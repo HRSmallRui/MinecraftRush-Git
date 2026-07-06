@@ -19,3 +19,9 @@ func die_audio_play():
 	AudioManager.instance.explosion_dead_body_audio_play()
 	shadow.hide()
 	pass
+
+
+func die_blood() -> Sprite2D:
+	await get_tree().create_timer(1.2,false).timeout
+	hide()
+	return super()
