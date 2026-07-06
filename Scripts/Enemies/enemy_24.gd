@@ -18,11 +18,6 @@ func anim_offset():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass
-
-
 func frame_changed():
 	if enemy_sprite.animation == "attack" and enemy_sprite.frame == 14:
 		cause_damage()
@@ -32,10 +27,6 @@ func frame_changed():
 
 
 func die_explosion_process():
-	var particle: AnimatedSprite2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-	particle.position = global_position
-	particle.modulate = Color(1,1,0.7,1)
-	particle.scale *= 1
-	Stage.instance.bullets.add_child(particle)
+	EffectManager.instance.play_block_effect(position,Vector2.ONE,Color(1,1,0.7,1))
 	dirt_audio.play()
 	pass
