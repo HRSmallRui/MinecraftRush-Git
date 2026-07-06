@@ -1,6 +1,6 @@
 extends Enemy
 
-const MIDDLE_SLIME_SCENE:PackedScene = preload("res://Scenes/Enemies/SlimeChild/middle_slime.tscn")
+@export var MIDDLE_SLIME_SCENE:PackedScene
 
 @export var attack_audio_list: Array[AudioStream]
 @export var summon_area_list: Array[Area2D]
@@ -25,9 +25,7 @@ func frame_changed():
 		attack_audio.stream = attack_audio_list.pick_random()
 		attack_audio.play()
 	if enemy_sprite.animation == "die" and enemy_sprite.frame == 6:
-		var smoke_effect:AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		smoke_effect.position = position
-		Stage.instance.bullets.add_child(smoke_effect)
+		EffectManager.instance.play_explosion_effect(hurt_box.global_position,Vector2.ONE * 1.5)
 		
 		if Stage.instance.is_win: return
 		

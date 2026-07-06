@@ -1,6 +1,7 @@
 extends Enemy
 
 @export var horn_audio_list: Array[AudioStream]
+@export var courage_buff_scene: PackedScene
 
 @onready var horn_audio: AudioStreamPlayer = $HornAudio
 @onready var enemy_encourage_area: Area2D = $UnitBody/EnemyEncourageArea
@@ -95,7 +96,7 @@ func encourage():
 		if enemy == self: continue
 		if !enemy.get_groups().has("illager"): continue
 		if enemy.enemy_type >= EnemyType.Big: continue
-		var courage_buff: PropertyBuff = preload("res://Scenes/Buffs/Enemies/encourage_buff.tscn").instantiate()
+		var courage_buff: PropertyBuff = courage_buff_scene.instantiate()
 		enemy.buffs.add_child(courage_buff)
 	pass
 

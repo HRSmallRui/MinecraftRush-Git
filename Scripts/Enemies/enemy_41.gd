@@ -23,8 +23,3 @@ func frame_changed():
 				if target_ally.ally_state != Ally.AllyState.DIE:
 					on_normal_attack_hit(target_ally)
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood_green.tscn")):
-	super(blood_packed_scene)
-	pass

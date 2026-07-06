@@ -1,7 +1,7 @@
 extends Enemy
 
-const LAND_ANIMATION = preload("res://Assets/Animations/Enemies/44守卫者/SpriteFrames/land.res")
-const WATER_ANIMATION = preload("res://Assets/Animations/Enemies/44守卫者/SpriteFrames/water.res")
+@export var LAND_ANIMATION: SpriteFrames
+@export var WATER_ANIMATION: SpriteFrames
 
 @export var die_audio_water: AudioStream
 @export var die_audio_land: AudioStream
@@ -11,6 +11,7 @@ const WATER_ANIMATION = preload("res://Assets/Animations/Enemies/44守卫者/Spr
 @export var step_1_color: Color
 @export var step_2_color: Color
 @export_range(0,1,0.1) var mix_power: float
+@export var water_effect_scene: PackedScene
 
 @onready var water_condition_area: Area2D = $UnitBody/WaterConditionArea
 @onready var jump_audio: AudioStreamPlayer = $JumpAudio
@@ -126,27 +127,22 @@ func leave_water(area: Area2D):
 func water_animation():
 	if first_in_water: return
 	AudioManager.instance.play_water_audio()
-	var water_particle: AnimatedSprite2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-	water_particle.position = position
-	water_particle.modulate = Color(0,0.8,1,0.6)
-	Stage.instance.bullets.add_child(water_particle)
+	EffectManager.instance.play_block_effect(position,Vector2.ONE,Color(0,0.8,1,0.6))
 	AudioManager.instance.play_water_audio()
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood.tscn")):
-	if enemy_sprite.sprite_frames == WATER_ANIMATION: return
-	var blood = blood_packed_scene.instantiate() as Sprite2D
-	blood.position = position
+func die_blood() -> Sprite2D:
+	if enemy_sprite.sprite_frames == WATER_ANIMATION: return null
+	var blood:Sprite2D = super()
 	blood.scale *= 2
-	Stage.instance.bullets.add_child(blood)
-	pass
+	return blood
 
 
 func _on_water_timer_timeout() -> void:
 	if enemy_sprite.sprite_frames == LAND_ANIMATION: return
 	if enemy_state != EnemyState.MOVE: return
-	var water_effect: Sprite2D = preload("res://Scenes/Effects/water_move_effect.tscn").instantiate()
+	var water_effect: Sprite2D = water_effect_scene.instantiate()
 	water_effect.position = water_marker.global_position
 	Stage.instance.bullets.add_child(water_effect)
 	pass # Replace with function body.

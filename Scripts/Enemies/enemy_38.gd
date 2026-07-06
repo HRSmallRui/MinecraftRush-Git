@@ -1,11 +1,13 @@
 extends Enemy
 
-const RUN_STATE_ANIMATION = preload("res://Assets/Animations/Enemies/38劫掠兽/SpriteFrames/run_state_animation.res")
-const WALK_STATE_ANIMATION = preload("res://Assets/Animations/Enemies/38劫掠兽/SpriteFrames/walk_state_animation.res")
+#const RUN_STATE_ANIMATION = preload("res://Assets/Animations/Enemies/38劫掠兽/SpriteFrames/run_state_animation.res")
+#const WALK_STATE_ANIMATION = preload("res://Assets/Animations/Enemies/38劫掠兽/SpriteFrames/walk_state_animation.res")
 
 @export var roar_audio_list: Array[AudioStream]
 @export var attack_audio_list: Array[AudioStream]
 @export var move_audio_list: Array[AudioStreamPlayer]
+@export var RUN_STATE_ANIMATION: SpriteFrames
+@export var WALK_STATE_ANIMATION: SpriteFrames
 
 @onready var attack_area: Area2D = $UnitBody/AttackArea
 @onready var attack_audio: AudioStreamPlayer = $AttackAudio
@@ -125,12 +127,10 @@ func _on_run_hit_area_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
 
 
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood.tscn")):
-	var blood = blood_packed_scene.instantiate() as Sprite2D
-	blood.position = position
+func die_blood() -> Sprite2D:
+	var blood: Sprite2D = super()
 	blood.scale *= 2
-	Stage.instance.bullets.add_child(blood)
-	pass
+	return blood
 
 
 func can_run() -> bool:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://xi5fkhf0l7je"]
+[gd_scene load_steps=38 format=3 uid="uid://xi5fkhf0l7je"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_vhgxp"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_44.gd" id="2_fqqol"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ddpaailx4w8gd" path="res://Assets/Images/UI/InformationBar/EnemyChapter4/守卫者.png" id="3_twgnn"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_xid2r"]
 [ext_resource type="AudioStream" uid="uid://vs7p3ngpo24u" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者die2.wav" id="4_2ntrs"]
+[ext_resource type="SpriteFrames" uid="uid://c63ftuf12o1xt" path="res://Assets/Animations/Enemies/44守卫者/SpriteFrames/water.res" id="4_vxpr1"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="5_umgue"]
 [ext_resource type="AudioStream" uid="uid://dh7w6iaiutj77" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者jump1.wav" id="5_voja1"]
 [ext_resource type="AudioStream" uid="uid://bhlds5wke321t" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者jump2.wav" id="6_emc5q"]
@@ -15,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://cn2mcf2yc7n62" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者appear3.wav" id="8_gn6yr"]
 [ext_resource type="AudioStream" uid="uid://degaom383fk1m" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者jump4.wav" id="8_jxhh0"]
 [ext_resource type="AudioStream" uid="uid://clcg0o8pih8t7" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者appear4.wav" id="9_owbut"]
+[ext_resource type="PackedScene" uid="uid://c1v6c158wodx2" path="res://Scenes/Effects/water_move_effect.tscn" id="11_b0grf"]
 [ext_resource type="SpriteFrames" uid="uid://sar00g7112py" path="res://Assets/Animations/Enemies/44守卫者/SpriteFrames/land.res" id="11_gcraj"]
 [ext_resource type="AudioStream" uid="uid://bpemphv5uttol" path="res://Assets/Sounds/FXs/Enemies/守卫者/尖刺.wav" id="17_eg433"]
 [ext_resource type="Shader" path="res://Assets/Shaders/guardian_ray.gdshader" id="18_5xcx3"]
@@ -205,6 +207,8 @@ _data = {
 
 [node name="Enemy44" instance=ExtResource("1_vhgxp")]
 script = ExtResource("2_fqqol")
+LAND_ANIMATION = ExtResource("11_gcraj")
+WATER_ANIMATION = ExtResource("4_vxpr1")
 die_audio_water = ExtResource("3_m23pd")
 die_audio_land = ExtResource("4_2ntrs")
 jump_audio_list = Array[AudioStream]([ExtResource("5_voja1"), ExtResource("6_emc5q"), ExtResource("7_5l2k6"), ExtResource("8_jxhh0")])
@@ -213,6 +217,7 @@ end_point_particle_gradient = SubResource("Gradient_bosfn")
 step_1_color = Color(0.533333, 0, 1, 0)
 step_2_color = Color(1, 0.54902, 0, 0)
 mix_power = 0.0
+water_effect_scene = ExtResource("11_b0grf")
 enemy_name = "守卫者"
 enemy_id = 44
 enemy_texture = ExtResource("3_twgnn")

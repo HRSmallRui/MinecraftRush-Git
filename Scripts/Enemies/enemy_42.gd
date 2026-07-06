@@ -37,17 +37,14 @@ func die(explosion: bool = false):
 	super(explosion)
 	create_tween().tween_property(enemy_sprite,"modulate:a",0,0.5)
 	await get_tree().create_timer(0.3,false).timeout
-	var smoke_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	smoke_effect.position = hurt_box.global_position
-	smoke_effect.scale *= 0.5
-	Stage.instance.bullets.add_child(smoke_effect)
+	EffectManager.instance.play_explosion_effect(hurt_box.global_position,Vector2.ONE * 0.5)
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
+func die_blood() -> Sprite2D:
 	await get_tree().create_timer(1.2,false).timeout
 	hide()
-	pass
+	return super()
 
 
 func move_process(delta:float):

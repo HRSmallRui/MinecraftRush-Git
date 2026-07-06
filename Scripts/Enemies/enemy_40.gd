@@ -19,8 +19,3 @@ func die_audio_play():
 	AudioManager.instance.explosion_dead_body_audio_play()
 	shadow.hide()
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass
