@@ -43,6 +43,7 @@ func _ready() -> void:
 	view_texture.texture = load("res://Assets/Images/Stages/Stage" + str(stage_level) + "/stage" + str(stage_level) + "-view.png")
 	
 	await get_tree().process_frame
+	print("label_size:",intro_label.size)
 	var level = (intro_label.size.y - 504) / 88
 	if level <= 0: clampy_min = clampy_max
 	else: clampy_min = 5 - level * 34
