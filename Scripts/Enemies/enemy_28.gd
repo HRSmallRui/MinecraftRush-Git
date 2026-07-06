@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var soldier_scene: PackedScene
+
 @onready var summon_area_1: Area2D = $SummonArea1
 @onready var summon_area_2: Area2D = $SummonArea2
 @onready var summon_area_3: Area2D = $SummonArea3
@@ -62,7 +64,7 @@ func summon_soldier(target_pos: Vector2):
 	if enemy_path == null: return
 	
 	var soldier_progress: float = enemy_path.curve.get_closest_offset(target_pos)
-	var soldier:Enemy = preload("res://Scenes/Enemies/enemy_27.tscn").instantiate()
+	var soldier:Enemy = soldier_scene.instantiate()
 	soldier.progress = soldier_progress
 	soldier.bounty = 0
 	enemy_path.add_child(soldier)
