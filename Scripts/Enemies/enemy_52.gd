@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var phatom_scene: PackedScene
+
 @onready var hating_soldier: AnimatedSprite2D = $UnitBody/HatingSoldier
 @onready var shadow: Sprite2D = $UnitBody/Shadow
 
@@ -70,22 +72,20 @@ func move_process(delta_time: float):
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
+func die_blood() -> Sprite2D:
 	shadow.hide()
-	pass
+	return super()
 
 
 func die(explosion: bool = false):
 	super(explosion)
 	hide()
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.global_position = hurt_box.global_position
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_explosion_effect(hurt_box.global_position)
 	AudioManager.instance.play_explosion_audio()
 	var damage: int = 100
 	if enemy_buff_tags.has("lightning"):
 		damage = 150
-	var phatom: Enemy = preload("res://Scenes/Enemies/enemy_40.tscn").instantiate()
+	var phatom: Enemy = phatom_scene.instantiate()
 	phatom.progress = progress
 	get_parent().add_child(phatom)
 	phatom.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,null,false,true)

@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var poison_buff_scene: PackedScene
+
 
 func anim_offset():
 	match enemy_sprite.animation:
@@ -22,12 +24,7 @@ func frame_changed():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood_green.tscn")):
-	super(blood_packed_scene)
-	pass
-
-
 func on_normal_attack_hit(target_ally: Ally):
-	var poison_buff: DotBuff = preload("res://Scenes/Buffs/Enemies/spider_poison_dot_buff.tscn").instantiate()
+	var poison_buff: DotBuff = poison_buff_scene.instantiate()
 	target_ally.buffs.add_child(poison_buff)
 	pass
