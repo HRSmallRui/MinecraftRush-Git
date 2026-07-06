@@ -46,17 +46,9 @@ func die(explosion: bool = false):
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass
-
-
 func explosion():
 	AudioManager.instance.play_explosion_audio()
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	
-	explosion_effect.global_position = self.hurt_box.global_position
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_explosion_effect(hurt_box.global_position)
 	
 	for ally_body: UnitBody in explosion_area.get_overlapping_bodies():
 		var ally: Ally = ally_body.owner
