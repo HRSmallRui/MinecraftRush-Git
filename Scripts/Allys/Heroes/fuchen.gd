@@ -2,6 +2,13 @@ extends Hero
 
 signal get_skill_4_linked_enemy(enemy: Enemy)
 
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_extra_damage_list: Array[int]
+@export_group("Skill1","skill1")
+@export var skill1_upgrade_damage_list: Array[int]
+@export_group("Skill2","skill2")
+@export var skill2_sheild_duration_list: Array[float]
+
 @onready var fuchen_magic_heart: Sprite2D = $UnitBody/FuchenMagicHeart
 @onready var normal_attack_audio: AudioStreamPlayer = $NormalAttackAudio
 @onready var teleport_audio: AudioStreamPlayer = $TeleportAudio
@@ -24,7 +31,7 @@ func _ready() -> void:
 	super()
 	sheild.modulate.a = 0
 	if skill_levels[2] > 0:
-		skill_2_during_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].sheild_duration[skill_levels[1]-1]
+		skill_2_during_timer.wait_time =skill2_sheild_duration_list[skill_levels[2]-1]
 	pass
 
 
@@ -64,11 +71,7 @@ func frame_changed():
 	if ally_sprite.animation == "teleport" and ally_sprite.frame == 13:
 		teleport_finished()
 	if ally_sprite.animation == "teleport" and ally_sprite.frame == 9:
-		var teleport_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		teleport_effect.modulate = Color.PURPLE
-		teleport_effect.scale *= 0.5
-		teleport_effect.position = global_position
-		Stage.instance.bullets.add_child(teleport_effect)
+		EffectManager.instance.play_explosion_effect(global_position,Vector2.ONE * 0.5, Color.PURPLE)
 		match randi_range(1,2):
 			1: teleport_audio.play()
 			2: teleport_audio_2.play()
@@ -84,10 +87,10 @@ func start_data_process():
 		1,2,3: skill_levels[0] = 1
 		4,5,6,7,8: skill_levels[0] = 2
 		9,10: skill_levels[0] = 3
-	passive_extra_damage = HeroSkillLibrary.hero_skill_data_library[ally_id][0].extra_damage[skill_levels[0]-1]
+	passive_extra_damage = passive_skill_extra_damage_list[skill_levels[0]-1]
 	
 	if skill_levels[1] > 0:
-		var plus_damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][1].upgrade_damage[skill_levels[1]-1]
+		var plus_damage: int = skill1_upgrade_damage_list[skill_levels[1]-1]
 		start_data.far_damage_low += plus_damage
 		start_data.far_damage_high += plus_damage
 	pass

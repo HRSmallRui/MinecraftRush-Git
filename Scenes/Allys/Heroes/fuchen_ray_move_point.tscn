@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpapq2rgal0bo"]
+[gd_scene load_steps=5 format=3 uid="uid://cpapq2rgal0bo"]
 
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/fuchen_ray_move_point.gd" id="1_ci2rm"]
-[ext_resource type="Texture2D" uid="uid://6mjftwxikkug" path="res://icon.svg" id="2_4svb6"]
+[ext_resource type="Texture2D" uid="uid://dte2vb1n81w5d" path="res://icon.svg" id="2_4svb6"]
+[ext_resource type="PackedScene" uid="uid://djs30vrk3cqvd" path="res://Scenes/Effects/fuchen_land_dust.tscn" id="2_p8icv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iffhw"]
 radius = 52.0096
 
 [node name="FuchenRayMovePoint" type="PathFollow2D"]
 script = ExtResource("1_ci2rm")
+fuchen_land_dust_scene = ExtResource("2_p8icv")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
