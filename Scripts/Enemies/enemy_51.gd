@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var die_explosion_effect_scene: PackedScene
+
 @onready var skeleton_audio: AudioStreamPlayer = $SkeletonAudio
 @onready var skeleton_explosion_audio: AudioStreamPlayer = $SkeletonExplosionAudio
 
@@ -48,7 +50,7 @@ func die(explosion: bool = false):
 
 
 func die_explosion_process():
-	var effect: AnimatedSprite2D = preload("res://Scenes/Effects/skeleton_dead_body_explosion.tscn").instantiate()
+	var effect: AnimatedSprite2D = die_explosion_effect_scene.instantiate()
 	effect.position = position
 	skeleton_explosion_audio.play()
 	get_parent().add_child(effect)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=141 format=3 uid="uid://civkk3fm2ol6"]
+[gd_scene load_steps=142 format=3 uid="uid://civkk3fm2ol6"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_pexjh"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_51.gd" id="2_l62ly"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_65nke"]
 [ext_resource type="Texture2D" uid="uid://elwoin4xdtf3" path="res://Assets/Images/UI/InformationBar/EnemyChapter6/荆棘射手.png" id="3_ca21u"]
+[ext_resource type="PackedScene" uid="uid://b8jjkpa7fqai6" path="res://Scenes/Effects/skeleton_dead_body_explosion.tscn" id="3_co474"]
 [ext_resource type="AudioStream" uid="uid://bx2lxbf0mlaqx" path="res://Assets/Sounds/FXs/Enemies/骨裂.wav" id="4_5r5ci"]
 [ext_resource type="PackedScene" uid="uid://cmg4q04xfhhcu" path="res://Scenes/Bullets/skeletion_physics_arrow.tscn" id="4_fvt4j"]
 [ext_resource type="Texture2D" uid="uid://dmbln18ghqyvx" path="res://Assets/Animations/Enemies/51荆棘射手/attack_00.png" id="4_mhrfk"]
@@ -596,6 +597,7 @@ animations = [{
 
 [node name="Enemy51" groups=["skeleton"] instance=ExtResource("1_pexjh")]
 script = ExtResource("2_l62ly")
+die_explosion_effect_scene = ExtResource("3_co474")
 enemy_name = "荆棘射手"
 enemy_id = 51
 enemy_texture = ExtResource("3_ca21u")
