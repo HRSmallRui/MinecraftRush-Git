@@ -31,7 +31,7 @@ func die(explosion: bool = false):
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
+func die_blood():
 	
 	pass
 
