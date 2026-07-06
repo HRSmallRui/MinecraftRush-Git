@@ -1,5 +1,11 @@
 extends Hero
 
+@export_group("PassiveSkill","passive_skill")
+@export_group("Skill1","skill1")
+@export_group("Skill2","skill2")
+@export_group("Skill3","skill3")
+@export_group("Skill4","skill4")
+
 @onready var skill_2_timer: Timer = $Skill2Timer
 @onready var skill_3_timer: Timer = $Skill3Timer
 @onready var skill_4_timer: Timer = $Skill4Timer
