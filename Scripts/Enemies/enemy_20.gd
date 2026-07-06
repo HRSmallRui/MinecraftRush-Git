@@ -29,3 +29,9 @@ func on_normal_attack_hit(target_ally: Ally):
 	hunger_buff.unit = current_intercepting_units[0]
 	target_ally.buffs.add_child(hunger_buff)
 	pass
+
+
+func die_blood() -> Sprite2D:
+	var blood: Sprite2D = super()
+	blood.modulate = Color.GRAY
+	return blood
