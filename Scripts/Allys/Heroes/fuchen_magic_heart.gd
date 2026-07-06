@@ -3,6 +3,12 @@ extends Sprite2D
 
 @export var fuchen: Hero
 @export var trace_area: Area2D
+@export_group("Skill3")
+@export var magic_ball_scene: PackedScene
+@export var magic_ball_damage: int
+@export_group("Skill4")
+@export var ray_scene: PackedScene
+@export var move_point_scene: PackedScene
 
 @onready var rotation_player: AnimationPlayer = $RotationPlayer
 @onready var move_player: AnimationPlayer = $MovePlayer
@@ -74,7 +80,7 @@ func skill_3_release():
 		var enemy:Enemy = body.owner
 		in_range_list.append(enemy)
 	for i in loop_count:
-		var magic_ball: Bullet = preload("res://Scenes/Bullets/fuchen_skill_3_bullet.tscn").instantiate()
+		var magic_ball: Bullet = magic_ball_scene.instantiate()
 		magic_ball.position = global_position
 		magic_ball.damage = HeroSkillLibrary.hero_skill_data_library[1][3].damage
 		if in_range_list.size() > 0:
@@ -104,8 +110,8 @@ func skill_4_release():
 	ray_audio.play()
 	elec_audio.play()
 	
-	current_ray = preload("res://Scenes/DefenceTowers/MagicTower/TowerComponents/protector_church_ray.tscn").instantiate()
-	move_point = preload("res://Scenes/Allys/Heroes/fuchen_ray_move_point.tscn").instantiate()
+	current_ray = ray_scene.instantiate()
+	move_point = move_point_scene.instantiate()
 	var enemy_path: EnemyPath = skill_4_linked_enemy.get_parent()
 	var new_progress: float = skill_4_linked_enemy.progress + 40
 	new_progress = clampf(new_progress,0,enemy_path.curve.get_baked_length())

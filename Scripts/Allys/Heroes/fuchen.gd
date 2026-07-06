@@ -2,6 +2,19 @@ extends Hero
 
 signal get_skill_4_linked_enemy(enemy: Enemy)
 
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_extra_damage_list: Array[int]
+@export_group("Skill1","skill1")
+@export var skill1_upgrade_damage_list: Array[int]
+@export_group("Skill2","skill2")
+@export var skill2_sheild_duration_list: Array[float]
+@export_group("Skill3","skill3")
+@export var skill3_magic_ball_count_list: Array[int]
+@export var skill3_damage_list: Array[int]
+@export_group("Skill4","skill4")
+@export var skill4_duration_list: Array[float]
+@export var skill4_damage_per_sec_list: Array[int]
+
 @onready var fuchen_magic_heart: Sprite2D = $UnitBody/FuchenMagicHeart
 @onready var normal_attack_audio: AudioStreamPlayer = $NormalAttackAudio
 @onready var teleport_audio: AudioStreamPlayer = $TeleportAudio
@@ -64,11 +77,7 @@ func frame_changed():
 	if ally_sprite.animation == "teleport" and ally_sprite.frame == 13:
 		teleport_finished()
 	if ally_sprite.animation == "teleport" and ally_sprite.frame == 9:
-		var teleport_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		teleport_effect.modulate = Color.PURPLE
-		teleport_effect.scale *= 0.5
-		teleport_effect.position = global_position
-		Stage.instance.bullets.add_child(teleport_effect)
+		EffectManager.instance.play_explosion_effect(global_position,Vector2.ONE * 0.5, Color.PURPLE)
 		match randi_range(1,2):
 			1: teleport_audio.play()
 			2: teleport_audio_2.play()

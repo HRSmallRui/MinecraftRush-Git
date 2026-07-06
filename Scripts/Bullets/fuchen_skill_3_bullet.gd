@@ -6,12 +6,8 @@ extends Bullet
 
 func after_attack_process(unit: Node2D):
 	AudioManager.instance.play_explosion_audio()
-	var explosion_effect = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate() as AnimatedSprite2D
-	explosion_effect.position = bullet_sprite.global_position
-	get_parent().add_child(explosion_effect)
-	var smoke_effect = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate() as AnimatedSprite2D
-	smoke_effect.position = bullet_sprite.global_position
-	get_parent().add_child(smoke_effect)
+	EffectManager.instance.play_explosion_effect(bullet_sprite.global_position)
+	EffectManager.instance.play_smoke_effect(bullet_sprite.global_position)
 	
 	var show_text: String
 	match randi_range(0,1):
