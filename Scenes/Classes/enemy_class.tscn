@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c3a06iwf4hcp1"]
+[gd_scene load_steps=23 format=3 uid="uid://c3a06iwf4hcp1"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_class.gd" id="1_paaco"]
 [ext_resource type="Texture2D" uid="uid://cs0pc8baxwnxu" path="res://Assets/Images/UI/InformationBar/尸国杂兵.png" id="2_6cwv2"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bbjx2rh2rc525" path="res://Assets/Sounds/FXs/Enemies/Sound_HumanDead3.wav" id="5_ll7ae"]
 [ext_resource type="AudioStream" uid="uid://0h275ggnhryt" path="res://Assets/Sounds/FXs/Enemies/Sound_HumanDead4.wav" id="6_x6g2n"]
 [ext_resource type="Texture2D" uid="uid://dte2vb1n81w5d" path="res://icon.svg" id="7_cg515"]
+[ext_resource type="PackedScene" uid="uid://j7lnr1816em2" path="res://Scenes/Effects/blood.tscn" id="7_mgyn8"]
 [ext_resource type="Texture2D" uid="uid://dpixs5csmnirl" path="res://Assets/Images/UI/血条.png" id="7_o72lm"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_health_bar.gd" id="12_ggp2i"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_screen_notifier.gd" id="13_w158p"]
@@ -50,6 +51,7 @@ script = ExtResource("1_paaco")
 enemy_name = "敌人类"
 enemy_texture = ExtResource("2_6cwv2")
 die_audio_stream_list = Array[AudioStream]([ExtResource("3_bcsrv"), ExtResource("4_qheye"), ExtResource("5_ll7ae"), ExtResource("6_x6g2n")])
+die_blood_scene = ExtResource("7_mgyn8")
 
 [node name="UnitBody" type="CharacterBody2D" parent="." node_paths=PackedStringArray("unit")]
 scale = Vector2(0.2, 0.2)

@@ -31,6 +31,7 @@ enum EnemyState{
 @export var bounty: int
 @export var show_tip: bool = true
 @export var die_audio_stream_list: Array[AudioStream]
+@export var die_blood_scene: PackedScene
 
 @onready var select_sprite: Sprite2D = $UnitBody/SelectSprite
 @onready var enemy_button: Button = $UnitBody/EnemyButton
@@ -402,8 +403,8 @@ func hurt_audio_play(damage_source: String):
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood.tscn")):
-	var blood = blood_packed_scene.instantiate() as Sprite2D
+func die_blood():
+	var blood = die_blood_scene.instantiate() as Sprite2D
 	blood.position = position
 	Stage.instance.bullets.add_child(blood)
 	pass
