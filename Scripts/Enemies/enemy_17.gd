@@ -21,7 +21,7 @@ func die_audio_play():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
+func die_blood() -> Sprite2D:
 	await get_tree().create_timer(1.2,false).timeout
 	hide()
-	pass
+	return super()

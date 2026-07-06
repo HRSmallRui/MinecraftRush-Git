@@ -1,5 +1,9 @@
 extends Enemy
 
+@export var lightning_area_scene: PackedScene
+@export var skill3_lightning_area_scene: PackedScene
+@export var story_layer_scene: PackedScene
+
 @onready var boss_music: AudioStreamPlayer = $BossMusic
 @onready var boss_ui: BossUI = $BossUI
 @onready var boss_music_2: AudioStreamPlayer = $BossMusic2
@@ -170,7 +174,7 @@ func into_story_mode():
 
 
 func skill_1_release():
-	var lightning_area: Area2D = preload("res://Scenes/Skills/HatingEmperorStory/hating_emp_skill_1_area.tscn").instantiate()
+	var lightning_area: Area2D = lightning_area_scene.instantiate()
 	if ally_area.has_overlapping_bodies():
 		var body = ally_area.get_overlapping_bodies().pick_random()
 		var ally: Ally = body.owner
@@ -183,7 +187,7 @@ func skill_1_release():
 
 
 func skill_2_release():
-	var lightning_area: Area2D = preload("res://Scenes/Skills/HatingEmperorStory/hating_emp_skill_1_area.tscn").instantiate()
+	var lightning_area: Area2D = lightning_area_scene.instantiate()
 	if tower_area.has_overlapping_areas():
 		var area = tower_area.get_overlapping_areas().pick_random()
 		var tower: DefenceTower = area.owner
@@ -198,7 +202,7 @@ func skill_2_release():
 
 func skill_3_release():
 	for i in 66:
-		var lightning_area: Area2D = preload("res://Scenes/Skills/HatingEmperorStory/hating_emp_lightning_area.tscn").instantiate()
+		var lightning_area: Area2D = skill3_lightning_area_scene.instantiate()
 		var target_pos: Vector2 = Vector2(randf_range(0,2100),randf_range(0,1300))
 		var enemy_path: EnemyPath = Stage.instance.enemies.get_children()[randf_range(0,17)]
 		target_pos = enemy_path.curve.get_closest_point(target_pos)
@@ -216,12 +220,8 @@ func super_release():
 	for area in tower_area.get_overlapping_areas():
 		var tower: DefenceTower = area.owner
 		tower.destroy_tower()
-		var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		explosion_effect.position = tower.position
-		Stage.instance.bullets.add_child(explosion_effect)
-		var smoke_effect: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-		smoke_effect.position = tower.position
-		Stage.instance.bullets.add_child(smoke_effect)
+		EffectManager.instance.play_explosion_effect(tower.position)
+		EffectManager.instance.play_smoke_effect(tower.position)
 		await get_tree().process_frame
 	for tower:DefenceTower in Stage.instance.towers.get_children():
 		tower.process_mode = Node.PROCESS_MODE_DISABLED
@@ -245,7 +245,7 @@ func super_release():
 	enemy_sprite.play()
 	
 	await get_tree().create_timer(2,false).timeout
-	var story_layer: StoryLayer = preload("res://Scenes/Stages/Stage15/stage_15_story_layer_2.tscn").instantiate()
+	var story_layer: StoryLayer = story_layer_scene.instantiate()
 	Stage.instance.add_child(story_layer)
 	await get_tree().create_timer(41).timeout
 	create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).tween_property(boss_music_2,"volume_db",-70,2)
@@ -254,10 +254,7 @@ func super_release():
 
 func teleport_effect():
 	teleport_audio.play()
-	var effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	effect.position = hurt_box.global_position
-	effect.modulate = Color.PURPLE
-	Stage.instance.bullets.add_child(effect)
+	EffectManager.instance.play_explosion_effect(hurt_box.global_position,Vector2.ONE,Color.PURPLE)
 	pass
 
 

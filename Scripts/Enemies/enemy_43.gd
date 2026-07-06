@@ -1,7 +1,7 @@
 extends Enemy
 
-const FLYING_ANIMATION = preload("res://Assets/Animations/Enemies/43泰坦威克斯/SpriteFrames/flying_animation.res")
-const LANDING_ANIMATION = preload("res://Assets/Animations/Enemies/43泰坦威克斯/SpriteFrames/landing_animation.res")
+@export var FLYING_ANIMATION: SpriteFrames
+@export var LANDING_ANIMATION: SpriteFrames
 
 @onready var fly_cd_timer: Timer = $FlyCDTimer
 @onready var fly_during_timer: Timer = $FlyDuringTimer

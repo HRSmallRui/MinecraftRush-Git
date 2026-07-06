@@ -27,3 +27,9 @@ func frame_changed():
 			var ally: Ally = body.owner
 			ally.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true,)
 	pass
+
+
+func die_blood() -> Sprite2D:
+	var blood: Sprite2D = super()
+	blood.scale *= 2
+	return blood

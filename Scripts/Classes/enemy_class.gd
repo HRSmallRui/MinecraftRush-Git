@@ -31,6 +31,11 @@ enum EnemyState{
 @export var bounty: int
 @export var show_tip: bool = true
 @export var die_audio_stream_list: Array[AudioStream]
+@export var die_blood_scene: PackedScene
+@export_group("others")
+@export var die_explosion_effect_scene: PackedScene
+@export var danger_tip_scene: PackedScene
+@export var new_tip_scene: PackedScene
 
 @onready var select_sprite: Sprite2D = $UnitBody/SelectSprite
 @onready var enemy_button: Button = $UnitBody/EnemyButton
@@ -131,7 +136,7 @@ func tip_show():
 	Global.sav_game_sav(Stage.instance.stage_sav)
 	if show_tip:
 		await get_tree().process_frame
-		var tip_button = preload("res://Scenes/UI-Components/enemy_tip_button.tscn").instantiate() as TipButton
+		var tip_button = new_tip_scene.instantiate() as TipButton
 		tip_button.id = enemy_id
 		Stage.instance.tips_container.add_child(tip_button)
 	pass
@@ -337,7 +342,7 @@ func achievement_enemy_die():
 
 
 func die_explosion_process():
-	var dead_explosion = preload("res://Scenes/Effects/dead_body_explosion.tscn").instantiate() as AnimatedSprite2D
+	var dead_explosion: AnimatedSprite2D = die_explosion_effect_scene.instantiate()
 	dead_explosion.position = position
 	AudioManager.instance.explosion_dead_body_audio_play()
 	Stage.instance.dead_body_node.add_child(dead_explosion)
@@ -402,11 +407,12 @@ func hurt_audio_play(damage_source: String):
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood.tscn")):
-	var blood = blood_packed_scene.instantiate() as Sprite2D
+func die_blood() -> Sprite2D:
+	if die_blood_scene == null: return null
+	var blood = die_blood_scene.instantiate() as Sprite2D
 	blood.position = position
 	Stage.instance.bullets.add_child(blood)
-	pass
+	return blood
 
 
 func sec_kill(explosion: bool):
@@ -511,7 +517,7 @@ func danger_tip_process():
 		danger_tip.queue_free()
 		danger_tip = null
 	if !screen_notifier.is_on_screen() and danger_tip == null and progress_ratio > 0.6:
-		var new_danger_tip: DangerTip = preload("res://Scenes/UI-Components/Stages/danger_tip.tscn").instantiate()
+		var new_danger_tip: DangerTip = danger_tip_scene.instantiate()
 		danger_tip = new_danger_tip
 		danger_tip.linked_enemy = self
 		Stage.instance.danger_tip_layer.add_child(danger_tip)

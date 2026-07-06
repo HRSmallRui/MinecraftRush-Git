@@ -18,8 +18,3 @@ func frame_changed():
 	if enemy_sprite.animation == "attack" and enemy_sprite.frame == 14:
 		cause_damage()
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass

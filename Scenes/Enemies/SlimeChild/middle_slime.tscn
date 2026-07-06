@@ -1,8 +1,9 @@
-[gd_scene load_steps=119 format=3 uid="uid://chg3j4ln6qt2v"]
+[gd_scene load_steps=120 format=3 uid="uid://chg3j4ln6qt2v"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_eulk5"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_-2.gd" id="2_yf0e8"]
 [ext_resource type="Texture2D" uid="uid://c2j7jvx437d0y" path="res://Assets/Images/UI/InformationBar/EnemyChapter4/史莱姆.png" id="3_aajfp"]
+[ext_resource type="PackedScene" uid="uid://b15iceej3khq1" path="res://Scenes/Enemies/SlimeChild/small_slime.tscn" id="3_ap3jm"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_1juw4"]
 [ext_resource type="AudioStream" uid="uid://cbl0di0wcb05x" path="res://Assets/Sounds/FXs/Enemies/史莱姆/史莱姆攻击2.wav" id="4_wkps6"]
 [ext_resource type="AudioStream" uid="uid://sehnxvlavjwu" path="res://Assets/Sounds/FXs/Enemies/史莱姆/大型史莱姆1.wav" id="5_emcr3"]
@@ -502,6 +503,7 @@ radius = 8.06226
 
 [node name="MiddleSlime" node_paths=PackedStringArray("summon_area_list") instance=ExtResource("1_eulk5")]
 script = ExtResource("2_yf0e8")
+SMALL_SLIME_SCENE = ExtResource("3_ap3jm")
 attack_audio_list = Array[AudioStream]([ExtResource("115_lum63"), ExtResource("4_wkps6")])
 summon_area_list = [NodePath("SummonArea1"), NodePath("SummonArea2"), NodePath("SummonArea3"), NodePath("SummonArea4")]
 enemy_name = "中型史莱姆"

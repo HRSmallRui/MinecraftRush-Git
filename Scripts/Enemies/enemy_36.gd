@@ -4,6 +4,9 @@ extends Enemy
 @export var fange_audio_list: Array[AudioStream]
 @export var skill_complete_audio_list: Array[AudioStream]
 @export var vex_marker_list: Array[Marker2D]
+@export var fang_effect_scene: PackedScene
+@export var fang_area_scene: PackedScene
+@export var vex_scene: PackedScene
 
 @onready var skill_releasing_audio: AudioStreamPlayer = $SkillReleasingAudio
 @onready var skill_finish_audio: AudioStreamPlayer = $SkillFinishAudio
@@ -95,13 +98,10 @@ func battle():
 
 
 func summon_fangs(fang_pos: Vector2):
-	var fang: Node2D = preload("res://Scenes/Effects/evoker_fang.tscn").instantiate()
+	var fang: Node2D = fang_effect_scene.instantiate()
 	fang.position = fang_pos
 	Stage.instance.bullets.add_child(fang)
-	var block_effect: Node2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-	block_effect.position = fang_pos
-	block_effect.modulate = Color.SADDLE_BROWN
-	Stage.instance.add_child(block_effect)
+	EffectManager.instance.play_block_effect(fang_pos,Vector2.ONE,Color.SADDLE_BROWN)
 	pass
 
 
@@ -140,7 +140,7 @@ func move_process(delta: float):
 
 func release_fang(summon_pos: Vector2):
 	summon_fangs(summon_pos)
-	var hit_box: SkillConditionArea2D = preload("res://Scenes/Skills/evoker_fang_area.tscn").instantiate()
+	var hit_box: SkillConditionArea2D = fang_area_scene.instantiate()
 	hit_box.position = summon_pos
 	Stage.instance.bullets.add_child(hit_box)
 	pass
@@ -148,7 +148,7 @@ func release_fang(summon_pos: Vector2):
 
 func summon_vex():
 	for marker in vex_marker_list:
-		var vex: Enemy = preload("res://Scenes/Enemies/enemy_42.tscn").instantiate()
+		var vex: Enemy = vex_scene.instantiate()
 		var enemy_path: EnemyPath = Stage.instance.get_closest_enemy_path(marker.global_position)
 		vex.progress = enemy_path.curve.get_closest_offset(marker.global_position)
 		enemy_path.add_child(vex)

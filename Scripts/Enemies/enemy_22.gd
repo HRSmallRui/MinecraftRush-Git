@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var self_enemy_scene: PackedScene
+
 @onready var summon_area_1: Area2D = $SummonArea1
 @onready var summon_area_2: Area2D = $SummonArea2
 @onready var summon_area_3: Area2D = $SummonArea3
@@ -40,19 +42,15 @@ func frame_changed():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass
+func die_blood() -> Sprite2D:
+	var blood: Sprite2D = super()
+	blood.modulate = Color.DIM_GRAY
+	return blood
 
 
 func _on_dirt_timer_timeout() -> void:
 	if enemy_sprite.animation == "appear":
-		var dir_effect: AnimatedSprite2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-		dir_effect.modulate = Color(0.3,0.1,0.07)
-		dir_effect.scale *= 0.5
-		dir_effect.position = position
-		dir_effect.z_index += 1
-		Stage.instance.bullets.add_child(dir_effect)
+		EffectManager.instance.play_block_effect(position,Vector2.ONE * 0.5,Color(0.3,0.1,0.07))
 	pass # Replace with function body.
 
 
@@ -92,7 +90,7 @@ func call_partner():
 
 
 func try_to_call_partner(enemy_path: EnemyPath, partner_progress: float):
-	var partner: Enemy = preload("res://Scenes/Enemies/enemy_22.tscn").instantiate()
+	var partner: Enemy = self_enemy_scene.instantiate()
 	partner.bounty = 0
 	partner.progress = partner_progress
 	enemy_path.add_child(partner)

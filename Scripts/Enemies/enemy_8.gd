@@ -25,23 +25,10 @@ func frame_changed():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass
-
-
 func die(explosion: bool = false):
 	super(explosion)
 	if explosion:
 		die_explosion_process()
 	else:
 		skeleton_audio.play()
-	pass
-
-
-func die_explosion_process():
-	var effect: AnimatedSprite2D = preload("res://Scenes/Effects/skeleton_dead_body_explosion.tscn").instantiate()
-	effect.position = position
-	skeleton_explosion_audio.play()
-	get_parent().add_child(effect)
 	pass

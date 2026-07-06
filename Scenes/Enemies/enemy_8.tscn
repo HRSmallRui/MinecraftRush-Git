@@ -1,8 +1,9 @@
-[gd_scene load_steps=117 format=3 uid="uid://cu5yypfgmssji"]
+[gd_scene load_steps=118 format=3 uid="uid://cu5yypfgmssji"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_sghgc"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_8.gd" id="2_74ksw"]
 [ext_resource type="Texture2D" uid="uid://cg38rrf5dasho" path="res://Assets/Images/UI/InformationBar/骨国步兵.png" id="3_gag00"]
+[ext_resource type="PackedScene" uid="uid://b8jjkpa7fqai6" path="res://Scenes/Effects/skeleton_dead_body_explosion.tscn" id="3_soigg"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_y4knd"]
 [ext_resource type="Texture2D" uid="uid://bbvbsil74q332" path="res://Assets/Animations/Enemies/8骨国步兵/attack_00.png" id="5_bpmn0"]
 [ext_resource type="Texture2D" uid="uid://bwiqcgio3tbgl" path="res://Assets/Animations/Enemies/8骨国步兵/attack_01.png" id="6_t4jbm"]
@@ -503,6 +504,8 @@ enemy_id = 8
 enemy_texture = ExtResource("3_gag00")
 start_data = SubResource("Resource_bm67v")
 bounty = 6
+die_blood_scene = null
+die_explosion_effect_scene = ExtResource("3_soigg")
 
 [node name="EnemySprite" parent="UnitBody" index="0"]
 position = Vector2(5, -115)

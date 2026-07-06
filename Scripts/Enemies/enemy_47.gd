@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var heal_effect_scene: PackedScene
+
 @onready var normal_attack_audio: AudioStreamPlayer = $NormalAttackAudio
 @onready var light_sprite: Sprite2D = $UnitBody/LightSprite
 @onready var heal_timer: Timer = $HealTimer
@@ -37,10 +39,10 @@ func frame_changed():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
+func die_blood() -> Sprite2D:
 	light_sprite.hide()
 	heal_timer.stop()
-	pass
+	return super()
 
 
 func move_process(delta: float):
@@ -78,6 +80,6 @@ func _on_heal_timer_timeout() -> void:
 	for body in heal_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.current_data.heal(heal_data)
-		var heal_effect:BuffClass = preload("res://Scenes/Buffs/Enemies/white_witch_heal_buff.tscn").instantiate()
+		var heal_effect:BuffClass = heal_effect_scene.instantiate()
 		enemy.buffs.add_child(heal_effect)
 	pass # Replace with function body.

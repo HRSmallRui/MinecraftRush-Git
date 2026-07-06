@@ -1,8 +1,9 @@
-[gd_scene load_steps=58 format=3 uid="uid://ctqg01hruyfxe"]
+[gd_scene load_steps=63 format=3 uid="uid://ctqg01hruyfxe"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_g1wju"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_3.gd" id="2_lvuyr"]
 [ext_resource type="Texture2D" uid="uid://comwl0ri8gw60" path="res://Assets/Images/UI/InformationBar/鸡骑士.png" id="2_w0q86"]
+[ext_resource type="PackedScene" uid="uid://bjaqbbyu6ihm7" path="res://Scenes/Enemies/enemy_2.tscn" id="3_du766"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_rn0uq"]
 [ext_resource type="AudioStream" uid="uid://iq0pyheftlvh" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡死亡2.wav" id="5_56vhu"]
 [ext_resource type="Texture2D" uid="uid://ddv0fe3ql1v4r" path="res://Assets/Animations/Enemies/3鸡骑士/idle_0.png" id="5_fiw8j"]
@@ -55,6 +56,10 @@
 [ext_resource type="Texture2D" uid="uid://bgfwlg2kb4yq7" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_13.png" id="51_1v3v3"]
 [ext_resource type="Texture2D" uid="uid://cl35i4fva4q5w" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_14.png" id="52_53t7k"]
 [ext_resource type="Texture2D" uid="uid://c5rk6vqwlvbrg" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_15.png" id="53_m0rea"]
+[ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="56_qkkhb"]
+[ext_resource type="AudioStream" uid="uid://cjqgganeritcc" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫1.wav" id="57_sholn"]
+[ext_resource type="AudioStream" uid="uid://cde18v2nr7yvq" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫2.wav" id="58_paqrx"]
+[ext_resource type="AudioStream" uid="uid://b8dl2vb71lspt" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫3.wav" id="59_ybemx"]
 
 [sub_resource type="Resource" id="Resource_105n5"]
 script = ExtResource("3_rn0uq")
@@ -249,6 +254,7 @@ animations = [{
 
 [node name="Enemy3" instance=ExtResource("1_g1wju")]
 script = ExtResource("2_lvuyr")
+later_enemy_scene = ExtResource("3_du766")
 enemy_name = "鸡骑士"
 enemy_id = 3
 enemy_texture = ExtResource("2_w0q86")
@@ -275,5 +281,5 @@ offset_right = 60.0
 offset_left = -70.0
 offset_right = 230.0
 
-[node name="AppearAudio" type="AudioStreamPlayer" parent="." index="5"]
-bus = &"Sound"
+[node name="AppearAudioComponent" parent="." index="6" instance=ExtResource("56_qkkhb")]
+appear_audio_list = Array[AudioStream]([ExtResource("57_sholn"), ExtResource("58_paqrx"), ExtResource("59_ybemx")])

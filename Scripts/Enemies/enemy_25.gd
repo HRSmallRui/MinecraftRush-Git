@@ -36,10 +36,7 @@ func on_normal_attack_hit(target_ally: Ally):
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood.tscn")):
-	var blood = blood_packed_scene.instantiate() as Sprite2D
-	blood.position = position
-	blood.modulate *= 0.5
-	blood.modulate.a = 1
-	get_parent().add_child(blood)
-	pass
+func die_blood() -> Sprite2D:
+	var blood: Sprite2D = super()
+	blood.modulate = Color.DIM_GRAY
+	return blood

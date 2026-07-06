@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var die_blood_spit_scene: PackedScene
+
 @onready var normal_attack_audio: AudioStreamPlayer = $NormalAttackAudio
 @onready var aoe_hit_audio: AudioStreamPlayer = $AoeHitAudio
 @onready var attack_area: Area2D = $UnitBody/AttackArea
@@ -51,15 +53,10 @@ func aoe_attack():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass
-
-
 func die(explosion: bool = false):
 	Achievement.achieve_complete("Boss5Dead")
 	super(explosion)
-	var blood_effect: AnimatedSprite2D = preload("res://Scenes/Effects/blood_spit_effect.tscn").instantiate()
+	var blood_effect: AnimatedSprite2D = die_blood_spit_scene.instantiate()
 	blood_effect.position = hurt_box.position + Vector2(0,-20)
 	blood_effect.scale *= 2
 	unit_body.add_child(blood_effect)

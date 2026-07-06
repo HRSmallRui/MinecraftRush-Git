@@ -20,9 +20,7 @@ func frame_changed():
 	pass
 
 
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood.tscn")):
-	var blood = blood_packed_scene.instantiate() as Sprite2D
-	blood.position = position
+func die_blood() -> Sprite2D:
+	var blood = super()
 	blood.scale *= 1.5
-	get_parent().add_child(blood)
-	pass
+	return blood

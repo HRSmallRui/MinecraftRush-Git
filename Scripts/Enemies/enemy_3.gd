@@ -1,6 +1,6 @@
 extends Enemy
 
-@onready var appear_audio: AudioStreamPlayer = $AppearAudio
+@export var later_enemy_scene: PackedScene
 
 
 func anim_offset():
@@ -15,30 +15,6 @@ func anim_offset():
 			enemy_sprite.position = Vector2(-10,-100) if enemy_sprite.flip_h else Vector2(5,-100)
 	
 	
-	pass
-
-
-func _ready() -> void:
-	super()
-	var audio_id: int = randi_range(1,3)
-	var entry_label: String = "chicken" + str(audio_id)
-	if entry_label in AudioManager.instance.registor_enemy_entry_audio_list:
-		if randf_range(0,1) < 0.2:
-			entry_audio_play(audio_id)
-	else:
-		entry_audio_play(audio_id)
-		AudioManager.instance.entry_audio_registor(entry_label)
-	pass
-
-
-func entry_audio_play(audio_id: int):
-	var stream: AudioStream
-	match audio_id:
-		1: stream = load("res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫1.wav")
-		2: stream = load("res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫2.wav")
-		3: stream = load("res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫3.wav")
-	appear_audio.stream = stream
-	appear_audio.play()
 	pass
 
 
@@ -60,7 +36,7 @@ func die(explosion: bool = false):
 		else: AudioManager.instance.dead_body_explosion_audio.play()
 		get_parent().add_child(dead_explosion)
 	else:
-		var new_enemy: Enemy = preload("res://Scenes/Enemies/enemy_2.tscn").instantiate()
+		var new_enemy: Enemy = later_enemy_scene.instantiate()
 		new_enemy.progress = progress
 		hide()
 		die_audio_play()

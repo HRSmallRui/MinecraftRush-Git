@@ -1,12 +1,15 @@
-[gd_scene load_steps=241 format=3 uid="uid://bc1bw8ys6yi8u"]
+[gd_scene load_steps=244 format=3 uid="uid://bc1bw8ys6yi8u"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_usild"]
 [ext_resource type="Script" path="res://Scripts/Enemies/SpecialEnemies/hating_emperor_story.gd" id="2_oe5kj"]
+[ext_resource type="PackedScene" uid="uid://c1qhhiire04ye" path="res://Scenes/Skills/HatingEmperorStory/hating_emp_skill_1_area.tscn" id="3_65woh"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_fgqbf"]
 [ext_resource type="Texture2D" uid="uid://pvy3khrtluxj" path="res://Assets/Images/UI/InformationBar/EnemyChapter4/厌皇story.png" id="3_i3cu5"]
+[ext_resource type="PackedScene" uid="uid://cnva3b0cv1bc3" path="res://Scenes/Skills/HatingEmperorStory/hating_emp_lightning_area.tscn" id="4_8wmg7"]
 [ext_resource type="Texture2D" uid="uid://dl2usge04c2as" path="res://Assets/Images/UI/dialog_panel.png" id="4_lpcua"]
 [ext_resource type="PackedScene" uid="uid://dcqlwpqyykpkq" path="res://Scenes/Enemies/EnemyComponents/boss_ui.tscn" id="4_urwjf"]
 [ext_resource type="Shader" path="res://Assets/Shaders/light.gdshader" id="5_7vq6y"]
+[ext_resource type="PackedScene" uid="uid://bfiig2i1y41ny" path="res://Scenes/Stages/Stage15/stage_15_story_layer_2.tscn" id="5_21yig"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/dialog_panel.gd" id="5_o4vf0"]
 [ext_resource type="AudioStream" uid="uid://dlp0505w2auej" path="res://Assets/Sounds/Music/Chapter4FinalBossStart.mp3" id="5_rtt6w"]
 [ext_resource type="Texture2D" uid="uid://bxuq4fqiukmqd" path="res://Assets/Animations/Enemies/厌皇_Story/idle_00.png" id="5_tcvni"]
@@ -1073,6 +1076,9 @@ stream_2/stream = ExtResource("229_bdlxv")
 [node name="HatingEmperorStory" groups=["boss", "god", "super_unit"] instance=ExtResource("1_usild")]
 z_index = 1
 script = ExtResource("2_oe5kj")
+lightning_area_scene = ExtResource("3_65woh")
+skill3_lightning_area_scene = ExtResource("4_8wmg7")
+story_layer_scene = ExtResource("5_21yig")
 enemy_name = "厌皇-尼古拉斯"
 enemy_id = -1
 enemy_texture = ExtResource("3_i3cu5")
@@ -1080,6 +1086,7 @@ enemy_type = 5
 start_data = SubResource("Resource_s7q82")
 interceptable = false
 lives_taken = 666
+die_blood_scene = null
 
 [node name="UnitBody" parent="." index="0"]
 collision_layer = 64
