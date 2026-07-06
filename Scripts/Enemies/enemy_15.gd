@@ -57,3 +57,9 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 	
 	return super(damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack, deadly)
 	pass
+
+func die_blood() -> Sprite2D:
+	var blood: Sprite2D = super()
+	blood.modulate = Color.GRAY
+	blood.scale *= 1.2
+	return blood
