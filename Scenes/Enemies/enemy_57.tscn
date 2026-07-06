@@ -1,4 +1,4 @@
-[gd_scene load_steps=404 format=3 uid="uid://c2daws4j24i7p"]
+[gd_scene load_steps=407 format=3 uid="uid://c2daws4j24i7p"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_7fhm2"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_57.gd" id="2_3tuyw"]
@@ -15,10 +15,13 @@
 [ext_resource type="AudioStream" uid="uid://bilabugxgu3hd" path="res://Assets/Sounds/FXs/Enemies/远古守卫者/whale2.wav" id="6_fvfr5"]
 [ext_resource type="Texture2D" uid="uid://dtp50vvpnbkbt" path="res://Assets/Animations/Enemies/57远古守卫者/appear_02.png" id="7_8tknr"]
 [ext_resource type="Texture2D" uid="uid://d3fr7nfkkekwo" path="res://Assets/Animations/Enemies/57远古守卫者/idle_02.png" id="7_28puu"]
+[ext_resource type="PackedScene" uid="uid://djs30vrk3cqvd" path="res://Scenes/Effects/fuchen_land_dust.tscn" id="7_jd6uq"]
 [ext_resource type="Texture2D" uid="uid://dn3wok6t4v6fg" path="res://Assets/Animations/Enemies/57远古守卫者/idle_03.png" id="8_8m7pf"]
 [ext_resource type="Texture2D" uid="uid://cul85tq08ldq8" path="res://Assets/Animations/Enemies/57远古守卫者/appear_03.png" id="8_byupa"]
+[ext_resource type="PackedScene" uid="uid://bp5j1f8muf2uv" path="res://Scenes/Skills/guardian_ghost.tscn" id="8_d5tfg"]
 [ext_resource type="Texture2D" uid="uid://cfxgxchad7plj" path="res://Assets/Animations/Enemies/57远古守卫者/appear_04.png" id="9_tslrx"]
 [ext_resource type="Texture2D" uid="uid://dp1rkoassm0cp" path="res://Assets/Animations/Enemies/57远古守卫者/idle_04.png" id="9_ub1lg"]
+[ext_resource type="PackedScene" uid="uid://531r2w8tg1n" path="res://Scenes/Bullets/guardian_ball.tscn" id="9_wn0nj"]
 [ext_resource type="Texture2D" uid="uid://bewfitekew12j" path="res://Assets/Animations/Enemies/57远古守卫者/idle_05.png" id="10_hl00i"]
 [ext_resource type="Texture2D" uid="uid://bfhkc54fp080v" path="res://Assets/Animations/Enemies/57远古守卫者/appear_05.png" id="10_vaokk"]
 [ext_resource type="Texture2D" uid="uid://b3d0ojiqs7ytb" path="res://Assets/Animations/Enemies/57远古守卫者/appear_06.png" id="11_bpvf2"]
@@ -1905,6 +1908,9 @@ roar_audio_list = Array[AudioStream]([ExtResource("3_2bk8e"), ExtResource("4_v5j
 whale_audio_list = Array[AudioStream]([ExtResource("5_et113"), ExtResource("6_fvfr5")])
 start_marker_begin_position = Vector2(0, -65)
 start_marker_end_position = Vector2(0, -480)
+land_dust_scene = ExtResource("7_jd6uq")
+ghost_layer_scene = ExtResource("8_d5tfg")
+guardian_ball_scene = ExtResource("9_wn0nj")
 enemy_name = "远古守卫者"
 enemy_id = 57
 enemy_texture = ExtResource("3_1bv30")
@@ -1915,6 +1921,7 @@ interceptable = false
 lives_taken = 20
 show_tip = false
 die_audio_stream_list = Array[AudioStream]([])
+die_blood_scene = null
 
 [node name="RoarLayer" type="CanvasLayer" parent="." index="0"]
 

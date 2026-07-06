@@ -5,6 +5,10 @@ extends Enemy
 @export var whale_audio_list: Array[AudioStream]
 @export var start_marker_begin_position: Vector2
 @export var start_marker_end_position: Vector2
+@export_group("ScriptLoadingResource")
+@export var land_dust_scene: PackedScene
+@export var ghost_layer_scene: PackedScene
+@export var guardian_ball_scene: PackedScene
 
 @onready var boss_ui: BossUI = $BossUI
 @onready var poise_bar: TextureProgressBar = $BossUI/Panel/PoiseBar
@@ -40,7 +44,7 @@ var ray_shoot_progress: float = 0:
 		ray_shoot_progress = v
 		if ray_link_enemy_curve == null: return
 		ray_end_position = ray_link_enemy_curve.sample_baked(ray_shoot_progress)
-		var land_dust: Sprite2D = preload("res://Scenes/Effects/fuchen_land_dust.tscn").instantiate()
+		var land_dust: Sprite2D = land_dust_scene.instantiate()
 		land_dust.position = ray_end_position
 		Stage.instance.bullets.add_child(land_dust)
 
@@ -244,10 +248,7 @@ func broken():
 	start_data.total_defence_rate = 0
 	if enemy_sprite.animation == "skill3_loop":
 		take_damage(400,DataProcess.DamageType.TrueDamage,0,)
-		var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		explosion_effect.position = energy_ball.global_position
-		explosion_effect.scale *= 3
-		Stage.instance.bullets.add_child(explosion_effect)
+		EffectManager.instance.play_explosion_effect(energy_ball.global_position,Vector2.ONE * 3)
 		AudioManager.instance.play_explosion_audio()
 		Stage.instance.stage_camera.shake(20)
 	
@@ -275,11 +276,7 @@ func roar():
 
 func water_effect():
 	AudioManager.instance.play_water_audio()
-	var water_particle: AnimatedSprite2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-	water_particle.position = position + Vector2(0,-20)
-	water_particle.modulate = Color(0,0.8,1,0.6)
-	water_particle.scale *= 4
-	Stage.instance.bullets.add_child(water_particle)
+	EffectManager.instance.play_block_effect(position + Vector2(0,-20),Vector2.ONE * 4,Color(0,0.8,1,0.6))
 	AudioManager.instance.play_water_audio()
 	pass
 
@@ -390,7 +387,7 @@ func die(explosion: bool = false):
 
 
 func ghost_skill():
-	var ghost: CanvasLayer = preload("res://Scenes/Skills/guardian_ghost.tscn").instantiate()
+	var ghost: CanvasLayer = ghost_layer_scene.instantiate()
 	Stage.instance.add_child(ghost)
 	pass
 
@@ -415,22 +412,13 @@ func _on_explosion_timer_timeout() -> void:
 
 
 func ray_explosion(explosion_pos: Vector2):
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = explosion_pos
-	explosion_effect.scale *= 2
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_explosion_effect(explosion_pos,Vector2.ONE * 2)
 	AudioManager.instance.play_explosion_audio()
 	Stage.instance.stage_camera.shake(40)
 	explosion_hit_area.position = explosion_pos
 	
-	var fire_effect: AnimatedSprite2D = preload("res://Scenes/Effects/fire_particle.tscn").instantiate()
-	fire_effect.position = explosion_pos
-	fire_effect.scale *= 2
-	Stage.instance.bullets.add_child(fire_effect)
-	var smoke_effect: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-	smoke_effect.position = explosion_pos
-	smoke_effect.scale *= 2
-	Stage.instance.bullets.add_child(smoke_effect)
+	EffectManager.instance.play_fire_effect(explosion_pos,Vector2.ONE*2)
+	EffectManager.instance.play_smoke_effect(explosion_pos,Vector2.ONE*2)
 	
 	await get_tree().physics_frame
 	for body in explosion_hit_area.get_overlapping_bodies():
@@ -542,14 +530,10 @@ func destroy_tower(tower: DefenceTower):
 	ray_audio_2.play()
 	elec_audio.play()
 	
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = tower.position
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_explosion_effect(tower.position)
 	AudioManager.instance.play_explosion_audio()
 	Stage.instance.stage_camera.shake(20)
-	var smoke_effect: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-	smoke_effect.position = tower.position
-	Stage.instance.bullets.add_child(smoke_effect)
+	EffectManager.instance.play_smoke_effect(tower.position)
 	await ray_tween.finished
 	
 	var finish_tween: Tween = create_tween()
@@ -576,7 +560,7 @@ func skill3_release():
 		var target_pos: Vector2 = Vector2(randf_range(0,2100),randf_range(0,1300))
 		var enemy_path: EnemyPath = Stage.instance.enemies.get_children()[randf_range(0,17)]
 		target_pos = enemy_path.curve.get_closest_point(target_pos)
-		var guardian_ball: Bullet = preload("res://Scenes/Bullets/guardian_ball.tscn").instantiate()
+		var guardian_ball: Bullet = guardian_ball_scene.instantiate()
 		guardian_ball.position = Vector2(randf_range(-200,2300),-100)
 		guardian_ball.target_position = target_pos
 		Stage.instance.bullets.add_child(guardian_ball)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=233 format=3 uid="uid://ds6gk401s8krk"]
+[gd_scene load_steps=234 format=3 uid="uid://ds6gk401s8krk"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_wbobx"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_58.gd" id="2_jsht0"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_7bfur"]
 [ext_resource type="Texture2D" uid="uid://blvximn1e4idw" path="res://Assets/Images/UI/InformationBar/EnemyChapter5/LIVER.png" id="3_lidj5"]
+[ext_resource type="PackedScene" uid="uid://b114ai8fd5tc6" path="res://Scenes/Effects/blood_spit_effect.tscn" id="3_tsq1c"]
 [ext_resource type="Texture2D" uid="uid://cdkht33wfyjxd" path="res://Assets/Animations/Enemies/58LIVER/attack_00.png" id="4_wrp8r"]
 [ext_resource type="AudioStream" uid="uid://dbtgg1fvplh1g" path="res://Assets/Sounds/FXs/Enemies/尸国统帅/尸国统帅死亡.wav" id="5_5hqo8"]
 [ext_resource type="Texture2D" uid="uid://b56myjniarrkr" path="res://Assets/Animations/Enemies/58LIVER/attack_01.png" id="5_pahvq"]
@@ -956,6 +957,7 @@ radius = 73.9444
 
 [node name="Enemy58" groups=["boss", "super_unit"] instance=ExtResource("1_wbobx")]
 script = ExtResource("2_jsht0")
+die_blood_spit_scene = ExtResource("3_tsq1c")
 enemy_name = "LIVER"
 enemy_id = 58
 enemy_texture = ExtResource("3_lidj5")
@@ -965,6 +967,7 @@ start_data = SubResource("Resource_yhspl")
 lives_taken = 20
 show_tip = false
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_5hqo8")])
+die_blood_scene = null
 
 [node name="EnemySprite" parent="UnitBody" index="0"]
 position = Vector2(-25, -270)

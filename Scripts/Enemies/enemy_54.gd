@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var blood_effect_scene: PackedScene
+
 @onready var attack_area: Area2D = $UnitBody/AttackArea
 @onready var attack_audio: AudioStreamPlayer = $AttackAudio
 @onready var rain_audio: AudioStreamPlayer = $RainAudio
@@ -50,7 +52,7 @@ func cause_damage(damage_type: int = 0):
 
 func die(explosion: bool = false):
 	super(explosion)
-	var blood_effect: AnimatedSprite2D = preload("res://Scenes/Effects/blood_spit_effect.tscn").instantiate()
+	var blood_effect: AnimatedSprite2D = blood_effect_scene.instantiate()
 	blood_effect.position = hurt_box.position + Vector2(0,-20)
 	unit_body.add_child(blood_effect)
 	await get_tree().create_timer(1,false).timeout
