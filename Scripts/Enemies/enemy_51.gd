@@ -1,7 +1,5 @@
 extends Enemy
 
-@export var die_explosion_effect_scene: PackedScene
-
 @onready var skeleton_audio: AudioStreamPlayer = $SkeletonAudio
 @onready var skeleton_explosion_audio: AudioStreamPlayer = $SkeletonExplosionAudio
 
@@ -32,11 +30,6 @@ func frame_changed():
 		var bullet: Bullet = summon_bullet(far_attack_bullet_scene,summon_pos,far_attack_position,damage,DataProcess.DamageType.TrueDamage)
 		Stage.instance.bullets.add_child(bullet)
 		AudioManager.instance.shoot_audio_1.play()
-	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
 	pass
 
 

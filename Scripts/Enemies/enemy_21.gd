@@ -1,6 +1,5 @@
 extends Enemy
 
-@export var die_explosion_effect_scene: PackedScene
 @export var die_effect_modulate: Color
 
 @onready var skeleton_explosion_audio: AudioStreamPlayer = $SkeletonExplosionAudio
@@ -58,11 +57,6 @@ func special_process():
 			far_attack_timer.start()
 			enemy_sprite.play("far_attack")
 			enemy_sprite.flip_h = far_attack_position.x < position.x
-	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
 	pass
 
 
