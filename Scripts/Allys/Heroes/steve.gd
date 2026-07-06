@@ -1,5 +1,23 @@
 extends Hero
 
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_defence_rate_list: Array[float]
+@export_group("Skill1","skill1")
+@export var skill1_health_upper_list: Array[int]
+@export_group("Skill2","skill2")
+@export var skill2_broken_buff_scene: PackedScene
+@export var skill2_armor_broken_rate_list: Array[float]
+@export var skill2_damage_list: Array[DamageBlock]
+@export_group("Skill3","skill3")
+@export var skill3_heal_buff_scene: PackedScene
+@export var skill3_heal_data_list: Array[int]
+@export var skill3_heal_duration_list: Array[float]
+@export_group("Skill4","skill4")
+@export var skill4_blood_buff_scene: PackedScene
+@export var skill4_damage_list: Array[int]
+@export var skill4_sec_kill_rate_list: Array[float]
+@export var skill4_blood_buff_duration_list: Array[float]
+
 @onready var skill_2_timer: Timer = $Skill2Timer
 @onready var skill_3_timer: Timer = $Skill3Timer
 @onready var skill_4_timer: Timer = $Skill4Timer
@@ -47,9 +65,9 @@ func start_data_process():
 		1,2,3: skill_levels[0] = 1
 		4,5,6,7: skill_levels[0] = 2
 		8,9,10: skill_levels[0] = 3
-	start_data.total_defence_rate = HeroSkillLibrary.hero_skill_data_library[ally_id][0][0][skill_levels[0]-1]
+	start_data.total_defence_rate = passive_skill_defence_rate_list[skill_levels[0]-1]
 	if skill_levels[1] > 0:
-		start_data.health += HeroSkillLibrary.hero_skill_data_library[ally_id][1][0][skill_levels[1]-1]
+		start_data.health += skill1_health_upper_list[skill_levels[1]-1]
 	pass
 
 
@@ -75,14 +93,13 @@ func battle():
 func skill_2_process():
 	if current_intercepting_enemy != null:
 		var enemy = current_intercepting_enemy as Enemy
-		var damage_low: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2][0][skill_levels[2]-1]
-		var damage_high: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2][1][skill_levels[2]-1]
-		var damage: int = randi_range(damage_low,damage_high)
+		var damage_block: DamageBlock = skill2_damage_list[skill_levels[2]-1]
+		var damage: int = damage_block.get_damage()
 		if enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0.5,false,self,false):
 			AudioManager.instance.battle_audio_play()
 			attack_text_effect(["铮！","锵！","唰！","剁！","铛！","哐！"],TextEffect.TextEffectType.Magic)
-			var broken_armor: float = HeroSkillLibrary.hero_skill_data_library[ally_id][2][2][skill_levels[2]-1]
-			var broken_buff: PropertyBuff = preload("res://Scenes/Buffs/Steve/armor_broken_debuff.tscn").instantiate()
+			var broken_armor: float = skill2_armor_broken_rate_list[skill_levels[2]-1]
+			var broken_buff: PropertyBuff = skill2_broken_buff_scene.instantiate()
 			broken_buff.buff_blocks[0].operation_data = -broken_armor
 			enemy.buffs.add_child(broken_buff)
 		
@@ -98,14 +115,14 @@ func skill_4_process():
 		var unit = hurt_box.owner
 		if unit is Enemy: in_area_enemy_list.append(unit)
 	
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][4][0][skill_levels[4]-1]
+	var damage: int = skill4_damage_list[skill_levels[4]-1]
 	for enemy in in_area_enemy_list:
 		enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,self,true,true)
 		get_exp(skill4_exp_get[skill_levels[4]-1])
 		
 	for enemy in in_area_enemy_list:
 		if enemy.enemy_state != Enemy.EnemyState.DIE and enemy.enemy_type < Enemy.EnemyType.Super:
-			var kill_rate: float = HeroSkillLibrary.hero_skill_data_library[ally_id][4][2][skill_levels[4]-1]
+			var kill_rate: float = skill4_sec_kill_rate_list[skill_levels[4]-1]
 			var health_rate: float = float(enemy.current_data.health) / enemy.start_data.health
 			if health_rate <= kill_rate: enemy.sec_kill(true)
 			if enemy.enemy_state == Enemy.EnemyState.DIE and !has_sec_killed:
@@ -117,8 +134,8 @@ func skill_4_process():
 	
 	for enemy in in_area_enemy_list:
 		if enemy.enemy_state == Enemy.EnemyState.DIE: continue
-		var blood_buff: BuffClass = preload("res://Scenes/Buffs/Steve/steve_blood_buff.tscn").instantiate()
-		blood_buff.duration = HeroSkillLibrary.hero_skill_data_library[ally_id][4][1][skill_levels[4]-1]
+		var blood_buff: BuffClass = skill4_blood_buff_scene.instantiate()
+		blood_buff.duration = skill4_blood_buff_duration_list[skill_levels[4]-1]
 		enemy.buffs.add_child(blood_buff)
 	pass
 
@@ -143,11 +160,11 @@ func _process(delta: float) -> void:
 
 
 func after_golen_apple_eaten():
-	var heal_data: int = HeroSkillLibrary.hero_skill_data_library[ally_id][3][0][skill_levels[3]-1]
+	var heal_data: int = skill3_heal_data_list[skill_levels[3]-1]
 	current_data.heal(heal_data)
 	get_exp(skill3_exp_get[skill_levels[3]-1])
-	var heal_buff: HealBuff = preload("res://Scenes/Buffs/Steve/steve_golen_apple_heal_buff.tscn").instantiate()
-	heal_buff.duration = HeroSkillLibrary.hero_skill_data_library[ally_id][3][1][skill_levels[3]-1]
+	var heal_buff: HealBuff = skill3_heal_buff_scene.instantiate()
+	heal_buff.duration = skill3_heal_duration_list[skill_levels[3]-1]
 	buffs.add_child(heal_buff)
 	pass
 
@@ -155,7 +172,7 @@ func after_golen_apple_eaten():
 func skill4_is_valid_to_release() -> bool:
 	if skill_4_hit_box.get_overlapping_bodies().size() >= 4:
 		return true
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][4][0][skill_levels[4]-1]
+	var damage: int = skill4_damage_list[skill_levels[4]-1]
 	damage *= 0.75
 	for body in skill_4_hit_box.get_overlapping_bodies():
 		var enemy: Enemy = body.owner

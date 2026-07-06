@@ -1,12 +1,16 @@
-[gd_scene load_steps=216 format=3 uid="uid://bci4cqlpyk1mn"]
+[gd_scene load_steps=223 format=3 uid="uid://bci4cqlpyk1mn"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_fja0x"]
 [ext_resource type="Texture2D" uid="uid://nu1mu4m4slwo" path="res://Assets/Images/UI/InformationBar/steve.png" id="2_bf7dl"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/steve.gd" id="2_csixa"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_8wacd"]
 [ext_resource type="Resource" uid="uid://c8i7af6diw1v" path="res://Library/Heroes/HeroPropertyBlocks/Steve.tres" id="3_nxgb3"]
+[ext_resource type="PackedScene" uid="uid://bbqttc441agcy" path="res://Scenes/Buffs/Steve/armor_broken_debuff.tscn" id="3_uq3ho"]
 [ext_resource type="Texture2D" uid="uid://cbjyh64w8vr4a" path="res://Assets/Animations/Heroes/Steve/steve-die_00.png" id="4_17geu"]
 [ext_resource type="Texture2D" uid="uid://dlfpt6kgimp1x" path="res://Assets/Animations/Heroes/Steve/steve-damage_00.png" id="4_bl1ws"]
+[ext_resource type="PackedScene" uid="uid://bre4knvunbq3e" path="res://Scenes/Buffs/Steve/steve_golen_apple_heal_buff.tscn" id="4_uiw37"]
 [ext_resource type="Texture2D" uid="uid://u4p7b64miqfl" path="res://Assets/Animations/Heroes/Steve/steve-damage_01.png" id="5_3ivrv"]
+[ext_resource type="PackedScene" uid="uid://cahoe6qmx7pc5" path="res://Scenes/Buffs/Steve/steve_blood_buff.tscn" id="5_l74ch"]
 [ext_resource type="Texture2D" uid="uid://su41ga5r12c4" path="res://Assets/Animations/Heroes/Steve/steve-die_01.png" id="5_wqxfc"]
 [ext_resource type="Texture2D" uid="uid://ct7ibfxp2ppkb" path="res://Assets/Animations/Heroes/Steve/steve-die_02.png" id="6_lmmpe"]
 [ext_resource type="Texture2D" uid="uid://c57x0p281rqhq" path="res://Assets/Animations/Heroes/Steve/steve-damage_02.png" id="6_mrjb6"]
@@ -213,6 +217,21 @@
 [ext_resource type="Texture2D" uid="uid://yt4i5818rucx" path="res://Assets/Animations/Heroes/Steve/steve-skill4_45.png" id="185_h8fbq"]
 [ext_resource type="AudioStream" uid="uid://3ciyyqe3hv5j" path="res://Assets/Sounds/FXs/Heroes/Steve/史蒂夫战神之刃.mp3" id="212_g4s5b"]
 [ext_resource type="AudioStream" uid="uid://ca04jebrw5o7e" path="res://Assets/Sounds/FXs/Heroes/Steve/史蒂夫金苹果.mp3" id="213_a0ilu"]
+
+[sub_resource type="Resource" id="Resource_dvsue"]
+script = ExtResource("3_8wacd")
+damage_low = 70
+damage_high = 82
+
+[sub_resource type="Resource" id="Resource_dfyv0"]
+script = ExtResource("3_8wacd")
+damage_low = 84
+damage_high = 96
+
+[sub_resource type="Resource" id="Resource_6llry"]
+script = ExtResource("3_8wacd")
+damage_low = 100
+damage_high = 122
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b8gqf"]
 animations = [{
@@ -889,6 +908,18 @@ radius = 329.806
 
 [node name="Steve" instance=ExtResource("1_fja0x")]
 script = ExtResource("2_csixa")
+passive_skill_defence_rate_list = Array[float]([0.1, 0.2, 0.3])
+skill1_health_upper_list = Array[int]([20, 40, 60])
+skill2_broken_buff_scene = ExtResource("3_uq3ho")
+skill2_armor_broken_rate_list = Array[float]([0.1, 0.2, 0.3])
+skill2_damage_list = Array[ExtResource("3_8wacd")]([SubResource("Resource_dvsue"), SubResource("Resource_dfyv0"), SubResource("Resource_6llry")])
+skill3_heal_buff_scene = ExtResource("4_uiw37")
+skill3_heal_data_list = Array[int]([200, 250, 300])
+skill3_heal_duration_list = Array[float]([8.0, 10.0, 12.0])
+skill4_blood_buff_scene = ExtResource("5_l74ch")
+skill4_damage_list = Array[int]([216, 374, 524])
+skill4_sec_kill_rate_list = Array[float]([0.04, 0.08, 0.12])
+skill4_blood_buff_duration_list = Array[float]([8.0, 12.0, 16.0])
 hero_level = 10
 skill_levels = Array[int]([3, 3, 3, 2, 3])
 heal_speeds = Array[int]([20, 23, 26, 29, 32, 35, 38, 42, 45, 50])
