@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var enemy_scene: PackedScene
 @export var linked_path: EnemyPath
 @export var summon_list: Array[SummonWaveBlock]
 
@@ -22,7 +23,7 @@ func summon_enemy():
 	appear_sprite.show()
 	appear_sprite.play("appear")
 	await appear_sprite.animation_finished
-	var enemy: Enemy = preload("res://Scenes/Enemies/enemy_18.tscn").instantiate()
+	var enemy: Enemy = enemy_scene.instantiate()
 	enemy.progress = progress
 	linked_path.add_child(enemy)
 	await get_tree().process_frame
@@ -32,10 +33,7 @@ func summon_enemy():
 
 func _on_timer_timeout() -> void:
 	if appear_sprite.visible and appear_sprite.frame < 18:
-		var dir_effect: AnimatedSprite2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-		dir_effect.modulate = Color(0.3,0.1,0.07)
-		dir_effect.scale *= 0.5
-		add_child(dir_effect)
+		EffectManager.instance.play_block_effect(position,Vector2.ONE * 0.5, Color(0.3,0.1,0.07))
 	pass # Replace with function body.
 
 
