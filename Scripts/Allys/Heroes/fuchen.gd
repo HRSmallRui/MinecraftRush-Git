@@ -8,12 +8,6 @@ signal get_skill_4_linked_enemy(enemy: Enemy)
 @export var skill1_upgrade_damage_list: Array[int]
 @export_group("Skill2","skill2")
 @export var skill2_sheild_duration_list: Array[float]
-@export_group("Skill3","skill3")
-@export var skill3_magic_ball_count_list: Array[int]
-@export var skill3_damage_list: Array[int]
-@export_group("Skill4","skill4")
-@export var skill4_duration_list: Array[float]
-@export var skill4_damage_per_sec_list: Array[int]
 
 @onready var fuchen_magic_heart: Sprite2D = $UnitBody/FuchenMagicHeart
 @onready var normal_attack_audio: AudioStreamPlayer = $NormalAttackAudio
