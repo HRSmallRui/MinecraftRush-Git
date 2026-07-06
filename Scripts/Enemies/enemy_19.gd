@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var hunger_buff_scene: PackedScene
+
 
 func anim_offset():
 	match enemy_sprite.animation:
@@ -21,7 +23,7 @@ func frame_changed():
 
 
 func on_normal_attack_hit(target_ally: Ally):
-	var hunger_buff: DotBuff = preload("res://Scenes/Buffs/Enemies/hunger_buff.tscn").instantiate()
+	var hunger_buff: DotBuff = hunger_buff_scene.instantiate()
 	hunger_buff.unit = current_intercepting_units[0]
 	target_ally.buffs.add_child(hunger_buff)
 	pass
