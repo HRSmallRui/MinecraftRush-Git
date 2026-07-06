@@ -77,7 +77,7 @@ func shoot():
 
 func skill_3_release():
 	fuchen.get_exp(fuchen.skill3_exp_get[fuchen.skill_levels[3]-1])
-	var loop_count: int = HeroSkillLibrary.hero_skill_data_library[1][3].magic_ball_count[fuchen.skill_levels[3]-1]
+	var loop_count: int = magic_ball_count_list[fuchen.skill_levels[3]-1]
 	var in_range_list: Array[Enemy]
 	for body in trace_area.get_overlapping_bodies():
 		var enemy:Enemy = body.owner
@@ -85,7 +85,7 @@ func skill_3_release():
 	for i in loop_count:
 		var magic_ball: Bullet = magic_ball_scene.instantiate()
 		magic_ball.position = global_position
-		magic_ball.damage = HeroSkillLibrary.hero_skill_data_library[1][3].damage
+		magic_ball.damage = magic_ball_damage
 		if in_range_list.size() > 0:
 			var target_position: Vector2 = in_range_list[0].hurt_box.global_position
 			magic_ball.target_position = target_position
@@ -118,7 +118,7 @@ func skill_4_release():
 	var enemy_path: EnemyPath = skill_4_linked_enemy.get_parent()
 	var new_progress: float = skill_4_linked_enemy.progress + 40
 	new_progress = clampf(new_progress,0,enemy_path.curve.get_baked_length())
-	move_point.damage = HeroSkillLibrary.hero_skill_data_library[1][4].damage_per_count[fuchen.skill_levels[4]-1]
+	move_point.damage = damage_per_sec_list[fuchen.skill_levels[4]-1]
 	enemy_path.add_child(move_point)
 	move_point.progress = new_progress
 	move_point.linked_hero = fuchen
