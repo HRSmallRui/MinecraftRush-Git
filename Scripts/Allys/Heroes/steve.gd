@@ -1,10 +1,20 @@
 extends Hero
 
 @export_group("PassiveSkill","passive_skill")
+@export var passive_skill_defence_rate_list: Array[float]
 @export_group("Skill1","skill1")
+@export var skill1_health_upper_list: Array[int]
 @export_group("Skill2","skill2")
+@export var skill2_armor_broken_rate: Array[float]
+@export var skill2_damage_list: Array[DamageBlock]
 @export_group("Skill3","skill3")
+@export var skill3_heal_buff_scene: PackedScene
+@export var skill3_heal_data_list: Array[int]
+@export var skill3_heal_duration_list: Array[float]
 @export_group("Skill4","skill4")
+@export var skill4_blood_buff_scene: PackedScene
+@export var skill4_damage_list: Array[int]
+@export var skill4_sec_kill_rate_list: Array[float]
 
 @onready var skill_2_timer: Timer = $Skill2Timer
 @onready var skill_3_timer: Timer = $Skill3Timer
