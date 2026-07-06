@@ -31,7 +31,7 @@ func _ready() -> void:
 	super()
 	sheild.modulate.a = 0
 	if skill_levels[2] > 0:
-		skill_2_during_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].sheild_duration[skill_levels[1]-1]
+		skill_2_during_timer.wait_time =skill2_sheild_duration_list[skill_levels[2]-1]
 	pass
 
 
@@ -87,10 +87,10 @@ func start_data_process():
 		1,2,3: skill_levels[0] = 1
 		4,5,6,7,8: skill_levels[0] = 2
 		9,10: skill_levels[0] = 3
-	passive_extra_damage = HeroSkillLibrary.hero_skill_data_library[ally_id][0].extra_damage[skill_levels[0]-1]
+	passive_extra_damage = passive_skill_extra_damage_list[skill_levels[0]-1]
 	
 	if skill_levels[1] > 0:
-		var plus_damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][1].upgrade_damage[skill_levels[1]-1]
+		var plus_damage: int = skill1_upgrade_damage_list[skill_levels[1]-1]
 		start_data.far_damage_low += plus_damage
 		start_data.far_damage_high += plus_damage
 	pass

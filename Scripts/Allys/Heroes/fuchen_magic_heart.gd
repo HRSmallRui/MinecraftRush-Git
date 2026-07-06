@@ -6,9 +6,12 @@ extends Sprite2D
 @export_group("Skill3")
 @export var magic_ball_scene: PackedScene
 @export var magic_ball_damage: int
+@export var magic_ball_count: int
 @export_group("Skill4")
 @export var ray_scene: PackedScene
 @export var move_point_scene: PackedScene
+@export var damage_per_sec_list: Array[int]
+@export var ray_duration_list: Array[float]
 
 @onready var rotation_player: AnimationPlayer = $RotationPlayer
 @onready var move_player: AnimationPlayer = $MovePlayer
