@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://r43w2gwj4g1v"]
+[gd_scene load_steps=136 format=3 uid="uid://r43w2gwj4g1v"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_5y2vy"]
 [ext_resource type="AudioStream" uid="uid://bbsw81a7ow1s6" path="res://Assets/Sounds/FXs/Enemies/蠹虫/蠹虫死亡1.wav" id="2_armsx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhama1l5n37ql" path="res://Assets/Images/UI/InformationBar/蠹虫.png" id="3_j1iud"]
 [ext_resource type="AudioStream" uid="uid://c8pry1eu6mfpt" path="res://Assets/Sounds/FXs/Enemies/蠹虫/蠹虫死亡2.wav" id="3_jdavo"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="6_jojed"]
+[ext_resource type="PackedScene" uid="uid://luou4r7qxtwb" path="res://Scenes/Effects/blood_green.tscn" id="7_3f174"]
 [ext_resource type="Texture2D" uid="uid://blpe66e7ovov6" path="res://Assets/Animations/Enemies/22蠹虫/appear_01.png" id="7_htdav"]
 [ext_resource type="Texture2D" uid="uid://cigvso5psy04n" path="res://Assets/Animations/Enemies/22蠹虫/attack_00.png" id="7_tiihj"]
 [ext_resource type="AudioStream" uid="uid://50av5vlhqeof" path="res://Assets/Sounds/FXs/Enemies/蠹虫/蠹虫出现1.wav" id="7_wo156"]
@@ -563,12 +564,14 @@ radius = 5.0
 
 [node name="Enemy22" groups=["desert"] instance=ExtResource("1_5y2vy")]
 script = ExtResource("2_npygt")
+self_enemy_scene = null
 enemy_name = "蠹虫"
 enemy_id = 22
 enemy_texture = ExtResource("3_j1iud")
 start_data = SubResource("Resource_qpndm")
 bounty = 6
 die_audio_stream_list = Array[AudioStream]([ExtResource("2_armsx"), ExtResource("3_jdavo")])
+die_blood_scene = ExtResource("7_3f174")
 
 [node name="EnemySprite" parent="UnitBody" index="0"]
 position = Vector2(0, -30)
