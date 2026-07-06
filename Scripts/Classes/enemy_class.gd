@@ -403,12 +403,12 @@ func hurt_audio_play(damage_source: String):
 	pass
 
 
-func die_blood():
-	if die_blood_scene == null: return
+func die_blood() -> Sprite2D:
+	if die_blood_scene == null: return null
 	var blood = die_blood_scene.instantiate() as Sprite2D
 	blood.position = position
 	Stage.instance.bullets.add_child(blood)
-	pass
+	return blood
 
 
 func sec_kill(explosion: bool):
