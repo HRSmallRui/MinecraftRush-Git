@@ -1,8 +1,9 @@
-[gd_scene load_steps=257 format=3 uid="uid://dp25g8s5is0j"]
+[gd_scene load_steps=258 format=3 uid="uid://dp25g8s5is0j"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_cv5kg"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_47.gd" id="2_x2k1e"]
 [ext_resource type="Texture2D" uid="uid://dkekou4fb0yiu" path="res://Assets/Images/UI/InformationBar/EnemyChapter5/白眼法师.png" id="3_ahkfd"]
+[ext_resource type="PackedScene" uid="uid://bjj80hcm672tg" path="res://Scenes/Buffs/Enemies/white_witch_heal_buff.tscn" id="3_de0aj"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_r5yqo"]
 [ext_resource type="Texture2D" uid="uid://7kga7y4yv63r" path="res://Assets/Animations/Enemies/47白眼法师/attack_00.png" id="4_go1yv"]
 [ext_resource type="AudioStream" uid="uid://mdc5281gfyfh" path="res://Assets/Sounds/FXs/Enemies/人偶/脉冲.wav" id="5_6vngg"]
@@ -1052,6 +1053,7 @@ shader_parameter/hue_shift = 0.32
 
 [node name="Enemy47" groups=["super_unit"] instance=ExtResource("1_cv5kg")]
 script = ExtResource("2_x2k1e")
+heal_effect_scene = ExtResource("3_de0aj")
 enemy_name = "白眼法师"
 enemy_id = 47
 enemy_texture = ExtResource("3_ahkfd")
@@ -1060,6 +1062,7 @@ start_data = SubResource("Resource_j73c3")
 far_attack_bullet_scene = ExtResource("5_ynof4")
 bounty = 32
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_6vngg")])
+die_blood_scene = null
 
 [node name="EnemySprite" parent="UnitBody" index="0"]
 position = Vector2(0, -85)

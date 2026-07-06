@@ -32,8 +32,3 @@ func aoe_attack():
 		var ally:Ally = body.owner
 		ally.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true,)
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass
