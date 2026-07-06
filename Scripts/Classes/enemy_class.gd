@@ -404,6 +404,7 @@ func hurt_audio_play(damage_source: String):
 
 
 func die_blood():
+	if die_blood_scene == null: return
 	var blood = die_blood_scene.instantiate() as Sprite2D
 	blood.position = position
 	Stage.instance.bullets.add_child(blood)
