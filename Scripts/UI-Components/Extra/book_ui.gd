@@ -25,7 +25,8 @@ static var instance: ExtraBookUI
 @onready var otehr_slot: ScrollContainer = $HBoxContainer/TagSlot/OtehrSlot
 @onready var art_slot: ScrollContainer = $HBoxContainer/TagSlot/ArtSlot
 @onready var back_button: Button = $BackButton
-@onready var rich_text_label: RichTextLabel = $HBoxContainer/IntroPanel/VBoxContainer/ContentScrollContainer/RichTextLabel
+#@onready var rich_text_label: RichTextLabel = $HBoxContainer/IntroPanel/VBoxContainer/ContentScrollContainer/RichTextLabel
+@onready var intro_label: Label = $HBoxContainer/IntroPanel/VBoxContainer/ContentScrollContainer/IntroLabel
 
 
 func _init() -> void:
@@ -48,7 +49,7 @@ func _input(event: InputEvent) -> void:
 func change_content(title: String, content: String, texture_path: String,show_alpha: float):
 	title_label.text = title
 	content_label.text = content
-	rich_text_label.text = content
+	intro_label.text = content
 	content_scroll_container.scroll_vertical = 0
 	if texture_path != "":
 		show_texture.texture = load(texture_path)
