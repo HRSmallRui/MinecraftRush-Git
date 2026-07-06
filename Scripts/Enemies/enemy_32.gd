@@ -71,10 +71,8 @@ func aoe_attack():
 
 func explosion():
 	AudioManager.instance.play_explosion_audio()
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	
-	explosion_effect.global_position = self.hurt_box.global_position
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_explosion_effect(hurt_box.global_position,Vector2.ONE * 2)
+	EffectManager.instance.play_smoke_effect(hurt_box.global_position,Vector2.ONE * 2)
 	
 	for ally_body: UnitBody in explosion_area.get_overlapping_bodies():
 		var ally: Ally = ally_body.owner
@@ -86,11 +84,6 @@ func die(explosion: bool = false):
 	explosion()
 	super(false)
 	hide()
-	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
 	pass
 
 
