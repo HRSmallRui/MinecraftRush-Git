@@ -18,8 +18,3 @@ func frame_changed():
 	if enemy_sprite.animation == "attack" and enemy_sprite.frame == 12:
 		cause_damage()
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = preload("res://Scenes/Effects/blood_green.tscn")):
-	super(blood_packed_scene)
-	pass

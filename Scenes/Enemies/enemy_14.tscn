@@ -1,10 +1,11 @@
-[gd_scene load_steps=72 format=3 uid="uid://dopjybnq4qjjp"]
+[gd_scene load_steps=73 format=3 uid="uid://dopjybnq4qjjp"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_xr8nc"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_14.gd" id="2_ehgdh"]
 [ext_resource type="Texture2D" uid="uid://e47aywixgsdw" path="res://Assets/Images/UI/InformationBar/腐化蜘蛛.png" id="3_xqcd0"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_qti18"]
 [ext_resource type="AudioStream" uid="uid://ct4vofbci7tfx" path="res://Assets/Sounds/FXs/Enemies/腐化蜘蛛/死亡.wav" id="5_jcgfq"]
+[ext_resource type="PackedScene" uid="uid://luou4r7qxtwb" path="res://Scenes/Effects/blood_green.tscn" id="6_26gaq"]
 [ext_resource type="Texture2D" uid="uid://e2c1y1pcsq4n" path="res://Assets/Animations/Enemies/14野区蜘蛛/attack_00.png" id="6_g1vb0"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="6_qb78w"]
 [ext_resource type="Texture2D" uid="uid://d2yy1dt1o4a0o" path="res://Assets/Animations/Enemies/14野区蜘蛛/attack_01.png" id="7_h8a8y"]
@@ -311,6 +312,7 @@ enemy_texture = ExtResource("3_xqcd0")
 start_data = SubResource("Resource_qdmih")
 bounty = 3
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_jcgfq")])
+die_blood_scene = ExtResource("6_26gaq")
 
 [node name="EnemySprite" parent="UnitBody" index="0"]
 position = Vector2(-2.84217e-14, -45)
