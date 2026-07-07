@@ -8,6 +8,22 @@ enum PowerElement{
 }
 
 @export_range(0,1,0.05) var element_hue_list: Array[float]
+@export var normal_attack_area_scene: PackedScene
+@export var shadow_effect_scene: PackedScene
+@export_group("PowerType")
+@export var fire_buff_scene: PackedScene
+@export var water_buff_scene: PackedScene
+@export_group("Skill1","skill1")
+@export var skill1_terminator_area_scene: PackedScene
+@export var skill1_second_terminator_area_scene: PackedScene
+@export_group("Skill2","skill2")
+@export var skill2_dust_scene: PackedScene
+@export var skill2_soul_scene: PackedScene
+@export_group("Skill3","skill3")
+@export var skill3_fire_dot_buff_scene: PackedScene
+@export_group("Skill4","skill4")
+@export var skill4_slow_debuff_scene: PackedScene
+@export var skill4_freeze_buff_scene: PackedScene
 
 @onready var god_ring: Node2D = $UnitBody/GodRing
 @onready var total_control_ring: Node2D = $UnitBody/GodRing/TotalControlRing
@@ -158,7 +174,7 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 
 func normal_attack(summon_pos: Vector2):
 	get_exp(hero_property_block.xp_speed_rate * 100)
-	var normal_attack_area: SkillConditionArea2D = preload("res://Scenes/Skills/mike_attack_area.tscn").instantiate()
+	var normal_attack_area: SkillConditionArea2D = normal_attack_area_scene.instantiate()
 	normal_attack_area.position = summon_pos
 	normal_attack_area.skill_level = hero_level
 	normal_attack_area.damage_low = current_data.near_damage_low
@@ -202,7 +218,7 @@ func teleport_move(target_pos: Vector2):
 
 
 func _on_shadow_timer_timeout() -> void:
-	var shadow: AnimatedSprite2D = preload("res://Scenes/Effects/mike_shadow_effect.tscn").instantiate()
+	var shadow: AnimatedSprite2D = shadow_effect_scene.instantiate()
 	shadow.scale.x = -1 if ally_sprite.flip_h else 1
 	shadow.animation = ally_sprite.animation
 	shadow.frame = ally_sprite.frame
@@ -253,10 +269,10 @@ func into_power_type():
 		current_element_strength += 1
 	
 	if current_element_strength == PowerElement.FIRE:
-		var fire_buff: PropertyBuff = preload("res://Scenes/Buffs/Mike/mike_fire_buff.tscn").instantiate()
+		var fire_buff: PropertyBuff = fire_buff_scene.instantiate()
 		buffs.add_child(fire_buff)
 	elif current_element_strength == PowerElement.WATER:
-		var water_buff: PropertyBuff = preload("res://Scenes/Buffs/Mike/mike_water_buff.tscn").instantiate()
+		var water_buff: PropertyBuff = water_buff_scene.instantiate()
 		buffs.add_child(water_buff)
 	elif current_element_strength == PowerElement.EARTH:
 		current_data.physic_immune = true
@@ -303,7 +319,7 @@ func release_destroy_fire(pos_list: Array[Vector2]):
 	#print(pos_list.size())
 	for pos in pos_list:
 		await get_tree().create_timer(randf_range(0.05,0.3),false).timeout
-		var skill_area: SkillConditionArea2D = preload("res://Scenes/Skills/mike_terminator_area.tscn").instantiate()
+		var skill_area: SkillConditionArea2D = skill1_terminator_area_scene.instantiate()
 		skill_area.position = pos
 		Stage.instance.bullets.add_child(skill_area)
 	pass
@@ -312,7 +328,7 @@ func release_destroy_fire(pos_list: Array[Vector2]):
 func destroy_second_explosion(pos_list: Array[Vector2]):
 	await get_tree().create_timer(3,false).timeout
 	for pos in pos_list:
-		var second_area: Area2D = preload("res://Scenes/Skills/mike_ternimator_second_area.tscn").instantiate()
+		var second_area: Area2D = skill1_second_terminator_area_scene.instantiate()
 		second_area.position = pos
 		Stage.instance.bullets.add_child(second_area)
 		await get_tree().create_timer(randf_range(0.1,0.2),false).timeout
@@ -353,16 +369,14 @@ func soul_kill():
 		var enemy: Enemy = body.owner
 		if enemy.enemy_type == Enemy.EnemyType.Boss: continue
 		enemy.disappear_kill()
-		var dust: Node2D = preload("res://Scenes/Effects/dust_effect.tscn").instantiate()
+		var dust: Node2D = skill2_dust_scene.instantiate()
 		dust.position = enemy.position
 		Stage.instance.bullets.add_child(dust)
-		var soul: MagicBall = preload("res://Scenes/Effects/soul.tscn").instantiate()
+		var soul: MagicBall = skill2_soul_scene.instantiate()
 		soul.position = enemy.hurt_box.global_position
 		soul.target_position = sould_marker.global_position
 		Stage.instance.bullets.add_child(soul)
-		var effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		effect.position = enemy.hurt_box.global_position
-		Stage.instance.bullets.add_child(effect)
+		EffectManager.instance.play_explosion_effect(enemy.hurt_box.global_position)
 	pass
 
 
@@ -444,7 +458,7 @@ func add_skill3_fire_buff():
 	#print("skill3_fire")
 	for body in skill_3_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var fire_dot_buff: DotBuff = preload("res://Scenes/Buffs/Mike/mike_fire_dot_buff.tscn").instantiate()
+		var fire_dot_buff: DotBuff = skill3_fire_dot_buff_scene.instantiate()
 		fire_dot_buff.buff_level = skill_levels[3]
 		enemy.buffs.add_child(fire_dot_buff)
 	pass
@@ -474,7 +488,7 @@ func stop_time_power():
 	for enemy_path: EnemyPath in Stage.instance.enemies.get_children():
 		for enemy in enemy_path.get_children():
 			if enemy is Enemy:
-				var slow_buff: PropertyBuff = preload("res://Scenes/Buffs/Mike/mike_slow_buff.tscn").instantiate()
+				var slow_buff: PropertyBuff = skill4_slow_debuff_scene.instantiate()
 				enemy.buffs.add_child(slow_buff)
 	pass
 
@@ -522,7 +536,7 @@ func for_ready_to_wave():
 func _on_skill_4_shot_timer_timeout() -> void:
 	for body in skill_3_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var freeze_buff: PropertyBuff = preload("res://Scenes/Buffs/Mike/freeze_buff.tscn").instantiate()
+		var freeze_buff: PropertyBuff = skill4_freeze_buff_scene.instantiate()
 		freeze_buff.duration = 0.1
 		enemy.buffs.add_child(freeze_buff)
 	pass # Replace with function body.

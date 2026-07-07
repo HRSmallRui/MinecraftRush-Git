@@ -34,15 +34,9 @@ func _ready() -> void:
 	AudioManager.instance.play_explosion_audio()
 	var damage_low: int = HeroSkillLibrary.hero_skill_data_library[9][1].damage_low
 	var damage_high: int = HeroSkillLibrary.hero_skill_data_library[9][1].damage_high
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = position
-	Stage.instance.bullets.add_child(explosion_effect)
-	var fire_particle: AnimatedSprite2D = preload("res://Scenes/Effects/fire_particle.tscn").instantiate()
-	fire_particle.position = position
-	Stage.instance.bullets.add_child(fire_particle)
-	var smoke: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-	smoke.position = position
-	Stage.instance.bullets.add_child(smoke)
+	EffectManager.instance.play_explosion_effect(position)
+	EffectManager.instance.play_fire_effect(position)
+	EffectManager.instance.play_smoke_effect(position)
 	Stage.instance.stage_camera.shake(10)
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
