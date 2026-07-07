@@ -1,11 +1,16 @@
-[gd_scene load_steps=221 format=3 uid="uid://bk1p56v4l7t2s"]
+[gd_scene load_steps=229 format=3 uid="uid://bk1p56v4l7t2s"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_iekej"]
 [ext_resource type="Resource" uid="uid://bhr5qoxona4kt" path="res://Library/Heroes/HeroPropertyBlocks/Alex.tres" id="2_h6qa7"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/alex.gd" id="2_x00oc"]
 [ext_resource type="Texture2D" uid="uid://blkv4e7adri14" path="res://Assets/Images/UI/HeroHall/HeadTexs/艾利克斯.png" id="3_6yl45"]
+[ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="3_jhbej"]
 [ext_resource type="Texture2D" uid="uid://bhn1n3b8o5qdk" path="res://Assets/Images/UI/InformationBar/Alex.png" id="4_hfqgo"]
+[ext_resource type="PackedScene" uid="uid://dx1f50engcgua" path="res://Scenes/Bullets/alex_skill1_bullet.tscn" id="4_o0hvl"]
+[ext_resource type="PackedScene" uid="uid://c2r43i1q8var" path="res://Scenes/Buffs/Alex/alex_sheild_buff.tscn" id="5_d2drq"]
 [ext_resource type="Texture2D" uid="uid://mvvxri2emsnj" path="res://Assets/Animations/Heroes/Alex/attack_00.png" id="5_ohal0"]
+[ext_resource type="PackedScene" uid="uid://cd2lhpat71u1q" path="res://Scenes/Skills/alex_skill_4_area.tscn" id="6_dpyoe"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="6_wnsbp"]
 [ext_resource type="Texture2D" uid="uid://cilepks1s4irp" path="res://Assets/Animations/Heroes/Alex/attack_01.png" id="6_wp6cu"]
 [ext_resource type="Texture2D" uid="uid://b4fkpwhpymbeo" path="res://Assets/Animations/Heroes/Alex/attack_02.png" id="7_kjtyv"]
 [ext_resource type="Texture2D" uid="uid://cj2cwvn4lybgt" path="res://Assets/Animations/Heroes/Alex/attack_03.png" id="8_pn4fx"]
@@ -218,6 +223,21 @@
 [ext_resource type="AudioStream" uid="uid://bdypa373jw534" path="res://Assets/Sounds/FXs/Heroes/Alex/艾利克斯庇佑.wav" id="216_r4i3q"]
 [ext_resource type="AudioStream" uid="uid://u5lwcg6367om" path="res://Assets/Sounds/FXs/Heroes/Alex/艾利克斯三技能.wav" id="217_uen2y"]
 [ext_resource type="AudioStream" uid="uid://dpa5usb52g0yn" path="res://Assets/Sounds/FXs/Heroes/Alex/艾利克斯四技能.wav" id="218_wm40g"]
+
+[sub_resource type="Resource" id="Resource_0jpqk"]
+script = ExtResource("6_wnsbp")
+damage_low = 72
+damage_high = 144
+
+[sub_resource type="Resource" id="Resource_hygu0"]
+script = ExtResource("6_wnsbp")
+damage_low = 86
+damage_high = 172
+
+[sub_resource type="Resource" id="Resource_ipmqw"]
+script = ExtResource("6_wnsbp")
+damage_low = 96
+damage_high = 216
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_imhyq"]
 animations = [{
@@ -894,6 +914,15 @@ radius = 73.9444
 
 [node name="Alex" instance=ExtResource("1_iekej")]
 script = ExtResource("2_x00oc")
+dizness_buff_scene = ExtResource("3_jhbej")
+passive_skill_immune_possible_list = Array[float]([0.2, 0.3, 0.4])
+skill1_lightning_damage_list = Array[int]([128, 156, 212])
+skill1_lightning_bullet_scene = ExtResource("4_o0hvl")
+skill2_armor_upgrade = 0.9
+skill2_duration_list = Array[float]([6.0, 8.0, 10.0])
+skill2_sheild_buff_scene = ExtResource("5_d2drq")
+skill3_damage_list = Array[ExtResource("6_wnsbp")]([SubResource("Resource_0jpqk"), SubResource("Resource_hygu0"), SubResource("Resource_ipmqw")])
+skill4_skill_area_scene = ExtResource("6_dpyoe")
 heal_speeds = Array[int]([25, 25, 30, 35, 35, 40, 40, 45, 50, 55])
 hero_property_block = ExtResource("2_h6qa7")
 skill1_exp_get = Array[int]([100, 200, 300])
