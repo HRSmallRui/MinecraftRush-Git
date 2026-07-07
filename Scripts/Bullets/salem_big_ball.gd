@@ -1,5 +1,7 @@
 extends ShooterBullet
 
+@export var salem_explosion_area_scene: PackedScene
+
 
 func _ready() -> void:
 	free_timer.wait_time = (target_position - self.global_position).length() / bullet_speed
@@ -13,7 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_free_timer_timeout():
-	var salem_explosion_area: SkillConditionArea2D = preload("res://Scenes/Skills/salem_explosion_area.tscn").instantiate()
+	var salem_explosion_area: SkillConditionArea2D = salem_explosion_area_scene.instantiate()
 	salem_explosion_area.position = position
 	salem_explosion_area.skill_level = special_skill_level
 	salem_explosion_area.passive_level = bullet_special_tag_levels["passive"]

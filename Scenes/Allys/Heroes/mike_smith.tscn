@@ -1,25 +1,36 @@
-[gd_scene load_steps=65 format=3 uid="uid://bsrfqwky7na58"]
+[gd_scene load_steps=76 format=3 uid="uid://bsrfqwky7na58"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_474hd"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/mike_smith.gd" id="2_0u3xe"]
+[ext_resource type="PackedScene" uid="uid://cb7n71app7bnx" path="res://Scenes/Skills/mike_attack_area.tscn" id="3_ppmp7"]
 [ext_resource type="Resource" uid="uid://b4sh8nyqw2hrp" path="res://Library/Heroes/HeroPropertyBlocks/MikeSmith.tres" id="3_yruri"]
+[ext_resource type="PackedScene" uid="uid://dhltw5fhv5kal" path="res://Scenes/Effects/mike_shadow_effect.tscn" id="4_4sexj"]
 [ext_resource type="Texture2D" uid="uid://dacm8l0x22p6q" path="res://Assets/Images/UI/HeroHall/HeadTexs/Mike.png" id="4_s3p6x"]
 [ext_resource type="Texture2D" uid="uid://bpvsbo132o8lh" path="res://Assets/Images/UI/InformationBar/Mike.png" id="4_x8kuo"]
 [ext_resource type="Texture2D" uid="uid://cdsje18xm8t37" path="res://Assets/Images/Effects/光矛.png" id="5_5fk4w"]
+[ext_resource type="PackedScene" uid="uid://cmghffnwe663h" path="res://Scenes/Buffs/Mike/mike_fire_buff.tscn" id="5_kwmdx"]
+[ext_resource type="PackedScene" uid="uid://ccvx8y8q5xa1g" path="res://Scenes/Buffs/Mike/mike_water_buff.tscn" id="6_4pp5n"]
 [ext_resource type="SpriteFrames" uid="uid://dadvopch7rgfa" path="res://Assets/Animations/Heroes/Mike/mike_smith.tres" id="6_718qx"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/skill_particle_shooter.gd" id="6_ewnhw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="7_d5cub"]
 [ext_resource type="Texture2D" uid="uid://ccglhhifm554s" path="res://Assets/Images/Effects/鼓舞光环.png" id="7_gcf1j"]
+[ext_resource type="PackedScene" uid="uid://cn46nfs7rgj5j" path="res://Scenes/Skills/mike_terminator_area.tscn" id="7_ncmxb"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/magic_book.gd" id="7_opsq8"]
 [ext_resource type="Texture2D" uid="uid://dvdqag74fo3gj" path="res://Assets/Animations/Heroes/Mike/MagicBook/0001.png" id="7_uejab"]
 [ext_resource type="PackedScene" uid="uid://e2sxqdv2uwcp" path="res://Scenes/Bullets/god_magic_ball.tscn" id="8_876o2"]
 [ext_resource type="Texture2D" uid="uid://csxs3w7oxle4f" path="res://Assets/Animations/Heroes/Mike/MagicBook/0002.png" id="8_ld8xe"]
+[ext_resource type="PackedScene" uid="uid://56txiathmqbt" path="res://Scenes/Skills/mike_ternimator_second_area.tscn" id="8_veq7u"]
 [ext_resource type="Texture2D" uid="uid://byh87lk5btcil" path="res://Assets/Animations/Heroes/Mike/MagicBook/0003.png" id="9_4i680"]
+[ext_resource type="PackedScene" uid="uid://cd152uu0c5x7l" path="res://Scenes/Effects/dust_effect.tscn" id="9_8qy0o"]
 [ext_resource type="Texture2D" uid="uid://bu3g3jhkcy7nt" path="res://Assets/Images/Effects/神环2.png" id="9_prl1t"]
 [ext_resource type="Texture2D" uid="uid://6phtbvo5qnuu" path="res://Assets/Animations/Heroes/Mike/MagicBook/0004.png" id="10_30wh2"]
+[ext_resource type="PackedScene" uid="uid://dm6o8cswv6kql" path="res://Scenes/Effects/soul.tscn" id="10_msmjr"]
 [ext_resource type="Texture2D" uid="uid://dl8rn7oqb0qnl" path="res://Assets/Animations/Heroes/Mike/MagicBook/0005.png" id="11_rrv6d"]
+[ext_resource type="PackedScene" uid="uid://bpl2i3l4vhh6g" path="res://Scenes/Buffs/Mike/mike_fire_dot_buff.tscn" id="11_vp4df"]
 [ext_resource type="Texture2D" uid="uid://b5vluaki8763m" path="res://Assets/Animations/Heroes/Mike/MagicBook/0006.png" id="12_hh4gs"]
+[ext_resource type="PackedScene" uid="uid://bac37bwxmly4y" path="res://Scenes/Buffs/Mike/mike_slow_buff.tscn" id="12_qekg4"]
 [ext_resource type="Texture2D" uid="uid://dxockcy4qxvgm" path="res://Assets/Animations/Heroes/Mike/MagicBook/0007.png" id="13_3rkgx"]
+[ext_resource type="PackedScene" uid="uid://ctmojslbqhrgw" path="res://Scenes/Buffs/Mike/freeze_buff.tscn" id="13_vf36f"]
 [ext_resource type="Texture2D" uid="uid://dy3c2gq7jwis" path="res://Assets/Animations/Heroes/Mike/MagicBook/0008.png" id="14_ot4uk"]
 [ext_resource type="Texture2D" uid="uid://cts72rlpe1bpm" path="res://Assets/Animations/Heroes/Mike/MagicBook/0009.png" id="15_dt3p4"]
 [ext_resource type="Texture2D" uid="uid://41r5a84oiked" path="res://Assets/Animations/Heroes/Mike/MagicBook/0010.png" id="16_ojb1l"]
@@ -451,6 +462,25 @@ _data = {
 [node name="MikeSmith" groups=["god"] instance=ExtResource("1_474hd")]
 script = ExtResource("2_0u3xe")
 element_hue_list = Array[float]([0.0, 0.6, 0.15, 0.35])
+normal_attack_area_scene = ExtResource("3_ppmp7")
+shadow_effect_scene = ExtResource("4_4sexj")
+fire_buff_scene = ExtResource("5_kwmdx")
+water_buff_scene = ExtResource("6_4pp5n")
+skill1_terminator_area_scene = ExtResource("7_ncmxb")
+skill1_second_terminator_area_scene = ExtResource("8_veq7u")
+skill1_fire_count_list = Array[int]([10, 20, 30])
+skill2_dust_scene = ExtResource("9_8qy0o")
+skill2_soul_scene = ExtResource("10_msmjr")
+skill2_cd_list = Array[float]([20.0, 18.0, 16.0])
+skill2_heal_rate_list = Array[float]([0.2, 0.4, 0.6])
+skill2_second_damage_list = Array[int]([400, 800, 1200])
+skill3_fire_dot_buff_scene = ExtResource("11_vp4df")
+skill3_damage_per_count_list = Array[int]([400, 800, 1200])
+skill4_slow_debuff_scene = ExtResource("12_qekg4")
+skill4_freeze_buff_scene = ExtResource("13_vf36f")
+skill4_cd_list = Array[float]([14.0, 18.0, 22.0])
+skill4_stop_time_duration_list = Array[float]([4.0, 8.0, 12.0])
+skill4_damage_rate_list = Array[float]([0.4, 0.5, 0.6])
 heal_speeds = Array[int]([20, 40, 60, 80, 100, 120, 140, 160, 180, 192])
 teleport_limit_length = 300.0
 hero_property_block = ExtResource("3_yruri")
@@ -667,12 +697,14 @@ bus = &"Sound"
 wait_time = 0.005
 
 [node name="Skill1Timer" type="Timer" parent="." index="12"]
+wait_time = 14.0
 one_shot = true
 
 [node name="Skill2Timer" type="Timer" parent="." index="13"]
 one_shot = true
 
 [node name="Skill3Timer" type="Timer" parent="." index="14"]
+wait_time = 18.0
 one_shot = true
 
 [node name="Skill4Timer" type="Timer" parent="." index="15"]

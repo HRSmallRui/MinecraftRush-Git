@@ -1,10 +1,12 @@
-[gd_scene load_steps=241 format=3 uid="uid://bdq3y4o8ebigc"]
+[gd_scene load_steps=246 format=3 uid="uid://bdq3y4o8ebigc"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_55l7y"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/johnny.gd" id="2_0j1yh"]
 [ext_resource type="Resource" uid="uid://c10pkfbcgi7vo" path="res://Library/Heroes/HeroPropertyBlocks/Johnny.tres" id="3_7vpxs"]
+[ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="3_580gt"]
 [ext_resource type="Texture2D" uid="uid://cl00cquqds7p0" path="res://Assets/Images/UI/InformationBar/Johnny.png" id="4_8o3ry"]
 [ext_resource type="Texture2D" uid="uid://dt5shjj5mtblw" path="res://Assets/Images/UI/HeroHall/HeadTexs/乔尼.png" id="4_kwcmk"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="4_mciwv"]
 [ext_resource type="Texture2D" uid="uid://ckg5lrwstr07i" path="res://Assets/Animations/Heroes/Johnny/attack_00.png" id="5_f3qbt"]
 [ext_resource type="Texture2D" uid="uid://dube8q4gestn2" path="res://Assets/Animations/Heroes/Johnny/attack_01.png" id="6_qpwil"]
 [ext_resource type="Texture2D" uid="uid://dx72q7a4dhmmf" path="res://Assets/Animations/Heroes/Johnny/attack_02.png" id="7_6a7nr"]
@@ -238,6 +240,21 @@
 [ext_resource type="AudioStream" uid="uid://b1oh1i1p6mefk" path="res://Assets/Sounds/FXs/Heroes/Johnny/storm_crash.mp3" id="236_8ua3w"]
 [ext_resource type="AudioStream" uid="uid://cg5eqvdpke71x" path="res://Assets/Sounds/FXs/Heroes/Johnny/电钻.wav" id="237_yy76b"]
 [ext_resource type="AudioStream" uid="uid://c3ulw48v0hsxy" path="res://Assets/Sounds/FXs/Heroes/Johnny/heavy_slash.mp3" id="238_emxck"]
+
+[sub_resource type="Resource" id="Resource_h2f23"]
+script = ExtResource("4_mciwv")
+damage_low = 310
+damage_high = 365
+
+[sub_resource type="Resource" id="Resource_bwp7j"]
+script = ExtResource("4_mciwv")
+damage_low = 400
+damage_high = 450
+
+[sub_resource type="Resource" id="Resource_fguff"]
+script = ExtResource("4_mciwv")
+damage_low = 510
+damage_high = 578
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hul8s"]
 animations = [{
@@ -1036,6 +1053,17 @@ radius = 73.9444
 
 [node name="Johnny" instance=ExtResource("1_55l7y")]
 script = ExtResource("2_0j1yh")
+dizness_buff_scene = ExtResource("3_580gt")
+passive_skill_broken_armor_list = Array[float]([0.02, 0.04, 0.08])
+skill1_heal_health_list = Array[int]([1, 2, 3])
+skill2_duration_list = Array[float]([2.0, 3.0, 4.0])
+skill2_damage = 8
+skill3_rotate_duration = 2.0
+skill3_damage_list = Array[int]([8, 10, 12])
+skill3_dizness_duration = 2.0
+skill4_damage_list = Array[ExtResource("4_mciwv")]([SubResource("Resource_h2f23"), SubResource("Resource_bwp7j"), SubResource("Resource_fguff")])
+skill4_dizness_duration = 2.0
+skill4_heal_rate_list = Array[float]([0.1, 0.2, 0.3])
 heal_speeds = Array[int]([24, 28, 32, 36, 40, 44, 48, 52, 56, 60])
 hero_property_block = ExtResource("3_7vpxs")
 skill1_exp_get = Array[int]([10, 20, 30])
@@ -1063,20 +1091,19 @@ scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_307yl")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="HeroUnitButton" parent="HeroUI" index="0"]
-offset_top = -189.0
-offset_bottom = 42.0
-
 [node name="HeroTexture" parent="HeroUI/HeroUnitButton" index="1"]
 texture = ExtResource("4_kwcmk")
 
 [node name="Skill2Timer" type="Timer" parent="." index="8"]
+wait_time = 17.0
 one_shot = true
 
 [node name="Skill3Timer" type="Timer" parent="." index="9"]
+wait_time = 18.0
 one_shot = true
 
 [node name="Skill4Timer" type="Timer" parent="." index="10"]
+wait_time = 30.0
 one_shot = true
 
 [node name="Skill2DurationTimer" type="Timer" parent="." index="11"]

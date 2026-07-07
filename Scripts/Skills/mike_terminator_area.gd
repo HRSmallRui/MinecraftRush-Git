@@ -1,6 +1,7 @@
 extends SkillConditionArea2D
 
 @export var max_point_limit: int = 20
+@export var damage_block: DamageBlock
 
 @onready var fire_sprite: AnimatedSprite2D = $FireSprite
 @onready var tail_line: Line2D = $TailLine
@@ -32,21 +33,13 @@ func _ready() -> void:
 	fire_sprite.hide()
 	shadow.hide()
 	AudioManager.instance.play_explosion_audio()
-	var damage_low: int = HeroSkillLibrary.hero_skill_data_library[9][1].damage_low
-	var damage_high: int = HeroSkillLibrary.hero_skill_data_library[9][1].damage_high
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = position
-	Stage.instance.bullets.add_child(explosion_effect)
-	var fire_particle: AnimatedSprite2D = preload("res://Scenes/Effects/fire_particle.tscn").instantiate()
-	fire_particle.position = position
-	Stage.instance.bullets.add_child(fire_particle)
-	var smoke: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-	smoke.position = position
-	Stage.instance.bullets.add_child(smoke)
+	EffectManager.instance.play_explosion_effect(position)
+	EffectManager.instance.play_fire_effect(position)
+	EffectManager.instance.play_smoke_effect(position)
 	Stage.instance.stage_camera.shake(10)
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		enemy.take_damage(randi_range(damage_low,damage_high),DataProcess.DamageType.SuperDamage,0,false,null,false,true)
+		enemy.take_damage(damage_block.get_damage(),DataProcess.DamageType.SuperDamage,0,false,null,false,true)
 	
 	await get_tree().create_timer(2,false).timeout
 	queue_free()
