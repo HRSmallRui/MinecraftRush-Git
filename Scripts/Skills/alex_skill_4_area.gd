@@ -2,6 +2,10 @@ extends SkillConditionArea2D
 
 @export var dizness_buff_scene: PackedScene
 @export var speed_low_buff_scene: PackedScene
+@export_group("SkillData")
+@export var first_damage_list: Array[int]
+@export var duration_list: Array[float]
+@export var damage_per_count: int
 
 @onready var fork_sprite: AnimatedSprite2D = $ForkSprite
 @onready var shot_timer: Timer = $ShotTimer
@@ -9,8 +13,6 @@ extends SkillConditionArea2D
 @onready var shadow: Sprite2D = $Shadow
 @onready var in_path_area: Area2D = $InPathArea
 @onready var skill_audio: AudioStreamPlayer = $SkillAudio
-
-var damage_per_count: int
 
 
 func _ready() -> void:
@@ -24,10 +26,9 @@ func _ready() -> void:
 	shadow.scale = Vector2.ZERO
 	create_tween().tween_property(shadow,"scale",Vector2.ONE * 3.6,0.12)
 	await get_tree().create_timer(0.12,false).timeout
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[2][4].first_damage[skill_level-1]
-	duration_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[2][4].duration[skill_level-1]
+	var damage: int = first_damage_list[skill_level-1]
+	duration_timer.wait_time = duration_list[skill_level-1]
 	duration_timer.start()
-	damage_per_count = HeroSkillLibrary.hero_skill_data_library[2][4].damage_per_count
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()

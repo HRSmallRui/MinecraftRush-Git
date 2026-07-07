@@ -2,6 +2,7 @@ extends SkillConditionArea2D
 
 @export var dizness_buff_scene: PackedScene
 @export var lightning_sheild_buff_scene: PackedScene
+@export var lightning_damage_list: Array[int]
 
 
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _ready() -> void:
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	var damage: int
-	damage = HeroSkillLibrary.hero_skill_data_library[2][1].lightning_damage[skill_level-1]
+	damage = lightning_damage_list[skill_level-1]
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		var dizness_debuff: PropertyBuff = dizness_buff_scene.instantiate()
