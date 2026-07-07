@@ -1,6 +1,18 @@
 extends Hero
 
 @export var lightning_hit_random_textures: Array[Texture]
+@export var lightning_dot_buff_scene: PackedScene
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_arae_scene: PackedScene
+@export_group("Skill1","skill1")
+@export var skill1_skill_area_scene: PackedScene
+@export_group("Skill2","skill2")
+@export var skill2_fire_dot_buff_scene: PackedScene
+@export var skill2_fire_particle_scene: PackedScene
+@export_group("Skill3","skill3")
+@export var skill3_earth_area_scene: PackedScene
+@export_group("Skill4","skill4")
+@export var skill4_strength_upgrade_area_scene: PackedScene
 
 @onready var robort_teleport_audio: AudioStreamPlayer = $RobortTeleportAudio
 @onready var lightning_start: Sprite2D = $FarAttackLightningComponent/LightningStart
@@ -87,17 +99,12 @@ func frame_changed():
 	if ally_sprite.animation == "skill3" and ally_sprite.frame == 18:
 		release_earth_queake()
 		AudioManager.instance.play_explosion_audio()
-		var teleport_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		teleport_effect.position = global_position
-		Stage.instance.bullets.add_child(teleport_effect)
+		EffectManager.instance.play_explosion_effect(global_position)
 	pass
 
 
 func teleport_effect():
-	var teleport_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	teleport_effect.scale *= 1
-	teleport_effect.position = global_position
-	Stage.instance.bullets.add_child(teleport_effect)
+	EffectManager.instance.play_explosion_effect(global_position)
 	robort_teleport_audio.play(0.2)
 	pass
 
@@ -150,7 +157,7 @@ func release_lightning():
 			null_release()
 			return
 	
-	var dot_buff: DotBuff = preload("res://Scenes/Buffs/Robort/robort_lighning_dot.tscn").instantiate()
+	var dot_buff: DotBuff = lightning_dot_buff_scene.instantiate()
 	var damage: float = randi_range(current_data.far_damage_low,current_data.far_damage_high)
 	dot_buff.duration *= damage
 	far_attack_target_enemy.buffs.add_child(dot_buff)
@@ -193,7 +200,7 @@ func null_release():
 
 
 func passive_skill_release(target_pos: Vector2):
-	var robort_aoe_area: SkillConditionArea2D = preload("res://Scenes/Skills/robort_lightning_hit_area.tscn").instantiate()
+	var robort_aoe_area: SkillConditionArea2D = passive_skill_arae_scene.instantiate()
 	robort_aoe_area.global_position = target_pos
 	robort_aoe_area.skill_level = skill_levels[0]
 	Stage.instance.bullets.add_child(robort_aoe_area)
@@ -201,7 +208,7 @@ func passive_skill_release(target_pos: Vector2):
 
 
 func strength_area_release(target_pos: Vector2):
-	var stength_area: SkillConditionArea2D = preload("res://Scenes/Skills/robort_lightning_ally_area.tscn").instantiate()
+	var stength_area: SkillConditionArea2D = skill4_strength_upgrade_area_scene.instantiate()
 	stength_area.global_position = target_pos
 	stength_area.skill_level = skill_levels[4]
 	Stage.instance.bullets.add_child(stength_area)
@@ -251,7 +258,7 @@ func release_tornado():
 	tornado_vihicle.rotates = false
 	skill1_locked_enemy.get_parent().add_child(tornado_vihicle)
 	tornado_vihicle.progress = skill1_locked_enemy.progress + 100
-	var robort_tornado_area: SkillConditionArea2D = preload("res://Scenes/Skills/robort_tornado_area.tscn").instantiate()
+	var robort_tornado_area: SkillConditionArea2D = skill1_skill_area_scene.instantiate()
 	robort_tornado_area.skill_level = skill_levels[1]
 	tornado_vihicle.add_child(robort_tornado_area)
 	pass
@@ -290,7 +297,7 @@ func release_flame():
 func _on_skill_2_hit_area_area_entered(area: Area2D) -> void:
 	var enemy: Enemy = area.owner
 	
-	var fire_dot_buff: DotBuff = preload("res://Scenes/Buffs/Robort/robort_fire_dot.tscn").instantiate()
+	var fire_dot_buff: DotBuff = skill2_fire_dot_buff_scene.instantiate()
 	fire_dot_buff.duration = HeroSkillLibrary.hero_skill_data_library[ally_id][2].during_time[skill_levels[2]-1]
 	enemy.buffs.add_child(fire_dot_buff)
 	
@@ -304,7 +311,7 @@ func _on_skill_2_hit_area_area_entered(area: Area2D) -> void:
 func flame_animation_play(start_pos: Vector2, end_pos: Vector2):
 	for i in 40:
 		for j in 3:
-			var fire_particle: AnimatedSprite2D = preload("res://Scenes/Effects/robort_fire_particle.tscn").instantiate()
+			var fire_particle: AnimatedSprite2D = skill2_fire_particle_scene.instantiate()
 			fire_particle.global_position = start_pos + Vector2(randf_range(-20,20),randf_range(-20,20))
 			Stage.instance.bullets.add_child(fire_particle)
 			var end_position: Vector2 = end_pos + Vector2(randf_range(-50,50),randf_range(-50,50))
@@ -347,7 +354,7 @@ func loop_add_earth_area(is_plus: bool):
 		var earth_progress: float = self_progress + n * (i+1) * delta_progress
 		if earth_progress < 0 or earth_progress > skill3_locked_enemy_path.curve.get_baked_length():
 			return
-		var earth_area: SkillConditionArea2D = preload("res://Scenes/Skills/robort_ground_area.tscn").instantiate()
+		var earth_area: SkillConditionArea2D = skill3_earth_area_scene.instantiate()
 		earth_area.position = skill3_locked_enemy_path.curve.sample_baked(earth_progress)
 		earth_area.skill_level = skill_levels[3]
 		Stage.instance.bullets.add_child(earth_area)
