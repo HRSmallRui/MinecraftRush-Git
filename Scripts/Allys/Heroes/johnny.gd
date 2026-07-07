@@ -1,5 +1,22 @@
 extends Hero
 
+@export var dizness_buff_scene: PackedScene
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_broken_armor_list: Array[float]
+@export_group("Skill1","skill1")
+@export var skill1_heal_health_list: Array[int]
+@export_group("Skill2","skill2")
+@export var skill2_duration_list: Array[float]
+@export var skill2_damage: int
+@export_group("Skill3","skill3")
+@export var skill3_rotate_duration: float
+@export var skill3_damage_list: Array[int]
+@export var skill3_dizness_duration: float
+@export_group("Skill4","skill4")
+@export var skill4_damage_list: Array[DamageBlock]
+@export var skill4_dizness_duration: float
+@export var skill4_heal_rate_list: Array[float]
+
 @onready var skill_2_timer: Timer = $Skill2Timer
 @onready var skill_3_timer: Timer = $Skill3Timer
 @onready var skill_4_timer: Timer = $Skill4Timer
@@ -16,21 +33,20 @@ extends Hero
 
 func _ready() -> void:
 	super()
-	skill_2_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].CD
-	skill_3_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][3].CD
-	skill_4_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][4].CD
-	skill_2_duration_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].rotation_time[skill_levels[2]-1]
-	skill_3_duration_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][3].attack_time
+	skill_2_duration_timer.wait_time = skill2_duration_list[skill_levels[2]-1]
+	skill_3_duration_timer.wait_time = skill3_rotate_duration
 	pass
 
 
 func start_data_process():
 	super()
 	match hero_level:
-		1,2,3,4,5,6,7,8:
+		1,2,3,4:
 			skill_levels[0] = 1
-		9,10:
+		5,6,7,8:
 			skill_levels[0] = 2
+		9,10:
+			skill_levels[0] = 3
 	pass
 
 
@@ -77,15 +93,13 @@ func frame_changed():
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 43:
 		skill_4_audio.play()
 		if current_intercepting_enemy != null:
-			var dizness_buff: DiznessBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
-			dizness_buff.duration = HeroSkillLibrary.hero_skill_data_library[ally_id][4].dizness_time
+			var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
+			dizness_buff.duration = skill4_dizness_duration
 			current_intercepting_enemy.buffs.add_child(dizness_buff)
-			var damage_low: int = HeroSkillLibrary.hero_skill_data_library[ally_id][4].damage_low[skill_levels[4]-1]
-			var damage_high: int = HeroSkillLibrary.hero_skill_data_library[ally_id][4].damage_high[skill_levels[4]-1]
-			var damage: int = randi_range(damage_low,damage_high)
+			var damage: int = skill4_damage_list[skill_levels[4]-1].get_damage()
 			TextEffect.text_effect_show("重击！",TextEffect.TextEffectType.SecKill,current_intercepting_enemy.hurt_box.global_position)
 			current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self,true,true,)
-		var heal_rate: float = HeroSkillLibrary.hero_skill_data_library[ally_id][4].heal_rate[skill_levels[4]-1]
+		var heal_rate: float = skill4_heal_rate_list[skill_levels[4]-1]
 		var heal_data: int = float(start_data.health) * heal_rate
 		current_data.heal(heal_data)
 	pass
@@ -95,7 +109,7 @@ func heal_health():
 	var heal_data: int
 	if skill_levels[1] == 0: heal_data = 0
 	else: 
-		heal_data = HeroSkillLibrary.hero_skill_data_library[ally_id][1].heal_health[skill_levels[1]-1]
+		heal_data = skill1_heal_health_list[skill_levels[1]-1]
 		get_exp(skill1_exp_get[skill_levels[1]-1])
 	current_data.heal(heal_data)
 	pass
@@ -103,7 +117,7 @@ func heal_health():
 
 func on_normal_attack_hit(target_enemy: Enemy):
 	if target_enemy.enemy_type >= Enemy.EnemyType.MiniBoss: return
-	var broken_armor: float = HeroSkillLibrary.hero_skill_data_library[ally_id][0].broken_armor[skill_levels[0]-1]
+	var broken_armor: float = passive_skill_broken_armor_list[skill_levels[0]-1]
 	target_enemy.start_data.armor -= broken_armor
 	target_enemy.current_data.update_armor()
 	pass
@@ -130,7 +144,7 @@ func _on_skill_2_hit_timer_timeout() -> void:
 		skill_2_hit_audio.play()
 	for body in skill_2_hit_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2].damage
+		var damage: int = skill2_damage
 		enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true,)
 		heal_health()
 	pass # Replace with function body.
@@ -138,9 +152,9 @@ func _on_skill_2_hit_timer_timeout() -> void:
 
 func _on_skill_3_hit_timer_timeout() -> void:
 	if current_intercepting_enemy != null:
-		var dizness_buff: DiznessBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+		var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
 		dizness_buff.duration = 0.2
-		var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][3].damage[skill_levels[3]-1]
+		var damage: int = skill3_damage_list[skill_levels[3]-1]
 		if current_intercepting_enemy.enemy_type < Enemy.EnemyType.MiniBoss:
 			current_intercepting_enemy.buffs.add_child(dizness_buff)
 		current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,self,false,true,)
