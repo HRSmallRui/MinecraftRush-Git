@@ -1,14 +1,14 @@
 extends SkillConditionArea2D
 
 @export var plague_buff_scene: PackedScene
+@export var damage_list: Array[DamageBlock]
 
 var dead_explosion_level: int
 var passive_level: int
 
 
 func _ready() -> void:
-	var damage_low: int = HeroSkillLibrary.hero_skill_data_library[7][4].damage_low[skill_level-1]
-	var damage_high: int = HeroSkillLibrary.hero_skill_data_library[7][4].damage_high[skill_level-1]
+	var damage_block: DamageBlock = damage_list[skill_level-1]
 	EffectManager.instance.play_explosion_effect(position,Vector2.ONE*1.5,Color.DARK_GREEN)
 	EffectManager.instance.play_smoke_effect(position,Vector2.ONE*2,Color.GREEN)
 	AudioManager.instance.play_explosion_audio()
@@ -16,7 +16,7 @@ func _ready() -> void:
 	await get_tree().physics_frame
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var damage: int = randi_range(damage_low,damage_high)
+		var damage: int = damage_block.get_damage()
 		enemy.take_damage(damage,DataProcess.DamageType.MagicDamage,0,false,null,false,true,)
 		for i in 3:
 			var plugin_buff: DotBuff = plague_buff_scene.instantiate()

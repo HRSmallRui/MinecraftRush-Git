@@ -4,6 +4,7 @@ extends Hero
 @export_group("Skill1","skill1")
 @export_group("Skill2","skill2")
 @export var skill2_dust_scene: PackedScene
+@export var skill2_damage_list: Array[int]
 @export_group("Skill3","skill3")
 @export_group("Skill4","skill4")
 @export var skill4_big_bullet_scene: PackedScene
@@ -26,8 +27,6 @@ var skill4_locked_enemy: Enemy
 
 func _ready() -> void:
 	super()
-	skill_2_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].CD
-	skill_4_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][4].CD
 	salem_big_ball.hide()
 	salem_big_ball.scale = Vector2.ZERO
 	salem_big_ball.modulate.a = 0
@@ -95,7 +94,7 @@ func frame_changed():
 		await get_tree().physics_frame
 		for body in skill_2_hit_area.get_overlapping_bodies():
 			var enemy: Enemy = body.owner
-			var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2].damage[skill_levels[2]-1]
+			var damage: int = skill2_damage_list[skill_levels[2]-1]
 			enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,null,true,true,)
 	
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 20:

@@ -4,6 +4,7 @@ extends DotBuff
 @export var higher_damage_list: Array[int] = [2,4,6,8,10,12,14,16,18]
 @export var plague_buff_scene: PackedScene
 @export var spread_buff_scene: PackedScene
+@export var explosion_damage_list: Array[int]
 
 @onready var explosion_area: Area2D = $ExplosionArea
 
@@ -34,7 +35,7 @@ func remove_buff():
 	if enemy.enemy_state == Enemy.EnemyState.DIE and dead_explosion_level > 0:
 		EffectManager.instance.play_explosion_effect(enemy.hurt_box.global_position,Vector2.ONE,Color.DARK_GREEN)
 		AudioManager.instance.play_explosion_audio()
-		var damage: int = HeroSkillLibrary.hero_skill_data_library[7][1].explosion_damage[dead_explosion_level-1]
+		var damage: int = explosion_damage_list[dead_explosion_level-1]
 		for body in explosion_area.get_overlapping_bodies():
 			var now_enemy: Enemy = body.owner
 			now_enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,null,false,true,)
