@@ -1,18 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://pfi6c0kuocyc"]
+[gd_scene load_steps=13 format=3 uid="uid://pfi6c0kuocyc"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_bgytc"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/talzin.gd" id="2_rsot2"]
 [ext_resource type="Resource" uid="uid://c0swkperp7xfh" path="res://Library/Heroes/HeroPropertyBlocks/Talzin.tres" id="3_l3wqq"]
 [ext_resource type="SpriteFrames" uid="uid://cod3kd5lyyeil" path="res://Assets/Animations/Heroes/Talzin/talzin_near.res" id="4_51pfk"]
 [ext_resource type="Texture2D" uid="uid://dw2xf678wc5tg" path="res://Assets/Images/UI/InformationBar/Talzin.png" id="4_a862s"]
+[ext_resource type="SpriteFrames" uid="uid://hnxlidhb1plh" path="res://Assets/Animations/Heroes/Talzin/talzin_far.res" id="4_ph1km"]
+[ext_resource type="PackedScene" uid="uid://bkrf6wbces0mf" path="res://Scenes/Bullets/talzin_kill_arrow.tscn" id="5_a0yvv"]
+[ext_resource type="PackedScene" uid="uid://bic0jtogy3xjq" path="res://Scenes/Buffs/Talzin/talzin_broken_armor.tscn" id="5_kd6si"]
 [ext_resource type="Texture2D" uid="uid://lml6a7lv7geb" path="res://Assets/Images/UI/HeroHall/HeadTexs/塔尔辛.png" id="5_l8spk"]
 [ext_resource type="PackedScene" uid="uid://ct2bmkj3j8o6h" path="res://Scenes/Bullets/talzin_arrow.tscn" id="5_vk5lu"]
+[ext_resource type="PackedScene" uid="uid://t81mjfievoof" path="res://Scenes/Bullets/talzin_poison_arrow.tscn" id="6_w56vy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_307yl"]
 radius = 73.9444
 
 [node name="Talzin" groups=["desert"] instance=ExtResource("1_bgytc")]
 script = ExtResource("2_rsot2")
+TALZIN_NEAR = ExtResource("4_51pfk")
+TALZIN_FAR = ExtResource("4_ph1km")
+skill1_seckill_arrow_scene = ExtResource("5_a0yvv")
+skill1_percentage_rate_list = Array[float]([0.4, 0.5, 0.6])
+skill2_poison_arrow_scene = ExtResource("6_w56vy")
+skill3_broken_buff_scene = ExtResource("5_kd6si")
+skill4_continue_count_list = Array[int]([1, 2, 3])
 heal_speeds = Array[int]([22, 23, 24, 25, 26, 27, 28, 29, 30, 32])
 hero_property_block = ExtResource("3_l3wqq")
 skill1_exp_get = Array[int]([100, 200, 300])
@@ -55,5 +66,5 @@ wait_time = 30.0
 one_shot = true
 
 [node name="Skill2Timer" type="Timer" parent="." index="9"]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
