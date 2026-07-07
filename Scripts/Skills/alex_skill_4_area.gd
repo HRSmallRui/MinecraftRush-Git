@@ -1,5 +1,7 @@
 extends SkillConditionArea2D
 
+@export var dizness_buff_scene: PackedScene
+@export var speed_low_buff_scene: PackedScene
 
 @onready var fork_sprite: AnimatedSprite2D = $ForkSprite
 @onready var shot_timer: Timer = $ShotTimer
@@ -28,7 +30,7 @@ func _ready() -> void:
 	damage_per_count = HeroSkillLibrary.hero_skill_data_library[2][4].damage_per_count
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var dizness_buff: PropertyBuff = preload("res://Scenes/Buffs/Alex/alex_dizness_debuff.tscn").instantiate()
+		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
 		dizness_buff.unit = enemy
 		dizness_buff.buff_tag = "alex_dizness_4"
 		dizness_buff.duration = 3
@@ -41,7 +43,7 @@ func _ready() -> void:
 func _on_shot_timer_timeout() -> void:
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var speed_low_buff: PropertyBuff = preload("res://Scenes/Buffs/Alex/alex_skill_4_speed_low.tscn").instantiate()
+		var speed_low_buff: PropertyBuff = speed_low_buff_scene.instantiate()
 		speed_low_buff.unit = enemy
 		enemy.buffs.add_child(speed_low_buff)
 		enemy.take_damage(damage_per_count,DataProcess.DamageType.PhysicsDamage,0)

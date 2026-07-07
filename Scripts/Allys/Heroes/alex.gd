@@ -1,5 +1,20 @@
 extends Hero
 
+@export var dizness_buff_scene: PackedScene
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_immune_possible_list: Array[float]
+@export_group("Skill1","skill1")
+@export var skill1_lightning_damage_list: Array[int]
+@export var skill1_lightning_bullet_scene: PackedScene
+@export_group("Skill2","skill2")
+@export var skill2_armor_list: Array[float]
+@export var skill2_duration_list: Array[float]
+@export var skill2_sheild_buff_scene: PackedScene
+@export_group("Skill3","skill3")
+@export var skill3_damage_list: Array[DamageBlock]
+@export_group("Skill4","skill4")
+@export var skill4_lightning_area_scene: PackedScene
+
 @onready var skill_1_timer: Timer = $Skill1Timer
 @onready var skill_1_condition_area: Area2D = $UnitBody/Skill1ConditionArea
 @onready var skill_1_audio_1: AudioStreamPlayer = $Skill1Audio1
@@ -52,7 +67,7 @@ func frame_changed():
 			for body in skill_3_condition_area.get_overlapping_bodies():
 				var enemy: Enemy = body.owner
 				enemy.take_damage(skill_damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true)
-				var dizness_buff: DiznessBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+				var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
 				dizness_buff.duration = 1
 				dizness_buff.buff_tag = "alex_dizness_3"
 				enemy.buffs.add_child(dizness_buff)
@@ -83,7 +98,7 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 			
 	if skill_levels[2] > 0 and skill_2_timer.is_stopped():
 		if current_data.health < start_data.health and ally_state != AllyState.DIE and source is Enemy:
-			var sheild: PropertyBuff = preload("res://Scenes/Buffs/Alex/alex_sheild_buff.tscn").instantiate()
+			var sheild: PropertyBuff = skill2_sheild_buff_scene.instantiate()
 			skill_2_audio.play()
 			skill_2_timer.start()
 			sheild.duration = HeroSkillLibrary.hero_skill_data_library[ally_id][2].duration[skill_levels[2]-1]
@@ -108,7 +123,7 @@ func skill_1_release():
 	match randi_range(0,1):
 		0: skill_1_audio_1.play()
 		1: skill_1_audio_2.play()
-	var lighting_bullet: Bullet = preload("res://Scenes/Bullets/alex_skill1_bullet.tscn").instantiate()
+	var lighting_bullet: Bullet = skill1_lightning_bullet_scene.instantiate()
 	lighting_bullet.special_skill_level = skill_levels[1]
 	var damage: int = randi_range(2 * current_data.near_damage_low, 2 * current_data.near_damage_high)
 	lighting_bullet.damage = damage

@@ -7,6 +7,7 @@ static var instance: EffectManager
 @export var smoke_effect_scene: PackedScene
 @export var fire_effect_scene: PackedScene
 @export var block_particle_scene: PackedScene
+@export var lightning_scene: PackedScene
 
 
 func _init() -> void:
@@ -40,4 +41,11 @@ func play_sprite_effect(effect_scene: PackedScene, summon_pos: Vector2, effect_s
 	effect.scale = effect_scale
 	effect.modulate = effect_modulate
 	Stage.instance.bullets.add_child(effect)
+	pass
+
+
+func play_lightning_effect(summon_pos: Vector2):
+	var lightning: Line2D = lightning_scene.instantiate()
+	lightning.position = summon_pos
+	Stage.instance.bullets.add_child(lightning)
 	pass
