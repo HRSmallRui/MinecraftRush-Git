@@ -2,6 +2,7 @@ extends SkillConditionArea2D
 
 @export var move_speed: float = 20
 @export var dizness_buff_scene: PackedScene
+@export var moving_time_list: Array[float]
 
 @onready var during_timer: Timer = $DuringTimer
 @onready var tornado_sprite: AnimatedSprite2D = $TornadoSprite
@@ -17,7 +18,7 @@ var enemy_list: Array[Enemy]
 
 
 func _ready() -> void:
-	during_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[4][1].moving_time[skill_level-1]
+	during_timer.wait_time = moving_time_list[skill_level-1]
 	Stage.instance.on_wining.connect(on_win)
 	
 	path_follower = get_parent()

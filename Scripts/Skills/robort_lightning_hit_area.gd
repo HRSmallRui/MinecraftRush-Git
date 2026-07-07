@@ -1,6 +1,7 @@
 extends SkillConditionArea2D
 
 @export var lightning_random_texture_list: Array[Texture]
+@export var damage_list: Array[DamageBlock]
 
 @onready var lightning_sprite: Sprite2D = $LightningSprite
 
@@ -8,13 +9,12 @@ extends SkillConditionArea2D
 func _ready() -> void:
 	lightning_sprite.texture = lightning_random_texture_list[randi_range(0,lightning_random_texture_list.size()-1)]
 	disappear()
-	var damage_low: int = HeroSkillLibrary.hero_skill_data_library[4][0].damage_low[skill_level-1]
-	var damage_high: int = HeroSkillLibrary.hero_skill_data_library[4][0].damage_high[skill_level-1]
+	var damage_block: DamageBlock = damage_list[skill_level-1]
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	for hurt_box in get_overlapping_areas():
 		var enemy: Enemy = hurt_box.owner
-		var damage: int = randi_range(damage_low,damage_high)
+		var damage: int = damage_block.get_damage()
 		enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,null,false,true)
 	pass
 

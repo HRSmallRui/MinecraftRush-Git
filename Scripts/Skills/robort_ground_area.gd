@@ -1,12 +1,13 @@
 extends SkillConditionArea2D
 
 @export var dizness_buff_scene: PackedScene
+@export var damage_list: Array[DamageBlock]
+@export var dizness_time_list: Array[float]
 
 
 func _ready() -> void:
-	var damage_low: int = HeroSkillLibrary.hero_skill_data_library[4][3].damage_low[skill_level-1]
-	var damage_high: int = HeroSkillLibrary.hero_skill_data_library[4][3].damage_high[skill_level-1]
-	var dizness_time: float = HeroSkillLibrary.hero_skill_data_library[4][3].dizness_time[skill_level-1]
+	var damage_block: DamageBlock = damage_list[skill_level-1]
+	var dizness_time: float = dizness_time_list[skill_level-1]
 	
 	EffectManager.instance.play_block_effect(position,Vector2.ONE,Color(0.27,0.1,0,1))
 	await get_tree().physics_frame
@@ -17,6 +18,6 @@ func _ready() -> void:
 		var dizness_buff: BuffClass = dizness_buff_scene.instantiate()
 		dizness_buff.duration = dizness_time
 		enemy.buffs.add_child(dizness_buff)
-		var damage: int = randi_range(damage_low,damage_high)
+		var damage: int = damage_block.get_damage()
 		enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,null,true,true,)
 	pass
