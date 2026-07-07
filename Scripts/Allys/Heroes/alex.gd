@@ -1,5 +1,19 @@
 extends Hero
 
+@export var dizness_buff_scene: PackedScene
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_immune_possible_list: Array[float]
+@export_group("Skill1","skill1")
+@export var skill1_lightning_bullet_scene: PackedScene
+@export_group("Skill2","skill2")
+@export var skill2_armor_upgrade: float
+@export var skill2_duration_list: Array[float]
+@export var skill2_sheild_buff_scene: PackedScene
+@export_group("Skill3","skill3")
+@export var skill3_damage_list: Array[DamageBlock]
+@export_group("Skill4","skill4")
+@export var skill4_skill_area_scene: PackedScene
+
 @onready var skill_1_timer: Timer = $Skill1Timer
 @onready var skill_1_condition_area: Area2D = $UnitBody/Skill1ConditionArea
 @onready var skill_1_audio_1: AudioStreamPlayer = $Skill1Audio1
@@ -46,13 +60,12 @@ func frame_changed():
 		skill_1_release()
 	if ally_sprite.animation == "skill3":
 		if ally_sprite.frame == 12 or ally_sprite.frame == 22:
-			var skill_damage_low: int = HeroSkillLibrary.hero_skill_data_library[ally_id][3].damage_low[skill_levels[3]-1]
-			var skill_damage_high: int = HeroSkillLibrary.hero_skill_data_library[ally_id][3].damage_high[skill_levels[3]-1]
-			var skill_damage:int = randi_range(skill_damage_low / 2, skill_damage_high / 2)
+			var damage_block: DamageBlock = skill3_damage_list[skill_levels[3]-1]
+			var skill_damage:int = damage_block.get_damage()/2
 			for body in skill_3_condition_area.get_overlapping_bodies():
 				var enemy: Enemy = body.owner
 				enemy.take_damage(skill_damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true)
-				var dizness_buff: DiznessBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+				var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
 				dizness_buff.duration = 1
 				dizness_buff.buff_tag = "alex_dizness_3"
 				enemy.buffs.add_child(dizness_buff)
@@ -69,7 +82,7 @@ func start_data_process():
 		1,2,3: skill_levels[0] = 1
 		4,5,6,7: skill_levels[0] = 2
 		8,9,10: skill_levels[0] = 3
-	immune_possible = HeroSkillLibrary.hero_skill_data_library[ally_id][0].immune_possible[skill_levels[0]-1]
+	immune_possible = passive_skill_immune_possible_list[skill_levels[0]-1]
 	pass
 
 
@@ -83,10 +96,10 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 			
 	if skill_levels[2] > 0 and skill_2_timer.is_stopped():
 		if current_data.health < start_data.health and ally_state != AllyState.DIE and source is Enemy:
-			var sheild: PropertyBuff = preload("res://Scenes/Buffs/Alex/alex_sheild_buff.tscn").instantiate()
+			var sheild: PropertyBuff = skill2_sheild_buff_scene.instantiate()
 			skill_2_audio.play()
 			skill_2_timer.start()
-			sheild.duration = HeroSkillLibrary.hero_skill_data_library[ally_id][2].duration[skill_levels[2]-1]
+			sheild.duration = skill2_duration_list[skill_levels[2]-1]
 			buffs.add_child(sheild)
 			get_exp(skill2_exp_get[skill_levels[2]-1])
 	return super(damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack, deadly)
@@ -108,7 +121,7 @@ func skill_1_release():
 	match randi_range(0,1):
 		0: skill_1_audio_1.play()
 		1: skill_1_audio_2.play()
-	var lighting_bullet: Bullet = preload("res://Scenes/Bullets/alex_skill1_bullet.tscn").instantiate()
+	var lighting_bullet: Bullet = skill1_lightning_bullet_scene.instantiate()
 	lighting_bullet.special_skill_level = skill_levels[1]
 	var damage: int = randi_range(2 * current_data.near_damage_low, 2 * current_data.near_damage_high)
 	lighting_bullet.damage = damage
@@ -205,7 +218,7 @@ func skill_3_release():
 
 func skill_4_release():
 	skill_4_audio.play()
-	var skill_area_scene: PackedScene = preload("res://Scenes/Skills/alex_skill_4_area.tscn")
+	var skill_area_scene: PackedScene = skill4_skill_area_scene
 	var interval_length: float = 30
 	var progress: float = skill_4_linked_enemy_path.curve.get_closest_offset(position)
 	var offset_direction: Vector2 = position - skill_4_linked_enemy_path.curve.get_closest_point(position)

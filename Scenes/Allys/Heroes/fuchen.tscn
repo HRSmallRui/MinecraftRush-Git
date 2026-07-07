@@ -1,4 +1,4 @@
-[gd_scene load_steps=269 format=3 uid="uid://b7nmquf4icsws"]
+[gd_scene load_steps=272 format=3 uid="uid://b7nmquf4icsws"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_6ohj6"]
 [ext_resource type="Texture2D" uid="uid://b65o81wdbsw7l" path="res://Assets/Images/UI/HeroHall/HeadTexs/Fuchen.png" id="2_7r13c"]
@@ -11,9 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://cjtsv28lgw3rn" path="res://Assets/Animations/Heroes/Fuchen/attack_00.png" id="6_nb4l8"]
 [ext_resource type="Texture2D" uid="uid://nhg04l35ui82" path="res://Assets/Animations/Heroes/Fuchen/attack_01.png" id="7_kdpr0"]
 [ext_resource type="AudioStream" uid="uid://dt6x3iyeqcmqd" path="res://Assets/Sounds/FXs/DefenceTowers/ProtectorChurch/RayElec.wav" id="7_vlkcg"]
+[ext_resource type="PackedScene" uid="uid://55lbnmhtaj1w" path="res://Scenes/Bullets/fuchen_skill_3_bullet.tscn" id="8_1a1ff"]
 [ext_resource type="Texture2D" uid="uid://cvjt2ppqpcwhp" path="res://Assets/Animations/Heroes/Fuchen/attack_02.png" id="8_5o0ro"]
 [ext_resource type="AudioStream" uid="uid://5vm66inghgpc" path="res://Assets/Sounds/FXs/Heroes/Fuchen/末日.wav" id="8_mkxfg"]
+[ext_resource type="PackedScene" uid="uid://cxlmw4wnnnka7" path="res://Scenes/DefenceTowers/MagicTower/TowerComponents/protector_church_ray.tscn" id="9_40qgb"]
 [ext_resource type="Texture2D" uid="uid://djt552elcvioj" path="res://Assets/Animations/Heroes/Fuchen/attack_03.png" id="9_wd06i"]
+[ext_resource type="PackedScene" uid="uid://cpapq2rgal0bo" path="res://Scenes/Allys/Heroes/fuchen_ray_move_point.tscn" id="10_fnkty"]
 [ext_resource type="Texture2D" uid="uid://fygi7j16nuy2" path="res://Assets/Animations/Heroes/Fuchen/attack_04.png" id="10_sl26c"]
 [ext_resource type="Texture2D" uid="uid://240om66o7y32" path="res://Assets/Animations/Heroes/Fuchen/attack_05.png" id="11_6dkkm"]
 [ext_resource type="Texture2D" uid="uid://c1qw011h7tr8m" path="res://Assets/Animations/Heroes/Fuchen/attack_06.png" id="12_nn27g"]
@@ -1235,6 +1238,9 @@ radius = 73.9444
 
 [node name="Fuchen" instance=ExtResource("1_6ohj6")]
 script = ExtResource("2_lpagh")
+passive_skill_extra_damage_list = Array[int]([5, 10, 15])
+skill1_upgrade_damage_list = Array[int]([4, 6, 8])
+skill2_sheild_duration_list = Array[float]([3.0, 4.0, 5.0])
 heal_speeds = Array[int]([15, 16, 17, 18, 19, 20, 21, 22, 23, 24])
 teleport_limit_length = 280.0
 hero_property_block = ExtResource("2_vmfd8")
@@ -1259,6 +1265,13 @@ region_rect = Rect2(377, 116, 116, 113)
 script = ExtResource("250_wthqo")
 fuchen = NodePath("../..")
 trace_area = NodePath("../Skill3TraceArea")
+magic_ball_scene = ExtResource("8_1a1ff")
+magic_ball_damage = 160
+magic_ball_count_list = Array[int]([4, 6, 8])
+ray_scene = ExtResource("9_40qgb")
+move_point_scene = ExtResource("10_fnkty")
+damage_per_sec_list = Array[int]([4, 6, 8])
+ray_duration = 3.0
 
 [node name="RotationPlayer" type="AnimationPlayer" parent="UnitBody/FuchenMagicHeart" index="0"]
 libraries = {

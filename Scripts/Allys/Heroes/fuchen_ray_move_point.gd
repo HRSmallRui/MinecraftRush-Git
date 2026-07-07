@@ -3,6 +3,8 @@ class_name FuchenRayMovePoint
 
 signal end
 
+@export var fuchen_land_dust_scene: PackedScene
+
 var damage: int
 var move_speed: float = 100
 var linked_hero: Hero
@@ -11,7 +13,7 @@ var linked_hero: Hero
 
 
 func _on_timer_timeout() -> void:
-	var dust: Sprite2D = preload("res://Scenes/Effects/fuchen_land_dust.tscn").instantiate()
+	var dust: Sprite2D = fuchen_land_dust_scene.instantiate()
 	dust.position = position
 	dust.rotation = rotation
 	Stage.instance.background.add_child(dust)
