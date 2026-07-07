@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccydxmm5h8la0"]
+[gd_scene load_steps=7 format=3 uid="uid://ccydxmm5h8la0"]
 
 [ext_resource type="PackedScene" uid="uid://bwifge7de0uys" path="res://Scenes/Buffs/dot_buff.tscn" id="1_hqaut"]
 [ext_resource type="Script" path="res://Scripts/Buffs/salem_plugin_buff.gd" id="2_5wk68"]
+[ext_resource type="PackedScene" uid="uid://crdplisacccvt" path="res://Scenes/Buffs/Salem/salem_spread_buff.tscn" id="3_5y0kt"]
 [ext_resource type="Script" path="res://Scripts/Classes/potion_particle_leader.gd" id="3_dcrtq"]
 [ext_resource type="Texture2D" uid="uid://oov3qeqnyjho" path="res://Assets/Images/Effects/smoke_particle.png" id="4_ulq4m"]
 
@@ -12,6 +13,8 @@ radius = 73.9444
 script = ExtResource("2_5wk68")
 lower_damage_list = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9])
 higher_damage_list = Array[int]([2, 4, 6, 8, 10, 12, 14, 16, 18])
+plague_buff_scene = null
+spread_buff_scene = ExtResource("3_5y0kt")
 duration = 3.0
 buff_tag = "SalemPluginBuff"
 immune_groups = Array[String](["god", "super_unit", "no_live"])

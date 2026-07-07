@@ -1,5 +1,13 @@
 extends Hero
 
+@export_group("PassiveSkill","passive_skill")
+@export_group("Skill1","skill1")
+@export_group("Skill2","skill2")
+@export var skill2_dust_scene: PackedScene
+@export_group("Skill3","skill3")
+@export_group("Skill4","skill4")
+@export var skill4_big_bullet_scene: PackedScene
+
 @onready var magic_ball: Sprite2D = $UnitBody/MagicBall
 @onready var magic_ball_animation_player: AnimationPlayer = $UnitBody/MagicBallAnimationPlayer
 @onready var normal_attack_audio: AudioStreamPlayer = $NormalAttackAudio
@@ -77,13 +85,10 @@ func frame_changed():
 		if skill2_locked_enemy == null: return
 		skill2_locked_enemy.disappear_kill()
 		skill_2_hit_area.global_position = skill2_locked_enemy.global_position
-		var dust: Node2D = preload("res://Scenes/Effects/dust_effect.tscn").instantiate()
+		var dust: Node2D = skill2_dust_scene.instantiate()
 		dust.position = skill2_locked_enemy.global_position
 		Stage.instance.bullets.add_child(dust)
-		var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		explosion_effect.position = dust.position
-		explosion_effect.modulate = Color.DARK_GREEN
-		Stage.instance.bullets.add_child(explosion_effect)
+		EffectManager.instance.play_explosion_effect(dust.position,Vector2.ONE,Color.DARK_GREEN)
 		AudioManager.instance.play_explosion_audio()
 		get_exp(skill2_exp_get[skill_levels[2]-1])
 		await get_tree().physics_frame
@@ -98,7 +103,7 @@ func frame_changed():
 		salem_big_ball.modulate.a = 0
 		if skill4_locked_enemy == null: return
 		AudioManager.instance.magic_shoot_heavy_audio.play()
-		var salem_big_bullet: Bullet = summon_bullet(preload("res://Scenes/Bullets/salem_big_ball.tscn"),salem_big_ball.global_position,skill4_locked_enemy.hurt_box.global_position,0,DataProcess.DamageType.MagicDamage)
+		var salem_big_bullet: Bullet = summon_bullet(skill4_big_bullet_scene,salem_big_ball.global_position,skill4_locked_enemy.hurt_box.global_position,0,DataProcess.DamageType.MagicDamage)
 		salem_big_bullet.special_skill_level = skill_levels[4]
 		salem_big_bullet.bullet_special_tag_levels["passive"] = skill_levels[0]
 		salem_big_bullet.bullet_special_tag_levels["explosion"] = skill_levels[1]
