@@ -1,6 +1,7 @@
 extends SkillConditionArea2D
 
 @export var move_speed: float = 20
+@export var dizness_buff_scene: PackedScene
 
 @onready var during_timer: Timer = $DuringTimer
 @onready var tornado_sprite: AnimatedSprite2D = $TornadoSprite
@@ -73,7 +74,7 @@ func end_move():
 		enemy.get_parent().remove_child(enemy)
 		target_enemy_path.add_child(enemy)
 		enemy.process_mode = Node.PROCESS_MODE_PAUSABLE
-		var dizness_buff: BuffClass = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+		var dizness_buff: BuffClass = dizness_buff_scene.instantiate()
 		dizness_buff.buff_tag = "RobortDiznessWind"
 		dizness_buff.duration = 1
 		enemy.buffs.add_child(dizness_buff)

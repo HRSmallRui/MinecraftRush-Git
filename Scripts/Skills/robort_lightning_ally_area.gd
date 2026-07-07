@@ -1,6 +1,7 @@
 extends SkillConditionArea2D
 
 @export var lightning_random_texture_list: Array[Texture]
+@export var strength_buff_scene: PackedScene
 
 @onready var lightning_sprite: Sprite2D = $LightningSprite
 @onready var timer: Timer = $Timer
@@ -15,7 +16,7 @@ func _ready() -> void:
 	for hurtbox in get_overlapping_areas():
 		var ally: Ally = hurtbox.owner
 		if ally is Hero: continue
-		var strength_buff: PropertyBuff = preload("res://Scenes/Buffs/Robort/robort_lightning_strength.tscn").instantiate()
+		var strength_buff: PropertyBuff = strength_buff_scene.instantiate()
 		for buff_block in strength_buff.buff_blocks:
 			buff_block.operation_data = operation_data
 		ally.buffs.add_child(strength_buff)
