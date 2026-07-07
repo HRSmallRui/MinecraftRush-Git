@@ -4,6 +4,13 @@ extends Hero
 @export var far_animation: SpriteFrames
 @export var physics_arrow_scene: PackedScene
 @export var magic_arrow_scene: PackedScene
+@export var rosa_broken_buff_scene: PackedScene
+@export var rosa_explosion_arrow_scene: PackedScene
+@export_group("SkillDatas")
+@export var dodge_rate_list: Array[float]
+@export var aoe_dodge_rate_list: Array[float]
+@export var skill2_damage_list: Array[int]
+@export var skill1_damage_list: Array[DamageBlock]
 
 @onready var teleport_audio: AudioStreamPlayer = $TeleportAudio
 @onready var skill_1_timer: Timer = $Skill1Timer
@@ -28,12 +35,9 @@ var aoe_dodge_rate: float
 func _ready() -> void:
 	super()
 	far_attack_bullet_scene = physics_arrow_scene
-	skill_1_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][1].CD
-	skill_2_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].CD
-	skill_3_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][3].CD
 	dodge_particle.visible = skill_levels[4] > 0
-	dodge_rate = HeroSkillLibrary.hero_skill_data_library[ally_id][4].dodge_rate[skill_levels[4]-1]
-	aoe_dodge_rate = HeroSkillLibrary.hero_skill_data_library[ally_id][4].aoe_dodge_rate[skill_levels[4]-1]
+	dodge_rate = dodge_rate_list[skill_levels[4]-1]
+	aoe_dodge_rate = aoe_dodge_rate_list[skill_levels[4]-1]
 	pass
 
 
@@ -66,14 +70,14 @@ func frame_changed():
 		ally_sprite.play()
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 14:
 		skill_2_audio.play()
-		var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2].damage[skill_levels[2]-1]
+		var damage: int = skill2_damage_list[skill_levels[2]-1]
 		var enemy: Enemy = current_intercepting_enemy
 		var show_pos: Vector2 = hurt_box.global_position
 		show_pos.x += -20 if ally_sprite.flip_h else 20
 		TextEffect.text_effect_show("重击！",TextEffect.TextEffectType.SecKill,show_pos)
 		if enemy == null: return
 		if enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,self,true,false,) and enemy.enemy_type < Enemy.EnemyType.Boss:
-			var broken_buff: PropertyBuff = preload("res://Scenes/Buffs/Rosa/rosa_broken_buff.tscn").instantiate()
+			var broken_buff: PropertyBuff = rosa_broken_buff_scene.instantiate()
 			enemy.buffs.add_child(broken_buff)
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 24:
 		get_exp(skill2_exp_get[skill_levels[2]-1])
@@ -157,11 +161,7 @@ func _on_idle_animation_timer_timeout() -> void:
 
 
 func teleport_effect_release(effect_pos: Vector2):
-	var teleport_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	teleport_effect.position = effect_pos
-	teleport_effect.scale /= 2
-	teleport_effect.modulate = Color.BLACK
-	Stage.instance.bullets.add_child(teleport_effect)
+	EffectManager.instance.play_explosion_effect(effect_pos,Vector2.ONE/2,Color.BLACK)
 	pass
 
 
@@ -198,9 +198,8 @@ func skill_1_release_oneshot(damage_type: DataProcess.DamageType):
 	ally_sprite.flip_h = locked_pos.x < global_position.x
 	var summon_pos: Vector2 = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	var bullet_scene: PackedScene = physics_arrow_scene if damage_type == DataProcess.DamageType.PhysicsDamage else magic_arrow_scene
-	var damage_low: int = HeroSkillLibrary.hero_skill_data_library[ally_id][1].damage_low[skill_levels[1]-1]
-	var damage_high: int = HeroSkillLibrary.hero_skill_data_library[ally_id][1].damage_high[skill_levels[1]-1]
-	bullet = summon_bullet(bullet_scene,summon_pos,locked_pos,randi_range(damage_low,damage_high),damage_type)
+	var damage: int = skill1_damage_list[skill_levels[1]-1].get_damage()
+	bullet = summon_bullet(bullet_scene,summon_pos,locked_pos,damage,damage_type)
 	bullet.bullet_speed *= 1.4
 	Stage.instance.bullets.add_child(bullet)
 	
@@ -259,7 +258,7 @@ func skill3_process():
 	unit_offset *= 1 if is_adding else -1
 	
 	for i in 5:
-		var arrow: ShooterBullet = preload("res://Scenes/Bullets/rosa_explosion_arrow.tscn").instantiate()
+		var arrow: ShooterBullet = rosa_explosion_arrow_scene.instantiate()
 		arrow.damage = randi_range(current_data.far_damage_low,current_data.far_damage_high)
 		var target_position: Vector2 = skill3_locked_pos
 		if i > 0:

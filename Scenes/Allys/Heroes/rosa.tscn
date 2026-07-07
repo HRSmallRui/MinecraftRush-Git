@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://4rrr2mb6m5uc"]
+[gd_scene load_steps=24 format=3 uid="uid://4rrr2mb6m5uc"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_6ilo6"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/rosa.gd" id="2_iuvn5"]
@@ -9,11 +9,29 @@
 [ext_resource type="SpriteFrames" uid="uid://dt5d31ne3x1gc" path="res://Assets/Animations/Heroes/Rosa/SpriteFrames/rosa_far.res" id="5_cbxqa"]
 [ext_resource type="SpriteFrames" uid="uid://cfsfsxk1gom5o" path="res://Assets/Animations/Heroes/Rosa/SpriteFrames/rosa_near.res" id="5_q3uxe"]
 [ext_resource type="PackedScene" uid="uid://dng356yvhe1hu" path="res://Scenes/Bullets/rosa_magic_arrow.tscn" id="6_s0o6a"]
+[ext_resource type="PackedScene" uid="uid://7ekqkrl8xxl5" path="res://Scenes/Buffs/Rosa/rosa_broken_buff.tscn" id="7_n2or8"]
+[ext_resource type="PackedScene" uid="uid://fim8a81rlxsq" path="res://Scenes/Bullets/rosa_explosion_arrow.tscn" id="8_xs1ja"]
 [ext_resource type="Texture2D" uid="uid://oov3qeqnyjho" path="res://Assets/Images/Effects/smoke_particle.png" id="9_w4cg3"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="9_wxcl7"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/skill_particle_shooter.gd" id="10_2rkh8"]
 [ext_resource type="AudioStream" uid="uid://cvr85147a6civ" path="res://Assets/Sounds/FXs/Enemies/瞬移1.wav" id="10_g2vfi"]
 [ext_resource type="AudioStream" uid="uid://c7r7ydgqlmmlf" path="res://Assets/Sounds/FXs/Enemies/瞬移2.wav" id="11_j3ykn"]
 [ext_resource type="AudioStream" uid="uid://c3ulw48v0hsxy" path="res://Assets/Sounds/FXs/Heroes/Johnny/heavy_slash.mp3" id="12_g7i7b"]
+
+[sub_resource type="Resource" id="Resource_g3oly"]
+script = ExtResource("9_wxcl7")
+damage_low = 22
+damage_high = 34
+
+[sub_resource type="Resource" id="Resource_t0y0m"]
+script = ExtResource("9_wxcl7")
+damage_low = 34
+damage_high = 46
+
+[sub_resource type="Resource" id="Resource_h1j4f"]
+script = ExtResource("9_wxcl7")
+damage_low = 46
+damage_high = 60
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_307yl"]
 radius = 73.9444
@@ -44,6 +62,12 @@ near_animation = ExtResource("5_q3uxe")
 far_animation = ExtResource("5_cbxqa")
 physics_arrow_scene = ExtResource("5_1p641")
 magic_arrow_scene = ExtResource("6_s0o6a")
+rosa_broken_buff_scene = ExtResource("7_n2or8")
+rosa_explosion_arrow_scene = ExtResource("8_xs1ja")
+dodge_rate_list = Array[float]([0.4, 0.5, 0.6])
+aoe_dodge_rate_list = Array[float]([0.2, 0.3, 0.4])
+skill2_damage_list = Array[int]([180, 240, 360])
+skill1_damage_list = Array[ExtResource("9_wxcl7")]([SubResource("Resource_g3oly"), SubResource("Resource_t0y0m"), SubResource("Resource_h1j4f")])
 heal_speeds = Array[int]([18, 20, 22, 24, 26, 28, 30, 32, 34, 36])
 teleport_limit_length = 300.0
 hero_property_block = ExtResource("3_vrg7k")
@@ -94,12 +118,15 @@ stream = SubResource("AudioStreamRandomizer_cselm")
 bus = &"Sound"
 
 [node name="Skill1Timer" type="Timer" parent="." index="10"]
+wait_time = 10.0
 one_shot = true
 
 [node name="Skill2Timer" type="Timer" parent="." index="11"]
+wait_time = 15.0
 one_shot = true
 
 [node name="Skill3Timer" type="Timer" parent="." index="12"]
+wait_time = 14.0
 one_shot = true
 
 [node name="Skill2Audio" type="AudioStreamPlayer" parent="." index="13"]
