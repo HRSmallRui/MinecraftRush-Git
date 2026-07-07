@@ -1,5 +1,7 @@
 extends ShooterBullet
 
+@export var explosion_damage_list: Array[int]
+
 @onready var explosion_area: Area2D = $ExplosionArea
 
 var has_exploded: bool
@@ -27,11 +29,9 @@ func explode():
 	if has_exploded: return
 	has_exploded = true
 	AudioManager.instance.play_explosion_audio()
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = position
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_explosion_effect(position)
 	
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[10][3].damage[special_skill_level-1]
+	var damage: int = explosion_damage_list[special_skill_level-1]
 	for hurt_box in explosion_area.get_overlapping_areas():
 		var enemy: Enemy = hurt_box.owner
 		enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,true,null,true,true,)

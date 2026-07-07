@@ -1,8 +1,16 @@
 extends Hero
 
-
-const TALZIN_NEAR = preload("res://Assets/Animations/Heroes/Talzin/talzin_near.res")
-const TALZIN_FAR = preload("res://Assets/Animations/Heroes/Talzin/talzin_far.res")
+@export var TALZIN_NEAR: SpriteFrames
+@export var TALZIN_FAR: SpriteFrames
+@export_group("Skill1","skill1")
+@export var skill1_seckill_arrow_scene: PackedScene
+@export var skill1_percentage_rate_list: Array[float]
+@export_group("Skill2","skill2")
+@export var skill2_poison_arrow_scene: PackedScene
+@export_group("Skill3","skill3")
+@export var skill3_broken_buff_scene: PackedScene
+@export_group("Skill4","skill4")
+@export var skill4_continue_count_list: Array[int]
 
 @onready var skill_1_timer: Timer = $Skill1Timer
 @onready var skill_2_timer: Timer = $Skill2Timer
@@ -47,8 +55,6 @@ func anim_offset():
 func _ready() -> void:
 	ally_sprite.sprite_frames = TALZIN_FAR
 	super()
-	skill_1_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][1].CD
-	skill_2_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].CD
 	pass
 
 
@@ -103,7 +109,7 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 	var bullet: Bullet = summon_bullet(far_attack_bullet_scene,summon_pos,target_pos,damage,damage_type)
 	
 	if skill_levels[4] > 0:
-		var continue_count: int = HeroSkillLibrary.hero_skill_data_library[ally_id][4].penetrate_count[skill_levels[4]-1]
+		var continue_count: int = skill4_continue_count_list[skill_levels[4]-1]
 		bullet.bullet_special_tag_levels["continue"] = [0.2,continue_count,0.5,far_attack_bullet_scene] ##穿梭时间，继续穿梭人数，伤害倍率,场景
 	
 	Stage.instance.bullets.add_child(bullet)
@@ -112,7 +118,7 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 
 
 func on_normal_attack_hit(target_enemy: Enemy):
-	var broken_buff: PropertyBuff = preload("res://Scenes/Buffs/Talzin/talzin_broken_armor.tscn").instantiate()
+	var broken_buff: PropertyBuff = skill3_broken_buff_scene.instantiate()
 	var broken_data: float
 	match skill_levels[3]:
 		1: broken_data = -0.01
@@ -219,8 +225,8 @@ func skill1_release():
 	var target_pos: Vector2 = skill1_locked_enemy.hurt_box.global_position
 	var summon_pos: Vector2 = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	var damage: int = randi_range(current_data.far_damage_low,current_data.far_damage_high)
-	var bullet = summon_bullet(preload("res://Scenes/Bullets/talzin_kill_arrow.tscn"),summon_pos,target_pos,damage,DataProcess.DamageType.PhysicsDamage) as PercentageDamageBullet
-	bullet.percentage_rate = HeroSkillLibrary.hero_skill_data_library[ally_id][1].damage_percentage[skill_levels[1]-1]
+	var bullet = summon_bullet(skill1_seckill_arrow_scene,summon_pos,target_pos,damage,DataProcess.DamageType.PhysicsDamage) as PercentageDamageBullet
+	bullet.percentage_rate = skill1_percentage_rate_list[skill_levels[1]-1]
 	Stage.instance.bullets.add_child(bullet)
 	get_exp(skill1_exp_get[skill_levels[1]-1])
 	pass
@@ -231,7 +237,7 @@ func skill2_release():
 	var target_pos: Vector2 = skill2_locked_enemy.hurt_box.global_position
 	var summon_pos: Vector2 = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	var damage: int = randi_range(current_data.far_damage_low,current_data.far_damage_high)
-	var bullet: Bullet = summon_bullet(preload("res://Scenes/Bullets/talzin_poison_arrow.tscn"),summon_pos,target_pos,damage,DataProcess.DamageType.PhysicsDamage)
+	var bullet: Bullet = summon_bullet(skill2_poison_arrow_scene,summon_pos,target_pos,damage,DataProcess.DamageType.PhysicsDamage)
 	bullet.special_skill_level = skill_levels[2]
 	Stage.instance.bullets.add_child(bullet)
 	get_exp(skill2_exp_get[skill_levels[1]-1])

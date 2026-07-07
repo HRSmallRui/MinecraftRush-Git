@@ -1,6 +1,8 @@
 extends ShooterBullet
 
 @export var hit_effect_scene: PackedScene
+@export var plague_buff_scene: PackedScene
+@export var aoe_damage_list: Array[int]
 
 @onready var plugin_area: Area2D = $PluginArea
 
@@ -9,22 +11,18 @@ var has_summon_hit_effect: bool = false
 
 func enemy_take_damage(enemy:Enemy):
 	super(enemy)
-	var salem_plugin_debuff: DotBuff = preload("res://Scenes/Buffs/Salem/salem_plugin_buff.tscn").instantiate()
+	var salem_plugin_debuff: DotBuff = plague_buff_scene.instantiate()
 	salem_plugin_debuff.passive_level = special_skill_level
 	salem_plugin_debuff.dead_explosion_level = bullet_special_tag_levels["explosion"]
 	enemy.buffs.add_child(salem_plugin_debuff)
 	if bullet_special_tag_levels["aoe"] > 0:
-		var smoke_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		smoke_effect.modulate = Color.DARK_GREEN
-		smoke_effect.position = position
-		smoke_effect.scale *= 0.6
-		Stage.instance.bullets.add_child(smoke_effect)
+		EffectManager.instance.play_smoke_effect(position,Vector2.ONE*0.6,Color.DARK_GREEN)
 		for body in plugin_area.get_overlapping_areas():
 			var now_enemy: Enemy = body.owner
 			if now_enemy == enemy: continue
-			var damage: int = HeroSkillLibrary.hero_skill_data_library[7][3].aoe_damage[bullet_special_tag_levels["aoe"]-1]
+			var damage: int = aoe_damage_list[bullet_special_tag_levels["aoe"]-1]
 			now_enemy.take_damage(damage,DataProcess.DamageType.MagicDamage,0,false,null,false,true,)
-			var plugin_debuff: DotBuff = preload("res://Scenes/Buffs/Salem/salem_plugin_buff.tscn").instantiate()
+			var plugin_debuff: DotBuff = plague_buff_scene.instantiate()
 			plugin_debuff.passive_level = special_skill_level
 			plugin_debuff.dead_explosion_level = bullet_special_tag_levels["explosion"]
 			now_enemy.buffs.add_child(plugin_debuff)

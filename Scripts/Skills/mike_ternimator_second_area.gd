@@ -1,12 +1,13 @@
 extends Area2D
 
+@export var damage: int
+
 @onready var bomb: Sprite2D = $Bomb
 @onready var prepare_effect: Sprite2D = $PrepareEffect
 
 
 func _ready() -> void:
 	bomb.scale = Vector2.ZERO
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[9][1].second_damage
 	prepare_effect.rotation_degrees = randf_range(-50,-40)
 	prepare_effect.scale = Vector2.ZERO
 	var prepare_tween: Tween = create_tween()
@@ -23,15 +24,9 @@ func _ready() -> void:
 		enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,false,true)
 	AudioManager.instance.play_explosion_audio()
 	Stage.instance.stage_camera.shake(20)
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = position
-	Stage.instance.bullets.add_child(explosion_effect)
-	var fire_particle: AnimatedSprite2D = preload("res://Scenes/Effects/fire_particle.tscn").instantiate()
-	fire_particle.position = position
-	Stage.instance.bullets.add_child(fire_particle)
-	var smoke: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-	smoke.position = position
-	Stage.instance.bullets.add_child(smoke)
+	EffectManager.instance.play_explosion_effect(position)
+	EffectManager.instance.play_smoke_effect(position)
+	EffectManager.instance.play_fire_effect(position)
 	
 	await get_tree().create_timer(2,false).timeout
 	queue_free()
