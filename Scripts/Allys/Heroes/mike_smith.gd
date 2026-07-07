@@ -16,14 +16,22 @@ enum PowerElement{
 @export_group("Skill1","skill1")
 @export var skill1_terminator_area_scene: PackedScene
 @export var skill1_second_terminator_area_scene: PackedScene
+@export var skill1_fire_count_list: Array[int]
 @export_group("Skill2","skill2")
 @export var skill2_dust_scene: PackedScene
 @export var skill2_soul_scene: PackedScene
+@export var skill2_cd_list: Array[float]
+@export var skill2_heal_rate_list: Array[float]
+@export var skill2_second_damage_list: Array[int]
 @export_group("Skill3","skill3")
 @export var skill3_fire_dot_buff_scene: PackedScene
+@export var skill3_damage_per_count_list: Array[int]
 @export_group("Skill4","skill4")
 @export var skill4_slow_debuff_scene: PackedScene
 @export var skill4_freeze_buff_scene: PackedScene
+@export var skill4_cd_list: Array[float]
+@export var skill4_stop_time_duration_list: Array[float]
+@export var skill4_damage_rate_list: Array[float]
 
 @onready var god_ring: Node2D = $UnitBody/GodRing
 @onready var total_control_ring: Node2D = $UnitBody/GodRing/TotalControlRing
@@ -66,11 +74,9 @@ var is_power_type: bool = false
 
 func _ready() -> void:
 	super()
-	skill_1_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][1].CD
-	skill_2_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].CD[skill_levels[2]-1]
-	skill_3_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][3].CD
-	skill_4_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][4].CD[skill_levels[4]-1]
-	skill_4_duration_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][4].stop_time[skill_levels[4]-1]
+	skill_2_timer.wait_time = skill2_cd_list[skill_levels[2]-1]
+	skill_4_timer.wait_time = skill4_cd_list[skill_levels[4]-1]
+	skill_4_duration_timer.wait_time = skill4_stop_time_duration_list[skill_levels[4]-1]
 	power_light.modulate.a = 0
 	energy_explosion.scale = Vector2.ZERO
 	energy_explosion.modulate.a = 1
@@ -143,7 +149,7 @@ func frame_changed():
 		elif ally_sprite.frame == 5:
 			soul_kill()
 		elif ally_sprite.frame == 17:
-			var heal_rate: float = HeroSkillLibrary.hero_skill_data_library[ally_id][2].heal_rate[skill_levels[2]-1]
+			var heal_rate: float = skill2_heal_rate_list[skill_levels[2]-1]
 			var heal_data: int = float(start_data.health) * heal_rate
 			current_data.heal(heal_data)
 	if ally_sprite.animation == "skill2_power" and ally_sprite.frame == 14:
@@ -300,7 +306,7 @@ func release_skill1():
 		if is_continue: continue
 		pos_list.append(enemy.position)
 	#print(pos_list)
-	var fire_count: int = HeroSkillLibrary.hero_skill_data_library[ally_id][1].fire_count[skill_levels[1]-1]
+	var fire_count: int = skill1_fire_count_list[skill_levels[1]-1]
 	if pos_list.size() > fire_count:
 		pos_list.resize(fire_count)
 	else:
@@ -389,7 +395,7 @@ func skill2_second_hit():
 	AudioManager.instance.play_explosion_audio()
 	skill_2_audio.play()
 	Stage.instance.stage_camera.shake(20)
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2].second_damage[skill_levels[2]-1]
+	var damage: int = skill2_second_damage_list[skill_levels[2]-1]
 	for body in skill_2_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,true,true,)
@@ -446,7 +452,7 @@ func skill_3_release():
 
 
 func _on_skill_3_dot_timer_timeout() -> void:
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][3].damage[skill_levels[3]-1]
+	var damage: int = skill3_damage_per_count_list[skill_levels[3]-1]
 	for body in skill_3_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,true,true)
@@ -502,7 +508,7 @@ func _on_skill_4_duration_timer_timeout() -> void:
 	Stage.instance.enemies.process_mode = Node.PROCESS_MODE_INHERIT
 	Stage.instance.background.process_mode = Node.PROCESS_MODE_INHERIT
 	stop_time_layer_player.play_backwards("show")
-	var damage_rate: float = HeroSkillLibrary.hero_skill_data_library[ally_id][4].damage_rate[skill_levels[4]-1]
+	var damage_rate: float = skill4_damage_rate_list[skill_levels[4]-1]
 	for body in skill_3_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		if enemy.enemy_type >= Enemy.EnemyType.MiniBoss: continue

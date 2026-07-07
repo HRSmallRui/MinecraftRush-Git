@@ -1,12 +1,13 @@
 extends Area2D
 
+@export var damage: int
+
 @onready var bomb: Sprite2D = $Bomb
 @onready var prepare_effect: Sprite2D = $PrepareEffect
 
 
 func _ready() -> void:
 	bomb.scale = Vector2.ZERO
-	var damage: int = HeroSkillLibrary.hero_skill_data_library[9][1].second_damage
 	prepare_effect.rotation_degrees = randf_range(-50,-40)
 	prepare_effect.scale = Vector2.ZERO
 	var prepare_tween: Tween = create_tween()
