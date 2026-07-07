@@ -1,4 +1,4 @@
-[gd_scene load_steps=258 format=3 uid="uid://d2cbtfu8s0ygn"]
+[gd_scene load_steps=262 format=3 uid="uid://d2cbtfu8s0ygn"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_r684i"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/robort.gd" id="2_8aby7"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://skxt73bgggsk" path="res://Scenes/Effects/robort_fire_particle.tscn" id="10_31f3j"]
 [ext_resource type="Texture2D" uid="uid://dl1swmwdixoif" path="res://Assets/Animations/Heroes/Robort/attack_05.png" id="10_ax85t"]
 [ext_resource type="Texture2D" uid="uid://drwcpnguh7exa" path="res://Assets/Animations/Heroes/Robort/attack_06.png" id="11_g054j"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="11_o61ko"]
 [ext_resource type="PackedScene" uid="uid://o3wi2fhxerj2" path="res://Scenes/Skills/robort_ground_area.tscn" id="11_tb0ss"]
 [ext_resource type="Texture2D" uid="uid://c5vwr2luc0n1j" path="res://Assets/Animations/Heroes/Robort/attack_07.png" id="12_uhmpk"]
 [ext_resource type="Texture2D" uid="uid://dtc1jyysqmfck" path="res://Assets/Animations/Heroes/Robort/attack_08.png" id="13_c0r50"]
@@ -252,6 +253,21 @@
 [ext_resource type="Texture2D" uid="uid://bae4x7egv7e5g" path="res://Assets/Images/Effects/RobortSkill/Lightning.png" id="242_ot2fh"]
 [ext_resource type="AudioStream" uid="uid://115ib7tk4ryl" path="res://Assets/Sounds/FXs/Heroes/Robort/电流.wav" id="244_a6oh2"]
 [ext_resource type="AudioStream" uid="uid://b1m272vlcwxyq" path="res://Assets/Sounds/FXs/Heroes/Robort/喷火.wav" id="245_x8cwf"]
+
+[sub_resource type="Resource" id="Resource_77e6h"]
+script = ExtResource("11_o61ko")
+damage_low = 125
+damage_high = 150
+
+[sub_resource type="Resource" id="Resource_078wh"]
+script = ExtResource("11_o61ko")
+damage_low = 142
+damage_high = 186
+
+[sub_resource type="Resource" id="Resource_p7ntk"]
+script = ExtResource("11_o61ko")
+damage_low = 172
+damage_high = 214
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_648o7"]
 animations = [{
@@ -1134,8 +1150,11 @@ passive_skill_arae_scene = ExtResource("7_tt88c")
 skill1_skill_area_scene = ExtResource("8_wkm3l")
 skill2_fire_dot_buff_scene = ExtResource("9_gkj5o")
 skill2_fire_particle_scene = ExtResource("10_31f3j")
+skill2_damage_list = Array[ExtResource("11_o61ko")]([SubResource("Resource_77e6h"), SubResource("Resource_078wh"), SubResource("Resource_p7ntk")])
+skill2_fire_buff_duration_list = Array[float]([4.0, 6.0, 8.0])
 skill3_earth_area_scene = ExtResource("11_tb0ss")
 skill4_strength_upgrade_area_scene = ExtResource("8_dkmtn")
+skill4_upgrade_damage_list = Array[int]([4, 6, 8])
 heal_speeds = Array[int]([12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
 teleport_limit_length = 240.0
 hero_property_block = ExtResource("3_k51nj")
@@ -1232,6 +1251,7 @@ stream = ExtResource("244_a6oh2")
 bus = &"Sound"
 
 [node name="Skill1Timer" type="Timer" parent="." index="12"]
+wait_time = 23.0
 one_shot = true
 
 [node name="Skill2Audio" type="AudioStreamPlayer" parent="." index="13"]
@@ -1254,9 +1274,11 @@ shape = SubResource("RectangleShape2D_1iopj")
 position = Vector2(1595, 0)
 
 [node name="Skill2Timer" type="Timer" parent="." index="15"]
+wait_time = 26.0
 one_shot = true
 
 [node name="Skill3Timer" type="Timer" parent="." index="16"]
+wait_time = 18.0
 one_shot = true
 
 [connection signal="timeout" from="LightningTimer" to="." method="_on_lightning_timer_timeout"]

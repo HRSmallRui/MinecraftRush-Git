@@ -9,10 +9,13 @@ extends Hero
 @export_group("Skill2","skill2")
 @export var skill2_fire_dot_buff_scene: PackedScene
 @export var skill2_fire_particle_scene: PackedScene
+@export var skill2_damage_list: Array[DamageBlock]
+@export var skill2_fire_buff_duration_list: Array[float]
 @export_group("Skill3","skill3")
 @export var skill3_earth_area_scene: PackedScene
 @export_group("Skill4","skill4")
 @export var skill4_strength_upgrade_area_scene: PackedScene
+@export var skill4_upgrade_damage_list: Array[int]
 
 @onready var robort_teleport_audio: AudioStreamPlayer = $RobortTeleportAudio
 @onready var lightning_start: Sprite2D = $FarAttackLightningComponent/LightningStart
@@ -39,9 +42,6 @@ var skill3_locked_enemy_path: EnemyPath
 func _ready() -> void:
 	super()
 	far_attack_lightning_component.hide()
-	skill_1_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][1].CD
-	skill_2_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][2].CD
-	skill_3_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[ally_id][3].CD
 	pass
 
 
@@ -52,7 +52,7 @@ func start_data_process():
 		5,6,7,8: skill_levels[0] = 2
 		9,10: skill_levels[0] = 3
 	if skill_levels[4] > 0:
-		var upgrade_damage: int = HeroSkillLibrary.hero_skill_data_library[ally_id][4].upgrade_damage[skill_levels[4]-1]
+		var upgrade_damage: int = skill4_upgrade_damage_list[skill_levels[4]-1]
 		start_data.far_damage_low += upgrade_damage
 		start_data.far_damage_high += upgrade_damage
 	pass
@@ -298,12 +298,11 @@ func _on_skill_2_hit_area_area_entered(area: Area2D) -> void:
 	var enemy: Enemy = area.owner
 	
 	var fire_dot_buff: DotBuff = skill2_fire_dot_buff_scene.instantiate()
-	fire_dot_buff.duration = HeroSkillLibrary.hero_skill_data_library[ally_id][2].during_time[skill_levels[2]-1]
+	fire_dot_buff.duration = skill2_fire_buff_duration_list[skill_levels[2]-1]
 	enemy.buffs.add_child(fire_dot_buff)
 	
-	var damage_low: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2].damage_low[skill_levels[2]-1]
-	var damage_high: int = HeroSkillLibrary.hero_skill_data_library[ally_id][2].damage_high[skill_levels[2]-1]
-	var damage: int = randi_range(damage_low,damage_high)
+	var damage_block: DamageBlock = skill2_damage_list[skill_levels[2]-1]
+	var damage: int = damage_block.get_damage()
 	enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,true,self,false,true)
 	pass # Replace with function body.
 
