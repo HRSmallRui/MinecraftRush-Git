@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var max_point_limit: int = 40
+@export var holy_fire_buff_scene: PackedScene
+@export var fire_damage: int
 
 @onready var fire_sprite: AnimatedSprite2D = $FireSprite
 @onready var tail_line: Line2D = $TailLine
@@ -29,27 +31,18 @@ func _ready() -> void:
 	create_tween().tween_property(bomb,"scale",Vector2.ONE * 1,0.8)
 	create_tween().tween_property(bomb,"modulate:a",0,0.8)
 	fire_sprite.hide()
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = position
-	explosion_effect.scale *= 2
-	Stage.instance.bullets.add_child(explosion_effect)
-	var smoke: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-	smoke.position = position
-	smoke.scale *= 2
-	Stage.instance.bullets.add_child(smoke)
+	EffectManager.instance.play_explosion_effect(position,Vector2.ONE*2)
+	EffectManager.instance.play_smoke_effect(position,Vector2.ONE*2)
 	shadow.hide()
-	var fire_particle: AnimatedSprite2D = preload("res://Scenes/Effects/fire_particle.tscn").instantiate()
-	fire_particle.position = position
-	fire_particle.scale *= 2
-	Stage.instance.bullets.add_child(fire_particle)
+	EffectManager.instance.play_fire_effect(position,Vector2.ONE*2)
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		if enemy.enemy_type < Enemy.EnemyType.MiniBoss:
 			enemy.sec_kill(true)
 		else:
-			var damage: int = HeroSkillLibrary.hero_skill_data_library[9][5].fire_damage
+			var damage: int = fire_damage
 			enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,false,true,)
-			var holy_fire: DotBuff = preload("res://Scenes/Buffs/Mike/mike_holy_fire.tscn").instantiate()
+			var holy_fire: DotBuff = holy_fire_buff_scene.instantiate()
 			enemy.buffs.add_child(holy_fire)
 	pass
 
