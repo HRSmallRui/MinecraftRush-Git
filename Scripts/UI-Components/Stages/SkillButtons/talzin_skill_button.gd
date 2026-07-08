@@ -1,5 +1,8 @@
 extends SkillButton
 
+@export var cold_time_list: Array[float]
+@export var kill_damage_list: Array[int]
+
 @onready var condition_area: Area2D = $ConditionArea
 @onready var sec_kill_effect: Sprite2D = $SecKillEffect
 @onready var preparation_audio: AudioStreamPlayer = $PreparationAudio
@@ -20,9 +23,9 @@ func _ready() -> void:
 	remove_child(sec_kill_effect)
 	Stage.instance.bullets.add_child(condition_area)
 	Stage.instance.bullets.add_child(sec_kill_effect)
-	skill_level = Stage.instance.stage_sav.hero_sav[3].skill_levels[4]
-	cooling_time = HeroSkillLibrary.hero_skill_data_library[3][5].CD[skill_level]
-	damage = HeroSkillLibrary.hero_skill_data_library[3][5].damage[skill_level]
+	skill_level = Global.get_hero_skill_level(3)
+	cooling_time = cold_time_list[skill_level]
+	damage = kill_damage_list[skill_level]
 	pass
 
 
