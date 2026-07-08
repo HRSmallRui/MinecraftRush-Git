@@ -1,6 +1,10 @@
 extends Area2D
 
 @export var potion_color: Color
+@export var potion_slash_effect_scene: PackedScene
+@export var heal_data: int
+@export var undead_damage: int
+@export var super_heal_buff_scene: PackedScene
 
 @onready var splash_1: AudioStreamPlayer = $Splash1
 @onready var splash_2: AudioStreamPlayer = $Splash2
@@ -20,21 +24,18 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 			2: splash_2.play()
 			3: splash_3.play()
 		
-		var potion_slash_effect: AnimatedSprite2D = preload("res://Scenes/Effects/potion_slash_effect.tscn").instantiate()
-		potion_slash_effect.modulate = potion_color
-		potion_slash_effect.position = position
-		Stage.instance.bullets.add_child(potion_slash_effect)
+		EffectManager.instance.play_sprite_effect(potion_slash_effect_scene,position,Vector2.ONE,potion_color)
 		
 		for hurt_box: HurtBox in get_overlapping_areas():
 			var unit = hurt_box.owner
 			if unit is Ally:
-				unit.current_data.heal(30)
-				unit.buffs.add_child(preload("res://Scenes/Buffs/Steve/super_heal_buff.tscn").instantiate())
+				unit.current_data.heal(heal_data)
+				unit.buffs.add_child(super_heal_buff_scene.instantiate())
 		
 		for hurt_box in damage_area.get_overlapping_areas():
 			var unit = hurt_box.owner
 			if unit is Enemy and "undead" in unit.get_groups():
-				unit.take_damage(30,DataProcess.DamageType.TrueDamage,0,true,null,)
+				unit.take_damage(undead_damage,DataProcess.DamageType.TrueDamage,0,true,null,)
 	pass # Replace with function body.
 
 

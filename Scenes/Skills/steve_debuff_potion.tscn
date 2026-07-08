@@ -1,9 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://b1cbglp3ngkrb"]
+[gd_scene load_steps=26 format=3 uid="uid://b1cbglp3ngkrb"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/steve_debuff_potion.gd" id="1_suljj"]
+[ext_resource type="PackedScene" uid="uid://s1ufugpd4ypu" path="res://Scenes/Effects/potion_slash_effect.tscn" id="2_5q67t"]
 [ext_resource type="AudioStream" uid="uid://b3y0u3upgm8w3" path="res://Assets/Sounds/FXs/Skills/potion_throw.wav" id="2_v1hwq"]
+[ext_resource type="PackedScene" uid="uid://b4lqcw33qxwut" path="res://Scenes/Buffs/Steve/steve_slowly_buff.tscn" id="3_1eg8g"]
 [ext_resource type="Texture2D" uid="uid://ch4ti3oc6o6mk" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_00.png" id="3_fh6l2"]
 [ext_resource type="Texture2D" uid="uid://cr6klbgpry20x" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_01.png" id="4_saihk"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="4_sgmra"]
 [ext_resource type="Texture2D" uid="uid://kk6axf506tey" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_02.png" id="5_k46ch"]
 [ext_resource type="Texture2D" uid="uid://bhopdsgeaamy4" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_03.png" id="6_sai7f"]
 [ext_resource type="Texture2D" uid="uid://dfimb0gyk3de1" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_04.png" id="7_sicrx"]
@@ -19,6 +22,11 @@
 [ext_resource type="AudioStream" uid="uid://dv2qekrqjyyjt" path="res://Assets/Sounds/FXs/Skills/splash1.wav" id="17_d00kw"]
 [ext_resource type="AudioStream" uid="uid://28wyvuelh0ah" path="res://Assets/Sounds/FXs/Skills/splash2.wav" id="18_t87de"]
 [ext_resource type="AudioStream" uid="uid://ex5wm8d4mv2r" path="res://Assets/Sounds/FXs/Skills/splash3.wav" id="19_vsyun"]
+
+[sub_resource type="Resource" id="Resource_u1aup"]
+script = ExtResource("4_sgmra")
+damage_low = 24
+damage_high = 64
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jnvg"]
 animations = [{
@@ -79,6 +87,9 @@ collision_layer = 0
 collision_mask = 96
 script = ExtResource("1_suljj")
 potion_color = Color(0.760784, 1, 0.4, 1)
+potion_slash_effect_scene = ExtResource("2_5q67t")
+slow_buff_scene = ExtResource("3_1eg8g")
+potion_damage = SubResource("Resource_u1aup")
 
 [node name="PotionThrow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_v1hwq")

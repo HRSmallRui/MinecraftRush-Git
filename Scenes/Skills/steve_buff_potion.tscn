@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bfbcx32wca88m"]
+[gd_scene load_steps=24 format=3 uid="uid://bfbcx32wca88m"]
 
 [ext_resource type="Texture2D" uid="uid://naipk375eihb" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_00.png" id="1_1j6ii"]
 [ext_resource type="Script" path="res://Scripts/Skills/steve_buff_potion.gd" id="1_vg3mc"]
+[ext_resource type="PackedScene" uid="uid://s1ufugpd4ypu" path="res://Scenes/Effects/potion_slash_effect.tscn" id="2_n6y2n"]
 [ext_resource type="Texture2D" uid="uid://da5v0ltiicr51" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_01.png" id="2_numg7"]
 [ext_resource type="AudioStream" uid="uid://b3y0u3upgm8w3" path="res://Assets/Sounds/FXs/Skills/potion_throw.wav" id="2_nwo77"]
+[ext_resource type="PackedScene" uid="uid://b14n0vxjtpqoq" path="res://Scenes/Buffs/Steve/super_heal_buff.tscn" id="3_w7qkf"]
 [ext_resource type="Texture2D" uid="uid://bwqsq6mbxo0pd" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_02.png" id="3_xl4bh"]
 [ext_resource type="Texture2D" uid="uid://dtjd0a8sfs8af" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_03.png" id="4_xnduc"]
 [ext_resource type="Texture2D" uid="uid://docxr2piuuwr6" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_04.png" id="5_nbpss"]
@@ -79,6 +81,10 @@ collision_layer = 0
 collision_mask = 24
 script = ExtResource("1_vg3mc")
 potion_color = Color(1, 0, 1, 1)
+potion_slash_effect_scene = ExtResource("2_n6y2n")
+heal_data = 30
+undead_damage = 30
+super_heal_buff_scene = ExtResource("3_w7qkf")
 
 [node name="PotionThrow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nwo77")
