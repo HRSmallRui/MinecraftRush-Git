@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var ray_damage: int
+
 
 @onready var ray: Line2D = $Ray
 @onready var end_point_particle: GPUParticles2D = $Ray/EndPointParticle
@@ -14,7 +16,7 @@ func _ready() -> void:
 	await damage_timer.timeout
 	for hurt_box in get_overlapping_areas():
 		var enemy:Enemy = hurt_box.owner
-		enemy.take_damage(80,DataProcess.DamageType.MagicDamage,0,)
+		enemy.take_damage(ray_damage,DataProcess.DamageType.MagicDamage,0,)
 	
 	await get_tree().create_timer(0.5,false).timeout
 	damage_timer.start()
