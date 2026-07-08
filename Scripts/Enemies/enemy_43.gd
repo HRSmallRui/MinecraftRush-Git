@@ -78,6 +78,7 @@ func fly():
 	unit_body.set_collision_layer_value(7,true)
 	hurt_box.set_collision_layer_value(6,false)
 	hurt_box.set_collision_layer_value(7,true)
+	is_flying = true
 	interceptable = false
 	enemy_sprite.sprite_frames = FLYING_ANIMATION
 	enemy_sprite.play("fly")
@@ -111,6 +112,7 @@ func landing():
 	buffs.position.y += 130
 	
 	enemy_sprite.sprite_frames = LANDING_ANIMATION
+	is_flying = false
 	enemy_sprite.play_backwards("land")
 	enemy_button.show()
 	enemy_button_2.hide()

@@ -18,6 +18,13 @@ enum EnemyState{
 	DIE
 }
 
+enum CollisionLayerType
+{
+	EnemyMove,
+	EnemyDead,
+	EnemyHide
+}
+
 @export var enemy_name: String
 @export var enemy_id: int
 @export var enemy_texture: Texture
@@ -521,4 +528,20 @@ func danger_tip_process():
 		danger_tip = new_danger_tip
 		danger_tip.linked_enemy = self
 		Stage.instance.danger_tip_layer.add_child(danger_tip)
+	pass
+
+
+func change_collision_layer(target_layer_type: CollisionLayerType):
+	unit_body.collision_layer = 0
+	hurt_box.collision_layer = 0
+	var layer_id: int
+	match target_layer_type:
+		CollisionLayerType.EnemyMove:
+			layer_id = 7 if is_flying else 6
+		CollisionLayerType.EnemyDead:
+			layer_id = 9
+		CollisionLayerType.EnemyHide:
+			layer_id = 18 if is_flying else 17
+	unit_body.set_collision_layer_value(layer_id,true)
+	hurt_box.set_collision_layer_value(layer_id,true)
 	pass
