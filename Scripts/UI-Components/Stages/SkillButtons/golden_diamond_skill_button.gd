@@ -37,7 +37,7 @@ var is_allowed_to_unlease: bool
 
 func _ready() -> void:
 	super()
-	skill_level = Stage.instance.stage_sav.hero_sav[6].skill_levels[4]
+	skill_level = Global.get_hero_skill_level(6)
 	on_chip_changed(0)
 	remove_child(enemy_condition_area)
 	Stage.instance.bullets.add_child(enemy_condition_area)

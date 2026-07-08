@@ -1,6 +1,8 @@
 extends Area2D
 class_name FirerainSkill
 
+@export var fire_land_scene: PackedScene
+
 @onready var fire_rock_sprite: AnimatedSprite2D = $FireRockSprite
 @onready var shadow: Sprite2D = $Shadow
 @onready var destroy_timer: Timer = $DestroyTimer
@@ -38,30 +40,20 @@ func attack_process():
 			hurter.take_damage(damage,DataProcess.DamageType.TrueDamage,0,true,null,false)
 	
 	AudioManager.instance.play_explosion_audio()
-	var explosion = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate() as AnimatedSprite2D
-	var smoke = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate() as AnimatedSprite2D
-	var fire_particle = preload("res://Scenes/Effects/fire_particle.tscn").instantiate() as AnimatedSprite2D
-	explosion.position = position
-	smoke.position = position
-	fire_particle.position = position
-	Stage.instance.bullets.add_child(explosion)
-	Stage.instance.bullets.add_child(smoke)
-	Stage.instance.bullets.add_child(fire_particle)
+	EffectManager.instance.play_explosion_effect(position)
+	EffectManager.instance.play_smoke_effect(position)
+	EffectManager.instance.play_fire_effect(position)
 	
 	if water_condition_area.has_overlapping_areas():
 		AudioManager.instance.play_water_audio()
-		var water_effect: AnimatedSprite2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-		water_effect.position = position + Vector2(0,20)
-		water_effect.scale *= 1.5
-		water_effect.modulate = Color(0,0.8,1,0.6)
-		Stage.instance.bullets.add_child(water_effect)
+		EffectManager.instance.play_block_effect(position+Vector2(0,20),Vector2.ONE*1.5,Color(0,0.8,1,0.6))
 		in_water = true
 	pass
 
 
 func fire_land_process():
 	if skill_level < 2: return
-	var fire_land: FireHurtArea = preload("res://Scenes/Skills/fire_hurt_area.tscn").instantiate()
+	var fire_land: FireHurtArea = fire_land_scene.instantiate()
 	fire_land.position = position
 	fire_land.in_water = in_water
 	match skill_level:

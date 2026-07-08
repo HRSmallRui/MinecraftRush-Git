@@ -7,7 +7,7 @@ var skill_level: int
 
 func _ready() -> void:
 	super()
-	skill_level = Stage.instance.stage_sav.hero_sav[5].skill_levels[4]
+	skill_level = Global.get_hero_skill_level(5)
 	pass
 
 

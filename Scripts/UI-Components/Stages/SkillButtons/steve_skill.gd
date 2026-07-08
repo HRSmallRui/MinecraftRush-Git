@@ -1,14 +1,18 @@
 extends SkillButton
 
+@export var buff_potion_scene: PackedScene
+@export var debuff_potion_scene: PackedScene
+@export var potion_count_list: Array[int]
+
 
 func skill_unlease():
 	super()
-	var level: int = Stage.instance.stage_sav.hero_sav[0].skill_levels[4]
-	var count: int = HeroSkillLibrary.hero_skill_data_library[0][5][0][level]
+	var level: int = Global.get_hero_skill_level(0)
+	var count: int = potion_count_list[level]
 	var mouse_position: Vector2 = Stage.instance.get_local_mouse_position()
 	for i in count:
-		var buff_potion: Area2D = preload("res://Scenes/Skills/steve_buff_potion.tscn").instantiate()
-		var debuff_potion: Area2D = preload("res://Scenes/Skills/steve_debuff_potion.tscn").instantiate()
+		var buff_potion: Area2D = buff_potion_scene.instantiate()
+		var debuff_potion: Area2D = debuff_potion_scene.instantiate()
 		buff_potion.position = random_position(mouse_position)
 		debuff_potion.position = random_position(mouse_position)
 		Stage.instance.bullets.add_child(buff_potion)

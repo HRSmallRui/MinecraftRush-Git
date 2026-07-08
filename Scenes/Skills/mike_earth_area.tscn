@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpjbsjlet4ai0"]
+[gd_scene load_steps=5 format=3 uid="uid://cpjbsjlet4ai0"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/mike_earth_area.gd" id="1_3qesa"]
 [ext_resource type="Texture2D" uid="uid://i25c7d1f734h" path="res://Assets/Images/Effects/earth_effect.png" id="2_dwevt"]
+[ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="2_vhued"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ublnm"]
 radius = 73.9444
@@ -10,6 +11,8 @@ radius = 73.9444
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_3qesa")
+dizness_buff_scene = ExtResource("2_vhued")
+earth_damage = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 1.4)

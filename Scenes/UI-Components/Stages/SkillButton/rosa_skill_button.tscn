@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnent4dbfhwcr"]
+[gd_scene load_steps=6 format=3 uid="uid://cnent4dbfhwcr"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_k35yp"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/rosa_skill_button.gd" id="2_wem2a"]
 [ext_resource type="Texture2D" uid="uid://bbix2ejk7c5om" path="res://Assets/Images/UI/SkillButton/Heroskill/Rosa/rosa_skill.png" id="3_nopmy"]
+[ext_resource type="PackedScene" uid="uid://c6fhmd1q7jfxq" path="res://Scenes/Skills/rosa_arrow_area.tscn" id="3_xwwf0"]
 [ext_resource type="Texture2D" uid="uid://nowfqe1fr7y6" path="res://Assets/Images/UI/SkillButton/Heroskill/Rosa/rosa_skill_using.png" id="4_whc6i"]
 
 [node name="RosaSkillButton" instance=ExtResource("1_k35yp")]
 script = ExtResource("2_wem2a")
+arrow_area_scene = ExtResource("3_xwwf0")
+arrow_count_list = Array[int]([15, 30, 45, 60])
 skill_type = 2
 texture_normal = ExtResource("3_nopmy")
 texture_select = ExtResource("4_whc6i")

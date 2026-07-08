@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddbc1xhcc3d3e"]
+[gd_scene load_steps=7 format=3 uid="uid://ddbc1xhcc3d3e"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_2wtn4"]
 [ext_resource type="Texture2D" uid="uid://cgqvtdtcpu8nd" path="res://Assets/Images/UI/SkillButton/Heroskill/Steve/steve_canuse.png" id="2_6clph"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/steve_skill.gd" id="2_q0u2c"]
 [ext_resource type="Texture2D" uid="uid://dfegr2mf1hf25" path="res://Assets/Images/UI/SkillButton/Heroskill/Steve/steve_select.png" id="3_brc1b"]
+[ext_resource type="PackedScene" uid="uid://bfbcx32wca88m" path="res://Scenes/Skills/steve_buff_potion.tscn" id="3_oygau"]
+[ext_resource type="PackedScene" uid="uid://b1cbglp3ngkrb" path="res://Scenes/Skills/steve_debuff_potion.tscn" id="4_2qjm7"]
 
 [node name="SteveSkill" instance=ExtResource("1_2wtn4")]
 script = ExtResource("2_q0u2c")
+buff_potion_scene = ExtResource("3_oygau")
+debuff_potion_scene = ExtResource("4_2qjm7")
+potion_count_list = Array[int]([2, 4, 6, 8])
 skill_type = 2
 texture_normal = ExtResource("2_6clph")
 texture_select = ExtResource("3_brc1b")

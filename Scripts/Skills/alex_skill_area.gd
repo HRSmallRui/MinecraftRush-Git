@@ -1,5 +1,11 @@
 extends SkillConditionArea2D
 
+@export var fork_sprite_scene: PackedScene
+@export var dizness_buff_scene: PackedScene
+@export var slow_buff_scene: PackedScene
+@export var fork_count_list: Array[int]
+@export var explosion_damage_list: Array[int]
+
 var loop_count: int
 var fork_list: Array[Sprite2D]
 @onready var explosion_timer: Timer = $ExplosionTimer
@@ -7,11 +13,10 @@ var fork_list: Array[Sprite2D]
 
 
 func _ready() -> void:
-	loop_count = HeroSkillLibrary.hero_skill_data_library[2][5].count[skill_level]
-	var explosion_damage: int = HeroSkillLibrary.hero_skill_data_library[2][5].explosion_damage[skill_level]
-	var fork_scene: PackedScene = preload("res://Scenes/Skills/fork_sprite.tscn")
+	loop_count = fork_count_list[skill_level]
+	var explosion_damage: int = explosion_damage_list[skill_level]
 	for i in loop_count:
-		var fork: Sprite2D = fork_scene.instantiate()
+		var fork: Sprite2D = fork_sprite_scene.instantiate()
 		add_child(fork)
 		fork.position = Vector2(randf_range(-70,70),randf_range(-150,-140))
 		var target_pos: Vector2 = Vector2(randf_range(-40,40),randf_range(-30,30))
@@ -27,13 +32,10 @@ func _ready() -> void:
 	explosion_timer.start()
 	await explosion_timer.timeout
 	AudioManager.instance.play_explosion_audio()
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = position
-	explosion_effect.z_index += 1
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_explosion_effect(position)
 	for body in explosion_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var dizness_buff: PropertyBuff = preload("res://Scenes/Buffs/Alex/alex_dizness_debuff.tscn").instantiate()
+		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
 		dizness_buff.buff_tag = "AlexSkill5Dizness"
 		dizness_buff.unit = enemy
 		enemy.buffs.add_child(dizness_buff)
@@ -47,7 +49,7 @@ func _ready() -> void:
 
 func _on_speed_low_area_body_entered(body: Node2D) -> void:
 	var enemy: Enemy = body.owner
-	var speed_low_buff: PropertyBuff = preload("res://Scenes/Buffs/Alex/alex_skill_4_speed_low.tscn").instantiate()
+	var speed_low_buff: PropertyBuff = slow_buff_scene.instantiate()
 	speed_low_buff.buff_tag = "AlexSkill5SpeedLow"
 	speed_low_buff.duration = 2
 	speed_low_buff.unit = enemy
