@@ -1,8 +1,9 @@
-[gd_scene load_steps=130 format=3 uid="uid://b2x2bvhxhfb8r"]
+[gd_scene load_steps=131 format=3 uid="uid://b2x2bvhxhfb8r"]
 
 [ext_resource type="PackedScene" uid="uid://bgi3ibffayb11" path="res://Scenes/Allys/Soldiers/soldier_class.tscn" id="1_wsvl7"]
 [ext_resource type="Script" path="res://Scripts/Allys/Soldiers/skeleton_soldier.gd" id="2_0s0kj"]
 [ext_resource type="Texture2D" uid="uid://elwoin4xdtf3" path="res://Assets/Images/UI/InformationBar/EnemyChapter6/荆棘射手.png" id="3_3pu22"]
+[ext_resource type="PackedScene" uid="uid://b4jmeqt5ub604" path="res://Scenes/Buffs/Allys/skeleton_heal_buff.tscn" id="3_5edwu"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_qc4pm"]
 [ext_resource type="PackedScene" uid="uid://c1rmis5jlhvqk" path="res://Scenes/Bullets/physics_arrow.tscn" id="5_bf3yi"]
 [ext_resource type="Texture2D" uid="uid://dmbln18ghqyvx" path="res://Assets/Animations/Enemies/51荆棘射手/attack_00.png" id="5_m4fx1"]
@@ -535,6 +536,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_307yl"]
 radius = 73.9444
 
+[sub_resource type="Animation" id="Animation_87odr"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_uqdcl"]
 resource_name = "loop"
 loop_mode = 1
@@ -551,20 +566,6 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1)
 }
 
-[sub_resource type="Animation" id="Animation_87odr"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nttoq"]
 _data = {
 "RESET": SubResource("Animation_87odr"),
@@ -576,6 +577,7 @@ script = ExtResource("2_0s0kj")
 return_damage_list = Array[float]([0.4, 0.5, 0.6])
 heal_duration_list = Array[float]([4.0, 5.0, 6.0])
 sec_kill_rate_list = Array[float]([0.4, 0.5, 0.6])
+heal_buff_scene = ExtResource("3_5edwu")
 soldier_name_list = Array[String](["凯乌斯・骨斯奇", "马库斯・骨卡尔", "卢基乌斯・骨克斯", "昆图斯・骨伦尔", "提比略・骨斯尔", "奥勒留・骨奇尔", "布鲁图・骨顿斯", "塞维鲁・骨克尔", "瓦勒里・骨图斯", "克劳狄・骨维尔", "康斯坦・骨斯奇", "图利乌・骨卡尔", "尼科马・骨克斯", "尤利乌・骨伦恩", "阿庇乌斯・骨奇斯"])
 ally_name = "荆棘射手"
 ally_level = 4

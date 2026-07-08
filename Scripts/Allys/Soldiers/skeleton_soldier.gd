@@ -3,6 +3,7 @@ extends Soldier
 @export var return_damage_list: Array[float]
 @export var heal_duration_list: Array[float]
 @export var sec_kill_rate_list: Array[float]
+@export var heal_buff_scene: PackedScene
 
 @onready var heal_buff_timer: Timer = $HealBuffTimer
 @onready var sec_kill_area: Area2D = $UnitBody/SecKillArea
@@ -96,7 +97,7 @@ func _process(delta: float) -> void:
 	super(delta)
 	if ally_state != AllyState.DIE and heal_buff_timer.is_stopped() and soldier_skill_levels[2 ]> 0 and health_bar.value < 0.4:
 		heal_buff_timer.start()
-		var heal_buff: HealBuff = preload("res://Scenes/Buffs/Allys/skeleton_heal_buff.tscn").instantiate()
+		var heal_buff: HealBuff = heal_buff_scene.instantiate()
 		var heal_duration: float = heal_duration_list[soldier_skill_levels[2]-1]
 		heal_buff.duration = heal_duration
 		buffs.add_child(heal_buff)

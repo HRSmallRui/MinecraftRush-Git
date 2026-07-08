@@ -1,8 +1,9 @@
-[gd_scene load_steps=51 format=3 uid="uid://byt1tgg7pdipi"]
+[gd_scene load_steps=52 format=3 uid="uid://byt1tgg7pdipi"]
 
 [ext_resource type="PackedScene" uid="uid://bgi3ibffayb11" path="res://Scenes/Allys/Soldiers/soldier_class.tscn" id="1_oc1np"]
 [ext_resource type="Script" path="res://Scripts/Allys/Soldiers/villager_knight.gd" id="2_6xdfr"]
 [ext_resource type="Texture2D" uid="uid://cp1oqtwnicbhy" path="res://Assets/Images/UI/InformationBar/Allys/村民骑士.png" id="2_8qg3w"]
+[ext_resource type="PackedScene" uid="uid://dmq2qhqipm7xk" path="res://Scenes/Buffs/Allys/villager_knight_bleed.tscn" id="3_ahj5e"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_jdufg"]
 [ext_resource type="Texture2D" uid="uid://dl3b1o22kisi4" path="res://Assets/Animations/Soldiers/VillagerKnight/attack_00.png" id="5_hbrx8"]
 [ext_resource type="Texture2D" uid="uid://dtnu5w1l1t53l" path="res://Assets/Animations/Soldiers/VillagerKnight/attack_01.png" id="6_51hr3"]
@@ -230,6 +231,7 @@ animations = [{
 
 [node name="VillagerKnight" instance=ExtResource("1_oc1np")]
 script = ExtResource("2_6xdfr")
+bleed_buff_scene = ExtResource("3_ahj5e")
 soldier_name_list = Array[String](["赵瑾之", "陈砚舟", "林珩川", "黄崧年", "徐昭庭", "周晏辞", "郑谦行", "王澈明", "杨翊风", "朱攸宁", "李岩虎", "张彪戍", "胡夯山", "马烈垣", "刘铠峥", "吴勐岳", "郑戍岩", "黄崟彪", "周烈夯", "陈垣铠", "沈枞锐", "顾锋垣", "梁挺之", "秦枞岳", "韩锐承", "魏挺锋", "董垣枞", "谢锐之", "吕枞承", "高垣锋"])
 ally_name = "村民骑士"
 ally_texture = ExtResource("2_8qg3w")
