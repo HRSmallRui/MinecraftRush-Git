@@ -44,8 +44,9 @@ func play_sprite_effect(effect_scene: PackedScene, summon_pos: Vector2, effect_s
 	pass
 
 
-func play_lightning_effect(summon_pos: Vector2):
+func play_lightning_effect(summon_pos: Vector2,effect_scale: Vector2 = Vector2.ONE):
 	var lightning: Line2D = lightning_scene.instantiate()
 	lightning.position = summon_pos
+	lightning.scale *= effect_scale
 	Stage.instance.bullets.add_child(lightning)
 	pass

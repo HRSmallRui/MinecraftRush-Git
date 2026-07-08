@@ -1,5 +1,10 @@
 extends SkillButton
 
+@export var lightning_area_scene: PackedScene
+@export var slow_buff_scene: PackedScene
+@export var lightning_count_list: Array[int]
+@export var rain_duration_list: Array[float]
+
 @onready var rain_timer: Timer = $RainTimer
 @onready var robort_rain_layer: CanvasLayer = $RobortRainLayer
 @onready var rain_audio_super: AudioStreamPlayer = $RainAudioSuper
@@ -20,7 +25,7 @@ func _ready() -> void:
 	
 	level = Stage.instance.stage_sav.hero_sav[4].skill_levels[4]
 	robort_rain_layer.hide()
-	rain_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[4][5].storm_during_time[level]
+	rain_timer.wait_time = rain_duration_list[level]
 	pass
 
 
@@ -38,9 +43,9 @@ func skill_unlease():
 
 
 func release_lightning(release_position: Vector2):
-	var loop_count: int = HeroSkillLibrary.hero_skill_data_library[4][5].lightning_count[level]
+	var loop_count: int =lightning_count_list[level]
 	for i in loop_count:
-		var lightning_area: SkillConditionArea2D = preload("res://Scenes/Skills/robort_lighting_area.tscn").instantiate()
+		var lightning_area: SkillConditionArea2D = lightning_area_scene.instantiate()
 		lightning_area.position = release_position + Vector2(randf_range(-60,60),randf_range(-45,45))
 		Stage.instance.bullets.add_child(lightning_area)
 		await get_tree().create_timer(0.4,false).timeout
@@ -65,6 +70,6 @@ func release_raining():
 func _on_rain_shot_timer_timeout() -> void:
 	for body in enemy_condition_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var slow_buff: PropertyBuff = preload("res://Scenes/Buffs/Robort/robort_slowly_buff.tscn").instantiate()
+		var slow_buff: PropertyBuff = slow_buff_scene.instantiate()
 		enemy.buffs.add_child(slow_buff)
 	pass # Replace with function body.
