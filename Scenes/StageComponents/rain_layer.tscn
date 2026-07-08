@@ -243,7 +243,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.2, 0.5, 1.4)
 }
 
@@ -284,8 +284,8 @@ tracks/2/path = NodePath("../LightningLight:energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(2, 2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.2, 0, 2, -0.2, 0, 0.133333, 0, 1.2, -0.133333, 0, 0.633333, 0, 0, -0.633333, 0, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 1, 2.9)
 }
 
@@ -327,7 +327,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.365, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.35, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.73, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0.7, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1.1, 1.5, 3.4)
 }
 
@@ -348,6 +348,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bgwfv"]
 gradient = SubResource("Gradient_kfumg")
+width = 12
+height = 12
 
 [node name="RainLayer" type="Node2D"]
 
@@ -475,6 +477,8 @@ range_z_max = 5
 texture = SubResource("GradientTexture2D_bgwfv")
 
 [node name="LightningLight" type="PointLight2D" parent="."]
+position = Vector2(640, 599)
+scale = Vector2(91.8596, 91.8596)
 energy = 0.0
 range_z_min = -1
 range_z_max = 5
