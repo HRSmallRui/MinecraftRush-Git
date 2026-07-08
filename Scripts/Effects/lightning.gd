@@ -3,10 +3,11 @@ extends Line2D
 @export var point_array: PackedVector2Array
 
 @onready var delay_timer: Timer = $DelayTimer
+@onready var lightning_light: PointLight2D = $LightningLight
 
 
 func _ready() -> void:
-	
+	lightning_light.visible = Stage.instance.is_dark_time
 	pass
 
 

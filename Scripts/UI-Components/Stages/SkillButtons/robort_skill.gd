@@ -23,7 +23,7 @@ func _ready() -> void:
 	collision_shape_2d.position = target_collision.position
 	collision_shape_2d.shape = target_collision.shape
 	
-	level = Stage.instance.stage_sav.hero_sav[4].skill_levels[4]
+	level = Global.get_hero_skill_level(4)
 	robort_rain_layer.hide()
 	rain_timer.wait_time = rain_duration_list[level]
 	pass
