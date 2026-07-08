@@ -7,6 +7,7 @@ extends Soldier
 @export var immune_rate_list: Array[float]
 @export var return_damage_rate_list: Array[float]
 @export var defence_possible_list: Array[float]
+@export var dizness_buff_scene: PackedScene
 
 @onready var aoe_hit_audio: AudioStreamPlayer = $AoeHitAudio
 @onready var aoe_attack_area: Area2D = $UnitBody/AoeAttackArea
@@ -38,7 +39,7 @@ func frame_changed():
 			for body in aoe_attack_area.get_overlapping_bodies():
 				var enemy: Enemy = body.owner
 				if randf() < dizness_possible_list[soldier_skill_levels[0]-1]:
-					var dizness_buff: DiznessBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+					var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
 					dizness_buff.duration = 1.5
 					dizness_buff.buff_tag = "zombie_big_dizness"
 					enemy.buffs.add_child(dizness_buff)

@@ -1,5 +1,7 @@
 extends ShooterBullet
 
+@export var kill_effect_scene: PackedScene
+
 
 func _ready() -> void:
 	free_timer.wait_time = (target_position - self.global_position).length() / bullet_speed
@@ -10,7 +12,7 @@ func _ready() -> void:
 func enemy_take_damage(enemy: Enemy):
 	if enemy.enemy_type < Enemy.EnemyType.Super:
 		enemy.sec_kill(false)
-		var kill_effect: Node2D = preload("res://Scenes/Effects/red_sec_kill_effect.tscn").instantiate()
+		var kill_effect: Node2D = kill_effect_scene.instantiate()
 		kill_effect.position = enemy.hurt_box.global_position
 		kill_effect.scale *= 2
 		Stage.instance.bullets.add_child(kill_effect)

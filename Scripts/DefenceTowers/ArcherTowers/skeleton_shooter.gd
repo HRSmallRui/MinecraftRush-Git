@@ -1,8 +1,8 @@
 extends Shooter
 
 @export var skeleton_archer_tower: SkeletonArcherTower
-
-var sec_kill_arrow_scene: PackedScene = preload("res://Scenes/Bullets/skeleton_seckill_arrow.tscn")
+@export var kill_effect_scene: PackedScene
+@export var sec_kill_arrow_scene: PackedScene
 
 
 func anim_offset():
@@ -21,7 +21,7 @@ func summon_bullet(summon_pos: Vector2, target_pos: Vector2, bullet_scene: Packe
 			bullet_scene = sec_kill_arrow_scene
 			skeleton_archer_tower.current_sec_kill_possible = 0
 			AudioManager.instance.shoot_audio_2.play()
-			var kill_effect: Node2D = preload("res://Scenes/Effects/red_sec_kill_effect.tscn").instantiate()
+			var kill_effect: Node2D = kill_effect_scene.instantiate()
 			kill_effect.position = summon_pos
 			kill_effect.get_node("AnimationPlayer").speed_scale = 2
 			Stage.instance.bullets.add_child(kill_effect)

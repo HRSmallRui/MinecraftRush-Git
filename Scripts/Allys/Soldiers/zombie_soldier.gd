@@ -1,5 +1,8 @@
 extends Soldier
 
+@export var jade_die_damage_buff_scene: PackedScene
+@export var jade_die_heal_buff_scene: PackedScene
+
 @onready var jade_die_audio: AudioStreamPlayer = $JadeDieAudio
 @onready var jade_die_area: Area2D = $UnitBody/JadeDieArea
 
@@ -42,11 +45,11 @@ func frame_changed():
 		for ally_body in jade_die_area.get_overlapping_bodies():
 			var ally: Ally = ally_body.owner
 			if ally == self: continue
-			var jade_die_damage_buff: PropertyBuff = preload("res://Scenes/Buffs/TowerBuffs/jade_die_damage_buff.tscn").instantiate()
+			var jade_die_damage_buff: PropertyBuff = jade_die_damage_buff_scene.instantiate()
 			jade_die_damage_buff.duration = duration
 			jade_die_damage_buff.unit = ally
 			ally.buffs.add_child(jade_die_damage_buff)
-			var jade_die_heal_buff: HealBuff = preload("res://Scenes/Buffs/jade_die_heal_buff.tscn").instantiate()
+			var jade_die_heal_buff: HealBuff = jade_die_heal_buff_scene.instantiate()
 			jade_die_heal_buff.duration = duration
 			jade_die_heal_buff.unit = ally
 			ally.buffs.add_child(jade_die_heal_buff)
