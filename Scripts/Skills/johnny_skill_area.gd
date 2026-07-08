@@ -1,5 +1,9 @@
 extends SkillConditionArea2D
 
+@export var existing_time_list: Array[float]
+@export var ally_upgrade_buff_scene: PackedScene
+@export var tower_upgrade_buff_scene: PackedScene
+
 @onready var flag: Node2D = $Flag
 @onready var shadow: Sprite2D = $Shadow
 @onready var buff_effect: Sprite2D = $BuffEffect
@@ -8,7 +12,7 @@ extends SkillConditionArea2D
 
 
 func _ready() -> void:
-	duration_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[8][5].duration[skill_level]
+	duration_timer.wait_time = existing_time_list[skill_level]
 	flag.modulate.a = 0
 	flag.position.y -= 40
 	create_tween().tween_property(flag,"position:y",flag.position.y + 40, 0.3)
@@ -33,12 +37,12 @@ func _on_timer_timeout() -> void:
 func _on_shot_timer_timeout() -> void:
 	for body in get_overlapping_bodies():
 		var ally: Ally = body.owner
-		var upgrade_buff: PropertyBuff = preload("res://Scenes/Buffs/Johnny/johnny_upgrade_buff.tscn").instantiate()
+		var upgrade_buff: PropertyBuff = ally_upgrade_buff_scene.instantiate()
 		ally.buffs.add_child(upgrade_buff)
 	
 	for area in get_overlapping_areas():
 		if !area.owner is DefenceTower: continue
 		var tower: DefenceTower = area.owner
-		var upgrade_buff: TowerBuff = preload("res://Scenes/TowerBuffs/johnny_tower_buff.tscn").instantiate()
+		var upgrade_buff: TowerBuff = tower_upgrade_buff_scene.instantiate()
 		tower.tower_buffs.add_child(upgrade_buff)
 	pass # Replace with function body.

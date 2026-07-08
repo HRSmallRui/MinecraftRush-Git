@@ -11,6 +11,16 @@ enum SkillElements{
 @export_multiline var skill_intro_list: PackedStringArray
 @export var normal_texture_list: Array[Texture]
 @export var hover_texture_list: Array[Texture]
+@export_group("Fire")
+@export var fire_area_scene: PackedScene
+@export var fire_count_list: Array[int]
+@export_group("Water")
+@export var water_area_scene: PackedScene
+@export_group("Earth")
+@export var earth_area_scene: PackedScene
+@export var earth_count_list: Array[int]
+@export_group("Wind")
+@export var wind_area_scene: PackedScene
 
 var current_element: SkillElements
 var level: int
@@ -66,9 +76,9 @@ func change_element():
 
 func release_fire():
 	var mouse_pos: Vector2 = Stage.instance.get_local_mouse_position()
-	var fire_count: int = HeroSkillLibrary.hero_skill_data_library[9][5].fire_count[level]
+	var fire_count: int = fire_count_list[level]
 	for i in fire_count:
-		var fire_rock: Area2D = preload("res://Scenes/Skills/mike_fire_skill_area.tscn").instantiate()
+		var fire_rock: Area2D = fire_area_scene.instantiate()
 		fire_rock.position = mouse_pos
 		fire_rock.position += Vector2(randf_range(-40,40),randf_range(-28,28))
 		Stage.instance.bullets.add_child(fire_rock)
@@ -78,7 +88,7 @@ func release_fire():
 
 func release_water():
 	var mouse_pos: Vector2 = Stage.instance.get_local_mouse_position()
-	var water_area: SkillConditionArea2D = preload("res://Scenes/Skills/mike_water_area.tscn").instantiate()
+	var water_area: SkillConditionArea2D = water_area_scene.instantiate()
 	water_area.skill_level = level
 	water_area.position = mouse_pos
 	Stage.instance.bullets.add_child(water_area)
@@ -87,9 +97,9 @@ func release_water():
 
 func release_earth():
 	var mouse_pos: Vector2 = Stage.instance.get_local_mouse_position()
-	var count: int = HeroSkillLibrary.hero_skill_data_library[9][5].earth_count[level]
+	var count: int = earth_count_list[level]
 	for i in count:
-		var earth_area: Area2D = preload("res://Scenes/Skills/mike_earth_area.tscn").instantiate()
+		var earth_area: Area2D = earth_area_scene.instantiate()
 		earth_area.position = mouse_pos
 		earth_area.position += Vector2(randf_range(-40,40),randf_range(-28,28))
 		Stage.instance.bullets.add_child(earth_area)
@@ -99,7 +109,7 @@ func release_earth():
 
 func release_wind():
 	var mouse_pos: Vector2 = Stage.instance.get_local_mouse_position()
-	var wind_area: SkillConditionArea2D = preload("res://Scenes/Skills/mike_wind_area.tscn").instantiate()
+	var wind_area: SkillConditionArea2D = wind_area_scene.instantiate()
 	wind_area.position = mouse_pos
 	wind_area.skill_level = level
 	Stage.instance.bullets.add_child(wind_area)

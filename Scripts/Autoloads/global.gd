@@ -175,3 +175,10 @@ func get_bedrock_count(sav_slot: int) -> int:
 		var current_level_sav = sav.level_sav[level_count]
 		bedrock_count += current_level_sav[3]
 	return bedrock_count
+
+
+func get_hero_skill_level(hero_id: int) -> int:
+	var sav: GameSaver = get_game_sav()
+	if hero_id >= sav.hero_sav.size(): return 0
+	var hero_sav: HeroSavBlock = sav.hero_sav[hero_id]
+	return hero_sav.skill_levels[4]

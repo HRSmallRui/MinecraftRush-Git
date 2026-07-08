@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj34jrw72f8te"]
+[gd_scene load_steps=15 format=3 uid="uid://bj34jrw72f8te"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_ajhs1"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/mike_skill_button.gd" id="2_wpl8p"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://djpvkskc7xgha" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/water_using.png" id="8_umon2"]
 [ext_resource type="Texture2D" uid="uid://h1owpg4svuy6" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/earth_using.png" id="9_a7qbi"]
 [ext_resource type="Texture2D" uid="uid://cf5l1eifchu7p" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/wind_using.png" id="10_vb81y"]
+[ext_resource type="PackedScene" uid="uid://blw5uskyvcsc4" path="res://Scenes/Skills/mike_fire_skill_area.tscn" id="11_8xa1h"]
+[ext_resource type="PackedScene" uid="uid://d0kit0a3hqmel" path="res://Scenes/Skills/mike_water_area.tscn" id="12_nwu65"]
+[ext_resource type="PackedScene" uid="uid://cpjbsjlet4ai0" path="res://Scenes/Skills/mike_earth_area.tscn" id="13_kgooh"]
+[ext_resource type="PackedScene" uid="uid://81wyjq6isf0g" path="res://Scenes/Skills/mike_wind_area.tscn" id="14_yn2ki"]
 
 [node name="MikeSkillButton" instance=ExtResource("1_ajhs1")]
 script = ExtResource("2_wpl8p")
@@ -17,6 +21,12 @@ skill_name_list = PackedStringArray("天火", "海啸", "地震", "风刃")
 skill_intro_list = PackedStringArray("召唤烈火陨石从天而降，对敌人造成极大损伤。", "造成大范围真实伤害，大幅削弱并沉默所有敌人。", "造成大范围多段伤害，波及到的敌人均保持眩晕状态。", "造成大范围多段真实伤害，减速敌人并摧毁敌人护甲。")
 normal_texture_list = Array[Texture]([ExtResource("3_qqiu3"), ExtResource("4_dhmii"), ExtResource("5_slnca"), ExtResource("6_gact3")])
 hover_texture_list = Array[Texture]([ExtResource("4_402hj"), ExtResource("8_umon2"), ExtResource("9_a7qbi"), ExtResource("10_vb81y")])
+fire_area_scene = ExtResource("11_8xa1h")
+fire_count_list = Array[int]([3, 4, 5, 6])
+water_area_scene = ExtResource("12_nwu65")
+earth_area_scene = ExtResource("13_kgooh")
+earth_count_list = Array[int]([2, 3, 4, 5])
+wind_area_scene = ExtResource("14_yn2ki")
 skill_type = 2
 texture_normal = ExtResource("3_qqiu3")
 texture_select = ExtResource("4_402hj")
