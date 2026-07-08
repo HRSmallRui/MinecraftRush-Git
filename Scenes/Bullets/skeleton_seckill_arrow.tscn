@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://otqn6v85du1l"]
+[gd_scene load_steps=8 format=3 uid="uid://otqn6v85du1l"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_026au"]
 [ext_resource type="Script" path="res://Scripts/Bullets/skeleton_seckill_arrow.gd" id="2_gmfr2"]
 [ext_resource type="Texture2D" uid="uid://b6g465hmch6qg" path="res://Assets/Images/Bullets/skeleton_seckill_arrow.png" id="3_dm080"]
+[ext_resource type="PackedScene" uid="uid://d3nv8j6wrrk2i" path="res://Scenes/Effects/red_sec_kill_effect.tscn" id="3_lktmv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -16,6 +17,8 @@ colors = PackedColorArray(1, 0, 0, 0.717647, 1, 0, 0, 0)
 
 [node name="PhysicsArrow" instance=ExtResource("1_026au")]
 script = ExtResource("2_gmfr2")
+kill_effect_scene = ExtResource("3_lktmv")
+tail_max_length = 20
 move_type = 1
 bullet_speed = 2000.0
 

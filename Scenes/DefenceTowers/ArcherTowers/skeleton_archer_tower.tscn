@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://diml616l40lvc"]
+[gd_scene load_steps=138 format=3 uid="uid://diml616l40lvc"]
 
 [ext_resource type="PackedScene" uid="uid://dtyu2t5hq40nc" path="res://Scenes/DefenceTowers/ArcherTowers/archer_tower.tscn" id="1_c07ie"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_f4jaw"]
@@ -128,6 +128,8 @@
 [ext_resource type="Texture2D" uid="uid://dm2g1bv5wfiui" path="res://Assets/Animations/Archers/Skeleton/shoot_front_55.png" id="123_g3fod"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/ArcherTowers/skeleton_shooter.gd" id="124_nsvow"]
 [ext_resource type="PackedScene" uid="uid://dwaokbtnrpbwn" path="res://Scenes/Bullets/straight_arrow.tscn" id="127_y2cbb"]
+[ext_resource type="PackedScene" uid="uid://otqn6v85du1l" path="res://Scenes/Bullets/skeleton_seckill_arrow.tscn" id="128_3a5lt"]
+[ext_resource type="PackedScene" uid="uid://d3nv8j6wrrk2i" path="res://Scenes/Effects/red_sec_kill_effect.tscn" id="128_y7vlk"]
 [ext_resource type="Texture2D" uid="uid://ddbk3trym1jmw" path="res://Assets/Images/DefenceTowers/Archers/Towers/Skeleton-Front.png" id="129_40wgt"]
 
 [sub_resource type="Resource" id="Resource_5ynjd"]
@@ -582,6 +584,8 @@ offset = Vector2(-2, 0)
 flip_h = true
 script = ExtResource("124_nsvow")
 skeleton_archer_tower = NodePath("..")
+kill_effect_scene = ExtResource("128_y7vlk")
+sec_kill_arrow_scene = ExtResource("128_3a5lt")
 tower = NodePath("..")
 summon_frame = 35
 arrow_scene = ExtResource("127_y2cbb")
