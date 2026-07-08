@@ -1,8 +1,9 @@
-[gd_scene load_steps=85 format=3 uid="uid://xj5kikjy1d8l"]
+[gd_scene load_steps=86 format=3 uid="uid://xj5kikjy1d8l"]
 
 [ext_resource type="PackedScene" uid="uid://bdp6vlymmmpu3" path="res://Scenes/Allys/SummonAllys/summon_ally_class.tscn" id="1_2l7ri"]
 [ext_resource type="Script" path="res://Scripts/Allys/SummonAllys/undead_knight.gd" id="2_3ft8p"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="2_3goqf"]
+[ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="3_mptdw"]
 [ext_resource type="Texture2D" uid="uid://cu2f602ookavg" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_00.png" id="4_b50eo"]
 [ext_resource type="Texture2D" uid="uid://btv6r5mk8pj0f" path="res://Assets/Images/UI/InformationBar/UndeadKnight.png" id="4_mkiul"]
 [ext_resource type="Texture2D" uid="uid://chrbst852pwaq" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_01.png" id="5_gief1"]
@@ -410,6 +411,8 @@ shader_parameter/hue_shift = 0.368
 
 [node name="UndeadKnight" groups=["no_live", "undead"] instance=ExtResource("1_2l7ri")]
 script = ExtResource("2_3ft8p")
+dizness_buff_scene = ExtResource("3_mptdw")
+exist_time_list = Array[float]([10.0, 12.0, 14.0, 16.0])
 unit_list = Array[ExtResource("2_3goqf")]([SubResource("Resource_ekc3c"), SubResource("Resource_no04b"), SubResource("Resource_ia38y"), SubResource("Resource_oajsu")])
 heal_speed_list = Array[int]([4, 5, 6, 7])
 ally_name = "不死骑士"

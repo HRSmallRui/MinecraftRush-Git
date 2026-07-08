@@ -1,5 +1,8 @@
 extends SummonAlly
 
+@export var dizness_buff_scene: PackedScene
+@export var exist_time_list: Array[float]
+
 @onready var existing_timer: Timer = $ExistingTimer
 @onready var dizness_area: Area2D = $UnitBody/DiznessArea
 
@@ -11,11 +14,11 @@ func _ready() -> void:
 	modulate.a = 0
 	for body in dizness_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var dizness_buff: PropertyBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
 		dizness_buff.buff_tag = "knight_dizness"
 		dizness_buff.duration = 1
 		enemy.buffs.add_child(dizness_buff)
-	existing_timer.wait_time = HeroSkillLibrary.hero_skill_data_library[7][5].existing_time[level-1]
+	existing_timer.wait_time = exist_time_list[level-1]
 	var target_pos: Vector2 = position
 	position += Vector2(-40,0) if randi_range(0,1) == 0 else Vector2(40,0)
 	move(target_pos)
