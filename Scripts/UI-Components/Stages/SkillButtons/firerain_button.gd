@@ -1,8 +1,8 @@
 extends SkillButton
 
-@onready var navigation_agent: NavigationAgent2D = $NavigationComponent/NavigationAgent
+@export var fire_rock_scene: PackedScene
 
-var fire_rock_scene = preload("res://Scenes/Skills/fire_rock.tscn")
+@onready var navigation_agent: NavigationAgent2D = $NavigationComponent/NavigationAgent
 
 
 func _ready() -> void:
