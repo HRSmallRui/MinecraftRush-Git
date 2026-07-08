@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://de67d6qs1ggfr"]
+[gd_scene load_steps=9 format=3 uid="uid://de67d6qs1ggfr"]
 
 [ext_resource type="Texture2D" uid="uid://dq8mty37pvehc" path="res://Assets/Images/Effects/lightning.png" id="1_c5eem"]
 [ext_resource type="Script" path="res://Scripts/Effects/lightning.gd" id="2_o8lwa"]
@@ -9,7 +9,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate:a")
+tracks/0/path = NodePath("LightningLight:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,6 +33,17 @@ tracks/0/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.2, 0.5, 1)
 }
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightningLight:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.5, 1)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3y046"]
 _data = {
@@ -40,8 +51,17 @@ _data = {
 "shining": SubResource("Animation_51j3h")
 }
 
+[sub_resource type="Gradient" id="Gradient_xu70g"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n0vcm"]
+gradient = SubResource("Gradient_xu70g")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [node name="Lightning" type="Line2D"]
-modulate = Color(1, 1, 1, 0)
+light_mask = 0
 z_index = 1
 points = PackedVector2Array(0, 0, 0, -13, 105, -207, -62, -505, 51, -843, -49, -1237, 72, -1631, -45, -2205, 85, -2967, -229, -3811, 188, -4426)
 width = 80.0
@@ -64,5 +84,12 @@ libraries = {
 "": SubResource("AnimationLibrary_3y046")
 }
 autoplay = "shining"
+
+[node name="LightningLight" type="PointLight2D" parent="."]
+scale = Vector2(1.8116, 1.08836)
+energy = 0.0
+range_z_min = -1
+range_z_max = 5
+texture = SubResource("GradientTexture2D_n0vcm")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
