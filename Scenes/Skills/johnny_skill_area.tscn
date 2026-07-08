@@ -1,8 +1,10 @@
-[gd_scene load_steps=47 format=3 uid="uid://b8c0rmf807qqs"]
+[gd_scene load_steps=49 format=3 uid="uid://b8c0rmf807qqs"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/johnny_skill_area.gd" id="1_0vaib"]
+[ext_resource type="PackedScene" uid="uid://drlh0najrp1x8" path="res://Scenes/Buffs/Johnny/johnny_upgrade_buff.tscn" id="2_w0c7j"]
 [ext_resource type="AudioStream" uid="uid://35m3t347vj5j" path="res://Assets/Sounds/FXs/Heroes/Johnny/乔尼号角.wav" id="2_x4vh2"]
 [ext_resource type="Texture2D" uid="uid://cjwfi23pc7s78" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_00.png" id="3_4ofr8"]
+[ext_resource type="PackedScene" uid="uid://1x74x2fajlf4" path="res://Scenes/TowerBuffs/johnny_tower_buff.tscn" id="3_62uow"]
 [ext_resource type="Texture2D" uid="uid://dcd11m427a8v7" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_01.png" id="4_owvqr"]
 [ext_resource type="Texture2D" uid="uid://cnkuxiecl0ftc" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_02.png" id="5_lfes2"]
 [ext_resource type="Texture2D" uid="uid://cxfakmtdwbqsa" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_03.png" id="6_3ludt"]
@@ -181,6 +183,9 @@ scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 1048
 script = ExtResource("1_0vaib")
+existing_time_list = Array[float]([4.0, 6.0, 8.0, 10.0])
+ally_upgrade_buff_scene = ExtResource("2_w0c7j")
+tower_upgrade_buff_scene = ExtResource("3_62uow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.7)
