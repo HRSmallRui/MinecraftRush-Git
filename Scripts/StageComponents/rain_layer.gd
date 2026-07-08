@@ -34,6 +34,7 @@ enum RainStep{
 @onready var rain_step_label: Label = $RainStepLabel
 @onready var black_light: PointLight2D = $"../BlackLight"
 @onready var lightning_light: PointLight2D = $"../LightningLight"
+@onready var ally_hit_area: Area2D = $"../AllyHitArea"
 
 var current_rain_step: RainStep
 var rain_damage: int
@@ -157,6 +158,10 @@ func _on_timer_timeout() -> void:
 		var enemy: Enemy = box.owner
 		if "enderman" in enemy.get_groups() and enemy.enemy_state != Enemy.EnemyState.DIE:
 			enemy.take_damage(rain_damage,DataProcess.DamageType.TrueDamage,0,true)
+	for box in ally_hit_area.get_overlapping_areas():
+		var ally: Ally = box.owner
+		if "red_stone" in ally.get_groups() and ally.ally_state != Ally.AllyState.DIE:
+			ally.take_damage(rain_damage,DataProcess.DamageType.TrueDamage,0,true)
 	pass # Replace with function body.
 
 
