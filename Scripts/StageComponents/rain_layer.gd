@@ -11,6 +11,7 @@ enum RainStep{
 
 @export var start_rain_step: RainStep
 @export var step_color_list: Array[Color]
+@export_range(0,1,0.01) var step_energy_list: Array[float]
 @export var wave_step_list: Array[RainStep]
 @export var stop_rain: bool
 
@@ -19,7 +20,7 @@ enum RainStep{
 @onready var rain_big: Sprite2D = $RainBig
 @onready var rain_animation_player: AnimationPlayer = $RainAnimationPlayer
 @onready var rain_super: Sprite2D = $RainSuper
-@onready var black_mask: ColorRect = $BlackMask
+#@onready var black_mask: ColorRect = $BlackMask
 @onready var lightning_timer: Timer = $LightningTimer
 @onready var lightning_animation_player: AnimationPlayer = $LightningAnimationPlayer
 @onready var rain_audio_small: AudioStreamPlayer = $RainAudioSmall
@@ -31,6 +32,8 @@ enum RainStep{
 @onready var lightning_audio_3: AudioStreamPlayer = $LightningAudio3
 @onready var hit_area: Area2D = $"../HitArea"
 @onready var rain_step_label: Label = $RainStepLabel
+@onready var black_light: PointLight2D = $"../BlackLight"
+@onready var lightning_light: PointLight2D = $"../LightningLight"
 
 var current_rain_step: RainStep
 var rain_damage: int
@@ -43,6 +46,14 @@ func _ready() -> void:
 	rain_step_label.modulate.a = 0
 	if stop_rain:
 		Stage.instance.on_wining.connect(on_win)
+	
+	await get_tree().process_frame
+	var colli_shape: CollisionShape2D = Stage.instance.click_area.get_child(0) as CollisionShape2D
+	var shape: Shape2D = colli_shape.shape
+	black_light.position = colli_shape.global_position
+	lightning_light.position = colli_shape.global_position
+	black_light.scale = shape.get_rect().size
+	lightning_light.scale = shape.get_rect().size
 	pass
 
 
@@ -84,10 +95,10 @@ func translate_to_rain_step(rain_step: RainStep):
 	rain_audio_medium.play() if rain_step == RainStep.Medium else rain_audio_medium.stop()
 	rain_audio_big.play() if rain_step == RainStep.Big else rain_audio_big.stop()
 	rain_audio_super.play() if rain_step == RainStep.Super else rain_audio_super.stop()
-	create_tween().tween_property(black_mask,"color",step_color_list[rain_step],0.5)
 	
 	if current_rain_step != rain_step:
 		rain_label_animation()
+		create_tween().tween_property(black_light,"energy",step_energy_list[rain_step],0.5)
 	
 	current_rain_step = rain_step
 	pass
