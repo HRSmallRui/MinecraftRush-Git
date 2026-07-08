@@ -24,6 +24,14 @@ enum AllyType{
 	Heroes
 }
 
+enum CollisionLayerType
+{
+	AllyIdle,
+	AllyDead,
+	AllyHide,
+	AllyMove
+}
+
 @export var ally_id: int
 @export var ally_name: String
 @export var ally_level: int = 1
@@ -253,32 +261,26 @@ func translate_to_new_state(new_state: AllyState):
 			ally_sprite.play("idle")
 			intercepting_shape.disabled = false
 			#change_collision_layer(false)
-			body_collision.disabled = false
-			hurt_box.monitorable = true
+			change_collision_layer(CollisionLayerType.AllyIdle)
 		AllyState.MOVE:
 			#intercepting_shape.disabled = true
 			#change_collision_layer(true)
-			body_collision.disabled = true
-			hurt_box.monitorable = false
 			intercepting_area.position = station_position
+			change_collision_layer(CollisionLayerType.AllyMove)
 		AllyState.BATTLE:
 			ally_sprite.play("idle")
 			intercepting_shape.disabled = false
 			#change_collision_layer(false)
-			body_collision.disabled = false
-			hurt_box.monitorable = true
+			change_collision_layer(CollisionLayerType.AllyIdle)
 		AllyState.SPECIAL:
 			intercepting_shape.disabled = false
 			#change_collision_layer(false)
-			body_collision.disabled = false
-			hurt_box.monitorable = true
+			change_collision_layer(CollisionLayerType.AllyIdle)
 		AllyState.DIE:
 			ally_dead.emit()
 			waiting_to_move = false
 			intercepting_shape.disabled = true
-			change_collision_layer(true)
-			unit_body.set_collision_layer_value(8,true)
-			hurt_box.set_collision_layer_value(8,true)
+			change_collision_layer(CollisionLayerType.AllyDead)
 			enemy_list.clear()
 			
 			if Stage.instance.information_bar.current_check_member == self: Stage.instance.ui_process(null)
@@ -348,14 +350,7 @@ func rebirth():
 	ally_rebirth.emit()
 	waiting_to_move = false
 	ally_button.show()
-	unit_body.set_collision_layer_value(8,false)
-	hurt_box.set_collision_layer_value(8,false)
-	if is_fly:
-		unit_body.set_collision_layer_value(5,true)
-		hurt_box.set_collision_layer_value(5,true)
-	else:
-		unit_body.set_collision_layer_value(4,true)
-		hurt_box.set_collision_layer_value(4,true)
+	change_collision_layer(CollisionLayerType.AllyIdle)
 	translate_to_new_state(AllyState.IDLE)
 	current_data.health = start_data.health
 	move_back()
@@ -495,16 +490,6 @@ func attack_text_effect(text_array: Array[String] = ["铮！","锵！","唰！",
 	pass
 
 
-func change_collision_layer(invincible: bool):
-	if is_fly:
-		unit_body.set_collision_layer_value(5,!invincible)
-		hurt_box.set_collision_layer_value(5,!invincible)
-	else:
-		unit_body.set_collision_layer_value(4,!invincible)
-		hurt_box.set_collision_layer_value(4,!invincible)
-	pass
-
-
 func dodge():
 	TextEffect.text_effect_show("闪避",TextEffect.TextEffectType.Magic,hurt_box.global_position)
 	pass
@@ -549,4 +534,22 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 	var damage: int = randi_range(current_data.far_damage_low,current_data.far_damage_high)
 	var bullet: Bullet = summon_bullet(far_attack_bullet_scene,summon_pos,target_pos,damage,damage_type)
 	Stage.instance.bullets.add_child(bullet)
+	pass
+
+
+func change_collision_layer(target_layer_type: CollisionLayerType):
+	hurt_box.collision_layer = 0
+	unit_body.collision_layer = 0
+	var target_layer_id: int
+	match target_layer_type:
+		CollisionLayerType.AllyIdle:
+			target_layer_id = 5 if is_fly else 4
+		CollisionLayerType.AllyDead:
+			target_layer_id = 8
+		CollisionLayerType.AllyMove:
+			target_layer_id = 14 if is_fly else 13
+		CollisionLayerType.AllyHide:
+			target_layer_id = 16 if is_fly else 15
+	hurt_box.set_collision_layer_value(target_layer_id,true)
+	unit_body.set_collision_layer_value(target_layer_id,true)
 	pass
