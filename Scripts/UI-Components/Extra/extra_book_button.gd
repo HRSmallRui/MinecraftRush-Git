@@ -13,6 +13,9 @@ func on_update(content_title: String):
 func _ready() -> void:
 	text_label.text = book_config.title
 	ExtraBookUI.instance.update.connect(on_update)
+	if !Global.extra_sav_has_tag(ExtraBookUI.instance.extra_sav,book_config.unlock_tag):
+		disabled = true
+		text_label.text = "? ? ?"
 	pass
 
 

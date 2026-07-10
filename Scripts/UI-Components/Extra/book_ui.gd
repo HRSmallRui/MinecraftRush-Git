@@ -33,17 +33,16 @@ var extra_sav: ExtraSav
 
 func _init() -> void:
 	instance = self
+	extra_sav = Global.get_extra_sav()
+	if extra_sav == null:
+		extra_sav = ExtraSav.new()
+		Global.sav_extra_sav(extra_sav)
 	pass
 
 
 func _ready() -> void:
 	update.emit("野区其一")
 	update_tag_list.emit(ExtraBookTag.Areas)
-	
-	extra_sav = Global.get_extra_sav()
-	if extra_sav == null:
-		extra_sav = ExtraSav.new()
-		Global.sav_extra_sav(extra_sav)
 	pass
 
 
