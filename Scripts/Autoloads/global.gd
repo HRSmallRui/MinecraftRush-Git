@@ -182,3 +182,20 @@ func get_hero_skill_level(hero_id: int) -> int:
 	if hero_id >= sav.hero_sav.size(): return 0
 	var hero_sav: HeroSavBlock = sav.hero_sav[hero_id]
 	return hero_sav.skill_levels[4]
+
+
+func get_extra_sav() -> ExtraSav:
+	var extra_sav_path = "res://Savs/ExtraSav.res" if OS.is_debug_build() else "user://ExtraSav.res"
+	if OS.get_name() == "Android" : extra_sav_path = OS.get_user_data_dir() + "ExtraSav.res"
+	if not load(extra_sav_path): return null
+	return load(extra_sav_path) as ExtraSav
+
+func sav_extra_sav(extra_sav: ExtraSav):
+	var extra_sav_path = "res://Savs/ExtraSav.res" if OS.is_debug_build() else "user://ExtraSav.res"
+	if OS.get_name() == "Android" : extra_sav_path = OS.get_user_data_dir() + "ExtraSav.res"
+	ResourceSaver.save(extra_sav,extra_sav_path)
+	pass
+
+
+func extra_sav_has_tag(extra_sav: ExtraSav, tag: String) -> bool:
+	return extra_sav.content_unlocked_tag.has(tag)

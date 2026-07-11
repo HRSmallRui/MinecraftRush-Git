@@ -24,6 +24,7 @@ static var instance: ExtraContent
 @onready var ui_layer: CanvasLayer = $UILayer
 
 var ui_state: ExtraUIState = ExtraUIState.None
+var sav: UserSaver
 
 
 func _init() -> void:
@@ -32,6 +33,7 @@ func _init() -> void:
 
 
 func _ready() -> void:
+	sav = Global.get_user_sav()
 	await get_tree().create_timer(21.98,true,true).timeout
 	extra_loop.play()
 	pass
