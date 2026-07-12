@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://battap0mupbot"]
+[gd_scene load_steps=19 format=3 uid="uid://battap0mupbot"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/hot_wave.gdshader" id="1_8je0u"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/hot_wave_system.gd" id="1_b0anp"]
 [ext_resource type="Texture2D" uid="uid://cgjl6w6ehkvm2" path="res://Assets/Images/Stages/Stage8/stage8-based.png" id="1_s7iiu"]
+[ext_resource type="PackedScene" uid="uid://20aosok016ww" path="res://Scenes/Buffs/EnvironmentBuffs/heat_damage_low_buff.tscn" id="2_3rhun"]
+[ext_resource type="PackedScene" uid="uid://gmjmag6bwsin" path="res://Scenes/Buffs/EnvironmentBuffs/sun_against_buff.tscn" id="3_846yf"]
 
 [sub_resource type="Gradient" id="Gradient_ntn7l"]
 offsets = PackedFloat32Array(0.232044, 1)
@@ -130,6 +132,8 @@ process_mode = 3
 script = ExtResource("1_b0anp")
 offset_2 = 0.685217
 immune_groups = Array[String](["desert", "god", "no_live", "super_unit"])
+heat_damage_low_buff_scene = ExtResource("2_3rhun")
+heat_against_damage_buff_scene = ExtResource("3_846yf")
 
 [node name="BasedSprite" type="Sprite2D" parent="."]
 visible = false

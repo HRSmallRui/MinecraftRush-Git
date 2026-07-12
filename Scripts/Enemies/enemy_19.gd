@@ -24,7 +24,7 @@ func frame_changed():
 
 func on_normal_attack_hit(target_ally: Ally):
 	var hunger_buff: DotBuff = hunger_buff_scene.instantiate()
-	hunger_buff.unit = current_intercepting_units[0]
+	hunger_buff.unit = target_ally
 	target_ally.buffs.add_child(hunger_buff)
 	pass
 

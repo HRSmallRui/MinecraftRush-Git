@@ -3,6 +3,7 @@ class_name UnitData
 
 signal hurt(damage:int)
 signal die(explosion: bool)
+signal on_take_damage(damage_event_data: DamageEventData)
 
 @export var health: int ##生命值，初始数据为最大生命值，当前数据为当前生命值
 @export var dodge_rate: float = 0 ##闪避率
@@ -104,6 +105,8 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 			if owner.enemy_type == Enemy.EnemyType.Small: die.emit(explosion)
 			else: die.emit(false)
 	else: hurt.emit(total_damage)
+	var damage_event: DamageEventData = DamageEventData.new(damage,total_damage,damage_type,broken_rate,far_attack,source,explosion,deadly)
+	on_take_damage.emit(damage_event)
 	pass
 
 
