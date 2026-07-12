@@ -27,10 +27,8 @@ func wave_tip(wave_count: int):
 
 func play_explosion(markers: Array[Marker2D]):
 	for marker in markers:
-		var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		explosion_effect.position = marker.global_position
-		explosion_effect.scale *= 2
-		Stage.instance.bullets.add_child(explosion_effect)
+		EffectManager.instance.play_explosion_effect(marker.global_position,Vector2.ONE*2)
+		EffectManager.instance.play_smoke_effect(marker.global_position,Vector2.ONE*2)
 		AudioManager.instance.play_explosion_audio()
 		Stage.instance.stage_camera.shake(10)
 		await get_tree().create_timer(0.2,false).timeout

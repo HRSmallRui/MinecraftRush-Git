@@ -1162,7 +1162,7 @@ chapter1_preload = false
 chapter4_hating_preload = true
 chapter4_other_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(1372, 1518)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -1459,7 +1459,7 @@ bus = &"Sound"
 position = Vector2(-3.02893, -1.10567)
 shape = SubResource("RectangleShape2D_8w3fb")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_fmsdl")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1664,9 +1664,6 @@ offset_bottom = 390.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(-5, 63, 118, 81, 235, 125, 374, 216, 417, 239, 421, -3, 512, -3, 506, 140, 508, 231, 542, 379, 572, 480, 629, 574, 724, 649, 859, 717, 900, 733, 940, 713, 1000, 659, 1054, 554, 1112, 485, 1171, 409, 1251, 365, 1339, 337, 1441, 309, 1580, 304, 1737, 324, 1858, 331, 1919, 321, 1940, 419, 1880, 423, 1786, 418, 1608, 402, 1458, 396, 1368, 408, 1253, 458, 1185, 532, 1130, 616, 1084, 695, 1043, 743, 992, 779, 996, 795, 1043, 833, 1096, 885, 1141, 919, 1185, 1000, 1215, 1034, 1253, 1114, 1276, 1240, 1316, 1396, 1386, 1471, 1443, 1543, 1456, 1596, 1456, 1606, 1371, 1606, 1360, 1580, 1313, 1532, 1267, 1483, 1228, 1404, 1201, 1330, 1179, 1230, 1161, 1140, 1152, 1085, 1080, 984, 978, 886, 838, 806, 715, 753, 622, 685, 585, 660, 521, 578, 482, 507, 446, 392, 432, 329, 383, 318, 282, 278, 208, 221, 140, 183, 45, 162, -7, 155)
 
-[node name="HeroSummonMarker" parent="." index="20"]
-position = Vector2(1369, 1523)
-
 [node name="Stage12StoryLayer" parent="." index="21" instance=ExtResource("4_ivxmj")]
 
 [node name="PathConfigLoadProcess" type="Node" parent="." index="22" node_paths=PackedStringArray("enemy_parent_node")]
@@ -1686,6 +1683,9 @@ script = ExtResource("53_uqegn")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 15
 process_summon_blocks = Array[ExtResource("32_3xae8")]([ExtResource("32_agaf2"), ExtResource("33_ae5dv"), ExtResource("34_6rxa8"), ExtResource("35_fwnq0"), ExtResource("36_txv3u"), ExtResource("37_fpobh"), ExtResource("38_4e1ei"), ExtResource("39_2m1xl"), ExtResource("40_jawl4")])
+
+[node name="HeroSummonMarker" parent="." index="24"]
+position = Vector2(1369, 1523)
 
 [connection signal="input_event" from="Background/CARRION/ClickArea" to="Background/CARRION" method="_on_click_area_input_event"]
 [connection signal="input_event" from="Background/CamFire/ClickArea" to="Background/CamFire" method="_on_click_area_input_event"]

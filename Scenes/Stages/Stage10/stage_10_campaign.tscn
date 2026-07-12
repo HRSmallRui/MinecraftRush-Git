@@ -1049,7 +1049,7 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 position = Vector2(182, 36)
 wave_dust_show_time = Array[float]([0.0, 0.0, 4.0, 0.0, 6.0, 0.0, 8.0, 10.0, 8.0, 0.0, 6.0, 0.0, 6.0, 0.0, 8.0])
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_ov1ka")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1301,9 +1301,6 @@ polygon = PackedVector2Array(2123, 558, 2011, 573, 1895, 572, 1817, 562, 1739, 5
 polygon = PackedVector2Array(856, 432, 900, 477, 972, 524, 1080, 567, 1031, 649, 986, 629, 905, 593, 830, 530, 793, 483)
 disabled = true
 
-[node name="HeroSummonMarker" parent="." index="19"]
-position = Vector2(72, 494)
-
 [node name="SpecialTowersUnlockUI" parent="." index="21" instance=ExtResource("10_jeht1")]
 show_texture = ExtResource("11_trdwa")
 show_name = "大刀教会"
@@ -1314,6 +1311,9 @@ script = ExtResource("42_v1hss")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 15
 process_summon_blocks = Array[ExtResource("20_0sulw")]([ExtResource("10_lwwcf"), ExtResource("12_0o1bo"), ExtResource("13_cj3q6"), ExtResource("14_b5sud"), ExtResource("15_ygany"), ExtResource("16_65sb2"), ExtResource("17_awvb0"), ExtResource("18_fghsm"), ExtResource("19_yv8wj"), ExtResource("20_5i0qu"), ExtResource("21_052c2"), ExtResource("22_u5jk6")])
+
+[node name="HeroSummonMarker" parent="." index="23"]
+position = Vector2(72, 494)
 
 [connection signal="input_event" from="Background/Remilia/ClickArea" to="Background/Remilia" method="_on_click_area_input_event"]
 [connection signal="input_event" from="Background/SunShine/ClickArea" to="Background/SunShine" method="_on_click_area_input_event"]
