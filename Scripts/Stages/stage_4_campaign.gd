@@ -59,11 +59,8 @@ func left_road_appear():
 
 func explosion_animation(explosion_marker_list: Array[Marker2D]):
 	for explosion_marker in explosion_marker_list:
-		var effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		effect.position = explosion_marker.global_position
-		effect.scale *= 3
+		EffectManager.instance.play_explosion_effect(explosion_marker.global_position,Vector2.ONE*3)
 		stage_camera.shake(10)
-		allys.add_child(effect)
 		AudioManager.instance.play_explosion_audio()
 		await get_tree().create_timer(0.25,false).timeout
 		firerain_random_region_right.enabled = true
