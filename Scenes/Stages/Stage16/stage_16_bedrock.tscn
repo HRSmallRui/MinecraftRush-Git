@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://esaasrl7nw7n"]
+[gd_scene load_steps=47 format=3 uid="uid://esaasrl7nw7n"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_gw46f"]
 [ext_resource type="PackedScene" uid="uid://dmru61x2gae2m" path="res://Scenes/Enemies/enemy_45.tscn" id="2_d65c0"]
@@ -34,6 +34,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c02ib"]
 size = Vector2(2100, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrdte"]
+size = Vector2(2164, 1261)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nmlan"]
 vertices = PackedVector2Array(445.906, 254.078, 503.031, -6.9375, 1837.19, 2.89063, 1769.27, 208.703, 372.547, 1185.08, 317.438, 993.703, -14.8438, 1006.6, -6.11719, 404.641, 284.68, 361.563, 2130.91, 216.773, 2122.08, 1203.89)
@@ -114,7 +117,7 @@ unlocked_tower_list = [false, true, false, true]
 chapter1_preload = false
 chapter5_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(113, 690)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -150,14 +153,15 @@ start_rain_step = 1
 step_color_list = Array[Color]([Color(0, 0, 0, 0), Color(0, 0, 0, 0.275), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0)])
 wave_step_list = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="BlackMask" parent="Background/RainLayer/RainLayer" index="0"]
-color = Color(0, 0, 0, 0.27451)
-
-[node name="RainStepLabel" parent="Background/RainLayer/RainLayer" index="17"]
+[node name="RainStepLabel" parent="Background/RainLayer/RainLayer" index="15"]
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" parent="Background/RainLayer/HitArea" index="0"]
 shape = null
+
+[node name="CollisionShape2D" parent="Background/RainLayer/AllyHitArea" index="0"]
+position = Vector2(1044, 597)
+shape = SubResource("RectangleShape2D_nrdte")
 
 [node name="Lilies" type="Node2D" parent="Background" index="4"]
 y_sort_enabled = true
@@ -211,7 +215,7 @@ position = Vector2(1626, 1122)
 [node name="RedLily6" parent="Background/Lilies" index="14" instance=ExtResource("9_hbr3o")]
 position = Vector2(777, 924)
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_nmlan")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -356,9 +360,6 @@ offset_bottom = 828.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(-2, 678, 61, 653, 178, 643, 360, 652, 561, 657, 751, 619, 898, 552, 1011, 469, 1059, 347, 1108, 161, 1152, 99, 1281, 33, 1346, -5, 1464, -3, 1442, 37, 1345, 104, 1219, 155, 1170, 262, 1138, 393, 1091, 478, 1154, 494, 1232, 545, 1286, 606, 1327, 646, 1400, 740, 1473, 789, 1545, 821, 1652, 826, 1744, 811, 1821, 751, 1871, 673, 1943, 600, 1993, 552, 2102, 535, 2101, 621, 2049, 634, 1987, 668, 1928, 750, 1858, 834, 1787, 885, 1702, 911, 1595, 911, 1483, 890, 1396, 843, 1319, 776, 1247, 688, 1177, 615, 1135, 579, 1042, 547, 975, 614, 857, 673, 685, 725, 556, 739, 407, 737, 294, 730, 192, 730, 121, 728, -3, 784)
 
-[node name="HeroSummonMarker" parent="." index="20"]
-position = Vector2(113, 688)
-
 [node name="PathConfigLoadProcess" type="Node" parent="." index="21" node_paths=PackedStringArray("enemy_parent_node")]
 script = ExtResource("22_gdufq")
 enemy_parent_node = NodePath("../Enemies")
@@ -376,5 +377,8 @@ script = ExtResource("27_1wfsk")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 1
 process_summon_blocks = Array[ExtResource("24_38plp")]([ExtResource("10_c68fy"), ExtResource("11_kr75f"), ExtResource("12_v02in"), ExtResource("13_tdc6g"), ExtResource("14_ffkty"), ExtResource("15_tvao5")])
+
+[node name="HeroSummonMarker" parent="." index="24"]
+position = Vector2(113, 688)
 
 [editable path="Background/RainLayer"]

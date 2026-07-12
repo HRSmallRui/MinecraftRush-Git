@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://be2c615bkcde"]
+[gd_scene load_steps=119 format=3 uid="uid://be2c615bkcde"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_6xx03"]
 [ext_resource type="PackedScene" uid="uid://dk7q4k0117mlj" path="res://Scenes/Enemies/enemy_10.tscn" id="2_kwicb"]
@@ -218,6 +218,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cjc0"]
 size = Vector2(3233, 1474)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r8to"]
+size = Vector2(3251, 1497)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psnp3"]
 animations = [{
@@ -449,7 +452,7 @@ stage_summon_config = SubResource("Resource_n0r0h")
 chapter1_preload = false
 chapter2_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(2237, 684)
 min_zoom_length_desktop = 0.75
 
@@ -641,6 +644,10 @@ wave_step_list = Array[int]([1])
 position = Vector2(1606.5, 727)
 shape = SubResource("RectangleShape2D_6cjc0")
 
+[node name="CollisionShape2D" parent="Background/S7RainLayer/AllyHitArea" index="0"]
+position = Vector2(1599, 716)
+shape = SubResource("RectangleShape2D_5r8to")
+
 [node name="LakePops" type="Node2D" parent="Background" index="9"]
 
 [node name="LakePop" type="AnimatedSprite2D" parent="Background/LakePops" index="0" node_paths=PackedStringArray("linked_rain_system")]
@@ -806,7 +813,7 @@ scale = Vector2(0.569332, 0.569332)
 texture = ExtResource("40_io6gv")
 offset = Vector2(1, -29)
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_vkp47")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1111,13 +1118,7 @@ enemy_parent_node = NodePath("../../Enemies")
 config_path_front = "res://Library/SummonConfigs/Stage7/Bedrock/"
 loading_count = 12
 
-[node name="HeroSummonMarker" parent="." index="20"]
+[node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(3159, 280)
-
-[node name="ColorRect" parent="BlackColor" index="0"]
-offset_left = 6.0
-offset_top = -3.0
-offset_right = 6.0
-offset_bottom = -3.0
 
 [editable path="Background/S7RainLayer"]
