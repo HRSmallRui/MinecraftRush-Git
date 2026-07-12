@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var explosion_scene: PackedScene
+@export var smoke_scene: PackedScene
+
 @onready var tnt_sprite: Sprite2D = $TNTSprite
 @onready var tail: Line2D = $Tail
 
@@ -11,12 +14,12 @@ func _ready() -> void:
 	var fly_tween: Tween = create_tween()
 	fly_tween.tween_property(tnt_sprite,"position",Vector2.ZERO,0.4)
 	fly_tween.finished.connect(func():
-		var explosion_effect:AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
+		var explosion_effect:AnimatedSprite2D = explosion_scene.instantiate()
 		explosion_effect.position = position
 		explosion_effect.scale *= 2
 		explosion_effect.z_index += 1
 		Stage.instance.bullets.add_child(explosion_effect)
-		var smoke_effect: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
+		var smoke_effect: AnimatedSprite2D = smoke_scene.instantiate()
 		smoke_effect.position = position
 		smoke_effect.scale *= 2
 		smoke_effect.z_index += 1

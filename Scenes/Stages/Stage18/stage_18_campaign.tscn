@@ -1,8 +1,9 @@
-[gd_scene load_steps=324 format=3 uid="uid://bqype6cmky022"]
+[gd_scene load_steps=325 format=3 uid="uid://bqype6cmky022"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_25fh1"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_18_campaign.gd" id="2_inavp"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_rut86"]
+[ext_resource type="PackedScene" uid="uid://bwut370axv31c" path="res://Scenes/Effects/destroy_wall_effect.tscn" id="3_2m0wd"]
 [ext_resource type="AudioStream" uid="uid://bdthvsar8ir28" path="res://Assets/Sounds/Music/高山-准备2.mp3" id="3_06e7d"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="3_mmkyp"]
 [ext_resource type="PackedScene" uid="uid://86c75yb50mgo" path="res://Scenes/Classes/loop_music_player.tscn" id="4_0p17e"]
@@ -1254,13 +1255,14 @@ enemy_tower_list = [NodePath("Background/SkeletonWallShooterTower4"), NodePath("
 explosion_marker_list = [NodePath("Background/ExplosionMarker1"), NodePath("Background/ExplosionMarker2"), NodePath("Background/ExplosionMarker3"), NodePath("Background/ExplosionMarker4")]
 later_disable_path_list = [NodePath("Enemies/EnemyPath"), NodePath("Enemies/EnemyPath2"), NodePath("Enemies/EnemyPath3"), NodePath("Enemies/EnemyPath4"), NodePath("Enemies/EnemyPath5"), NodePath("Enemies/EnemyPath6")]
 later_enable_path_list = [NodePath("Enemies/EnemyPath7"), NodePath("Enemies/EnemyPath8"), NodePath("Enemies/EnemyPath9"), NodePath("Enemies/EnemyPath10"), NodePath("Enemies/EnemyPath11"), NodePath("Enemies/EnemyPath12"), NodePath("Enemies/EnemyPath13"), NodePath("Enemies/EnemyPath14"), NodePath("Enemies/EnemyPath15")]
+destroy_wall_scene = ExtResource("3_2m0wd")
 stage_count = 18
 enemy_scene_list = Array[PackedScene]([ExtResource("3_mmkyp"), ExtResource("4_rq8d8"), ExtResource("5_8g1il"), ExtResource("6_2irj7"), ExtResource("7_ncoy6"), ExtResource("8_cubo8"), ExtResource("9_vtljt"), ExtResource("10_4kv2o"), ExtResource("11_hfo7t"), ExtResource("12_0eudx")])
 current_money = 500
 total_waves = 15
 stage_summon_config = SubResource("Resource_vy2w1")
 
-[node name="StageCamera" parent="." index="2" node_paths=PackedStringArray("move_limit_shape")]
+[node name="StageCamera" parent="." index="3" node_paths=PackedStringArray("move_limit_shape")]
 position = Vector2(3109, 569)
 move_limit_shape = NodePath("CollisionShape2D2")
 
@@ -1720,7 +1722,7 @@ region_rect = Rect2(194, 273, 174, 61)
 position = Vector2(0, -25.5)
 shape = SubResource("RectangleShape2D_va6p1")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_21vye")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -2106,9 +2108,6 @@ position = Vector2(889, 472)
 [node name="CameraMarker" type="Marker2D" parent="." index="23"]
 position = Vector2(1252, 849)
 
-[node name="HeroSummonMarker" parent="." index="24"]
-position = Vector2(3139, 583)
-
 [node name="HatingShellConditionArea" type="Area2D" parent="." index="25"]
 collision_layer = 0
 collision_mask = 120
@@ -2123,6 +2122,9 @@ script = ExtResource("151_omxjd")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 15
 process_summon_blocks = Array[ExtResource("152_21mkh")]([ExtResource("126_w1xfl"), ExtResource("127_xjwck"), ExtResource("128_kjwbu"), ExtResource("129_mye2p"), ExtResource("130_rngw1"), ExtResource("131_ugdsd"), ExtResource("132_dw6fp"), ExtResource("133_jatl8"), ExtResource("134_hgsmv"), ExtResource("135_yk4um"), ExtResource("136_65hft"), ExtResource("137_c0qbc"), ExtResource("138_o1hq3"), ExtResource("139_wog0l"), ExtResource("140_mwovx")])
+
+[node name="HeroSummonMarker" parent="." index="27"]
+position = Vector2(3139, 583)
 
 [connection signal="input_event" from="Background/KinitoPet" to="Background/KinitoPet" method="_on_input_event"]
 
