@@ -13,6 +13,12 @@ extends Stage
 @export var right_path_mask: Sprite2D
 @export var right_explosion_markers: Array[Marker2D]
 
+@export_group("Story")
+@export var story_layer_scene: PackedScene
+@export var rain_layer_scene: PackedScene
+@export var final_boss_scene: PackedScene
+@export var boss_scene: PackedScene
+
 @onready var boss_path: EnemyPath = $Enemies/BossPath
 
 var stage_step: int = 0
@@ -45,15 +51,15 @@ func win(wait_time: float = 3):
 
 
 func after_boss_defeat():
-	var stage_story_layer: StoryLayer = preload("res://Scenes/Stages/Stage15/stage_15_story_layer.tscn").instantiate()
+	var stage_story_layer: StoryLayer = story_layer_scene.instantiate()
 	add_child(stage_story_layer)
 	create_tween().tween_property(boss_music,"volume_db",-80,1)
 	
 	await get_tree().create_timer(14,false).timeout
-	var rain_layer: Node2D = preload("res://Scenes/Stages/Stage15/stage_15_layer.tscn").instantiate()
+	var rain_layer: Node2D = rain_layer_scene.instantiate()
 	background.add_child(rain_layer)
 	await get_tree().create_timer(3,false).timeout
-	var final_boss: Enemy = preload("res://Scenes/Enemies/hating_emperor_story.tscn").instantiate()
+	var final_boss: Enemy = final_boss_scene.instantiate()
 	enemies.get_child(-1).add_child(final_boss)
 	var pos: Vector2 = enemies.get_child(-1).get_child(0).position
 	final_boss.position = pos
@@ -62,7 +68,7 @@ func after_boss_defeat():
 
 func summon_boss():
 	await get_tree().create_timer(5,false).timeout
-	var boss: Enemy = preload("res://Scenes/Enemies/enemy_57.tscn").instantiate()
+	var boss: Enemy = boss_scene.instantiate()
 	boss_path.add_child(boss)
 	for enemy_path: EnemyPath in enemies.get_children():
 		enemy_path.wave_summon(current_wave+1)
@@ -107,12 +113,8 @@ func open_path_right():
 
 func explosion(marker_list: Array[Marker2D]):
 	for marker in marker_list:
-		var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		explosion_effect.position = marker.global_position
-		Stage.instance.bullets.add_child(explosion_effect)
-		var smoke_effect: AnimatedSprite2D = preload("res://Scenes/Effects/smoke_effect.tscn").instantiate()
-		smoke_effect.position = marker.global_position
-		Stage.instance.bullets.add_child(smoke_effect)
+		EffectManager.instance.play_explosion_effect(marker.global_position)
+		EffectManager.instance.play_smoke_effect(marker.global_position)
 		AudioManager.instance.play_explosion_audio()
 		await get_tree().create_timer(0.2,false).timeout
 	pass
