@@ -34,6 +34,7 @@ enum VersionType{
 #res://Savs/Sav
 var current_sav_slot: int = 1
 var cursor_show: bool
+var stage_first: bool = true
 
 
 func start_load():

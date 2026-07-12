@@ -64,6 +64,8 @@ func _init() -> void:
 
 
 func _ready() -> void:
+	Global.stage_first = true
+	
 	if OS.get_name() == "Android":
 		camera.zoom *= 1.5
 		button_groups.scale *= 1.2

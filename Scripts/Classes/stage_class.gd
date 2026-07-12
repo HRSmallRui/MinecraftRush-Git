@@ -116,6 +116,7 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	Global.stage_first = false
 	zoom_slider.hide()
 	zoom_button.hide()
 	#save_button.visible = OS.is_debug_build()
