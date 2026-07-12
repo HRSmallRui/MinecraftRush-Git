@@ -95,7 +95,7 @@ func _on_heat_timer_timeout() -> void:
 			var damage: int = 0 if current_hot_sun_step == HotSunStep.Small else 1
 			ally.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false)
 			ally.buffs.add_child(damage_buff)
-		if ally.get_groups().has("robot"):
+		if ally.get_groups().has("robot") or ally.get_groups().has("metal"):
 			var against_buff: AgainstDamageBuff = heat_against_damage_buff_scene.instantiate()
 			against_buff.buff_level = 1 if current_hot_sun_step == HotSunStep.Small else 2
 			ally.buffs.add_child(against_buff)

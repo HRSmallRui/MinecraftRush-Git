@@ -18,6 +18,12 @@ enum AgainstType
 @export var against_deadly: bool = true
 
 
+func buff_start():
+	super()
+	data_owner.on_take_damage.connect(on_owner_take_damage)
+	pass
+
+
 func on_owner_take_damage(damage_event: DamageEventData):
 	if unit is Ally:
 		if unit.ally_state == Ally.AllyState.DIE: return
@@ -34,8 +40,9 @@ func on_owner_take_damage(damage_event: DamageEventData):
 			against_damage = damage_event.final_damage if use_final_damage else damage_event.raw_damage
 			against_damage *= against_rate_list[buff_level-1]
 	
-	if unit is Ally:
-		unit.take_damage(against_damage,against_damage_type,against_broken_rate,false,null,against_explosion,false,against_deadly)
-	if unit is Enemy:
-		unit.take_damage(against_damage,against_damage_type,against_broken_rate,false,null,against_explosion,false,against_deadly)
+	if source is Ally:
+		source.take_damage(against_damage,against_damage_type,against_broken_rate,false,null,against_explosion,false,against_deadly)
+	if source is Enemy:
+		source.take_damage(against_damage,against_damage_type,against_broken_rate,false,null,against_explosion,false,against_deadly)
+		print("against_enemy")
 	pass
