@@ -1077,7 +1077,7 @@ current_money = 800
 total_waves = 16
 stage_summon_config = SubResource("Resource_ofy7u")
 
-[node name="StageCamera" parent="." index="2" node_paths=PackedStringArray("move_limit_shape")]
+[node name="StageCamera" parent="." index="3" node_paths=PackedStringArray("move_limit_shape")]
 position = Vector2(3480, 455)
 move_limit_shape = NodePath("CollisionShape2D2")
 
@@ -1232,7 +1232,7 @@ bus = &"Sound"
 visible = false
 texture = ExtResource("57_qipi7")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_l5aqg")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1593,9 +1593,6 @@ enemy_parent_node = NodePath("../Enemies")
 config_path_front = "res://Library/SummonConfigs/Stage19/Campaign"
 loading_count = 12
 
-[node name="HeroSummonMarker" parent="." index="23"]
-position = Vector2(3480, 457)
-
 [node name="TowerConditionArea" type="Area2D" parent="." index="24"]
 position = Vector2(0, 1026)
 collision_layer = 0
@@ -1619,5 +1616,8 @@ script = ExtResource("62_0onwt")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 16
 process_summon_blocks = Array[ExtResource("61_yedcf")]([ExtResource("55_88lyq"), ExtResource("56_6ecgx"), ExtResource("57_h610p"), ExtResource("58_tac0j"), ExtResource("59_uwk2m"), ExtResource("60_0mame"), ExtResource("61_sijgg"), ExtResource("62_4bq03"), ExtResource("63_5ic73"), ExtResource("64_0lk3h"), ExtResource("65_0cvml"), ExtResource("66_se2hl")])
+
+[node name="HeroSummonMarker" parent="." index="29"]
+position = Vector2(3480, 457)
 
 [connection signal="input_event" from="Background/Lawyer" to="Background/Lawyer" method="_on_input_event"]

@@ -1,5 +1,6 @@
 extends Stage
 
+@export var magic_defence_tip_scene: PackedScene
 
 @onready var explosion_marker: Marker2D = $ExplosionMarker
 
@@ -14,13 +15,11 @@ func _ready() -> void:
 func wave_tip(wave_count: int):
 	match wave_count:
 		7:
-			tips_container.add_child(preload("res://Scenes/UI-Components/TipButtons/magic_defence_tip_button.tscn").instantiate())
+			tips_container.add_child(magic_defence_tip_scene.instantiate())
 		9:
 			await get_tree().create_timer(15,false).timeout
-			var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-			explosion_effect.position = explosion_marker.global_position
-			explosion_effect.scale *= 3
-			bullets.add_child(explosion_effect)
+			EffectManager.instance.play_explosion_effect(explosion_marker.global_position,Vector2.ONE*3)
+			EffectManager.instance.play_smoke_effect(explosion_marker.global_position,Vector2.ONE*3)
 			AudioManager.instance.play_explosion_audio()
 			stage_camera.position = explosion_marker.position
 	pass

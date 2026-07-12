@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwut370axv31c"]
+[gd_scene load_steps=7 format=3 uid="uid://bwut370axv31c"]
 
 [ext_resource type="Script" path="res://Scripts/Effects/destroy_wall_effect.gd" id="1_byj81"]
+[ext_resource type="PackedScene" uid="uid://blf6tdqaj673m" path="res://Scenes/Effects/bullet_explosion_effect.tscn" id="2_grj31"]
 [ext_resource type="Texture2D" uid="uid://l28307nifl11" path="res://Assets/Images/Bullets/炮弹LV3.png" id="2_mg5gb"]
+[ext_resource type="PackedScene" uid="uid://bf25ajrac2ijx" path="res://Scenes/Effects/smoke_effect.tscn" id="3_0sqkh"]
 
 [sub_resource type="Curve" id="Curve_84ech"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -13,6 +15,8 @@ colors = PackedColorArray(1, 1, 1, 0.741176, 1, 1, 1, 0)
 [node name="DestroyWallEffect" type="Node2D"]
 z_index = 1
 script = ExtResource("1_byj81")
+explosion_scene = ExtResource("2_grj31")
+smoke_scene = ExtResource("3_0sqkh")
 
 [node name="TNTSprite" type="Sprite2D" parent="."]
 rotation = -0.785398

@@ -1216,7 +1216,7 @@ chapter4_hating_preload = true
 chapter4_illager_preload = true
 chapter4_other_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(3121, 1146)
 min_zoom_length_desktop = 0.6
 
@@ -1679,7 +1679,7 @@ position = Vector2(1820, 858)
 [node name="Marker2D6" type="Marker2D" parent="Background/ExplosionMarkers2" index="5"]
 position = Vector2(1820, 1064)
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_x21wf")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1926,10 +1926,6 @@ visible = false
 position = Vector2(1922, 494)
 based_skin = 1
 
-[node name="CollisionShape2D" parent="ClickArea" index="0"]
-position = Vector2(1605, 909.5)
-shape = SubResource("RectangleShape2D_a3y0h")
-
 [node name="HouseFrontMask" type="Sprite2D" parent="." index="14" node_paths=PackedStringArray("center_wave_button", "left_wave_button", "right_wave_button", "wave_panel_center", "wave_panel_left", "wave_panel_right")]
 y_sort_enabled = true
 position = Vector2(782, 923)
@@ -2000,6 +1996,10 @@ position = Vector2(-367, -881)
 
 [node name="PanelRightInside" type="Marker2D" parent="HouseFrontMask" index="14"]
 position = Vector2(337, -879)
+
+[node name="CollisionShape2D" parent="ClickArea" index="0"]
+position = Vector2(1605, 909.5)
+shape = SubResource("RectangleShape2D_a3y0h")
 
 [node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("17_f8mke")]
 offset_left = 661.0
@@ -2147,9 +2147,6 @@ disabled = true
 polygon = PackedVector2Array(1765, -27, 1765, 1105, 1862, 1105, 1862, -32)
 disabled = true
 
-[node name="HeroSummonMarker" parent="." index="20"]
-position = Vector2(3124, 1148)
-
 [node name="SpecialTowersUnlockUI" parent="." index="22" instance=ExtResource("5_ervl1")]
 show_texture = ExtResource("44_gjwo3")
 show_name = "劫掠哨塔"
@@ -2182,6 +2179,9 @@ script = ExtResource("68_d0t2d")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 15
 process_summon_blocks = Array[ExtResource("69_vpkai")]([ExtResource("16_ymdjt"), ExtResource("17_n6edu"), ExtResource("18_wnph7"), ExtResource("19_4vjb1"), ExtResource("20_fhy6g"), ExtResource("21_1fms6"), ExtResource("22_0ubut"), ExtResource("23_i5j4v"), ExtResource("24_2soeo"), ExtResource("25_l881p"), ExtResource("26_fe26x"), ExtResource("27_k5y1r"), ExtResource("28_h2mas"), ExtResource("29_y5h7x"), ExtResource("30_8h543"), ExtResource("31_6yi65"), ExtResource("32_sfja0"), ExtResource("33_vgndl")])
+
+[node name="HeroSummonMarker" parent="." index="26"]
+position = Vector2(3124, 1148)
 
 [connection signal="input_event" from="Background/RedCrayon" to="Background/RedCrayon" method="_on_input_event"]
 [connection signal="input_event" from="Background/Chest/ChestArea1" to="Background/Chest/ChestArea1" method="_on_input_event"]

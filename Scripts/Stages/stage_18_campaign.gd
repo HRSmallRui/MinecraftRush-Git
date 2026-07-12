@@ -4,6 +4,7 @@ extends Stage
 @export var explosion_marker_list: Array[Marker2D]
 @export var later_disable_path_list: Array[EnemyPath]
 @export var later_enable_path_list: Array[EnemyPath]
+@export var destroy_wall_scene: PackedScene
 
 @onready var camera_collision_shape: CollisionShape2D = $StageCamera/CollisionShape2D
 @onready var firerain_random_region_2: NavigationRegion2D = $FirerainRandomRegions/FirerainRandomRegion2
@@ -23,7 +24,7 @@ func open_path():
 	for i in 4:
 		var enemy_tower: EnemyTower = enemy_tower_list[i]
 		var explosion_marker: Marker2D = explosion_marker_list[i]
-		var destroy_effect:Node2D = preload("res://Scenes/Effects/destroy_wall_effect.tscn").instantiate()
+		var destroy_effect:Node2D = destroy_wall_scene.instantiate()
 		destroy_effect.position = explosion_marker.global_position
 		Stage.instance.bullets.add_child(destroy_effect)
 		Stage.instance.stage_camera.position = explosion_marker.global_position

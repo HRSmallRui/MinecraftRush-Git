@@ -34,11 +34,7 @@ func _ready() -> void:
 
 func loop_explosion():
 	for marker: Marker2D in explosion_markers:
-		var particle: AnimatedSprite2D = preload("res://Scenes/Effects/block_particle.tscn").instantiate()
-		particle.position = marker.position
-		particle.modulate = Color(1,1,0.7,1)
-		particle.scale *= 2
-		Stage.instance.background.add_child(particle)
+		EffectManager.instance.play_block_effect(marker.global_position,Vector2.ONE*2,Color(1,1,0.7,1))
 		dirt_audio.play()
 		await get_tree().create_timer(0.1,false).timeout
 	pass

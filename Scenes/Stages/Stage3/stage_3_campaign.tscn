@@ -1,4 +1,4 @@
-[gd_scene load_steps=305 format=3 uid="uid://rcg1lfxfefu4"]
+[gd_scene load_steps=306 format=3 uid="uid://rcg1lfxfefu4"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_xvwvm"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_3_campaign.gd" id="2_uvqui"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://44npbgu1xrd5" path="res://Scenes/Enemies/enemy_0.tscn" id="3_dsewc"]
 [ext_resource type="Texture2D" uid="uid://n0wspjo2af5f" path="res://Assets/Images/Stages/Stage3/stage3-based.png" id="3_erb48"]
 [ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="3_qfc5l"]
+[ext_resource type="PackedScene" uid="uid://cnehqoj6f1nsv" path="res://Scenes/UI-Components/TipButtons/magic_defence_tip_button.tscn" id="3_wbumf"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="4_e0ess"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="4_gd04t"]
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="4_m37da"]
@@ -1251,6 +1252,7 @@ wave_summon_text_list = Array[ExtResource("112_qaw62")]([SubResource("Resource_i
 
 [node name="Stage3Campaign" instance=ExtResource("1_xvwvm")]
 script = ExtResource("2_uvqui")
+magic_defence_tip_scene = ExtResource("3_wbumf")
 stage_count = 3
 enemy_scene_list = Array[PackedScene]([ExtResource("3_dsewc"), ExtResource("4_gd04t"), ExtResource("5_rp5t1"), ExtResource("6_7202s"), ExtResource("7_2jiyd"), ExtResource("8_a313h"), ExtResource("9_u4gi6"), ExtResource("10_jo27k")])
 current_money = 350
@@ -1400,7 +1402,7 @@ script = ExtResource("92_id2ik")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/HideArea2" index="0"]
 polygon = PackedVector2Array(3211, 555, 3098, 515, 2983, 564, 2950, 640, 2976, 709, 3202, 718)
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_kuojd")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1661,7 +1663,7 @@ process_summon_blocks = Array[ExtResource("116_8cjv6")]([ExtResource("95_nuvso")
 [node name="ExplosionMarker" type="Marker2D" parent="." index="19"]
 position = Vector2(490, 14)
 
-[node name="HeroSummonMarker" parent="." index="22"]
+[node name="HeroSummonMarker" parent="." index="24"]
 position = Vector2(94, 661)
 
 [editable path="Towers/WallArhcer2"]
