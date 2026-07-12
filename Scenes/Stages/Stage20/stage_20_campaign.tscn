@@ -2329,7 +2329,7 @@ total_waves = 15
 stage_summon_config = SubResource("Resource_f4kk5")
 metadata/_edit_horizontal_guides_ = [535.0]
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(2023, 1434)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -2748,7 +2748,7 @@ stream = ExtResource("90_jtq3r")
 volume_db = -10.0
 bus = &"Sound"
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_wogwj")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -3264,9 +3264,6 @@ enemy_parent_node = NodePath("../Enemies")
 config_path_front = "res://Library/SummonConfigs/Stage20/Campaign"
 loading_count = 24
 
-[node name="HeroSummonMarker" parent="." index="22"]
-position = Vector2(2035, 1436)
-
 [node name="RegionMarker" type="Marker2D" parent="." index="23"]
 position = Vector2(1051, 1948)
 
@@ -3339,6 +3336,9 @@ script = ExtResource("243_2ywgr")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 15
 process_summon_blocks = Array[ExtResource("62_k3iig")]([ExtResource("56_k1573"), ExtResource("57_5opoj"), ExtResource("58_g5lwg"), ExtResource("59_brmmu"), ExtResource("60_0022v"), ExtResource("61_mofs5"), ExtResource("62_4kcyn"), ExtResource("63_87uhw"), ExtResource("64_tep5a"), ExtResource("65_xgtr3"), ExtResource("66_qcvda"), ExtResource("67_e3ivv"), ExtResource("68_vborx"), ExtResource("69_f72ol"), ExtResource("70_akegh"), ExtResource("71_04gbf"), ExtResource("72_x148e"), ExtResource("73_5gcyu"), ExtResource("74_27nmd"), ExtResource("75_uy3sk"), ExtResource("76_1io3b"), ExtResource("77_p4h64"), ExtResource("78_qlg4g"), ExtResource("79_iib7p")])
+
+[node name="HeroSummonMarker" parent="." index="29"]
+position = Vector2(2035, 1436)
 
 [connection signal="input_event" from="Background/Wall/BeggarClickArea" to="Background/Wall/BeggarClickArea" method="_on_input_event"]
 [connection signal="input_event" from="Background/MagicHeart/MagicHeartClickArea" to="Background/MagicHeart" method="_on_magic_heart_click_area_input_event"]

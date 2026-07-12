@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://g4ctknm1yi6c"]
+[gd_scene load_steps=125 format=3 uid="uid://g4ctknm1yi6c"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_6uq0t"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_0tbmg"]
@@ -148,6 +148,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pogaa"]
 size = Vector2(2240, 1522)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jy50"]
+size = Vector2(2197, 1463)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vljsf"]
 vertices = PackedVector2Array(-7.84375, 1441.08, -37.9766, 1101.95, 668.602, 1161.34, 2194.3, 1461.9, 911.672, 932.688, 1477.61, 1114.1, 472.797, 398.758, -1.34375, 471.398, -9.75, 197.578, 222.492, 134.938, 664.617, 118.008, 848.961, 518.352, 912.602, 146.672, 1084.63, 253.93, 1318.84, 521.398, 1981.43, 129.008, 2185.46, 157.609, 2169.66, 418.789, 1606.83, 350.656, 1441.66, 139.969, 1331.11, 949.93, 2205.67, 1097.24)
@@ -428,7 +431,7 @@ stage_summon_config = SubResource("Resource_iitdq")
 chapter1_preload = false
 chapter2_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(1197, 747)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -716,7 +719,11 @@ stop_rain = true
 position = Vector2(1076, 714)
 shape = SubResource("RectangleShape2D_pogaa")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="CollisionShape2D" parent="Background/RainLayer/AllyHitArea" index="0"]
+position = Vector2(1079, 730)
+shape = SubResource("RectangleShape2D_4jy50")
+
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_vljsf")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -985,7 +992,7 @@ enemy_parent_node = NodePath("../../Enemies")
 config_path_front = "res://Library/SummonConfigs/Stage6/Diamond/"
 loading_count = 18
 
-[node name="HeroSummonMarker" parent="." index="20"]
+[node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(2093, 288)
 
 [connection signal="input_event" from="Background/BearArea" to="Background/BearArea" method="_on_input_event"]

@@ -631,7 +631,7 @@ current_money = 8000
 total_waves = 1
 unlocked_tower_list = [true, true, false, true]
 
-[node name="StageCamera" parent="." index="2" node_paths=PackedStringArray("move_limit_shape")]
+[node name="StageCamera" parent="." index="3" node_paths=PackedStringArray("move_limit_shape")]
 position = Vector2(2023, 1434)
 move_limit_shape = NodePath("CollisionShape2D2")
 min_zoom_length_desktop = 0.95
@@ -648,6 +648,7 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="PreparationMusic" parent="Musics" index="0"]
 stream = ExtResource("3_fjs7h")
+autoplay = false
 
 [node name="BossMusic" parent="Musics" index="2"]
 stream = null
@@ -666,6 +667,7 @@ stream = ExtResource("6_yplqs")
 bus = &"Music"
 
 [node name="BossStep2MusicPlayer" parent="Musics" index="4" instance=ExtResource("6_btl56")]
+music_mode = 0
 
 [node name="BasedSprite" parent="Background" index="0"]
 texture = ExtResource("7_mod0f")
@@ -886,7 +888,7 @@ frame_progress = 0.513868
 offset = Vector2(7, -112)
 script = ExtResource("54_ihik7")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_wogwj")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1364,9 +1366,6 @@ polygon = PackedVector2Array(2101, 1667, 1960, 1686, 1734, 1730, 1604, 1796, 151
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="PathArea" index="3"]
 polygon = PackedVector2Array(983, 972, 978, 1121, 985, 1250, 968, 1383, 936, 1506, 883, 1638, 810, 1766, 707, 1868, 614, 1929, 477, 1973, 526, 2052, 578, 2040, 711, 1974, 825, 1884, 941, 1731, 998, 1601, 1031, 1517, 1042, 1525, 1056, 1622, 1111, 1747, 1145, 1835, 1196, 1914, 1253, 1982, 1318, 2036, 1410, 2071, 1462, 1989, 1407, 1976, 1343, 1949, 1287, 1883, 1220, 1778, 1165, 1656, 1127, 1549, 1086, 1350, 1074, 1201, 1076, 977)
 
-[node name="HeroSummonMarker" parent="." index="20"]
-position = Vector2(2035, 1436)
-
 [node name="PathConfigSave" type="Node2D" parent="." index="21"]
 script = ExtResource("85_21ggb")
 sample_config = ExtResource("85_m1gpq")
@@ -1384,3 +1383,6 @@ position = Vector2(1032, 871)
 
 [node name="DownMarker" type="Marker2D" parent="." index="24"]
 position = Vector2(1048, 1971)
+
+[node name="HeroSummonMarker" parent="." index="25"]
+position = Vector2(2035, 1436)

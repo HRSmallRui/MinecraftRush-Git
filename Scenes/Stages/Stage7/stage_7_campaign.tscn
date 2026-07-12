@@ -1,4 +1,4 @@
-[gd_scene load_steps=373 format=3 uid="uid://dhc0nhxlersp8"]
+[gd_scene load_steps=374 format=3 uid="uid://dhc0nhxlersp8"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_2g2g5"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_7_campaign.gd" id="2_5l11u"]
@@ -230,6 +230,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ua4fm"]
 size = Vector2(3266, 1522)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r8to"]
+size = Vector2(3251, 1497)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psnp3"]
 animations = [{
@@ -1699,7 +1702,7 @@ chapter1_preload = false
 chapter2_preload = true
 chapter2_boss_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(2237, 684)
 min_zoom_length_desktop = 0.75
 
@@ -1940,6 +1943,10 @@ wave_step_list = Array[int]([0, 1, 2, 3, 4, 2, 1, 0, 1, 2, 2, 4, 0, 2, 1, 0])
 position = Vector2(1612, 720)
 shape = SubResource("RectangleShape2D_ua4fm")
 
+[node name="CollisionShape2D" parent="Background/RainLayer/AllyHitArea" index="0"]
+position = Vector2(1593.5, 713.5)
+shape = SubResource("RectangleShape2D_5r8to")
+
 [node name="LakePops" type="Node2D" parent="Background" index="9"]
 
 [node name="LakePop" type="AnimatedSprite2D" parent="Background/LakePops" index="0" node_paths=PackedStringArray("linked_rain_system")]
@@ -2124,7 +2131,7 @@ position = Vector2(2388, 947)
 linked_path = NodePath("../../Enemies/EnemyPath2")
 summon_list = Array[ExtResource("47_1dixs")]([null, null, null, null, null, null, null, null, SubResource("Resource_rttmi"), SubResource("Resource_vgjex"), SubResource("Resource_q3mk0"), SubResource("Resource_87abe"), SubResource("Resource_xt4sd"), SubResource("Resource_11faj"), SubResource("Resource_lnw3g"), null])
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_vkp47")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -2312,7 +2319,7 @@ based_skin = 3
 position = Vector2(2745, 896)
 based_skin = 3
 
-[node name="PauseButton" parent="StageUI" index="4"]
+[node name="PauseButton" parent="StageUI" index="3"]
 texture_hover = null
 
 [node name="FirerainButton" parent="StageUI/SkillButtonContainer" index="0"]
@@ -2423,7 +2430,7 @@ show_texture = ExtResource("60_swhks")
 show_name = "投石高塔"
 tower_group = 0
 
-[node name="HeroSummonMarker" parent="." index="22"]
+[node name="HeroSummonMarker" parent="." index="23"]
 position = Vector2(3159, 280)
 
 [editable path="Background/RainLayer"]

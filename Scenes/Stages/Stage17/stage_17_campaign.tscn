@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://kr4a50ijschb"]
+[gd_scene load_steps=193 format=3 uid="uid://kr4a50ijschb"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_o645j"]
 [ext_resource type="AudioStream" uid="uid://bdthvsar8ir28" path="res://Assets/Sounds/Music/高山-准备2.mp3" id="2_7yt7r"]
@@ -60,6 +60,9 @@ hero_skill_cooling_fast = Array[float]([8.0, 10.0, 14.0, 15.0, 16.0, 18.0, 20.0,
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtu1q"]
 size = Vector2(2200, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsi5y"]
+size = Vector2(2232, 1240)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6w3hw"]
 animations = [{
@@ -775,7 +778,7 @@ chapter1_preload = false
 chapter5_preload = true
 chapter5_boss_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(129, 415)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -830,14 +833,15 @@ start_rain_step = 1
 step_color_list = Array[Color]([Color(0, 0, 0, 0), Color(0, 0, 0, 0.275), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0)])
 wave_step_list = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="BlackMask" parent="Background/RainLayer/RainLayer" index="0"]
-color = Color(0, 0, 0, 0.27451)
-
-[node name="RainStepLabel" parent="Background/RainLayer/RainLayer" index="17"]
+[node name="RainStepLabel" parent="Background/RainLayer/RainLayer" index="15"]
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" parent="Background/RainLayer/HitArea" index="0"]
 shape = null
+
+[node name="CollisionShape2D" parent="Background/RainLayer/AllyHitArea" index="0"]
+position = Vector2(1106, 610)
+shape = SubResource("RectangleShape2D_fsi5y")
 
 [node name="LakePop" type="AnimatedSprite2D" parent="Background" index="6"]
 position = Vector2(1330, 985)
@@ -898,7 +902,7 @@ show_wave_count = 11
 position = Vector2(1503, 492)
 show_wave_count = 14
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_pko58")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1135,9 +1139,6 @@ offset_bottom = 939.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(-5, 358, 95, 377, 231, 386, 456, 391, 630, 391, 759, 365, 887, 321, 967, 267, 1061, 174, 1144, 104, 1205, 68, 1291, 54, 1394, 35, 1462, -5, 1594, -7, 1565, 24, 1528, 64, 1453, 100, 1377, 120, 1254, 138, 1181, 172, 1074, 276, 1051, 303, 1075, 364, 1134, 436, 1230, 548, 1318, 611, 1418, 645, 1515, 654, 1629, 656, 1750, 645, 1860, 638, 1973, 628, 2077, 643, 2208, 662, 2203, 750, 2098, 718, 1955, 707, 1816, 724, 1687, 736, 1532, 731, 1416, 716, 1309, 688, 1280, 671, 1253, 693, 1224, 741, 1167, 795, 1087, 841, 976, 883, 869, 927, 817, 948, 855, 999, 903, 1073, 933, 1147, 945, 1207, 847, 1208, 842, 1153, 820, 1092, 763, 1012, 695, 949, 621, 900, 528, 845, 386, 812, 219, 802, 50, 804, -9, 802, -8, 723, 76, 721, 191, 719, 272, 719, 403, 730, 499, 757, 603, 798, 714, 870, 753, 910, 806, 870, 878, 837, 989, 801, 1068, 759, 1132, 719, 1176, 662, 1206, 619, 1173, 593, 1092, 523, 1022, 432, 980, 355, 961, 354, 930, 385, 880, 410, 808, 434, 686, 457, 581, 465, 447, 469, 281, 468, 161, 461, 68, 450, -1, 442)
 
-[node name="HeroSummonMarker" parent="." index="20"]
-position = Vector2(122, 415)
-
 [node name="PathConfigSave" type="Node2D" parent="." index="21"]
 script = ExtResource("20_5e2s5")
 sample_config = ExtResource("21_g25j4")
@@ -1155,5 +1156,8 @@ script = ExtResource("42_rfcjs")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 15
 process_summon_blocks = Array[ExtResource("43_1yghm")]([ExtResource("19_kx82y"), ExtResource("20_3n2r4"), ExtResource("21_e0xa0"), ExtResource("22_sebyo"), ExtResource("23_v8ohy"), ExtResource("24_vv847"), ExtResource("25_hso6y"), ExtResource("26_fsy6l"), ExtResource("27_hapog"), ExtResource("28_ablqj"), ExtResource("29_vpukb"), ExtResource("30_o4kc6")])
+
+[node name="HeroSummonMarker" parent="." index="24"]
+position = Vector2(122, 415)
 
 [editable path="Background/RainLayer"]

@@ -1,19 +1,23 @@
-[gd_scene load_steps=406 format=3 uid="uid://b4e3rg8kuinw"]
+[gd_scene load_steps=410 format=3 uid="uid://b4e3rg8kuinw"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_nb21u"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_jj3qo"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_15_campaign.gd" id="2_m3pg1"]
 [ext_resource type="PackedScene" uid="uid://d0mpofppk7l0a" path="res://Scenes/Enemies/enemy_29.tscn" id="3_4nc4e"]
 [ext_resource type="AudioStream" uid="uid://bmv12x8leo1qe" path="res://Assets/Sounds/Music/厌国-准备3.mp3" id="3_6shrs"]
+[ext_resource type="PackedScene" uid="uid://cl7rohwaio23a" path="res://Scenes/Stages/Stage15/stage_15_story_layer.tscn" id="3_a2oa1"]
+[ext_resource type="PackedScene" uid="uid://dhp8o34tjylg6" path="res://Scenes/Stages/Stage15/stage_15_layer.tscn" id="4_ag364"]
 [ext_resource type="AudioStream" uid="uid://c20mhx2c3axhq" path="res://Assets/Sounds/Music/厌国-战斗3.mp3" id="4_ltope"]
 [ext_resource type="PackedScene" uid="uid://dk81pa88qj7rh" path="res://Scenes/Enemies/enemy_30.tscn" id="4_t8qyn"]
 [ext_resource type="PackedScene" uid="uid://dlggpawrxkxx5" path="res://Scenes/TipUI/special_towers_unlock_ui.tscn" id="5_3b25o"]
 [ext_resource type="PackedScene" uid="uid://dny4v8gl6x6b" path="res://Scenes/Enemies/enemy_31.tscn" id="5_47fdh"]
+[ext_resource type="PackedScene" uid="uid://bc1bw8ys6yi8u" path="res://Scenes/Enemies/hating_emperor_story.tscn" id="5_cuefj"]
 [ext_resource type="Texture2D" uid="uid://b4y8xqhvfnllh" path="res://Assets/Images/Stages/Stage15/stage15-based.png" id="5_d2rab"]
 [ext_resource type="AudioStream" uid="uid://dfgrfv6fo5v76" path="res://Assets/Sounds/Music/chapter4_boss.mp3" id="5_t4njh"]
 [ext_resource type="Texture2D" uid="uid://pe1sf035jhvg" path="res://Assets/Animations/StageComponents/保护点.png" id="6_hxpef"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_kad05"]
 [ext_resource type="PackedScene" uid="uid://dkm4khot84thm" path="res://Scenes/Enemies/enemy_32.tscn" id="6_ub0b4"]
+[ext_resource type="PackedScene" uid="uid://c2daws4j24i7p" path="res://Scenes/Enemies/enemy_57.tscn" id="6_v8uu0"]
 [ext_resource type="PackedScene" uid="uid://c0i5mwbqr4fdj" path="res://Scenes/Enemies/enemy_33.tscn" id="7_8pnvj"]
 [ext_resource type="Script" path="res://Scripts/Stages/protection_point.gd" id="7_60lfb"]
 [ext_resource type="PackedScene" uid="uid://1jntuff0cxsu" path="res://Scenes/Enemies/enemy_34.tscn" id="8_cyxd1"]
@@ -1599,6 +1603,10 @@ path_right_collision = NodePath("PathArea/CollisionPolygon2D3")
 right_hidden_tower = NodePath("Towers/DefenceTowerBased18")
 right_path_mask = NodePath("Background/BasedSprite/PathMask2")
 right_explosion_markers = [NodePath("Background/ExplosionMarkers2/Marker2D"), NodePath("Background/ExplosionMarkers2/Marker2D2"), NodePath("Background/ExplosionMarkers2/Marker2D3"), NodePath("Background/ExplosionMarkers2/Marker2D4"), NodePath("Background/ExplosionMarkers2/Marker2D5"), NodePath("Background/ExplosionMarkers2/Marker2D6")]
+story_layer_scene = ExtResource("3_a2oa1")
+rain_layer_scene = ExtResource("4_ag364")
+final_boss_scene = ExtResource("5_cuefj")
+boss_scene = ExtResource("6_v8uu0")
 stage_count = 15
 enemy_scene_list = Array[PackedScene]([ExtResource("3_4nc4e"), ExtResource("4_t8qyn"), ExtResource("5_47fdh"), ExtResource("6_ub0b4"), ExtResource("7_8pnvj"), ExtResource("8_cyxd1"), ExtResource("9_ut71u"), ExtResource("10_fd6hk"), ExtResource("11_hkruk"), ExtResource("12_w5s5p"), ExtResource("13_y804y"), ExtResource("14_ffc8q"), ExtResource("15_otiff"), ExtResource("16_s683u"), ExtResource("17_v0tug"), ExtResource("18_rq1lo")])
 current_money = 2000
@@ -1613,7 +1621,7 @@ chapter4_other_preload = true
 chapter4_guardian_preload = true
 chapter4_boss_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(1114, 1006)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -1843,8 +1851,16 @@ position = Vector2(1889, 1020)
 [node name="Marker2D6" type="Marker2D" parent="Background/ExplosionMarkers2" index="5"]
 position = Vector2(1838, 1043)
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_wolgf")
+
+[node name="FireExtraArea" type="Area2D" parent="." index="9"]
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("41_77yy6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FireExtraArea" index="0"]
+polygon = PackedVector2Array(-129, -7, 2418, 6, 2313, 261, 2018, 292, 1962, 302, 1939, 323, 1845, 329, 1777, 349, 1672, 348, 1593, 364, 1480, 391, 1443, 462, 1369, 530, 1267, 566, 1213, 603, 1146, 598, 1048, 602, 1000, 561, 916, 511, 816, 457, 658, 408, 512, 366, 414, 360, 303, 330, 171, 328, 75, 318, -131, 332)
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
 navigation_polygon = SubResource("NavigationPolygon_4tnon")
@@ -1865,14 +1881,6 @@ navigation_layers = 2
 navigation_polygon = SubResource("NavigationPolygon_try1t")
 use_edge_connections = false
 navigation_layers = 2
-
-[node name="FireExtraArea" type="Area2D" parent="." index="9"]
-collision_layer = 512
-collision_mask = 0
-script = ExtResource("41_77yy6")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FireExtraArea" index="0"]
-polygon = PackedVector2Array(-129, -7, 2418, 6, 2313, 261, 2018, 292, 1962, 302, 1939, 323, 1845, 329, 1777, 349, 1672, 348, 1593, 364, 1480, 391, 1443, 462, 1369, 530, 1267, 566, 1213, 603, 1146, 598, 1048, 602, 1000, 561, 916, 511, 816, 457, 658, 408, 512, 366, 414, 360, 303, 330, 171, 328, 75, 318, -131, 332)
 
 [node name="EnemyPath" type="Path2D" parent="Enemies" index="0"]
 y_sort_enabled = true
@@ -2355,9 +2363,6 @@ polygon = PackedVector2Array(963, 544, 922, 570, 883, 650, 960, 692, 988, 628, 1
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="PathArea" index="4"]
 polygon = PackedVector2Array(1403, 526, 1418, 559, 1452, 589, 1529, 555, 1491, 522, 1482, 468, 1442, 504)
 
-[node name="HeroSummonMarker" parent="." index="21"]
-position = Vector2(1151, 1249)
-
 [node name="SpecialTowersUnlockUI" parent="." index="22" instance=ExtResource("5_3b25o")]
 show_texture = ExtResource("94_8hng7")
 show_name = "炼金术士"
@@ -2384,6 +2389,9 @@ script = ExtResource("105_hnwf3")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 15
 process_summon_blocks = Array[ExtResource("47_2rd71")]([ExtResource("40_oqtjh"), ExtResource("41_uf5iy"), ExtResource("42_j7smw"), ExtResource("43_86rw3"), ExtResource("44_bqp6q"), ExtResource("45_usv38"), ExtResource("46_5xb3l"), ExtResource("47_khxls"), ExtResource("48_eycdx"), ExtResource("49_n8e3o"), ExtResource("50_td6lp"), ExtResource("51_7um6r"), ExtResource("52_udkmo"), ExtResource("53_7q4kl"), ExtResource("54_1d06j"), ExtResource("55_xqbj1"), ExtResource("56_y1bee"), ExtResource("57_b0ys1"), ExtResource("58_1iedd"), ExtResource("59_3en8t"), ExtResource("60_hkv5i"), ExtResource("61_rw8t3"), ExtResource("62_t6sft"), ExtResource("63_q6xcn")])
+
+[node name="HeroSummonMarker" parent="." index="25"]
+position = Vector2(1151, 1249)
 
 [connection signal="mouse_entered" from="FireExtraArea" to="FireExtraArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="FireExtraArea" to="FireExtraArea" method="_on_mouse_exited"]

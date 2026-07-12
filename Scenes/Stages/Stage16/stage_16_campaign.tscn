@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://dqlocojgd1hai"]
+[gd_scene load_steps=128 format=3 uid="uid://dqlocojgd1hai"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_sgk6s"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_dv7dj"]
@@ -49,6 +49,9 @@ hero_skill_cooling_fast = Array[float]([10.0, 12.0, 14.0, 15.0, 16.0, 18.0, 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c02ib"]
 size = Vector2(2100, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrdte"]
+size = Vector2(2164, 1261)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nmlan"]
 vertices = PackedVector2Array(445.906, 254.078, 503.031, -6.9375, 1837.19, 2.89063, 1769.27, 208.703, 372.547, 1185.08, 317.438, 993.703, -14.8438, 1006.6, -6.11719, 404.641, 284.68, 361.563, 2130.91, 216.773, 2122.08, 1203.89)
@@ -482,7 +485,7 @@ stage_summon_config = SubResource("Resource_vj5g6")
 chapter1_preload = false
 chapter5_preload = true
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(113, 690)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -518,14 +521,15 @@ start_rain_step = 1
 step_color_list = Array[Color]([Color(0, 0, 0, 0), Color(0, 0, 0, 0.275), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0)])
 wave_step_list = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="BlackMask" parent="Background/RainLayer/RainLayer" index="0"]
-color = Color(0, 0, 0, 0.27451)
-
-[node name="RainStepLabel" parent="Background/RainLayer/RainLayer" index="17"]
+[node name="RainStepLabel" parent="Background/RainLayer/RainLayer" index="15"]
 self_modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" parent="Background/RainLayer/HitArea" index="0"]
 shape = null
+
+[node name="CollisionShape2D" parent="Background/RainLayer/AllyHitArea" index="0"]
+position = Vector2(1063, 609.5)
+shape = SubResource("RectangleShape2D_nrdte")
 
 [node name="Lilies" type="Node2D" parent="Background" index="4"]
 y_sort_enabled = true
@@ -590,7 +594,7 @@ show_wave_count = 10
 position = Vector2(777, 924)
 show_wave_count = 12
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_nmlan")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -735,9 +739,6 @@ offset_bottom = 828.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(-2, 678, 61, 653, 178, 643, 360, 652, 561, 657, 751, 619, 898, 552, 1011, 469, 1059, 347, 1108, 161, 1152, 99, 1281, 33, 1346, -5, 1464, -3, 1442, 37, 1345, 104, 1219, 155, 1170, 262, 1138, 393, 1091, 478, 1154, 494, 1232, 545, 1286, 606, 1327, 646, 1400, 740, 1473, 789, 1545, 821, 1652, 826, 1744, 811, 1821, 751, 1871, 673, 1943, 600, 1993, 552, 2102, 535, 2101, 621, 2049, 634, 1987, 668, 1928, 750, 1858, 834, 1787, 885, 1702, 911, 1595, 911, 1483, 890, 1396, 843, 1319, 776, 1247, 688, 1177, 615, 1135, 579, 1042, 547, 975, 614, 857, 673, 685, 725, 556, 739, 407, 737, 294, 730, 192, 730, 121, 728, -3, 784)
 
-[node name="HeroSummonMarker" parent="." index="20"]
-position = Vector2(113, 688)
-
 [node name="PathConfigLoadProcess" type="Node" parent="." index="21" node_paths=PackedStringArray("enemy_parent_node")]
 script = ExtResource("9_g8soh")
 enemy_parent_node = NodePath("../Enemies")
@@ -762,5 +763,8 @@ show_name = "无人机控制平台"
 tower_group = 3
 tower_id = 5
 bombard_intro_list = PackedStringArray("不同于寻常炮台，这些奇怪的家伙能够发射能量炮弹，锁定地面和飞行单位，对命中目标造成较低真实伤害，随后能量炮弹四散火花溅射伤害周围目标。", "以高能液体为动力的终极炮塔，可倾泻毁灭性火力，不过维护成本相当昂贵。同时得益于高能液体的放射性，被炮弹波及的敌人会被“放射病”折磨，不断减少生命的同时也会降低自身攻击力。", "演算者与帝国工程师联手打造的力作，操控无人机投掷炸弹轰炸地面目标，支持自由调遣无人机，大幅提升战术布局的灵活性。")
+
+[node name="HeroSummonMarker" parent="." index="25"]
+position = Vector2(113, 688)
 
 [editable path="Background/RainLayer"]
