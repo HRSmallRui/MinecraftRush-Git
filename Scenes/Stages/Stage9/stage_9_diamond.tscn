@@ -52,7 +52,7 @@ hero_skill_cooling_fast = Array[float]([25.0, 30.0, 32.0, 36.0])
 size = Vector2(2100, 1440)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4lhq"]
-size = Vector2(1941, 1093)
+size = Vector2(2134, 1478)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_d8g51"]
 vertices = PackedVector2Array(2090.97, 1428.02, 33.0703, 1432.91, 146.859, 1359.54, 2091.99, -35, 2091.01, 1027.97, 1518.83, 921.797, 9, -35, 933.672, 1050.82, 9, 1241.79, 149.219, 1269.85, 932.398, 1065.46, 1533.44, 1320.45, 1998.89, 1036.55, 2090.02, 1054.25, 1058.18, 1117.06, 1366.82, 1235.58, 1307.04, 1193.4, 1251.62, 1157.58, 1291.24, 1152.79, 1305.29, 1160.93, 1274.36, 1144.35, 1183.18, 1113.08)
@@ -367,10 +367,6 @@ total_waves = 5
 stage_environment_tags = Array[String](["desert"])
 stage_summon_config = SubResource("Resource_bbij1")
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-chapter3_preload = true
-
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
 position = Vector2(1050, 720)
 shape = SubResource("RectangleShape2D_cmmen")
@@ -484,7 +480,12 @@ wave_hot_sun_steps = Array[int]([1, 2, 0, 1, 2])
 start_hot_sun_step = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/HotWaveSystem/HitArea" index="0"]
-position = Vector2(960.5, 536.5)
+position = Vector2(1057, 729)
+shape = SubResource("RectangleShape2D_m4lhq")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/HotWaveSystem/EnemyArea" index="0"]
+position = Vector2(1050, 732)
 shape = SubResource("RectangleShape2D_m4lhq")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
@@ -492,7 +493,7 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 position = Vector2(182, 36)
 wave_dust_show_time = Array[float]([0.0, 6.0, 8.0, 10.0, 12.0])
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_d8g51")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -685,13 +686,13 @@ offset_bottom = 1371.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(235, 1, 234, 104, 235, 259, 255, 378, 332, 499, 395, 566, 480, 603, 593, 622, 570, 702, 503, 801, 380, 931, 348, 1037, 352, 1182, 393, 1270, 510, 1371, 622, 1392, 744, 1388, 845, 1346, 968, 1261, 1082, 1202, 1293, 1191, 1418, 1209, 1314, 1111, 1138, 1102, 989, 1138, 845, 1240, 710, 1301, 597, 1298, 497, 1250, 427, 1133, 447, 1019, 540, 889, 643, 761, 687, 619, 831, 597, 955, 561, 1082, 490, 1183, 469, 1368, 480, 1553, 597, 1668, 639, 1836, 640, 1966, 622, 2105, 557, 2106, 451, 1993, 510, 1848, 554, 1676, 547, 1532, 477, 1432, 413, 1281, 375, 1383, 238, 1437, 74, 1443, 4, 1354, 0, 1344, 68, 1288, 203, 1203, 338, 1159, 387, 1067, 396, 982, 437, 881, 486, 713, 530, 556, 527, 448, 489, 351, 378, 327, 236, 325, 58, 331, -4)
 
-[node name="HeroSummonMarker" parent="." index="19"]
-position = Vector2(279, 90)
-
 [node name="SummonCountProcess" type="Node2D" parent="." index="21" node_paths=PackedStringArray("enemy_parnt_node")]
 script = ExtResource("45_87yny")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 5
 process_summon_blocks = Array[ExtResource("46_pedi2")]([ExtResource("29_ycnvf"), ExtResource("30_oq2u1"), ExtResource("31_gdxye"), ExtResource("32_j1mpc"), ExtResource("33_17trb"), ExtResource("34_g1sc2"), ExtResource("35_xblm6"), ExtResource("36_vm22k"), ExtResource("37_0yfcl")])
+
+[node name="HeroSummonMarker" parent="." index="22"]
+position = Vector2(279, 90)
 
 [editable path="Background/HotWaveSystem"]

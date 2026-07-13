@@ -16,6 +16,7 @@ enum AgainstType
 @export var against_broken_rate: float
 @export var against_explosion: bool
 @export var against_deadly: bool = true
+@export var against_immune_groups: Array[String]
 
 
 func buff_start():
@@ -31,6 +32,7 @@ func on_owner_take_damage(damage_event: DamageEventData):
 		if unit.enemy_state == Enemy.EnemyState.DIE: return
 	var source: Node2D = damage_event.source
 	if source == null: return
+	if is_immune(source.get_groups()): return
 	if only_near_damage_against and damage_event.far_attack: return
 	
 	var against_damage: int
@@ -44,5 +46,10 @@ func on_owner_take_damage(damage_event: DamageEventData):
 		source.take_damage(against_damage,against_damage_type,against_broken_rate,false,null,against_explosion,false,against_deadly)
 	if source is Enemy:
 		source.take_damage(against_damage,against_damage_type,against_broken_rate,false,null,against_explosion,false,against_deadly)
-		print("against_enemy")
 	pass
+
+
+func is_immune(unit_groups: Array[StringName]) -> bool:
+	for group in unit_groups:
+		if group in against_immune_groups: return true
+	return false

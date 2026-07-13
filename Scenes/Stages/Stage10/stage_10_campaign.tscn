@@ -880,10 +880,6 @@ total_waves = 15
 stage_environment_tags = Array[String](["desert"])
 stage_summon_config = SubResource("Resource_ymklo")
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-chapter3_preload = true
-
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
 position = Vector2(1050, 600)
 shape = SubResource("RectangleShape2D_qh5nl")
@@ -1041,6 +1037,11 @@ shape = SubResource("CircleShape2D_5wuug")
 wave_hot_sun_steps = Array[int]([0, 1, 1, 0, 1, 1, 2, 2, 0, 1, 1, 2, 1, 2, 1])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/HotWaveSystem/HitArea" index="0"]
+position = Vector2(1051.5, 602)
+shape = SubResource("RectangleShape2D_uvxrp")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/HotWaveSystem/EnemyArea" index="0"]
 position = Vector2(1051.5, 602)
 shape = SubResource("RectangleShape2D_uvxrp")
 debug_color = Color(0, 0.6, 0.701961, 0)

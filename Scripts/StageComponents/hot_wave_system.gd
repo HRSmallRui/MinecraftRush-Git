@@ -18,6 +18,7 @@ enum HotSunStep{
 @onready var sun_light: PointLight2D = $CanvasLayer/SunLight
 @onready var hot_wave_rect: ColorRect = $CanvasLayer/HotWaveRect
 @onready var hit_area: Area2D = $HitArea
+@onready var enemy_area: Area2D = $EnemyArea
 
 var gradient: Gradient
 var current_hot_sun_step: HotSunStep
@@ -85,6 +86,7 @@ func stage_wave(wave_count: int):
 
 func _on_heat_timer_timeout() -> void:
 	if current_hot_sun_step == HotSunStep.None: return
+	var damage: int = 0 if current_hot_sun_step == HotSunStep.Small else 1
 	for hurt_box in hit_area.get_overlapping_bodies():
 		var ally: Ally = hurt_box.owner
 		if !is_immune(ally.get_groups()):
@@ -92,13 +94,21 @@ func _on_heat_timer_timeout() -> void:
 			if current_hot_sun_step == HotSunStep.Super: 
 				damage_buff.buff_blocks[0] = damage_buff.buff_blocks[0].duplicate()
 				damage_buff.buff_blocks[0].operation_data = 0.5
-			var damage: int = 0 if current_hot_sun_step == HotSunStep.Small else 1
 			ally.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false)
 			ally.buffs.add_child(damage_buff)
-		if ally.get_groups().has("robot") or ally.get_groups().has("metal"):
+		if ally.get_groups().has("metal"):
 			var against_buff: AgainstDamageBuff = heat_against_damage_buff_scene.instantiate()
 			against_buff.buff_level = 1 if current_hot_sun_step == HotSunStep.Small else 2
 			ally.buffs.add_child(against_buff)
+	
+	for hurt_box in enemy_area.get_overlapping_areas():
+		var enemy: Enemy = hurt_box.owner
+		if !is_immune(enemy.get_groups()):
+			enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false)
+		if enemy.get_groups().has("metal"):
+			var against_buff: AgainstDamageBuff = heat_against_damage_buff_scene.instantiate()
+			against_buff.buff_level = 1 if current_hot_sun_step == HotSunStep.Small else 2
+			enemy.buffs.add_child(against_buff)
 	pass # Replace with function body.
 
 

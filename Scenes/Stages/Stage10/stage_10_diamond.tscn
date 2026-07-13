@@ -361,7 +361,7 @@ _data = {
 radius = 80.6226
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfycm"]
-size = Vector2(1941, 1093)
+size = Vector2(2130, 1221)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ov1ka"]
 vertices = PackedVector2Array(382.43, 11.1719, 353.43, -19.6719, 1842.35, 1.0625, 1552.12, 84.5938, 566.383, 65.2188, 1910.65, 260.461, 2099.1, 188.477, 2104.92, 969.523, 1832.64, 956.93, 136.328, 1010.3, -0.820313, 1057.88, 9.86719, 209.828, 459.969, 201.969, 2107.51, 1160.97, 2109.45, 1197.1, 550.977, 1212.96, 1766.02, 1159.99, 1592.26, 1046.94, 1596.89, 183.547, 472.359, 1150.4, 535.227, 172.523, 1593.91, 1034.44, 521.117, 1193.06)
@@ -626,10 +626,6 @@ total_waves = 5
 stage_environment_tags = Array[String](["desert"])
 stage_summon_config = SubResource("Resource_8bbaf")
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-chapter3_preload = true
-
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
 position = Vector2(1050, 600)
 shape = SubResource("RectangleShape2D_qh5nl")
@@ -790,7 +786,12 @@ wave_hot_sun_steps = Array[int]([1, 1, 2, 1, 2])
 start_hot_sun_step = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/HotWaveSystem/HitArea" index="0"]
-position = Vector2(960.5, 536.5)
+position = Vector2(1055, 600.5)
+shape = SubResource("RectangleShape2D_gfycm")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/HotWaveSystem/EnemyArea" index="0"]
+position = Vector2(1055, 600.5)
 shape = SubResource("RectangleShape2D_gfycm")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
@@ -798,7 +799,7 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 position = Vector2(182, 36)
 wave_dust_show_time = Array[float]([0.0, 5.0, 8.0, 10.0, 15.0])
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_ov1ka")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1042,14 +1043,14 @@ polygon = PackedVector2Array(2123, 558, 2011, 573, 1895, 572, 1817, 562, 1739, 5
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="PathArea" index="2"]
 polygon = PackedVector2Array(856, 432, 900, 477, 972, 524, 1080, 567, 1031, 649, 986, 629, 905, 593, 830, 530, 793, 483)
 
-[node name="HeroSummonMarker" parent="." index="19"]
-position = Vector2(72, 494)
-
 [node name="SummonCountProcess" type="Node2D" parent="." index="21" node_paths=PackedStringArray("enemy_parnt_node")]
 script = ExtResource("39_w8ucx")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 5
 process_summon_blocks = Array[ExtResource("40_5ujjo")]([ExtResource("18_36ygr"), ExtResource("19_6iyoj"), ExtResource("20_a6ecb"), ExtResource("21_cdh4n"), ExtResource("22_f35tv"), ExtResource("23_mmfh0"), ExtResource("24_g4w8w"), ExtResource("25_8shhd"), ExtResource("26_l6xyb"), ExtResource("27_5uua0"), ExtResource("28_dhu55"), ExtResource("29_rcb6o")])
+
+[node name="HeroSummonMarker" parent="." index="22"]
+position = Vector2(72, 494)
 
 [connection signal="input_event" from="Background/Remilia/ClickArea" to="Background/Remilia" method="_on_click_area_input_event"]
 [connection signal="input_event" from="Background/SunShine/ClickArea" to="Background/SunShine" method="_on_click_area_input_event"]

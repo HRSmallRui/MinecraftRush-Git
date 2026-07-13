@@ -55,7 +55,7 @@
 size = Vector2(2100, 1200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocb73"]
-size = Vector2(1941, 1093)
+size = Vector2(2141, 1232)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bbmu0"]
 radius = 104.962
@@ -471,10 +471,6 @@ total_waves = 1
 unlocked_tower_list = [true, true, false, false]
 stage_environment_tags = Array[String](["desert"])
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-chapter3_preload = true
-
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
 position = Vector2(1050, 600)
 shape = SubResource("RectangleShape2D_qh5nl")
@@ -530,7 +526,12 @@ wave_hot_sun_steps = Array[int]([2])
 start_hot_sun_step = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/HotWaveSystem/HitArea" index="0"]
-position = Vector2(960.5, 536.5)
+position = Vector2(1060.5, 606)
+shape = SubResource("RectangleShape2D_ocb73")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/HotWaveSystem/EnemyArea" index="0"]
+position = Vector2(1060.5, 606)
 shape = SubResource("RectangleShape2D_ocb73")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
@@ -639,7 +640,7 @@ collision_mask = 0
 position = Vector2(0, -44)
 shape = SubResource("CircleShape2D_5wuug")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_ov1ka")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -882,14 +883,14 @@ polygon = PackedVector2Array(2123, 558, 2011, 573, 1895, 572, 1817, 562, 1739, 5
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="PathArea" index="2"]
 polygon = PackedVector2Array(856, 432, 900, 477, 972, 524, 1080, 567, 1031, 649, 986, 629, 905, 593, 830, 530, 793, 483)
 
-[node name="HeroSummonMarker" parent="." index="19"]
-position = Vector2(72, 494)
-
 [node name="SummonCountProcess" type="Node2D" parent="." index="21" node_paths=PackedStringArray("enemy_parnt_node")]
 script = ExtResource("37_6rsyp")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 1
 process_summon_blocks = Array[ExtResource("38_rjqtq")]([ExtResource("18_bshj8"), ExtResource("19_m4mvs"), ExtResource("20_oe1eo"), ExtResource("21_kpoqb"), ExtResource("22_lldtd"), ExtResource("23_lfsnm"), ExtResource("24_3657x"), ExtResource("25_xs6vq"), ExtResource("26_njx46"), ExtResource("27_wiq8b"), ExtResource("28_6c05p"), ExtResource("29_apcqb")])
+
+[node name="HeroSummonMarker" parent="." index="22"]
+position = Vector2(72, 494)
 
 [connection signal="input_event" from="Background/Remilia/ClickArea" to="Background/Remilia" method="_on_click_area_input_event"]
 [connection signal="input_event" from="Background/SunShine/ClickArea" to="Background/SunShine" method="_on_click_area_input_event"]

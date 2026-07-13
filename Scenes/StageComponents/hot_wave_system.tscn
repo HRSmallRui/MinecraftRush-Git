@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://battap0mupbot"]
+[gd_scene load_steps=18 format=3 uid="uid://battap0mupbot"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/hot_wave.gdshader" id="1_8je0u"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/hot_wave_system.gd" id="1_b0anp"]
-[ext_resource type="Texture2D" uid="uid://cgjl6w6ehkvm2" path="res://Assets/Images/Stages/Stage8/stage8-based.png" id="1_s7iiu"]
 [ext_resource type="PackedScene" uid="uid://20aosok016ww" path="res://Scenes/Buffs/EnvironmentBuffs/heat_damage_low_buff.tscn" id="2_3rhun"]
 [ext_resource type="PackedScene" uid="uid://gmjmag6bwsin" path="res://Scenes/Buffs/EnvironmentBuffs/sun_against_buff.tscn" id="3_846yf"]
 
@@ -135,12 +134,6 @@ immune_groups = Array[String](["desert", "god", "no_live", "super_unit"])
 heat_damage_low_buff_scene = ExtResource("2_3rhun")
 heat_against_damage_buff_scene = ExtResource("3_846yf")
 
-[node name="BasedSprite" type="Sprite2D" parent="."]
-visible = false
-z_index = -1
-texture = ExtResource("1_s7iiu")
-centered = false
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HotWaveRect" type="ColorRect" parent="CanvasLayer"]
@@ -183,5 +176,9 @@ autostart = true
 [node name="HitArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 24
+
+[node name="EnemyArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 96
 
 [connection signal="timeout" from="HeatTimer" to="." method="_on_heat_timer_timeout"]
