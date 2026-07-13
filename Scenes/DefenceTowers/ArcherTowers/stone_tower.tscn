@@ -96,6 +96,9 @@
 [ext_resource type="Texture2D" uid="uid://bhrgkgpbr1fr2" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_46.png" id="85_dcyga"]
 [ext_resource type="PackedScene" uid="uid://bqgbd6mv1bkuk" path="res://Scenes/Bullets/black_stone.tscn" id="94_tc868"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="95_7i02j"]
+[ext_resource type="Resource" uid="uid://p6ht47411c5a" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/black_stone_lv1.tres" id="96_up72r"]
+[ext_resource type="Resource" uid="uid://oyudt4tcfrym" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/black_stone_lv2.tres" id="97_oih14"]
+[ext_resource type="Resource" uid="uid://bcbj5ymoopdil" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/black_stone_lv3.tres" id="98_thp02"]
 
 [sub_resource type="Resource" id="Resource_sfb2x"]
 script = ExtResource("2_iyeqd")
@@ -553,21 +556,6 @@ animations = [{
 "speed": 18.0
 }]
 
-[sub_resource type="Resource" id="Resource_gtf0x"]
-script = ExtResource("95_7i02j")
-damage_low = 100
-damage_high = 120
-
-[sub_resource type="Resource" id="Resource_hnyh1"]
-script = ExtResource("95_7i02j")
-damage_low = 150
-damage_high = 180
-
-[sub_resource type="Resource" id="Resource_80d40"]
-script = ExtResource("95_7i02j")
-damage_low = 200
-damage_high = 240
-
 [node name="StoneTower" node_paths=PackedStringArray("shooter_list") instance=ExtResource("1_jat4a")]
 script = ExtResource("2_pashq")
 start_data = SubResource("Resource_sfb2x")
@@ -629,7 +617,7 @@ animation = &"skill1"
 autoplay = "idle_front"
 script = ExtResource("62_jnjh6")
 black_stone_scene = ExtResource("94_tc868")
-black_stone_damage_list = Array[ExtResource("95_7i02j")]([SubResource("Resource_gtf0x"), SubResource("Resource_hnyh1"), SubResource("Resource_80d40")])
+black_stone_damage_list = Array[ExtResource("95_7i02j")]([ExtResource("96_up72r"), ExtResource("97_oih14"), ExtResource("98_thp02")])
 tower = NodePath("../..")
 summon_frame = 41
 arrow_scene = ExtResource("63_mqand")
@@ -656,7 +644,7 @@ animation = &"skill1"
 autoplay = "idle_front"
 script = ExtResource("62_jnjh6")
 black_stone_scene = ExtResource("94_tc868")
-black_stone_damage_list = Array[ExtResource("95_7i02j")]([SubResource("Resource_gtf0x"), SubResource("Resource_hnyh1"), SubResource("Resource_80d40")])
+black_stone_damage_list = Array[ExtResource("95_7i02j")]([ExtResource("96_up72r"), ExtResource("97_oih14"), ExtResource("98_thp02")])
 tower = NodePath("../..")
 summon_frame = 41
 arrow_scene = ExtResource("63_mqand")

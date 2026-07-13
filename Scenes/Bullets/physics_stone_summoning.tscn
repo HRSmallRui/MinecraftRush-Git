@@ -6,16 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cofnlv67wb2sc" path="res://Assets/Images/Bullets/stone.png" id="3_udm6r"]
 [ext_resource type="PackedScene" uid="uid://dkjb4g44gllfp" path="res://Scenes/Effects/explosion_stone_effect.tscn" id="4_mdwfa"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="5_ohnqf"]
-
-[sub_resource type="Resource" id="Resource_uoymf"]
-script = ExtResource("5_ohnqf")
-damage_low = 10
-damage_high = 15
-
-[sub_resource type="Resource" id="Resource_44d7m"]
-script = ExtResource("5_ohnqf")
-damage_low = 15
-damage_high = 24
+[ext_resource type="Resource" uid="uid://bjgfpi4xxmfqn" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/explosion_stone_damage_lv1.tres" id="6_lquay"]
+[ext_resource type="Resource" uid="uid://duwyaew3ntybq" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/explosion_stone_damage_lv2.tres" id="7_r8ubo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -37,7 +29,7 @@ colors = PackedColorArray(1, 1, 1, 0.717647, 1, 1, 1, 0)
 script = ExtResource("2_3xjad")
 stone_bullet_scene = ExtResource("3_mt4jc")
 stone_explosion_effect_scene = ExtResource("4_mdwfa")
-stone_explosion_damage_list = Array[ExtResource("5_ohnqf")]([SubResource("Resource_uoymf"), SubResource("Resource_44d7m")])
+stone_explosion_damage_list = Array[ExtResource("5_ohnqf")]([ExtResource("6_lquay"), ExtResource("7_r8ubo")])
 tail_max_length = 20
 bullet_speed = 1.0
 
