@@ -1,6 +1,8 @@
 extends Node2D
 class_name DesertWolfSkill
 
+@export var dizness_buff_scene: PackedScene
+
 @onready var wolf_anim: AnimatedSprite2D = $WolfAnim
 @onready var wolf_audio: AudioStreamPlayer = $WolfAudio
 @onready var duration_timer: Timer = $DurationTimer
@@ -67,7 +69,7 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 	var unit = body.owner
 	if unit is Enemy:
 		unit.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,true,)
-		var dizness_buff: PropertyBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
 		dizness_buff.duration = dizness_time
 		dizness_buff.buff_tag = "wolf_dizness"
 		dizness_buff.unit = unit

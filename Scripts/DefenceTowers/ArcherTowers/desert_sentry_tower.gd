@@ -1,12 +1,19 @@
 extends ArcherTower
 class_name DesertSentryTower
 
+@export var DESERT_KILLER_SCENE: PackedScene
+@export var desert_wolf_scene: PackedScene
+@export_group("Skill1Data")
+@export var killing_damage_list: Array[DamageBlock]
+@export var killing_possible_list: Array[float]
+@export_group("Skill2Data")
+@export var wolf_damage_list: Array[int]
+@export var wold_dizness_time: Array[float]
+
 @onready var skill_1_timer: Timer = $Skill1Timer
 @onready var desert_shooter: AnimatedSprite2D = $TowerSprite/DesertShooter
 @onready var killing_area: Area2D = $KillingArea
 @onready var skill_2_timer: Timer = $Skill2Timer
-
-const DESERT_KILLER_SCENE = preload("res://Scenes/Skills/desert_killer.tscn")
 
 var skill1_is_releasing: bool = false
 
@@ -33,20 +40,10 @@ func skill1_release():
 	for body in killing_area.get_overlapping_bodies():
 		enemy_list.append(body.owner)
 	var locked_enemy: Enemy = get_highest_health_enemy(enemy_list)
-	var desert_killer: DesertSentryKillingSkill = preload("res://Scenes/Skills/desert_killer.tscn").instantiate()
+	var desert_killer: DesertSentryKillingSkill = DESERT_KILLER_SCENE.instantiate()
 	desert_killer.desert_sentry_tower = self
-	var damage: int
-	var killing_possible: float
-	match tower_skill_levels[0]:
-		1: 
-			damage = randi_range(115,135)
-			killing_possible = 0.2
-		2: 
-			damage = randi_range(200,250)
-			killing_possible = 0.3
-		3: 
-			damage = randi_range(310,400)
-			killing_possible = 0.4
+	var damage: int = killing_damage_list[tower_skill_levels[0]-1].get_damage()
+	var killing_possible: float = killing_possible_list[tower_skill_levels[0]-1]
 	desert_killer.killing_possibile = killing_possible
 	desert_killer.skill_damage = damage
 	desert_killer.killing_enemy = locked_enemy
@@ -69,20 +66,10 @@ func skill_2_release():
 	for body in killing_area.get_overlapping_bodies():
 		enemy_list.append(body.owner)
 	var locked_enemy: Enemy = get_latest_enemy(enemy_list)
-	var desert_wolf: DesertWolfSkill = preload("res://Scenes/Skills/desert_wolf.tscn").instantiate()
+	var desert_wolf: DesertWolfSkill = desert_wolf_scene.instantiate()
 	desert_wolf.sample_enemy = locked_enemy
-	var damage: int
-	var dizness_time: float
-	match tower_skill_levels[1]:
-		1:
-			damage = 28
-			dizness_time = 1
-		2:
-			damage = 52
-			dizness_time = 1.5
-		3:
-			damage = 68
-			dizness_time = 2
+	var damage: int = wolf_damage_list[tower_skill_levels[1]-1]
+	var dizness_time: float = wold_dizness_time[tower_skill_levels[1]-1]
 	desert_wolf.damage = damage
 	desert_wolf.dizness_time = dizness_time
 	Stage.instance.bullets.add_child(desert_wolf)
