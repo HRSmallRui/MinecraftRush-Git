@@ -1,12 +1,14 @@
 extends ShooterBullet
 
+@export var dizness_buff_scene: PackedScene
+@export var dizness_duration: float
 
 
 func enemy_take_damage(enemy: Enemy):
 	AudioManager.instance.black_stone_hit_audio.play()
 	if enemy != null:
-		var dizness_buff: PropertyBuff = preload("res://Scenes/Buffs/TowerBuffs/bombard_dizness_buff.tscn").instantiate()
-		dizness_buff.duration = 1
+		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
+		dizness_buff.duration = dizness_duration
 		dizness_buff.unit = enemy
 		enemy.buffs.add_child(dizness_buff)
 	super(enemy)

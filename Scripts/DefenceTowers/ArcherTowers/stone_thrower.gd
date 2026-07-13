@@ -1,5 +1,8 @@
 extends Shooter
 
+@export var black_stone_scene: PackedScene
+@export var black_stone_damage_list: Array[DamageBlock]
+
 @onready var skill_1_marker: Marker2D = $Skill1Marker
 
 
@@ -33,20 +36,9 @@ func frame_condition():
 			summon_pos = back_flip.global_position if flip_h else back_no_flip.global_position
 		var target_pos: Vector2 = enemy.hurt_box.global_position + enemy.direction * enemy.current_data.unit_move_speed * 2
 		
-		var bullet: Bullet = summon_bullet(summon_pos,target_pos,preload("res://Scenes/Bullets/black_stone.tscn"))
-		var damage_low: int
-		var damage_high: int
-		match tower.tower_skill_levels[0]:
-			1:
-				damage_low = 100
-				damage_high = 120
-			2:
-				damage_low = 150
-				damage_high = 180
-			3:
-				damage_low = 200
-				damage_high = 240
-		bullet.damage = randi_range(damage_low,damage_high)
+		var bullet: Bullet = summon_bullet(summon_pos,target_pos,black_stone_scene)
+		var damage_block: DamageBlock = black_stone_damage_list[tower.tower_skill_levels[0]-1]
+		bullet.damage = damage_block.get_damage()
 	pass
 
 

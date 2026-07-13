@@ -1,5 +1,8 @@
 extends ShooterBullet
 
+@export var stone_bullet_scene: PackedScene
+@export var stone_explosion_effect_scene: PackedScene
+@export var stone_explosion_damage_list: Array[DamageBlock]
 
 @onready var condition_area: Area2D = $ConditionArea
 @onready var explosion_hit_area: Area2D = $ExplosionHitArea
@@ -10,7 +13,7 @@ func enemy_take_damage(enemy: Enemy):
 	for hurt_box in condition_area.get_overlapping_areas():
 		var new_enemy = hurt_box.owner
 		if new_enemy == enemy: continue
-		var stone_bullet: Bullet = preload("res://Scenes/Bullets/physics_stone.tscn").instantiate()
+		var stone_bullet: Bullet = stone_bullet_scene.instantiate()
 		stone_bullet.position = position
 		stone_bullet.erase_enemy_list.append(enemy)
 		stone_bullet.damage = damage * 2/3
@@ -22,21 +25,11 @@ func enemy_take_damage(enemy: Enemy):
 		Stage.instance.bullets.add_child(stone_bullet)
 		return
 	if bullet_special_tag_levels.has("stone_explosion"):
-		var explosion_stone_effect: AnimatedSprite2D = preload("res://Scenes/Effects/explosion_stone_effect.tscn").instantiate()
-		explosion_stone_effect.position = position
-		Stage.instance.bullets.add_child(explosion_stone_effect)
+		EffectManager.instance.play_sprite_effect(stone_explosion_effect_scene,position)
 		AudioManager.instance.stone_explosion_audio.play()
-		var damage_low: int
-		var damage_high: int
-		match bullet_special_tag_levels["stone_explosion"]:
-			1:
-				damage_low = 10
-				damage_high = 15
-			2:
-				damage_low = 15
-				damage_high = 24
+		var damage_block: DamageBlock = stone_explosion_damage_list[bullet_special_tag_levels["stone_explosion"]-1]
 		for box in explosion_hit_area.get_overlapping_areas():
 			var new_enemy: Enemy = box.owner
-			new_enemy.take_damage(randi_range(damage_low,damage_high),DataProcess.DamageType.PhysicsDamage,0,false,source,explosion,true)
+			new_enemy.take_damage(damage_block.get_damage(),DataProcess.DamageType.PhysicsDamage,0,false,source,explosion,true)
 	
 	pass

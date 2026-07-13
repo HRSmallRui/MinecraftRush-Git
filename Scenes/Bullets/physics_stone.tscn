@@ -1,8 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://csh7higjurisu"]
+[gd_scene load_steps=12 format=3 uid="uid://csh7higjurisu"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_md6qt"]
 [ext_resource type="Script" path="res://Scripts/Bullets/physics_stone.gd" id="2_e02e0"]
+[ext_resource type="PackedScene" uid="uid://dkjb4g44gllfp" path="res://Scenes/Effects/explosion_stone_effect.tscn" id="3_amkjf"]
 [ext_resource type="Texture2D" uid="uid://cofnlv67wb2sc" path="res://Assets/Images/Bullets/stone.png" id="3_t1jh6"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="4_c8g7n"]
+
+[sub_resource type="Resource" id="Resource_uoymf"]
+script = ExtResource("4_c8g7n")
+damage_low = 10
+damage_high = 15
+
+[sub_resource type="Resource" id="Resource_44d7m"]
+script = ExtResource("4_c8g7n")
+damage_low = 15
+damage_high = 24
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -19,6 +31,8 @@ colors = PackedColorArray(1, 1, 1, 0.717647, 1, 1, 1, 0)
 
 [node name="PhysicsStone" instance=ExtResource("1_md6qt")]
 script = ExtResource("2_e02e0")
+explosion_stone_effect_scene = ExtResource("3_amkjf")
+explosion_damage_list = Array[ExtResource("4_c8g7n")]([SubResource("Resource_uoymf"), SubResource("Resource_44d7m")])
 tail_max_length = 20
 bullet_speed = 0.8
 
