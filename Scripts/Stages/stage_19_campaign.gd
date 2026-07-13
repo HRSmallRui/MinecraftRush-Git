@@ -37,10 +37,12 @@ var cooperator_music_player: LoopMusicPlayer
 func _ready() -> void:
 	for tower in tower_summon_list:
 		tower_summon_pos_list.append(tower.global_position)
-	super()
-	add_child(begin_story_layer_scene.instantiate())
+	if Global.stage_first:
+		add_child(begin_story_layer_scene.instantiate())
+		Global.stage_first = false
 	await get_tree().create_timer(0.01,false).timeout
 	preparation_music.play()
+	super()
 	pass
 
 
