@@ -1,7 +1,8 @@
 extends CanvasLayer
 
+@export var stage_scene: PackedScene
 @onready var subtitle: Label = $Subtitle
-var later_scene = preload("res://Scenes/Stages/Stage1/stage_1_campaign_later.tscn")
+
 @onready var skip_button: Button = $SkipButton
 
 
@@ -41,7 +42,7 @@ func _ready() -> void:
 	subtitle_change("我们需要你比任何史官都更早写下这场战争的终章……",124,4)
 	
 	await get_tree().create_timer(132,false).timeout
-	get_tree().change_scene_to_packed(later_scene)
+	get_tree().change_scene_to_packed(stage_scene)
 	pass
 
 
@@ -58,5 +59,5 @@ func _on_skip_button_pressed() -> void:
 	get_tree().paused = true
 	await get_tree().create_timer(0.3,true).timeout
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(later_scene)
+	get_tree().change_scene_to_packed(stage_scene)
 	pass # Replace with function body.

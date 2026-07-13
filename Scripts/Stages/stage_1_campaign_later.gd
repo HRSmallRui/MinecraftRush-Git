@@ -1,5 +1,7 @@
 extends Stage
 
+@export var armor_tip_button_scene: PackedScene
+
 
 func _hero_summon_condition():
 	if stage_sav.level_sav[1][1] == 0:
@@ -11,7 +13,7 @@ func _hero_summon_condition():
 func wave_tip(wave_count: int):
 	if wave_count == 6:
 		await get_tree().create_timer(2,false).timeout
-		tips_container.add_child(load("res://Scenes/UI-Components/TipButtons/ArmorTipButton.tscn").instantiate())
+		tips_container.add_child(armor_tip_button_scene.instantiate())
 	pass
 
 

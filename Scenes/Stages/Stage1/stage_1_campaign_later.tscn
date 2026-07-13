@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=3 uid="uid://bfxsbppmehrlo"]
+[gd_scene load_steps=165 format=3 uid="uid://bfxsbppmehrlo"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_uf25d"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_1_campaign_later.gd" id="2_o0b88"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c8gmdhh2o6jgd" path="res://Assets/Images/Stages/Stage1/stage1-wall.png" id="3_bvto7"]
 [ext_resource type="PackedScene" uid="uid://44npbgu1xrd5" path="res://Scenes/Enemies/enemy_0.tscn" id="3_kkfxg"]
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="3_uostc"]
+[ext_resource type="PackedScene" uid="uid://d11w8wb6ou4nk" path="res://Scenes/UI-Components/TipButtons/ArmorTipButton.tscn" id="3_va8nk"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="4_m34qa"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_jdvbq"]
 [ext_resource type="PackedScene" uid="uid://d0sta1lv6shgl" path="res://Scenes/DefenceTowers/defence_tower_based.tscn" id="6_s654h"]
@@ -105,6 +106,11 @@
 [ext_resource type="Texture2D" uid="uid://c8c5ijp3v7ggd" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_40.png" id="90_sulxg"]
 [ext_resource type="PackedScene" uid="uid://cdiktf378osju" path="res://Scenes/StageComponents/sheep.tscn" id="91_pidg0"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="98_m3yo4"]
+[ext_resource type="PackedScene" uid="uid://c3t3j2ih5w5ss" path="res://Scenes/TipUI/reinforce_unlock.tscn" id="100_eahil"]
+[ext_resource type="PackedScene" uid="uid://bxaumuhy1wwpp" path="res://Scenes/TipUI/hero_unlock.tscn" id="101_t6ijq"]
+[ext_resource type="PackedScene" uid="uid://kodaiwqt343w" path="res://Scenes/TipUI/heroskill_unlock.tscn" id="102_tecm7"]
+[ext_resource type="PackedScene" uid="uid://b1i3simwvcxqa" path="res://Scenes/TipUI/firerain_unlock.tscn" id="103_kp2n4"]
+[ext_resource type="PackedScene" uid="uid://bck1eh6yn7iii" path="res://Scenes/UI-Components/Stages/tutorial_warning.tscn" id="104_3w5l8"]
 [ext_resource type="Texture2D" uid="uid://dnrxg6tdwx1mp" path="res://Assets/Animations/StageComponents/Sheep/dead_0.png" id="123_dy5ms"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrbi4"]
@@ -861,11 +867,12 @@ wave_summon_text_list = Array[ExtResource("98_m3yo4")]([SubResource("Resource_mx
 
 [node name="Stage1Campaign" instance=ExtResource("1_uf25d")]
 script = ExtResource("2_o0b88")
+armor_tip_button_scene = ExtResource("3_va8nk")
 enemy_scene_list = Array[PackedScene]([ExtResource("3_kkfxg"), ExtResource("4_m34qa")])
 current_money = 250
 stage_summon_config = ExtResource("3_0ugup")
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 min_zoom_length_mobile = 1.0
 
 [node name="PreparationMusic" parent="Musics" index="0"]
@@ -953,7 +960,7 @@ position = Vector2(1391, 1062)
 texture = ExtResource("123_dy5ms")
 flip_h = true
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_k1m06")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1008,6 +1015,11 @@ position = Vector2(1516, 604)
 [node name="TeachSystem" type="CanvasLayer" parent="." index="13"]
 process_mode = 3
 script = ExtResource("12_8h6nn")
+reinforce_unlock_scene = ExtResource("100_eahil")
+hero_unlock_scene = ExtResource("101_t6ijq")
+hero_skill_unlock_scene = ExtResource("102_tecm7")
+fire_unlock_scene = ExtResource("103_kp2n4")
+warning_scene = ExtResource("104_3w5l8")
 
 [node name="AllStop" type="ColorRect" parent="TeachSystem" index="0"]
 anchors_preset = 15
@@ -1311,7 +1323,7 @@ offset_bottom = 340.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(270, 481, 873, 486, 956, 371, 999, 249, 1024, 135, 1026, -1, 1114, 1, 1122, 76, 1092, 255, 998, 494, 1376, 588, 1744, 695, 1922, 691, 1919, 773, 1679, 778, 1033, 591, 284, 567)
 
-[node name="HeroSummonMarker" parent="." index="21"]
+[node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(421, 527)
 
 [connection signal="pressed" from="TeachSystem/SkipButton" to="TeachSystem" method="_on_skip_button_pressed"]

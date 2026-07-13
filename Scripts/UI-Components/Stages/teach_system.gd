@@ -1,6 +1,12 @@
 extends CanvasLayer
 class_name TeachSystem
 
+@export var reinforce_unlock_scene: PackedScene
+@export var hero_unlock_scene: PackedScene
+@export var hero_skill_unlock_scene: PackedScene
+@export var fire_unlock_scene: PackedScene
+@export var warning_scene: PackedScene
+
 @onready var intro_label: Label = $IntroLabel
 @onready var enemy_point_1: PointLight2D = $ShowComponent/EnemyPoint1
 @onready var directional_light: DirectionalLight2D = $DirectionalLight
@@ -198,7 +204,7 @@ func step4():
 
 func reinforce_tutorial():
 	await get_tree().create_timer(2,false).timeout
-	Stage.instance.add_child(preload("res://Scenes/TipUI/reinforce_unlock.tscn").instantiate())
+	Stage.instance.add_child(reinforce_unlock_scene.instantiate())
 	await get_tree().create_timer(0.3,false).timeout
 	var reinforce_skill_button: SkillButton = Stage.instance.skill_button_container.get_child(1)
 	reinforce_skill_button.unlock()
@@ -207,7 +213,7 @@ func reinforce_tutorial():
 
 func hero_tutorial():
 	await get_tree().create_timer(2,false).timeout
-	Stage.instance.add_child(preload("res://Scenes/TipUI/hero_unlock.tscn").instantiate())
+	Stage.instance.add_child(hero_unlock_scene.instantiate())
 	await get_tree().create_timer(0.3,false).timeout
 	Stage.instance.summon_hero(Stage.instance.hero_summon_marker.position - Vector2(300,0))
 	await get_tree().create_timer(0.5,false).timeout
@@ -219,7 +225,7 @@ func hero_tutorial():
 
 func heroskill_tutorial():
 	await get_tree().create_timer(2,false).timeout
-	Stage.instance.add_child(preload("res://Scenes/TipUI/heroskill_unlock.tscn").instantiate())
+	Stage.instance.add_child(hero_skill_unlock_scene.instantiate())
 	await get_tree().create_timer(0.3,false).timeout
 	var skill_button: SkillButton = Stage.instance.skill_button_container.get_child(2)
 	skill_button.unlock()
@@ -228,7 +234,7 @@ func heroskill_tutorial():
 
 func firerain_tutorial():
 	await get_tree().create_timer(2,false).timeout
-	Stage.instance.add_child(preload("res://Scenes/TipUI/firerain_unlock.tscn").instantiate())
+	Stage.instance.add_child(fire_unlock_scene.instantiate())
 	await get_tree().create_timer(0.3,false).timeout
 	var skill_button: SkillButton = Stage.instance.skill_button_container.get_child(0)
 	skill_button.unlock()
@@ -237,7 +243,7 @@ func firerain_tutorial():
 
 func _on_skip_button_pressed() -> void:
 	get_tree().paused = false
-	Stage.instance.add_child(preload("res://Scenes/UI-Components/Stages/tutorial_warning.tscn").instantiate())
+	Stage.instance.add_child(warning_scene.instantiate())
 	Stage.instance.summon_hero()
 	
 	queue_free()
