@@ -65,6 +65,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	Global.stage_first = true
+	HeroGlobal.clear_hero_scene()
 	
 	if OS.get_name() == "Android":
 		camera.zoom *= 1.5

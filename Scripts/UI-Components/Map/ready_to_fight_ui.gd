@@ -144,18 +144,18 @@ func _on_start_button_pressed() -> void:
 			Global.change_scene(bedrock_path)
 	
 	match Map.instance.current_sav.select_hero_id:
-		0: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/steve.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		1: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/fuchen.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		2: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/alex.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		3: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/talzin.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		4: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/robort.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		5: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/kong_shu_lin.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		6: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/golden_diamond.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		7: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/salem.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		8: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/johnny.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		9: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/mike_smith.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		10:ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/rosa.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
-		11: ResourceLoader.load_threaded_request("res://Scenes/Allys/Heroes/steve_sp.tscn","",false,ResourceLoader.CACHE_MODE_IGNORE)
+		0: HeroGlobal.load_async("res://Scenes/Allys/Heroes/steve.tscn")
+		1: HeroGlobal.load_async("res://Scenes/Allys/Heroes/fuchen.tscn")
+		2: HeroGlobal.load_async("res://Scenes/Allys/Heroes/alex.tscn")
+		3: HeroGlobal.load_async("res://Scenes/Allys/Heroes/talzin.tscn")
+		4: HeroGlobal.load_async("res://Scenes/Allys/Heroes/robort.tscn")
+		5: HeroGlobal.load_async("res://Scenes/Allys/Heroes/kong_shu_lin.tscn")
+		6: HeroGlobal.load_async("res://Scenes/Allys/Heroes/golden_diamond.tscn")
+		7: HeroGlobal.load_async("res://Scenes/Allys/Heroes/salem.tscn")
+		8: HeroGlobal.load_async("res://Scenes/Allys/Heroes/johnny.tscn")
+		9: HeroGlobal.load_async("res://Scenes/Allys/Heroes/mike_smith.tscn")
+		10: HeroGlobal.load_async("res://Scenes/Allys/Heroes/rosa.tscn")
+		11: HeroGlobal.load_async("res://Scenes/Allys/Heroes/steve_sp.tscn")
 	pass # Replace with function body.
 
 

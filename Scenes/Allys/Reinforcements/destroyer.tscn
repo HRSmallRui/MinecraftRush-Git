@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6l5ggsar3vu"]
+[gd_scene load_steps=10 format=3 uid="uid://b6l5ggsar3vu"]
 
 [ext_resource type="PackedScene" uid="uid://f1vaqnehc211" path="res://Scenes/Allys/Reinforcements/reinforcement_class.tscn" id="1_qf1xv"]
 [ext_resource type="Script" path="res://Scripts/Allys/Reinfrocements/destroyer.gd" id="2_77r56"]
@@ -29,9 +29,6 @@ explode_immune = false
 total_defence_rate = 0.0
 unit_move_speed = 1.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg13w"]
-size = Vector2(120, 155)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1kar6"]
 radius = 73.9444
 
@@ -55,10 +52,6 @@ position = Vector2(10, -180)
 sprite_frames = ExtResource("3_v8qhe")
 animation = &"attack"
 autoplay = "idle"
-
-[node name="CollisionShape2D" parent="UnitBody" index="1"]
-position = Vector2(0, -67.5)
-shape = SubResource("RectangleShape2D_yg13w")
 
 [node name="HurtBox" parent="UnitBody" index="2"]
 position = Vector2(0, -100)

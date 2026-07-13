@@ -131,11 +131,13 @@ func change_scene(scene_path: String):
 	create_tween().tween_property(tip_panel,"modulate:a",1,0.5)
 	await get_tree().create_timer(0.5,true).timeout
 	get_tree().paused = false
-	ResourceLoader.load_threaded_request(scene_path,"",false,ResourceLoader.CACHE_MODE_IGNORE)
+	ResourceLoader.load_threaded_request(scene_path,"",false)
 	$SceneChanger.scene_path = scene_path
 	$SceneChanger.set_process(true)
 	$SceneChanger.update = 0
 	await $SceneChanger.done
+	if !HeroGlobal.is_loading_done:
+		await HeroGlobal.hero_loading_done
 	create_tween().tween_property(progress_bar,"modulate:a",0,0.3)
 	create_tween().tween_property(tip_panel,"modulate:a",0,0.5)
 	await get_tree().create_timer(0.5,true).timeout
