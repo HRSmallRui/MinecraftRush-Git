@@ -136,6 +136,8 @@ func change_scene(scene_path: String):
 	$SceneChanger.set_process(true)
 	$SceneChanger.update = 0
 	await $SceneChanger.done
+	if !GlobalHero.is_loading_done:
+		await GlobalHero.hero_loading_done
 	create_tween().tween_property(progress_bar,"modulate:a",0,0.3)
 	create_tween().tween_property(tip_panel,"modulate:a",0,0.5)
 	await get_tree().create_timer(0.5,true).timeout

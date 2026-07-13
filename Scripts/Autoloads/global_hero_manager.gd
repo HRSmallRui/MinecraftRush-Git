@@ -24,6 +24,7 @@ func load_async(path: String):
 
 func _process(delta: float) -> void:
 	ResourceLoader.load_threaded_get_status(loading_path,progress)
+	print(progress)
 	if progress[0] >= 0.99:
 		hero_scene = ResourceLoader.load_threaded_get(loading_path)
 		is_loading_done = true
