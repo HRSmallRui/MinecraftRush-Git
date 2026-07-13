@@ -1,31 +1,27 @@
 extends SkillButton
 
-
 var reinforce_scene: PackedScene
-var destroyer_scene: PackedScene
+@export var destroyer_scene: PackedScene
+
+var reinforce_scene_path: String
+var destroyer_scene_path: String
 
 
 func _enter_tree() -> void:
 	var level: int = clampi(Stage.instance.stage_sav.upgrade_sav[5],0,Stage.instance.limit_tech_level)
 	
 	match level:
-		0: ResourceLoader.load_threaded_request("res://Scenes/Allys/Reinforcements/reinforcement_lv_0.tscn")
-		1: ResourceLoader.load_threaded_request("res://Scenes/Allys/Reinforcements/reinforcement_lv_1.tscn")
-		2: ResourceLoader.load_threaded_request("res://Scenes/Allys/Reinforcements/reinforcement_lv_2.tscn")
-		3: ResourceLoader.load_threaded_request("res://Scenes/Allys/Reinforcements/reinforcement_lv_3.tscn")
-		4,5: ResourceLoader.load_threaded_request("res://Scenes/Allys/Reinforcements/reinforcement_lv_4.tscn")
+		0: reinforce_scene_path = "res://Scenes/Allys/Reinforcements/reinforcement_lv_0.tscn"
+		1: reinforce_scene_path = "res://Scenes/Allys/Reinforcements/reinforcement_lv_1.tscn"
+		2: reinforce_scene_path = "res://Scenes/Allys/Reinforcements/reinforcement_lv_2.tscn"
+		3: reinforce_scene_path = "res://Scenes/Allys/Reinforcements/reinforcement_lv_3.tscn"
+		4,5: reinforce_scene_path = "res://Scenes/Allys/Reinforcements/reinforcement_lv_4.tscn"
 	
-	if level == 5: ResourceLoader.load_threaded_request("res://Scenes/Allys/Reinforcements/destroyer.tscn")
+	ResourceLoader.load_threaded_request(reinforce_scene_path)
 	
 	await get_tree().create_timer(2).timeout
-	match level:
-		0: reinforce_scene = load("res://Scenes/Allys/Reinforcements/reinforcement_lv_0.tscn")
-		1: reinforce_scene = load("res://Scenes/Allys/Reinforcements/reinforcement_lv_1.tscn")
-		2: reinforce_scene = load("res://Scenes/Allys/Reinforcements/reinforcement_lv_2.tscn")
-		3: reinforce_scene = load("res://Scenes/Allys/Reinforcements/reinforcement_lv_3.tscn")
-		4,5: reinforce_scene = load("res://Scenes/Allys/Reinforcements/reinforcement_lv_4.tscn")
 	
-	if level == 5: destroyer_scene = load("res://Scenes/Allys/Reinforcements/destroyer.tscn")
+	ResourceLoader.load_threaded_get(reinforce_scene_path)
 	pass
 
 
