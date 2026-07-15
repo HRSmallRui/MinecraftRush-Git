@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjb0kbnuofjn6"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/MagicianRayShader.gdshader" id="1_7xqrs"]
+[ext_resource type="Texture2D" uid="uid://cqb2h1mtdogf7" path="res://Assets/Images/Stages/path_effect.png" id="2_t62b6"]
+[ext_resource type="Script" path="res://Scripts/StageComponents/path_line_effect.gd" id="3_agim0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d76qw"]
+shader = ExtResource("1_7xqrs")
+shader_parameter/speed = 4.0
+shader_parameter/alpha_strength = 0.0
+
+[sub_resource type="Animation" id="Animation_ll8ss"]
+resource_name = "show"
+length = 0.5
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/alpha_strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_1meo4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/alpha_strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8wkl"]
+_data = {
+"RESET": SubResource("Animation_1meo4"),
+"show": SubResource("Animation_ll8ss")
+}
+
+[node name="PathLineEffect" type="Line2D"]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_d76qw")
+width = 20.0
+texture = ExtResource("2_t62b6")
+texture_mode = 1
+script = ExtResource("3_agim0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g8wkl")
+}
+speed_scale = 2.0

@@ -4,12 +4,12 @@ class_name WaveButton
 @export var linked_wave_panel: WavePanel
 @export var wave_button_id: int = 0
 @export var summon_text_list: Array[WaveSummonTextList]
+@export var linked_enemy_path: EnemyPath
 @onready var texture_button: TextureButton = $TextureButton
 @onready var mouse_over_audio: AudioStreamPlayer = $MouseOverAudio
 @onready var wave_progress_bar: TextureProgressBar = $TextureButton/WaveProgressBar
 @onready var back_button: TextureButton = $WaveOverScreenLayer/BackButton
 @onready var wave_over_screen_layer: CanvasLayer = $WaveOverScreenLayer
-@onready var screen_visible_node: VisibleOnScreenNotifier2D = $ScreenVisibleNode
 
 var wave_animation_playing: bool = false
 
@@ -55,6 +55,7 @@ func ui_process(memeber: Node):
 func _on_texture_button_mouse_entered() -> void:
 	mouse_over_audio.play()
 	linked_wave_panel.show_panel()
+	show_path_effect()
 	pass # Replace with function body.
 
 
@@ -62,6 +63,8 @@ func _on_texture_button_mouse_exited() -> void:
 	linked_wave_panel.hide_panel()
 	if MobileMiddleProcess.instance.current_touch_object == self:
 		MobileMiddleProcess.instance.current_touch_object = null
+	
+	hide_path_effect()
 	pass # Replace with function body.
 
 
@@ -136,4 +139,18 @@ func control_back_button_visible():
 		back_button.position += direction * x_rate if x_rate < y_rate else direction * y_rate
 		back_button.position -= Vector2(24,24)
 		back_button.position = Vector2(clampf(back_button.position.x,0,1872),clampf(back_button.position.y,0,1032))
+	pass
+
+
+func show_path_effect():
+	PathLineEffect.instance.clear_points()
+	var points: PackedVector2Array = linked_enemy_path.curve.get_baked_points()
+	for point in points:
+		PathLineEffect.instance.add_point(point)
+	PathLineEffect.instance.show_path_line()
+	pass
+
+
+func hide_path_effect():
+	PathLineEffect.instance.hide_path_line()
 	pass
