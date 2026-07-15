@@ -1,5 +1,8 @@
 extends Stage
 
+@export var battle_tip_scene: PackedScene
+@export var barrack_tip_scene: PackedScene
+
 
 func _ready() -> void:
 	super()
@@ -13,7 +16,7 @@ func _ready() -> void:
 func wave_tip(wave_count: int):
 	match wave_count:
 		1:
-			tips_container.add_child(preload("res://Scenes/UI-Components/TipButtons/battle_tip_button.tscn").instantiate())
+			tips_container.add_child(battle_tip_scene.instantiate())
 		3:
-			tips_container.add_child(preload("res://Scenes/UI-Components/TipButtons/barrack_tip_button.tscn").instantiate())
+			tips_container.add_child(barrack_tip_scene.instantiate())
 	pass

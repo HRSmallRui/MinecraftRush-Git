@@ -516,9 +516,6 @@ z_index = -1
 texture = ExtResource("6_mchjs")
 centered = false
 
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(1490, 994)
-
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(1637, 995)
 texture = ExtResource("6_pdou5")
@@ -582,7 +579,10 @@ sprite_frames = SubResource("SpriteFrames_p8fkw")
 autoplay = "default"
 offset = Vector2(127.56, -217.251)
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="Flag" parent="Background" index="17"]
+position = Vector2(1490, 994)
+
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_mikv3")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -672,12 +672,13 @@ position = Vector2(990, 452)
 [node name="DefenceTowerBased16" parent="Towers" index="15" instance=ExtResource("50_qhue6")]
 position = Vector2(785, 343)
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("51_ucq4v")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("51_ucq4v")]
 offset_left = 38.0
 offset_top = 518.0
 offset_right = 38.0
 offset_bottom = 518.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("52_lt1uk")]([SubResource("Resource_85pwq"), SubResource("Resource_yomnx"), SubResource("Resource_mj8v4"), SubResource("Resource_yokrx"), SubResource("Resource_buk21")])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="3"]
@@ -686,12 +687,13 @@ rotation = -2.29575
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("54_gy3qw")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("51_ucq4v")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("51_ucq4v")]
 offset_left = 895.0
 offset_top = 82.0
 offset_right = 895.0
 offset_bottom = 82.0
 linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("52_lt1uk")]([SubResource("Resource_eer41"), SubResource("Resource_32u50"), SubResource("Resource_sey64"), SubResource("Resource_3met2"), SubResource("Resource_u1qgb")])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="3"]
@@ -722,5 +724,5 @@ script = ExtResource("63_2ixfb")
 max_wave_count = 5
 process_summon_blocks = Array[ExtResource("50_ol1y5")]([ExtResource("51_dcbuj"), ExtResource("52_t4n1v"), ExtResource("53_cv81b"), ExtResource("54_3qqmm"), ExtResource("55_nn1g1"), ExtResource("56_dlvk7")])
 
-[node name="HeroSummonMarker" parent="." index="20"]
+[node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(1559, 1002)

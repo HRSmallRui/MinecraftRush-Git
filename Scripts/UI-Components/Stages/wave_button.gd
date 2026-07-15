@@ -3,8 +3,9 @@ class_name WaveButton
 
 @export var linked_wave_panel: WavePanel
 @export var wave_button_id: int = 0
-@export var summon_text_list: Array[WaveSummonTextList]
 @export var linked_enemy_path: EnemyPath
+@export var summon_text_list: Array[WaveSummonTextList]
+
 @onready var texture_button: TextureButton = $TextureButton
 @onready var mouse_over_audio: AudioStreamPlayer = $MouseOverAudio
 @onready var wave_progress_bar: TextureProgressBar = $TextureButton/WaveProgressBar
