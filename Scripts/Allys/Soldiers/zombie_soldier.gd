@@ -1,7 +1,14 @@
 extends Soldier
 
+@export_group("Skill1")
+@export var damage_heal_data_list: Array[int]
+@export_group("Skill2",)
+@export var upgrade_damage_list: Array[DamageBlock]
+@export var upgrade_armor: FloatSaver
+@export_group("Skill3")
 @export var jade_die_damage_buff_scene: PackedScene
 @export var jade_die_heal_buff_scene: PackedScene
+@export var jade_die_duration_list: Array[float]
 
 @onready var jade_die_audio: AudioStreamPlayer = $JadeDieAudio
 @onready var jade_die_area: Area2D = $UnitBody/JadeDieArea
@@ -23,11 +30,7 @@ func anim_offset():
 func cause_damage(damage_type: int = 0):
 	super(damage_type)
 	if soldier_skill_levels[0] > 0:
-		var heal_data: int
-		match soldier_skill_levels[0]:
-			1: heal_data = 5
-			2: heal_data = 10
-			3: heal_data = 15
+		var heal_data: int = damage_heal_data_list[soldier_skill_levels[0]-1]
 		current_data.heal(heal_data)
 	pass
 
@@ -37,11 +40,7 @@ func frame_changed():
 		cause_damage()
 	if ally_sprite.animation == "jade_die" and ally_sprite.frame == 23:
 		jade_die_audio.play()
-		var duration: float
-		match soldier_skill_levels[2]:
-			1: duration = 4
-			2: duration = 6
-			3: duration = 8
+		var duration: float = jade_die_duration_list[soldier_skill_levels[2]-1]
 		for ally_body in jade_die_area.get_overlapping_bodies():
 			var ally: Ally = ally_body.owner
 			if ally == self: continue

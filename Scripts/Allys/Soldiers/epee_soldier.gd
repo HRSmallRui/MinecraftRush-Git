@@ -1,5 +1,16 @@
 extends Soldier
 
+@export var aoe_damage_rate: float
+@export_group("Skill1","skill1")
+@export var skill1_upgrade_damage_list: Array[DamageBlock]
+@export_group("Skill2","skill2")
+@export var skill2_damage_list: Array[DamageBlock]
+@export_group("Skill3","skill3")
+@export var skill3_invincible_buff_scene: PackedScene
+@export var skill3_start_rebirth_possible_list: Array[float]
+@export var skill3_rebirth_possible_delta: float
+@export var skill3_rebirth_heal_rate_list: Array[float]
+
 @onready var skill_2_audio: AudioStreamPlayer = $Skill2Audio
 @onready var rebirth_audio: AudioStreamPlayer = $RebirthAudio
 @onready var skill_2_timer: Timer = $Skill2Timer
@@ -37,7 +48,7 @@ func frame_changed():
 			var enemy = body.owner as Enemy
 			if enemy != current_intercepting_enemy: enemy_hit_list.append(enemy)
 		for enemy in enemy_hit_list:
-			enemy.take_damage(damage / 2,DataProcess.DamageType.PhysicsDamage,0,false,null,false,true)
+			enemy.take_damage(damage * aoe_damage_rate,DataProcess.DamageType.PhysicsDamage,0,false,null,false,true)
 		
 		if current_intercepting_enemy != null:
 			current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true)
@@ -46,25 +57,14 @@ func frame_changed():
 			AudioManager.instance.battle_audio_play()
 	
 	if ally_sprite.animation == "super_attack" and ally_sprite.frame == 20:
-		var damage_low: int
-		var damage_high: int
+		var damage: int = skill2_damage_list[soldier_skill_levels[2]-1].get_damage()
 		skill_2_audio.play()
-		match soldier_skill_levels[1]:
-			1:
-				damage_low = 75
-				damage_high = 150
-			2:
-				damage_low = 100
-				damage_high = 180
-			3:
-				damage_low = 130
-				damage_high = 210
 		var text_position: Vector2 = hurt_box.global_position - Vector2(0,10)
 		text_position.x -= 10 if ally_sprite.flip_h else -10
 		TextEffect.text_effect_show("重击！",TextEffect.TextEffectType.SecKill,text_position)
 		for body in super_attack_hit_area.get_overlapping_bodies():
 			var enemy: Enemy = body.owner
-			enemy.take_damage(randi_range(damage_low,damage_high),DataProcess.DamageType.ExplodeDamage,0,false,self,true,true)
+			enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,self,true,true)
 	pass
 
 
@@ -96,7 +96,7 @@ func die(explosion: bool = false):
 	
 	if randf_range(0,1) < current_rebirth_possible and skill_3_timer.is_stopped():
 		skill_3_rebirth()
-		current_rebirth_possible -= 0.2
+		current_rebirth_possible -= skill3_rebirth_possible_delta
 		return
 	
 	super(explosion)
@@ -108,18 +108,14 @@ func die(explosion: bool = false):
 func skill_3_rebirth():
 	translate_to_new_state(AllyState.SPECIAL)
 	ally_sprite.play("rebirth")
-	var heal_rate: float
-	match soldier_skill_levels[2]:
-		1: heal_rate = 0.4
-		2: heal_rate = 0.6
-		3: heal_rate = 0.8
+	var heal_rate: float = skill3_rebirth_heal_rate_list[soldier_skill_levels[2]-1]
 	var heal_health: int = float(start_data.health) * heal_rate
 	current_data.health = heal_health
 	skill_3_timer.start()
 	rebirth_audio.play()
 	skill_3_duration_timer.start()
 	rebirth_light.show()
-	var invincible_buff: PropertyBuff = preload("res://Scenes/Buffs/Allys/epee_soldier_invincible_buff.tscn").instantiate()
+	var invincible_buff: PropertyBuff = skill3_invincible_buff_scene.instantiate()
 	invincible_buff.duration = skill_3_duration_timer.wait_time
 	invincible_buff.unit = self
 	buffs.add_child(invincible_buff)
@@ -132,16 +128,7 @@ func skill_3_rebirth():
 func soldier_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
 	if skill_id == 2:
-		match skill_level:
-			1: 
-				#skill_3_duration_timer.wait_time = 2
-				rebirth_possible = 0.6
-			2: 
-				#skill_3_duration_timer.wait_time = 4
-				rebirth_possible = 0.7
-			3: 
-				#skill_3_duration_timer.wait_time = 6
-				rebirth_possible = 0.8
+		rebirth_possible = skill3_start_rebirth_possible_list[soldier_skill_levels[2]-1]
 		
 		current_rebirth_possible = rebirth_possible
 		skill_3_timer.stop()

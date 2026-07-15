@@ -1,9 +1,19 @@
 extends Soldier
 
 @export var medical_buff_scene: PackedScene
-
-const BLOOD_SOLDIERRES = preload("res://Assets/Animations/Soldiers/LV4-3/SpriteFrames/blood_soldierres.res")
-const NORMAL_SOLDIER = preload("res://Assets/Animations/Soldiers/LV4-3/SpriteFrames/normal_soldier.res")
+@export var BLOOD_SOLDIERRES: SpriteFrames
+@export var NORMAL_SOLDIER: SpriteFrames
+@export var medical_plague_buff_scene: PackedScene
+@export_group("Passive","passive")
+@export var passive_heal_data: int
+@export var passive_heal_time_interval: float
+@export var passive_heal_effect_scene: PackedScene
+@export_group("Skill1","skill1")
+@export var skill1_buff_duration_list: Array[float]
+@export_group("Skill2","skill2")
+@export var skill2_far_damage_list: Array[DamageBlock]
+@export_group("Skill3","skill3")
+@export var skill3_heal_data_list: Array[int]
 
 @onready var heal_animation_player: AnimationPlayer = $UnitBody/HealAnimationPlayer
 @onready var heal_area: Area2D = $UnitBody/HealArea
@@ -14,6 +24,7 @@ const NORMAL_SOLDIER = preload("res://Assets/Animations/Soldiers/LV4-3/SpriteFra
 
 func _ready() -> void:
 	super()
+	passive_heal_timer.wait_time = passive_heal_time_interval
 	ally_sprite.sprite_frames = NORMAL_SOLDIER
 	await get_tree().create_timer(randf_range(1,2),false).timeout
 	passive_heal_timer.start()
@@ -45,11 +56,7 @@ func frame_changed():
 		if ally_sprite.frame == 11:
 			heal_animation_player.play("Appear")
 		if ally_sprite.frame == 19:
-			var heal_data: int
-			match soldier_skill_levels[2]:
-				1: heal_data = 40
-				2: heal_data = 80
-				3: heal_data = 120
+			var heal_data: int = skill3_heal_data_list[soldier_skill_levels[2]-1]
 			for body in heal_area.get_overlapping_bodies():
 				var ally: Ally = body.owner
 				ally.current_data.heal(heal_data)
@@ -58,12 +65,8 @@ func frame_changed():
 
 func on_normal_attack_hit(target_enemy):
 	if soldier_skill_levels[0] > 0:
-		var duration: float
-		match soldier_skill_levels[0]:
-			1: duration = 4
-			2: duration = 6
-			3: duration = 8
-		var plugin_buff: DotBuff = preload("res://Scenes/Buffs/Allys/medical_plugin_dot_debuff.tscn").instantiate()
+		var duration: float = skill1_buff_duration_list[soldier_skill_levels[0]-1]
+		var plugin_buff: DotBuff = medical_plague_buff_scene.instantiate()
 		plugin_buff.buff_level = soldier_skill_levels[0]
 		plugin_buff.duration = duration
 		target_enemy.buffs.add_child(plugin_buff)
@@ -76,8 +79,8 @@ func _on_passive_heal_timer_timeout() -> void:
 			var ally: Ally = body.owner
 			if ally == self: continue
 			if ally is Soldier and ally in soldier_brothers: continue
-			ally.current_data.heal(4)
-			var heal_effect: HealBuff = preload("res://Scenes/Buffs/Allys/medical_heal_buff.tscn").instantiate()
+			ally.current_data.heal(passive_heal_data)
+			var heal_effect: HealBuff = passive_heal_effect_scene.instantiate()
 			ally.buffs.add_child(heal_effect)
 	pass # Replace with function body.
 
@@ -100,20 +103,10 @@ func soldier_skill_level_up(skill_id: int, skill_level: int):
 			#far_attack_timer.wait_time = current_data.far_attack_speed
 			#var shape: CollisionShape2D = far_attack_area.get_child(0)
 			#shape.disabled = false
-		var damage_low: int
-		var damage_high: int
-		match skill_level:
-			1:
-				damage_low = 8
-				damage_high = 12
-			2:
-				damage_low = 10
-				damage_high = 16
-			3:
-				damage_low = 15
-				damage_high = 20
-		start_data.far_damage_low = damage_low
-		start_data.far_damage_high = damage_high
+		
+		var damage_block: DamageBlock = skill2_far_damage_list[soldier_skill_levels[1]-1]
+		start_data.far_damage_low = damage_block.damage_low
+		start_data.far_damage_high = damage_block.damage_high
 		current_data.update_far_damage()
 	pass
 

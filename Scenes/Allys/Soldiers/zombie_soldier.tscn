@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://do2edynt8v2l7"]
+[gd_scene load_steps=117 format=3 uid="uid://do2edynt8v2l7"]
 
 [ext_resource type="PackedScene" uid="uid://bgi3ibffayb11" path="res://Scenes/Allys/Soldiers/soldier_class.tscn" id="1_d56mc"]
 [ext_resource type="Texture2D" uid="uid://ccdjennpkjoik" path="res://Assets/Images/UI/InformationBar/尸国正规军.png" id="2_4qo8h"]
@@ -7,9 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://btufdvb6y5vx" path="res://Scenes/Buffs/TowerBuffs/jade_die_damage_buff.tscn" id="3_wrah6"]
 [ext_resource type="PackedScene" uid="uid://hjyhlcmawc6p" path="res://Scenes/Buffs/jade_die_heal_buff.tscn" id="4_isqoa"]
 [ext_resource type="Texture2D" uid="uid://dx4fr574rcf3j" path="res://Assets/Animations/Enemies/4尸国正规军/attack_00.png" id="5_6qemd"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="5_lue2u"]
+[ext_resource type="Resource" uid="uid://ba4sfwmjk5i82" path="res://Library/TowerConfigs/BarrackTowers/ZombieBarrackNormal/upgrade_damage_lv1.tres" id="6_bupyk"]
 [ext_resource type="Texture2D" uid="uid://cma55oguvh8iu" path="res://Assets/Animations/Enemies/4尸国正规军/attack_01.png" id="6_dx5k3"]
+[ext_resource type="Resource" uid="uid://b5jj4ihg2f402" path="res://Library/TowerConfigs/BarrackTowers/ZombieBarrackNormal/upgrade_damage_lv2.tres" id="7_jeq0p"]
 [ext_resource type="Texture2D" uid="uid://br6n3wmrm6s3p" path="res://Assets/Animations/Enemies/4尸国正规军/attack_02.png" id="7_xykfb"]
 [ext_resource type="Texture2D" uid="uid://nslkof6jl6hb" path="res://Assets/Animations/Enemies/4尸国正规军/attack_03.png" id="8_7w1rc"]
+[ext_resource type="Resource" uid="uid://b48b48tq2h4lb" path="res://Library/TowerConfigs/BarrackTowers/ZombieBarrackNormal/upgrade_armor.tres" id="8_f5o0x"]
 [ext_resource type="Texture2D" uid="uid://c6mhom584hthy" path="res://Assets/Animations/Enemies/4尸国正规军/attack_04.png" id="9_o0wpo"]
 [ext_resource type="Texture2D" uid="uid://c6i4h7uqbmwbi" path="res://Assets/Animations/Enemies/4尸国正规军/attack_05.png" id="10_vwak7"]
 [ext_resource type="Texture2D" uid="uid://c3eqjeufdptvp" path="res://Assets/Animations/Enemies/4尸国正规军/attack_06.png" id="11_iuevh"]
@@ -473,8 +477,12 @@ radius = 73.9444
 
 [node name="ZombieSoldier" instance=ExtResource("1_d56mc")]
 script = ExtResource("2_7l8ck")
+damage_heal_data_list = Array[int]([5, 10, 15])
+upgrade_damage_list = Array[ExtResource("5_lue2u")]([ExtResource("6_bupyk"), ExtResource("7_jeq0p")])
+upgrade_armor = ExtResource("8_f5o0x")
 jade_die_damage_buff_scene = ExtResource("3_wrah6")
 jade_die_heal_buff_scene = ExtResource("4_isqoa")
+jade_die_duration_list = Array[float]([4.0, 6.0, 8.0])
 soldier_name_list = Array[String](["燧岩燎", "峪烬炘", "烽赭烨", "炻燃昆", "岩妁煊", "烬垣朗", "燧野焜", "峪烽阳", "赭岩明", "燃炻光", "光禾柠"])
 ally_level = 4
 ally_texture = ExtResource("2_4qo8h")
