@@ -1,5 +1,7 @@
 extends DotBuff
 
+@export var plague_buff_scene: PackedScene
+
 @onready var explosion_area: Area2D = $ExplosionArea
 @onready var plugin_explosion: AudioStreamPlayer = $PluginExplosion
 @onready var plugin_effect: Sprite2D = $PluginEffect
@@ -14,12 +16,7 @@ func remove_buff():
 		var enemy: Enemy = unit
 		if enemy.enemy_state == Enemy.EnemyState.DIE and !enemy.is_disappear_killing and !has_explosion:
 			has_explosion = true
-			var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-			explosion_effect.position = enemy.hurt_box.global_position
-			explosion_effect.modulate = Color.DARK_RED
-			explosion_effect.scale *= 0.5
-			explosion_effect.z_index = 0
-			Stage.instance.bullets.add_child(explosion_effect)
+			EffectManager.instance.play_explosion_effect(enemy.hurt_box.global_position,Vector2.ONE*0.5,Color.DARK_RED,0)
 			plugin_explosion.play()
 			var enemy_list: Array[Enemy]
 			for body in explosion_area.get_overlapping_bodies():
@@ -30,7 +27,7 @@ func remove_buff():
 				new_enemy.take_damage(30,DataProcess.DamageType.TrueDamage,0,false,null,false,true,)
 			for new_enemy in enemy_list:
 				#if new_enemy.enemy_state == Enemy.EnemyState.DIE: continue
-				var dot_debuff: DotBuff = preload("res://Scenes/Buffs/Allys/medical_plugin_dot_debuff.tscn").instantiate()
+				var dot_debuff: DotBuff = plague_buff_scene.instantiate()
 				dot_debuff.duration = duration
 				dot_debuff.buff_level = buff_level
 				new_enemy.buffs.add_child(dot_debuff)

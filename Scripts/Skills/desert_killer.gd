@@ -1,6 +1,8 @@
 extends Node2D
 class_name DesertSentryKillingSkill
 
+@export var dizness_buff_scene: PackedScene
+
 
 @onready var killing_anim: AnimatedSprite2D = $KillingAnim
 @onready var killing_audio: AudioStreamPlayer = $KillingAudio
@@ -13,7 +15,7 @@ var desert_sentry_tower: DesertSentryTower
 
 func _ready() -> void:
 	killing_anim.frame_changed.connect(frame_changed)
-	var dizness_buff: PropertyBuff = preload("res://Scenes/Buffs/dizness_buff.tscn").instantiate()
+	var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
 	dizness_buff.duration = 1.5
 	#dizness_buff.immune_groups.erase("boss")
 	dizness_buff.buff_tag = "killing_dizness"

@@ -1,12 +1,15 @@
-[gd_scene load_steps=84 format=3 uid="uid://dprxgaxbaogqs"]
+[gd_scene load_steps=87 format=3 uid="uid://dprxgaxbaogqs"]
 
 [ext_resource type="PackedScene" uid="uid://dtyu2t5hq40nc" path="res://Scenes/DefenceTowers/ArcherTowers/archer_tower.tscn" id="1_uvpqa"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_1alja"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/ArcherTowers/sentry_tower.gd" id="2_6l6lk"]
 [ext_resource type="Texture2D" uid="uid://btqp3wn0ulubt" path="res://Assets/Images/UI/InformationBar/arrow-id-6.png" id="2_ioo5i"]
 [ext_resource type="PackedScene" uid="uid://c4m8muh7cl3bi" path="res://Scenes/Allys/TowerSoldiers/changer_soldier.tscn" id="3_mkpbo"]
+[ext_resource type="Resource" uid="uid://clb50nt82a6vc" path="res://Library/TowerConfigs/ArcherTowers/SentryTower/illager_damage_rate.tres" id="4_f1ll4"]
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="4_ntvwl"]
+[ext_resource type="PackedScene" uid="uid://d23a0wuffckpv" path="res://Scenes/Buffs/TowerBuffs/illager_cage.tscn" id="5_bu74i"]
 [ext_resource type="Texture2D" uid="uid://bo521r3mdgmp" path="res://Assets/Images/DefenceTowers/Archers/UI/牢笼.png" id="6_2u5aw"]
+[ext_resource type="PackedScene" uid="uid://c30apev1ahbtk" path="res://Scenes/Effects/illager_cage.tscn" id="6_5f44c"]
 [ext_resource type="Texture2D" uid="uid://tqrg2d2cgi3x" path="res://Assets/Images/DefenceTowers/Archers/Towers/LV4-3.png" id="6_xs3y8"]
 [ext_resource type="Texture2D" uid="uid://bigahgxmmt6iw" path="res://Assets/Images/DefenceTowers/Archers/UI/牢笼select.png" id="7_lbopb"]
 [ext_resource type="Texture2D" uid="uid://dcq2yrpeqk76q" path="res://Assets/Animations/Archers/LV4-3/Archer-LV4-3shoot_00.png" id="7_mgm2o"]
@@ -299,6 +302,10 @@ radius = 73.9444
 [node name="SentryTower" node_paths=PackedStringArray("shooter_list", "linked_areas") instance=ExtResource("1_uvpqa")]
 script = ExtResource("2_6l6lk")
 changer_soldier_scene = ExtResource("3_mkpbo")
+illager_damage_rate = ExtResource("4_f1ll4")
+cage_dizness_buff_scene = ExtResource("5_bu74i")
+cage_effect_scene = ExtResource("6_5f44c")
+dizness_duration_list = Array[float]([2.0, 3.0, 4.0])
 start_data = SubResource("Resource_mgmmv")
 shooter_list = [NodePath("TowerSprite/IllagerShooter"), NodePath("TowerSprite/IllagerShooter2")]
 tower_name = "劫掠哨塔"

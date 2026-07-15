@@ -1,5 +1,7 @@
 extends SkillConditionArea2D
 
+@export var potion_slash_effect_scene: PackedScene
+@export var plague_buff_scene: PackedScene
 
 @onready var splash_1: AudioStreamPlayer = $Splash1
 @onready var splash_2: AudioStreamPlayer = $Splash2
@@ -7,10 +9,7 @@ extends SkillConditionArea2D
 
 
 func _ready() -> void:
-	var potion_slash_effect: AnimatedSprite2D = preload("res://Scenes/Effects/potion_slash_effect.tscn").instantiate()
-	potion_slash_effect.modulate = Color.DARK_RED
-	potion_slash_effect.position = position
-	Stage.instance.bullets.add_child(potion_slash_effect)
+	EffectManager.instance.play_sprite_effect(potion_slash_effect_scene,position,Vector2.ONE,Color.DARK_RED)
 	
 	match randi_range(1,3):
 		1: splash_1.play()
@@ -34,7 +33,7 @@ func plugin_condition():
 	await get_tree().physics_frame
 	for hurt_box in get_overlapping_areas():
 		var enemy: Enemy = hurt_box.owner
-		var plugin_buff: DotBuff = preload("res://Scenes/Buffs/Allys/medical_plugin_dot_debuff.tscn").instantiate()
+		var plugin_buff: DotBuff = plague_buff_scene.instantiate()
 		plugin_buff.duration = plugin_duration
 		plugin_buff.buff_level = skill_level
 		enemy.buffs.add_child(plugin_buff)

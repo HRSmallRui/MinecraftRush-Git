@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7mqh1cdjarom"]
+[gd_scene load_steps=8 format=3 uid="uid://b7mqh1cdjarom"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_gob84"]
 [ext_resource type="Script" path="res://Scripts/Bullets/illaget_shhoter_arrow.gd" id="2_sisgd"]
 [ext_resource type="Texture2D" uid="uid://c6selkcma2jq4" path="res://Assets/Images/Bullets/箭.png" id="3_0ln48"]
+[ext_resource type="Resource" uid="uid://clb50nt82a6vc" path="res://Library/TowerConfigs/ArcherTowers/SentryTower/illager_damage_rate.tres" id="3_vbw0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -16,6 +17,8 @@ colors = PackedColorArray(1, 1, 1, 0.717647, 1, 1, 1, 0)
 
 [node name="IllagerShooterArrow" instance=ExtResource("1_gob84")]
 script = ExtResource("2_sisgd")
+illager_damage_rate = ExtResource("3_vbw0h")
+tail_max_length = 20
 move_type = 1
 bullet_speed = 1000.0
 

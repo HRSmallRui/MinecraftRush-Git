@@ -1,15 +1,21 @@
-[gd_scene load_steps=70 format=3 uid="uid://ckt7p5ymm5l6q"]
+[gd_scene load_steps=76 format=3 uid="uid://cx7xy31d08alo"]
 
 [ext_resource type="PackedScene" uid="uid://dtyu2t5hq40nc" path="res://Scenes/DefenceTowers/ArcherTowers/archer_tower.tscn" id="1_gugb7"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_pkxpr"]
 [ext_resource type="Texture2D" uid="uid://dgiv3fp7tqa62" path="res://Assets/Images/UI/InformationBar/arrow-id-5.png" id="2_vng1v"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/ArcherTowers/desert_sentry_tower.gd" id="2_xrodq"]
+[ext_resource type="PackedScene" uid="uid://bw30v3e17i10m" path="res://Scenes/Skills/desert_killer.tscn" id="3_n0yms"]
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="4_6pb6d"]
+[ext_resource type="PackedScene" uid="uid://1xdpsrqa5nu7" path="res://Scenes/Skills/desert_wolf.tscn" id="4_pn4mk"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="4_vxy2b"]
 [ext_resource type="Texture2D" uid="uid://b1u5ifth4hyot" path="res://Assets/Images/DefenceTowers/Archers/UI/沙狼.png" id="5_ap656"]
+[ext_resource type="Resource" uid="uid://c27ja5enrppi5" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv1.tres" id="5_m0gxq"]
 [ext_resource type="Texture2D" uid="uid://blyy83vpkbsgx" path="res://Assets/Images/DefenceTowers/Archers/UI/背后一刺.png" id="5_vtw1i"]
 [ext_resource type="Texture2D" uid="uid://bfkm37m2ts7vm" path="res://Assets/Images/DefenceTowers/Archers/Towers/LV4-2.png" id="5_wgc16"]
 [ext_resource type="Texture2D" uid="uid://c87e657pt37tt" path="res://Assets/Images/DefenceTowers/Archers/UI/背后一刺select.png" id="6_8tvc0"]
 [ext_resource type="Texture2D" uid="uid://crn0w5r42sxnj" path="res://Assets/Images/DefenceTowers/Archers/UI/沙狼select.png" id="6_plaeu"]
+[ext_resource type="Resource" uid="uid://d18roinqkakj3" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv2.tres" id="6_qnykw"]
+[ext_resource type="Resource" uid="uid://blldvc06tt16i" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv3.tres" id="7_41gb2"]
 [ext_resource type="Texture2D" uid="uid://bify4tqvdp1h5" path="res://Assets/Images/DefenceTowers/Archers/UI/背后一刺disabled.png" id="7_ck6ui"]
 [ext_resource type="Texture2D" uid="uid://b5d53411slu81" path="res://Assets/Images/DefenceTowers/Archers/UI/沙狼disabled.png" id="7_si8tb"]
 [ext_resource type="Texture2D" uid="uid://xtdw2n8v54ra" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_00.png" id="13_dmirg"]
@@ -255,6 +261,12 @@ animations = [{
 
 [node name="DesertSentryTower" node_paths=PackedStringArray("shooter_list", "linked_areas") instance=ExtResource("1_gugb7")]
 script = ExtResource("2_xrodq")
+DESERT_KILLER_SCENE = ExtResource("3_n0yms")
+desert_wolf_scene = ExtResource("4_pn4mk")
+killing_damage_list = Array[ExtResource("4_vxy2b")]([ExtResource("5_m0gxq"), ExtResource("6_qnykw"), ExtResource("7_41gb2")])
+killing_possible_list = Array[float]([0.2, 0.3, 0.4])
+wolf_damage_list = Array[int]([28, 52, 68])
+wold_dizness_time = Array[float]([1.0, 1.5, 2.0])
 start_data = SubResource("Resource_awl4y")
 shooter_list = [NodePath("TowerSprite/DesertShooter")]
 tower_name = "沙漠哨塔"
@@ -329,6 +341,9 @@ sprite_frames = SubResource("SpriteFrames_yx5uc")
 animation = &"idle_front"
 autoplay = "idle_front"
 script = ExtResource("61_uv7a1")
+critical_possible = 0.2
+critical_damage_rate = 2.0
+critical_broken_rate = 0.8
 tower = NodePath("../..")
 summon_frame = 13
 arrow_scene = ExtResource("62_cm76o")

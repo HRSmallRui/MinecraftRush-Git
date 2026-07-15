@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://diml616l40lvc"]
+[gd_scene load_steps=138 format=3 uid="uid://yx461wtx88m6"]
 
 [ext_resource type="PackedScene" uid="uid://dtyu2t5hq40nc" path="res://Scenes/DefenceTowers/ArcherTowers/archer_tower.tscn" id="1_c07ie"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_f4jaw"]
@@ -514,6 +514,7 @@ animations = [{
 [node name="SkeletonArcherTower" node_paths=PackedStringArray("shooter_list") instance=ExtResource("1_c07ie")]
 y_sort_enabled = false
 script = ExtResource("2_yid3a")
+seckill_possible_adding_list = Array[float]([0.05, 0.1, 0.15])
 start_data = SubResource("Resource_5ynjd")
 shooter_list = [NodePath("SkeletonShooter"), NodePath("SkeletonShooter2")]
 tower_name = "骷髅狙击塔"
@@ -610,6 +611,8 @@ autoplay = "idle_front"
 offset = Vector2(2, 0)
 script = ExtResource("124_nsvow")
 skeleton_archer_tower = NodePath("..")
+kill_effect_scene = ExtResource("128_y7vlk")
+sec_kill_arrow_scene = ExtResource("128_3a5lt")
 tower = NodePath("..")
 summon_frame = 35
 arrow_scene = ExtResource("127_y2cbb")

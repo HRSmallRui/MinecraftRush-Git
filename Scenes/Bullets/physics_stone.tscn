@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://csh7higjurisu"]
+[gd_scene load_steps=12 format=3 uid="uid://csh7higjurisu"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_md6qt"]
 [ext_resource type="Script" path="res://Scripts/Bullets/physics_stone.gd" id="2_e02e0"]
+[ext_resource type="PackedScene" uid="uid://dkjb4g44gllfp" path="res://Scenes/Effects/explosion_stone_effect.tscn" id="3_amkjf"]
 [ext_resource type="Texture2D" uid="uid://cofnlv67wb2sc" path="res://Assets/Images/Bullets/stone.png" id="3_t1jh6"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="4_c8g7n"]
+[ext_resource type="Resource" uid="uid://bjgfpi4xxmfqn" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill2_ExplosionStoneDamage/explosion_stone_damage_lv1.tres" id="5_xjq45"]
+[ext_resource type="Resource" uid="uid://duwyaew3ntybq" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill2_ExplosionStoneDamage/explosion_stone_damage_lv2.tres" id="6_3378l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -19,6 +23,8 @@ colors = PackedColorArray(1, 1, 1, 0.717647, 1, 1, 1, 0)
 
 [node name="PhysicsStone" instance=ExtResource("1_md6qt")]
 script = ExtResource("2_e02e0")
+explosion_stone_effect_scene = ExtResource("3_amkjf")
+explosion_damage_list = Array[ExtResource("4_c8g7n")]([ExtResource("5_xjq45"), ExtResource("6_3378l")])
 tail_max_length = 20
 bullet_speed = 0.8
 

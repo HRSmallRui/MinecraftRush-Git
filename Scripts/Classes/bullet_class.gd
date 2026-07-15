@@ -2,6 +2,7 @@ extends Node2D
 class_name Bullet
 
 signal straight_move_finished
+signal move_finshed
 
 enum MoveType{
 	Gravity,
@@ -75,6 +76,7 @@ func _ready() -> void:
 			hit_box.monitoring = true
 			await get_tree().create_timer(0.35 / bullet_speed,false).timeout
 			hit_box.monitoring = false
+			move_finshed.emit()
 		
 		MoveType.Straight:
 			look_at(target_position)
@@ -82,6 +84,7 @@ func _ready() -> void:
 			var move_tween: Tween = create_tween()
 			move_tween.tween_property(self,"global_position",target_position,time)
 			move_tween.finished.connect(func():straight_move_finished.emit())
+			move_tween.finished.connect(func():move_finshed.emit())
 			await get_tree().create_timer(time+0.1,false).timeout
 			hit_box.monitoring = false
 		
@@ -105,9 +108,11 @@ func _ready() -> void:
 			rotate_front_tween.tween_property(self,"rotation_degrees",rotate_degree/4,move_time/4)
 			await rotate_front_tween.finished
 			var rotate_latter_tween: Tween = create_tween()
+			rotate_latter_tween.finished.connect(func():move_finshed.emit())
 			rotate_latter_tween.tween_property(self,"rotation_degrees",rotate_degree,move_time * 1.25)
 			await rotate_latter_tween.finished
 			hit_box.monitoring = true
+			
 			
 		MoveType.CurveLeft:
 			hit_box.monitoring = false
@@ -125,9 +130,11 @@ func _ready() -> void:
 			rotate_front_tween.tween_property(self,"rotation_degrees",rotate_degree/4,move_time/4)
 			await rotate_front_tween.finished
 			var rotate_latter_tween: Tween = create_tween()
+			rotate_latter_tween.finished.connect(func():move_finshed.emit())
 			rotate_latter_tween.tween_property(self,"rotation_degrees",rotate_degree,move_time * 1.25)
 			await get_tree().create_timer(move_time,false).timeout
 			hit_box.monitoring = true
+			
 		
 		MoveType.CurveRight:
 			hit_box.monitoring = false
@@ -145,9 +152,11 @@ func _ready() -> void:
 			rotate_front_tween.tween_property(self,"rotation_degrees",rotate_degree/4,move_time/4)
 			await rotate_front_tween.finished
 			var rotate_latter_tween: Tween = create_tween()
+			rotate_latter_tween.finished.connect(func():move_finshed.emit())
 			rotate_latter_tween.tween_property(self,"rotation_degrees",rotate_degree,move_time * 1.25)
 			await get_tree().create_timer(move_time,false).timeout
 			hit_box.monitoring = true
+			
 	pass
 
 
