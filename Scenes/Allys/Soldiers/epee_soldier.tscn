@@ -1,12 +1,17 @@
-[gd_scene load_steps=177 format=3 uid="uid://d2bgyaqeok6iu"]
+[gd_scene load_steps=185 format=3 uid="uid://d2bgyaqeok6iu"]
 
 [ext_resource type="PackedScene" uid="uid://bgi3ibffayb11" path="res://Scenes/Allys/Soldiers/soldier_class.tscn" id="1_2v4le"]
 [ext_resource type="Script" path="res://Scripts/Allys/Soldiers/epee_soldier.gd" id="2_maprn"]
 [ext_resource type="Texture2D" uid="uid://bvkbi0f3m4csf" path="res://Assets/Images/UI/InformationBar/SoldierLV4-2.png" id="3_afob0"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_mh5l0"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_tqq0g"]
 [ext_resource type="Texture2D" uid="uid://3nc1cvda7b5b" path="res://Assets/Animations/Soldiers/LV4-2/attack_00.png" id="4_gflc6"]
+[ext_resource type="Resource" uid="uid://bqimkepnjxa4h" path="res://Library/TowerConfigs/BarrackTowers/EpeeChurch/Skill1/upgrade_damage_block_lv1.tres" id="4_lvekp"]
+[ext_resource type="Resource" uid="uid://ghjrijpl6efj" path="res://Library/TowerConfigs/BarrackTowers/EpeeChurch/Skill1/upgrade_damage_block_lv2.tres" id="5_0b3ks"]
 [ext_resource type="Texture2D" uid="uid://h2w51f2rxobm" path="res://Assets/Animations/Soldiers/LV4-2/attack_01.png" id="5_ymxjw"]
+[ext_resource type="Resource" uid="uid://q505p2e04678" path="res://Library/TowerConfigs/BarrackTowers/EpeeChurch/Skill1/upgrade_damage_block_lv3.tres" id="6_ljd3t"]
 [ext_resource type="Texture2D" uid="uid://cglrfw0ex8q38" path="res://Assets/Animations/Soldiers/LV4-2/attack_02.png" id="6_pegu0"]
+[ext_resource type="PackedScene" uid="uid://cc4to7q26juuo" path="res://Scenes/Buffs/Allys/epee_soldier_invincible_buff.tscn" id="7_ayhhy"]
 [ext_resource type="Texture2D" uid="uid://68xc2li6dtuv" path="res://Assets/Animations/Soldiers/LV4-2/attack_03.png" id="7_bxugt"]
 [ext_resource type="Texture2D" uid="uid://brecn5j1yfrxo" path="res://Assets/Animations/Soldiers/LV4-2/attack_04.png" id="8_wd7t4"]
 [ext_resource type="Texture2D" uid="uid://cglywtabdgbcj" path="res://Assets/Animations/Soldiers/LV4-2/attack_05.png" id="9_dyjs1"]
@@ -171,6 +176,21 @@
 [ext_resource type="Texture2D" uid="uid://jwx0l5xx48ao" path="res://Assets/Animations/Soldiers/LV4-2/super_attack_38.png" id="168_tygck"]
 [ext_resource type="AudioStream" uid="uid://bake0o2gadmk8" path="res://Assets/Sounds/FXs/DefenceTowers/EpeeChurch/强力斩击.mp3" id="170_ogo1e"]
 [ext_resource type="AudioStream" uid="uid://ytks1qaq3775" path="res://Assets/Sounds/FXs/DefenceTowers/EpeeChurch/复活.mp3" id="171_etf0r"]
+
+[sub_resource type="Resource" id="Resource_650fy"]
+script = ExtResource("3_tqq0g")
+damage_low = 75
+damage_high = 150
+
+[sub_resource type="Resource" id="Resource_afinb"]
+script = ExtResource("3_tqq0g")
+damage_low = 100
+damage_high = 180
+
+[sub_resource type="Resource" id="Resource_kxdsl"]
+script = ExtResource("3_tqq0g")
+damage_low = 130
+damage_high = 210
 
 [sub_resource type="Resource" id="Resource_dp710"]
 script = ExtResource("3_mh5l0")
@@ -738,6 +758,13 @@ fill_to = Vector2(0.764957, 0.226496)
 
 [node name="EpeeSoldier" groups=["desert"] instance=ExtResource("1_2v4le")]
 script = ExtResource("2_maprn")
+aoe_damage_rate = 0.5
+skill1_upgrade_damage_list = Array[ExtResource("3_tqq0g")]([ExtResource("4_lvekp"), ExtResource("5_0b3ks"), ExtResource("6_ljd3t")])
+skill2_damage_list = Array[ExtResource("3_tqq0g")]([SubResource("Resource_650fy"), SubResource("Resource_afinb"), SubResource("Resource_kxdsl")])
+skill3_invincible_buff_scene = ExtResource("7_ayhhy")
+skill3_start_rebirth_possible_list = Array[float]([0.6, 0.7, 0.8])
+skill3_rebirth_possible_delta = 0.2
+skill3_rebirth_heal_rate_list = Array[float]([0.4, 0.6, 0.8])
 soldier_name_list = Array[String](["玛格丽特", "玛尔大", "加百列", "拉斐尔", "赫拉克勒斯", "忒修斯", "威廉·马歇尔", "圣克里斯托弗", "圣参孙", "圣乔治", "雨果", "赫尔曼", "罗杰 德 穆兰", "圣塞巴斯蒂安", "子路"])
 ally_level = 4
 ally_texture = ExtResource("3_afob0")
