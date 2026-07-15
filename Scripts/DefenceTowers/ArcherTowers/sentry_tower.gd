@@ -1,6 +1,12 @@
 extends ArcherTower
+class_name SentryTower
 
 @export var changer_soldier_scene: PackedScene
+@export var illager_damage_rate: FloatSaver
+@export_group("Cage")
+@export var cage_dizness_buff_scene: PackedScene
+@export var cage_effect_scene: PackedScene
+@export var dizness_duration_list: Array[float]
 
 @onready var unit_move_area: Area2D = $UnitMoveArea
 @onready var first_move_rays: Node2D = $FirstMoveRays
@@ -125,15 +131,11 @@ func fighting_process():
 		var enemy: Enemy = get_valid_skill1_enemy()
 		if enemy != null:
 			cage_timer.start()
-			var cage_dizness: DiznessBuff = preload("res://Scenes/Buffs/TowerBuffs/illager_cage.tscn").instantiate()
-			var dizness_time: float
-			match tower_skill_levels[0]:
-				1: dizness_time = 2
-				2: dizness_time = 3
-				3: dizness_time = 4
+			var cage_dizness: DiznessBuff = cage_dizness_buff_scene.instantiate()
+			var dizness_time: float = dizness_duration_list[tower_skill_levels[0]-1]
 			cage_dizness.duration = dizness_time
 			enemy.buffs.add_child(cage_dizness)
-			var cage_effect: Node2D = preload("res://Scenes/Effects/illager_cage.tscn").instantiate()
+			var cage_effect: Node2D = cage_effect_scene.instantiate()
 			cage_effect.position = enemy.position
 			Stage.instance.bullets.add_child(cage_effect)
 			var timer: Timer = cage_effect.get_node("Timer")
@@ -142,15 +144,11 @@ func fighting_process():
 			normal_attack_timer.start()
 		var second_enemy: Enemy = get_valid_skill1_enemy()
 		if second_enemy != null:
-			var cage_dizness: DiznessBuff = preload("res://Scenes/Buffs/TowerBuffs/illager_cage.tscn").instantiate()
-			var dizness_time: float
-			match tower_skill_levels[0]:
-				1: dizness_time = 2
-				2: dizness_time = 3
-				3: dizness_time = 4
+			var cage_dizness: DiznessBuff = cage_dizness_buff_scene.instantiate()
+			var dizness_time: float = dizness_duration_list[tower_skill_levels[0]-1]
 			cage_dizness.duration = dizness_time
 			second_enemy.buffs.add_child(cage_dizness)
-			var cage_effect: Node2D = preload("res://Scenes/Effects/illager_cage.tscn").instantiate()
+			var cage_effect: Node2D = cage_effect_scene.instantiate()
 			cage_effect.position = second_enemy.position
 			Stage.instance.bullets.add_child(cage_effect)
 			var timer: Timer = cage_effect.get_node("Timer")
