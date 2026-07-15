@@ -1,12 +1,33 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5x88rohdiv78"]
+[gd_scene load_steps=19 format=3 uid="uid://c5x88rohdiv78"]
 
 [ext_resource type="PackedScene" uid="uid://bgi3ibffayb11" path="res://Scenes/Allys/Soldiers/soldier_class.tscn" id="1_1526n"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="2_b6csl"]
 [ext_resource type="Script" path="res://Scripts/Allys/Soldiers/royal_guard.gd" id="2_w4ts0"]
+[ext_resource type="Texture2D" uid="uid://b2ionjl40r88q" path="res://Assets/Images/UI/InformationBar/SoldierLV4-1S.png" id="3_5sc6r"]
 [ext_resource type="Texture2D" uid="uid://282jkph6kkqr" path="res://Assets/Images/UI/InformationBar/SoldierLV4-1.png" id="3_vavyk"]
 [ext_resource type="SpriteFrames" uid="uid://t2xe231tp4h0" path="res://Assets/Animations/Soldiers/LV4-1/royal_guard.tres" id="4_c5ct0"]
+[ext_resource type="SpriteFrames" uid="uid://cd1kbo6hy8qw0" path="res://Assets/Animations/Soldiers/LV4-1/royal_guard_upgrade.tres" id="4_qeri0"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="5_2r7f2"]
+[ext_resource type="PackedScene" uid="uid://dga3rflqj0d2y" path="res://Scenes/Buffs/RoyalGuard/royal_protection_lv_1.tscn" id="6_7bc0m"]
 [ext_resource type="AudioStream" uid="uid://crlkuw7dwgl3j" path="res://Assets/Sounds/FXs/DefenceTowers/Defence.mp3" id="6_uebbt"]
+[ext_resource type="PackedScene" uid="uid://bopg7y2i6l45i" path="res://Scenes/Buffs/RoyalGuard/royal_protection_lv_2.tscn" id="7_ld1wy"]
 [ext_resource type="AudioStream" uid="uid://t747tp5trjru" path="res://Assets/Sounds/FXs/DefenceTowers/皇家审判.wav" id="7_ot6av"]
+[ext_resource type="PackedScene" uid="uid://co3tm4i7tmsi6" path="res://Scenes/Buffs/RoyalGuard/royal_protection_lv_3.tscn" id="8_2pm46"]
+
+[sub_resource type="Resource" id="Resource_ygbct"]
+script = ExtResource("5_2r7f2")
+damage_low = 20
+damage_high = 40
+
+[sub_resource type="Resource" id="Resource_kjca7"]
+script = ExtResource("5_2r7f2")
+damage_low = 30
+damage_high = 60
+
+[sub_resource type="Resource" id="Resource_m3jw4"]
+script = ExtResource("5_2r7f2")
+damage_low = 40
+damage_high = 80
 
 [sub_resource type="Resource" id="Resource_xebkm"]
 script = ExtResource("2_b6csl")
@@ -34,6 +55,15 @@ radius = 73.9444
 
 [node name="RoyalGuard" instance=ExtResource("1_1526n")]
 script = ExtResource("2_w4ts0")
+SOLDIER_LV_4_1S = ExtResource("3_5sc6r")
+ROYAL_GUARD_UPGRADE = ExtResource("4_qeri0")
+skill1_damage_list = Array[ExtResource("5_2r7f2")]([SubResource("Resource_ygbct"), SubResource("Resource_kjca7"), SubResource("Resource_m3jw4")])
+skill1_release_possible = 0.3
+skill1_kill_possible = 0.1
+skill2_defence_possible_near = 0.4
+skill2_defence_possible_far = 0.6
+skill3_protection_buff_scene_list = Array[PackedScene]([ExtResource("6_7bc0m"), ExtResource("7_ld1wy"), ExtResource("8_2pm46")])
+skill3_total_defence_rate_list = Array[float]([0.2, 0.3, 0.4])
 soldier_name_list = Array[String](["卢凌风", "李元芳", "李金吾", "暗一", "影二", "赵龙武", "钱虎贲", "秦琼", "李叔宝", "尉迟恭", "王鹏", "李御前", "李天枢", "赵羽林"])
 ally_name = "皇家近卫军"
 ally_level = 4
