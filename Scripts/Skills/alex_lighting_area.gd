@@ -7,7 +7,7 @@ extends SkillConditionArea2D
 
 func _ready() -> void:
 	EffectManager.instance.play_lightning_effect(position)
-	EffectManager.instance.play_explosion_effect(position)
+	EffectManager.instance.play_explosion_effect(position,Vector2.ONE,Color.WHITE,1)
 	AudioManager.instance.play_explosion_audio()
 	
 	await get_tree().physics_frame

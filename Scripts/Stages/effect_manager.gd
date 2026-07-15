@@ -15,38 +15,40 @@ func _init() -> void:
 	pass
 
 
-func play_explosion_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE):
-	play_sprite_effect(explosion_effect_scene,summon_pos,effect_scale,effect_modulate)
+func play_explosion_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE, z_index: int = 0):
+	play_sprite_effect(explosion_effect_scene,summon_pos,effect_scale,effect_modulate,z_index)
 	pass
 
 
-func play_smoke_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE):
-	play_sprite_effect(smoke_effect_scene,summon_pos,effect_scale,effect_modulate)
+func play_smoke_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE, z_index: int = 0):
+	play_sprite_effect(explosion_effect_scene,summon_pos,effect_scale,effect_modulate,z_index)
 	pass
 
 
-func play_fire_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE):
-	play_sprite_effect(fire_effect_scene,summon_pos,effect_scale,effect_modulate)
+func play_fire_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE, z_index: int = 0):
+	play_sprite_effect(explosion_effect_scene,summon_pos,effect_scale,effect_modulate,z_index)
 	pass
 
 
-func play_block_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE):
-	play_sprite_effect(block_particle_scene,summon_pos,effect_scale,effect_modulate)
+func play_block_effect(summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE, z_index: int = 0):
+	play_sprite_effect(explosion_effect_scene,summon_pos,effect_scale,effect_modulate,z_index)
 	pass
 
 
-func play_sprite_effect(effect_scene: PackedScene, summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE):
+func play_sprite_effect(effect_scene: PackedScene, summon_pos: Vector2, effect_scale: Vector2 = Vector2.ONE, effect_modulate: Color = Color.WHITE, z_index: int = 0):
 	var effect: AnimatedSprite2D = effect_scene.instantiate()
 	effect.position = summon_pos
 	effect.scale = effect_scale
 	effect.modulate = effect_modulate
+	effect.z_index = z_index
 	Stage.instance.bullets.add_child(effect)
 	pass
 
 
-func play_lightning_effect(summon_pos: Vector2,effect_scale: Vector2 = Vector2.ONE):
+func play_lightning_effect(summon_pos: Vector2,effect_scale: Vector2 = Vector2.ONE, z_index: int = 0):
 	var lightning: Line2D = lightning_scene.instantiate()
 	lightning.position = summon_pos
 	lightning.scale *= effect_scale
+	lightning.z_index = z_index
 	Stage.instance.bullets.add_child(lightning)
 	pass
