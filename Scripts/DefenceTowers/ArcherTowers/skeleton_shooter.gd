@@ -34,14 +34,7 @@ func summon_bullet(summon_pos: Vector2, target_pos: Vector2, bullet_scene: Packe
 		arrow.bullet_special_tag_levels["continue"] = [0.2,1,0.5,bullet_scene] ##穿梭时间，继续穿梭人数，伤害倍率,场景
 	
 	if skeleton_archer_tower.tower_skill_levels[0] > 0:
-		var add_sec_kill_possible: float
-		match skeleton_archer_tower.tower_skill_levels[0]:
-			1: add_sec_kill_possible = 0.05
-			2: add_sec_kill_possible = 0.1
-			3: add_sec_kill_possible = 0.15
+		var add_sec_kill_possible: float = skeleton_archer_tower.seckill_possible_adding_list[tower.tower_skill_levels[0]-1]
 		skeleton_archer_tower.current_sec_kill_possible += add_sec_kill_possible
-		
-			
-		
 	return arrow
 	pass
