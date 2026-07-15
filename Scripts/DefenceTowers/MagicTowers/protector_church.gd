@@ -3,6 +3,7 @@ class_name ProtectorChurch
 
 @export var level_damage_list: Array[DamageBlock]
 @export var dust_kill_waiting_time_list: Array[float]
+@export var iron_golem_scene: PackedScene
 
 @onready var unit_move_area: Area2D = $UnitMoveArea
 @onready var first_move_rays: Node2D = $FirstMoveRays
@@ -214,7 +215,7 @@ func _on_security_timer_timeout() -> void:
 func tower_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
 	if skill_id == 0 and skill_level == 1:
-		var golem: SummonAlly = preload("res://Scenes/Allys/SummonAllys/iron_golem.tscn").instantiate()
+		var golem: SummonAlly = iron_golem_scene.instantiate()
 		golem.position = golem_position
 		iron_golem = golem
 		iron_golem.station_position = golem_position
