@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://1xdpsrqa5nu7"]
+[gd_scene load_steps=30 format=3 uid="uid://1xdpsrqa5nu7"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/desert_wolf.gd" id="1_esti5"]
 [ext_resource type="Texture2D" uid="uid://d0gybrx72po1d" path="res://Assets/Animations/Archers/DesertWolf/move_back_00.png" id="2_73bcp"]
+[ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="2_f8o5l"]
 [ext_resource type="AudioStream" uid="uid://ce2uayknwiuym" path="res://Assets/Sounds/FXs/DefenceTowers/DesertSentryTower/狗叫.wav" id="2_mrt7e"]
 [ext_resource type="Texture2D" uid="uid://cgvr8wyuwmjo2" path="res://Assets/Animations/Archers/DesertWolf/move_back_02.png" id="4_6f1l1"]
 [ext_resource type="Texture2D" uid="uid://1yf6ti0xhj0h" path="res://Assets/Animations/Archers/DesertWolf/move_back_03.png" id="5_awaxi"]
@@ -123,6 +124,7 @@ radius = 180.069
 [node name="DesertWolf" type="Node2D"]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_esti5")
+dizness_buff_scene = ExtResource("2_f8o5l")
 
 [node name="WolfAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_mrt7e")
