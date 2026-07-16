@@ -73,7 +73,7 @@ func start_data_process():
 
 func battle():
 	if ally_sprite.animation == "idle":
-		if skill_levels[2] > 0 and skill_2_timer.is_stopped() and skill2_is_valid_to_release():
+		if skill_levels[2] > 0 and skill_2_timer.is_stopped():
 			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill_2")
 			skill_2_timer.start()
