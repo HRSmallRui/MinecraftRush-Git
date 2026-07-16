@@ -5,7 +5,7 @@ signal get_skill_4_linked_enemy(enemy: Enemy)
 @export_group("PassiveSkill","passive_skill")
 @export var passive_skill_extra_damage_list: Array[int]
 @export_group("Skill1","skill1")
-@export var skill1_upgrade_damage_list: Array[int]
+@export var skill1_upgrade_damage_list: Array[IntSaver]
 @export_group("Skill2","skill2")
 @export var skill2_sheild_duration_list: Array[float]
 
@@ -90,7 +90,7 @@ func start_data_process():
 	passive_extra_damage = passive_skill_extra_damage_list[skill_levels[0]-1]
 	
 	if skill_levels[1] > 0:
-		var plus_damage: int = skill1_upgrade_damage_list[skill_levels[1]-1]
+		var plus_damage: int = skill1_upgrade_damage_list[skill_levels[1]-1].saving_int_value
 		start_data.far_damage_low += plus_damage
 		start_data.far_damage_high += plus_damage
 	pass

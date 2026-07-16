@@ -1,14 +1,18 @@
-[gd_scene load_steps=272 format=3 uid="uid://b7nmquf4icsws"]
+[gd_scene load_steps=276 format=3 uid="uid://b7nmquf4icsws"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_6ohj6"]
 [ext_resource type="Texture2D" uid="uid://b65o81wdbsw7l" path="res://Assets/Images/UI/HeroHall/HeadTexs/Fuchen.png" id="2_7r13c"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/fuchen.gd" id="2_lpagh"]
 [ext_resource type="Resource" uid="uid://c2ltxu5vo3jy3" path="res://Library/Heroes/HeroPropertyBlocks/Fuchen.tres" id="2_vmfd8"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="3_srntc"]
 [ext_resource type="Texture2D" uid="uid://bogj23c18updw" path="res://Assets/Images/UI/InformationBar/Fuchen.png" id="4_45pkp"]
+[ext_resource type="Resource" uid="uid://d2oqlftytv4sp" path="res://Library/Heroes/HeroConfigs/Fuchen/upgrade_damage_lv1.tres" id="4_vxwe6"]
 [ext_resource type="PackedScene" uid="uid://c063ssypuf6my" path="res://Scenes/Bullets/purple_magic_ball.tscn" id="4_xexlq"]
+[ext_resource type="Resource" uid="uid://d3jnfk0186xfs" path="res://Library/Heroes/HeroConfigs/Fuchen/upgrade_damage_lv2.tres" id="5_c82mv"]
 [ext_resource type="Texture2D" uid="uid://b7ej7af5cef3y" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-1/heart_purple.png" id="6_0x1im"]
 [ext_resource type="AudioStream" uid="uid://fr2csv8b0ofi" path="res://Assets/Sounds/FXs/DefenceTowers/ProtectorChurch/Ray1.wav" id="6_bn04r"]
 [ext_resource type="Texture2D" uid="uid://cjtsv28lgw3rn" path="res://Assets/Animations/Heroes/Fuchen/attack_00.png" id="6_nb4l8"]
+[ext_resource type="Resource" uid="uid://dfhbybvulye5h" path="res://Library/Heroes/HeroConfigs/Fuchen/upgrade_damage_lv3.tres" id="6_r0grh"]
 [ext_resource type="Texture2D" uid="uid://nhg04l35ui82" path="res://Assets/Animations/Heroes/Fuchen/attack_01.png" id="7_kdpr0"]
 [ext_resource type="AudioStream" uid="uid://dt6x3iyeqcmqd" path="res://Assets/Sounds/FXs/DefenceTowers/ProtectorChurch/RayElec.wav" id="7_vlkcg"]
 [ext_resource type="PackedScene" uid="uid://55lbnmhtaj1w" path="res://Scenes/Bullets/fuchen_skill_3_bullet.tscn" id="8_1a1ff"]
@@ -1239,7 +1243,7 @@ radius = 73.9444
 [node name="Fuchen" instance=ExtResource("1_6ohj6")]
 script = ExtResource("2_lpagh")
 passive_skill_extra_damage_list = Array[int]([5, 10, 15])
-skill1_upgrade_damage_list = Array[int]([4, 6, 8])
+skill1_upgrade_damage_list = Array[ExtResource("3_srntc")]([ExtResource("4_vxwe6"), ExtResource("5_c82mv"), ExtResource("6_r0grh")])
 skill2_sheild_duration_list = Array[float]([3.0, 4.0, 5.0])
 heal_speeds = Array[int]([15, 16, 17, 18, 19, 20, 21, 22, 23, 24])
 teleport_limit_length = 280.0
