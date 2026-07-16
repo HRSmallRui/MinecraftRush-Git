@@ -581,12 +581,7 @@ current_money = 1800
 total_waves = 5
 stage_summon_config = SubResource("Resource_o1qil")
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-chapter4_hating_preload = true
-chapter4_other_preload = true
-
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(1372, 1518)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -636,9 +631,6 @@ region_rect = Rect2(-3, -14, 517, 218)
 [node name="TempleBased" type="Sprite2D" parent="Background/BasedSprite" index="4"]
 texture = ExtResource("8_r16i1")
 centered = false
-
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(1292, 1536)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(1457, 1528)
@@ -806,7 +798,10 @@ bus = &"Sound"
 position = Vector2(-3.02893, -1.10567)
 shape = SubResource("RectangleShape2D_iegxg")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="Flag" parent="Background" index="20"]
+position = Vector2(1292, 1536)
+
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_fmsdl")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -942,45 +937,48 @@ based_skin = 3
 position = Vector2(1050.5, 789.5)
 shape = SubResource("RectangleShape2D_xdhcc")
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("42_uxerg")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("42_uxerg")]
 offset_left = 1864.0
 offset_top = 377.0
 offset_right = 1864.0
 offset_bottom = 377.0
 linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("43_g11fc")]([SubResource("Resource_urqw1"), null, SubResource("Resource_6s8yo"), SubResource("Resource_hh1l3"), SubResource("Resource_pkpdu")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = -0.0170414
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("45_pn4fo")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("42_uxerg")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("42_uxerg")]
 offset_left = 130.0
 offset_top = 141.0
 offset_right = 130.0
 offset_bottom = 141.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("43_g11fc")]([null, SubResource("Resource_iuwab"), SubResource("Resource_iolr3"), SubResource("Resource_2vfh3"), SubResource("Resource_x2qo4")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = -2.93365
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("45_pn4fo")
 
-[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("42_uxerg")]
+[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("42_uxerg")]
 offset_left = 464.0
 offset_top = 142.0
 offset_right = 464.0
 offset_bottom = 142.0
 linked_wave_panel = NodePath("../WavePanel3")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath7")
 summon_text_list = Array[ExtResource("43_g11fc")]([null, SubResource("Resource_o2s1d"), null, SubResource("Resource_x1hpe"), SubResource("Resource_2wo2s")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = -1.61206
@@ -1011,9 +1009,6 @@ offset_bottom = 390.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(-5, 63, 118, 81, 235, 125, 374, 216, 417, 239, 421, -3, 512, -3, 506, 140, 508, 231, 542, 379, 572, 480, 629, 574, 724, 649, 859, 717, 900, 733, 940, 713, 1000, 659, 1054, 554, 1112, 485, 1171, 409, 1251, 365, 1339, 337, 1441, 309, 1580, 304, 1737, 324, 1858, 331, 1919, 321, 1940, 419, 1880, 423, 1786, 418, 1608, 402, 1458, 396, 1368, 408, 1253, 458, 1185, 532, 1130, 616, 1084, 695, 1043, 743, 992, 779, 996, 795, 1043, 833, 1096, 885, 1141, 919, 1185, 1000, 1215, 1034, 1253, 1114, 1276, 1240, 1316, 1396, 1386, 1471, 1443, 1543, 1456, 1596, 1456, 1606, 1371, 1606, 1360, 1580, 1313, 1532, 1267, 1483, 1228, 1404, 1201, 1330, 1179, 1230, 1161, 1140, 1152, 1085, 1080, 984, 978, 886, 838, 806, 715, 753, 622, 685, 585, 660, 521, 578, 482, 507, 446, 392, 432, 329, 383, 318, 282, 278, 208, 221, 140, 183, 45, 162, -7, 155)
 
-[node name="HeroSummonMarker" parent="." index="19"]
-position = Vector2(1369, 1523)
-
 [node name="PathConfigLoadProcess" type="Node" parent="." index="21" node_paths=PackedStringArray("enemy_parent_node")]
 script = ExtResource("48_rwpo2")
 enemy_parent_node = NodePath("../Enemies")
@@ -1031,5 +1026,8 @@ script = ExtResource("53_pd6n5")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 5
 process_summon_blocks = Array[ExtResource("50_1r1rk")]([ExtResource("31_ui0kb"), ExtResource("32_hxhx2"), ExtResource("33_d46um"), ExtResource("34_7svb5"), ExtResource("35_jf2uw"), ExtResource("36_fgj6a"), ExtResource("37_lpmrl"), ExtResource("38_1svr8"), ExtResource("39_m7rpu")])
+
+[node name="HeroSummonMarker" parent="." index="23"]
+position = Vector2(1369, 1523)
 
 [connection signal="input_event" from="Background/Switch" to="Background/Switch" method="_on_input_event"]

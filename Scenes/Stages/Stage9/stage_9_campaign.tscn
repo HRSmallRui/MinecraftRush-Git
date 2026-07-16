@@ -712,9 +712,6 @@ texture = ExtResource("4_4t874")
 [node name="ProtectionPoint" parent="Background/BasedSprite" index="0"]
 position = Vector2(277, 84)
 
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(212, 92)
-
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(348, 92)
 texture = ExtResource("6_uliur")
@@ -846,6 +843,9 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 position = Vector2(182, 36)
 wave_dust_show_time = Array[float]([0.0, 0.0, 0.0, 0.0, 4.0, 0.0, 5.0, 0.0, 10.0, 0.0, 0.0, 8.0, 0.0, 0.0, 12.0])
 
+[node name="Flag" parent="Background" index="18"]
+position = Vector2(212, 92)
+
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_d8g51")
 
@@ -970,45 +970,48 @@ based_skin = 2
 position = Vector2(1037.5, 718)
 shape = SubResource("RectangleShape2D_13mmx")
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("41_bjthq")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("41_bjthq")]
 offset_left = 1969.0
 offset_top = 570.0
 offset_right = 1969.0
 offset_bottom = 570.0
 linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("42_bnu0d")]([SubResource("Resource_rc8jl"), SubResource("Resource_rlmg6"), SubResource("Resource_f6ifd"), SubResource("Resource_fijlv"), null, SubResource("Resource_xuqy1"), null, null, SubResource("Resource_opmsb"), SubResource("Resource_c5nbk"), SubResource("Resource_go2mj"), null, SubResource("Resource_7adr1"), SubResource("Resource_plpns"), SubResource("Resource_lemss")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
 position = Vector2(1.25, 1.25)
 rotation = -0.365381
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("43_lssc0")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("41_bjthq")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("41_bjthq")]
 offset_left = 1388.0
 offset_top = 78.0
 offset_right = 1388.0
 offset_bottom = 78.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("42_bnu0d")]([null, null, SubResource("Resource_pxt0t"), SubResource("Resource_guji8"), SubResource("Resource_3dml2"), null, SubResource("Resource_dvttc"), null, SubResource("Resource_o3rit"), null, SubResource("Resource_45l63"), SubResource("Resource_x40s1"), SubResource("Resource_ejmxp"), SubResource("Resource_585lf"), SubResource("Resource_gbsqk")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true
 position = Vector2(1.25, 1.25)
 rotation = -1.45453
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("43_lssc0")
 
-[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("41_bjthq")]
+[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("41_bjthq")]
 offset_left = 1234.0
 offset_top = 1151.0
 offset_right = 1234.0
 offset_bottom = 1151.0
 linked_wave_panel = NodePath("../WavePanel3")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath7")
 summon_text_list = Array[ExtResource("42_bnu0d")]([null, null, null, null, null, SubResource("Resource_uifq0"), SubResource("Resource_eaa7l"), SubResource("Resource_m27yu"), SubResource("Resource_xo8h8"), SubResource("Resource_4trxd"), SubResource("Resource_pewjt"), SubResource("Resource_77mqn"), null, SubResource("Resource_m3trh"), SubResource("Resource_65o7j")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="4"]
 show_behind_parent = true
 position = Vector2(1.25, 1.25)
 rotation = -0.223502

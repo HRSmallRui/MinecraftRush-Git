@@ -89,7 +89,7 @@
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="60_2wblk"]
 [ext_resource type="Resource" uid="uid://mfj30upk0hqn" path="res://Library/SummonConfigs/Stage19/Diamond/path9.res" id="60_gmpnd"]
 [ext_resource type="PackedScene" uid="uid://crvf6uhgs2gu8" path="res://Scenes/DefenceTowers/BarrackTowers/zombie_berserker_barrack.tscn" id="66_f1idv"]
-[ext_resource type="PackedScene" uid="uid://diml616l40lvc" path="res://Scenes/DefenceTowers/ArcherTowers/skeleton_archer_tower.tscn" id="67_mb6ca"]
+[ext_resource type="PackedScene" uid="uid://yx461wtx88m6" path="res://Scenes/DefenceTowers/ArcherTowers/skeleton_archer_tower.tscn" id="67_mb6ca"]
 [ext_resource type="PackedScene" uid="uid://tf7do34gqsgt" path="res://Scenes/DefenceTowers/BarrackTowers/skeleton_barrack.tscn" id="68_ib5kd"]
 [ext_resource type="PackedScene" uid="uid://dty3c22jvjcnc" path="res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_zombie.tscn" id="69_fl2gm"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="71_q80ad"]
@@ -603,7 +603,7 @@ current_money = 800
 total_waves = 5
 stage_summon_config = SubResource("Resource_7je1m")
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(3480, 455)
 min_zoom_length_desktop = 0.9
 
@@ -626,9 +626,6 @@ position = Vector2(3480, 449)
 position = Vector2(3480, 1201)
 texture = ExtResource("8_7a7ic")
 script = ExtResource("9_j5qh1")
-
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(3482, 395)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(3482, 506)
@@ -738,7 +735,10 @@ bus = &"Sound"
 visible = false
 texture = ExtResource("54_5lavv")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="Flag" parent="Background" index="9"]
+position = Vector2(3482, 395)
+
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_l5aqg")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -872,45 +872,48 @@ position = Vector2(1833, 1130)
 position = Vector2(1806, 703.5)
 shape = SubResource("RectangleShape2D_l1jqf")
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("55_a53ei")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("55_a53ei")]
 offset_left = 90.0
 offset_top = 578.0
 offset_right = 90.0
 offset_bottom = 578.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("56_2x11i")]([null, SubResource("Resource_yw3i8"), SubResource("Resource_4mtbb"), null, SubResource("Resource_pahv3")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 2.99799
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("57_bqyvj")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("55_a53ei")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("55_a53ei")]
 offset_left = 268.0
 offset_top = 1181.0
 offset_right = 268.0
 offset_bottom = 1181.0
 linked_wave_panel = NodePath("../WavePanel3")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("56_2x11i")]([null, SubResource("Resource_6tlji"), null, SubResource("Resource_cigw3"), SubResource("Resource_0x118")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 3.1373
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("57_bqyvj")
 
-[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("55_a53ei")]
+[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("55_a53ei")]
 offset_left = 268.0
 offset_top = 1230.0
 offset_right = 268.0
 offset_bottom = 1230.0
 linked_wave_panel = NodePath("../WavePanel4")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath7")
 summon_text_list = Array[ExtResource("56_2x11i")]([SubResource("Resource_ks54y"), null, SubResource("Resource_eci8p"), SubResource("Resource_3hf0h"), SubResource("Resource_euf5w")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 3.1373
@@ -953,9 +956,6 @@ enemy_parent_node = NodePath("../Enemies")
 config_path_front = "res://Library/SummonConfigs/Stage19/Diamond"
 loading_count = 9
 
-[node name="HeroSummonMarker" parent="." index="22"]
-position = Vector2(3480, 457)
-
 [node name="ExtraHeroSummonManager" type="Node2D" parent="." index="23" node_paths=PackedStringArray("hero_marker_list")]
 script = ExtResource("80_qnv7k")
 hero_scene_list = Array[PackedScene]([ExtResource("81_8s1c7"), ExtResource("82_w0y0b")])
@@ -972,5 +972,8 @@ script = ExtResource("60_2wblk")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 5
 process_summon_blocks = Array[ExtResource("71_q80ad")]([ExtResource("52_asm48"), ExtResource("53_4pu1m"), ExtResource("54_jnnex"), ExtResource("55_oxxqc"), ExtResource("56_1x40g"), ExtResource("57_aysqg"), ExtResource("58_oapra"), ExtResource("59_yqeus"), ExtResource("60_gmpnd")])
+
+[node name="HeroSummonMarker" parent="." index="25"]
+position = Vector2(3480, 457)
 
 [connection signal="input_event" from="Background/Lawyer" to="Background/Lawyer" method="_on_input_event"]

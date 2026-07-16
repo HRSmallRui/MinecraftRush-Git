@@ -5,6 +5,7 @@ signal ui_update(member: Node)
 signal wave_appear(wave_count:int)
 signal wave_summon(wave_count: int)
 signal on_wining
+signal on_paused(paused: bool)
 
 signal on_prepare_music_playing
 signal on_battle_music_playing

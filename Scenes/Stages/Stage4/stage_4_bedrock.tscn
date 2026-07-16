@@ -488,7 +488,7 @@ total_waves = 1
 unlocked_tower_list = [false, true, false, false]
 stage_summon_config = SubResource("Resource_y3f8x")
 
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(960, 887)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -548,9 +548,6 @@ position = Vector2(1802, 710)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("13_g2sfx")
 
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(413, 1393)
-
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(553, 1393)
 texture = ExtResource("12_rg8c1")
@@ -601,7 +598,10 @@ sprite_frames = SubResource("SpriteFrames_5h5o5")
 autoplay = "default"
 offset = Vector2(127.56, -217.251)
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="Flag" parent="Background" index="9"]
+position = Vector2(413, 1393)
+
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_pder1")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -781,71 +781,76 @@ position = Vector2(886, 892)
 position = Vector2(961, 715.5)
 shape = SubResource("RectangleShape2D_vfr8y")
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("56_y5bmr")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("56_y5bmr")]
 offset_left = 947.0
 offset_top = 263.0
 offset_right = 947.0
 offset_bottom = 263.0
 linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("57_7dfgr")]([SubResource("Resource_d1qck")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
 rotation = -1.57416
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("58_5xqiu")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("56_y5bmr")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("56_y5bmr")]
 offset_left = 185.0
 offset_top = 261.0
 offset_right = 185.0
 offset_bottom = 261.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("57_7dfgr")]([SubResource("Resource_ejwpa")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true
 rotation = -1.57416
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("58_5xqiu")
 
-[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("56_y5bmr")]
+[node name="WaveButton3" parent="WaveButtons" index="2" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("56_y5bmr")]
 offset_left = 1532.0
 offset_top = 273.0
 offset_right = 1532.0
 offset_bottom = 273.0
 linked_wave_panel = NodePath("../WavePanel3")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath7")
 summon_text_list = Array[ExtResource("57_7dfgr")]([SubResource("Resource_h6jvg")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="4"]
 show_behind_parent = true
 rotation = -1.57416
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("58_5xqiu")
 
-[node name="WaveButton4" parent="WaveButtons" index="3" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("56_y5bmr")]
+[node name="WaveButton4" parent="WaveButtons" index="3" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("56_y5bmr")]
 offset_left = 109.0
 offset_top = 940.0
 offset_right = 109.0
 offset_bottom = 940.0
 linked_wave_panel = NodePath("../WavePanel4")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath10")
 summon_text_list = Array[ExtResource("57_7dfgr")]([SubResource("Resource_evcae")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton4" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton4" index="4"]
 show_behind_parent = true
 rotation = -2.79823
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("58_5xqiu")
 
-[node name="WaveButton5" parent="WaveButtons" index="4" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("56_y5bmr")]
+[node name="WaveButton5" parent="WaveButtons" index="4" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("56_y5bmr")]
 offset_left = 1837.0
 offset_top = 916.0
 offset_right = 1837.0
 offset_bottom = 916.0
 linked_wave_panel = NodePath("../WavePanel5")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath13")
 summon_text_list = Array[ExtResource("57_7dfgr")]([SubResource("Resource_u8hrp")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton5" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton5" index="4"]
 show_behind_parent = true
 rotation = -0.14226
 scale = Vector2(0.942457, 0.942457)
@@ -900,5 +905,5 @@ script = ExtResource("61_ytmv4")
 max_wave_count = 1
 process_summon_blocks = Array[ExtResource("62_vlu8n")]([ExtResource("63_84k2f"), ExtResource("64_il62f"), ExtResource("65_fqyaq"), ExtResource("66_msn4o"), ExtResource("67_cu8jt"), ExtResource("68_8esq3"), ExtResource("69_qojhe"), ExtResource("70_0e3gf"), ExtResource("71_388s5"), ExtResource("72_lwhlh"), ExtResource("73_3lqm0"), ExtResource("74_4h6am"), ExtResource("75_qi24f"), ExtResource("76_bxpe5"), ExtResource("77_pkytl")])
 
-[node name="HeroSummonMarker" parent="." index="20"]
+[node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(484, 1382)

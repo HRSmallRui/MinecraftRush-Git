@@ -1,13 +1,15 @@
-[gd_scene load_steps=175 format=3 uid="uid://de6r78ksmfvev"]
+[gd_scene load_steps=177 format=3 uid="uid://de6r78ksmfvev"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_o6bbr"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_2_campaign.gd" id="2_6ve6i"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_bm1vf"]
+[ext_resource type="PackedScene" uid="uid://c1phrmmy23dhu" path="res://Scenes/UI-Components/TipButtons/battle_tip_button.tscn" id="3_a0odx"]
 [ext_resource type="Texture2D" uid="uid://cc3pyy24qmtpi" path="res://Assets/Images/Stages/Stage2/stage2-based.png" id="3_j3jnh"]
 [ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="3_onhgg"]
 [ext_resource type="PackedScene" uid="uid://44npbgu1xrd5" path="res://Scenes/Enemies/enemy_0.tscn" id="3_rv5fm"]
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="4_4tljh"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="4_n4umq"]
+[ext_resource type="PackedScene" uid="uid://bpa30l3yll0if" path="res://Scenes/UI-Components/TipButtons/barrack_tip_button.tscn" id="4_sanf4"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="4_uewcl"]
 [ext_resource type="PackedScene" uid="uid://bjaqbbyu6ihm7" path="res://Scenes/Enemies/enemy_2.tscn" id="5_dut11"]
 [ext_resource type="Texture2D" uid="uid://bc5346uy7bb4t" path="res://Assets/Images/Stages/Stage2/stage2-mask1.png" id="5_ln1aq"]
@@ -842,6 +844,8 @@ wave_summon_text_list = Array[ExtResource("64_uo0c6")]([SubResource("Resource_qr
 
 [node name="Stage2Campaign" instance=ExtResource("1_o6bbr")]
 script = ExtResource("2_6ve6i")
+battle_tip_scene = ExtResource("3_a0odx")
+barrack_tip_scene = ExtResource("4_sanf4")
 stage_count = 2
 enemy_scene_list = Array[PackedScene]([ExtResource("3_rv5fm"), ExtResource("4_uewcl"), ExtResource("5_dut11"), ExtResource("6_u7rin"), ExtResource("7_qvhw3")])
 current_money = 320
@@ -864,9 +868,6 @@ position = Vector2(1558, 996)
 z_index = -1
 texture = ExtResource("7_k7xus")
 centered = false
-
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(1490, 994)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(1637, 995)
@@ -960,7 +961,10 @@ position = Vector2(5.48573, 54.8573)
 scale = Vector2(1.27244, 0.745289)
 texture = SubResource("GradientTexture2D_sk857")
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="Flag" parent="Background" index="18"]
+position = Vector2(1490, 994)
+
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_mikv3")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -1050,12 +1054,13 @@ position = Vector2(990, 452)
 [node name="DefenceTowerBased16" parent="Towers" index="15" instance=ExtResource("8_tnix8")]
 position = Vector2(785, 343)
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("50_rpxw1")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("50_rpxw1")]
 offset_left = 38.0
 offset_top = 518.0
 offset_right = 38.0
 offset_bottom = 518.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("51_qnska")]([SubResource("Resource_uj2v3"), SubResource("Resource_sgm7x"), SubResource("Resource_muegg"), SubResource("Resource_8i7da"), SubResource("Resource_jrwih"), SubResource("Resource_1g4nr"), SubResource("Resource_8igk6"), SubResource("Resource_wvt0b"), SubResource("Resource_v2fjb"), SubResource("Resource_5yasx")])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="3"]
@@ -1064,12 +1069,13 @@ rotation = -2.29575
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("53_y75kl")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("50_rpxw1")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("50_rpxw1")]
 offset_left = 895.0
 offset_top = 82.0
 offset_right = 895.0
 offset_bottom = 82.0
 linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("51_qnska")]([null, null, SubResource("Resource_675os"), null, SubResource("Resource_6c756"), SubResource("Resource_je2ux"), SubResource("Resource_xmxil"), SubResource("Resource_yux7h"), SubResource("Resource_o5xsl"), SubResource("Resource_ruvah")])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="3"]
@@ -1097,5 +1103,5 @@ polygon = PackedVector2Array(849, -19, 833, 201, 837, 282, 842, 572, 848, 674, 8
 
 [node name="Level2UnlockTip" parent="." index="17" instance=ExtResource("57_7dybd")]
 
-[node name="HeroSummonMarker" parent="." index="20"]
+[node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(1559, 1002)

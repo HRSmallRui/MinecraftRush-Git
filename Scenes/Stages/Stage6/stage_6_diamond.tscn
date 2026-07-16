@@ -427,10 +427,6 @@ current_money = 960
 total_waves = 5
 stage_summon_config = SubResource("Resource_iitdq")
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-chapter2_preload = true
-
 [node name="StageCamera" parent="." index="3"]
 position = Vector2(1197, 747)
 
@@ -454,9 +450,6 @@ position = Vector2(2090, 282)
 position = Vector2(2111, 1225)
 texture = ExtResource("6_luxme")
 script = ExtResource("7_ycjmw")
-
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(2110, 234)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(2070, 350)
@@ -723,6 +716,9 @@ shape = SubResource("RectangleShape2D_pogaa")
 position = Vector2(1079, 730)
 shape = SubResource("RectangleShape2D_4jy50")
 
+[node name="Flag" parent="Background" index="29"]
+position = Vector2(2110, 234)
+
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_vljsf")
 
@@ -933,12 +929,13 @@ based_skin = 1
 position = Vector2(1080, 719.5)
 shape = SubResource("RectangleShape2D_nqk7m")
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("49_ers8h")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("49_ers8h")]
 offset_left = 84.0
 offset_top = 300.0
 offset_right = 84.0
 offset_bottom = 300.0
 linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("50_a0nic")]([SubResource("Resource_17xlb"), SubResource("Resource_ibybc"), null, SubResource("Resource_56l4h"), SubResource("Resource_4p0g0")])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="3"]
@@ -948,12 +945,13 @@ rotation = -3.65528
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("51_qm8em")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("49_ers8h")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("49_ers8h")]
 offset_left = 236.0
 offset_top = 1261.0
 offset_right = 236.0
 offset_bottom = 1261.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("50_a0nic")]([SubResource("Resource_yq4v8"), null, SubResource("Resource_8u1w7"), SubResource("Resource_r8yyr"), SubResource("Resource_tp6le")])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="3"]

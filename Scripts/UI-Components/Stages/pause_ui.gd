@@ -12,6 +12,7 @@ class_name PauseUI
 func _ready() -> void:
 	music_slider.value = Global.get_user_sav().user_music_volume
 	sound_slider.value = Global.get_user_sav().user_sound_volume
+	Stage.instance.on_paused.emit(true)
 	pass
 
 
@@ -28,6 +29,7 @@ func back():
 	$AnimationPlayer.play("Exit")
 	await $AnimationPlayer.animation_finished
 	get_tree().paused = false
+	Stage.instance.on_paused.emit(false)
 	queue_free()
 	pass
 
