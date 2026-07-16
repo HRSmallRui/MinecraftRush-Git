@@ -405,6 +405,22 @@ func move_to_intercept(target_pos: Vector2):
 
 
 func move_back():
+	if current_intercepting_enemy == null and intercepting_area.monitoring:
+		if intercepting_area.has_overlapping_bodies():
+			var enemy_list: Array[Enemy]
+			for body in intercepting_area.get_overlapping_bodies():
+				var enemy = body.owner as Enemy
+				if !enemy.interceptable: continue
+				enemy_list.append(enemy)
+			if enemy_list.size() > 0:
+				var enemy: Enemy = get_closest_enemy(enemy_list)
+				if enemy != null:
+					current_intercepting_enemy = enemy
+					enemy.current_intercepting_units.append(self)
+					move_to_intercept(enemy.intercepting_marker.global_position)
+					enemy.update_state()
+					return
+		
 	translate_to_new_state(AllyState.MOVE)
 	move_animation(station_position)
 	await move_tween.finished
