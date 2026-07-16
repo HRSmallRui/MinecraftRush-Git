@@ -359,10 +359,7 @@ current_money = 2000
 total_waves = 5
 stage_summon_config = SubResource("Resource_6x1lv")
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-
-[node name="StageCamera" parent="." index="2"]
+[node name="StageCamera" parent="." index="3"]
 position = Vector2(1114, 1006)
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -409,9 +406,6 @@ texture = ExtResource("9_4luap")
 centered = false
 region_enabled = true
 region_rect = Rect2(1777, 707, 323, 420)
-
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(338, 1258)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(481, 1258)
@@ -554,7 +548,10 @@ sprite_frames = SubResource("SpriteFrames_6jnhw")
 autoplay = "default"
 frame_progress = 0.318033
 
-[node name="StageNavigationRegion" parent="." index="7"]
+[node name="Flag" parent="Background" index="16"]
+position = Vector2(338, 1258)
+
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_wolgf")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -829,7 +826,7 @@ offset_bottom = 444.0
 linked_wave_panel = NodePath("../WavePanel")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 3.1489
@@ -844,7 +841,7 @@ offset_bottom = 493.0
 linked_wave_panel = NodePath("../WavePanel2")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 3.1489
@@ -859,7 +856,7 @@ offset_bottom = 444.0
 linked_wave_panel = NodePath("../WavePanel3")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 6.24128
@@ -874,7 +871,7 @@ offset_bottom = 499.0
 linked_wave_panel = NodePath("../WavePanel4")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton4" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton4" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 6.16395
@@ -889,7 +886,7 @@ offset_bottom = 966.0
 linked_wave_panel = NodePath("../WavePanel5")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton5" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton5" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 3.26792
@@ -904,7 +901,7 @@ offset_bottom = 860.0
 linked_wave_panel = NodePath("../WavePanel6")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton6" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton6" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 5.90898
@@ -919,7 +916,7 @@ offset_bottom = 137.0
 linked_wave_panel = NodePath("../WavePanel7")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton7" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton7" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 3.16083
@@ -934,7 +931,7 @@ offset_bottom = 150.0
 linked_wave_panel = NodePath("../WavePanel8")
 summon_text_list = Array[ExtResource("90_h8tk0")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton8" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton8" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 6.10102
@@ -1012,9 +1009,6 @@ polygon = PackedVector2Array(963, 544, 922, 570, 883, 650, 960, 692, 988, 628, 1
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="PathArea" index="4"]
 polygon = PackedVector2Array(1403, 526, 1418, 559, 1452, 589, 1529, 555, 1491, 522, 1482, 468, 1442, 504)
 
-[node name="HeroSummonMarker" parent="." index="19"]
-position = Vector2(1151, 1249)
-
 [node name="FireExtraArea" type="Area2D" parent="." index="21"]
 collision_layer = 512
 collision_mask = 0
@@ -1035,6 +1029,9 @@ enemy_parent_node = NodePath("../../Enemies")
 config_path_front = "res://Library/SummonConfigs/Stage15/Diamond"
 loading_count = 24
 boss_wave_config_path_front = "res://Library/SummonConfigs/Stage15/BossWave"
+
+[node name="HeroSummonMarker" parent="." index="23"]
+position = Vector2(1151, 1249)
 
 [connection signal="mouse_entered" from="FireExtraArea" to="FireExtraArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="FireExtraArea" to="FireExtraArea" method="_on_mouse_exited"]

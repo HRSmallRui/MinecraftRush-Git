@@ -23,6 +23,12 @@ func _enter_tree() -> void:
 	pass
 
 
+func _ready() -> void:
+	back_button.mouse_entered.connect(on_back_button_mouse_enter)
+	back_button.mouse_exited.connect(on_back_button_mouse_exited)
+	pass
+
+
 func wave_show(wave_count: int):
 	hide()
 	wave_over_screen_layer.hide()
@@ -154,4 +160,14 @@ func show_path_effect():
 
 func hide_path_effect():
 	PathLineEffect.instance.hide_path_line()
+	pass
+
+
+func on_back_button_mouse_enter():
+	show_path_effect()
+	pass
+
+
+func on_back_button_mouse_exited():
+	hide_path_effect()
 	pass
