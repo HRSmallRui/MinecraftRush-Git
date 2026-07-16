@@ -6,6 +6,9 @@ signal update_hero_skills
 signal select_hero(hero_id: int)
 
 @export var hero_property_block_list: Array[HeroPropertyBlock]
+@export_group("HeroProperty")
+@export_subgroup("Health")
+@export var steve_health_blocks: Array[IntSaver]
 
 @onready var hero_head_textures: Panel = $HeroHeadTextures
 @onready var hero_texture: TextureRect = $HeroTexture
@@ -126,7 +129,7 @@ func update_health():
 	var max_health: int = hero_property_block_list[current_check].max_healths[hero_level-1]
 	match current_check:
 		0:
-			if skill_levels[0] > 0: max_health += HeroSkillLibrary.hero_skill_data_library[0][1][0][skill_levels[0]-1]
+			if skill_levels[0] > 0: max_health += steve_health_blocks[skill_levels[0]-1].saving_int_value
 	health_label.text = str(max_health)
 	pass
 

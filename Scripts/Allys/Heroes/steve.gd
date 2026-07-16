@@ -3,7 +3,7 @@ extends Hero
 @export_group("PassiveSkill","passive_skill")
 @export var passive_skill_defence_rate_list: Array[float]
 @export_group("Skill1","skill1")
-@export var skill1_health_upper_list: Array[int]
+@export var skill1_health_upper_list: Array[IntSaver]
 @export_group("Skill2","skill2")
 @export var skill2_broken_buff_scene: PackedScene
 @export var skill2_armor_broken_rate_list: Array[float]
@@ -67,7 +67,7 @@ func start_data_process():
 		8,9,10: skill_levels[0] = 3
 	start_data.total_defence_rate = passive_skill_defence_rate_list[skill_levels[0]-1]
 	if skill_levels[1] > 0:
-		start_data.health += skill1_health_upper_list[skill_levels[1]-1]
+		start_data.health += skill1_health_upper_list[skill_levels[1]-1].saving_int_value
 	pass
 
 
