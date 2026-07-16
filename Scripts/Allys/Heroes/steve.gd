@@ -186,3 +186,13 @@ func skill2_is_valid_to_release() -> bool:
 	if current_intercepting_enemy.current_data.armor > 0: return true
 	return false
 	pass
+
+
+func move(target_pos: Vector2):
+	if ally_sprite.animation == "skill_3" and ally_state != AllyState.DIE:
+		var target_state: AllyState = AllyState.IDLE if current_intercepting_enemy == null else AllyState.BATTLE
+		translate_to_new_state(target_state)
+		skill_3_audio.stop()
+		skill_3_timer.stop()
+	super(target_pos)
+	pass
