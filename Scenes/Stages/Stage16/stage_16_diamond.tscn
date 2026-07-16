@@ -258,10 +258,6 @@ current_money = 1200
 total_waves = 5
 stage_summon_config = SubResource("Resource_hrj2w")
 
-[node name="EnemyScenePreloadConfig" parent="." index="0"]
-chapter1_preload = false
-chapter5_preload = true
-
 [node name="StageCamera" parent="." index="3"]
 position = Vector2(113, 690)
 
@@ -280,9 +276,6 @@ texture = ExtResource("5_y6cm7")
 
 [node name="ProtectionPoint" parent="Background/BasedSprite" index="0"]
 position = Vector2(112, 680)
-
-[node name="Flag" parent="Background" index="1"]
-position = Vector2(106, 622)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(120, 750)
@@ -360,6 +353,9 @@ position = Vector2(1626, 1122)
 
 [node name="RedLily6" parent="Background/Lilies" index="14" instance=ExtResource("9_3pvib")]
 position = Vector2(777, 924)
+
+[node name="Flag" parent="Background" index="5"]
+position = Vector2(106, 622)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_nmlan")
@@ -459,30 +455,32 @@ based_skin = 4
 position = Vector2(1038, 584)
 shape = SubResource("RectangleShape2D_pbyl0")
 
-[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("18_uwlpl")]
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("18_uwlpl")]
 offset_left = 1370.0
 offset_top = 40.0
 offset_right = 1370.0
 offset_bottom = 40.0
 linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("19_8dqdp")]([SubResource("Resource_tta2n"), null, SubResource("Resource_ni3e0"), SubResource("Resource_dom5o"), SubResource("Resource_g0y2k")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 5.31332
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("20_ktgfn")
 
-[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel") instance=ExtResource("18_uwlpl")]
+[node name="WaveButton2" parent="WaveButtons" index="1" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("18_uwlpl")]
 offset_left = 2011.0
 offset_top = 598.0
 offset_right = 2011.0
 offset_bottom = 598.0
 linked_wave_panel = NodePath("../WavePanel2")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("19_8dqdp")]([null, SubResource("Resource_q32nl"), SubResource("Resource_hklt1"), SubResource("Resource_jfm6k"), SubResource("Resource_1ap4f")])
 
-[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="5"]
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true
 position = Vector2(0.000152469, 1.25)
 rotation = 5.89353
