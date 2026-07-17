@@ -62,6 +62,7 @@ enum CollisionLayerType
 @onready var body_collision: CollisionShape2D = $UnitBody/BodyCollision
 @onready var screen_notifier: VisibleOnScreenNotifier2D = $UnitBody/ScreenNotifier
 @onready var free_timer: Timer = $FreeTimer
+@onready var logic_timer: Timer = $LogicTimer
 
 var current_data: UnitData
 var enemy_state: EnemyState = EnemyState.MOVE
@@ -103,7 +104,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	#Stage.instance.enemy_count += 1
-	
+	logic_timer.timeout.connect(on_logic_timer_timeout)
 	update_health_bar()
 	select_sprite.hide()
 	unlock_condition()
@@ -172,12 +173,19 @@ func _process(delta: float) -> void:
 	match enemy_state:
 		EnemyState.MOVE:
 			move_process(delta)
+	intercepting_marker.position.x = -battle_length if enemy_sprite.flip_h else battle_length
+	anim_offset()
+	pass
+
+
+func on_logic_timer_timeout():
+	match enemy_state:
+		EnemyState.MOVE:
+			move_logic_process()
 		EnemyState.BATTLE:
 			battle_process()
 		EnemyState.SPECIAL:
 			special_process()
-	intercepting_marker.position.x = -battle_length if enemy_sprite.flip_h else battle_length
-	anim_offset()
 	pass
 
 
@@ -207,6 +215,11 @@ func move_process(delta:float):
 		enemy_sprite.play("move_front")
 	else:
 		enemy_sprite.play("move_normal")
+	pass
+
+
+func move_logic_process():
+	
 	pass
 
 
