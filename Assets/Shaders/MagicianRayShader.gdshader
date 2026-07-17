@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform float speed = 1.0;
-uniform float alpha_strength: hint_range(0.0, 1.0, 0.01);
+uniform float alpha_strength: hint_range(0.0, 1.0, 0.01) = 1;
 
 void vertex() {
 	// Called for every vertex the material is visible on.

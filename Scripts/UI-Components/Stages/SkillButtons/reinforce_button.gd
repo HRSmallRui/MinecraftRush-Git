@@ -21,7 +21,7 @@ func _enter_tree() -> void:
 	
 	await get_tree().create_timer(2).timeout
 	
-	ResourceLoader.load_threaded_get(reinforce_scene_path)
+	reinforce_scene = ResourceLoader.load_threaded_get(reinforce_scene_path)
 	pass
 
 

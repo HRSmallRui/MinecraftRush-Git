@@ -545,3 +545,9 @@ func change_collision_layer(target_layer_type: CollisionLayerType):
 	unit_body.set_collision_layer_value(layer_id,true)
 	hurt_box.set_collision_layer_value(layer_id,true)
 	pass
+
+
+func get_remaining_progress() -> float:
+	var enemy_path: EnemyPath = get_parent()
+	var full_length: float = enemy_path.curve.get_baked_length()
+	return full_length - progress

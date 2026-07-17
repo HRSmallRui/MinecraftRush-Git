@@ -6,6 +6,11 @@ signal update_hero_skills
 signal select_hero(hero_id: int)
 
 @export var hero_property_block_list: Array[HeroPropertyBlock]
+@export_group("HeroProperty")
+@export_subgroup("Health")
+@export var steve_health_blocks: Array[IntSaver]
+@export_subgroup("Damage")
+@export var fuchen_damage_blocks: Array[IntSaver]
 
 @onready var hero_head_textures: Panel = $HeroHeadTextures
 @onready var hero_texture: TextureRect = $HeroTexture
@@ -126,7 +131,7 @@ func update_health():
 	var max_health: int = hero_property_block_list[current_check].max_healths[hero_level-1]
 	match current_check:
 		0:
-			if skill_levels[0] > 0: max_health += HeroSkillLibrary.hero_skill_data_library[0][1][0][skill_levels[0]-1]
+			if skill_levels[0] > 0: max_health += steve_health_blocks[skill_levels[0]-1].saving_int_value
 	health_label.text = str(max_health)
 	pass
 
@@ -146,8 +151,9 @@ func update_damage():
 	match current_check:
 		1:
 			if skill_levels[0] > 0:
-				damage_low += HeroSkillLibrary.hero_skill_data_library[1][1].upgrade_damage[skill_levels[0]-1]
-				damage_high += HeroSkillLibrary.hero_skill_data_library[1][1].upgrade_damage[skill_levels[0]-1]
+				var upgrade_damage: int = fuchen_damage_blocks[skill_levels[0]-1].saving_int_value
+				damage_low += upgrade_damage
+				damage_high += upgrade_damage
 		4:
 			if skill_levels[3] > 0:
 				damage_low += HeroSkillLibrary.hero_skill_data_library[4][4].upgrade_damage[skill_levels[3]-1]

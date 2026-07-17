@@ -1,18 +1,22 @@
-[gd_scene load_steps=223 format=3 uid="uid://bci4cqlpyk1mn"]
+[gd_scene load_steps=227 format=3 uid="uid://bci4cqlpyk1mn"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_fja0x"]
 [ext_resource type="Texture2D" uid="uid://nu1mu4m4slwo" path="res://Assets/Images/UI/InformationBar/steve.png" id="2_bf7dl"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/steve.gd" id="2_csixa"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_8wacd"]
 [ext_resource type="Resource" uid="uid://c8i7af6diw1v" path="res://Library/Heroes/HeroPropertyBlocks/Steve.tres" id="3_nxgb3"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="3_p2sv4"]
 [ext_resource type="PackedScene" uid="uid://bbqttc441agcy" path="res://Scenes/Buffs/Steve/armor_broken_debuff.tscn" id="3_uq3ho"]
+[ext_resource type="Resource" uid="uid://hhpn60avbe45" path="res://Library/Heroes/HeroConfigs/Steve/upgrade_health_lv1.tres" id="4_8nvje"]
 [ext_resource type="Texture2D" uid="uid://cbjyh64w8vr4a" path="res://Assets/Animations/Heroes/Steve/steve-die_00.png" id="4_17geu"]
 [ext_resource type="Texture2D" uid="uid://dlfpt6kgimp1x" path="res://Assets/Animations/Heroes/Steve/steve-damage_00.png" id="4_bl1ws"]
 [ext_resource type="PackedScene" uid="uid://bre4knvunbq3e" path="res://Scenes/Buffs/Steve/steve_golen_apple_heal_buff.tscn" id="4_uiw37"]
 [ext_resource type="Texture2D" uid="uid://u4p7b64miqfl" path="res://Assets/Animations/Heroes/Steve/steve-damage_01.png" id="5_3ivrv"]
+[ext_resource type="Resource" uid="uid://dpi1h7o14gwyn" path="res://Library/Heroes/HeroConfigs/Steve/upgrade_health_lv2.tres" id="5_i1sdg"]
 [ext_resource type="PackedScene" uid="uid://cahoe6qmx7pc5" path="res://Scenes/Buffs/Steve/steve_blood_buff.tscn" id="5_l74ch"]
 [ext_resource type="Texture2D" uid="uid://su41ga5r12c4" path="res://Assets/Animations/Heroes/Steve/steve-die_01.png" id="5_wqxfc"]
 [ext_resource type="Texture2D" uid="uid://ct7ibfxp2ppkb" path="res://Assets/Animations/Heroes/Steve/steve-die_02.png" id="6_lmmpe"]
+[ext_resource type="Resource" uid="uid://lcy03tgh3ybe" path="res://Library/Heroes/HeroConfigs/Steve/upgrade_health_lv3.tres" id="6_m2ey7"]
 [ext_resource type="Texture2D" uid="uid://c57x0p281rqhq" path="res://Assets/Animations/Heroes/Steve/steve-damage_02.png" id="6_mrjb6"]
 [ext_resource type="Texture2D" uid="uid://ddmooxv3d5tvm" path="res://Assets/Animations/Heroes/Steve/steve-die_03.png" id="7_5n6ba"]
 [ext_resource type="Texture2D" uid="uid://cb8jgdi1m4igb" path="res://Assets/Animations/Heroes/Steve/steve-damage_03.png" id="7_obthh"]
@@ -908,8 +912,8 @@ radius = 329.806
 
 [node name="Steve" instance=ExtResource("1_fja0x")]
 script = ExtResource("2_csixa")
-passive_skill_defence_rate_list = Array[float]([0.1, 0.2, 0.3])
-skill1_health_upper_list = Array[int]([20, 40, 60])
+passive_skill_defence_rate_list = Array[float]([0.2, 0.3, 0.4])
+skill1_health_upper_list = Array[ExtResource("3_p2sv4")]([ExtResource("4_8nvje"), ExtResource("5_i1sdg"), ExtResource("6_m2ey7")])
 skill2_broken_buff_scene = ExtResource("3_uq3ho")
 skill2_armor_broken_rate_list = Array[float]([0.1, 0.2, 0.3])
 skill2_damage_list = Array[ExtResource("3_8wacd")]([SubResource("Resource_dvsue"), SubResource("Resource_dfyv0"), SubResource("Resource_6llry")])
@@ -938,7 +942,6 @@ sprite_frames = SubResource("SpriteFrames_b8gqf")
 animation = &"skill_4"
 autoplay = "idle"
 frame = 33
-frame_progress = 0.701764
 
 [node name="Skill4HitBox" type="Area2D" parent="UnitBody" index="7"]
 position = Vector2(195, 0)

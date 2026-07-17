@@ -3,7 +3,7 @@ extends Hero
 @export_group("PassiveSkill","passive_skill")
 @export var passive_skill_defence_rate_list: Array[float]
 @export_group("Skill1","skill1")
-@export var skill1_health_upper_list: Array[int]
+@export var skill1_health_upper_list: Array[IntSaver]
 @export_group("Skill2","skill2")
 @export var skill2_broken_buff_scene: PackedScene
 @export var skill2_armor_broken_rate_list: Array[float]
@@ -67,14 +67,14 @@ func start_data_process():
 		8,9,10: skill_levels[0] = 3
 	start_data.total_defence_rate = passive_skill_defence_rate_list[skill_levels[0]-1]
 	if skill_levels[1] > 0:
-		start_data.health += skill1_health_upper_list[skill_levels[1]-1]
+		start_data.health += skill1_health_upper_list[skill_levels[1]-1].saving_int_value
 	pass
 
 
 func battle():
 	if ally_sprite.animation == "idle":
-		if skill_levels[2] > 0 and skill_2_timer.is_stopped() and skill2_is_valid_to_release():
-			translate_to_new_state(AllyState.SPECIAL)
+		if skill_levels[2] > 0 and skill_2_timer.is_stopped():
+			#translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill_2")
 			skill_2_timer.start()
 			return
@@ -185,4 +185,14 @@ func skill2_is_valid_to_release() -> bool:
 	if current_intercepting_enemy == null: return false
 	if current_intercepting_enemy.current_data.armor > 0: return true
 	return false
+	pass
+
+
+func move(target_pos: Vector2):
+	if ally_sprite.animation == "skill_3" and ally_state != AllyState.DIE:
+		var target_state: AllyState = AllyState.IDLE if current_intercepting_enemy == null else AllyState.BATTLE
+		translate_to_new_state(target_state)
+		skill_3_audio.stop()
+		skill_3_timer.stop()
+	super(target_pos)
 	pass
