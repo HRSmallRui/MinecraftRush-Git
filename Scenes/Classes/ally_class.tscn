@@ -136,5 +136,10 @@ autostart = true
 [node name="FarAttackTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="LogicTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+autostart = true
+
 [connection signal="pressed" from="UnitBody/AllyButton" to="." method="_on_ally_button_pressed"]
 [connection signal="timeout" from="HealTimer" to="." method="_on_heal_timer_timeout"]

@@ -63,6 +63,7 @@ enum CollisionLayerType
 @onready var far_attack_timer: Timer = $FarAttackTimer
 @onready var body_collision: CollisionShape2D = $UnitBody/BodyCollision
 @onready var intercepting_shape: CollisionShape2D = $UnitBody/InterceptingArea/InterceptingShape
+@onready var logic_timer: Timer = $LogicTimer
 
 var ally_state:AllyState = AllyState.IDLE
 var move_tween: Tween
@@ -85,6 +86,7 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	logic_timer.timeout.connect(on_logic_timer_timeout)
 	#station_position = position
 	ally_sprite.position = Vector2.ZERO
 	select_sprite.hide()
@@ -133,9 +135,14 @@ func _on_ally_button_pressed() -> void:
 
 
 func _process(delta: float) -> void:
-	#current_data.update_data()
 	anim_offset()
 	update_health_bar()
+	pass
+
+
+func on_logic_timer_timeout():
+	#current_data.update_data()
+	
 	match ally_state:
 		AllyState.IDLE:
 			idle_process()
@@ -145,8 +152,6 @@ func _process(delta: float) -> void:
 			battle_process()
 		AllyState.SPECIAL:
 			special_process()
-	
-	anim_offset()
 	pass
 
 

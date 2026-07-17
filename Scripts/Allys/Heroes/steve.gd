@@ -147,7 +147,7 @@ func golden_apple():
 	pass
 
 
-func _process(delta: float) -> void:
+func on_logic_timer_timeout():
 	if ally_state != AllyState.MOVE and ally_state != AllyState.DIE and ally_sprite.animation == "idle":
 		if skill_levels[3] > 0:
 			var health_rate = float(current_data.health) / start_data.health
@@ -155,7 +155,7 @@ func _process(delta: float) -> void:
 				skill_3_timer.start()
 				golden_apple()
 				return
-	super(delta)
+	super()
 	pass
 
 
