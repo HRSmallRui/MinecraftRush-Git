@@ -265,7 +265,7 @@ func translate_to_new_state(new_state: AllyState):
 		AllyState.MOVE:
 			#intercepting_shape.disabled = true
 			#change_collision_layer(true)
-			intercepting_area.position = station_position
+			#intercepting_area.position = station_position
 			change_collision_layer(CollisionLayerType.AllyMove)
 		AllyState.BATTLE:
 			ally_sprite.play("idle")
@@ -360,6 +360,7 @@ func rebirth():
 
 func move(target_pos:Vector2):
 	station_position = target_pos
+	intercepting_area.position = target_pos
 	if ally_state == AllyState.DIE: return
 	if ally_state == AllyState.SPECIAL:
 		waiting_to_move = true

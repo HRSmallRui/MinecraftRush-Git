@@ -40,16 +40,16 @@ func skill_unlease():
 	var reinforce2: Reinforcement = reinforce_scene.instantiate()
 	allocate_ally_id(reinforce1,reinforce2)
 	
-	reinforce1.reinforce_partners.append(reinforce2)
-	reinforce2.reinforce_partners.append(reinforce1)
 	var summon_pos: Vector2 = Stage.instance.get_local_mouse_position()
 	reinforce1.position = summon_pos - Vector2(15,0)
 	reinforce2.position = summon_pos + Vector2(15,0)
 	reinforce1.station_position = reinforce1.position
 	reinforce2.station_position = reinforce2.position
 	Stage.instance.allys.add_child(reinforce1)
+	reinforce1.intercepting_area.position = summon_pos
 	await get_tree().create_timer(0.2,false).timeout
 	Stage.instance.allys.add_child(reinforce2)
+	reinforce2.intercepting_area.position = summon_pos
 	
 	var destroyer_possible: float = 1
 	if level >= 5 and randf_range(0,1) < destroyer_possible:

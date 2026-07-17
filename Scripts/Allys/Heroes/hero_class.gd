@@ -137,6 +137,7 @@ func move(target_pos:Vector2):
 
 
 func navigation_move():
+	intercepting_area.position = navigation_agent.target_position
 	if ally_state == AllyState.SPECIAL:
 		waiting_to_move = true
 		next_move_position = navigation_agent.target_position
