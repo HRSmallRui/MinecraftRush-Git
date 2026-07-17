@@ -143,7 +143,7 @@ func navigation_move():
 		return
 	station_position = navigation_agent.target_position
 	navigation_timer.start()
-	enemy_list.clear()
+	#enemy_list.clear()
 	if current_intercepting_enemy != null: current_intercepting_enemy.current_intercepting_units.erase(self)
 	current_intercepting_enemy = null
 	translate_to_new_state(AllyState.MOVE)
