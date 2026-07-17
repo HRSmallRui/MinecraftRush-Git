@@ -2,7 +2,8 @@ extends SkillConditionArea2D
 
 @export var dizness_buff_scene: PackedScene
 @export var lightning_sheild_buff_scene: PackedScene
-@export var lightning_damage_list: Array[int]
+@export var lightning_damage_list: Array[IntSaver]
+@export var dizness_duration: FloatSaver
 
 
 func _ready() -> void:
@@ -13,11 +14,12 @@ func _ready() -> void:
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	var damage: int
-	damage = lightning_damage_list[skill_level-1]
+	damage = lightning_damage_list[skill_level-1].saving_int_value
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		var dizness_debuff: PropertyBuff = dizness_buff_scene.instantiate()
 		dizness_debuff.unit = enemy
+		dizness_debuff.duration = dizness_duration.saving_float_value
 		enemy.buffs.add_child(dizness_debuff)
 		if "creeper" in enemy.get_groups():
 			enemy.enemy_buff_tags["lightning"] = 1

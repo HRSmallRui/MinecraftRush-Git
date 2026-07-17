@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1o16n47y1863"]
+[gd_scene load_steps=6 format=3 uid="uid://c1o16n47y1863"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/alex_lighting_area.gd" id="1_87krn"]
 [ext_resource type="PackedScene" uid="uid://b45m7kufl3xts" path="res://Scenes/Buffs/Alex/alex_dizness_debuff.tscn" id="2_pc2we"]
 [ext_resource type="PackedScene" uid="uid://cqkga82q85ygo" path="res://Scenes/Buffs/lightning_sheild.tscn" id="3_fanr5"]
+[ext_resource type="Resource" uid="uid://bv3hgk5sg1k4u" path="res://Library/Heroes/HeroConfigs/Alex/Skill1/dizness_duration.tres" id="4_d1wj7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q213q"]
 radius = 73.9444
@@ -14,6 +15,7 @@ script = ExtResource("1_87krn")
 dizness_buff_scene = ExtResource("2_pc2we")
 lightning_sheild_buff_scene = ExtResource("3_fanr5")
 lightning_damage_list = Array[int]([128, 156, 212])
+dizness_duration = ExtResource("4_d1wj7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.7)

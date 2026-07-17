@@ -3,9 +3,10 @@ extends SkillConditionArea2D
 @export var dizness_buff_scene: PackedScene
 @export var speed_low_buff_scene: PackedScene
 @export_group("SkillData")
-@export var first_damage_list: Array[int]
-@export var duration_list: Array[float]
-@export var damage_per_count: int
+@export var first_damage_list: Array[IntSaver]
+@export var duration_list: Array[FloatSaver]
+@export var damage_per_count: IntSaver
+@export var dizness_duration: FloatSaver
 
 @onready var fork_sprite: AnimatedSprite2D = $ForkSprite
 @onready var shot_timer: Timer = $ShotTimer
@@ -26,15 +27,15 @@ func _ready() -> void:
 	shadow.scale = Vector2.ZERO
 	create_tween().tween_property(shadow,"scale",Vector2.ONE * 3.6,0.12)
 	await get_tree().create_timer(0.12,false).timeout
-	var damage: int = first_damage_list[skill_level-1]
-	duration_timer.wait_time = duration_list[skill_level-1]
+	var damage: int = first_damage_list[skill_level-1].saving_int_value
+	duration_timer.wait_time = duration_list[skill_level-1].saving_float_value
 	duration_timer.start()
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
 		dizness_buff.unit = enemy
 		dizness_buff.buff_tag = "alex_dizness_4"
-		dizness_buff.duration = 3
+		dizness_buff.duration = dizness_duration.saving_float_value
 		enemy.buffs.add_child(dizness_buff)
 		enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,)
 	shot_timer.start()
@@ -47,7 +48,7 @@ func _on_shot_timer_timeout() -> void:
 		var speed_low_buff: PropertyBuff = speed_low_buff_scene.instantiate()
 		speed_low_buff.unit = enemy
 		enemy.buffs.add_child(speed_low_buff)
-		enemy.take_damage(damage_per_count,DataProcess.DamageType.PhysicsDamage,0)
+		enemy.take_damage(damage_per_count.saving_int_value,DataProcess.DamageType.PhysicsDamage,0)
 	pass # Replace with function body.
 
 
