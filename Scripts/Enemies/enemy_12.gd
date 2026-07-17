@@ -44,9 +44,13 @@ func frame_changed():
 	pass
 
 
-func move_process(delta:float):
+func _process(delta: float) -> void:
 	super(delta)
 	sprint_sprite.global_rotation = direction_sprite.global_rotation
+	pass
+
+
+func move_logic_process():
 	if enemy_state == EnemyState.MOVE:
 		if far_attack_area.has_overlapping_bodies() and silence_layers <= 0 and sprint_timer.is_stopped():
 			var enemy_path: EnemyPath = get_parent()
@@ -54,26 +58,7 @@ func move_process(delta:float):
 				sprint()
 				is_skill_releasing = true
 				return
-		if far_attack_area.get_overlapping_bodies().size() > 0 and far_attack_timer.is_stopped() and !is_skill_releasing:
-			translate_to_new_state(EnemyState.SPECIAL)
-			enemy_sprite.play("idle")
-			return
-	pass
-
-
-func special_process():
-	if enemy_sprite.animation == "idle":
-		if far_attack_area.get_overlapping_bodies().size() == 0:
-			translate_to_new_state(EnemyState.MOVE)
-			return
-		if current_intercepting_units.size() > 0:
-			translate_to_new_state(EnemyState.BATTLE)
-		elif far_attack_area.get_overlapping_bodies().size() > 0 and far_attack_timer.is_stopped():
-			var ally: Ally = far_attack_area.get_overlapping_bodies()[0].owner
-			far_attack_position = ally.hurt_box.global_position
-			far_attack_timer.start()
-			enemy_sprite.play("far_attack")
-			enemy_sprite.flip_h = far_attack_position.x < position.x
+	super()
 	pass
 
 
@@ -88,8 +73,10 @@ func sprint():
 	var original_speed = start_data.unit_move_speed
 	start_data.unit_move_speed *= 5
 	current_data.update_move_speed()
+	stop_far_attack_translation = true
 	
 	await sprint_continue_timer.timeout
+	stop_far_attack_translation = false
 	sprint_timer.start()
 	interceptable = true
 	enemy_sprite.show()

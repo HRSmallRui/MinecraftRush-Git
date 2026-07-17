@@ -14,8 +14,3 @@ func frame_changed():
 	if "move" in enemy_sprite.animation and enemy_sprite.frame == 27:
 		die_audio_play()
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass

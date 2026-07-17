@@ -73,15 +73,9 @@ func frame_changed():
 	pass
 
 
-func move_process(delta: float):
-	if far_attack_area.has_overlapping_bodies() and far_attack_timer.is_stopped():
-		translate_to_new_state(EnemyState.SPECIAL)
-		var ally: Ally = far_attack_area.get_overlapping_bodies()[0].owner
-		far_attack_position = ally.hurt_box.global_position
-		enemy_sprite.play("far_attack")
-		enemy_sprite.flip_h = far_attack_position.x < position.x
-		far_attack_timer.start()
-		return
+func move_logic_process():
+	if far_attack_timer.is_stopped():
+		super()
 	if heal_self_timer.is_stopped() and health_bar.value < 0.6 and silence_layers <= 0:
 		release_heal_self()
 		return
@@ -121,7 +115,6 @@ func move_process(delta: float):
 				enemy_sprite.play("heal_potion")
 				enemy_sprite.flip_h = far_attack_position.x < position.x
 				return
-	super(delta)
 	pass
 
 
@@ -129,6 +122,16 @@ func battle():
 	if heal_self_timer.is_stopped() and health_bar.value < 0.6:
 		release_heal_self()
 		return
+	super()
+	pass
+
+
+func far_attack_process():
+	if !far_attack_timer.is_stopped():
+		if current_intercepting_units.is_empty():
+			translate_to_new_state(EnemyState.MOVE)
+		else:
+			translate_to_new_state(EnemyState.BATTLE)
 	super()
 	pass
 
@@ -148,14 +151,4 @@ func get_heal_enemy() -> Enemy:
 		if enemy.health_bar.value < 0.5: return enemy
 	
 	return null
-	pass
-
-
-func special_process():
-	super()
-	if enemy_sprite.animation == "idle":
-		if current_intercepting_units.is_empty():
-			translate_to_new_state(EnemyState.MOVE)
-		else:
-			translate_to_new_state(EnemyState.BATTLE)
 	pass

@@ -62,8 +62,3 @@ func summon_middle_slime(target_position: Vector2, target_enemy_path: EnemyPath)
 	middle_slime.translate_to_new_state(EnemyState.MOVE)
 	middle_slime.interceptable = true
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass

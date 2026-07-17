@@ -74,6 +74,7 @@ var enemy_buff_tags: Dictionary
 var silence_layers: int = 0
 var is_disappear_killing: bool = false
 var danger_tip: DangerTip
+var stop_far_attack_translation: bool
 
 
 func _init() -> void:
@@ -219,7 +220,7 @@ func move_process(delta:float):
 
 
 func move_logic_process():
-	if enemy_state == EnemyState.MOVE and far_attack_area.has_overlapping_bodies() and current_data.far_damage_range > 0:
+	if enemy_state == EnemyState.MOVE and far_attack_area.has_overlapping_bodies() and current_data.far_damage_range > 0 and !stop_far_attack_translation:
 		enemy_sprite.play("idle")
 		translate_to_new_state(EnemyState.SPECIAL)
 	pass
@@ -275,11 +276,12 @@ func far_attack_process():
 
 
 func normal_far_attack():
-	if far_attack_area.has_overlapping_bodies():
+	if far_attack_area.has_overlapping_bodies() and far_attack_timer.is_stopped():
 		var ally: Ally = far_attack_area.get_overlapping_bodies()[0].owner
 		far_attack_position = ally.hurt_box.global_position
 		enemy_sprite.flip_h = far_attack_position.x < position.x
 		enemy_sprite.play("far_attack")
+		far_attack_timer.start()
 	pass
 
 
@@ -301,11 +303,9 @@ func translate_to_new_state(new_state: EnemyState):
 		EnemyState.DIE:
 			achievement_enemy_die()
 			enemy_sprite.pause()
-			unit_body.set_collision_layer_value(6,false)
-			unit_body.set_collision_layer_value(7,false)
+			unit_body.collision_layer = 0
 			unit_body.set_collision_layer_value(9,true)
-			hurt_box.set_collision_layer_value(6,false)
-			hurt_box.set_collision_layer_value(7,false)
+			hurt_box.collision_layer = 0
 			hurt_box.set_collision_layer_value(9,true)
 			enemy_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			if Stage.instance.information_bar.current_check_member == self: Stage.instance.ui_process(null)

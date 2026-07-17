@@ -64,10 +64,6 @@ func move_process(delta_time: float):
 		"move_back": anim_name = "back"
 		"move_front": anim_name = "front"
 	hating_soldier.play(anim_name)
-	if far_attack_area.get_overlapping_bodies().size() > 0 and far_attack_timer.is_stopped():
-		translate_to_new_state(EnemyState.SPECIAL)
-		enemy_sprite.play("idle")
-		return
 	super(delta_time)
 	pass
 
