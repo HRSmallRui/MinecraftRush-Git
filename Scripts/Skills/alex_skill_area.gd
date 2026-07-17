@@ -3,8 +3,10 @@ extends SkillConditionArea2D
 @export var fork_sprite_scene: PackedScene
 @export var dizness_buff_scene: PackedScene
 @export var slow_buff_scene: PackedScene
-@export var fork_count_list: Array[int]
-@export var explosion_damage_list: Array[int]
+@export var fork_count_list: Array[IntSaver]
+@export var explosion_damage_list: Array[IntSaver]
+@export var each_fork_damage: IntSaver
+@export var speed_low_duration: FloatSaver
 
 var loop_count: int
 var fork_list: Array[Sprite2D]
@@ -13,8 +15,8 @@ var fork_list: Array[Sprite2D]
 
 
 func _ready() -> void:
-	loop_count = fork_count_list[skill_level]
-	var explosion_damage: int = explosion_damage_list[skill_level]
+	loop_count = fork_count_list[skill_level].saving_int_value
+	var explosion_damage: int = explosion_damage_list[skill_level].saving_int_value
 	for i in loop_count:
 		var fork: Sprite2D = fork_sprite_scene.instantiate()
 		add_child(fork)
@@ -28,11 +30,12 @@ func _ready() -> void:
 		await fork_tween.finished
 		for body in get_overlapping_bodies():
 			var enemy: Enemy = body.owner
-			enemy.take_damage(80,DataProcess.DamageType.PhysicsDamage,0)
+			enemy.take_damage(each_fork_damage.saving_int_value,DataProcess.DamageType.PhysicsDamage,0)
 	explosion_timer.start()
 	await explosion_timer.timeout
 	AudioManager.instance.play_explosion_audio()
-	EffectManager.instance.play_explosion_effect(position)
+	EffectManager.instance.play_explosion_effect(position,Vector2.ONE,Color.WHITE,1)
+	EffectManager.instance.play_smoke_effect(position,Vector2.ONE,Color.WHITE,1)
 	for body in explosion_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		var dizness_buff: PropertyBuff = dizness_buff_scene.instantiate()
@@ -51,7 +54,7 @@ func _on_speed_low_area_body_entered(body: Node2D) -> void:
 	var enemy: Enemy = body.owner
 	var speed_low_buff: PropertyBuff = slow_buff_scene.instantiate()
 	speed_low_buff.buff_tag = "AlexSkill5SpeedLow"
-	speed_low_buff.duration = 2
+	speed_low_buff.duration = speed_low_duration.saving_float_value
 	speed_low_buff.unit = enemy
 	enemy.buffs.add_child(speed_low_buff)
 	pass # Replace with function body.
