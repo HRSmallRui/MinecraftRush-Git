@@ -219,7 +219,9 @@ func move_process(delta:float):
 
 
 func move_logic_process():
-	
+	if enemy_state == EnemyState.MOVE and far_attack_area.has_overlapping_bodies() and current_data.far_damage_range > 0:
+		enemy_sprite.play("idle")
+		translate_to_new_state(EnemyState.SPECIAL)
 	pass
 
 
@@ -256,13 +258,36 @@ func battle():
 
 
 func special_process():
-	current_data.unit_move_speed = 0
-	#if enemy_sprite.animation == "idle" and current_intercepting_units.is_empty():
-		#translate_to_new_state(EnemyState.MOVE)
+	if enemy_sprite.animation == "idle":
+		if current_intercepting_units.is_empty():
+			far_attack_process()
+		else:
+			translate_to_new_state(EnemyState.BATTLE)
+	pass
+
+
+func far_attack_process():
+	if far_attack_area.has_overlapping_bodies():
+		normal_far_attack()
+		return
+	translate_to_new_state(EnemyState.MOVE)
+	pass
+
+
+func normal_far_attack():
+	if far_attack_area.has_overlapping_bodies():
+		var ally: Ally = far_attack_area.get_overlapping_bodies()[0].owner
+		far_attack_position = ally.hurt_box.global_position
+		enemy_sprite.flip_h = far_attack_position.x < position.x
+		enemy_sprite.play("far_attack")
 	pass
 
 
 func translate_to_new_state(new_state: EnemyState):
+	if new_state != EnemyState.MOVE:
+		current_data.unit_move_speed = 0
+	else:
+		current_data.update_move_speed()
 	match new_state:
 		EnemyState.MOVE:
 			current_data.update_move_speed()
