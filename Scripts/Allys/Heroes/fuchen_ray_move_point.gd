@@ -10,6 +10,7 @@ var move_speed: float = 100
 var linked_hero: Hero
 
 @onready var hit_box: Area2D = $HitBox
+@onready var interval_timer: Timer = $IntervalTimer
 
 
 func _on_timer_timeout() -> void:

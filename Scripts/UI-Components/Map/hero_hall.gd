@@ -9,6 +9,8 @@ signal select_hero(hero_id: int)
 @export_group("HeroProperty")
 @export_subgroup("Health")
 @export var steve_health_blocks: Array[IntSaver]
+@export_subgroup("Damage")
+@export var fuchen_damage_blocks: Array[IntSaver]
 
 @onready var hero_head_textures: Panel = $HeroHeadTextures
 @onready var hero_texture: TextureRect = $HeroTexture
@@ -149,8 +151,9 @@ func update_damage():
 	match current_check:
 		1:
 			if skill_levels[0] > 0:
-				damage_low += HeroSkillLibrary.hero_skill_data_library[1][1].upgrade_damage[skill_levels[0]-1]
-				damage_high += HeroSkillLibrary.hero_skill_data_library[1][1].upgrade_damage[skill_levels[0]-1]
+				var upgrade_damage: int = fuchen_damage_blocks[skill_levels[0]-1].saving_int_value
+				damage_low += upgrade_damage
+				damage_high += upgrade_damage
 		4:
 			if skill_levels[3] > 0:
 				damage_low += HeroSkillLibrary.hero_skill_data_library[4][4].upgrade_damage[skill_levels[3]-1]
