@@ -72,8 +72,10 @@ func move(target_pos: Vector2):
 	var pos2: Vector2 = target_pos + Vector2(20,0)
 	soldier_1.move(pos1)
 	soldier_1.station_position = pos1
+	soldier_1.intercepting_area.position = target_pos
 	soldier_2.move(pos2)
 	soldier_2.station_position = pos2
+	soldier_2.intercepting_area.position = target_pos
 	pass
 
 
