@@ -186,28 +186,6 @@ func shoot_ray():
 	pass
 
 
-func move_process(delta_time: float):
-	super(delta_time)
-	#print(normal_attack_timer.time_left)
-	if far_attack_timer.is_stopped() and silence_layers <= 0 and far_attack_area.has_overlapping_bodies():
-		var ally: Ally = far_attack_area.get_overlapping_bodies()[0].owner
-		far_attack_position = ally.hurt_box.global_position
-		translate_to_new_state(EnemyState.SPECIAL)
-		enemy_sprite.play("far_attack")
-		enemy_sprite.flip_h = far_attack_position.x < position.x
-		far_attack_timer.start()
-		return
-	pass
-
-
-func special_process():
-	if enemy_sprite.animation == "idle" and current_intercepting_units.is_empty():
-		translate_to_new_state(EnemyState.MOVE)
-	elif enemy_sprite.animation == "idle" and current_intercepting_units.size() > 0:
-		translate_to_new_state(EnemyState.BATTLE)
-	pass
-
-
 func purple_to_orange():
 	create_tween().tween_property(ray,"material:shader_parameter/mix_power",step_2_color,0.3)
 	pass

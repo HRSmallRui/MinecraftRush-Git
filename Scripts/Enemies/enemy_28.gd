@@ -86,21 +86,12 @@ func summon_skill_release():
 	pass
 
 
-func move_process(delta:float):
-	super(delta)
+func move_logic_process():
+	super()
 	if summon_timer.is_stopped():
 		translate_to_new_state(EnemyState.SPECIAL)
 		enemy_sprite.play("call")
 		summon_timer.start()
-	pass
-
-
-func special_process():
-	if enemy_sprite.animation == "idle":
-		if current_intercepting_units.is_empty():
-			translate_to_new_state(EnemyState.MOVE)
-		else:
-			translate_to_new_state(EnemyState.BATTLE)
 	pass
 
 

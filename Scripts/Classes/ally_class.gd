@@ -279,7 +279,6 @@ func translate_to_new_state(new_state: AllyState):
 		AllyState.DIE:
 			ally_dead.emit()
 			waiting_to_move = false
-			intercepting_shape.disabled = true
 			change_collision_layer(CollisionLayerType.AllyDead)
 			#enemy_list.clear()
 			

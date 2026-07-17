@@ -95,8 +95,8 @@ func pounce_release():
 	pass
 
 
-func move_process(delta: float):
-	super(delta)
+func move_logic_process():
+	super()
 	if enemy_state == EnemyState.MOVE:
 		if pounce_condition_area.has_overlapping_bodies() and pounce_timer.is_stopped() and silence_layers <= 0:
 			var curve = get_parent().curve as Curve2D

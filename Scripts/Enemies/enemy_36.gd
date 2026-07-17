@@ -105,7 +105,7 @@ func summon_fangs(fang_pos: Vector2):
 	pass
 
 
-func move_process(delta: float):
+func move_logic_process():
 	if fang_timer.is_stopped() and silence_layers <= 0 and fange_skill_area.has_overlapping_bodies():
 		var enemy_path: EnemyPath = get_parent()
 		var curve: Curve2D = enemy_path.curve
@@ -134,7 +134,7 @@ func move_process(delta: float):
 		skill_releasing_audio.stream = vex_audio
 		skill_releasing_audio.play()
 		return
-	super(delta)
+	super()
 	pass
 
 

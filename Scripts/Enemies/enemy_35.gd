@@ -50,33 +50,13 @@ func frame_changed():
 	pass
 
 
-func move_process(delta: float):
-	if far_attack_area.has_overlapping_bodies():
-		translate_to_new_state(EnemyState.SPECIAL)
-		enemy_sprite.play("idle")
-		return
+func move_logic_process():
 	if horn_can_release() and horn_timer.is_stopped():
 		translate_to_new_state(EnemyState.SPECIAL)
 		enemy_sprite.play("horn")
 		horn_timer.start()
 		return
-	super(delta)
-	pass
-
-
-func special_process():
-	if enemy_sprite.animation == "idle":
-		if far_attack_area.get_overlapping_bodies().size() == 0:
-			translate_to_new_state(EnemyState.MOVE)
-			return
-		if current_intercepting_units.size() > 0:
-			translate_to_new_state(EnemyState.BATTLE)
-		elif far_attack_area.get_overlapping_bodies().size() > 0 and far_attack_timer.is_stopped():
-			var ally: Ally = far_attack_area.get_overlapping_bodies()[0].owner
-			far_attack_position = ally.hurt_box.global_position
-			far_attack_timer.start()
-			enemy_sprite.play("far_attack")
-			enemy_sprite.flip_h = far_attack_position.x < position.x
+	super()
 	pass
 
 
