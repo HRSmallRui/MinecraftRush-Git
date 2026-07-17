@@ -69,7 +69,6 @@ var move_tween: Tween
 var current_data: UnitData
 var station_position: Vector2
 var current_intercepting_enemy: Enemy
-var enemy_list: Array[Enemy]
 var waiting_to_move: bool = false
 var next_move_position: Vector2
 var far_attack_target_enemy: Enemy
@@ -289,7 +288,7 @@ func translate_to_new_state(new_state: AllyState):
 			waiting_to_move = false
 			intercepting_shape.disabled = true
 			change_collision_layer(CollisionLayerType.AllyDead)
-			enemy_list.clear()
+			#enemy_list.clear()
 			
 			if Stage.instance.information_bar.current_check_member == self: Stage.instance.ui_process(null)
 			if current_intercepting_enemy != null:
@@ -374,7 +373,7 @@ func move(target_pos:Vector2):
 		next_move_position = target_pos
 		return
 	
-	enemy_list.clear()
+	#enemy_list.clear()
 	if current_intercepting_enemy != null: current_intercepting_enemy.current_intercepting_units.erase(self)
 	current_intercepting_enemy = null
 	translate_to_new_state(AllyState.MOVE)
