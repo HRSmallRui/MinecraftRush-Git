@@ -33,6 +33,7 @@ enum CollisionLayerType
 @export var is_final_boss: bool
 @export var start_data: UnitData
 @export var far_attack_bullet_scene: PackedScene
+@export var far_attack_waiting_timer: bool
 @export var interceptable: bool = true
 @export var lives_taken: int = 1
 @export var bounty: int
@@ -221,6 +222,8 @@ func move_process(delta:float):
 
 func move_logic_process():
 	if enemy_state == EnemyState.MOVE and far_attack_area.has_overlapping_bodies() and current_data.far_damage_range > 0 and !stop_far_attack_translation:
+		if far_attack_waiting_timer and !far_attack_timer.is_stopped():
+			return
 		enemy_sprite.play("idle")
 		translate_to_new_state(EnemyState.SPECIAL)
 	pass
@@ -268,6 +271,13 @@ func special_process():
 
 
 func far_attack_process():
+	if far_attack_waiting_timer and !far_attack_timer.is_stopped():
+		if current_intercepting_units.is_empty():
+			translate_to_new_state(EnemyState.MOVE)
+		else:
+			translate_to_new_state(EnemyState.BATTLE)
+		return
+	
 	if far_attack_area.has_overlapping_bodies():
 		normal_far_attack()
 		return

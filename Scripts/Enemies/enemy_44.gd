@@ -189,19 +189,3 @@ func shoot_ray():
 func purple_to_orange():
 	create_tween().tween_property(ray,"material:shader_parameter/mix_power",step_2_color,0.3)
 	pass
-
-
-func move_logic_process():
-	if far_attack_timer.is_stopped():
-		super()
-	pass
-
-
-func far_attack_process():
-	if !far_attack_timer.is_stopped():
-		if current_intercepting_units.is_empty():
-			translate_to_new_state(EnemyState.MOVE)
-		else:
-			translate_to_new_state(EnemyState.BATTLE)
-	super()
-	pass

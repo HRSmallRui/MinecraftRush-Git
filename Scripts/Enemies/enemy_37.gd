@@ -126,16 +126,6 @@ func battle():
 	pass
 
 
-func far_attack_process():
-	if !far_attack_timer.is_stopped():
-		if current_intercepting_units.is_empty():
-			translate_to_new_state(EnemyState.MOVE)
-		else:
-			translate_to_new_state(EnemyState.BATTLE)
-	super()
-	pass
-
-
 func release_heal_self():
 	translate_to_new_state(EnemyState.SPECIAL)
 	heal_self_timer.start()
