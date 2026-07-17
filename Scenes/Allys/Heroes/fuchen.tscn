@@ -1259,7 +1259,7 @@ far_attack_bullet_scene = ExtResource("4_xexlq")
 intercepting_range = 80
 rebirth_time = 21
 
-[node name="FuchenMagicHeart" type="Sprite2D" parent="UnitBody" index="0" node_paths=PackedStringArray("fuchen", "trace_area")]
+[node name="FuchenMagicHeart" type="Sprite2D" parent="UnitBody" index="0" node_paths=PackedStringArray("fuchen", "trace_area", "ray_during_timer")]
 y_sort_enabled = true
 position = Vector2(-80, -55)
 scale = Vector2(0.662555, 0.662555)
@@ -1276,6 +1276,8 @@ ray_scene = ExtResource("9_40qgb")
 move_point_scene = ExtResource("10_fnkty")
 damage_per_sec_list = Array[int]([4, 6, 8])
 ray_duration = 3.0
+ray_during_timer = NodePath("../../Skill4DurationTimer")
+ray_time_interval = 0.1
 
 [node name="RotationPlayer" type="AnimationPlayer" parent="UnitBody/FuchenMagicHeart" index="0"]
 libraries = {

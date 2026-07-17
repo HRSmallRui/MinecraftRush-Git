@@ -12,6 +12,8 @@ extends Sprite2D
 @export var move_point_scene: PackedScene
 @export var damage_per_sec_list: Array[int]
 @export var ray_duration: float
+@export var ray_during_timer: Timer
+@export var ray_time_interval: float
 
 @onready var rotation_player: AnimationPlayer = $RotationPlayer
 @onready var move_player: AnimationPlayer = $MovePlayer
@@ -32,6 +34,7 @@ func _ready() -> void:
 	
 	ally_sprite.frame_changed.connect(hero_frame_changed)
 	ally_sprite.animation_changed.connect(on_sprite_update_animation)
+	ray_during_timer.wait_time = ray_duration
 	pass
 
 
@@ -122,6 +125,7 @@ func skill_4_release():
 	enemy_path.add_child(move_point)
 	move_point.progress = new_progress
 	move_point.linked_hero = fuchen
+	move_point.interval_timer.wait_time = ray_time_interval
 	current_ray.start_point = self
 	current_ray.end_point = move_point
 	
