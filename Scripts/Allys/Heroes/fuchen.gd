@@ -131,9 +131,10 @@ func idle_process():
 	super()
 	if ally_state != AllyState.IDLE: return
 	if ally_sprite.animation == "idle":
-		if skill_levels[4] > 0 and skill_4_timer.is_stopped():
-			if skill_4_condition_area.get_overlapping_bodies().size() >= 2:
-				skill_4_release()
+		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and skill_4_condition_area.get_overlapping_bodies().size() >= 2:
+			var target_enemy: Enemy = get_skill4_target_enemy()
+			if target_enemy != null:
+				skill_4_release(target_enemy)
 				return
 	pass
 
@@ -175,11 +176,12 @@ func skill_3_release():
 	pass
 
 
-func skill_4_release():
+func skill_4_release(target_enemy: Enemy):
 	skill_4_timer.start()
 	ally_sprite.play("skill4_start")
 	translate_to_new_state(AllyState.SPECIAL)
-	get_skill_4_linked_enemy.emit(far_attack_area.get_overlapping_bodies()[0].owner)
+	ally_sprite.flip_h = target_enemy.position.x < position.x
+	get_skill_4_linked_enemy.emit(target_enemy)
 	pass
 
 
@@ -198,3 +200,16 @@ func move(target_pos:Vector2):
 		skill_4_duration_timer.timeout.emit()
 	super(target_pos)
 	pass
+
+
+func get_skill4_target_enemy() -> Enemy:
+	var enemy_array: Array[Enemy]
+	for body in skill_4_condition_area.get_overlapping_bodies():
+		var enemy: Enemy = body.owner
+		if enemy.get_groups().has("special"): continue
+		enemy_array.append(enemy)
+	if enemy_array.is_empty(): return null
+	var back_enemy: Enemy = enemy_array[0]
+	for enemy in enemy_array:
+		if enemy.get_remaining_progress() < back_enemy.get_remaining_progress(): back_enemy = enemy
+	return back_enemy
