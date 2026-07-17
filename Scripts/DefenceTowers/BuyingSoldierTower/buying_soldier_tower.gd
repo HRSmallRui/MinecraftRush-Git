@@ -72,6 +72,9 @@ func move(target_pos: Vector2):
 			current_pos.x += cos((2 * PI / buying_soldier_list.size() * i)- PI/2) * 24
 			current_pos.y -= sin((2 * PI / buying_soldier_list.size() * i)- PI/2) * 24
 			buying_soldier_list[i].move(current_pos)
+	
+	for soldier in buying_soldier_list:
+		soldier.intercepting_area.position = target_pos
 	pass
 
 
@@ -87,6 +90,8 @@ func allocate_position(target_pos: Vector2):
 			current_pos.x += cos((2 * PI / buying_soldier_list.size() * i)- PI/2) * 24
 			current_pos.y -= sin((2 * PI / buying_soldier_list.size() * i)- PI/2) * 24
 			buying_soldier_list[i].station_position = current_pos
+	for soldier in buying_soldier_list:
+		soldier.intercepting_area.position = target_pos
 	pass
 
 
@@ -95,12 +100,4 @@ func update_soldiers_position():
 	for soldier in buying_soldier_list:
 		if soldier.ally_state == Ally.AllyState.IDLE or soldier.ally_state == Ally.AllyState.MOVE:
 			soldier.move_back()
-	pass
-
-
-func update_buying_soldier_brothers():
-	for buying_soldier in buying_soldier_list:
-		var now_brother_list: Array[BuyingSoldier] = buying_soldier_list.duplicate()
-		now_brother_list.erase(buying_soldier)
-		buying_soldier.buying_soldier_brothers = now_brother_list
 	pass

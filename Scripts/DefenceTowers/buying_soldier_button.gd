@@ -52,5 +52,4 @@ func summon_soldier():
 	Stage.instance.allys.add_child(soldier)
 	linked_tower.buying_soldier_list.append(soldier)
 	linked_tower.update_soldiers_position()
-	linked_tower.update_buying_soldier_brothers()
 	pass
