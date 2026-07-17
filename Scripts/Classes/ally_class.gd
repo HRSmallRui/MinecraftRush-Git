@@ -216,6 +216,14 @@ func battle_process():
 					return
 	
 	if ally_sprite.animation == "idle" and current_intercepting_enemy == null:
+		if intercepting_area.has_overlapping_bodies():
+			var enemy: Enemy = get_continue_intercepting_enemy()
+			if enemy != null:
+				current_intercepting_enemy = enemy
+				enemy.current_intercepting_units.append(self)
+				move_to_intercept(enemy.intercepting_marker.global_position)
+				enemy.update_state()
+				return
 		move_back()
 		return
 	
@@ -371,8 +379,7 @@ func move(target_pos:Vector2):
 	current_intercepting_enemy = null
 	translate_to_new_state(AllyState.MOVE)
 	move_animation(target_pos)
-	await move_tween.finished
-	translate_to_new_state(AllyState.IDLE)
+	move_tween.finished.connect(func(): translate_to_new_state(AllyState.IDLE))
 	pass
 
 
@@ -397,10 +404,10 @@ func move_to_intercept(target_pos: Vector2):
 				else: target_pos.y -= 5
 				target_pos.x += 6 if enemy.enemy_sprite.flip_h else -6
 	move_animation(target_pos)
-	await move_tween.finished
-	if current_intercepting_enemy != null:
-		ally_sprite.flip_h = current_intercepting_enemy.global_position.x < global_position.x
-	translate_to_new_state(AllyState.BATTLE)
+	move_tween.finished.connect(func():
+		if current_intercepting_enemy != null:
+			ally_sprite.flip_h = current_intercepting_enemy.global_position.x < global_position.x
+		translate_to_new_state(AllyState.BATTLE))
 	pass
 
 
@@ -412,19 +419,10 @@ func move_back():
 				var enemy = body.owner as Enemy
 				if !enemy.interceptable: continue
 				enemy_list.append(enemy)
-			if enemy_list.size() > 0:
-				var enemy: Enemy = get_closest_enemy(enemy_list)
-				if enemy != null:
-					current_intercepting_enemy = enemy
-					enemy.current_intercepting_units.append(self)
-					move_to_intercept(enemy.intercepting_marker.global_position)
-					enemy.update_state()
-					return
 		
 	translate_to_new_state(AllyState.MOVE)
 	move_animation(station_position)
-	await move_tween.finished
-	translate_to_new_state(AllyState.IDLE)
+	move_tween.finished.connect(func(): translate_to_new_state(AllyState.IDLE))
 	pass
 
 
@@ -569,3 +567,20 @@ func change_collision_layer(target_layer_type: CollisionLayerType):
 	hurt_box.set_collision_layer_value(target_layer_id,true)
 	unit_body.set_collision_layer_value(target_layer_id,true)
 	pass
+
+
+func get_continue_intercepting_enemy() -> Enemy:
+	var enemy_array_intercepting: Array[Enemy]
+	var enemy_array_no_intercepting: Array[Enemy]
+	for body in intercepting_area.get_overlapping_bodies():
+		var enemy: Enemy = body.owner
+		if !enemy.interceptable: continue
+		if enemy.enemy_state == Enemy.EnemyState.DIE: continue
+		if enemy.current_intercepting_units.is_empty():
+			enemy_array_no_intercepting.append(enemy)
+		else:
+			enemy_array_intercepting.append(enemy)
+	if enemy_array_no_intercepting.is_empty():
+		return get_closest_enemy(enemy_array_intercepting)
+	else:
+		return get_closest_enemy(enemy_array_intercepting)
