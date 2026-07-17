@@ -1,6 +1,10 @@
 extends SkillButton
 
 @export var skill_area_scene: PackedScene
+@export var each_fork_damage: IntSaver
+@export var explosion_damage_list: Array[IntSaver]
+@export var fork_count_list: Array[IntSaver]
+@export var speed_low_duration: FloatSaver
 
 var level: int
 

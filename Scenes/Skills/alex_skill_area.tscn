@@ -1,10 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf574jc0yar5v"]
+[gd_scene load_steps=18 format=3 uid="uid://bf574jc0yar5v"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/alex_skill_area.gd" id="1_vo826"]
 [ext_resource type="PackedScene" uid="uid://cohx4bqb0wvor" path="res://Scenes/Skills/fork_sprite.tscn" id="2_26nu1"]
 [ext_resource type="Texture2D" uid="uid://bp4mm2qr04sfd" path="res://Assets/Images/Skills/Firerain/shadow.png" id="2_g1ymm"]
 [ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="3_m2cl7"]
 [ext_resource type="PackedScene" uid="uid://c34mrk15dce5r" path="res://Scenes/Buffs/Alex/alex_skill_4_speed_low.tscn" id="4_vin8q"]
+[ext_resource type="Resource" uid="uid://dmkroq5pypmx7" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/each_fork_damage.tres" id="5_7wqeb"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="5_55q3p"]
+[ext_resource type="Resource" uid="uid://cxdk2it56tip6" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/speed_low_duration.tres" id="6_2tdhr"]
+[ext_resource type="Resource" uid="uid://dakjki3q55dv6" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/fork_count_lv0.tres" id="6_vjq2u"]
+[ext_resource type="Resource" uid="uid://cn27xonfcvdev" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/fork_count_lv1.tres" id="7_lhipn"]
+[ext_resource type="Resource" uid="uid://cqhk5t1yx3k8o" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/fork_count_lv2.tres" id="8_ul71i"]
+[ext_resource type="Resource" uid="uid://bqnf5w7u4efuh" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/fork_count_lv3.tres" id="9_uipte"]
+[ext_resource type="Resource" uid="uid://cf1ae8simo5c4" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/explosion_damage_lv0.tres" id="10_pb8q1"]
+[ext_resource type="Resource" uid="uid://d381xivp758cf" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/explosion_damage_lv1.tres" id="11_nf8yj"]
+[ext_resource type="Resource" uid="uid://be5vneengq7ca" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/explosion_damage_lv2.tres" id="12_8fhxm"]
+[ext_resource type="Resource" uid="uid://dqrhkm34n6ol2" path="res://Library/Heroes/HeroConfigs/Alex/Skill5/explosion_damage_lv3.tres" id="13_0u6yu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nwtgx"]
 radius = 73.9444
@@ -18,8 +29,10 @@ script = ExtResource("1_vo826")
 fork_sprite_scene = ExtResource("2_26nu1")
 dizness_buff_scene = ExtResource("3_m2cl7")
 slow_buff_scene = ExtResource("4_vin8q")
-fork_count_list = Array[int]([6, 8, 10, 12])
-explosion_damage_list = Array[int]([126, 168, 210, 252])
+fork_count_list = Array[ExtResource("5_55q3p")]([ExtResource("6_vjq2u"), ExtResource("7_lhipn"), ExtResource("8_ul71i"), ExtResource("9_uipte")])
+explosion_damage_list = Array[ExtResource("5_55q3p")]([ExtResource("10_pb8q1"), ExtResource("11_nf8yj"), ExtResource("12_8fhxm"), ExtResource("13_0u6yu")])
+each_fork_damage = ExtResource("5_7wqeb")
+speed_low_duration = ExtResource("6_2tdhr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.7)

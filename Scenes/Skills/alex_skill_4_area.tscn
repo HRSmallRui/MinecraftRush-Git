@@ -1,19 +1,29 @@
-[gd_scene load_steps=21 format=3 uid="uid://cd2lhpat71u1q"]
+[gd_scene load_steps=31 format=3 uid="uid://cd2lhpat71u1q"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/alex_skill_4_area.gd" id="1_a41ry"]
 [ext_resource type="PackedScene" uid="uid://b45m7kufl3xts" path="res://Scenes/Buffs/Alex/alex_dizness_debuff.tscn" id="2_8f534"]
 [ext_resource type="PackedScene" uid="uid://c34mrk15dce5r" path="res://Scenes/Buffs/Alex/alex_skill_4_speed_low.tscn" id="3_0jkao"]
 [ext_resource type="Texture2D" uid="uid://b47y3ot4ncn0i" path="res://Assets/Images/Effects/AlexSkill4/0001.png" id="3_o5fn2"]
 [ext_resource type="Texture2D" uid="uid://h6gk6x620gep" path="res://Assets/Images/Effects/AlexSkill4/0002.png" id="4_g6jvo"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="4_nkqpe"]
+[ext_resource type="Resource" uid="uid://c6hslkedhkb1m" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/first_damage_lv1.tres" id="5_6minn"]
 [ext_resource type="Texture2D" uid="uid://b2t6w18d42eto" path="res://Assets/Images/Effects/AlexSkill4/0003.png" id="5_t4371"]
+[ext_resource type="Resource" uid="uid://dyu8s82uwyw6r" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/first_damage_lv2.tres" id="6_2oi6t"]
 [ext_resource type="Texture2D" uid="uid://5j24qagqqnk4" path="res://Assets/Images/Effects/AlexSkill4/0004.png" id="6_u41sr"]
+[ext_resource type="Resource" uid="uid://d0uqiq04diwoo" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/first_damage_lv3.tres" id="7_eoluu"]
 [ext_resource type="Texture2D" uid="uid://dqh7dflej1jmb" path="res://Assets/Images/Effects/AlexSkill4/0005.png" id="7_nwu4g"]
+[ext_resource type="Resource" uid="uid://dd776hvq4rc42" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/damage_per_count.tres" id="8_hohvc"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="8_lcnow"]
 [ext_resource type="Texture2D" uid="uid://c1kghc5ywg757" path="res://Assets/Images/Effects/AlexSkill4/0006.png" id="8_rlhrf"]
+[ext_resource type="Resource" uid="uid://bq8o7f1pgb5ji" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/fork_duration_lv1.tres" id="9_jclnh"]
 [ext_resource type="Texture2D" uid="uid://c1mheuykvq2nv" path="res://Assets/Images/Effects/AlexSkill4/0007.png" id="9_tt02a"]
+[ext_resource type="Resource" uid="uid://4myevbdoutsl" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/fork_duration_lv2.tres" id="10_a2ho4"]
 [ext_resource type="Texture2D" uid="uid://bdfs7cmwo3cyp" path="res://Assets/Images/Effects/AlexSkill4/0008.png" id="10_g3r8w"]
 [ext_resource type="Texture2D" uid="uid://46g4mkr7p3a8" path="res://Assets/Images/Effects/AlexSkill4/0009.png" id="11_k1d2r"]
+[ext_resource type="Resource" uid="uid://bcmd8p3djwu80" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/fork_duration_lv3.tres" id="11_ny4k6"]
 [ext_resource type="Texture2D" uid="uid://cmwqekox3iw0v" path="res://Assets/Images/Effects/AlexSkill4/0010.png" id="12_5ybnh"]
 [ext_resource type="Texture2D" uid="uid://bn3wkt82qug3x" path="res://Assets/Images/Effects/AlexSkill4/0011.png" id="13_08ff1"]
+[ext_resource type="Resource" uid="uid://jc1mcxprd6tg" path="res://Library/Heroes/HeroConfigs/Alex/Skill4/dizness_duration.tres" id="13_k5pc8"]
 [ext_resource type="Texture2D" uid="uid://1kdugdg6jogr" path="res://Assets/Images/Effects/AlexSkill4/0012.png" id="14_tmjfu"]
 [ext_resource type="Texture2D" uid="uid://bh48a0yv4j7" path="res://Assets/Images/Effects/AlexSkill4/0013.png" id="15_22rj0"]
 [ext_resource type="AudioStream" uid="uid://csuw2h1ql0whd" path="res://Assets/Sounds/FXs/Heroes/Alex/破土.wav" id="16_7nxds"]
@@ -76,9 +86,10 @@ collision_mask = 32
 script = ExtResource("1_a41ry")
 dizness_buff_scene = ExtResource("2_8f534")
 speed_low_buff_scene = ExtResource("3_0jkao")
-first_damage_list = Array[int]([164, 196, 246])
-duration_list = Array[float]([4.0, 6.0, 8.0])
-damage_per_count = 8
+first_damage_list = Array[ExtResource("4_nkqpe")]([ExtResource("5_6minn"), ExtResource("6_2oi6t"), ExtResource("7_eoluu")])
+duration_list = Array[ExtResource("8_lcnow")]([ExtResource("9_jclnh"), ExtResource("10_a2ho4"), ExtResource("11_ny4k6")])
+damage_per_count = ExtResource("8_hohvc")
+dizness_duration = ExtResource("13_k5pc8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.7)
