@@ -87,8 +87,8 @@ func play_walk_audio():
 	pass
 
 
-func move_process(delta: float):
-	super(delta)
+func move_logic_process():
+	super()
 	if run_timer.is_stopped() and running_prepare_timer.is_stopped() and skill_condition_area.has_overlapping_bodies() and silence_layers <= 0 and can_run():
 		run_timer.start()
 		run_duration_timer.start()

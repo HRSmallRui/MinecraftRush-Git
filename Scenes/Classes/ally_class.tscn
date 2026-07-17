@@ -102,7 +102,7 @@ collision_mask = 32
 [node name="InterceptingShape" type="CollisionShape2D" parent="UnitBody/InterceptingArea"]
 scale = Vector2(1, 0.699999)
 shape = SubResource("CircleShape2D_307yl")
-debug_color = Color(1, 1, 1, 0.121569)
+debug_color = Color(0, 1, 1, 0.121569)
 
 [node name="FarAttackArea" type="Area2D" parent="UnitBody"]
 collision_layer = 0
@@ -111,7 +111,7 @@ collision_mask = 96
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/FarAttackArea"]
 scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_307yl")
-debug_color = Color(1, 1, 1, 0)
+debug_color = Color(0, 1, 0, 0)
 
 [node name="FarAttackMarker" type="Marker2D" parent="UnitBody"]
 
@@ -135,6 +135,11 @@ autostart = true
 
 [node name="FarAttackTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="LogicTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+autostart = true
 
 [connection signal="pressed" from="UnitBody/AllyButton" to="." method="_on_ally_button_pressed"]
 [connection signal="timeout" from="HealTimer" to="." method="_on_heal_timer_timeout"]

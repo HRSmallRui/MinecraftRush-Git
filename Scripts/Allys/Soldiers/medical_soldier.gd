@@ -1,4 +1,5 @@
 extends Soldier
+class_name MedicalSoldier
 
 @export var medical_buff_scene: PackedScene
 @export var BLOOD_SOLDIERRES: SpriteFrames
@@ -78,7 +79,7 @@ func _on_passive_heal_timer_timeout() -> void:
 		for body in heal_area.get_overlapping_bodies():
 			var ally: Ally = body.owner
 			if ally == self: continue
-			if ally is Soldier and ally in soldier_brothers: continue
+			if ally is MedicalSoldier: continue
 			ally.current_data.heal(passive_heal_data)
 			var heal_effect: HealBuff = passive_heal_effect_scene.instantiate()
 			ally.buffs.add_child(heal_effect)

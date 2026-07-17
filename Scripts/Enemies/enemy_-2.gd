@@ -60,8 +60,3 @@ func summon_small_slime(target_position: Vector2, target_enemy_path: EnemyPath):
 	small_slime.hurt_box.set_collision_layer_value(6,true)
 	small_slime.translate_to_new_state(EnemyState.MOVE)
 	pass
-
-
-func die_blood(blood_packed_scene: PackedScene = null):
-	
-	pass

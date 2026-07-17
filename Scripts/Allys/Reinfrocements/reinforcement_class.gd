@@ -1,7 +1,7 @@
 extends Ally
 class_name Reinforcement
 
-@export var reinforce_partners: Array[Reinforcement]
+#@export var reinforce_partners: Array[Reinforcement]
 @export var reinforce_level: int
 @export var reinforce_animation_list: Array[SpriteFrames]
 @export var reinforce_headtex_list: Array[Texture]
@@ -25,9 +25,6 @@ func _ready() -> void:
 
 
 func die(explosion):
-	for reinforce in reinforce_partners:
-		if reinforce != null:
-			reinforce.reinforce_partners.erase(self)
 	super(explosion)
 	var target_pos: Vector2 = position
 	target_pos += Vector2(50,0) if ally_sprite.flip_h else Vector2(-50,0)
@@ -40,18 +37,4 @@ func die(explosion):
 
 func rebirth():
 	die(false)
-	pass
-
-
-func idle_process():
-	super()
-	if current_intercepting_enemy == null and ally_state == AllyState.IDLE:
-		for partner in reinforce_partners:
-			if partner == null: continue
-			if partner.ally_state == AllyState.BATTLE and partner.current_intercepting_enemy != null:
-				var enemy = partner.current_intercepting_enemy as Enemy
-				current_intercepting_enemy = enemy
-				enemy.current_intercepting_units.append(self)
-				move_to_intercept(enemy.intercepting_marker.global_position)
-				return
 	pass

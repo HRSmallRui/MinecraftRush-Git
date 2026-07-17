@@ -89,6 +89,9 @@ func move(target_pos: Vector2):
 			current_pos.x += cos((2 * PI / unit_count * i)- PI/2) * 24
 			current_pos.y -= sin((2 * PI / unit_count * i)- PI/2) * 24
 			soldier_list[i].move(current_pos)
+	
+	for soldier in soldier_list:
+		soldier.intercepting_area.position = target_pos
 	pass
 
 

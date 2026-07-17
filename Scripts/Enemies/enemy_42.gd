@@ -47,7 +47,7 @@ func die_blood() -> Sprite2D:
 	return super()
 
 
-func move_process(delta:float):
+func move_logic_process():
 	if attack_timer.is_stopped() and silence_layers <= 0 and attack_area.has_overlapping_bodies():
 		var enemy_path: EnemyPath = get_parent()
 		var curve: Curve2D = enemy_path.curve
@@ -59,7 +59,7 @@ func move_process(delta:float):
 			attack(ally,curve.sample_baked(target_progress))
 			attack_timer.start()
 			return
-	super(delta)
+	super()
 	pass
 
 

@@ -33,6 +33,7 @@ enum CollisionLayerType
 @export var is_final_boss: bool
 @export var start_data: UnitData
 @export var far_attack_bullet_scene: PackedScene
+@export var far_attack_waiting_timer: bool
 @export var interceptable: bool = true
 @export var lives_taken: int = 1
 @export var bounty: int
@@ -62,6 +63,7 @@ enum CollisionLayerType
 @onready var body_collision: CollisionShape2D = $UnitBody/BodyCollision
 @onready var screen_notifier: VisibleOnScreenNotifier2D = $UnitBody/ScreenNotifier
 @onready var free_timer: Timer = $FreeTimer
+@onready var logic_timer: Timer = $LogicTimer
 
 var current_data: UnitData
 var enemy_state: EnemyState = EnemyState.MOVE
@@ -73,6 +75,7 @@ var enemy_buff_tags: Dictionary
 var silence_layers: int = 0
 var is_disappear_killing: bool = false
 var danger_tip: DangerTip
+var stop_far_attack_translation: bool
 
 
 func _init() -> void:
@@ -103,7 +106,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	#Stage.instance.enemy_count += 1
-	
+	logic_timer.timeout.connect(on_logic_timer_timeout)
 	update_health_bar()
 	select_sprite.hide()
 	unlock_condition()
@@ -172,12 +175,19 @@ func _process(delta: float) -> void:
 	match enemy_state:
 		EnemyState.MOVE:
 			move_process(delta)
+	intercepting_marker.position.x = -battle_length if enemy_sprite.flip_h else battle_length
+	anim_offset()
+	pass
+
+
+func on_logic_timer_timeout():
+	match enemy_state:
+		EnemyState.MOVE:
+			move_logic_process()
 		EnemyState.BATTLE:
 			battle_process()
 		EnemyState.SPECIAL:
 			special_process()
-	intercepting_marker.position.x = -battle_length if enemy_sprite.flip_h else battle_length
-	anim_offset()
 	pass
 
 
@@ -207,6 +217,15 @@ func move_process(delta:float):
 		enemy_sprite.play("move_front")
 	else:
 		enemy_sprite.play("move_normal")
+	pass
+
+
+func move_logic_process():
+	if enemy_state == EnemyState.MOVE and far_attack_area.has_overlapping_bodies() and current_data.far_damage_range > 0 and !stop_far_attack_translation:
+		if far_attack_waiting_timer and !far_attack_timer.is_stopped():
+			return
+		enemy_sprite.play("idle")
+		translate_to_new_state(EnemyState.SPECIAL)
 	pass
 
 
@@ -243,13 +262,44 @@ func battle():
 
 
 func special_process():
-	current_data.unit_move_speed = 0
-	#if enemy_sprite.animation == "idle" and current_intercepting_units.is_empty():
-		#translate_to_new_state(EnemyState.MOVE)
+	if enemy_sprite.animation == "idle":
+		if current_intercepting_units.is_empty():
+			far_attack_process()
+		else:
+			translate_to_new_state(EnemyState.BATTLE)
+	pass
+
+
+func far_attack_process():
+	if far_attack_waiting_timer and !far_attack_timer.is_stopped():
+		if current_intercepting_units.is_empty():
+			translate_to_new_state(EnemyState.MOVE)
+		else:
+			translate_to_new_state(EnemyState.BATTLE)
+		return
+	
+	if far_attack_area.has_overlapping_bodies():
+		normal_far_attack()
+		return
+	translate_to_new_state(EnemyState.MOVE)
+	pass
+
+
+func normal_far_attack():
+	if far_attack_area.has_overlapping_bodies() and far_attack_timer.is_stopped():
+		var ally: Ally = far_attack_area.get_overlapping_bodies()[0].owner
+		far_attack_position = ally.hurt_box.global_position
+		enemy_sprite.flip_h = far_attack_position.x < position.x
+		enemy_sprite.play("far_attack")
+		far_attack_timer.start()
 	pass
 
 
 func translate_to_new_state(new_state: EnemyState):
+	if new_state != EnemyState.MOVE:
+		current_data.unit_move_speed = 0
+	else:
+		current_data.update_move_speed()
 	match new_state:
 		EnemyState.MOVE:
 			current_data.update_move_speed()
@@ -263,11 +313,9 @@ func translate_to_new_state(new_state: EnemyState):
 		EnemyState.DIE:
 			achievement_enemy_die()
 			enemy_sprite.pause()
-			unit_body.set_collision_layer_value(6,false)
-			unit_body.set_collision_layer_value(7,false)
+			unit_body.collision_layer = 0
 			unit_body.set_collision_layer_value(9,true)
-			hurt_box.set_collision_layer_value(6,false)
-			hurt_box.set_collision_layer_value(7,false)
+			hurt_box.collision_layer = 0
 			hurt_box.set_collision_layer_value(9,true)
 			enemy_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			if Stage.instance.information_bar.current_check_member == self: Stage.instance.ui_process(null)
