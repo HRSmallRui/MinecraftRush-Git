@@ -298,7 +298,7 @@ func release_flame():
 	skill_2_hit_area.global_position = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	skill_2_hit_area.look_at(skill2_locked_enemy.hurt_box.global_position)
 	flame_animation_play(skill_2_hit_area.global_position,fire_end_marker.global_position)
-	await get_tree().create_timer(0.4,false).timeout
+	await get_tree().create_timer(1,false).timeout
 	skill_2_hit_area.monitoring = false
 	pass
 
