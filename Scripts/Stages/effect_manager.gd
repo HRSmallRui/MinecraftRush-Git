@@ -49,6 +49,7 @@ func play_lightning_effect(summon_pos: Vector2,effect_scale: Vector2 = Vector2.O
 	var lightning: Line2D = lightning_scene.instantiate()
 	lightning.position = summon_pos
 	lightning.scale *= effect_scale
+	if randf() < 0.5: lightning.scale.x *= -1
 	lightning.z_index = z_index
 	Stage.instance.bullets.add_child(lightning)
 	pass
