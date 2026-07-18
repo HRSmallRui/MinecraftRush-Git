@@ -13,6 +13,7 @@ extends Hero
 @export var skill3_broken_buff_scene: PackedScene
 @export_group("Skill4","skill4")
 @export var skill4_continue_count_list: Array[int]
+@export var skill4_damage_rate: float
 
 @onready var skill_1_timer: Timer = $Skill1Timer
 @onready var skill_2_timer: Timer = $Skill2Timer
@@ -113,7 +114,7 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 	
 	if skill_levels[4] > 0:
 		var continue_count: int = skill4_continue_count_list[skill_levels[4]-1]
-		bullet.bullet_special_tag_levels["continue"] = [0.2,continue_count,0.5,far_attack_bullet_scene] ##穿梭时间，继续穿梭人数，伤害倍率,场景
+		bullet.bullet_special_tag_levels["continue"] = [0.2,continue_count,skill4_damage_rate,far_attack_bullet_scene] ##穿梭时间，继续穿梭人数，伤害倍率,场景
 	
 	Stage.instance.bullets.add_child(bullet)
 	get_exp(int(float(damage) * exp_rate))
