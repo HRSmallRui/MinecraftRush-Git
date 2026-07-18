@@ -2,9 +2,7 @@ extends ShooterBullet
 
 @export var hit_effect_scene: PackedScene
 @export var plague_buff_scene: PackedScene
-@export var dead_body_buff_scene:PackedScene
 @export var aoe_damage_list: Array[int]
-@export var plague_duration: FloatSaver
 
 @onready var plugin_area: Area2D = $PluginArea
 
@@ -14,11 +12,9 @@ var has_summon_hit_effect: bool = false
 func enemy_take_damage(enemy:Enemy):
 	super(enemy)
 	var salem_plugin_debuff: DotBuff = plague_buff_scene.instantiate()
-	salem_plugin_debuff.duration = plague_duration.saving_float_value
 	salem_plugin_debuff.passive_level = special_skill_level
 	salem_plugin_debuff.dead_explosion_level = bullet_special_tag_levels["explosion"]
 	enemy.buffs.add_child(salem_plugin_debuff)
-	if !bullet_special_tag_levels.has("aoe"): return
 	if bullet_special_tag_levels["aoe"] > 0:
 		EffectManager.instance.play_smoke_effect(position,Vector2.ONE*0.6,Color.DARK_GREEN)
 		for body in plugin_area.get_overlapping_areas():
