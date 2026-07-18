@@ -1,6 +1,7 @@
 extends Hero
 
 @export_group("PassiveSkill","passive_skill")
+@export var passive_skill_plague_duration: FloatSaver
 @export_group("Skill1","skill1")
 @export_group("Skill2","skill2")
 @export var skill2_dust_scene: PackedScene

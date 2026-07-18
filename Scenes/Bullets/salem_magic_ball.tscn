@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://53k7dcpmtv4y"]
+[gd_scene load_steps=11 format=3 uid="uid://53k7dcpmtv4y"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_omncy"]
 [ext_resource type="Script" path="res://Scripts/Bullets/salem_magic_ball.gd" id="2_8lkpo"]
 [ext_resource type="Texture2D" uid="uid://bbt0wqkma2bgq" path="res://Assets/Images/Bullets/magic_bullet3.png" id="3_6khxe"]
 [ext_resource type="PackedScene" uid="uid://cdmjm26n35ui2" path="res://Scenes/Effects/green_magic_ball_hit.tscn" id="3_cg26u"]
-[ext_resource type="PackedScene" uid="uid://hjyhlcmawc6p" path="res://Scenes/Buffs/jade_die_heal_buff.tscn" id="4_fxl1g"]
-
+[ext_resource type="PackedScene" uid="uid://ccydxmm5h8la0" path="res://Scenes/Buffs/Salem/salem_plague_buff.tscn" id="4_uw41l"]
+[ext_resource type="PackedScene" uid="uid://vskjnj3q4puw" path="res://Scenes/Buffs/Salem/salem_dead_body_plague_buff.tscn" id="5_hm7yw"]
+[ext_resource type="Resource" uid="uid://co1bn8srlpb3" path="res://Library/Heroes/HeroConfigs/Salem/PassiveSkill/plague_duration.tres" id="6_03pd2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -20,8 +21,10 @@ colors = PackedColorArray(0, 0.572549, 0, 0.717647, 0, 0.572549, 0, 0)
 [node name="SalemBall" instance=ExtResource("1_omncy")]
 script = ExtResource("2_8lkpo")
 hit_effect_scene = ExtResource("3_cg26u")
-plague_buff_scene = ExtResource("4_fxl1g")
+plague_buff_scene = ExtResource("4_uw41l")
+dead_body_buff_scene = ExtResource("5_hm7yw")
 aoe_damage_list = Array[int]([3, 6, 9])
+plague_duration = ExtResource("6_03pd2")
 tail_max_length = 30
 damage_type = 1
 move_type = 1

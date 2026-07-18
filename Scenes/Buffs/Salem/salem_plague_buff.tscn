@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccydxmm5h8la0"]
 
-[ext_resource type="PackedScene" uid="uid://bwifge7de0uys" path="res://Scenes/Buffs/dot_buff.tscn" id="1_hqaut"]
-[ext_resource type="Script" path="res://Scripts/Buffs/salem_plugin_buff.gd" id="2_5wk68"]
-[ext_resource type="Script" path="res://Scripts/Classes/potion_particle_leader.gd" id="3_dcrtq"]
-[ext_resource type="Texture2D" uid="uid://oov3qeqnyjho" path="res://Assets/Images/Effects/smoke_particle.png" id="4_ulq4m"]
+[ext_resource type="PackedScene" uid="uid://bwifge7de0uys" path="res://Scenes/Buffs/dot_buff.tscn" id="1_xuhji"]
+[ext_resource type="Script" path="res://Scripts/Buffs/salem_plugin_buff.gd" id="2_5woij"]
+[ext_resource type="Script" path="res://Scripts/Classes/potion_particle_leader.gd" id="3_4tqm7"]
+[ext_resource type="Texture2D" uid="uid://oov3qeqnyjho" path="res://Assets/Images/Effects/smoke_particle.png" id="4_c1gv4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bbxfg"]
 radius = 73.9444
 
-[node name="SalemPluginBuff" instance=ExtResource("1_hqaut")]
-script = ExtResource("2_5wk68")
+[node name="SalemPluginBuff" instance=ExtResource("1_xuhji")]
+script = ExtResource("2_5woij")
 lower_damage_list = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9])
 higher_damage_list = Array[int]([2, 4, 6, 8, 10, 12, 14, 16, 18])
 plague_buff_scene = null
@@ -23,9 +23,9 @@ immune_groups = Array[String](["god", "super_unit", "no_live"])
 wait_time = 0.2
 
 [node name="PotionParticleLeader" type="Node2D" parent="." index="1" node_paths=PackedStringArray("buff_vehicle")]
-script = ExtResource("3_dcrtq")
+script = ExtResource("3_4tqm7")
 potion_color = Color(0, 0.419608, 0, 1)
-potion_texture = ExtResource("4_ulq4m")
+potion_texture = ExtResource("4_c1gv4")
 buff_vehicle = NodePath("..")
 particle_size_rate = 0.5
 particle_z_index = 1
