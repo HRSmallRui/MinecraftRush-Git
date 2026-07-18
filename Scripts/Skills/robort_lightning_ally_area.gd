@@ -2,7 +2,7 @@ extends SkillConditionArea2D
 
 @export var lightning_random_texture_list: Array[Texture]
 @export var strength_buff_scene: PackedScene
-@export var damage_upgrade_rate_list: Array[float]
+@export var damage_upgrade_rate_list: Array[FloatSaver]
 
 @onready var lightning_sprite: Sprite2D = $LightningSprite
 @onready var timer: Timer = $Timer
@@ -11,7 +11,7 @@ extends SkillConditionArea2D
 func _ready() -> void:
 	lightning_sprite.texture = lightning_random_texture_list[randi_range(0,lightning_random_texture_list.size()-1)]
 	disappear()
-	var operation_data: float = damage_upgrade_rate_list[skill_level-1]
+	var operation_data: float = damage_upgrade_rate_list[skill_level-1].saving_float_value
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	for hurtbox in get_overlapping_areas():

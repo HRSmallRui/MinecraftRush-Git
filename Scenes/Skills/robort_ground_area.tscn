@@ -1,23 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://o3wi2fhxerj2"]
+[gd_scene load_steps=12 format=3 uid="uid://o3wi2fhxerj2"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/robort_ground_area.gd" id="1_rfqs6"]
 [ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="2_j47ja"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_4bkpm"]
-
-[sub_resource type="Resource" id="Resource_uhj3o"]
-script = ExtResource("3_4bkpm")
-damage_low = 40
-damage_high = 72
-
-[sub_resource type="Resource" id="Resource_kwjp1"]
-script = ExtResource("3_4bkpm")
-damage_low = 56
-damage_high = 94
-
-[sub_resource type="Resource" id="Resource_2mage"]
-script = ExtResource("3_4bkpm")
-damage_low = 72
-damage_high = 108
+[ext_resource type="Resource" uid="uid://cv2qcvo28r0e8" path="res://Library/Heroes/HeroConfigs/Robort/Skill3/earth_damage_lv1.tres" id="4_3lgcv"]
+[ext_resource type="Resource" uid="uid://nifudl0dk5ce" path="res://Library/Heroes/HeroConfigs/Robort/Skill3/earth_damage_lv2.tres" id="5_j04nu"]
+[ext_resource type="Resource" uid="uid://maojmbaxm5wn" path="res://Library/Heroes/HeroConfigs/Robort/Skill3/earth_damage_lv3.tres" id="6_emk8s"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="7_tj3kr"]
+[ext_resource type="Resource" uid="uid://dvpqwbrjs36d6" path="res://Library/Heroes/HeroConfigs/Robort/Skill3/dizness_duration_lv1.tres" id="8_571o6"]
+[ext_resource type="Resource" uid="uid://c6dnvqfle4wcu" path="res://Library/Heroes/HeroConfigs/Robort/Skill3/dizness_duration_lv2.tres" id="9_1xsn8"]
+[ext_resource type="Resource" uid="uid://dvlny37xmbes5" path="res://Library/Heroes/HeroConfigs/Robort/Skill3/dizness_duration_lv3.tres" id="10_k3y50"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sv3hw"]
 radius = 73.9444
@@ -27,8 +19,8 @@ collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_rfqs6")
 dizness_buff_scene = ExtResource("2_j47ja")
-damage_list = Array[ExtResource("3_4bkpm")]([SubResource("Resource_uhj3o"), SubResource("Resource_kwjp1"), SubResource("Resource_2mage")])
-dizness_time_list = Array[float]([2.0, 3.0, 4.0])
+damage_list = Array[ExtResource("3_4bkpm")]([ExtResource("4_3lgcv"), ExtResource("5_j04nu"), ExtResource("6_emk8s")])
+dizness_time_list = Array[ExtResource("7_tj3kr")]([ExtResource("8_571o6"), ExtResource("9_1xsn8"), ExtResource("10_k3y50")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.4, 0.28)

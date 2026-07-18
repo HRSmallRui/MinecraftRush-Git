@@ -5,21 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b7opqi6uaik2a" path="res://Assets/Images/Effects/RobortSkill/LightningRandom2.png" id="3_4y21t"]
 [ext_resource type="Texture2D" uid="uid://qvtngcyrqvvp" path="res://Assets/Images/Effects/RobortSkill/LightningRandom3.png" id="4_4k23a"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="5_qvesl"]
-
-[sub_resource type="Resource" id="Resource_t6mak"]
-script = ExtResource("5_qvesl")
-damage_low = 7
-damage_high = 10
-
-[sub_resource type="Resource" id="Resource_i1www"]
-script = ExtResource("5_qvesl")
-damage_low = 10
-damage_high = 20
-
-[sub_resource type="Resource" id="Resource_8ajro"]
-script = ExtResource("5_qvesl")
-damage_low = 15
-damage_high = 30
+[ext_resource type="Resource" uid="uid://w2cnvg1yt2bf" path="res://Library/Heroes/HeroConfigs/Robort/PassiveSkill/damage_lv1.tres" id="6_hmarr"]
+[ext_resource type="Resource" uid="uid://cie8y7fx0mpo3" path="res://Library/Heroes/HeroConfigs/Robort/PassiveSkill/damage_lv2.tres" id="7_xfxkh"]
+[ext_resource type="Resource" uid="uid://rsx5p41xmgjt" path="res://Library/Heroes/HeroConfigs/Robort/PassiveSkill/damage_lv3.tres" id="8_5h4j3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wuu7"]
 radius = 85.0368
@@ -29,7 +17,7 @@ collision_layer = 0
 collision_mask = 96
 script = ExtResource("1_so3de")
 lightning_random_texture_list = Array[Texture]([ExtResource("2_eb77x"), ExtResource("3_4y21t"), ExtResource("4_4k23a")])
-damage_list = Array[ExtResource("5_qvesl")]([SubResource("Resource_t6mak"), SubResource("Resource_i1www"), SubResource("Resource_8ajro")])
+damage_list = Array[ExtResource("5_qvesl")]([ExtResource("6_hmarr"), ExtResource("7_xfxkh"), ExtResource("8_5h4j3")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.629378, 0.629378)

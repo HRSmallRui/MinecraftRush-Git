@@ -4,8 +4,11 @@ extends Hero
 @export var lightning_dot_buff_scene: PackedScene
 @export_group("PassiveSkill","passive_skill")
 @export var passive_skill_arae_scene: PackedScene
+@export var passive_skill_damage_list: Array[DamageBlock]
 @export_group("Skill1","skill1")
 @export var skill1_skill_area_scene: PackedScene
+@export var skill1_move_time_list: Array[FloatSaver]
+@export var skill1_max_enemy_count: IntSaver
 @export_group("Skill2","skill2")
 @export var skill2_fire_dot_buff_scene: PackedScene
 @export var skill2_fire_particle_scene: PackedScene
@@ -13,9 +16,12 @@ extends Hero
 @export var skill2_fire_buff_duration_list: Array[float]
 @export_group("Skill3","skill3")
 @export var skill3_earth_area_scene: PackedScene
+@export var skill3_damage_list: Array[DamageBlock]
+@export var skill3_dizness_duration_list: Array[FloatSaver]
 @export_group("Skill4","skill4")
 @export var skill4_strength_upgrade_area_scene: PackedScene
-@export var skill4_upgrade_damage_list: Array[int]
+@export var skill4_upgrade_damage_list: Array[IntSaver]
+@export var skill4_ally_damage_rate_list: Array[FloatSaver]
 
 @onready var robort_teleport_audio: AudioStreamPlayer = $RobortTeleportAudio
 @onready var lightning_start: Sprite2D = $FarAttackLightningComponent/LightningStart
@@ -52,7 +58,7 @@ func start_data_process():
 		5,6,7,8: skill_levels[0] = 2
 		9,10: skill_levels[0] = 3
 	if skill_levels[4] > 0:
-		var upgrade_damage: int = skill4_upgrade_damage_list[skill_levels[4]-1]
+		var upgrade_damage: int = skill4_upgrade_damage_list[skill_levels[4]-1].saving_int_value
 		start_data.far_damage_low += upgrade_damage
 		start_data.far_damage_high += upgrade_damage
 	pass
