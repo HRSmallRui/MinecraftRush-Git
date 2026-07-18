@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bj5yga3t4ujcx"]
+[gd_scene load_steps=21 format=3 uid="uid://bj5yga3t4ujcx"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_2lkls"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/robort_skill.gd" id="2_ef2h4"]
@@ -191,6 +191,15 @@ _data = {
 "pause": SubResource("Animation_6j6m1")
 }
 
+[sub_resource type="Gradient" id="Gradient_kfumg"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_srxxr"]
+gradient = SubResource("Gradient_kfumg")
+width = 12
+height = 12
+
 [node name="RobortSkill" instance=ExtResource("1_2lkls")]
 script = ExtResource("2_ef2h4")
 lightning_area_scene = ExtResource("3_b4yus")
@@ -206,43 +215,33 @@ cooling_time = 50.0
 
 [node name="RobortRainLayer" type="CanvasLayer" parent="." index="3"]
 process_mode = 3
-layer = 0
 script = ExtResource("5_xcixx")
 
-[node name="BlackMask" type="ColorRect" parent="RobortRainLayer" index="0"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.106)
-
-[node name="RainSmall" type="Sprite2D" parent="RobortRainLayer" index="1"]
+[node name="RainSmall" type="Sprite2D" parent="RobortRainLayer" index="0"]
 material = SubResource("ShaderMaterial_010d0")
 position = Vector2(887, 538)
 rotation = -0.0406255
 texture = ExtResource("7_svmtv")
 
-[node name="RainMedium" type="Sprite2D" parent="RobortRainLayer" index="2"]
+[node name="RainMedium" type="Sprite2D" parent="RobortRainLayer" index="1"]
 material = SubResource("ShaderMaterial_4q7ss")
 position = Vector2(1059, 300)
 rotation = -0.0406255
 texture = ExtResource("7_svmtv")
 
-[node name="RainBig" type="Sprite2D" parent="RobortRainLayer" index="3"]
+[node name="RainBig" type="Sprite2D" parent="RobortRainLayer" index="2"]
 material = SubResource("ShaderMaterial_i6yh4")
 position = Vector2(889, 556)
 rotation = -0.0406255
 texture = ExtResource("7_svmtv")
 
-[node name="RainSuper" type="Sprite2D" parent="RobortRainLayer" index="4"]
+[node name="RainSuper" type="Sprite2D" parent="RobortRainLayer" index="3"]
 material = SubResource("ShaderMaterial_i1rdt")
 position = Vector2(1041, 528)
 rotation = -0.0406255
 texture = ExtResource("7_svmtv")
 
-[node name="RainAnimationPlayer" type="AnimationPlayer" parent="RobortRainLayer" index="5"]
+[node name="RainAnimationPlayer" type="AnimationPlayer" parent="RobortRainLayer" index="4"]
 libraries = {
 "": SubResource("AnimationLibrary_eqv3m")
 }
@@ -267,5 +266,12 @@ collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyConditionArea" index="0"]
 debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="BlackLight" type="PointLight2D" parent="." index="8"]
+energy = 0.0
+blend_mode = 1
+range_z_min = -1
+range_z_max = 5
+texture = SubResource("GradientTexture2D_srxxr")
 
 [connection signal="timeout" from="RainShotTimer" to="." method="_on_rain_shot_timer_timeout"]
