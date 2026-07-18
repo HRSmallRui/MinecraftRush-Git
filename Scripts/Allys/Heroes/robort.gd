@@ -43,6 +43,7 @@ extends Hero
 var skill1_locked_enemy: Enemy
 var skill2_locked_enemy: Enemy
 var skill3_locked_enemy_path: EnemyPath
+var skill3_locked_enemy: Enemy
 
 
 func _ready() -> void:
@@ -234,10 +235,12 @@ func idle_process():
 		far_attack_timer.start()
 		return
 	if skill_levels[3] > 0 and skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 2:
-		var locked_enemy_path: EnemyPath = Stage.instance.get_closest_enemy_path(position)
+		var locked_enemy_path: EnemyPath = get_skill3_locked_enemy_path()
 		if locked_enemy_path != null:
 			skill3_locked_enemy_path = locked_enemy_path
 			translate_to_new_state(AllyState.SPECIAL)
+			if skill3_locked_enemy != null:
+				ally_sprite.flip_h = skill3_locked_enemy.position.x < position.x
 			ally_sprite.play("skill3")
 			skill_3_timer.start()
 			return
@@ -371,3 +374,20 @@ func delay_free_area(area: Area2D):
 	await get_tree().create_timer(1,false).timeout
 	area.queue_free()
 	pass
+
+
+func get_skill3_enemy_path() -> EnemyPath:
+	var enemy_path_list: Array[EnemyPath]
+	for enemy_path:EnemyPath in Stage.instance.enemies.get_children():
+		if position.distance_to(enemy_path.curve.get_closest_point(position)) <= 50: enemy_path_list.append(enemy_path)
+	if enemy_path_list.is_empty(): return null
+	var enemy_list: Array[Enemy]
+	for body in skill_3_condition_area.get_overlapping_bodies():
+		var enemy: Enemy = body.owner
+		if enemy.get_parent() in enemy_path_list: enemy_list.append(enemy)
+	if enemy_list.is_empty(): return null
+	var lock_enemy: Enemy = enemy_list[0]
+	for enemy: Enemy in enemy_list:
+		if enemy.get_remaining_progress() < lock_enemy.get_remaining_progress(): lock_enemy = enemy
+	skill3_locked_enemy = lock_enemy
+	return lock_enemy.get_parent() as EnemyPath
