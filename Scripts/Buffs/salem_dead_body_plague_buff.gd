@@ -17,7 +17,13 @@ var dead_explosion_level: int
 func buff_start():
 	super()
 	enemy = unit as Enemy
-	enemy.enemy_died.connect(on_enemy_died)
+	pass
+
+
+func remove_buff():
+	super()
+	if enemy.enemy_state == Enemy.EnemyState.DIE:
+		on_enemy_died()
 	pass
 
 
