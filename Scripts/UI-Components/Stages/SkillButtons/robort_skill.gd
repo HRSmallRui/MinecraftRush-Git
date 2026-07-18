@@ -1,6 +1,7 @@
 extends SkillButton
 
 @export var lightning_area_scene: PackedScene
+@export var lightning_damage_block: DamageBlock
 @export var slow_buff_scene: PackedScene
 @export var lightning_count_list: Array[int]
 @export var rain_duration_list: Array[float]

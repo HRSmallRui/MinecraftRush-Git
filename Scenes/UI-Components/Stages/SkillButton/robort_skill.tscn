@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bj5yga3t4ujcx"]
+[gd_scene load_steps=22 format=3 uid="uid://bj5yga3t4ujcx"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_2lkls"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/robort_skill.gd" id="2_ef2h4"]
 [ext_resource type="PackedScene" uid="uid://jm81licgdjgs" path="res://Scenes/Skills/robort_lighting_area.tscn" id="3_b4yus"]
 [ext_resource type="Texture2D" uid="uid://brp4ngaouh57t" path="res://Assets/Images/UI/SkillButton/Heroskill/Robort/robort_skill.png" id="3_u00e2"]
+[ext_resource type="Resource" uid="uid://5hmgamf5goyw" path="res://Library/Heroes/HeroConfigs/Robort/Skill5/lightning_damage_block.tres" id="4_bska3"]
 [ext_resource type="Texture2D" uid="uid://dss0myl1srlmb" path="res://Assets/Images/UI/SkillButton/Heroskill/Robort/robort_skill_using.png" id="4_lxs68"]
 [ext_resource type="PackedScene" uid="uid://c6cebb2sdcm7q" path="res://Scenes/Buffs/Robort/robort_slowly_buff.tscn" id="4_wlv2e"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/robort_rain_layer.gd" id="5_xcixx"]
@@ -203,6 +204,7 @@ height = 12
 [node name="RobortSkill" instance=ExtResource("1_2lkls")]
 script = ExtResource("2_ef2h4")
 lightning_area_scene = ExtResource("3_b4yus")
+lightning_damage_block = ExtResource("4_bska3")
 slow_buff_scene = ExtResource("4_wlv2e")
 lightning_count_list = Array[int]([3, 4, 5, 6])
 rain_duration_list = Array[float]([4.0, 5.0, 6.0, 8.0])
