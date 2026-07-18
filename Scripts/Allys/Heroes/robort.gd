@@ -379,7 +379,7 @@ func delay_free_area(area: Area2D):
 func get_skill3_enemy_path() -> EnemyPath:
 	var enemy_path_list: Array[EnemyPath]
 	for enemy_path:EnemyPath in Stage.instance.enemies.get_children():
-		if position.distance_to(enemy_path.curve.get_closest_point(position)) <= 50: enemy_path_list.append(enemy_path)
+		if position.distance_to(enemy_path.curve.get_closest_point(position)) <= 20: enemy_path_list.append(enemy_path)
 	if enemy_path_list.is_empty(): return null
 	var enemy_list: Array[Enemy]
 	for body in skill_3_condition_area.get_overlapping_bodies():
