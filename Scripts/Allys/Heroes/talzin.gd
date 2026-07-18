@@ -2,6 +2,8 @@ extends Hero
 
 @export var TALZIN_NEAR: SpriteFrames
 @export var TALZIN_FAR: SpriteFrames
+@export_group("PassiveSkill")
+@export var far_attack_broken_armor: float
 @export_group("Skill1","skill1")
 @export var skill1_seckill_arrow_scene: PackedScene
 @export var skill1_percentage_rate_list: Array[float]
@@ -107,6 +109,7 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 	target_pos += far_attack_target_enemy.direction * far_attack_target_enemy.current_data.unit_move_speed * 2
 	var damage: int = randi_range(current_data.far_damage_low,current_data.far_damage_high)
 	var bullet: Bullet = summon_bullet(far_attack_bullet_scene,summon_pos,target_pos,damage,damage_type)
+	bullet.broken_rate = far_attack_broken_armor
 	
 	if skill_levels[4] > 0:
 		var continue_count: int = skill4_continue_count_list[skill_levels[4]-1]
