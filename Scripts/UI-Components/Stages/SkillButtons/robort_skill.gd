@@ -1,6 +1,7 @@
 extends SkillButton
 
 @export var lightning_area_scene: PackedScene
+@export var lightning_damage_block: DamageBlock
 @export var slow_buff_scene: PackedScene
 @export var lightning_count_list: Array[int]
 @export var rain_duration_list: Array[float]
@@ -11,8 +12,10 @@ extends SkillButton
 @onready var rain_shot_timer: Timer = $RainShotTimer
 @onready var enemy_condition_area: Area2D = $EnemyConditionArea
 @onready var collision_shape_2d: CollisionShape2D = $EnemyConditionArea/CollisionShape2D
+@onready var black_light: PointLight2D = $BlackLight
 
 var level: int
+var is_raining: bool
 
 
 func _ready() -> void:
@@ -26,6 +29,11 @@ func _ready() -> void:
 	level = Global.get_hero_skill_level(4)
 	robort_rain_layer.hide()
 	rain_timer.wait_time = rain_duration_list[level]
+	
+	var colli_shape: CollisionShape2D = Stage.instance.click_area.get_child(0) as CollisionShape2D
+	var shape: Shape2D = colli_shape.shape
+	black_light.position = colli_shape.global_position
+	black_light.scale = shape.get_rect().size
 	pass
 
 
@@ -59,11 +67,22 @@ func release_raining():
 	robort_rain_layer.show()
 	rain_timer.start()
 	rain_shot_timer.start()
+	is_raining = true
+	if RainSystem.instance == null:
+		create_tween().tween_property(black_light,"energy",0.8,0.5)
+	elif RainSystem.instance.current_rain_step <= RainSystem.RainStep.Small:
+		create_tween().tween_property(black_light,"energy",0.8,0.5)
 	
 	await rain_timer.timeout
 	rain_audio_super.stop()
 	robort_rain_layer.hide()
 	rain_shot_timer.stop()
+	is_raining = false
+	if RainSystem.instance == null:
+		Stage.instance.is_dark_time = false
+	else:
+		Stage.instance.is_dark_time = RainSystem.instance.current_rain_step > RainSystem.RainStep.None
+	create_tween().tween_property(black_light,"energy",0,0.5)
 	pass
 
 
@@ -73,3 +92,10 @@ func _on_rain_shot_timer_timeout() -> void:
 		var slow_buff: PropertyBuff = slow_buff_scene.instantiate()
 		enemy.buffs.add_child(slow_buff)
 	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	super(delta)
+	if is_raining:
+		Stage.instance.is_dark_time = true
+	pass

@@ -2,7 +2,8 @@ extends SkillConditionArea2D
 
 @export var move_speed: float = 20
 @export var dizness_buff_scene: PackedScene
-@export var moving_time_list: Array[float]
+@export var moving_time_list: Array[FloatSaver]
+@export var max_enemy_count: IntSaver
 
 @onready var during_timer: Timer = $DuringTimer
 @onready var tornado_sprite: AnimatedSprite2D = $TornadoSprite
@@ -18,7 +19,7 @@ var enemy_list: Array[Enemy]
 
 
 func _ready() -> void:
-	during_timer.wait_time = moving_time_list[skill_level-1]
+	during_timer.wait_time = moving_time_list[skill_level-1].saving_float_value
 	Stage.instance.on_wining.connect(on_win)
 	
 	path_follower = get_parent()
@@ -41,7 +42,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if enemy_list.size() > 5: return
+	if enemy_list.size() > max_enemy_count.saving_int_value: return
 	var enemy: Enemy = body.owner
 	if enemy.enemy_type < Enemy.EnemyType.Super:
 		enemy_list.append(enemy)

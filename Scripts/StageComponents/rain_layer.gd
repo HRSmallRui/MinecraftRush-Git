@@ -36,8 +36,15 @@ enum RainStep{
 @onready var lightning_light: PointLight2D = $"../LightningLight"
 @onready var ally_hit_area: Area2D = $"../AllyHitArea"
 
+static var instance: RainSystem
+
 var current_rain_step: RainStep
 var rain_damage: int
+
+
+func _init() -> void:
+	instance = self
+	pass
 
 
 func _ready() -> void:
