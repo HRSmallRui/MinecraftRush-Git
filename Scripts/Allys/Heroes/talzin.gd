@@ -11,6 +11,7 @@ extends Hero
 @export var skill2_poison_arrow_scene: PackedScene
 @export_group("Skill3","skill3")
 @export var skill3_broken_buff_scene: PackedScene
+@export var skill3_property_block_list: Array[PropertyBuffBlock]
 @export_group("Skill4","skill4")
 @export var skill4_continue_count_list: Array[int]
 @export var skill4_damage_rate: float
@@ -123,12 +124,7 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 
 func on_normal_attack_hit(target_enemy: Enemy):
 	var broken_buff: PropertyBuff = skill3_broken_buff_scene.instantiate()
-	var broken_data: float
-	match skill_levels[3]:
-		1: broken_data = -0.01
-		2: broken_data = -0.02
-		3: broken_data = -0.03
-	broken_buff.buff_blocks[0].operation_data = broken_data
+	broken_buff.buff_blocks[0] = skill3_property_block_list[skill_levels[3]-1]
 	target_enemy.buffs.add_child(broken_buff)
 	pass
 
