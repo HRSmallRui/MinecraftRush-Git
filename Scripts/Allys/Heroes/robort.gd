@@ -4,8 +4,11 @@ extends Hero
 @export var lightning_dot_buff_scene: PackedScene
 @export_group("PassiveSkill","passive_skill")
 @export var passive_skill_arae_scene: PackedScene
+@export var passive_skill_damage_list: Array[DamageBlock]
 @export_group("Skill1","skill1")
 @export var skill1_skill_area_scene: PackedScene
+@export var skill1_move_time_list: Array[FloatSaver]
+@export var skill1_max_enemy_count: IntSaver
 @export_group("Skill2","skill2")
 @export var skill2_fire_dot_buff_scene: PackedScene
 @export var skill2_fire_particle_scene: PackedScene
@@ -13,9 +16,12 @@ extends Hero
 @export var skill2_fire_buff_duration_list: Array[float]
 @export_group("Skill3","skill3")
 @export var skill3_earth_area_scene: PackedScene
+@export var skill3_damage_list: Array[DamageBlock]
+@export var skill3_dizness_duration_list: Array[FloatSaver]
 @export_group("Skill4","skill4")
 @export var skill4_strength_upgrade_area_scene: PackedScene
-@export var skill4_upgrade_damage_list: Array[int]
+@export var skill4_upgrade_damage_list: Array[IntSaver]
+@export var skill4_ally_damage_rate_list: Array[FloatSaver]
 
 @onready var robort_teleport_audio: AudioStreamPlayer = $RobortTeleportAudio
 @onready var lightning_start: Sprite2D = $FarAttackLightningComponent/LightningStart
@@ -37,6 +43,7 @@ extends Hero
 var skill1_locked_enemy: Enemy
 var skill2_locked_enemy: Enemy
 var skill3_locked_enemy_path: EnemyPath
+var skill3_locked_enemy: Enemy
 
 
 func _ready() -> void:
@@ -52,7 +59,7 @@ func start_data_process():
 		5,6,7,8: skill_levels[0] = 2
 		9,10: skill_levels[0] = 3
 	if skill_levels[4] > 0:
-		var upgrade_damage: int = skill4_upgrade_damage_list[skill_levels[4]-1]
+		var upgrade_damage: int = skill4_upgrade_damage_list[skill_levels[4]-1].saving_int_value
 		start_data.far_damage_low += upgrade_damage
 		start_data.far_damage_high += upgrade_damage
 	pass
@@ -228,10 +235,12 @@ func idle_process():
 		far_attack_timer.start()
 		return
 	if skill_levels[3] > 0 and skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 2:
-		var locked_enemy_path: EnemyPath = Stage.instance.get_closest_enemy_path(position)
+		var locked_enemy_path: EnemyPath = get_skill3_locked_enemy_path()
 		if locked_enemy_path != null:
 			skill3_locked_enemy_path = locked_enemy_path
 			translate_to_new_state(AllyState.SPECIAL)
+			if skill3_locked_enemy != null:
+				ally_sprite.flip_h = skill3_locked_enemy.position.x < position.x
 			ally_sprite.play("skill3")
 			skill_3_timer.start()
 			return
@@ -289,7 +298,7 @@ func release_flame():
 	skill_2_hit_area.global_position = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	skill_2_hit_area.look_at(skill2_locked_enemy.hurt_box.global_position)
 	flame_animation_play(skill_2_hit_area.global_position,fire_end_marker.global_position)
-	await get_tree().create_timer(0.4,false).timeout
+	await get_tree().create_timer(1,false).timeout
 	skill_2_hit_area.monitoring = false
 	pass
 
@@ -365,3 +374,20 @@ func delay_free_area(area: Area2D):
 	await get_tree().create_timer(1,false).timeout
 	area.queue_free()
 	pass
+
+
+func get_skill3_enemy_path() -> EnemyPath:
+	var enemy_path_list: Array[EnemyPath]
+	for enemy_path:EnemyPath in Stage.instance.enemies.get_children():
+		if position.distance_to(enemy_path.curve.get_closest_point(position)) <= 20: enemy_path_list.append(enemy_path)
+	if enemy_path_list.is_empty(): return null
+	var enemy_list: Array[Enemy]
+	for body in skill_3_condition_area.get_overlapping_bodies():
+		var enemy: Enemy = body.owner
+		if enemy.get_parent() in enemy_path_list: enemy_list.append(enemy)
+	if enemy_list.is_empty(): return null
+	var lock_enemy: Enemy = enemy_list[0]
+	for enemy: Enemy in enemy_list:
+		if enemy.get_remaining_progress() < lock_enemy.get_remaining_progress(): lock_enemy = enemy
+	skill3_locked_enemy = lock_enemy
+	return lock_enemy.get_parent() as EnemyPath

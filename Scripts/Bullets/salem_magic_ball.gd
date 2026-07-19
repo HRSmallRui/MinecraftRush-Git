@@ -2,7 +2,7 @@ extends ShooterBullet
 
 @export var hit_effect_scene: PackedScene
 @export var plague_buff_scene: PackedScene
-@export var aoe_damage_list: Array[int]
+@export var aoe_damage_list: Array[IntSaver]
 
 @onready var plugin_area: Area2D = $PluginArea
 
@@ -20,7 +20,7 @@ func enemy_take_damage(enemy:Enemy):
 		for body in plugin_area.get_overlapping_areas():
 			var now_enemy: Enemy = body.owner
 			if now_enemy == enemy: continue
-			var damage: int = aoe_damage_list[bullet_special_tag_levels["aoe"]-1]
+			var damage: int = aoe_damage_list[bullet_special_tag_levels["aoe"]-1].saving_int_value
 			now_enemy.take_damage(damage,DataProcess.DamageType.MagicDamage,0,false,null,false,true,)
 			var plugin_debuff: DotBuff = plague_buff_scene.instantiate()
 			plugin_debuff.passive_level = special_skill_level

@@ -2,12 +2,12 @@ extends SkillConditionArea2D
 
 @export var dizness_buff_scene: PackedScene
 @export var damage_list: Array[DamageBlock]
-@export var dizness_time_list: Array[float]
+@export var dizness_time_list: Array[FloatSaver]
 
 
 func _ready() -> void:
 	var damage_block: DamageBlock = damage_list[skill_level-1]
-	var dizness_time: float = dizness_time_list[skill_level-1]
+	var dizness_time: float = dizness_time_list[skill_level-1].saving_float_value
 	
 	EffectManager.instance.play_block_effect(position,Vector2.ONE,Color(0.27,0.1,0,1))
 	await get_tree().physics_frame

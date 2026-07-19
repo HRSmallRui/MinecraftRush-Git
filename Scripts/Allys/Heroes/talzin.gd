@@ -2,6 +2,8 @@ extends Hero
 
 @export var TALZIN_NEAR: SpriteFrames
 @export var TALZIN_FAR: SpriteFrames
+@export_group("PassiveSkill")
+@export var far_attack_broken_armor: float
 @export_group("Skill1","skill1")
 @export var skill1_seckill_arrow_scene: PackedScene
 @export var skill1_percentage_rate_list: Array[float]
@@ -9,8 +11,10 @@ extends Hero
 @export var skill2_poison_arrow_scene: PackedScene
 @export_group("Skill3","skill3")
 @export var skill3_broken_buff_scene: PackedScene
+@export var skill3_property_block_list: Array[PropertyBuffBlock]
 @export_group("Skill4","skill4")
 @export var skill4_continue_count_list: Array[int]
+@export var skill4_damage_rate: float
 
 @onready var skill_1_timer: Timer = $Skill1Timer
 @onready var skill_2_timer: Timer = $Skill2Timer
@@ -107,10 +111,11 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 	target_pos += far_attack_target_enemy.direction * far_attack_target_enemy.current_data.unit_move_speed * 2
 	var damage: int = randi_range(current_data.far_damage_low,current_data.far_damage_high)
 	var bullet: Bullet = summon_bullet(far_attack_bullet_scene,summon_pos,target_pos,damage,damage_type)
+	bullet.broken_rate = far_attack_broken_armor
 	
 	if skill_levels[4] > 0:
 		var continue_count: int = skill4_continue_count_list[skill_levels[4]-1]
-		bullet.bullet_special_tag_levels["continue"] = [0.2,continue_count,0.5,far_attack_bullet_scene] ##穿梭时间，继续穿梭人数，伤害倍率,场景
+		bullet.bullet_special_tag_levels["continue"] = [0.2,continue_count,skill4_damage_rate,far_attack_bullet_scene] ##穿梭时间，继续穿梭人数，伤害倍率,场景
 	
 	Stage.instance.bullets.add_child(bullet)
 	get_exp(int(float(damage) * exp_rate))
@@ -119,12 +124,7 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 
 func on_normal_attack_hit(target_enemy: Enemy):
 	var broken_buff: PropertyBuff = skill3_broken_buff_scene.instantiate()
-	var broken_data: float
-	match skill_levels[3]:
-		1: broken_data = -0.01
-		2: broken_data = -0.02
-		3: broken_data = -0.03
-	broken_buff.buff_blocks[0].operation_data = broken_data
+	broken_buff.buff_blocks[0] = skill3_property_block_list[skill_levels[3]-1]
 	target_enemy.buffs.add_child(broken_buff)
 	pass
 

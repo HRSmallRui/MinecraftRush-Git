@@ -1,0 +1,31 @@
+[gd_scene load_steps=10 format=3 uid="uid://vskjnj3q4puw"]
+
+[ext_resource type="PackedScene" uid="uid://c3gyjosb382do" path="res://Scenes/Classes/buff_class.tscn" id="1_6ey7q"]
+[ext_resource type="Script" path="res://Scripts/Buffs/salem_dead_body_plague_buff.gd" id="2_blbrh"]
+[ext_resource type="PackedScene" uid="uid://crdplisacccvt" path="res://Scenes/Buffs/Salem/salem_spread_buff.tscn" id="3_r777d"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="4_ct6f7"]
+[ext_resource type="Resource" uid="uid://bvw0ibsjh0db1" path="res://Library/Heroes/HeroConfigs/Salem/Skill1/explosion_damage_lv1.tres" id="5_7r305"]
+[ext_resource type="Resource" uid="uid://c74tdrj5j8kms" path="res://Library/Heroes/HeroConfigs/Salem/Skill1/explosion_damage_lv2.tres" id="6_281qk"]
+[ext_resource type="Resource" uid="uid://byh6pr4npvxtw" path="res://Library/Heroes/HeroConfigs/Salem/Skill1/explosion_damage_lv3.tres" id="7_gkyym"]
+[ext_resource type="Resource" uid="uid://cas4pk0w5gugp" path="res://Library/Heroes/HeroConfigs/Salem/Skill1/dead_body_buff_duration.tres" id="10_kmo72"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjr3l"]
+radius = 73.9444
+
+[node name="SalemDeadBodyPlagueBuff" instance=ExtResource("1_6ey7q")]
+script = ExtResource("2_blbrh")
+spread_buff_scene = ExtResource("3_r777d")
+explosion_damage_list = Array[ExtResource("4_ct6f7")]([ExtResource("5_7r305"), ExtResource("6_281qk"), ExtResource("7_gkyym")])
+dead_body_buff_duration = ExtResource("10_kmo72")
+buff_tag = "SalemDeadBodyPlagueBuff"
+immune_groups = Array[String](["god", "super_unit", "no_live"])
+
+[node name="ExplosionArea" type="Area2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 196704
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" index="0"]
+scale = Vector2(1, 0.7)
+shape = SubResource("CircleShape2D_bjr3l")
+debug_color = Color(1, 1, 1, 0)

@@ -5,6 +5,9 @@ extends Hero
 @export var passive_skill_immune_possible_list: Array[float]
 @export_group("Skill1","skill1")
 @export var skill1_lightning_bullet_scene: PackedScene
+@export var skill1_bullet_damage_rate: float
+@export var skill1_lightning_damage_list: Array[IntSaver]
+@export var skill1_lightning_dizness_time: FloatSaver
 @export_group("Skill2","skill2")
 @export var skill2_armor_upgrade: float
 @export var skill2_duration_list: Array[float]
@@ -13,6 +16,10 @@ extends Hero
 @export var skill3_damage_list: Array[DamageBlock]
 @export_group("Skill4","skill4")
 @export var skill4_skill_area_scene: PackedScene
+@export var skill4_damage_per_count: IntSaver
+@export var skill4_first_damage_list: Array[IntSaver]
+@export var skill4_fork_duration_list: Array[FloatSaver]
+@export var skill4_dizness_duration: FloatSaver
 
 @onready var skill_1_timer: Timer = $Skill1Timer
 @onready var skill_1_condition_area: Area2D = $UnitBody/Skill1ConditionArea
@@ -123,7 +130,7 @@ func skill_1_release():
 		1: skill_1_audio_2.play()
 	var lighting_bullet: Bullet = skill1_lightning_bullet_scene.instantiate()
 	lighting_bullet.special_skill_level = skill_levels[1]
-	var damage: int = randi_range(2 * current_data.near_damage_low, 2 * current_data.near_damage_high)
+	var damage: int = randi_range(current_data.near_damage_low, current_data.near_damage_high) * skill1_bullet_damage_rate
 	lighting_bullet.damage = damage
 	lighting_bullet.position = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	lighting_bullet.target_position = skill_1_linked_enemy.hurt_box.global_position

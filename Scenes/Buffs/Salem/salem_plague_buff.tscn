@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl4bgknb3ffkd"]
+
+[ext_resource type="PackedScene" uid="uid://bwifge7de0uys" path="res://Scenes/Buffs/dot_buff.tscn" id="1_xuhji"]
+[ext_resource type="Script" path="res://Scripts/Buffs/salem_plugin_buff.gd" id="2_5woij"]
+[ext_resource type="Script" path="res://Scripts/Classes/potion_particle_leader.gd" id="3_4tqm7"]
+[ext_resource type="PackedScene" uid="uid://vskjnj3q4puw" path="res://Scenes/Buffs/Salem/salem_dead_body_plague_buff.tscn" id="3_prpkd"]
+[ext_resource type="Resource" uid="uid://cas4pk0w5gugp" path="res://Library/Heroes/HeroConfigs/Salem/Skill1/dead_body_buff_duration.tres" id="4_0yhuy"]
+[ext_resource type="Texture2D" uid="uid://oov3qeqnyjho" path="res://Assets/Images/Effects/smoke_particle.png" id="4_c1gv4"]
+[ext_resource type="Resource" uid="uid://biaw2f6y5tadq" path="res://Library/Heroes/HeroConfigs/Salem/PassiveSkill/salem_plague_duration.tres" id="5_c0wgo"]
+[ext_resource type="Resource" uid="uid://dq5jx8j2jp5y2" path="res://Library/Heroes/HeroConfigs/Salem/PassiveSkill/max_plague_layer_count.tres" id="6_d0t2w"]
+
+[node name="SalemPluginBuff" instance=ExtResource("1_xuhji")]
+script = ExtResource("2_5woij")
+lower_damage_list = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9])
+higher_damage_list = Array[int]([2, 4, 6, 8, 10, 12, 14, 16, 18])
+plague_buff_scene = null
+dead_body_buff_scene = ExtResource("3_prpkd")
+dead_body_buff_duration = ExtResource("4_0yhuy")
+explosion_damage_list = Array[int]([10, 20, 30])
+salem_plague_duration = ExtResource("5_c0wgo")
+max_plague_layer_count = ExtResource("6_d0t2w")
+duration = 3.0
+buff_tag = "SalemPluginBuff"
+immune_groups = Array[String](["god", "super_unit", "no_live"])
+
+[node name="DotTimer" parent="." index="0"]
+wait_time = 0.2
+
+[node name="PotionParticleLeader" type="Node2D" parent="." index="1" node_paths=PackedStringArray("buff_vehicle")]
+script = ExtResource("3_4tqm7")
+potion_color = Color(0, 0.419608, 0, 1)
+potion_texture = ExtResource("4_c1gv4")
+buff_vehicle = NodePath("..")
+particle_size_rate = 0.5
+particle_z_index = 1

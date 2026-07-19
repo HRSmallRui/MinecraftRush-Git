@@ -2,6 +2,8 @@
 extends PathFollow2D
 class_name Enemy
 
+signal enemy_died
+
 enum EnemyType{
 	Small,
 	Medium,
@@ -312,6 +314,7 @@ func translate_to_new_state(new_state: EnemyState):
 			pass
 		EnemyState.DIE:
 			achievement_enemy_die()
+			enemy_died.emit()
 			enemy_sprite.pause()
 			unit_body.collision_layer = 0
 			unit_body.set_collision_layer_value(9,true)

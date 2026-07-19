@@ -11,6 +11,7 @@ signal select_hero(hero_id: int)
 @export var steve_health_blocks: Array[IntSaver]
 @export_subgroup("Damage")
 @export var fuchen_damage_blocks: Array[IntSaver]
+@export var robort_damage_blocks: Array[IntSaver]
 
 @onready var hero_head_textures: Panel = $HeroHeadTextures
 @onready var hero_texture: TextureRect = $HeroTexture
@@ -130,7 +131,7 @@ func update_health():
 	var hero_level = Map.instance.current_sav.hero_sav[current_check].hero_level
 	var max_health: int = hero_property_block_list[current_check].max_healths[hero_level-1]
 	match current_check:
-		0:
+		0: ##Steve
 			if skill_levels[0] > 0: max_health += steve_health_blocks[skill_levels[0]-1].saving_int_value
 	health_label.text = str(max_health)
 	pass
@@ -149,15 +150,16 @@ func update_damage():
 		damage_high = property_block.damage_fars[hero_level-1].damage_high
 	
 	match current_check:
-		1:
+		1: ##Fuchen
 			if skill_levels[0] > 0:
 				var upgrade_damage: int = fuchen_damage_blocks[skill_levels[0]-1].saving_int_value
 				damage_low += upgrade_damage
 				damage_high += upgrade_damage
-		4:
+		4: ##Robort
 			if skill_levels[3] > 0:
-				damage_low += HeroSkillLibrary.hero_skill_data_library[4][4].upgrade_damage[skill_levels[3]-1]
-				damage_high += HeroSkillLibrary.hero_skill_data_library[4][4].upgrade_damage[skill_levels[3]-1]
+				var upgrade_damage: int = robort_damage_blocks[skill_levels[3]-1].saving_int_value
+				damage_low += upgrade_damage
+				damage_high += upgrade_damage
 	
 	damage_label.text = str(damage_low) + " - " + str(damage_high)
 	pass

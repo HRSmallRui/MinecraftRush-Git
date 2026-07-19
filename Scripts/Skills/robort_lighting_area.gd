@@ -5,7 +5,7 @@ extends SkillConditionArea2D
 
 
 func _ready() -> void:
-	EffectManager.instance.play_lightning_effect(position,Vector2.ONE if randf()<0.5 else -Vector2.ONE)
+	EffectManager.instance.play_lightning_effect(position)
 	EffectManager.instance.play_explosion_effect(position)
 	AudioManager.instance.play_explosion_audio()
 	
