@@ -988,7 +988,17 @@ scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_307yl")
 debug_color = Color(0, 1, 1, 0.137255)
 
-[node name="Skill4ConditionArea" type="Area2D" parent="UnitBody" index="10"]
+[node name="Skill3AttackArea" type="Area2D" parent="UnitBody" index="10"]
+scale = Vector2(1.2, 1.2)
+collision_layer = 0
+collision_mask = 65568
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/Skill3AttackArea" index="0"]
+scale = Vector2(5, 3.5)
+shape = SubResource("CircleShape2D_307yl")
+debug_color = Color(0, 1, 1, 0.137255)
+
+[node name="Skill4ConditionArea" type="Area2D" parent="UnitBody" index="11"]
 scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 32
@@ -998,10 +1008,10 @@ scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_307yl")
 debug_color = Color(0, 1, 1, 0.137255)
 
-[node name="FarAttackMarker" parent="UnitBody" index="11"]
+[node name="FarAttackMarker" parent="UnitBody" index="12"]
 position = Vector2(75, -140)
 
-[node name="FarAttackMarkerFlip" parent="UnitBody" index="12"]
+[node name="FarAttackMarkerFlip" parent="UnitBody" index="13"]
 position = Vector2(-75, -140)
 
 [node name="HeroTexture" parent="HeroUI/HeroUnitButton" index="1"]

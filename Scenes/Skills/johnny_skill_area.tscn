@@ -1,13 +1,18 @@
-[gd_scene load_steps=49 format=3 uid="uid://b8c0rmf807qqs"]
+[gd_scene load_steps=54 format=3 uid="uid://b8c0rmf807qqs"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/johnny_skill_area.gd" id="1_0vaib"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="2_a23lq"]
 [ext_resource type="PackedScene" uid="uid://drlh0najrp1x8" path="res://Scenes/Buffs/Johnny/johnny_upgrade_buff.tscn" id="2_w0c7j"]
 [ext_resource type="AudioStream" uid="uid://35m3t347vj5j" path="res://Assets/Sounds/FXs/Heroes/Johnny/乔尼号角.wav" id="2_x4vh2"]
 [ext_resource type="Texture2D" uid="uid://cjwfi23pc7s78" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_00.png" id="3_4ofr8"]
 [ext_resource type="PackedScene" uid="uid://1x74x2fajlf4" path="res://Scenes/TowerBuffs/johnny_tower_buff.tscn" id="3_62uow"]
+[ext_resource type="Resource" uid="uid://clopw21qfrs7m" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv0.tres" id="3_ml6xc"]
+[ext_resource type="Resource" uid="uid://t7qpgvbmiw8m" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv1.tres" id="4_n5oi7"]
 [ext_resource type="Texture2D" uid="uid://dcd11m427a8v7" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_01.png" id="4_owvqr"]
+[ext_resource type="Resource" uid="uid://cuxs666apk83i" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv2.tres" id="5_c10bg"]
 [ext_resource type="Texture2D" uid="uid://cnkuxiecl0ftc" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_02.png" id="5_lfes2"]
 [ext_resource type="Texture2D" uid="uid://cxfakmtdwbqsa" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_03.png" id="6_3ludt"]
+[ext_resource type="Resource" uid="uid://b8b5h04ktxenx" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv3.tres" id="6_jto14"]
 [ext_resource type="Texture2D" uid="uid://11vwts3682t5" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_04.png" id="7_14y8h"]
 [ext_resource type="Texture2D" uid="uid://nrpbs7nhjoh" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_05.png" id="8_kmstx"]
 [ext_resource type="Texture2D" uid="uid://p30wqannx3uf" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_06.png" id="9_btwrb"]
@@ -181,9 +186,9 @@ animations = [{
 [node name="JohnnySkillArea" type="Area2D"]
 scale = Vector2(2, 2)
 collision_layer = 0
-collision_mask = 1048
+collision_mask = 62488
 script = ExtResource("1_0vaib")
-existing_time_list = Array[float]([4.0, 6.0, 8.0, 10.0])
+existing_time_list = Array[ExtResource("2_a23lq")]([ExtResource("3_ml6xc"), ExtResource("4_n5oi7"), ExtResource("5_c10bg"), ExtResource("6_jto14")])
 ally_upgrade_buff_scene = ExtResource("2_w0c7j")
 tower_upgrade_buff_scene = ExtResource("3_62uow")
 
