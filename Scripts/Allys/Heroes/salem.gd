@@ -4,6 +4,9 @@ extends Hero
 @export var passive_skill_plague_duration: FloatSaver
 @export var passive_skill_max_plague_layer_count: IntSaver
 @export_group("Skill1","skill1")
+@export var skill1_dead_body_buff_duration: FloatSaver
+@export var skill1_extra_plague_layer_count: IntSaver
+@export var skill1_explosion_damage_list: Array[IntSaver]
 @export_group("Skill2","skill2")
 @export var skill2_dust_scene: PackedScene
 @export var skill2_damage_list: Array[int]
