@@ -33,6 +33,7 @@ extends Hero
 @onready var skill_4_condition_area: Area2D = $UnitBody/Skill4ConditionArea
 @onready var skill_4_timer: Timer = $Skill4Timer
 @onready var skill_4_audio: AudioStreamPlayer = $Skill4Audio
+@onready var skill_3_attack_area: Area2D = $UnitBody/Skill3AttackArea
 
 var immune_possible: float
 var skill_1_linked_enemy: Enemy
@@ -69,7 +70,7 @@ func frame_changed():
 		if ally_sprite.frame == 12 or ally_sprite.frame == 22:
 			var damage_block: DamageBlock = skill3_damage_list[skill_levels[3]-1]
 			var skill_damage:int = damage_block.get_damage()/2
-			for body in skill_3_condition_area.get_overlapping_bodies():
+			for body in skill_3_attack_area.get_overlapping_bodies():
 				var enemy: Enemy = body.owner
 				enemy.take_damage(skill_damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true)
 				var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
