@@ -1,25 +1,36 @@
-[gd_scene load_steps=202 format=3 uid="uid://ce5fjyatcc1kx"]
+[gd_scene load_steps=213 format=3 uid="uid://ce5fjyatcc1kx"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_fbaup"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/salem.gd" id="2_fue08"]
 [ext_resource type="Resource" uid="uid://cfqopcxrppsuf" path="res://Library/Heroes/HeroPropertyBlocks/Salem.tres" id="2_wgbkj"]
+[ext_resource type="Resource" uid="uid://biaw2f6y5tadq" path="res://Library/Heroes/HeroConfigs/Salem/PassiveSkill/salem_plague_duration.tres" id="3_axvhs"]
 [ext_resource type="Texture2D" uid="uid://cwi5sukxylub0" path="res://Assets/Images/UI/HeroHall/HeadTexs/塞勒姆.png" id="3_gb28s"]
 [ext_resource type="PackedScene" uid="uid://cd152uu0c5x7l" path="res://Scenes/Effects/dust_effect.tscn" id="3_sgn1c"]
 [ext_resource type="PackedScene" uid="uid://rl67hbmjxyh4" path="res://Scenes/Bullets/salem_big_ball.tscn" id="4_aoobe"]
+[ext_resource type="Resource" uid="uid://dq5jx8j2jp5y2" path="res://Library/Heroes/HeroConfigs/Salem/PassiveSkill/max_plague_layer_count.tres" id="4_dspbh"]
 [ext_resource type="Texture2D" uid="uid://cch0gcslxvm8x" path="res://Assets/Images/UI/InformationBar/Salem.png" id="4_dwivk"]
 [ext_resource type="Texture2D" uid="uid://co8vfau3t35co" path="res://Assets/Animations/Heroes/Salem/attack_00.png" id="4_q45y8"]
 [ext_resource type="Texture2D" uid="uid://y3c1ad66iw0n" path="res://Assets/Animations/Heroes/Salem/attack_01.png" id="5_tuka2"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="6_7qt15"]
 [ext_resource type="Texture2D" uid="uid://cvkkrql6o07gm" path="res://Assets/Animations/Heroes/Salem/attack_02.png" id="6_conor"]
 [ext_resource type="PackedScene" uid="uid://53k7dcpmtv4y" path="res://Scenes/Bullets/salem_magic_ball.tscn" id="7_3nn0g"]
 [ext_resource type="Texture2D" uid="uid://cl0wvtlj2vh2m" path="res://Assets/Animations/Heroes/Salem/attack_03.png" id="7_31olf"]
+[ext_resource type="Resource" uid="uid://cx1y4t5tcg3ec" path="res://Library/Heroes/HeroConfigs/Salem/Skill3/aoe_damage_lv1.tres" id="7_jbl2f"]
+[ext_resource type="Resource" uid="uid://gh53cm81w3nn" path="res://Library/Heroes/HeroConfigs/Salem/Skill3/aoe_damage_lv2.tres" id="8_rgaig"]
 [ext_resource type="Texture2D" uid="uid://c815le4ajjy2q" path="res://Assets/Animations/Heroes/Salem/attack_04.png" id="8_ynm02"]
+[ext_resource type="Resource" uid="uid://dvkwgcyhjsx5x" path="res://Library/Heroes/HeroConfigs/Salem/Skill3/aoe_damage_lv3.tres" id="9_1m0d0"]
 [ext_resource type="Texture2D" uid="uid://buj18hayaewbe" path="res://Assets/Animations/Heroes/Salem/attack_05.png" id="9_gjjgu"]
 [ext_resource type="Texture2D" uid="uid://hqbssldbe5a" path="res://Assets/Animations/Heroes/Salem/attack_06.png" id="10_qi1r0"]
 [ext_resource type="Texture2D" uid="uid://cibb1h3pnm77f" path="res://Assets/Animations/Heroes/Salem/attack_07.png" id="11_4yuhk"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="11_ixx0o"]
+[ext_resource type="Resource" uid="uid://b3sh36ok3bvll" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/explosion_damage_lv1.tres" id="12_7s8tv"]
 [ext_resource type="Texture2D" uid="uid://dixm4x8cysji2" path="res://Assets/Animations/Heroes/Salem/attack_08.png" id="12_nnmf8"]
+[ext_resource type="Resource" uid="uid://do6ef3fyopmmr" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/explosion_damage_lv2.tres" id="13_34mdy"]
 [ext_resource type="Texture2D" uid="uid://b0idu8oohe7oi" path="res://Assets/Animations/Heroes/Salem/attack_09.png" id="13_51tio"]
 [ext_resource type="Texture2D" uid="uid://bi4t1rte1x7i" path="res://Assets/Animations/Heroes/Salem/attack_10.png" id="14_uqe1c"]
+[ext_resource type="Resource" uid="uid://d0iqln5poux16" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/explosion_damage_lv3.tres" id="14_xskr7"]
 [ext_resource type="Texture2D" uid="uid://mb0ldbd2n1rq" path="res://Assets/Animations/Heroes/Salem/attack_11.png" id="15_ell1d"]
+[ext_resource type="Resource" uid="uid://ll54mflwyk7m" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/plague_layer_count_add.tres" id="15_vqr4k"]
 [ext_resource type="Texture2D" uid="uid://eba6dvp4qr6b" path="res://Assets/Animations/Heroes/Salem/attack_12.png" id="16_qyrss"]
 [ext_resource type="Texture2D" uid="uid://deffo1v3iufew" path="res://Assets/Animations/Heroes/Salem/attack_13.png" id="17_o56de"]
 [ext_resource type="Texture2D" uid="uid://cqvdijug5s81q" path="res://Assets/Animations/Heroes/Salem/attack_14.png" id="18_yxooy"]
@@ -949,9 +960,14 @@ _data = {
 
 [node name="Salem" instance=ExtResource("1_fbaup")]
 script = ExtResource("2_fue08")
+passive_skill_plague_duration = ExtResource("3_axvhs")
+passive_skill_max_plague_layer_count = ExtResource("4_dspbh")
 skill2_dust_scene = ExtResource("3_sgn1c")
 skill2_damage_list = Array[int]([150, 200, 250])
+skill3_ape_damage_list = Array[ExtResource("6_7qt15")]([ExtResource("7_jbl2f"), ExtResource("8_rgaig"), ExtResource("9_1m0d0")])
 skill4_big_bullet_scene = ExtResource("4_aoobe")
+skill4_damage_list = Array[ExtResource("11_ixx0o")]([ExtResource("12_7s8tv"), ExtResource("13_34mdy"), ExtResource("14_xskr7")])
+skill4_plague_layer_count_add = ExtResource("15_vqr4k")
 heal_speeds = Array[int]([27, 28, 29, 29, 30, 30, 31, 31, 32, 33])
 hero_property_block = ExtResource("2_wgbkj")
 skill1_exp_get = Array[int]([300, 400, 500])

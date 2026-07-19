@@ -1,23 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://behoes0110obl"]
+[gd_scene load_steps=9 format=3 uid="uid://behoes0110obl"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/salem_explosion_area.gd" id="1_ry7v6"]
-[ext_resource type="PackedScene" uid="uid://ccydxmm5h8la0" path="res://Scenes/Buffs/Salem/salem_plugin_buff.tscn" id="2_q7djj"]
+[ext_resource type="PackedScene" uid="uid://bl4bgknb3ffkd" path="res://Scenes/Buffs/Salem/salem_plague_buff.tscn" id="2_shm8e"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_g2ssa"]
-
-[sub_resource type="Resource" id="Resource_7tnjc"]
-script = ExtResource("3_g2ssa")
-damage_low = 100
-damage_high = 230
-
-[sub_resource type="Resource" id="Resource_1xgd3"]
-script = ExtResource("3_g2ssa")
-damage_low = 124
-damage_high = 256
-
-[sub_resource type="Resource" id="Resource_e2v26"]
-script = ExtResource("3_g2ssa")
-damage_low = 156
-damage_high = 304
+[ext_resource type="Resource" uid="uid://b3sh36ok3bvll" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/explosion_damage_lv1.tres" id="4_tup2r"]
+[ext_resource type="Resource" uid="uid://do6ef3fyopmmr" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/explosion_damage_lv2.tres" id="5_1ne68"]
+[ext_resource type="Resource" uid="uid://d0iqln5poux16" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/explosion_damage_lv3.tres" id="6_tbinu"]
+[ext_resource type="Resource" uid="uid://ll54mflwyk7m" path="res://Library/Heroes/HeroConfigs/Salem/Skill4/plague_layer_count_add.tres" id="7_i2ar4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uq1bv"]
 radius = 73.9444
@@ -27,8 +16,9 @@ scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 96
 script = ExtResource("1_ry7v6")
-plague_buff_scene = ExtResource("2_q7djj")
-damage_list = Array[ExtResource("3_g2ssa")]([SubResource("Resource_7tnjc"), SubResource("Resource_1xgd3"), SubResource("Resource_e2v26")])
+plague_buff_scene = ExtResource("2_shm8e")
+damage_list = Array[ExtResource("3_g2ssa")]([ExtResource("4_tup2r"), ExtResource("5_1ne68"), ExtResource("6_tbinu")])
+plague_layer_count_add = ExtResource("7_i2ar4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.7)

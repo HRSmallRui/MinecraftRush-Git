@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://53k7dcpmtv4y"]
+[gd_scene load_steps=13 format=3 uid="uid://53k7dcpmtv4y"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_omncy"]
 [ext_resource type="Script" path="res://Scripts/Bullets/salem_magic_ball.gd" id="2_8lkpo"]
 [ext_resource type="Texture2D" uid="uid://bbt0wqkma2bgq" path="res://Assets/Images/Bullets/magic_bullet3.png" id="3_6khxe"]
 [ext_resource type="PackedScene" uid="uid://cdmjm26n35ui2" path="res://Scenes/Effects/green_magic_ball_hit.tscn" id="3_cg26u"]
 [ext_resource type="PackedScene" uid="uid://bl4bgknb3ffkd" path="res://Scenes/Buffs/Salem/salem_plague_buff.tscn" id="4_uw41l"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="5_ismdv"]
+[ext_resource type="Resource" uid="uid://cx1y4t5tcg3ec" path="res://Library/Heroes/HeroConfigs/Salem/Skill3/aoe_damage_lv1.tres" id="6_tseud"]
+[ext_resource type="Resource" uid="uid://gh53cm81w3nn" path="res://Library/Heroes/HeroConfigs/Salem/Skill3/aoe_damage_lv2.tres" id="7_qd5nv"]
+[ext_resource type="Resource" uid="uid://dvkwgcyhjsx5x" path="res://Library/Heroes/HeroConfigs/Salem/Skill3/aoe_damage_lv3.tres" id="8_6e1by"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -20,7 +24,7 @@ colors = PackedColorArray(0, 0.572549, 0, 0.717647, 0, 0.572549, 0, 0)
 script = ExtResource("2_8lkpo")
 hit_effect_scene = ExtResource("3_cg26u")
 plague_buff_scene = ExtResource("4_uw41l")
-aoe_damage_list = Array[int]([3, 6, 9])
+aoe_damage_list = Array[ExtResource("5_ismdv")]([ExtResource("6_tseud"), ExtResource("7_qd5nv"), ExtResource("8_6e1by")])
 tail_max_length = 30
 damage_type = 1
 move_type = 1

@@ -1,13 +1,18 @@
 extends Hero
 
 @export_group("PassiveSkill","passive_skill")
+@export var passive_skill_plague_duration: FloatSaver
+@export var passive_skill_max_plague_layer_count: IntSaver
 @export_group("Skill1","skill1")
 @export_group("Skill2","skill2")
 @export var skill2_dust_scene: PackedScene
 @export var skill2_damage_list: Array[int]
 @export_group("Skill3","skill3")
+@export var skill3_ape_damage_list: Array[IntSaver]
 @export_group("Skill4","skill4")
 @export var skill4_big_bullet_scene: PackedScene
+@export var skill4_damage_list: Array[DamageBlock]
+@export var skill4_plague_layer_count_add: IntSaver
 
 @onready var magic_ball: Sprite2D = $UnitBody/MagicBall
 @onready var magic_ball_animation_player: AnimationPlayer = $UnitBody/MagicBallAnimationPlayer

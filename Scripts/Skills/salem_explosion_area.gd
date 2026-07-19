@@ -2,6 +2,7 @@ extends SkillConditionArea2D
 
 @export var plague_buff_scene: PackedScene
 @export var damage_list: Array[DamageBlock]
+@export var plague_layer_count_add: IntSaver
 
 var dead_explosion_level: int
 var passive_level: int
@@ -18,7 +19,7 @@ func _ready() -> void:
 		var enemy: Enemy = body.owner
 		var damage: int = damage_block.get_damage()
 		enemy.take_damage(damage,DataProcess.DamageType.MagicDamage,0,false,null,false,true,)
-		for i in 3:
+		for i in plague_layer_count_add.saving_int_value:
 			var plugin_buff: DotBuff = plague_buff_scene.instantiate()
 			plugin_buff.dead_explosion_level = dead_explosion_level
 			plugin_buff.passive_level = passive_level
