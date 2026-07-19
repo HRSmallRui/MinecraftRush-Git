@@ -8,6 +8,7 @@ extends DotBuff
 @export var dead_body_buff_duration: FloatSaver
 @export var explosion_damage_list: Array[int]
 @export var salem_plague_duration: FloatSaver
+@export var max_plague_layer_count: IntSaver
 
 var passive_level: int
 var dead_explosion_level: int
@@ -21,7 +22,7 @@ func buff_start() -> void:
 		dot_damage = higher_damage_list
 	var enemy: Enemy = unit
 	if enemy.enemy_buff_tags.has("salem_plugin"):
-		buff_level = clampi(enemy.enemy_buff_tags["salem_plugin"]+1,0,6)
+		buff_level = clampi(enemy.enemy_buff_tags["salem_plugin"]+1,0,max_plague_layer_count.saving_int_value)
 		enemy.enemy_buff_tags["salem_plugin"] = buff_level
 	else:
 		buff_level = 1

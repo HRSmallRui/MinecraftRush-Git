@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl4bgknb3ffkd"]
+[gd_scene load_steps=9 format=3 uid="uid://bl4bgknb3ffkd"]
 
 [ext_resource type="PackedScene" uid="uid://bwifge7de0uys" path="res://Scenes/Buffs/dot_buff.tscn" id="1_xuhji"]
 [ext_resource type="Script" path="res://Scripts/Buffs/salem_plugin_buff.gd" id="2_5woij"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cas4pk0w5gugp" path="res://Library/Heroes/HeroConfigs/Salem/Skill1/dead_body_buff_duration.tres" id="4_0yhuy"]
 [ext_resource type="Texture2D" uid="uid://oov3qeqnyjho" path="res://Assets/Images/Effects/smoke_particle.png" id="4_c1gv4"]
 [ext_resource type="Resource" uid="uid://biaw2f6y5tadq" path="res://Library/Heroes/HeroConfigs/Salem/PassiveSkill/salem_plague_duration.tres" id="5_c0wgo"]
+[ext_resource type="Resource" uid="uid://dq5jx8j2jp5y2" path="res://Library/Heroes/HeroConfigs/Salem/PassiveSkill/max_plague_layer_count.tres" id="6_d0t2w"]
 
 [node name="SalemPluginBuff" instance=ExtResource("1_xuhji")]
 script = ExtResource("2_5woij")
@@ -17,6 +18,7 @@ dead_body_buff_scene = ExtResource("3_prpkd")
 dead_body_buff_duration = ExtResource("4_0yhuy")
 explosion_damage_list = Array[int]([10, 20, 30])
 salem_plague_duration = ExtResource("5_c0wgo")
+max_plague_layer_count = ExtResource("6_d0t2w")
 duration = 3.0
 buff_tag = "SalemPluginBuff"
 immune_groups = Array[String](["god", "super_unit", "no_live"])

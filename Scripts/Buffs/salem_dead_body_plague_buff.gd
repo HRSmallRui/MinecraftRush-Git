@@ -1,9 +1,9 @@
 extends BuffClass
 
 @export var spread_buff_scene: PackedScene
-@export var salem_plague_buff_scene: PackedScene
+#@export var salem_plague_buff_scene: PackedScene
 @export var explosion_damage_list: Array[IntSaver]
-@export var extra_plague_layer_count: IntSaver
+#@export var extra_plague_layer_count: IntSaver
 @export var dead_body_buff_duration: FloatSaver
 
 @onready var explosion_area: Area2D = $ExplosionArea
@@ -33,11 +33,6 @@ func on_enemy_died():
 		var now_enemy: Enemy = body.owner
 		if now_enemy == enemy: continue
 		now_enemy.take_damage(explosion_damage,DataProcess.DamageType.ExplodeDamage,0)
-		for i in extra_plague_layer_count.saving_int_value:
-			var salem_plague_buff: DotBuff = salem_plague_buff_scene.instantiate()
-			salem_plague_buff.set("passive_level",passive_level)
-			salem_plague_buff.set("dead_explosion_level",dead_explosion_level)
-			now_enemy.buffs.add_child(salem_plague_buff)
 	
 	var spread_buff: BuffClass = spread_buff_scene.instantiate()
 	spread_buff.duration = dead_body_buff_duration.saving_float_value
