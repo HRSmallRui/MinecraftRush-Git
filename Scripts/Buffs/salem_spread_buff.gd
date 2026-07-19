@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 func _on_spread_timer_timeout() -> void:
 	for body in spread_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var plugin_buff: BuffClass = plague_buff_scene.instantiate()
+		var plugin_buff: DotBuff = load("res://Scenes/Buffs/Salem/salem_plague_buff.tscn").instantiate()
 		plugin_buff.passive_level = passive_level
 		plugin_buff.dead_explosion_level = dead_explosion_level
 		enemy.buffs.add_child(plugin_buff)
