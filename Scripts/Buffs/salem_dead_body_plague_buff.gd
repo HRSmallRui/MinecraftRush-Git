@@ -22,6 +22,7 @@ func buff_start():
 
 func remove_buff():
 	super()
+	print("remove")
 	if enemy.enemy_state == Enemy.EnemyState.DIE:
 		on_enemy_died()
 	pass
