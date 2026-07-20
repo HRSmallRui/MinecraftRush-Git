@@ -9,6 +9,7 @@ signal skill2_effect_release
 @export var skill2_damage_list: Array[DamageBlock]
 @export var debuff_duration_list: Array[float]
 @export var skill2_buff_scene: PackedScene
+@export var skill2_second_damage_list: Array[int]
 @export_group("Skill3")
 @export var skill3_bullet_count_list: Array[int]
 @export var skill3_damage: DamageBlock
@@ -235,8 +236,11 @@ func battle():
 
 
 func add_buff():
+	var damage: int = skill2_second_damage_list[skill_levels[2]-1]
 	for body in skill_2_attack_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
+		enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0)
+		if enemy.enemy_state == Enemy.EnemyState.DIE: continue
 		var soul_debuff: PropertyBuff = skill2_buff_scene.instantiate()
 		soul_debuff.duration = debuff_duration_list[skill_levels[2]-1]
 		enemy.buffs.add_child(soul_debuff)
