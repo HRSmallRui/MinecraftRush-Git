@@ -1,6 +1,9 @@
 extends SkillButton
 
 @export var release_scene: PackedScene
+@export var damage_per_count: IntSaver
+@export var knife_count: IntSaver
+@export var knife_damage_list: Array[IntSaver]
 
 var skill_level: int
 

@@ -1,8 +1,9 @@
 extends SkillConditionArea2D
 
 @export var freeze_buff_scene: PackedScene
-@export var skill_damage: int
-@export var bullet_damage_list: Array[int]
+@export var skill_damage_per_count: IntSaver
+@export var knife_count: IntSaver
+@export var bullet_damage_list: Array[IntSaver]
 @export var bullet_scene: PackedScene
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -27,7 +28,7 @@ func _on_shot_timer_timeout() -> void:
 		freeze_buff.duration = 0.2
 		freeze_buff.buff_tag = "kongshulin_freeze"
 		enemy.buffs.add_child(freeze_buff)
-		enemy.take_damage(skill_damage,DataProcess.DamageType.TrueDamage,0,false,)
+		enemy.take_damage(skill_damage_per_count.saving_int_value,DataProcess.DamageType.TrueDamage,0,false,)
 	pass # Replace with function body.
 
 
@@ -40,11 +41,11 @@ func _on_duration_timer_timeout() -> void:
 
 func summon_bullet():
 	var bullet_list: Array[Bullet]
-	for i in 40:
+	for i in knife_count.saving_int_value:
 		var bullet: Bullet = bullet_scene.instantiate()
 		bullet.target_position = position + Vector2(randf_range(-1,1),randf_range(-1,1)) * 40
 		bullet.position = bullet.target_position + Vector2(randf_range(-1,1),randf_range(-1,1)) * 100
-		bullet.damage = bullet_damage_list[skill_level]
+		bullet.damage = bullet_damage_list[skill_level].saving_int_value
 		Stage.instance.bullets.add_child(bullet)
 		knife_audio.play()
 		bullet.process_mode = Node.PROCESS_MODE_DISABLED
