@@ -1,15 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnent4dbfhwcr"]
+[gd_scene load_steps=11 format=3 uid="uid://cnent4dbfhwcr"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_k35yp"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/rosa_skill_button.gd" id="2_wem2a"]
 [ext_resource type="Texture2D" uid="uid://bbix2ejk7c5om" path="res://Assets/Images/UI/SkillButton/Heroskill/Rosa/rosa_skill.png" id="3_nopmy"]
 [ext_resource type="PackedScene" uid="uid://c6fhmd1q7jfxq" path="res://Scenes/Skills/rosa_arrow_area.tscn" id="3_xwwf0"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="4_avu5s"]
 [ext_resource type="Texture2D" uid="uid://nowfqe1fr7y6" path="res://Assets/Images/UI/SkillButton/Heroskill/Rosa/rosa_skill_using.png" id="4_whc6i"]
+[ext_resource type="Resource" uid="uid://ci40dtwolgwuh" path="res://Library/Heroes/HeroConfigs/Rosa/arrow_damage_lv0.tres" id="5_bdrq6"]
+[ext_resource type="Resource" uid="uid://ddjtu7j84pxtt" path="res://Library/Heroes/HeroConfigs/Rosa/arrow_damage_lv1.tres" id="6_fi07i"]
+[ext_resource type="Resource" uid="uid://cw6qc44siv68y" path="res://Library/Heroes/HeroConfigs/Rosa/arrow_damage_lv2.tres" id="7_4y3kf"]
+[ext_resource type="Resource" uid="uid://bypmbouxj83i4" path="res://Library/Heroes/HeroConfigs/Rosa/arrow_damage_lv3.tres" id="8_deeas"]
 
 [node name="RosaSkillButton" instance=ExtResource("1_k35yp")]
 script = ExtResource("2_wem2a")
 arrow_area_scene = ExtResource("3_xwwf0")
 arrow_count_list = Array[int]([15, 30, 45, 60])
+arrow_damage_list = Array[ExtResource("4_avu5s")]([ExtResource("5_bdrq6"), ExtResource("6_fi07i"), ExtResource("7_4y3kf"), ExtResource("8_deeas")])
 skill_type = 2
 texture_normal = ExtResource("3_nopmy")
 texture_select = ExtResource("4_whc6i")
