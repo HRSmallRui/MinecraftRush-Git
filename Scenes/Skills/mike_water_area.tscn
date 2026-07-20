@@ -1,29 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0kit0a3hqmel"]
+[gd_scene load_steps=20 format=3 uid="uid://d0kit0a3hqmel"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/mike_water_area.gd" id="1_qsy6i"]
 [ext_resource type="Texture2D" uid="uid://clg14gs7wy7te" path="res://Assets/Images/Effects/mike_water_effect.png" id="2_65smc"]
 [ext_resource type="PackedScene" uid="uid://b1puw18cdilke" path="res://Scenes/Buffs/Mike/mike_water_broken_buff.tscn" id="2_kuapu"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="3_dsbnd"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_jj2ug"]
-
-[sub_resource type="Resource" id="Resource_tj2oo"]
-script = ExtResource("3_jj2ug")
-damage_low = 4
-damage_high = 8
-
-[sub_resource type="Resource" id="Resource_dva5u"]
-script = ExtResource("3_jj2ug")
-damage_low = 3
-damage_high = 6
-
-[sub_resource type="Resource" id="Resource_57kov"]
-script = ExtResource("3_jj2ug")
-damage_low = 2
-damage_high = 4
-
-[sub_resource type="Resource" id="Resource_fmtea"]
-script = ExtResource("3_jj2ug")
-damage_low = 1
-damage_high = 2
+[ext_resource type="Resource" uid="uid://b07geonx1wlby" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv0.tres" id="4_ttjsk"]
+[ext_resource type="Resource" uid="uid://xobscfn7ydhb" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv1.tres" id="5_r4b5i"]
+[ext_resource type="Resource" uid="uid://b7disskueb0j3" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv2.tres" id="6_ibcak"]
+[ext_resource type="Resource" uid="uid://cq0pfpdxyuam2" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv3.tres" id="7_j3uju"]
+[ext_resource type="Resource" uid="uid://d4erdiis3mp4p" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv0.tres" id="9_ruo7k"]
+[ext_resource type="Resource" uid="uid://itoenmfyjnky" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv1.tres" id="10_3yvyp"]
+[ext_resource type="Resource" uid="uid://dq7dweebimfwj" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv2.tres" id="11_xxorg"]
+[ext_resource type="Resource" uid="uid://cbx87af6v5ei8" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv3.tres" id="12_ljs3d"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="13_ysyl6"]
+[ext_resource type="Resource" uid="uid://b0rfeaykpxv01" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv0.tres" id="14_luk2x"]
+[ext_resource type="Resource" uid="uid://bbaera8pxp1j8" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv1.tres" id="15_hnlhr"]
+[ext_resource type="Resource" uid="uid://h2v3h8qivfmt" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv2.tres" id="16_avqym"]
+[ext_resource type="Resource" uid="uid://c6m1m0ctk6i12" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv3.tres" id="17_5nysm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ttrns"]
 radius = 73.9444
@@ -33,9 +27,9 @@ collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_qsy6i")
 broken_buff_scene = ExtResource("2_kuapu")
-water_damage_list = Array[int]([100, 200, 300, 400])
-enemy_debuff_damage_list = Array[ExtResource("3_jj2ug")]([SubResource("Resource_tj2oo"), SubResource("Resource_dva5u"), SubResource("Resource_57kov"), SubResource("Resource_fmtea")])
-water_buff_duration_list = Array[float]([4.0, 6.0, 8.0, 10.0])
+water_damage_list = Array[ExtResource("3_dsbnd")]([ExtResource("4_ttjsk"), ExtResource("5_r4b5i"), ExtResource("6_ibcak"), ExtResource("7_j3uju")])
+enemy_debuff_damage_list = Array[ExtResource("3_jj2ug")]([ExtResource("9_ruo7k"), ExtResource("10_3yvyp"), ExtResource("11_xxorg"), ExtResource("12_ljs3d")])
+water_buff_duration_list = Array[ExtResource("13_ysyl6")]([ExtResource("14_luk2x"), ExtResource("15_hnlhr"), ExtResource("16_avqym"), ExtResource("17_5nysm")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 1.4)

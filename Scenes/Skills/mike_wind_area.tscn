@@ -1,10 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://81wyjq6isf0g"]
+[gd_scene load_steps=19 format=3 uid="uid://81wyjq6isf0g"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/mike_wind_area.gd" id="1_nkg7y"]
 [ext_resource type="PackedScene" uid="uid://di8ngpy70nphk" path="res://Scenes/Buffs/Mike/mike_wind_slow_buff.tscn" id="2_ckpe3"]
 [ext_resource type="AudioStream" uid="uid://bt0dr8e2jdhri" path="res://Assets/Sounds/FXs/Heroes/Mike/迈克风刃.wav" id="2_ngl6d"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="3_5nous"]
+[ext_resource type="Resource" uid="uid://dbxfsm1dq7c1n" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_blade_count.tres" id="3_dkdw8"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="3_semea"]
 [ext_resource type="Texture2D" uid="uid://dxtbm2sugxqwh" path="res://Assets/Images/Effects/wind光矛.png" id="3_uvy6j"]
+[ext_resource type="Resource" uid="uid://b7j2imrj06ule" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv0.tres" id="4_gfnce"]
 [ext_resource type="AudioStream" uid="uid://c26x7bprxxddb" path="res://Assets/Sounds/FXs/Heroes/Mike/玻璃破碎.mp3" id="4_jvklg"]
+[ext_resource type="Resource" uid="uid://cpyky6vdi8amf" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv0.tres" id="4_yasm5"]
+[ext_resource type="Resource" uid="uid://ci1ij7ksvbbct" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv1.tres" id="5_1oogc"]
+[ext_resource type="Resource" uid="uid://2w3xna441n1a" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv1.tres" id="5_q465t"]
+[ext_resource type="Resource" uid="uid://bprrsgh3w0i4i" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv2.tres" id="6_3wmuo"]
+[ext_resource type="Resource" uid="uid://cocppvywbyivo" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv2.tres" id="6_jjbqv"]
+[ext_resource type="Resource" uid="uid://dihh172ud53ld" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv3.tres" id="7_i4xut"]
+[ext_resource type="Resource" uid="uid://beilq0my1havo" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv3.tres" id="7_lvklo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gcfah"]
 radius = 73.9444
@@ -22,8 +33,9 @@ collision_layer = 0
 collision_mask = 96
 script = ExtResource("1_nkg7y")
 slow_buff_scene = ExtResource("2_ckpe3")
-slow_duration_list = Array[float]([5.0, 6.0, 7.0, 8.0])
-wind_damage_list = Array[int]([40, 60, 80, 100])
+slow_duration_list = Array[ExtResource("3_5nous")]([ExtResource("4_yasm5"), ExtResource("5_q465t"), ExtResource("6_3wmuo"), ExtResource("7_i4xut")])
+wind_damage_list = Array[ExtResource("3_semea")]([ExtResource("4_gfnce"), ExtResource("5_1oogc"), ExtResource("6_jjbqv"), ExtResource("7_lvklo")])
+wind_blade_count = ExtResource("3_dkdw8")
 
 [node name="AttackAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ngl6d")
