@@ -2,6 +2,7 @@ extends SkillButton
 
 @export var arrow_area_scene: PackedScene
 @export var arrow_count_list: Array[int]
+@export var arrow_damage_list: Array[IntSaver]
 
 var level: int
 
@@ -20,7 +21,8 @@ func skill_unlease():
 	var arrow_count: int = arrow_count_list[level]
 	var has_offseted: bool
 	for i in arrow_count:
-		var arrow_area: Area2D = arrow_area_scene.instantiate()
+		var arrow_area: SkillConditionArea2D = arrow_area_scene.instantiate()
+		arrow_area.skill_level = level
 		arrow_area.position = locked_enemy_path.curve.sample_baked(current_progress)
 		if randf() < offset_possible and !has_offseted:
 			var v_offset: Vector2 = locked_enemy_path.curve.sample_baked_with_rotation(current_progress).y

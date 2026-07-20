@@ -1,8 +1,9 @@
 extends SkillConditionArea2D
 
 @export var slow_buff_scene: PackedScene
-@export var slow_duration_list: Array[float]
-@export var wind_damage_list: Array[int]
+@export var slow_duration_list: Array[FloatSaver]
+@export var wind_damage_list: Array[IntSaver]
+@export var wind_blade_count: IntSaver
 
 @onready var wind_hit_particle: GPUParticles2D = $WindHitParticle
 @onready var attack_audio: AudioStreamPlayer = $AttackAudio
@@ -13,9 +14,9 @@ func _ready() -> void:
 	wind_animation()
 	await get_tree().physics_frame
 	await get_tree().physics_frame
-	var damage: int = wind_damage_list[skill_level]
-	var slow_duration :float = slow_duration_list[skill_level]
-	for i in 10:
+	var damage: int = wind_damage_list[skill_level].saving_int_value
+	var slow_duration :float = slow_duration_list[skill_level].saving_float_value
+	for i in wind_blade_count.saving_int_value:
 		attack_audio.play()
 		for body in get_overlapping_bodies():
 			var enemy:Enemy = body.owner

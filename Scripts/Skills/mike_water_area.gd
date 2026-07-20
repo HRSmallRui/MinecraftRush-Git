@@ -1,17 +1,17 @@
 extends SkillConditionArea2D
 
 @export var broken_buff_scene: PackedScene
-@export var water_damage_list: Array[int]
+@export var water_damage_list: Array[IntSaver]
 @export var enemy_debuff_damage_list: Array[DamageBlock]
-@export var water_buff_duration_list: Array[float]
+@export var water_buff_duration_list: Array[FloatSaver]
 
 @onready var mike_water_effect: Sprite2D = $MikeWaterEffect
 
 
 func _ready() -> void:
 	water_animation()
-	var damage: int = water_damage_list[skill_level]
-	var during_time: float = water_buff_duration_list[skill_level]
+	var damage: int = water_damage_list[skill_level].saving_int_value
+	var during_time: float = water_buff_duration_list[skill_level].saving_float_value
 	var damage_low: int = enemy_debuff_damage_list[skill_level].damage_low
 	var damage_high: int = enemy_debuff_damage_list[skill_level].damage_high
 	mike_water_effect.modulate.a = 0

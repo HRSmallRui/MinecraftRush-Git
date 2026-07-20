@@ -1,14 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8x0kq15o53mv"]
+[gd_scene load_steps=11 format=3 uid="uid://b8x0kq15o53mv"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_j2q1u"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/johnny_skill_button.gd" id="2_53bf4"]
 [ext_resource type="PackedScene" uid="uid://b8c0rmf807qqs" path="res://Scenes/Skills/johnny_skill_area.tscn" id="3_qo76c"]
 [ext_resource type="Texture2D" uid="uid://cs3l3ig4ft2ea" path="res://Assets/Images/UI/SkillButton/Heroskill/Johnny/johnny_skill.png" id="3_vv87e"]
 [ext_resource type="Texture2D" uid="uid://vqwfhk15yr8o" path="res://Assets/Images/UI/SkillButton/Heroskill/Johnny/johnny_skill_using.png" id="4_2y2at"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="4_floeg"]
+[ext_resource type="Resource" uid="uid://clopw21qfrs7m" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv0.tres" id="5_5e3f4"]
+[ext_resource type="Resource" uid="uid://t7qpgvbmiw8m" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv1.tres" id="6_owscg"]
+[ext_resource type="Resource" uid="uid://cuxs666apk83i" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv2.tres" id="7_nxdei"]
+[ext_resource type="Resource" uid="uid://b8b5h04ktxenx" path="res://Library/Heroes/HeroConfigs/Johnny/Skill5/existing_time_lv3.tres" id="8_l24c8"]
 
 [node name="JohnnySkillButton" instance=ExtResource("1_j2q1u")]
 script = ExtResource("2_53bf4")
 johnny_area_scene = ExtResource("3_qo76c")
+existing_time_list = Array[ExtResource("4_floeg")]([ExtResource("5_5e3f4"), ExtResource("6_owscg"), ExtResource("7_nxdei"), ExtResource("8_l24c8")])
 skill_type = 2
 texture_normal = ExtResource("3_vv87e")
 texture_select = ExtResource("4_2y2at")

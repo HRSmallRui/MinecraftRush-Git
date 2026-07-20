@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://fim8a81rlxsq"]
+[gd_scene load_steps=12 format=3 uid="uid://fim8a81rlxsq"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_1a3ph"]
 [ext_resource type="Script" path="res://Scripts/Bullets/rosa_explosion_arrow.gd" id="2_par4l"]
 [ext_resource type="Texture2D" uid="uid://c38ou0s0f3qj0" path="res://Assets/Images/Bullets/rosa_special_arrow.png" id="3_c3hcb"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="3_t672f"]
+[ext_resource type="Resource" uid="uid://dn87k8w38c4h1" path="res://Library/Heroes/HeroConfigs/Rosa/explosion_damage_lv1.tres" id="4_r0ock"]
+[ext_resource type="Resource" uid="uid://b5mf0ue6i3k2s" path="res://Library/Heroes/HeroConfigs/Rosa/explosion_damage_lv2.tres" id="5_f1twv"]
+[ext_resource type="Resource" uid="uid://bxxm1cy8poo6p" path="res://Library/Heroes/HeroConfigs/Rosa/explosion_damage_lv3.tres" id="6_2ji75"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -19,7 +23,7 @@ radius = 54.0
 
 [node name="RosaExplodeArrow" instance=ExtResource("1_1a3ph")]
 script = ExtResource("2_par4l")
-explosion_damage_list = Array[int]([100, 150, 200])
+explosion_damage_list = Array[ExtResource("3_t672f")]([ExtResource("4_r0ock"), ExtResource("5_f1twv"), ExtResource("6_2ji75")])
 tail_max_length = 20
 move_type = 1
 bullet_speed = 800.0
@@ -31,7 +35,7 @@ texture = ExtResource("3_c3hcb")
 
 [node name="HitBox" parent="." index="1"]
 scale = Vector2(1.29689, 1.29689)
-collision_mask = 96
+collision_mask = 196704
 monitorable = false
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]

@@ -1,6 +1,7 @@
 extends SkillButton
 
 @export var johnny_area_scene: PackedScene
+@export var existing_time_list: Array[FloatSaver]
 
 var level: int
 

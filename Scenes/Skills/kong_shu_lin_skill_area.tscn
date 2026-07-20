@@ -1,12 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://8xgj1goqei34"]
+[gd_scene load_steps=22 format=3 uid="uid://8xgj1goqei34"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/kong_shu_lin_skill_area.gd" id="1_ch0m6"]
 [ext_resource type="Shader" path="res://Assets/Shaders/stop_time_color.gdshader" id="2_2jdyi"]
 [ext_resource type="PackedScene" uid="uid://ctmojslbqhrgw" path="res://Scenes/Buffs/Mike/freeze_buff.tscn" id="2_amcmf"]
+[ext_resource type="Resource" uid="uid://dau8r3tl582dg" path="res://Library/Heroes/HeroConfigs/KongShuLin/Skill5/knife_count.tres" id="3_6bstj"]
+[ext_resource type="Resource" uid="uid://c8nheu7ynkjve" path="res://Library/Heroes/HeroConfigs/KongShuLin/Skill5/damage_per_count.tres" id="3_axm4x"]
 [ext_resource type="AudioStream" uid="uid://dcrx0ef8eu86o" path="res://Assets/Sounds/FXs/Heroes/KongShuLin/时停.wav" id="3_l4j61"]
 [ext_resource type="PackedScene" uid="uid://ciin4jhnf4fi6" path="res://Scenes/Bullets/kongshulin_stop_time_bullet.tscn" id="3_yj5db"]
 [ext_resource type="Texture2D" uid="uid://dte2vb1n81w5d" path="res://icon.svg" id="4_3yh52"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="5_f15q4"]
 [ext_resource type="AudioStream" uid="uid://cbd4v1oahvpo0" path="res://Assets/Sounds/FXs/Heroes/KongShuLin/飞刀.wav" id="6_83d2q"]
+[ext_resource type="Resource" uid="uid://b743fmgxm1g5e" path="res://Library/Heroes/HeroConfigs/KongShuLin/Skill5/knife_damage_lv0.tres" id="6_omxth"]
+[ext_resource type="Resource" uid="uid://clvwebl0t7vlp" path="res://Library/Heroes/HeroConfigs/KongShuLin/Skill5/knife_damage_lv1.tres" id="7_p0gmv"]
+[ext_resource type="Resource" uid="uid://cqmwnh2m2mpfs" path="res://Library/Heroes/HeroConfigs/KongShuLin/Skill5/knife_damage_lv2.tres" id="8_lj4kr"]
+[ext_resource type="Resource" uid="uid://dbmktrb4mbwjc" path="res://Library/Heroes/HeroConfigs/KongShuLin/Skill5/knife_damage_lv3.tres" id="9_sf4sx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dxjs6"]
 radius = 158.0
@@ -97,8 +104,9 @@ collision_layer = 0
 collision_mask = 96
 script = ExtResource("1_ch0m6")
 freeze_buff_scene = ExtResource("2_amcmf")
-skill_damage = 2
-bullet_damage_list = Array[int]([15, 20, 25, 30])
+skill_damage_per_count = ExtResource("3_axm4x")
+knife_count = ExtResource("3_6bstj")
+bullet_damage_list = Array[ExtResource("5_f15q4")]([ExtResource("6_omxth"), ExtResource("7_p0gmv"), ExtResource("8_lj4kr"), ExtResource("9_sf4sx")])
 bullet_scene = ExtResource("3_yj5db")
 metadata/_edit_vertical_guides_ = [-159.0]
 

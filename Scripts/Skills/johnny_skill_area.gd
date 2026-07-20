@@ -1,6 +1,6 @@
 extends SkillConditionArea2D
 
-@export var existing_time_list: Array[float]
+@export var existing_time_list: Array[FloatSaver]
 @export var ally_upgrade_buff_scene: PackedScene
 @export var tower_upgrade_buff_scene: PackedScene
 
@@ -12,7 +12,7 @@ extends SkillConditionArea2D
 
 
 func _ready() -> void:
-	duration_timer.wait_time = existing_time_list[skill_level]
+	duration_timer.wait_time = existing_time_list[skill_level].saving_float_value
 	flag.modulate.a = 0
 	flag.position.y -= 40
 	create_tween().tween_property(flag,"position:y",flag.position.y + 40, 0.3)

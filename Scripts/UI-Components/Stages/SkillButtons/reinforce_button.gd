@@ -59,8 +59,6 @@ func skill_unlease():
 		destroyer.station_position = destroyer.position
 		#reinforce1.reinforce_partners.append(destroyer)
 		#reinforce2.reinforce_partners.append(destroyer)
-		destroyer.reinforce_partners.append(reinforce1)
-		destroyer.reinforce_partners.append(reinforce2)
 		Stage.instance.allys.add_child(destroyer)
 	pass
 
