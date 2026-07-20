@@ -28,6 +28,7 @@ enum PowerElement{
 @export_group("Skill3","skill3")
 @export var skill3_fire_dot_buff_scene: PackedScene
 @export var skill3_damage_per_count_list: Array[int]
+@export var skill3_heal_data_per_count_list: Array[int]
 @export_group("Skill4","skill4")
 @export var skill4_slow_debuff_scene: PackedScene
 @export var skill4_freeze_buff_scene: PackedScene
@@ -455,6 +456,8 @@ func skill_3_release():
 
 func _on_skill_3_dot_timer_timeout() -> void:
 	var damage: int = skill3_damage_per_count_list[skill_levels[3]-1]
+	var heal_data: int = skill3_heal_data_per_count_list[skill_levels[3]-1]
+	current_data.heal(heal_data)
 	for body in skill_3_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,true,true)
