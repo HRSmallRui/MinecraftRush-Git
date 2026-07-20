@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://4rrr2mb6m5uc"]
+[gd_scene load_steps=28 format=3 uid="uid://4rrr2mb6m5uc"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_6ilo6"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/rosa.gd" id="2_iuvn5"]
@@ -15,8 +15,12 @@
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="9_wxcl7"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/skill_particle_shooter.gd" id="10_2rkh8"]
 [ext_resource type="AudioStream" uid="uid://cvr85147a6civ" path="res://Assets/Sounds/FXs/Enemies/瞬移1.wav" id="10_g2vfi"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="10_kqipr"]
 [ext_resource type="AudioStream" uid="uid://c7r7ydgqlmmlf" path="res://Assets/Sounds/FXs/Enemies/瞬移2.wav" id="11_j3ykn"]
+[ext_resource type="Resource" uid="uid://dn87k8w38c4h1" path="res://Library/Heroes/HeroConfigs/Rosa/explosion_damage_lv1.tres" id="11_p6m6b"]
 [ext_resource type="AudioStream" uid="uid://c3ulw48v0hsxy" path="res://Assets/Sounds/FXs/Heroes/Johnny/heavy_slash.mp3" id="12_g7i7b"]
+[ext_resource type="Resource" uid="uid://b5mf0ue6i3k2s" path="res://Library/Heroes/HeroConfigs/Rosa/explosion_damage_lv2.tres" id="12_koexu"]
+[ext_resource type="Resource" uid="uid://bxxm1cy8poo6p" path="res://Library/Heroes/HeroConfigs/Rosa/explosion_damage_lv3.tres" id="13_0i3lo"]
 
 [sub_resource type="Resource" id="Resource_g3oly"]
 script = ExtResource("9_wxcl7")
@@ -68,6 +72,7 @@ dodge_rate_list = Array[float]([0.4, 0.5, 0.6])
 aoe_dodge_rate_list = Array[float]([0.2, 0.3, 0.4])
 skill2_damage_list = Array[int]([180, 240, 360])
 skill1_damage_list = Array[ExtResource("9_wxcl7")]([SubResource("Resource_g3oly"), SubResource("Resource_t0y0m"), SubResource("Resource_h1j4f")])
+skill3_damage_list = Array[ExtResource("10_kqipr")]([ExtResource("11_p6m6b"), ExtResource("12_koexu"), ExtResource("13_0i3lo")])
 heal_speeds = Array[int]([18, 20, 22, 24, 26, 28, 30, 32, 34, 36])
 teleport_limit_length = 300.0
 hero_property_block = ExtResource("3_vrg7k")

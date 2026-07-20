@@ -11,6 +11,7 @@ extends Hero
 @export var aoe_dodge_rate_list: Array[float]
 @export var skill2_damage_list: Array[int]
 @export var skill1_damage_list: Array[DamageBlock]
+@export var skill3_damage_list: Array[IntSaver]
 
 @onready var teleport_audio: AudioStreamPlayer = $TeleportAudio
 @onready var skill_1_timer: Timer = $Skill1Timer
