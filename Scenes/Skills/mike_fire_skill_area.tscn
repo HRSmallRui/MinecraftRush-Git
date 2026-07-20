@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://blw5uskyvcsc4"]
+[gd_scene load_steps=14 format=3 uid="uid://blw5uskyvcsc4"]
 
 [ext_resource type="Texture2D" uid="uid://bjqd4l7lvkdk3" path="res://Assets/Images/Skills/Firerain/fire1.png" id="1_3qjet"]
 [ext_resource type="Script" path="res://Scripts/Skills/mike_fire_skill_area.gd" id="1_i1w82"]
 [ext_resource type="Texture2D" uid="uid://dryb5uixkktvo" path="res://Assets/Images/Skills/Firerain/fire2.png" id="2_m6ecv"]
 [ext_resource type="PackedScene" uid="uid://6s1lahcbtvxc" path="res://Scenes/Buffs/Mike/mike_holy_fire.tscn" id="2_wptta"]
 [ext_resource type="Texture2D" uid="uid://bgnmllpvmj6s8" path="res://Assets/Images/Skills/Firerain/fire3.png" id="3_80oxd"]
+[ext_resource type="Resource" uid="uid://cs18v7i0hbew5" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Fire/fire_damage.tres" id="3_otq7f"]
 [ext_resource type="Texture2D" uid="uid://bp4mm2qr04sfd" path="res://Assets/Images/Skills/Firerain/shadow.png" id="4_xdnsh"]
 [ext_resource type="Texture2D" uid="uid://bd674kbilvbyt" path="res://Assets/Images/Effects/bomb.png" id="5_rtbl5"]
 [ext_resource type="AudioStream" uid="uid://cft00832wmncs" path="res://Assets/Sounds/FXs/Bullets/Sound_FireballUnleash.wav" id="7_1cns8"]
@@ -38,10 +39,10 @@ colors = PackedColorArray(1, 0, 0, 0.678431, 1, 0, 0, 0.0235294)
 
 [node name="MikeFireSkillArea" type="Area2D"]
 collision_layer = 0
-collision_mask = 96
+collision_mask = 196704
 script = ExtResource("1_i1w82")
 holy_fire_buff_scene = ExtResource("2_wptta")
-fire_damage = 300
+fire_damage = ExtResource("3_otq7f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 1.4)

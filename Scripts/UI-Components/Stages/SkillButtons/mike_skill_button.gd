@@ -14,13 +14,21 @@ enum SkillElements{
 @export_group("Fire")
 @export var fire_area_scene: PackedScene
 @export var fire_count_list: Array[int]
+@export var fire_damage: IntSaver
 @export_group("Water")
 @export var water_area_scene: PackedScene
+@export var water_damage_list: Array[IntSaver]
+@export var water_low_damage_block_list: Array[DamageBlock]
+@export var water_debuff_duration_list: Array[FloatSaver]
 @export_group("Earth")
 @export var earth_area_scene: PackedScene
 @export var earth_count_list: Array[int]
+@export var earth_damage: IntSaver
 @export_group("Wind")
 @export var wind_area_scene: PackedScene
+@export var wind_blade_count: IntSaver
+@export var wind_blade_per_count_list: Array[IntSaver]
+@export var wind_slow_buff_duration_list: Array[FloatSaver]
 
 var current_element: SkillElements
 var level: int

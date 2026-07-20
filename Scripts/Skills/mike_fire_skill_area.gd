@@ -2,7 +2,7 @@ extends Area2D
 
 @export var max_point_limit: int = 40
 @export var holy_fire_buff_scene: PackedScene
-@export var fire_damage: int
+@export var fire_damage: IntSaver
 
 @onready var fire_sprite: AnimatedSprite2D = $FireSprite
 @onready var tail_line: Line2D = $TailLine
@@ -40,7 +40,7 @@ func _ready() -> void:
 		if enemy.enemy_type < Enemy.EnemyType.MiniBoss:
 			enemy.sec_kill(true)
 		else:
-			var damage: int = fire_damage
+			var damage: int = fire_damage.saving_int_value
 			enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,false,true,)
 			var holy_fire: DotBuff = holy_fire_buff_scene.instantiate()
 			enemy.buffs.add_child(holy_fire)

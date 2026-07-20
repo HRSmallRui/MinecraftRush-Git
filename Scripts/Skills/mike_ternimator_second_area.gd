@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var damage: int
+@export var damage: IntSaver
 
 @onready var bomb: Sprite2D = $Bomb
 @onready var prepare_effect: Sprite2D = $PrepareEffect
@@ -21,7 +21,7 @@ func _ready() -> void:
 	create_tween().tween_property(bomb,"modulate:a",0,0.6)
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,false,true)
+		enemy.take_damage(damage.saving_int_value,DataProcess.DamageType.SuperDamage,0,false,null,false,true)
 	AudioManager.instance.play_explosion_audio()
 	Stage.instance.stage_camera.shake(20)
 	EffectManager.instance.play_explosion_effect(position)

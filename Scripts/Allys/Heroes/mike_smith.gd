@@ -17,6 +17,8 @@ enum PowerElement{
 @export var skill1_terminator_area_scene: PackedScene
 @export var skill1_second_terminator_area_scene: PackedScene
 @export var skill1_fire_count_list: Array[int]
+@export var skill1_first_damage: DamageBlock
+@export var skill1_second_damage: IntSaver
 @export_group("Skill2","skill2")
 @export var skill2_dust_scene: PackedScene
 @export var skill2_soul_scene: PackedScene
@@ -26,6 +28,7 @@ enum PowerElement{
 @export_group("Skill3","skill3")
 @export var skill3_fire_dot_buff_scene: PackedScene
 @export var skill3_damage_per_count_list: Array[int]
+@export var skill3_heal_data_per_count_list: Array[int]
 @export_group("Skill4","skill4")
 @export var skill4_slow_debuff_scene: PackedScene
 @export var skill4_freeze_buff_scene: PackedScene
@@ -67,6 +70,7 @@ enum PowerElement{
 @onready var clock_audio: AudioStreamPlayer = $ClockAudio
 @onready var stop_time_audio: AudioStreamPlayer = $StopTimeAudio
 @onready var skill_4_shot_timer: Timer = $Skill4ShotTimer
+@onready var skill_3_fire_effect: Sprite2D = $UnitBody/Skill3FireEffect
 
 var current_element_strength: PowerElement = PowerElement.WIND
 var is_power_type: bool = false
@@ -85,6 +89,7 @@ func _ready() -> void:
 	skill_3_particle.modulate.a = 0.8
 	skill_4_layer.hide()
 	stop_time_layer.hide()
+	skill_3_fire_effect.hide()
 	pass
 
 
@@ -160,6 +165,7 @@ func frame_changed():
 		skill_3_release()
 		await get_tree().create_timer(2,false).timeout
 		if ally_state != AllyState.DIE:
+			skill_3_fire_effect.hide()
 			ally_sprite.play()
 			create_tween().tween_property(total_control_ring,"scale",Vector2.ONE,0.5)
 			skill_4_animation_player.play_backwards("release")
@@ -432,7 +438,8 @@ func rebirth():
 
 func skill_3_release():
 	z_index = 10
-	skill_3_particle.show()
+	skill_3_fire_effect.show()
+	#skill_3_particle.show()
 	skill_3_release_audio.play()
 	skill_3_layer.show()
 	skill_4_animation_player.play("release")
@@ -453,6 +460,8 @@ func skill_3_release():
 
 func _on_skill_3_dot_timer_timeout() -> void:
 	var damage: int = skill3_damage_per_count_list[skill_levels[3]-1]
+	var heal_data: int = skill3_heal_data_per_count_list[skill_levels[3]-1]
+	current_data.heal(heal_data)
 	for body in skill_3_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,true,true)
@@ -476,12 +485,12 @@ func stop_time():
 	#skill_4_layer.position += self.to_local(Stage.instance.stage_camera.global_position)
 	stop_time_audio_play()
 	for_ready_to_wave()
-	Stage.instance.background.process_mode = Node.PROCESS_MODE_DISABLED
+	#Stage.instance.background.process_mode = Node.PROCESS_MODE_DISABLED
 	stop_timer_player.play("stop_time")
-	Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_DISABLED
-	Stage.instance.wave_during_timer.paused = true
-	Stage.instance.wave_next_timer.paused = true
-	Stage.instance.enemies.process_mode = Node.PROCESS_MODE_DISABLED
+	#Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_DISABLED
+	#Stage.instance.wave_during_timer.paused = true
+	#Stage.instance.wave_next_timer.paused = true
+	#Stage.instance.enemies.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	skill_4_duration_timer.start()
 	if is_power_type:
@@ -502,11 +511,11 @@ func stop_time_power():
 func _on_skill_4_duration_timer_timeout() -> void:
 	skill_4_shot_timer.start()
 	skill_4_shot_timer.stop()
-	Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_INHERIT
-	Stage.instance.wave_during_timer.paused = false
-	Stage.instance.wave_next_timer.paused = false
-	Stage.instance.enemies.process_mode = Node.PROCESS_MODE_INHERIT
-	Stage.instance.background.process_mode = Node.PROCESS_MODE_INHERIT
+	#Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_INHERIT
+	#Stage.instance.wave_during_timer.paused = false
+	#Stage.instance.wave_next_timer.paused = false
+	#Stage.instance.enemies.process_mode = Node.PROCESS_MODE_INHERIT
+	#Stage.instance.background.process_mode = Node.PROCESS_MODE_INHERIT
 	stop_time_layer_player.play_backwards("show")
 	var damage_rate: float = skill4_damage_rate_list[skill_levels[4]-1]
 	for body in skill_3_area.get_overlapping_bodies():
@@ -546,3 +555,9 @@ func _on_skill_4_shot_timer_timeout() -> void:
 		freeze_buff.duration = 0.1
 		enemy.buffs.add_child(freeze_buff)
 	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	super(delta)
+	skill_3_fire_effect.rotation_degrees = randf_range(0,360)
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bj34jrw72f8te"]
+[gd_scene load_steps=41 format=3 uid="uid://bj34jrw72f8te"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_ajhs1"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/mike_skill_button.gd" id="2_wpl8p"]
@@ -12,8 +12,34 @@
 [ext_resource type="Texture2D" uid="uid://cf5l1eifchu7p" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/wind_using.png" id="10_vb81y"]
 [ext_resource type="PackedScene" uid="uid://blw5uskyvcsc4" path="res://Scenes/Skills/mike_fire_skill_area.tscn" id="11_8xa1h"]
 [ext_resource type="PackedScene" uid="uid://d0kit0a3hqmel" path="res://Scenes/Skills/mike_water_area.tscn" id="12_nwu65"]
+[ext_resource type="Resource" uid="uid://cs18v7i0hbew5" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Fire/fire_damage.tres" id="12_wd3e1"]
 [ext_resource type="PackedScene" uid="uid://cpjbsjlet4ai0" path="res://Scenes/Skills/mike_earth_area.tscn" id="13_kgooh"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="14_dnim6"]
 [ext_resource type="PackedScene" uid="uid://81wyjq6isf0g" path="res://Scenes/Skills/mike_wind_area.tscn" id="14_yn2ki"]
+[ext_resource type="Resource" uid="uid://b07geonx1wlby" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv0.tres" id="15_7ks87"]
+[ext_resource type="Resource" uid="uid://xobscfn7ydhb" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv1.tres" id="16_nwc8a"]
+[ext_resource type="Resource" uid="uid://b7disskueb0j3" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv2.tres" id="17_cxsu1"]
+[ext_resource type="Resource" uid="uid://cq0pfpdxyuam2" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_damage_lv3.tres" id="18_a4ctd"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="19_6k8pg"]
+[ext_resource type="Resource" uid="uid://d4erdiis3mp4p" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv0.tres" id="20_07xxa"]
+[ext_resource type="Resource" uid="uid://itoenmfyjnky" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv1.tres" id="21_hvwv0"]
+[ext_resource type="Resource" uid="uid://dq7dweebimfwj" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv2.tres" id="22_enk6k"]
+[ext_resource type="Resource" uid="uid://cbx87af6v5ei8" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/debuff_damage_block_lv3.tres" id="23_ip3hw"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="24_8iatj"]
+[ext_resource type="Resource" uid="uid://b0rfeaykpxv01" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv0.tres" id="25_imfgy"]
+[ext_resource type="Resource" uid="uid://bbaera8pxp1j8" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv1.tres" id="26_5klk5"]
+[ext_resource type="Resource" uid="uid://h2v3h8qivfmt" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv2.tres" id="27_x3s15"]
+[ext_resource type="Resource" uid="uid://c6m1m0ctk6i12" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Water/water_debuff_duration_lv3.tres" id="28_0mwib"]
+[ext_resource type="Resource" uid="uid://cpnnmrpc28htj" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Earth/earth_damage.tres" id="30_py3j3"]
+[ext_resource type="Resource" uid="uid://dbxfsm1dq7c1n" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_blade_count.tres" id="32_gw2ls"]
+[ext_resource type="Resource" uid="uid://b7j2imrj06ule" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv0.tres" id="33_tksr1"]
+[ext_resource type="Resource" uid="uid://ci1ij7ksvbbct" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv1.tres" id="34_6ohp7"]
+[ext_resource type="Resource" uid="uid://cocppvywbyivo" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv2.tres" id="35_elstt"]
+[ext_resource type="Resource" uid="uid://beilq0my1havo" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/wind_damage_lv3.tres" id="36_fohwl"]
+[ext_resource type="Resource" uid="uid://cpyky6vdi8amf" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv0.tres" id="37_i3ok3"]
+[ext_resource type="Resource" uid="uid://2w3xna441n1a" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv1.tres" id="38_k81cq"]
+[ext_resource type="Resource" uid="uid://bprrsgh3w0i4i" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv2.tres" id="39_ln643"]
+[ext_resource type="Resource" uid="uid://dihh172ud53ld" path="res://Library/Heroes/HeroConfigs/Mike/Skill5/Wind/slow_duration_lv3.tres" id="40_ll6ko"]
 
 [node name="MikeSkillButton" instance=ExtResource("1_ajhs1")]
 script = ExtResource("2_wpl8p")
@@ -23,10 +49,18 @@ normal_texture_list = Array[Texture]([ExtResource("3_qqiu3"), ExtResource("4_dhm
 hover_texture_list = Array[Texture]([ExtResource("4_402hj"), ExtResource("8_umon2"), ExtResource("9_a7qbi"), ExtResource("10_vb81y")])
 fire_area_scene = ExtResource("11_8xa1h")
 fire_count_list = Array[int]([3, 4, 5, 6])
+fire_damage = ExtResource("12_wd3e1")
 water_area_scene = ExtResource("12_nwu65")
+water_damage_list = Array[ExtResource("14_dnim6")]([ExtResource("15_7ks87"), ExtResource("16_nwc8a"), ExtResource("17_cxsu1"), ExtResource("18_a4ctd")])
+water_low_damage_block_list = Array[ExtResource("19_6k8pg")]([ExtResource("20_07xxa"), ExtResource("21_hvwv0"), ExtResource("22_enk6k"), ExtResource("23_ip3hw")])
+water_debuff_duration_list = Array[ExtResource("24_8iatj")]([ExtResource("25_imfgy"), ExtResource("26_5klk5"), ExtResource("27_x3s15"), ExtResource("28_0mwib")])
 earth_area_scene = ExtResource("13_kgooh")
 earth_count_list = Array[int]([2, 3, 4, 5])
+earth_damage = ExtResource("30_py3j3")
 wind_area_scene = ExtResource("14_yn2ki")
+wind_blade_count = ExtResource("32_gw2ls")
+wind_blade_per_count_list = Array[ExtResource("14_dnim6")]([ExtResource("33_tksr1"), ExtResource("34_6ohp7"), ExtResource("35_elstt"), ExtResource("36_fohwl")])
+wind_slow_buff_duration_list = Array[ExtResource("24_8iatj")]([ExtResource("37_i3ok3"), ExtResource("38_k81cq"), ExtResource("39_ln643"), ExtResource("40_ll6ko")])
 skill_type = 2
 texture_normal = ExtResource("3_qqiu3")
 texture_select = ExtResource("4_402hj")
