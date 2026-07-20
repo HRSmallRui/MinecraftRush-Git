@@ -16,6 +16,7 @@ signal skill2_effect_release
 @export var dodge_possible_list: Array[float]
 @export var skill4_damage_rate_list: Array[float]
 @export var skill4_based_kill_possible_list: Array[float]
+@export var skill4_broken_armor: float
 
 @onready var passive_timer: Timer = $PassiveTimer
 @onready var skill_1_timer: Timer = $Skill1Timer
@@ -128,7 +129,7 @@ func frame_changed():
 		else:
 			var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
 			damage *= skill4_damage_rate_list[skill_levels[4]-1]
-			enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0.5,false,self,false,false)
+			enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,skill4_broken_armor,false,self,false,false)
 			show_text = "重击！"
 		skill_4_slash_audio.play()
 		TextEffect.text_effect_show(show_text,TextEffect.TextEffectType.SecKill,enemy.hurt_box.global_position + Vector2(0,-30))
