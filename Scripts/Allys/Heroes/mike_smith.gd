@@ -481,12 +481,12 @@ func stop_time():
 	#skill_4_layer.position += self.to_local(Stage.instance.stage_camera.global_position)
 	stop_time_audio_play()
 	for_ready_to_wave()
-	Stage.instance.background.process_mode = Node.PROCESS_MODE_DISABLED
+	#Stage.instance.background.process_mode = Node.PROCESS_MODE_DISABLED
 	stop_timer_player.play("stop_time")
-	Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_DISABLED
-	Stage.instance.wave_during_timer.paused = true
-	Stage.instance.wave_next_timer.paused = true
-	Stage.instance.enemies.process_mode = Node.PROCESS_MODE_DISABLED
+	#Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_DISABLED
+	#Stage.instance.wave_during_timer.paused = true
+	#Stage.instance.wave_next_timer.paused = true
+	#Stage.instance.enemies.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	skill_4_duration_timer.start()
 	if is_power_type:
@@ -507,11 +507,11 @@ func stop_time_power():
 func _on_skill_4_duration_timer_timeout() -> void:
 	skill_4_shot_timer.start()
 	skill_4_shot_timer.stop()
-	Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_INHERIT
-	Stage.instance.wave_during_timer.paused = false
-	Stage.instance.wave_next_timer.paused = false
-	Stage.instance.enemies.process_mode = Node.PROCESS_MODE_INHERIT
-	Stage.instance.background.process_mode = Node.PROCESS_MODE_INHERIT
+	#Stage.instance.wave_buttons.process_mode = Node.PROCESS_MODE_INHERIT
+	#Stage.instance.wave_during_timer.paused = false
+	#Stage.instance.wave_next_timer.paused = false
+	#Stage.instance.enemies.process_mode = Node.PROCESS_MODE_INHERIT
+	#Stage.instance.background.process_mode = Node.PROCESS_MODE_INHERIT
 	stop_time_layer_player.play_backwards("show")
 	var damage_rate: float = skill4_damage_rate_list[skill_levels[4]-1]
 	for body in skill_3_area.get_overlapping_bodies():
