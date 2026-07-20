@@ -17,6 +17,7 @@ signal skill2_effect_release
 @export var skill4_damage_rate_list: Array[float]
 @export var skill4_based_kill_possible_list: Array[float]
 @export var skill4_broken_armor: float
+@export var skill4_layer_adding_possible: float ##每层命债提高的秒杀概率
 
 @onready var passive_timer: Timer = $PassiveTimer
 @onready var skill_1_timer: Timer = $Skill1Timer
@@ -119,7 +120,7 @@ func frame_changed():
 		var enemy: Enemy = current_intercepting_enemy
 		if enemy == null: return
 		var kill_possible: float = skill4_based_kill_possible_list[skill_levels[4]-1]
-		kill_possible += 0.05 * (lives_layer - 1)
+		kill_possible += skill4_layer_adding_possible * (lives_layer - 1)
 		#prints("kill_possible:",kill_possible)
 		var show_text: String
 		if randf() < kill_possible and enemy.enemy_type < Enemy.EnemyType.Super and lives_layer >= 1:
