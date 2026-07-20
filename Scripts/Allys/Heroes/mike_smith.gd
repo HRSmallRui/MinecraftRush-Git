@@ -70,6 +70,7 @@ enum PowerElement{
 @onready var clock_audio: AudioStreamPlayer = $ClockAudio
 @onready var stop_time_audio: AudioStreamPlayer = $StopTimeAudio
 @onready var skill_4_shot_timer: Timer = $Skill4ShotTimer
+@onready var skill_3_fire_effect: Sprite2D = $UnitBody/Skill3FireEffect
 
 var current_element_strength: PowerElement = PowerElement.WIND
 var is_power_type: bool = false
@@ -88,6 +89,7 @@ func _ready() -> void:
 	skill_3_particle.modulate.a = 0.8
 	skill_4_layer.hide()
 	stop_time_layer.hide()
+	skill_3_fire_effect.hide()
 	pass
 
 
@@ -163,6 +165,7 @@ func frame_changed():
 		skill_3_release()
 		await get_tree().create_timer(2,false).timeout
 		if ally_state != AllyState.DIE:
+			skill_3_fire_effect.hide()
 			ally_sprite.play()
 			create_tween().tween_property(total_control_ring,"scale",Vector2.ONE,0.5)
 			skill_4_animation_player.play_backwards("release")
@@ -435,7 +438,8 @@ func rebirth():
 
 func skill_3_release():
 	z_index = 10
-	skill_3_particle.show()
+	skill_3_fire_effect.show()
+	#skill_3_particle.show()
 	skill_3_release_audio.play()
 	skill_3_layer.show()
 	skill_4_animation_player.play("release")
@@ -551,3 +555,9 @@ func _on_skill_4_shot_timer_timeout() -> void:
 		freeze_buff.duration = 0.1
 		enemy.buffs.add_child(freeze_buff)
 	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	super(delta)
+	skill_3_fire_effect.rotation_degrees = randf_range(0,360)
+	pass

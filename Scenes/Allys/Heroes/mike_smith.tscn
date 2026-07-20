@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bsrfqwky7na58"]
+[gd_scene load_steps=79 format=3 uid="uid://bsrfqwky7na58"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_474hd"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/mike_smith.gd" id="2_0u3xe"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cts72rlpe1bpm" path="res://Assets/Animations/Heroes/Mike/MagicBook/0009.png" id="15_dt3p4"]
 [ext_resource type="Texture2D" uid="uid://41r5a84oiked" path="res://Assets/Animations/Heroes/Mike/MagicBook/0010.png" id="16_ojb1l"]
 [ext_resource type="Texture2D" uid="uid://bknmlvf8pvwtm" path="res://Assets/Animations/Heroes/Mike/MagicBook/0011.png" id="17_0028u"]
+[ext_resource type="Texture2D" uid="uid://cwgxpvfwx7lxa" path="res://Assets/Images/Effects/MikeFire.png" id="18_daqp1"]
 [ext_resource type="Texture2D" uid="uid://cypmey20xjsng" path="res://Assets/Animations/Heroes/Mike/MagicBook/0012.png" id="18_vcqps"]
 [ext_resource type="Texture2D" uid="uid://bwdod4y83xjb5" path="res://Assets/Animations/Heroes/Mike/MagicBook/0013.png" id="19_qpdcf"]
 [ext_resource type="Texture2D" uid="uid://ck4jo0c533iwi" path="res://Assets/Images/Effects/YellowEnergyExplosion.png" id="24_auf22"]
@@ -498,7 +499,15 @@ ally_name = "迈克・史密斯"
 ally_texture = ExtResource("4_x8kuo")
 rebirth_time = 32
 
-[node name="Skill3Particle" type="GPUParticles2D" parent="UnitBody" index="0"]
+[node name="Skill3FireEffect" type="Sprite2D" parent="UnitBody" index="0"]
+visible = false
+modulate = Color(1, 1, 1, 0.913725)
+material = SubResource("ShaderMaterial_m0ovs")
+position = Vector2(0, -175)
+scale = Vector2(56, 56)
+texture = ExtResource("18_daqp1")
+
+[node name="Skill3Particle" type="GPUParticles2D" parent="UnitBody" index="1"]
 process_mode = 3
 visible = false
 material = SubResource("ShaderMaterial_m0ovs")
@@ -511,7 +520,7 @@ lifetime = 0.02
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 script = ExtResource("6_ewnhw")
 
-[node name="StopTimeLayer" type="ColorRect" parent="UnitBody" index="1"]
+[node name="StopTimeLayer" type="ColorRect" parent="UnitBody" index="2"]
 z_index = 2
 material = SubResource("ShaderMaterial_n558w")
 offset_left = -156375.0
@@ -526,7 +535,7 @@ libraries = {
 "": SubResource("AnimationLibrary_mve4o")
 }
 
-[node name="GodRing" type="Node2D" parent="UnitBody" index="2"]
+[node name="GodRing" type="Node2D" parent="UnitBody" index="3"]
 position = Vector2(0, -175)
 
 [node name="TotalControlRing" type="Node2D" parent="UnitBody/GodRing" index="0"]
@@ -549,7 +558,7 @@ libraries = {
 }
 autoplay = "rotate"
 
-[node name="AllySprite" parent="UnitBody" index="3"]
+[node name="AllySprite" parent="UnitBody" index="4"]
 material = SubResource("ShaderMaterial_njof6")
 position = Vector2(-5, -110)
 sprite_frames = ExtResource("6_718qx")
@@ -559,7 +568,7 @@ frame = 17
 frame_progress = 0.364842
 flip_h = true
 
-[node name="PowerLight" type="Sprite2D" parent="UnitBody" index="4"]
+[node name="PowerLight" type="Sprite2D" parent="UnitBody" index="5"]
 z_index = -1
 material = SubResource("ShaderMaterial_rwdcv")
 position = Vector2(0, -10)
@@ -567,7 +576,7 @@ scale = Vector2(1.63554, 1.63554)
 texture = ExtResource("7_gcf1j")
 region_rect = Rect2(20, 24, 110, 63)
 
-[node name="MagicBook" type="Node2D" parent="UnitBody" index="5" node_paths=PackedStringArray("mike", "far_attack_area")]
+[node name="MagicBook" type="Node2D" parent="UnitBody" index="6" node_paths=PackedStringArray("mike", "far_attack_area")]
 position = Vector2(-95, -160)
 script = ExtResource("7_opsq8")
 mike = NodePath("../..")
@@ -589,20 +598,20 @@ autoplay = "fly"
 [node name="AttackTimer" type="Timer" parent="UnitBody/MagicBook" index="2"]
 one_shot = true
 
-[node name="AllyButton" parent="UnitBody" index="9"]
+[node name="AllyButton" parent="UnitBody" index="10"]
 offset_left = -48.0
 offset_top = -195.0
 offset_right = 50.0
 
-[node name="HealthBar" parent="UnitBody" index="10"]
+[node name="HealthBar" parent="UnitBody" index="11"]
 material = SubResource("ShaderMaterial_m0ovs")
 offset_top = -235.0
 offset_bottom = -226.0
 
-[node name="FarAttackArea" parent="UnitBody" index="12"]
+[node name="FarAttackArea" parent="UnitBody" index="13"]
 collision_mask = 32
 
-[node name="MagicBookArea" type="Area2D" parent="UnitBody" index="13"]
+[node name="MagicBookArea" type="Area2D" parent="UnitBody" index="14"]
 scale = Vector2(4, 4)
 collision_layer = 0
 collision_mask = 196704
@@ -612,7 +621,7 @@ scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_307yl")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="Skill2Area" type="Area2D" parent="UnitBody" index="14"]
+[node name="Skill2Area" type="Area2D" parent="UnitBody" index="15"]
 scale = Vector2(12, 12)
 collision_layer = 0
 collision_mask = 196704
@@ -622,7 +631,7 @@ scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_xhryc")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="Skill1TraceArea" type="Area2D" parent="UnitBody" index="15"]
+[node name="Skill1TraceArea" type="Area2D" parent="UnitBody" index="16"]
 scale = Vector2(60, 60)
 collision_layer = 0
 collision_mask = 196704
@@ -632,7 +641,7 @@ scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_xhryc")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="Skill3Area" type="Area2D" parent="UnitBody" index="16"]
+[node name="Skill3Area" type="Area2D" parent="UnitBody" index="17"]
 scale = Vector2(80, 80)
 collision_layer = 0
 collision_mask = 196704
@@ -642,10 +651,10 @@ scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_xhryc")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="SouldMarker" type="Marker2D" parent="UnitBody" index="20"]
+[node name="SouldMarker" type="Marker2D" parent="UnitBody" index="21"]
 position = Vector2(0, -225)
 
-[node name="EnergyExplosion" type="Sprite2D" parent="UnitBody" index="21"]
+[node name="EnergyExplosion" type="Sprite2D" parent="UnitBody" index="22"]
 visible = false
 position = Vector2(-1.90735e-06, -9.53674e-07)
 scale = Vector2(43.364, 43.364)
@@ -654,7 +663,7 @@ offset = Vector2(2.98023e-08, -30.5032)
 region_enabled = true
 region_rect = Rect2(112, 112, 207, 164)
 
-[node name="Skill4Layer" type="Sprite2D" parent="UnitBody" index="22"]
+[node name="Skill4Layer" type="Sprite2D" parent="UnitBody" index="23"]
 z_index = 6
 material = SubResource("ShaderMaterial_43prx")
 position = Vector2(0, -130)
