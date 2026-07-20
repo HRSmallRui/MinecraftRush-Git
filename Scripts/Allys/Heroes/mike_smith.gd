@@ -17,6 +17,8 @@ enum PowerElement{
 @export var skill1_terminator_area_scene: PackedScene
 @export var skill1_second_terminator_area_scene: PackedScene
 @export var skill1_fire_count_list: Array[int]
+@export var skill1_first_damage: DamageBlock
+@export var skill1_second_damage: IntSaver
 @export_group("Skill2","skill2")
 @export var skill2_dust_scene: PackedScene
 @export var skill2_soul_scene: PackedScene

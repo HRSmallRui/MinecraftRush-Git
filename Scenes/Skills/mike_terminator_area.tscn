@@ -1,17 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cn46nfs7rgj5j"]
+[gd_scene load_steps=12 format=3 uid="uid://cn46nfs7rgj5j"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/mike_terminator_area.gd" id="1_vehkr"]
-[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="2_bch74"]
+[ext_resource type="Resource" uid="uid://28otmixgf63a" path="res://Library/Heroes/HeroConfigs/Mike/Skill1/first_damage.tres" id="2_8x7jd"]
 [ext_resource type="Texture2D" uid="uid://bjqd4l7lvkdk3" path="res://Assets/Images/Skills/Firerain/fire1.png" id="2_nubwx"]
 [ext_resource type="Texture2D" uid="uid://dryb5uixkktvo" path="res://Assets/Images/Skills/Firerain/fire2.png" id="3_dxscw"]
 [ext_resource type="Texture2D" uid="uid://bgnmllpvmj6s8" path="res://Assets/Images/Skills/Firerain/fire3.png" id="4_m0si3"]
 [ext_resource type="Texture2D" uid="uid://bp4mm2qr04sfd" path="res://Assets/Images/Skills/Firerain/shadow.png" id="5_0bpnp"]
 [ext_resource type="Texture2D" uid="uid://bd674kbilvbyt" path="res://Assets/Images/Effects/bomb.png" id="6_ifsfj"]
-
-[sub_resource type="Resource" id="Resource_l6b1m"]
-script = ExtResource("2_bch74")
-damage_low = 100
-damage_high = 200
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rqkyc"]
 radius = 73.9444
@@ -45,7 +40,7 @@ collision_layer = 0
 collision_mask = 96
 script = ExtResource("1_vehkr")
 max_point_limit = 40
-damage_block = SubResource("Resource_l6b1m")
+damage_block = ExtResource("2_8x7jd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.8, 1.96)
