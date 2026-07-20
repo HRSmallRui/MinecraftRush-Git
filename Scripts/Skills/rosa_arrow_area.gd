@@ -1,6 +1,8 @@
-extends Area2D
+extends SkillConditionArea2D
 
-@export var arrow_damage: int
+@export var arrow_damage_list: Array[IntSaver]
+
+var arrow_damage: int
 
 @onready var arrow_node: Node2D = $ArrowNode
 @onready var arrow_sprite: Sprite2D = $ArrowNode/ArrowMagic
@@ -10,6 +12,7 @@ var arrow_height: float = 1200
 
 
 func _ready() -> void:
+	arrow_damage = arrow_damage_list[skill_level].saving_int_value
 	arrow_node.rotation_degrees = randf_range(-30,30)
 	arrow_sprite.position.y = -arrow_height + randf_range(-1,1) * 20
 	var shoot_tween: Tween = create_tween()

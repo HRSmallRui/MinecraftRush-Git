@@ -1,6 +1,6 @@
 extends ShooterBullet
 
-@export var explosion_damage_list: Array[int]
+@export var explosion_damage_list: Array[IntSaver]
 
 @onready var explosion_area: Area2D = $ExplosionArea
 
@@ -31,7 +31,7 @@ func explode():
 	AudioManager.instance.play_explosion_audio()
 	EffectManager.instance.play_explosion_effect(position)
 	
-	var damage: int = explosion_damage_list[special_skill_level-1]
+	var damage: int = explosion_damage_list[special_skill_level-1].saving_int_value
 	for hurt_box in explosion_area.get_overlapping_areas():
 		var enemy: Enemy = hurt_box.owner
 		enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,true,null,true,true,)
