@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blw5uskyvcsc4"]
+[gd_scene load_steps=15 format=3 uid="uid://blw5uskyvcsc4"]
 
 [ext_resource type="Texture2D" uid="uid://bjqd4l7lvkdk3" path="res://Assets/Images/Skills/Firerain/fire1.png" id="1_3qjet"]
 [ext_resource type="Script" path="res://Scripts/Skills/mike_fire_skill_area.gd" id="1_i1w82"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bp4mm2qr04sfd" path="res://Assets/Images/Skills/Firerain/shadow.png" id="4_xdnsh"]
 [ext_resource type="Texture2D" uid="uid://bd674kbilvbyt" path="res://Assets/Images/Effects/bomb.png" id="5_rtbl5"]
 [ext_resource type="AudioStream" uid="uid://cft00832wmncs" path="res://Assets/Sounds/FXs/Bullets/Sound_FireballUnleash.wav" id="7_1cns8"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="7_82uko"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_26o7e"]
 radius = 73.9444
@@ -50,13 +51,18 @@ shape = SubResource("CircleShape2D_26o7e")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="FireSprite" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 rotation = -2.42444
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_geegh")
 autoplay = "default"
 
+[node name="DarkTimeLight" parent="FireSprite" instance=ExtResource("7_82uko")]
+scale = Vector2(2.01247, 2.01247)
+
 [node name="TailLine" type="Line2D" parent="."]
 top_level = true
+light_mask = 2
 points = PackedVector2Array(-117, -118, 2, 2)
 width = 40.0
 width_curve = SubResource("Curve_ccpr2")
@@ -74,9 +80,14 @@ wait_time = 0.01
 autostart = true
 
 [node name="Bomb" type="Sprite2D" parent="."]
+light_mask = 2
 position = Vector2(0, -1.90735e-06)
 texture = ExtResource("5_rtbl5")
 offset = Vector2(0, -120)
+
+[node name="DarkTimeLight" parent="Bomb" instance=ExtResource("7_82uko")]
+position = Vector2(0, -101)
+scale = Vector2(8.79334, 8.79334)
 
 [node name="SoundFireballUnleash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_1cns8")
