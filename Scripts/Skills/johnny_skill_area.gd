@@ -9,9 +9,11 @@ extends SkillConditionArea2D
 @onready var buff_effect: Sprite2D = $BuffEffect
 @onready var duration_timer: Timer = $DurationTimer
 @onready var shot_timer: Timer = $ShotTimer
+@onready var dark_time_light: PointLight2D = $BuffEffect/DarkTimeLight
 
 
 func _ready() -> void:
+	dark_time_light.energy = 0
 	duration_timer.wait_time = existing_time_list[skill_level].saving_float_value
 	flag.modulate.a = 0
 	flag.position.y -= 40
@@ -19,6 +21,7 @@ func _ready() -> void:
 	create_tween().tween_property(flag,"modulate:a",1,0.3)
 	create_tween().tween_property(shadow,"modulate:a",1,0.3)
 	create_tween().tween_property(buff_effect,"modulate:a",0.6,0.5)
+	create_tween().tween_property(dark_time_light,"energy",1,0.3)
 	await get_tree().create_timer(0.5,false).timeout
 	duration_timer.start()
 	shot_timer.start()
