@@ -9,7 +9,7 @@ signal chip_changed(chip_count: int)
 @export var heart_golem_scene:PackedScene ##红心傀儡
 @export var club_golem_scene: PackedScene ##梅花傀儡
 @export var diamond_golem_scene: PackedScene ##方块傀儡
-@export var golem_exist_time: float
+@export var golem_exist_time: FloatSaver
 @export_group("Skill2","skill2")
 @export var skill2_during_time_list: Array[float]
 @export var skill2_back_chip_rate: float
