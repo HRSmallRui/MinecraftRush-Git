@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpf08pwsac8gq"]
+[gd_scene load_steps=21 format=3 uid="uid://bpf08pwsac8gq"]
 
 [ext_resource type="PackedScene" uid="uid://bdp6vlymmmpu3" path="res://Scenes/Allys/SummonAllys/summon_ally_class.tscn" id="1_xompk"]
 [ext_resource type="Script" path="res://Scripts/Allys/SummonAllys/gd_golem.gd" id="2_uwq1c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blf6tdqaj673m" path="res://Scenes/Effects/bullet_explosion_effect.tscn" id="4_vyvnk"]
 [ext_resource type="PackedScene" uid="uid://bf25ajrac2ijx" path="res://Scenes/Effects/smoke_effect.tscn" id="5_3i0ld"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="6_yqk0h"]
+[ext_resource type="Resource" uid="uid://cwpowg0xprdcx" path="res://Library/Heroes/HeroConfigs/GoldenDiamond/Skill1/golem_existing_time.tres" id="7_1tx5i"]
 [ext_resource type="Texture2D" uid="uid://d4j5anx21u0gf" path="res://Assets/Images/UI/InformationBar/Allys/GDGolem4.png" id="7_5hatv"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="7_osen3"]
 [ext_resource type="SpriteFrames" uid="uid://g3n3wwagwm78" path="res://Assets/Animations/SummonAllys/GDGolem/gd_golem_frames.tres" id="8_3vtpi"]
@@ -125,6 +126,7 @@ dizness_buff_scene = ExtResource("3_fowbc")
 explosion_effect_scene = ExtResource("4_vyvnk")
 smoke_effect_scene = ExtResource("5_3i0ld")
 die_explosion_damage = SubResource("Resource_tnlst")
+existing_time = ExtResource("7_1tx5i")
 unit_list = Array[ExtResource("7_osen3")]([SubResource("Resource_ymmpk")])
 heal_speed_list = Array[int]([6])
 ally_name = "方块傀儡"
@@ -142,7 +144,7 @@ autoplay = "idle"
 [node name="ExplosionAttackArea" type="Area2D" parent="UnitBody" index="8"]
 scale = Vector2(2, 2)
 collision_layer = 0
-collision_mask = 32
+collision_mask = 65568
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/ExplosionAttackArea" index="0"]
 scale = Vector2(5, 3.5)
