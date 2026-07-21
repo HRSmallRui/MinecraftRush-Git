@@ -169,7 +169,7 @@ func move(target_pos:Vector2):
 func idle_process():
 	super()
 	if ally_state != AllyState.IDLE: return
-	if skill_levels[1] > 0 and skill_1_timer.is_stopped() and far_attack_timer.is_stopped():
+	if skill_levels[1] > 0 and skill_1_timer.is_stopped():
 		var enemy:Enemy = skill1_can_be_released()
 		if enemy != null:
 			skill1_locked_enemy = enemy
