@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://xj5kikjy1d8l"]
+[gd_scene load_steps=87 format=3 uid="uid://xj5kikjy1d8l"]
 
 [ext_resource type="PackedScene" uid="uid://bdp6vlymmmpu3" path="res://Scenes/Allys/SummonAllys/summon_ally_class.tscn" id="1_2l7ri"]
 [ext_resource type="Script" path="res://Scripts/Allys/SummonAllys/undead_knight.gd" id="2_3ft8p"]
@@ -78,6 +78,7 @@
 [ext_resource type="Texture2D" uid="uid://bh2e3tmacjnf1" path="res://Assets/Animations/SummonAllys/UndeadKnight/move_39.png" id="74_qr8jk"]
 [ext_resource type="Texture2D" uid="uid://ccglhhifm554s" path="res://Assets/Images/Effects/鼓舞光环.png" id="76_0eg3j"]
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="76_y175v"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="79_bulud"]
 
 [sub_resource type="Resource" id="Resource_ekc3c"]
 script = ExtResource("2_3goqf")
@@ -448,6 +449,7 @@ shape = SubResource("CircleShape2D_307yl")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="鼓舞光环" type="Sprite2D" parent="UnitBody" index="13"]
+light_mask = 2
 z_index = -1
 material = SubResource("ShaderMaterial_24qga")
 position = Vector2(0, -5)
@@ -455,6 +457,10 @@ scale = Vector2(1.58794, 1.58794)
 texture = ExtResource("76_0eg3j")
 region_enabled = true
 region_rect = Rect2(20, 24, 110, 63)
+
+[node name="DarkTimeLight" parent="UnitBody/鼓舞光环" index="0" instance=ExtResource("79_bulud")]
+scale = Vector2(2.42473, 1.21864)
+color = Color(0.25098, 1, 0.27451, 1)
 
 [node name="ExistingTimer" type="Timer" parent="." index="6"]
 one_shot = true

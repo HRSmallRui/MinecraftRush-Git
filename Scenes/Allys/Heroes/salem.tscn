@@ -1,4 +1,4 @@
-[gd_scene load_steps=218 format=3 uid="uid://ce5fjyatcc1kx"]
+[gd_scene load_steps=219 format=3 uid="uid://ce5fjyatcc1kx"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_fbaup"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/salem.gd" id="2_fue08"]
@@ -212,6 +212,7 @@
 [ext_resource type="Texture2D" uid="uid://bbt0wqkma2bgq" path="res://Assets/Images/Bullets/magic_bullet3.png" id="190_3nffl"]
 [ext_resource type="Texture2D" uid="uid://dvv7jvsirbhyt" path="res://Assets/Images/Bullets/salem_big_ball.png" id="192_cktwb"]
 [ext_resource type="AudioStream" uid="uid://cq0hmmp6grfpw" path="res://Assets/Sounds/FXs/Battles/魔法拳.wav" id="192_oja6r"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="210_7xxd8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fe3yy"]
 animations = [{
@@ -997,9 +998,14 @@ frame = 15
 frame_progress = 0.753788
 
 [node name="SalemBigBall" type="Sprite2D" parent="UnitBody" index="5"]
+light_mask = 2
 position = Vector2(-65, -245)
 texture = ExtResource("192_cktwb")
 region_rect = Rect2(50, 50, 156, 156)
+
+[node name="DarkTimeLight" parent="UnitBody/SalemBigBall" index="0" instance=ExtResource("210_7xxd8")]
+scale = Vector2(2.534, 2.534)
+color = Color(0.25098, 1, 0.27451, 1)
 
 [node name="HealthBar" parent="UnitBody" index="6"]
 offset_top = -250.0

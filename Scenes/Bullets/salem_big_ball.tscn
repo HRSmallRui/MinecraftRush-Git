@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://rl67hbmjxyh4"]
+[gd_scene load_steps=9 format=3 uid="uid://rl67hbmjxyh4"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_jr1rv"]
 [ext_resource type="Script" path="res://Scripts/Bullets/salem_big_ball.gd" id="2_yhn6c"]
 [ext_resource type="Texture2D" uid="uid://dvv7jvsirbhyt" path="res://Assets/Images/Bullets/salem_big_ball.png" id="3_4bkwa"]
 [ext_resource type="PackedScene" uid="uid://behoes0110obl" path="res://Scenes/Skills/salem_explosion_area.tscn" id="3_stohm"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="5_vmpxd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -23,8 +24,13 @@ move_type = 1
 bullet_speed = 800.0
 
 [node name="BulletSprite" parent="." index="0"]
+light_mask = 2
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_4bkwa")
+
+[node name="DarkTimeLight" parent="BulletSprite" index="0" instance=ExtResource("5_vmpxd")]
+scale = Vector2(4.99044, 4.99044)
+color = Color(0.25098, 1, 0.27451, 1)
 
 [node name="HitBox" parent="." index="1"]
 scale = Vector2(2.21034, 2.21034)
