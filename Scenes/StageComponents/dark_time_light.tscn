@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bncdwxly6r5v1"]
+
+[ext_resource type="Script" path="res://Scripts/StageComponents/dark_time_light.gd" id="1_63oir"]
+
+[sub_resource type="Gradient" id="Gradient_p2m5m"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ck8y3"]
+gradient = SubResource("Gradient_p2m5m")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.965812, 0.320513)
+
+[node name="DarkTimeLight" type="PointLight2D"]
+range_z_min = -2
+range_z_max = 5
+texture = SubResource("GradientTexture2D_ck8y3")
+script = ExtResource("1_63oir")

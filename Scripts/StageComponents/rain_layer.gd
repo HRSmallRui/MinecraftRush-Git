@@ -49,6 +49,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	translate_to_rain_step(start_rain_step)
+	black_light.energy =step_energy_list[current_rain_step]
 	Stage.instance.wave_summon.connect(wave_step)
 	lightning_timer.start()
 	rain_step_label.modulate.a = 0

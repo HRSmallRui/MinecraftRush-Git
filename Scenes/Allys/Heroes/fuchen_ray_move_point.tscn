@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpapq2rgal0bo"]
+[gd_scene load_steps=6 format=3 uid="uid://cpapq2rgal0bo"]
 
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/fuchen_ray_move_point.gd" id="1_ci2rm"]
 [ext_resource type="Texture2D" uid="uid://dte2vb1n81w5d" path="res://icon.svg" id="2_4svb6"]
 [ext_resource type="PackedScene" uid="uid://djs30vrk3cqvd" path="res://Scenes/Effects/fuchen_land_dust.tscn" id="2_p8icv"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="3_mbuxp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iffhw"]
 radius = 52.0096
@@ -21,6 +22,9 @@ collision_mask = 65568
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_iffhw")
+
+[node name="DarkTimeLight" parent="HitBox" instance=ExtResource("3_mbuxp")]
+scale = Vector2(1.96644, 1.08485)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

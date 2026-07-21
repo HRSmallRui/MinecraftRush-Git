@@ -1,18 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://55lbnmhtaj1w"]
+[gd_scene load_steps=8 format=3 uid="uid://55lbnmhtaj1w"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_83vyl"]
 [ext_resource type="Texture2D" uid="uid://xm8yhq55odwi" path="res://Assets/Images/Bullets/magic_bullet2.png" id="2_2a0on"]
 [ext_resource type="Script" path="res://Scripts/Bullets/fuchen_skill_3_bullet.gd" id="2_q3n0p"]
-[ext_resource type="Script" path="res://Scripts/DefenceTowers/light_component.gd" id="4_awmgu"]
-
-[sub_resource type="Gradient" id="Gradient_g5opw"]
-colors = PackedColorArray(0.966788, 0.000767204, 0.966782, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_502tn"]
-gradient = SubResource("Gradient_g5opw")
-fill = 1
-fill_from = Vector2(0.491453, 0.529915)
-fill_to = Vector2(0.82906, 0.24359)
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="4_ir2pr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b3m0"]
 radius = 82.0244
@@ -35,14 +26,11 @@ bullet_speed = 800.0
 damage_source = ""
 
 [node name="BulletSprite" parent="." index="0"]
+light_mask = 2
 texture = ExtResource("2_2a0on")
 
-[node name="LightComponent" type="PointLight2D" parent="BulletSprite" index="0"]
-scale = Vector2(0.801215, 0.801215)
-energy = 1.5
-texture = SubResource("GradientTexture2D_502tn")
-texture_scale = 2.8
-script = ExtResource("4_awmgu")
+[node name="DarkTimeLight" parent="BulletSprite" index="0" instance=ExtResource("4_ir2pr")]
+scale = Vector2(1.73566, 1.73566)
 
 [node name="HitBox" parent="." index="1"]
 collision_mask = 196704
