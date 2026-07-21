@@ -3,6 +3,10 @@ class_name GoldenDiamond
 
 signal chip_changed(chip_count: int)
 
+@export_group("PassiveSkill","passive_skill")
+@export var passive_skill_chip_start: int
+@export var passive_skill_chip_rebirth_min: int
+@export var passive_skill_chip_rebirth_max: int
 @export_group("Skill1")
 @export var golem_summon_count_list: Array[int]
 @export var spade_golem_scene: PackedScene ##黑桃傀儡
@@ -158,6 +162,7 @@ func frame_changed():
 func delay_passive_timer_start():
 	await Stage.instance.wave_summon
 	passive_timer.start()
+	chip += passive_skill_chip_start
 	pass
 
 
@@ -169,7 +174,7 @@ func die(explosion: bool):
 
 func rebirth():
 	super()
-	chip = randi_range(1,4)
+	chip = randi_range(passive_skill_chip_rebirth_min,passive_skill_chip_rebirth_max)
 	pass
 
 
