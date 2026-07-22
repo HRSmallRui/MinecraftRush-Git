@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://bsrfqwky7na58"]
+[gd_scene load_steps=80 format=3 uid="uid://bsrfqwky7na58"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_474hd"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/mike_smith.gd" id="2_0u3xe"]
@@ -49,6 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://cdn55y835kw2c" path="res://Assets/Sounds/FXs/Heroes/Mike/flame.wav" id="33_2sxih"]
 [ext_resource type="AudioStream" uid="uid://ckey5gj3vauup" path="res://Assets/Sounds/FXs/Heroes/Mike/clock.mp3" id="35_flvfc"]
 [ext_resource type="AudioStream" uid="uid://l05ate4l1pem" path="res://Assets/Sounds/FXs/Heroes/Mike/时停.wav" id="36_dtol2"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="42_ylmmf"]
 [ext_resource type="AudioStream" uid="uid://cvr85147a6civ" path="res://Assets/Sounds/FXs/Enemies/瞬移1.wav" id="356_5lu1q"]
 [ext_resource type="AudioStream" uid="uid://c7r7ydgqlmmlf" path="res://Assets/Sounds/FXs/Enemies/瞬移2.wav" id="357_k61l5"]
 
@@ -481,7 +482,7 @@ skill2_heal_rate_list = Array[float]([0.2, 0.4, 0.6])
 skill2_second_damage_list = Array[int]([400, 800, 1200])
 skill3_fire_dot_buff_scene = ExtResource("11_vp4df")
 skill3_damage_per_count_list = Array[int]([120, 160, 200])
-skill3_heal_data_per_count_list = Array[int]([20, 40, 60])
+skill3_heal_data_per_count_list = Array[int]([10, 20, 30])
 skill4_slow_debuff_scene = ExtResource("12_qekg4")
 skill4_freeze_buff_scene = ExtResource("13_vf36f")
 skill4_cd_list = Array[float]([14.0, 18.0, 22.0])
@@ -502,6 +503,7 @@ rebirth_time = 32
 [node name="Skill3FireEffect" type="Sprite2D" parent="UnitBody" index="0"]
 visible = false
 modulate = Color(1, 1, 1, 0.913725)
+light_mask = 2
 material = SubResource("ShaderMaterial_m0ovs")
 position = Vector2(0, -175)
 scale = Vector2(56, 56)
@@ -543,11 +545,13 @@ material = SubResource("ShaderMaterial_m0ovs")
 position = Vector2(5, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="UnitBody/GodRing/TotalControlRing" index="0"]
+light_mask = 2
 use_parent_material = true
 scale = Vector2(3.31, 3.31)
 texture = ExtResource("9_prl1t")
 
 [node name="Sprite2D2" type="Sprite2D" parent="UnitBody/GodRing/TotalControlRing" index="1"]
+light_mask = 2
 use_parent_material = true
 scale = Vector2(8.015, 8.015)
 texture = ExtResource("9_prl1t")
@@ -557,6 +561,9 @@ libraries = {
 "": SubResource("AnimationLibrary_xkvyj")
 }
 autoplay = "rotate"
+
+[node name="DarkTimeLight" parent="UnitBody/GodRing" index="2" instance=ExtResource("42_ylmmf")]
+scale = Vector2(6.01159, 6.01159)
 
 [node name="AllySprite" parent="UnitBody" index="4"]
 material = SubResource("ShaderMaterial_njof6")
@@ -569,6 +576,7 @@ frame_progress = 0.364842
 flip_h = true
 
 [node name="PowerLight" type="Sprite2D" parent="UnitBody" index="5"]
+light_mask = 2
 z_index = -1
 material = SubResource("ShaderMaterial_rwdcv")
 position = Vector2(0, -10)
@@ -656,12 +664,18 @@ position = Vector2(0, -225)
 
 [node name="EnergyExplosion" type="Sprite2D" parent="UnitBody" index="22"]
 visible = false
+light_mask = 2
 position = Vector2(-1.90735e-06, -9.53674e-07)
 scale = Vector2(43.364, 43.364)
 texture = ExtResource("24_auf22")
 offset = Vector2(2.98023e-08, -30.5032)
 region_enabled = true
 region_rect = Rect2(112, 112, 207, 164)
+
+[node name="DarkTimeLight" parent="UnitBody/EnergyExplosion" index="0" instance=ExtResource("42_ylmmf")]
+position = Vector2(0, -22.83)
+scale = Vector2(3.34253, 3.34253)
+color = Color(0.994789, 1, 0.915413, 1)
 
 [node name="Skill4Layer" type="Sprite2D" parent="UnitBody" index="23"]
 z_index = 6
