@@ -117,18 +117,23 @@ func frame_changed():
 		skill_1_release_audio.play()
 	if ally_sprite.animation == "skill1_end" and ally_sprite.frame == 33:
 		skill1_attack()
+		ally_sprite.light_mask = 2
 		skill_1_end_audio.play()
 		var strength_buff: PropertyBuff = skill1_buff_list[skill_levels[1]-1].instantiate()
 		strength_buff.duration = skill1_buff_duration
 		buffs.add_child(strength_buff)
+		get_tree().create_timer(0.4,false).timeout.connect(func():ally_sprite.light_mask = 1, CONNECT_ONE_SHOT)
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 36:
 		AudioManager.instance.shoot_audio_2.play()
 		skill2_release()
 		await ally_sprite.animation_finished
 		start_data.total_defence_rate = 0
 		current_data.update_total_defence_rate()
+	if ally_sprite.animation == "skill2" and ally_sprite.frame == 42:
+		ally_sprite.light_mask = 1
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 19:
 		kill_arrow_prepare_audio.play(0.18)
+		ally_sprite.light_mask = 2
 	if ally_sprite.animation == "skill3" and ally_sprite.frame == 14:
 		skill3_release()
 		explosion_arrow_prepare_audio.play()
@@ -427,4 +432,10 @@ func delay_explosion_damage(explosion_pos_list: PackedVector2Array):
 		Stage.instance.bullets.add_child(smoke_effect)
 		Stage.instance.bullets.add_child(explosion_effect)
 	AudioManager.instance.play_explosion_audio()
+	pass
+
+
+func die(explosion: bool):
+	super(explosion)
+	ally_sprite.light_mask = 1
 	pass

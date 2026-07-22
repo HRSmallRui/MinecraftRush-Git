@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2o33d7hrvisg"]
+[gd_scene load_steps=12 format=3 uid="uid://c2o33d7hrvisg"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_nx7dt"]
 [ext_resource type="Script" path="res://Scripts/Bullets/steve_explosion_arrow.gd" id="2_6a80e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bon1hpme3x74u" path="res://Assets/Images/Bullets/arrow-huge.png" id="4_ec2c6"]
 [ext_resource type="PackedScene" uid="uid://blf6tdqaj673m" path="res://Scenes/Effects/bullet_explosion_effect.tscn" id="4_f8hhe"]
 [ext_resource type="PackedScene" uid="uid://bf25ajrac2ijx" path="res://Scenes/Effects/smoke_effect.tscn" id="5_u3c64"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="7_11koi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -21,6 +22,7 @@ colors = PackedColorArray(1, 0, 0, 0.717647, 1, 0, 0, 0)
 radius = 73.9444
 
 [node name="SteveExplosionArrow" instance=ExtResource("1_nx7dt")]
+light_mask = 2
 script = ExtResource("2_6a80e")
 explosion_damage = ExtResource("3_5285w")
 explosion_scene = ExtResource("4_f8hhe")
@@ -34,6 +36,10 @@ position = Vector2(-2.38419e-07, 7.10539e-15)
 rotation = -1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_ec2c6")
+
+[node name="DarkTimeLight" parent="BulletSprite" index="0" instance=ExtResource("7_11koi")]
+scale = Vector2(1.91064, 1.91064)
+color = Color(0.687057, 0.735266, 1, 1)
 
 [node name="HitBox" parent="." index="1"]
 scale = Vector2(0.649891, 0.649891)
