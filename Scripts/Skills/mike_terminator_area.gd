@@ -7,6 +7,7 @@ extends SkillConditionArea2D
 @onready var tail_line: Line2D = $TailLine
 @onready var shadow: Sprite2D = $Shadow
 @onready var bomb: Sprite2D = $Bomb
+@onready var dark_time_light: PointLight2D = $Bomb/DarkTimeLight
 
 
 func _ready() -> void:
@@ -30,6 +31,7 @@ func _ready() -> void:
 	await fire_tween.finished
 	create_tween().tween_property(bomb,"scale",Vector2.ONE * 0.6,0.6)
 	create_tween().tween_property(bomb,"modulate:a",0,0.5)
+	create_tween().tween_property(dark_time_light,"energy",0,0.5)
 	fire_sprite.hide()
 	shadow.hide()
 	AudioManager.instance.play_explosion_audio()

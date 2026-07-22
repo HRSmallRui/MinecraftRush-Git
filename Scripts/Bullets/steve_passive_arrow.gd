@@ -1,13 +1,13 @@
 extends ShooterBullet
 
 @export var dizness_buff_scene: PackedScene
-@export var dizness_duration: float
+@export var dizness_duration: FloatSaver
 
 
 func enemy_take_damage(enemy: Enemy):
 	super(enemy)
 	var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
-	dizness_buff.duration = dizness_duration
+	dizness_buff.duration = dizness_duration.saving_float_value
 	dizness_buff.buff_tag = "steve_passive_dizness"
 	enemy.buffs.add_child(dizness_buff)
 	pass

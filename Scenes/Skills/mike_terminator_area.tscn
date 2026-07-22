@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cn46nfs7rgj5j"]
+[gd_scene load_steps=13 format=3 uid="uid://cn46nfs7rgj5j"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/mike_terminator_area.gd" id="1_vehkr"]
 [ext_resource type="Resource" uid="uid://28otmixgf63a" path="res://Library/Heroes/HeroConfigs/Mike/Skill1/first_damage.tres" id="2_8x7jd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgnmllpvmj6s8" path="res://Assets/Images/Skills/Firerain/fire3.png" id="4_m0si3"]
 [ext_resource type="Texture2D" uid="uid://bp4mm2qr04sfd" path="res://Assets/Images/Skills/Firerain/shadow.png" id="5_0bpnp"]
 [ext_resource type="Texture2D" uid="uid://bd674kbilvbyt" path="res://Assets/Images/Effects/bomb.png" id="6_ifsfj"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="6_vmbff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rqkyc"]
 radius = 73.9444
@@ -48,13 +49,19 @@ shape = SubResource("CircleShape2D_rqkyc")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="FireSprite" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 rotation = -2.42444
 sprite_frames = SubResource("SpriteFrames_1hdbp")
 autoplay = "default"
 frame_progress = 0.644242
 
+[node name="DarkTimeLight" parent="FireSprite" instance=ExtResource("6_vmbff")]
+scale = Vector2(1.9312, 1.9312)
+color = Color(1, 0.721514, 0.615593, 1)
+
 [node name="TailLine" type="Line2D" parent="."]
 top_level = true
+light_mask = 2
 points = PackedVector2Array(-117, -118, 2, 2)
 width_curve = SubResource("Curve_gdehf")
 gradient = SubResource("Gradient_varwx")
@@ -71,9 +78,15 @@ wait_time = 0.01
 autostart = true
 
 [node name="Bomb" type="Sprite2D" parent="."]
+light_mask = 2
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_ifsfj")
 offset = Vector2(0, -120)
+
+[node name="DarkTimeLight" parent="Bomb" instance=ExtResource("6_vmbff")]
+position = Vector2(0, -110)
+scale = Vector2(8.07808, 8.07808)
+color = Color(1, 0.788704, 0.659052, 1)
 
 [connection signal="timeout" from="TailTimer" to="." method="_on_tail_timer_timeout"]

@@ -1,16 +1,30 @@
-[gd_scene load_steps=20 format=3 uid="uid://c2wlk0mxridsh"]
+[gd_scene load_steps=34 format=3 uid="uid://c2wlk0mxridsh"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/steve_front_skill_area.gd" id="1_3xr3l"]
 [ext_resource type="Texture2D" uid="uid://lwjmqf5us70v" path="res://Assets/Images/Effects/黄色激光.png" id="2_dpfuv"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="2_iraje"]
 [ext_resource type="PackedScene" uid="uid://bu71x0boy17c4" path="res://Scenes/Buffs/SteveSP/steve_skill_slow_buff.tscn" id="2_x4v22"]
 [ext_resource type="AudioStream" uid="uid://cdwi7aoe3lqdb" path="res://Assets/Sounds/FXs/DefenceTowers/OperatorTurret/演算者发射.mp3" id="3_dp3dj"]
 [ext_resource type="PackedScene" uid="uid://bnjgq5a2h0i0t" path="res://Scenes/Buffs/SteveSP/steve_skill_armor_broken_buff.tscn" id="3_exurl"]
+[ext_resource type="Resource" uid="uid://3yesem41beq2" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv0.tres" id="3_fpiey"]
 [ext_resource type="PackedScene" uid="uid://blf6tdqaj673m" path="res://Scenes/Effects/bullet_explosion_effect.tscn" id="4_4t4eb"]
 [ext_resource type="Texture2D" uid="uid://bd674kbilvbyt" path="res://Assets/Images/Effects/bomb.png" id="4_e5s6a"]
+[ext_resource type="Resource" uid="uid://0j4gy5mk6frj" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv1.tres" id="4_q6vit"]
 [ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="4_rb85j"]
+[ext_resource type="Resource" uid="uid://cgkgyiosboy05" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv2.tres" id="5_2v7c8"]
 [ext_resource type="PackedScene" uid="uid://bf25ajrac2ijx" path="res://Scenes/Effects/smoke_effect.tscn" id="5_flvsl"]
+[ext_resource type="Resource" uid="uid://dtq0ytehlbh1n" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv3.tres" id="6_xottu"]
+[ext_resource type="Resource" uid="uid://c820y4xp4ox4f" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv0.tres" id="9_0rxgy"]
 [ext_resource type="Texture2D" uid="uid://fdl34csjxid" path="res://Assets/Images/Effects/skeleton_seckill_effect.png" id="10_dsuen"]
+[ext_resource type="Resource" uid="uid://bf06pv2b1vm0n" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv1.tres" id="10_ems6a"]
 [ext_resource type="AudioStream" uid="uid://fbwpwvsu6gr3" path="res://Assets/Sounds/FXs/Heroes/Mike/二段爆炸预备.wav" id="11_3vgc6"]
+[ext_resource type="Resource" uid="uid://dklcpmqhyyh6o" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv2.tres" id="11_lwgfs"]
+[ext_resource type="Resource" uid="uid://8l4ep7pmin3e" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv3.tres" id="12_rrffn"]
+[ext_resource type="Resource" uid="uid://cimsc2qukbi28" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv0.tres" id="14_osbsn"]
+[ext_resource type="Resource" uid="uid://dgepnh33imi48" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv1.tres" id="15_4inl4"]
+[ext_resource type="Resource" uid="uid://bgbm83is42g4u" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv2.tres" id="16_4aikd"]
+[ext_resource type="Resource" uid="uid://2tjydck3yj7h" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv3.tres" id="17_nxfyb"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="25_7u4ix"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_56l7t"]
 radius = 73.9444
@@ -152,6 +166,28 @@ tracks/10/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("DarkTimeLight:energy")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Bomb/DarkTimeLight:energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_klttg"]
 resource_name = "release"
@@ -271,6 +307,17 @@ tracks/9/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("DarkTimeLight:energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.8)
+}
 
 [sub_resource type="Animation" id="Animation_pdetq"]
 resource_name = "second"
@@ -309,6 +356,31 @@ tracks/2/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bomb/DarkTimeLight:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7)
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tkq04"]
 _data = {
@@ -320,15 +392,15 @@ _data = {
 [node name="SteveFrontSkillArea" type="Area2D"]
 z_index = 1
 collision_layer = 0
-collision_mask = 96
+collision_mask = 196704
 script = ExtResource("1_3xr3l")
-skill_damage_list = Array[int]([40, 60, 80, 100])
+skill_damage_list = Array[ExtResource("2_iraje")]([ExtResource("3_fpiey"), ExtResource("4_q6vit"), ExtResource("5_2v7c8"), ExtResource("6_xottu")])
 slow_buff_scene = ExtResource("2_x4v22")
 armor_broken_buff_scene = ExtResource("3_exurl")
-second_damage_list = Array[int]([200, 300, 400, 500])
+second_damage_list = Array[ExtResource("2_iraje")]([ExtResource("9_0rxgy"), ExtResource("10_ems6a"), ExtResource("11_lwgfs"), ExtResource("12_rrffn")])
 dizness_buff_scene = ExtResource("4_rb85j")
 dizness_duration = 4.0
-extra_damage_per_layer_list = Array[int]([20, 30, 40, 50])
+extra_damage_per_layer_list = Array[ExtResource("2_iraje")]([ExtResource("14_osbsn"), ExtResource("15_4inl4"), ExtResource("16_4aikd"), ExtResource("17_nxfyb")])
 explosion_effect_scene = ExtResource("4_4t4eb")
 smoke_scene = ExtResource("5_flvsl")
 
@@ -338,6 +410,7 @@ shape = SubResource("CircleShape2D_56l7t")
 debug_color = Color(0, 1, 1, 0)
 
 [node name="Ray" type="Line2D" parent="."]
+visibility_layer = 2
 position = Vector2(8, 0)
 points = PackedVector2Array(0, -2000, 0, 0)
 width = 200.0
@@ -362,12 +435,18 @@ autoplay = true
 bus = &"Sound"
 
 [node name="Bomb" type="Sprite2D" parent="."]
+light_mask = 2
 position = Vector2(0, 24)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("4_e5s6a")
 offset = Vector2(0, -120)
 
+[node name="DarkTimeLight" parent="Bomb" instance=ExtResource("25_7u4ix")]
+position = Vector2(0, -79)
+scale = Vector2(9.41265, 6.33867)
+
 [node name="SecKillSprite" type="Sprite2D" parent="."]
+light_mask = 2
 scale = Vector2(1.87698, 1.87698)
 texture = ExtResource("10_dsuen")
 region_enabled = true
@@ -376,3 +455,6 @@ region_rect = Rect2(10, 7, 143, 143)
 [node name="PrepareAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_3vgc6")
 bus = &"Sound"
+
+[node name="DarkTimeLight" parent="." instance=ExtResource("25_7u4ix")]
+scale = Vector2(6.15308, 3.91524)

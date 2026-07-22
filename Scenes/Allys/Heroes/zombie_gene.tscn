@@ -959,10 +959,12 @@ metadata/_edit_vertical_guides_ = [-208.0]
 metadata/_edit_horizontal_guides_ = [-145.0]
 
 [node name="AllySprite" parent="UnitBody" index="0"]
-position = Vector2(30, -155)
+position = Vector2(70, -60)
 sprite_frames = SubResource("SpriteFrames_kh36r")
-animation = &"skill3_start"
+animation = &"skill1_end"
 autoplay = "idle"
+frame = 44
+frame_progress = 1.0
 
 [node name="Skill1ConditionArea" type="Area2D" parent="UnitBody" index="8"]
 scale = Vector2(3.6, 3.6)
@@ -977,9 +979,19 @@ debug_color = Color(1, 1, 1, 0)
 [node name="Skill3AttackArea" type="Area2D" parent="UnitBody" index="9"]
 scale = Vector2(2.8, 2.8)
 collision_layer = 0
-collision_mask = 96
+collision_mask = 196704
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/Skill3AttackArea" index="0"]
+scale = Vector2(5, 3.5)
+shape = SubResource("CircleShape2D_307yl")
+debug_color = Color(1, 1, 1, 0)
+
+[node name="Skill3ConditionArea" type="Area2D" parent="UnitBody" index="10"]
+scale = Vector2(2.8, 2.8)
+collision_layer = 0
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/Skill3ConditionArea" index="0"]
 scale = Vector2(5, 3.5)
 shape = SubResource("CircleShape2D_307yl")
 debug_color = Color(1, 1, 1, 0)
@@ -1005,19 +1017,20 @@ volume_db = -10.0
 max_polyphony = 10
 bus = &"Sound"
 
-[node name="DefenceTimer" type="Timer" parent="." index="11"]
-wait_time = 3.0
-one_shot = true
-
-[node name="Skill1Area" type="Area2D" parent="." index="12"]
+[node name="Skill1Area" type="Area2D" parent="." index="11"]
 top_level = true
 collision_layer = 0
 collision_mask = 32
 
-[node name="SlashAudio" type="AudioStreamPlayer" parent="." index="13"]
+[node name="SlashAudio" type="AudioStreamPlayer" parent="." index="12"]
 stream = ExtResource("212_smxtm")
 bus = &"Sound"
 
-[node name="Skill3ReleaseAudio" type="AudioStreamPlayer" parent="." index="14"]
+[node name="Skill3ReleaseAudio" type="AudioStreamPlayer" parent="." index="13"]
 stream = ExtResource("213_8jwnw")
+bus = &"Sound"
+
+[node name="Skill3Audio" type="AudioStreamPlayer" parent="." index="15"]
+stream = ExtResource("212_smxtm")
+volume_db = -5.0
 bus = &"Sound"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://56txiathmqbt"]
+[gd_scene load_steps=8 format=3 uid="uid://56txiathmqbt"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/mike_ternimator_second_area.gd" id="1_v2vlw"]
 [ext_resource type="Texture2D" uid="uid://fdl34csjxid" path="res://Assets/Images/Effects/skeleton_seckill_effect.png" id="2_0yo7e"]
 [ext_resource type="Resource" uid="uid://idtali7jfb15" path="res://Library/Heroes/HeroConfigs/Mike/Skill1/second_damage.tres" id="2_ysf6d"]
 [ext_resource type="AudioStream" uid="uid://fbwpwvsu6gr3" path="res://Assets/Sounds/FXs/Heroes/Mike/二段爆炸预备.wav" id="3_0fsoy"]
 [ext_resource type="Texture2D" uid="uid://bd674kbilvbyt" path="res://Assets/Images/Effects/bomb.png" id="4_gntbf"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="6_knnme"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1u3p"]
 radius = 73.9444
@@ -21,6 +22,7 @@ shape = SubResource("CircleShape2D_g1u3p")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="PrepareEffect" type="Sprite2D" parent="."]
+light_mask = 2
 scale = Vector2(2, 2)
 texture = ExtResource("2_0yo7e")
 offset = Vector2(-3, -2)
@@ -32,7 +34,13 @@ autoplay = true
 bus = &"Sound"
 
 [node name="Bomb" type="Sprite2D" parent="."]
+light_mask = 2
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_gntbf")
 offset = Vector2(0, -120)
+
+[node name="DarkTimeLight" parent="Bomb" instance=ExtResource("6_knnme")]
+position = Vector2(0, -130)
+scale = Vector2(8.12575, 8.12575)
+color = Color(1, 0.80244, 0.722339, 1)

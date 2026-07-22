@@ -1,4 +1,4 @@
-[gd_scene load_steps=283 format=3 uid="uid://d2cbtfu8s0ygn"]
+[gd_scene load_steps=284 format=3 uid="uid://d2cbtfu8s0ygn"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_r684i"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/robort.gd" id="2_8aby7"]
@@ -274,6 +274,7 @@
 [ext_resource type="Texture2D" uid="uid://bae4x7egv7e5g" path="res://Assets/Images/Effects/RobortSkill/Lightning.png" id="242_ot2fh"]
 [ext_resource type="AudioStream" uid="uid://115ib7tk4ryl" path="res://Assets/Sounds/FXs/Heroes/Robort/电流.wav" id="244_a6oh2"]
 [ext_resource type="AudioStream" uid="uid://b1m272vlcwxyq" path="res://Assets/Sounds/FXs/Heroes/Robort/喷火.wav" id="245_x8cwf"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="273_qaf37"]
 
 [sub_resource type="Resource" id="Resource_77e6h"]
 script = ExtResource("11_o61ko")
@@ -1237,18 +1238,9 @@ bus = &"Sound"
 
 [node name="FarAttackLightningComponent" type="Node2D" parent="." index="9"]
 
-[node name="LightningStart" type="Sprite2D" parent="FarAttackLightningComponent" index="0"]
-position = Vector2(145, -60)
-texture = ExtResource("238_ehjbp")
-region_enabled = true
-region_rect = Rect2(17, 17, 67, 67)
-
-[node name="LightningStartParticle" type="Sprite2D" parent="FarAttackLightningComponent/LightningStart" index="0"]
-show_behind_parent = true
-texture = ExtResource("3_v1jhq")
-
-[node name="LightningLine" type="Line2D" parent="FarAttackLightningComponent" index="1"]
+[node name="LightningLine" type="Line2D" parent="FarAttackLightningComponent" index="0"]
 top_level = true
+light_mask = 2
 z_index = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_psh14")
@@ -1257,8 +1249,24 @@ width = 20.0
 texture = ExtResource("242_ot2fh")
 texture_mode = 1
 
+[node name="LightningStart" type="Sprite2D" parent="FarAttackLightningComponent" index="1"]
+light_mask = 2
+position = Vector2(145, -60)
+texture = ExtResource("238_ehjbp")
+region_enabled = true
+region_rect = Rect2(17, 17, 67, 67)
+
+[node name="LightningStartParticle" type="Sprite2D" parent="FarAttackLightningComponent/LightningStart" index="0"]
+show_behind_parent = true
+light_mask = 2
+texture = ExtResource("3_v1jhq")
+
+[node name="DarkTimeLight" parent="FarAttackLightningComponent/LightningStart" index="1" instance=ExtResource("273_qaf37")]
+scale = Vector2(2.91083, 2.91083)
+
 [node name="LightningEnd" type="Sprite2D" parent="FarAttackLightningComponent" index="2"]
 top_level = true
+light_mask = 2
 z_index = 1
 position = Vector2(195, -10)
 scale = Vector2(0.2, 0.2)
@@ -1268,7 +1276,11 @@ region_rect = Rect2(17, 17, 67, 67)
 
 [node name="LightningEndParticle" type="Sprite2D" parent="FarAttackLightningComponent/LightningEnd" index="0"]
 show_behind_parent = true
+light_mask = 2
 texture = ExtResource("3_v1jhq")
+
+[node name="DarkTimeLight" parent="FarAttackLightningComponent/LightningEnd" index="1" instance=ExtResource("273_qaf37")]
+scale = Vector2(2.49805, 2.49805)
 
 [node name="LightningTimer" type="Timer" parent="." index="10"]
 wait_time = 0.2

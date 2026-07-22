@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmtuo1odey0r2"]
+[gd_scene load_steps=19 format=3 uid="uid://cmtuo1odey0r2"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/fuchen_destroy_rat_area.gd" id="1_4x78l"]
 [ext_resource type="Shader" path="res://Assets/Shaders/MagicianRayShader.gdshader" id="2_bj8h3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/skill_particle_shooter.gd" id="4_6dhqu"]
 [ext_resource type="AudioStream" uid="uid://5vm66inghgpc" path="res://Assets/Sounds/FXs/Heroes/Fuchen/末日.wav" id="4_rk8xf"]
 [ext_resource type="Script" path="res://Scripts/Skills/matertial_speed_control.gd" id="5_yqqn3"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="7_laj6k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3ykp"]
 radius = 73.9444
@@ -114,6 +115,7 @@ scale = Vector2(1, 0.7)
 shape = SubResource("CircleShape2D_n3ykp")
 
 [node name="Ray" type="Line2D" parent="."]
+light_mask = 2
 texture_repeat = 2
 material = SubResource("ShaderMaterial_unle6")
 points = PackedVector2Array(0, -3000, 0, 0)
@@ -122,6 +124,7 @@ texture = ExtResource("2_gpfy8")
 texture_mode = 1
 
 [node name="EndPointParticle" type="GPUParticles2D" parent="Ray"]
+light_mask = 2
 z_index = 1
 process_material = SubResource("ParticleProcessMaterial_a76wq")
 texture = SubResource("GradientTexture2D_388m2")
@@ -129,6 +132,7 @@ lifetime = 0.2
 script = ExtResource("4_6dhqu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ray/EndPointParticle"]
+light_mask = 2
 scale = Vector2(0.870514, 0.870514)
 texture = SubResource("GradientTexture2D_qblck")
 
@@ -152,3 +156,6 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_ahadb")
 }
+
+[node name="DarkTimeLight" parent="." instance=ExtResource("7_laj6k")]
+scale = Vector2(1.88916, 1.16916)

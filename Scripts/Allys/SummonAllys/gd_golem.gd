@@ -12,6 +12,7 @@ enum PokeType{
 @export var explosion_effect_scene: PackedScene
 @export var smoke_effect_scene: PackedScene
 @export var die_explosion_damage: DamageBlock
+@export var existing_time: FloatSaver
 
 @onready var existing_timer: Timer = $ExistingTimer
 @onready var heal_area: Area2D = $UnitBody/HealArea
@@ -20,6 +21,7 @@ enum PokeType{
 
 
 func _ready() -> void:
+	existing_timer.wait_time = existing_time.saving_float_value
 	super()
 	if poke_type != PokeType.Heart:
 		heal_area.queue_free()
