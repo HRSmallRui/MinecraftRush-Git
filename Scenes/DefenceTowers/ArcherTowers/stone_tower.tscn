@@ -1,9 +1,10 @@
-[gd_scene load_steps=106 format=3 uid="uid://bkn4qk42x6rv7"]
+[gd_scene load_steps=107 format=3 uid="uid://bkn4qk42x6rv7"]
 
 [ext_resource type="PackedScene" uid="uid://dtyu2t5hq40nc" path="res://Scenes/DefenceTowers/ArcherTowers/archer_tower.tscn" id="1_jat4a"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_iyeqd"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/ArcherTowers/stone_tower.gd" id="2_pashq"]
 [ext_resource type="Texture2D" uid="uid://bwmua6m4kbfsh" path="res://Assets/Images/UI/InformationBar/arrow-id-4.png" id="2_shdsh"]
+[ext_resource type="Resource" uid="uid://c4bmn0iwfyinw" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/extra_stone_damage_rate.tres" id="3_pcp16"]
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="4_84obp"]
 [ext_resource type="Texture2D" uid="uid://cdgt7j5rilbt1" path="res://Assets/Images/DefenceTowers/Archers/Towers/LV4-1.png" id="5_675fu"]
 [ext_resource type="Texture2D" uid="uid://b1y0xjmth6d1w" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_00.png" id="6_llpen"]
@@ -96,9 +97,9 @@
 [ext_resource type="Texture2D" uid="uid://bhrgkgpbr1fr2" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_46.png" id="85_dcyga"]
 [ext_resource type="PackedScene" uid="uid://bqgbd6mv1bkuk" path="res://Scenes/Bullets/black_stone.tscn" id="94_tc868"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="95_7i02j"]
-[ext_resource type="Resource" uid="uid://p6ht47411c5a" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill1_BlackStone/black_stone_lv1.tres" id="96_up72r"]
-[ext_resource type="Resource" uid="uid://oyudt4tcfrym" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill1_BlackStone/black_stone_lv2.tres" id="97_oih14"]
-[ext_resource type="Resource" uid="uid://bcbj5ymoopdil" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill1_BlackStone/black_stone_lv3.tres" id="98_thp02"]
+[ext_resource type="Resource" uid="uid://cvoaioopic1ig" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill1_BlackStone/black_stone_lv1.tres" id="96_up72r"]
+[ext_resource type="Resource" uid="uid://iqs0hafm01d8" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill1_BlackStone/black_stone_lv2.tres" id="97_oih14"]
+[ext_resource type="Resource" uid="uid://ms7ir84y4cah" path="res://Library/TowerConfigs/ArcherTowers/StoneTower/Skill1_BlackStone/black_stone_lv3.tres" id="98_thp02"]
 
 [sub_resource type="Resource" id="Resource_sfb2x"]
 script = ExtResource("2_iyeqd")
@@ -558,6 +559,7 @@ animations = [{
 
 [node name="StoneTower" node_paths=PackedStringArray("shooter_list") instance=ExtResource("1_jat4a")]
 script = ExtResource("2_pashq")
+extra_stone_damage_rate = ExtResource("3_pcp16")
 start_data = SubResource("Resource_sfb2x")
 shooter_list = [NodePath("TowerSprite/StoneThrower"), NodePath("TowerSprite/StoneThrower2")]
 tower_name = "投石高塔"
