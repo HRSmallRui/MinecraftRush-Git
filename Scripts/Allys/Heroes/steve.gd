@@ -24,10 +24,12 @@ extends Hero
 @onready var skill_4_hit_box: Area2D = $UnitBody/Skill4HitBox
 @onready var skill_4_audio: AudioStreamPlayer = $Skill4Audio
 @onready var skill_3_audio: AudioStreamPlayer = $Skill3Audio
+@onready var skill_4_condition_area: Area2D = $UnitBody/Skill4ConditionArea
 
 
 func anim_offset():
 	skill_4_hit_box.position.x = -195 if ally_sprite.flip_h else 195
+	skill_4_condition_area.global_position = skill_4_hit_box.global_position
 	match ally_sprite.animation:
 		"attack","idle":
 			ally_sprite.position = Vector2(15,-125) if ally_sprite.flip_h else Vector2(-20,-125)
@@ -170,11 +172,11 @@ func after_golen_apple_eaten():
 
 
 func skill4_is_valid_to_release() -> bool:
-	if skill_4_hit_box.get_overlapping_bodies().size() >= 4:
+	if skill_4_condition_area.get_overlapping_bodies().size() >= 4:
 		return true
 	var damage: int = skill4_damage_list[skill_levels[4]-1]
 	damage *= 0.75
-	for body in skill_4_hit_box.get_overlapping_bodies():
+	for body in skill_4_condition_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		if enemy.current_data.health > damage: return true
 	return false
