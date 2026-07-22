@@ -11,11 +11,13 @@ extends SkillConditionArea2D
 @onready var buff_sprite: Sprite2D = $BuffSprite
 @onready var shot_timer: Timer = $ShotTimer
 @onready var duration_timer: Timer = $DurationTimer
+@onready var dark_time_light: PointLight2D = $DarkTimeLight
 
 
 func _ready() -> void:
 	buff_sprite.modulate.a = 0
 	create_tween().tween_property(buff_sprite,"modulate:a",1,0.4)
+	create_tween().tween_property(dark_time_light,"energy",1,0.4)
 	duration_timer.wait_time = skill_duration_list[skill_level].saving_float_value
 	duration_timer.start()
 	var steve: Hero = Stage.instance.hero_list[0]
@@ -53,6 +55,7 @@ func _on_duration_timer_timeout() -> void:
 	shot_timer.stop()
 	var disappear_tween: Tween = create_tween()
 	disappear_tween.tween_property(buff_sprite,"modulate:a",0,0.4)
+	create_tween().tween_property(dark_time_light,"energy",0,0.4)
 	await disappear_tween.finished
 	queue_free()
 	pass # Replace with function body.
