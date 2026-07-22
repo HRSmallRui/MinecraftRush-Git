@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dayts72hbkndu"]
+[gd_scene load_steps=12 format=3 uid="uid://dayts72hbkndu"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/fire_rock.gd" id="1_r6yev"]
 [ext_resource type="Texture2D" uid="uid://bjqd4l7lvkdk3" path="res://Assets/Images/Skills/Firerain/fire1.png" id="2_jgix1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgnmllpvmj6s8" path="res://Assets/Images/Skills/Firerain/fire3.png" id="4_5ojd5"]
 [ext_resource type="Texture2D" uid="uid://bp4mm2qr04sfd" path="res://Assets/Images/Skills/Firerain/shadow.png" id="5_xh0op"]
 [ext_resource type="AudioStream" uid="uid://cft00832wmncs" path="res://Assets/Sounds/FXs/Bullets/Sound_FireballUnleash.wav" id="6_7f5kx"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="6_8vijn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3ykp"]
 radius = 73.9444
@@ -42,12 +43,18 @@ scale = Vector2(1.2, 0.84)
 shape = SubResource("CircleShape2D_n3ykp")
 
 [node name="FireRockSprite" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 z_index = 5
 rotation = -2.35619
 sprite_frames = SubResource("SpriteFrames_5baqr")
 autoplay = "default"
 frame_progress = 0.648675
 offset = Vector2(20, 0)
+
+[node name="DarkTimeLight" parent="FireRockSprite" instance=ExtResource("6_8vijn")]
+position = Vector2(7.77817, -0.707142)
+scale = Vector2(1.45915, 1.45915)
+color = Color(1, 0.858459, 0.779482, 1)
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1

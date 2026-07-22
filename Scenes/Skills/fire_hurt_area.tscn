@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://djx4mfq8eu1bv"]
+[gd_scene load_steps=8 format=3 uid="uid://djx4mfq8eu1bv"]
 
 [ext_resource type="Texture2D" uid="uid://cbcql7n04o2pk" path="res://Assets/Images/Effects/firerock.png" id="1_2wda8"]
 [ext_resource type="Script" path="res://Scripts/Skills/fire_hurt_area.gd" id="1_crqwy"]
 [ext_resource type="PackedScene" uid="uid://32u5i6wwhrqy" path="res://Scenes/Effects/lingering_potion_shooter.tscn" id="3_cu1hx"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="3_f7nki"]
 [ext_resource type="Texture2D" uid="uid://oov3qeqnyjho" path="res://Assets/Images/Effects/smoke_particle.png" id="4_eb42c"]
 [ext_resource type="Texture2D" uid="uid://djqnwtl1embrg" path="res://Assets/Animations/Enemies/Shadow.png" id="5_xv6l0"]
 
@@ -18,8 +19,14 @@ script = ExtResource("1_crqwy")
 smoke_particle_shooters = [NodePath("LingeringPotionShooter"), NodePath("LingeringPotionShooter2"), NodePath("LingeringPotionShooter3"), NodePath("LingeringPotionShooter4"), NodePath("LingeringPotionShooter5")]
 
 [node name="Texture" type="Sprite2D" parent="."]
+light_mask = 2
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_2wda8")
+
+[node name="DarkTimeLight" parent="Texture" instance=ExtResource("3_f7nki")]
+scale = Vector2(6.54256, 3.47821)
+color = Color(1, 0.76957, 0.699276, 1)
+energy = 0.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.479999)
