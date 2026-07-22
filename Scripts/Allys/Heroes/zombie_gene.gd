@@ -18,17 +18,19 @@ extends Hero
 @onready var skill_3_timer: Timer = $Skill3Timer
 @onready var skill_3_attack_area: Area2D = $UnitBody/Skill3AttackArea
 @onready var defence_audio: AudioStreamPlayer = $DefenceAudio
-@onready var defence_timer: Timer = $DefenceTimer
 @onready var skill_1_condition_area: Area2D = $UnitBody/Skill1ConditionArea
 @onready var skill_1_area: Area2D = $Skill1Area
 @onready var slash_audio: AudioStreamPlayer = $SlashAudio
 @onready var skill_3_release_audio: AudioStreamPlayer = $Skill3ReleaseAudio
+@onready var skill_3_audio: AudioStreamPlayer = $Skill3Audio
+@onready var skill_3_condition_area: Area2D = $UnitBody/Skill3ConditionArea
 
 var target_enemy_path: EnemyPath
 var move_to_start_point: bool
 var freeze_enemy_list: Array[Enemy]
 var freeze_buff_list: Array[BuffClass]
 var delay_slash_effect_list: Array[Node2D]
+var skill1_origin_position: Vector2
 
 
 func anim_offset():
@@ -46,7 +48,7 @@ func anim_offset():
 		"skill1_end":
 			ally_sprite.position = Vector2(25,-50) if ally_sprite.flip_h else Vector2(-25,-50)
 		"skill1_start":
-			ally_sprite.position = Vector2(-70,-60) if ally_sprite.flip_h else Vector2(70,60)
+			ally_sprite.position = Vector2(-70,-60) if ally_sprite.flip_h else Vector2(70,-60)
 		"skill3_end","skill3_start":
 			ally_sprite.position = Vector2(-30,-155) if ally_sprite.flip_h else Vector2(30,-155)
 	pass
@@ -58,7 +60,11 @@ func frame_changed():
 	
 	if ally_sprite.animation == "skill1_start" :
 		if ally_sprite.frame == 14:
-			create_tween().tween_property(self,"modulate:a",0,0.2)
+			var target_pos: Vector2 = position
+			skill1_origin_position = position
+			target_pos.x += -50 if ally_sprite.flip_h else 50
+			create_tween().tween_property(self,"position",target_pos,0.4)
+			create_tween().tween_property(self,"modulate:a",0,0.4)
 		if ally_sprite.frame == 22:
 			ally_sprite.pause()
 			delay_slash()
@@ -70,6 +76,11 @@ func frame_changed():
 			if buff != null: buff.remove_buff()
 		freeze_buff_list.clear()
 		
+		for delay_slash_effect in delay_slash_effect_list:
+			if delay_slash_effect == null: continue
+			delay_slash_effect.queue_free()
+		delay_slash_effect_list.clear()
+		
 		for enemy in freeze_enemy_list:
 			if enemy == null: continue
 			var damage: int = randi_range(skill1_damage_block.damage_low,skill1_damage_block.damage_high)
@@ -80,12 +91,6 @@ func frame_changed():
 			Stage.instance.bullets.add_child(red_slash_effect)
 		freeze_enemy_list.clear()
 		slash_audio.play()
-		
-		for shape in skill_1_area.get_children():
-			shape.queue_free()
-		for slash_effect in delay_slash_effect_list:
-			slash_effect.queue_free()
-		delay_slash_effect_list.clear()
 	
 	if ally_sprite.animation == "skill3_start" and ally_sprite.frame == 29:
 		ally_sprite.pause()
@@ -100,9 +105,8 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 	var is_defence: bool
 	if source != null and randf() < defence_possible and (ally_state != AllyState.SPECIAL and ally_state != AllyState.DIE):
 		if source is Enemy:
-			current_damage = float(damage) * defence_immune_rate
+			current_damage = float(damage) * (1-defence_immune_rate)
 			is_defence = true
-			defence_timer.start()
 			#print(current_damage)
 	var result: bool = super(current_damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack,deadly)
 	if is_defence and ally_state != AllyState.DIE and current_intercepting_enemy != null:
@@ -116,23 +120,17 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 
 
 func idle_process():
+	if skill_1_timer.is_stopped() and skill_1_condition_area.get_overlapping_bodies().size() >= 3:
+		var enemy: Enemy = skill_1_condition_area.get_overlapping_bodies()[0].owner
+		ally_sprite.flip_h = enemy.position.x < position.x
+		translate_to_new_state(AllyState.SPECIAL)
+		body_collision.disabled = true
+		ally_sprite.play("skill1_start")
+		skill_1_timer.start()
+		return
 	super()
 	if ally_state == AllyState.IDLE:
-		#if skill_1_timer.is_stopped() and skill_1_condition_area.get_overlapping_bodies().size() >= 4:
-			#var target_enemy: Enemy = get_skill1_enemy()
-			#if target_enemy != null:
-				#target_enemy_path = target_enemy.get_parent()
-				#body_collision.disabled = true
-				#hurt_box.set_collision_layer_value(4,false)
-				#translate_to_new_state(AllyState.SPECIAL)
-				#ally_sprite.play("skill1_start")
-				#skill_1_timer.start()
-				#ally_sprite.flip_h = target_enemy.global_position.x < global_position.x
-				#var self_progress: float = target_enemy_path.curve.get_closest_offset(position)
-				#move_to_start_point = self_progress > target_enemy.progress
-				#return
-		
-		if skill_3_timer.is_stopped() and skill_3_attack_area.get_overlapping_bodies().size() >= 3:
+		if skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 3:
 			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill3_start")
 			skill_3_timer.start()
@@ -140,62 +138,31 @@ func idle_process():
 	pass
 
 
-func get_skill1_enemy() -> Enemy:
+func delay_slash():
+	freeze_enemy_list.clear()
+	freeze_buff_list.clear()
 	for body in skill_1_condition_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		if enemy.get_groups().has("special"): continue
-		var enemy_path: EnemyPath = enemy.get_parent()
-		var curve: Curve2D = enemy_path.curve
-		if position.distance_to(curve.get_closest_point(global_position)) > 40: continue
-		return enemy
-	return null
-
-
-func delay_slash():
-	await get_tree().create_timer(0.2,false).timeout
-	var self_progress: float = target_enemy_path.curve.get_closest_offset(position)
-	var delta_progress: float = 600
-	delta_progress *= -1 if move_to_start_point else 1
-	freeze_and_slash(self_progress,delta_progress)
-	position = target_enemy_path.curve.sample_baked(self_progress + delta_progress)
-	create_tween().tween_property(self,"modulate:a",1,0.2)
-	ally_sprite.play("skill1_end")
-	intercepting_area.position = position
-	station_position = position
-	pass
-
-
-func freeze_and_slash(start_progress: float, delta_progress: float):
-	var count: int = 20
-	var circle_shape: CircleShape2D = CircleShape2D.new()
-	circle_shape.radius = 40
-	delta_progress /= count
-	for i in count:
-		var collision: CollisionShape2D = CollisionShape2D.new()
-		collision.shape = circle_shape
-		collision.position = target_enemy_path.curve.sample_baked(start_progress + delta_progress * i)
-		collision.position = Stage.instance.get_closest_main_enemy_path(collision.global_position).curve.get_closest_point(collision.global_position)
-		skill_1_area.add_child(collision)
-	
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-	for body in skill_1_area.get_overlapping_bodies():
-		var enemy: Enemy = body.owner
 		freeze_enemy_list.append(enemy)
-	for enemy in freeze_enemy_list:
-		if enemy.enemy_type >= Enemy.EnemyType.MiniBoss: continue
-		var freeze_buff: PropertyBuff = freeze_buff_scene.instantiate()
-		freeze_buff_list.append(freeze_buff)
+		var freeze_buff: BuffClass = freeze_buff_scene.instantiate()
 		enemy.buffs.add_child(freeze_buff)
+		freeze_buff_list.append(freeze_buff)
 		var delay_slash_effect: Node2D = delay_slash_effect_scene.instantiate()
 		delay_slash_effect.position = enemy.hurt_box.global_position
-		delay_slash_effect.scale *= 0.6
 		Stage.instance.bullets.add_child(delay_slash_effect)
+		delay_slash_effect.scale *= 0.4
 		delay_slash_effect_list.append(delay_slash_effect)
+	await get_tree().create_timer(0.4,false).timeout
+	ally_sprite.play("skill1_end")
+	var delta_pos: Vector2 = position - skill1_origin_position
+	position = skill1_origin_position - delta_pos
+	create_tween().tween_property(self,"position",skill1_origin_position,0.3)
+	create_tween().tween_property(self,"modulate:a",1,0.3)
 	pass
 
 
 func skill3_release():
+	skill_3_audio.play()
 	for i in 40:
 		var pos: Vector2= position + Vector2(randf_range(-208,0),randf_range(-145,145))
 		var sword_effect: Node2D = sword_effect_scene.instantiate()
@@ -219,10 +186,16 @@ func skill3_release():
 
 func battle():
 	if ally_sprite.animation == "idle":
-		if skill_3_timer.is_stopped() and skill_3_attack_area.get_overlapping_bodies().size() >= 3:
+		if skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 3:
 			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill3_start")
 			skill_3_timer.start()
+			return
+		if skill_1_timer.is_stopped() and normal_attack_timer.is_stopped():
+			normal_attack_timer.start()
+			translate_to_new_state(AllyState.SPECIAL)
+			skill_1_timer.start()
+			ally_sprite.play("skill1_start")
 			return
 	super()
 	pass
