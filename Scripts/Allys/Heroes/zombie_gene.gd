@@ -22,6 +22,7 @@ extends Hero
 @onready var skill_1_area: Area2D = $Skill1Area
 @onready var slash_audio: AudioStreamPlayer = $SlashAudio
 @onready var skill_3_release_audio: AudioStreamPlayer = $Skill3ReleaseAudio
+@onready var skill_3_audio: AudioStreamPlayer = $Skill3Audio
 
 var target_enemy_path: EnemyPath
 var move_to_start_point: bool
@@ -194,6 +195,7 @@ func freeze_and_slash(start_progress: float, delta_progress: float):
 
 
 func skill3_release():
+	skill_3_audio.play()
 	for i in 40:
 		var pos: Vector2= position + Vector2(randf_range(-208,0),randf_range(-145,145))
 		var sword_effect: Node2D = sword_effect_scene.instantiate()
