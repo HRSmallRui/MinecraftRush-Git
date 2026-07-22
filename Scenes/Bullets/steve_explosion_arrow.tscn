@@ -1,16 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2o33d7hrvisg"]
+[gd_scene load_steps=11 format=3 uid="uid://c2o33d7hrvisg"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_nx7dt"]
 [ext_resource type="Script" path="res://Scripts/Bullets/steve_explosion_arrow.gd" id="2_6a80e"]
-[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_ec2cm"]
+[ext_resource type="Resource" uid="uid://b0s4qmm63q01o" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill3/explosion_damage.tres" id="3_5285w"]
 [ext_resource type="Texture2D" uid="uid://bon1hpme3x74u" path="res://Assets/Images/Bullets/arrow-huge.png" id="4_ec2c6"]
 [ext_resource type="PackedScene" uid="uid://blf6tdqaj673m" path="res://Scenes/Effects/bullet_explosion_effect.tscn" id="4_f8hhe"]
 [ext_resource type="PackedScene" uid="uid://bf25ajrac2ijx" path="res://Scenes/Effects/smoke_effect.tscn" id="5_u3c64"]
-
-[sub_resource type="Resource" id="Resource_casyj"]
-script = ExtResource("3_ec2cm")
-damage_low = 40
-damage_high = 80
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5n3q"]
 radius = 11.0
@@ -27,7 +22,7 @@ radius = 73.9444
 
 [node name="SteveExplosionArrow" instance=ExtResource("1_nx7dt")]
 script = ExtResource("2_6a80e")
-explosion_damage = SubResource("Resource_casyj")
+explosion_damage = ExtResource("3_5285w")
 explosion_scene = ExtResource("4_f8hhe")
 smoke_scene = ExtResource("5_u3c64")
 tail_max_length = 20

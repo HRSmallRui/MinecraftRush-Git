@@ -1,4 +1,4 @@
-[gd_scene load_steps=405 format=3 uid="uid://m4njsxve4pvn"]
+[gd_scene load_steps=407 format=3 uid="uid://m4njsxve4pvn"]
 
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_kecyl"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/steve_sp.gd" id="2_ttqs3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ri5xgtcf8imc" path="res://Scenes/Effects/steve_slash_effect.tscn" id="6_uoo5o"]
 [ext_resource type="PackedScene" uid="uid://d0ssn7lgmqe2b" path="res://Scenes/Buffs/SteveSP/steve_strngth_buff_lv_1.tscn" id="7_8ptgi"]
 [ext_resource type="PackedScene" uid="uid://ctmojslbqhrgw" path="res://Scenes/Buffs/Mike/freeze_buff.tscn" id="7_jv1o1"]
+[ext_resource type="Resource" uid="uid://cyinh2w57qka6" path="res://Library/Heroes/HeroConfigs/SteveSP/PassiveSkill/dizness_duration.tres" id="7_m3ik3"]
 [ext_resource type="PackedScene" uid="uid://c1rmis5jlhvqk" path="res://Scenes/Bullets/physics_arrow.tscn" id="7_tnavb"]
 [ext_resource type="PackedScene" uid="uid://46o2npu3sf2m" path="res://Scenes/Buffs/SteveSP/steve_strngth_buff_lv_2.tscn" id="8_wula0"]
 [ext_resource type="PackedScene" uid="uid://bnd25kip5xyc5" path="res://Scenes/Buffs/SteveSP/steve_strngth_buff_lv_3.tscn" id="9_485dp"]
@@ -29,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://csjiy4cs02xn4" path="res://Assets/Animations/Heroes/SteveSP/attack_06.png" id="15_x064y"]
 [ext_resource type="PackedScene" uid="uid://wwdy8hweb5jd" path="res://Scenes/Buffs/SteveSP/steve_hurt_buff.tscn" id="16_3udh2"]
 [ext_resource type="Texture2D" uid="uid://bho48515f468o" path="res://Assets/Animations/Heroes/SteveSP/attack_07.png" id="16_7yxyj"]
+[ext_resource type="Resource" uid="uid://b0s4qmm63q01o" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill3/explosion_damage.tres" id="16_toe44"]
 [ext_resource type="Texture2D" uid="uid://blmscgo76sn06" path="res://Assets/Animations/Heroes/SteveSP/attack_08.png" id="17_hqom6"]
 [ext_resource type="PackedScene" uid="uid://dtw166w3kekx8" path="res://Scenes/Effects/sec_kill_sprite.tscn" id="17_om28t"]
 [ext_resource type="Texture2D" uid="uid://b5ua1es51x7a7" path="res://Assets/Animations/Heroes/SteveSP/attack_09.png" id="18_hwc60"]
@@ -1614,6 +1616,7 @@ smoke_effect_scene = ExtResource("5_37kj1")
 passive_skill_bullet_scene = ExtResource("4_gjhxp")
 passive_skill_damage_rate = 2.0
 passive_skill_broken_rate = 0.5
+passive_skill_dizness_duration = ExtResource("7_m3ik3")
 skill1_damage_list = Array[ExtResource("3_ub1vj")]([SubResource("Resource_hjbxb"), SubResource("Resource_uwff1"), SubResource("Resource_ixvey")])
 skill1_buff_duration = 10.0
 skill1_buff_list = Array[PackedScene]([ExtResource("7_8ptgi"), ExtResource("8_wula0"), ExtResource("9_485dp")])
@@ -1623,6 +1626,7 @@ skill2_damage_list = Array[int]([480, 640, 720])
 skill2_bullet_scene = ExtResource("12_dprll")
 skill3_bullet_count_list = Array[int]([6, 8, 10])
 skill3_bullet_scene = ExtResource("13_sxmyd")
+skill3_explosion_damage = ExtResource("16_toe44")
 skill4_first_damage_list = Array[int]([50, 80, 120])
 skill4_effect_bullet_scene = ExtResource("14_4gd47")
 skill4_slow_buff_scene = ExtResource("15_ucd87")

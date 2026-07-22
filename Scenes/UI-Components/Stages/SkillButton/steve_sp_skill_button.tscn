@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxtqcldp8cif2"]
+[gd_scene load_steps=32 format=3 uid="uid://cxtqcldp8cif2"]
 
 [ext_resource type="PackedScene" uid="uid://dakq012d6gh6m" path="res://Scenes/UI-Components/Stages/skill_button.tscn" id="1_ctw2g"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/SkillButtons/steve_sp_skill_button.gd" id="2_14cv4"]
@@ -7,7 +7,30 @@
 [ext_resource type="PackedScene" uid="uid://c2wlk0mxridsh" path="res://Scenes/Skills/steve_front_skill_area.tscn" id="5_2b8i5"]
 [ext_resource type="Texture2D" uid="uid://ioxth5ppo8i6" path="res://Assets/Images/UI/SkillButton/Heroskill/SteveSP/仍有要守护之物.png" id="5_ui3ek"]
 [ext_resource type="Texture2D" uid="uid://biujfpeswlii7" path="res://Assets/Images/UI/SkillButton/Heroskill/SteveSP/仍有要守护之物using.png" id="6_v5dcq"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="6_v85rd"]
+[ext_resource type="Resource" uid="uid://3yesem41beq2" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv0.tres" id="7_p7lwf"]
+[ext_resource type="Resource" uid="uid://0j4gy5mk6frj" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv1.tres" id="8_7yx44"]
 [ext_resource type="PackedScene" uid="uid://dpr553lmxdmf8" path="res://Scenes/Skills/steve_back_skill_area.tscn" id="8_r7bus"]
+[ext_resource type="Resource" uid="uid://cgkgyiosboy05" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv2.tres" id="9_xnhd3"]
+[ext_resource type="Resource" uid="uid://dtq0ytehlbh1n" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_first_lv3.tres" id="10_7inqn"]
+[ext_resource type="Resource" uid="uid://c820y4xp4ox4f" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv0.tres" id="11_isdmw"]
+[ext_resource type="Resource" uid="uid://bf06pv2b1vm0n" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv1.tres" id="12_q2ijj"]
+[ext_resource type="Resource" uid="uid://dklcpmqhyyh6o" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv2.tres" id="13_0erm0"]
+[ext_resource type="Resource" uid="uid://8l4ep7pmin3e" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/damage_second_lv3.tres" id="14_x5f13"]
+[ext_resource type="Resource" uid="uid://cimsc2qukbi28" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv0.tres" id="15_se7il"]
+[ext_resource type="Resource" uid="uid://dgepnh33imi48" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv1.tres" id="16_t6wn8"]
+[ext_resource type="Resource" uid="uid://bgbm83is42g4u" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv2.tres" id="17_5j8jy"]
+[ext_resource type="Resource" uid="uid://2tjydck3yj7h" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Front/extra_damage_per_layer_lv3.tres" id="18_3grot"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="22_7veho"]
+[ext_resource type="Resource" uid="uid://slhvj4e7dbut" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv0.tres" id="23_qbjnt"]
+[ext_resource type="Resource" uid="uid://3bgigr1q2ykk" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv1.tres" id="24_mmfys"]
+[ext_resource type="Resource" uid="uid://di3uggfv6epqx" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv2.tres" id="25_s4060"]
+[ext_resource type="Resource" uid="uid://dalsxg1qj4ewn" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv3.tres" id="26_hjddv"]
+[ext_resource type="Resource" uid="uid://8uxw4qqx6xg1" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv0.tres" id="27_bw0kq"]
+[ext_resource type="Resource" uid="uid://dvwp4abh3vhhp" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv1.tres" id="28_noqsi"]
+[ext_resource type="Resource" uid="uid://ccmy6iq4b03l0" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv2.tres" id="29_ffis8"]
+[ext_resource type="Resource" uid="uid://ymd22kcqmua7" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv3.tres" id="30_72isl"]
+[ext_resource type="Resource" uid="uid://r0kjdgk8ijnu" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/steve_heal_rate.tres" id="31_p5fh2"]
 
 [node name="SteveSPSkillButton" instance=ExtResource("1_ctw2g")]
 script = ExtResource("2_14cv4")
@@ -16,11 +39,17 @@ front_skill_intro = "对范围内的敌人造成大量伤害并眩晕敌人"
 front_skill_normal_texture = ExtResource("3_fvt4g")
 front_skill_select_texture = ExtResource("4_gtpny")
 front_skill_area_scene = ExtResource("5_2b8i5")
+front_skill_damage_first_list = Array[ExtResource("6_v85rd")]([ExtResource("7_p7lwf"), ExtResource("8_7yx44"), ExtResource("9_xnhd3"), ExtResource("10_7inqn")])
+front_skill_damage_second_list = Array[ExtResource("6_v85rd")]([ExtResource("11_isdmw"), ExtResource("12_q2ijj"), ExtResource("13_0erm0"), ExtResource("14_x5f13")])
+front_skill_extra_damage_per_layer_list = Array[ExtResource("6_v85rd")]([ExtResource("15_se7il"), ExtResource("16_t6wn8"), ExtResource("17_5j8jy"), ExtResource("18_3grot")])
 back_skill_name = "仍有要守护之物"
 back_skill_intro = "召唤一片领域，持续增益领域内的我方单位"
 back_skill_normal_texture = ExtResource("5_ui3ek")
 back_skill_select_texture = ExtResource("6_v5dcq")
 back_skill_area_scene = ExtResource("8_r7bus")
+back_skill_skill_duration_list = Array[ExtResource("22_7veho")]([ExtResource("23_qbjnt"), ExtResource("24_mmfys"), ExtResource("25_s4060"), ExtResource("26_hjddv")])
+back_skill_heal_rate_list = Array[ExtResource("22_7veho")]([ExtResource("27_bw0kq"), ExtResource("28_noqsi"), ExtResource("29_ffis8"), ExtResource("30_72isl")])
+back_skill_steve_heal_rate = ExtResource("31_p5fh2")
 skill_type = 2
 texture_normal = ExtResource("3_fvt4g")
 texture_select = ExtResource("4_gtpny")

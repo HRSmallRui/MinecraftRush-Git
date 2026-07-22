@@ -7,6 +7,7 @@ extends Hero
 @export var passive_skill_bullet_scene: PackedScene
 @export var passive_skill_damage_rate: float
 @export var passive_skill_broken_rate: float
+@export var passive_skill_dizness_duration: FloatSaver
 @export_group("Skill1","skill1")
 @export var skill1_damage_list: Array[DamageBlock]
 @export var skill1_buff_duration: float
@@ -19,6 +20,7 @@ extends Hero
 @export_group("Skill3","skill3")
 @export var skill3_bullet_count_list: Array[int]
 @export var skill3_bullet_scene: PackedScene
+@export var skill3_explosion_damage: DamageBlock
 @export_group("Skill4","skill4")
 @export var skill4_first_damage_list: Array[int]
 @export var skill4_effect_bullet_scene: PackedScene
