@@ -18,7 +18,6 @@ extends Hero
 @onready var skill_3_timer: Timer = $Skill3Timer
 @onready var skill_3_attack_area: Area2D = $UnitBody/Skill3AttackArea
 @onready var defence_audio: AudioStreamPlayer = $DefenceAudio
-@onready var defence_timer: Timer = $DefenceTimer
 @onready var skill_1_condition_area: Area2D = $UnitBody/Skill1ConditionArea
 @onready var skill_1_area: Area2D = $Skill1Area
 @onready var slash_audio: AudioStreamPlayer = $SlashAudio
@@ -100,9 +99,8 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 	var is_defence: bool
 	if source != null and randf() < defence_possible and (ally_state != AllyState.SPECIAL and ally_state != AllyState.DIE):
 		if source is Enemy:
-			current_damage = float(damage) * defence_immune_rate
+			current_damage = float(damage) * (1-defence_immune_rate)
 			is_defence = true
-			defence_timer.start()
 			#print(current_damage)
 	var result: bool = super(current_damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack,deadly)
 	if is_defence and ally_state != AllyState.DIE and current_intercepting_enemy != null:

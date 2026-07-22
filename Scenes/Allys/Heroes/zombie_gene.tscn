@@ -961,7 +961,7 @@ metadata/_edit_horizontal_guides_ = [-145.0]
 [node name="AllySprite" parent="UnitBody" index="0"]
 position = Vector2(30, -155)
 sprite_frames = SubResource("SpriteFrames_kh36r")
-animation = &"skill3_start"
+animation = &"skill1_end"
 autoplay = "idle"
 
 [node name="Skill1ConditionArea" type="Area2D" parent="UnitBody" index="8"]
@@ -1005,19 +1005,15 @@ volume_db = -10.0
 max_polyphony = 10
 bus = &"Sound"
 
-[node name="DefenceTimer" type="Timer" parent="." index="11"]
-wait_time = 3.0
-one_shot = true
-
-[node name="Skill1Area" type="Area2D" parent="." index="12"]
+[node name="Skill1Area" type="Area2D" parent="." index="11"]
 top_level = true
 collision_layer = 0
 collision_mask = 32
 
-[node name="SlashAudio" type="AudioStreamPlayer" parent="." index="13"]
+[node name="SlashAudio" type="AudioStreamPlayer" parent="." index="12"]
 stream = ExtResource("212_smxtm")
 bus = &"Sound"
 
-[node name="Skill3ReleaseAudio" type="AudioStreamPlayer" parent="." index="14"]
+[node name="Skill3ReleaseAudio" type="AudioStreamPlayer" parent="." index="13"]
 stream = ExtResource("213_8jwnw")
 bus = &"Sound"
