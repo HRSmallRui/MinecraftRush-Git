@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://cxx03a6cdmthp"]
+[gd_scene load_steps=24 format=3 uid="uid://cxx03a6cdmthp"]
 
 [ext_resource type="Script" path="res://Scripts/Stages/information_bar.gd" id="1_8g1cu"]
-[ext_resource type="Texture2D" uid="uid://cqx34wicbeheb" path="res://Assets/Images/UI/InformationBar/arrow-id-1.png" id="2_d50ro"]
+[ext_resource type="Texture2D" uid="uid://bpvsbo132o8lh" path="res://Assets/Images/UI/InformationBar/Mike.png" id="2_rqqqq"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_jjxfd"]
 [ext_resource type="Texture2D" uid="uid://bhe2i0ciou46g" path="res://Assets/Images/UI/DataUIs/timer.res" id="5_80eae"]
 [ext_resource type="Texture2D" uid="uid://q8p0gwed57be" path="res://Assets/Images/UI/DataUIs/range.res" id="6_xroi5"]
@@ -23,8 +23,15 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 corner_detail = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tu5n3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uum7v"]
 bg_color = Color(0, 0, 0, 0.568627)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcwgl"]
+bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -159,11 +166,26 @@ offset_bottom = 91.0
 grow_vertical = 2
 scale = Vector2(0.562265, 0.562265)
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tu5n3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_uum7v")
 
-[node name="HeadTexture" type="TextureRect" parent="Panel/PanelContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="Panel"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -37.0
+offset_right = 144.0
+offset_bottom = 91.0
+grow_vertical = 2
+scale = Vector2(0.562265, 0.562265)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcwgl")
+
+[node name="HeadTexture" type="TextureRect" parent="Panel/PanelContainer2"]
 layout_mode = 2
-texture = ExtResource("2_d50ro")
+texture = ExtResource("2_rqqqq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
