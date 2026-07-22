@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c063ssypuf6my"]
+[gd_scene load_steps=8 format=3 uid="uid://c063ssypuf6my"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_84vxm"]
 [ext_resource type="Script" path="res://Scripts/Bullets/magic_ball.gd" id="2_e5x1v"]
 [ext_resource type="PackedScene" uid="uid://d3ljd2wofm34l" path="res://Scenes/Effects/purple_magic_ball_tail.tscn" id="3_qnrup"]
 [ext_resource type="Texture2D" uid="uid://xm8yhq55odwi" path="res://Assets/Images/Bullets/magic_bullet2.png" id="4_e8dc7"]
 [ext_resource type="PackedScene" uid="uid://chwm7kf60y1ka" path="res://Scenes/Effects/purple_magic_ball_hit.tscn" id="4_lvt5u"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="6_20wl0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8x6c"]
 radius = 17.0
@@ -20,6 +21,7 @@ bullet_speed = 750.0
 damage_source = "MagicBall"
 
 [node name="BulletSprite" parent="." index="0"]
+light_mask = 2
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_e8dc7")
 
@@ -28,3 +30,7 @@ collision_mask = 196704
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_u8x6c")
+
+[node name="DarkTimeLight" parent="." index="3" instance=ExtResource("6_20wl0")]
+scale = Vector2(1.6305, 1.6305)
+color = Color(1, 0.768627, 1, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b8c0rmf807qqs"]
+[gd_scene load_steps=55 format=3 uid="uid://b8c0rmf807qqs"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/johnny_skill_area.gd" id="1_0vaib"]
 [ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="2_a23lq"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://d0p16tjvyvgsl" path="res://Assets/Animations/Heroes/Johnny/JohnnyFlag/flow_39.png" id="42_fqi72"]
 [ext_resource type="Texture2D" uid="uid://djqnwtl1embrg" path="res://Assets/Animations/Enemies/Shadow.png" id="43_shhcg"]
 [ext_resource type="Texture2D" uid="uid://ccglhhifm554s" path="res://Assets/Images/Effects/鼓舞光环.png" id="44_yuncf"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="52_74osk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sncij"]
 radius = 73.9444
@@ -221,11 +222,17 @@ region_rect = Rect2(194, 273, 174, 61)
 
 [node name="BuffEffect" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
+light_mask = 2
 z_index = -1
 position = Vector2(0, -9)
 scale = Vector2(1.37234, 1.87234)
 texture = ExtResource("44_yuncf")
 region_rect = Rect2(20, 24, 110, 63)
+
+[node name="DarkTimeLight" parent="BuffEffect" instance=ExtResource("52_74osk")]
+position = Vector2(0, 5.07386)
+scale = Vector2(1.7418, 0.920546)
+color = Color(1, 0.708375, 0.66164, 1)
 
 [node name="DurationTimer" type="Timer" parent="."]
 one_shot = true

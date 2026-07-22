@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cd1wjjsrmayqe"]
+[gd_scene load_steps=22 format=3 uid="uid://cd1wjjsrmayqe"]
 
 [ext_resource type="PackedScene" uid="uid://bdp6vlymmmpu3" path="res://Scenes/Allys/SummonAllys/summon_ally_class.tscn" id="1_2aomv"]
 [ext_resource type="Script" path="res://Scripts/Allys/SummonAllys/gd_golem.gd" id="2_xtyb6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cqml6idiuqh86" path="res://Assets/Images/Effects/扑克花色.png" id="7_0ke43"]
 [ext_resource type="Resource" uid="uid://cwpowg0xprdcx" path="res://Library/Heroes/HeroConfigs/GoldenDiamond/Skill1/golem_existing_time.tres" id="7_co3fn"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="7_nb1cd"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="13_7fvll"]
 
 [sub_resource type="Resource" id="Resource_tnlst"]
 script = ExtResource("6_8egxn")
@@ -162,12 +163,17 @@ shape = SubResource("CircleShape2D_307yl")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="Light" type="Sprite2D" parent="UnitBody" index="13"]
+light_mask = 2
 z_index = -1
 material = SubResource("ShaderMaterial_4ljfs")
 scale = Vector2(1.80574, 1.80574)
 texture = ExtResource("4_v8c31")
 region_enabled = true
 region_rect = Rect2(20, 24, 110, 63)
+
+[node name="DarkTimeLight" parent="UnitBody/Light" index="0" instance=ExtResource("13_7fvll")]
+scale = Vector2(1.96122, 1.29667)
+color = Color(0.587035, 0.722509, 1, 1)
 
 [node name="Poke" type="Sprite2D" parent="UnitBody" index="14"]
 modulate = Color(1, 1, 1, 0)

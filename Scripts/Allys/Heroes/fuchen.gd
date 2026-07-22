@@ -71,7 +71,8 @@ func frame_changed():
 	if ally_sprite.animation == "teleport" and ally_sprite.frame == 13:
 		teleport_finished()
 	if ally_sprite.animation == "teleport" and ally_sprite.frame == 9:
-		EffectManager.instance.play_explosion_effect(global_position,Vector2.ONE * 0.5, Color.PURPLE)
+		var effect: AnimatedSprite2D = EffectManager.instance.play_explosion_effect(global_position,Vector2.ONE * 0.5, Color.PURPLE)
+		effect.light_mask = 2
 		match randi_range(1,2):
 			1: teleport_audio.play()
 			2: teleport_audio_2.play()

@@ -1,35 +1,37 @@
 extends SkillConditionArea2D
 
-@export var skill_duration_list: Array[float]
+@export var skill_duration_list: Array[FloatSaver]
 @export var protection_buff_scene: PackedScene
-@export var heal_rate_list: Array[float]
+@export var heal_rate_list: Array[FloatSaver]
 @export var steve_armor_up_buff_scene: PackedScene
-@export var steve_heal_rate: float
+@export var steve_heal_rate: FloatSaver
 @export var heal_buff_scene: PackedScene
 @export var heal_buff_effect_scene: PackedScene
 
 @onready var buff_sprite: Sprite2D = $BuffSprite
 @onready var shot_timer: Timer = $ShotTimer
 @onready var duration_timer: Timer = $DurationTimer
+@onready var dark_time_light: PointLight2D = $DarkTimeLight
 
 
 func _ready() -> void:
 	buff_sprite.modulate.a = 0
 	create_tween().tween_property(buff_sprite,"modulate:a",1,0.4)
-	duration_timer.wait_time = skill_duration_list[skill_level]
+	create_tween().tween_property(dark_time_light,"energy",1,0.4)
+	duration_timer.wait_time = skill_duration_list[skill_level].saving_float_value
 	duration_timer.start()
 	var steve: Hero = Stage.instance.hero_list[0]
-	var heal_data: int = steve.start_data.health * steve_heal_rate
+	var heal_data: int = steve.start_data.health * steve_heal_rate.saving_float_value
 	steve.current_data.heal(heal_data)
 	var heal_effect: BuffClass = heal_buff_effect_scene.instantiate()
 	steve.buffs.add_child(heal_effect)
 	var steve_armor_buff: PropertyBuff = steve_armor_up_buff_scene.instantiate()
-	steve_armor_buff.duration = skill_duration_list[skill_level]
+	steve_armor_buff.duration = skill_duration_list[skill_level].saving_float_value
 	steve.buffs.add_child(steve_armor_buff)
 	
 	await get_tree().physics_frame
 	await get_tree().physics_frame
-	var heal_rate: float = heal_rate_list[skill_level]
+	var heal_rate: float = heal_rate_list[skill_level].saving_float_value
 	for body in get_overlapping_bodies():
 		var ally: Ally = body.owner
 		if ally.ally_type == Ally.AllyType.Heroes: continue
@@ -53,6 +55,7 @@ func _on_duration_timer_timeout() -> void:
 	shot_timer.stop()
 	var disappear_tween: Tween = create_tween()
 	disappear_tween.tween_property(buff_sprite,"modulate:a",0,0.4)
+	create_tween().tween_property(dark_time_light,"energy",0,0.4)
 	await disappear_tween.finished
 	queue_free()
 	pass # Replace with function body.

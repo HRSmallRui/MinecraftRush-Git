@@ -11,6 +11,9 @@ enum SteveSkillType{
 @export var front_skill_normal_texture: Texture
 @export var front_skill_select_texture: Texture
 @export var front_skill_area_scene: PackedScene
+@export var front_skill_damage_first_list: Array[IntSaver]
+@export var front_skill_damage_second_list: Array[IntSaver]
+@export var front_skill_extra_damage_per_layer_list: Array[IntSaver]
 
 @export_group("BackSkill","back_skill")
 @export var back_skill_name: String
@@ -18,6 +21,9 @@ enum SteveSkillType{
 @export var back_skill_normal_texture: Texture
 @export var back_skill_select_texture: Texture
 @export var back_skill_area_scene: PackedScene
+@export var back_skill_skill_duration_list: Array[FloatSaver]
+@export var back_skill_heal_rate_list: Array[FloatSaver]
+@export var back_skill_steve_heal_rate: FloatSaver
 
 var skill_level: int
 var steve_skill_type: SteveSkillType = SteveSkillType.Front

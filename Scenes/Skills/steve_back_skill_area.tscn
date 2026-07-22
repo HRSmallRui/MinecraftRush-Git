@@ -1,13 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpr553lmxdmf8"]
+[gd_scene load_steps=22 format=3 uid="uid://dpr553lmxdmf8"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/steve_back_skill_area.gd" id="1_vnibe"]
 [ext_resource type="PackedScene" uid="uid://dqulx3g6cvgqk" path="res://Scenes/Buffs/EnvironmentBuffs/lily_heal_buff.tscn" id="2_b41vw"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="2_fi8wk"]
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="2_hq5my"]
 [ext_resource type="PackedScene" uid="uid://b33aer858lqtu" path="res://Scenes/Buffs/SteveSP/steve_skill_protection_buff.tscn" id="2_iom4q"]
+[ext_resource type="Resource" uid="uid://slhvj4e7dbut" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv0.tres" id="3_bqmrb"]
 [ext_resource type="Texture2D" uid="uid://ccglhhifm554s" path="res://Assets/Images/Effects/鼓舞光环.png" id="3_e08h1"]
 [ext_resource type="PackedScene" uid="uid://d1xwu3yq5mwdq" path="res://Scenes/Buffs/SteveSP/steve_armor_up_buff.tscn" id="3_ormn1"]
 [ext_resource type="PackedScene" uid="uid://bi8hxlk4frye6" path="res://Scenes/Buffs/SteveSP/steve_skill_heal_buff.tscn" id="4_avh4w"]
+[ext_resource type="Resource" uid="uid://3bgigr1q2ykk" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv1.tres" id="4_j1ark"]
+[ext_resource type="Resource" uid="uid://di3uggfv6epqx" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv2.tres" id="5_udb7e"]
+[ext_resource type="Resource" uid="uid://dalsxg1qj4ewn" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/skill_daration_lv3.tres" id="6_pwf31"]
+[ext_resource type="Resource" uid="uid://8uxw4qqx6xg1" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv0.tres" id="8_60y32"]
 [ext_resource type="AudioStream" uid="uid://b6k07hqofnnxa" path="res://Assets/Sounds/FXs/Heroes/Fuchen/护盾.wav" id="8_rcsed"]
+[ext_resource type="Resource" uid="uid://dvwp4abh3vhhp" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv1.tres" id="9_tyu6h"]
+[ext_resource type="Resource" uid="uid://ccmy6iq4b03l0" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv2.tres" id="10_6ycya"]
+[ext_resource type="Resource" uid="uid://ymd22kcqmua7" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/heal_rate_lv3.tres" id="11_p5yfb"]
+[ext_resource type="Resource" uid="uid://r0kjdgk8ijnu" path="res://Library/Heroes/HeroConfigs/SteveSP/Skill5/Back/steve_heal_rate.tres" id="13_vu4cq"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="19_l5fi1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sh4v"]
 radius = 73.9444
@@ -21,11 +32,11 @@ z_index = -1
 collision_layer = 0
 collision_mask = 24
 script = ExtResource("1_vnibe")
-skill_duration_list = Array[float]([3.0, 5.0, 7.0, 10.0])
+skill_duration_list = Array[ExtResource("2_fi8wk")]([ExtResource("3_bqmrb"), ExtResource("4_j1ark"), ExtResource("5_udb7e"), ExtResource("6_pwf31")])
 protection_buff_scene = ExtResource("2_iom4q")
-heal_rate_list = Array[float]([0.3, 0.4, 0.5, 0.6])
+heal_rate_list = Array[ExtResource("2_fi8wk")]([ExtResource("8_60y32"), ExtResource("9_tyu6h"), ExtResource("10_6ycya"), ExtResource("11_p5yfb")])
 steve_armor_up_buff_scene = ExtResource("3_ormn1")
-steve_heal_rate = 0.4
+steve_heal_rate = ExtResource("13_vu4cq")
 heal_buff_scene = ExtResource("4_avh4w")
 heal_buff_effect_scene = ExtResource("2_b41vw")
 
@@ -36,6 +47,7 @@ debug_color = Color(0, 1, 1, 0)
 
 [node name="BuffSprite" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.792157)
+light_mask = 2
 material = SubResource("ShaderMaterial_jfvbt")
 position = Vector2(0, -33)
 scale = Vector2(3.144, 5.155)
@@ -53,6 +65,10 @@ one_shot = true
 stream = ExtResource("8_rcsed")
 autoplay = true
 bus = &"Sound"
+
+[node name="DarkTimeLight" parent="." instance=ExtResource("19_l5fi1")]
+scale = Vector2(6.2025, 4.4825)
+color = Color(0.810994, 1, 0.995986, 1)
 
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
 [connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]

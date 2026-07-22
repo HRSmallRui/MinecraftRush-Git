@@ -1,12 +1,12 @@
 extends SkillConditionArea2D
 
-@export var skill_damage_list: Array[int]
+@export var skill_damage_list: Array[IntSaver]
 @export var slow_buff_scene: PackedScene
 @export var armor_broken_buff_scene: PackedScene
-@export var second_damage_list: Array[int]
+@export var second_damage_list: Array[IntSaver]
 @export var dizness_buff_scene: PackedScene
 @export var dizness_duration: float
-@export var extra_damage_per_layer_list: Array[int]
+@export var extra_damage_per_layer_list: Array[IntSaver]
 @export var explosion_effect_scene: PackedScene
 @export var smoke_scene: PackedScene
 
@@ -14,7 +14,7 @@ extends SkillConditionArea2D
 
 
 func cause_damage():
-	var damage: int = skill_damage_list[skill_level]
+	var damage: int = skill_damage_list[skill_level].saving_int_value
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,null)
@@ -46,7 +46,8 @@ func second_cause_damage():
 	
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		enemy_second_take_damage(enemy,second_damage_list[skill_level],extra_damage_per_layer_list[skill_level])
+		enemy_second_take_damage(enemy,second_damage_list[skill_level].saving_int_value,
+		extra_damage_per_layer_list[skill_level].saving_int_value)
 	pass
 
 

@@ -1,13 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://cxlmw4wnnnka7"]
+[gd_scene load_steps=19 format=3 uid="uid://cxlmw4wnnnka7"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/MagicianRayShader.gdshader" id="1_yn8da"]
 [ext_resource type="Texture2D" uid="uid://bfypq5d241fn8" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-1/LV4-1-RAY.png" id="2_stfyr"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/MagicTowers/protector_church_ray.gd" id="3_1pfao"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/skill_particle_shooter.gd" id="4_s1hfr"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="5_6uwdr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u6xfe"]
 shader = ExtResource("1_yn8da")
 shader_parameter/speed = 1.0
+shader_parameter/alpha_strength = 1.0
 
 [sub_resource type="Animation" id="Animation_wec4c"]
 resource_name = "1"
@@ -118,6 +120,7 @@ fill_to = Vector2(0.782051, 0.222222)
 
 [node name="ProtectorChurchRay" type="Line2D"]
 process_mode = 3
+light_mask = 2
 material = SubResource("ShaderMaterial_u6xfe")
 width = 30.0
 texture = ExtResource("2_stfyr")
@@ -132,14 +135,19 @@ libraries = {
 
 [node name="StartPointParticle" type="GPUParticles2D" parent="."]
 process_mode = 3
+light_mask = 2
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_bcvf7")
 texture = SubResource("GradientTexture2D_7500e")
 lifetime = 0.2
 script = ExtResource("4_s1hfr")
 
+[node name="DarkTimeLight" parent="StartPointParticle" instance=ExtResource("5_6uwdr")]
+color = Color(1, 0.768627, 1, 1)
+
 [node name="EndPointParticle" type="GPUParticles2D" parent="."]
 process_mode = 3
+light_mask = 2
 z_index = 1
 process_material = SubResource("ParticleProcessMaterial_qtwag")
 texture = SubResource("GradientTexture2D_mbf1w")
@@ -147,5 +155,9 @@ lifetime = 0.2
 script = ExtResource("4_s1hfr")
 
 [node name="Sprite2D" type="Sprite2D" parent="EndPointParticle"]
+light_mask = 2
 scale = Vector2(0.312077, 0.312077)
 texture = SubResource("GradientTexture2D_7lryk")
+
+[node name="DarkTimeLight" parent="EndPointParticle" instance=ExtResource("5_6uwdr")]
+color = Color(1, 0.768627, 1, 1)

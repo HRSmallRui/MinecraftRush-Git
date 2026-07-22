@@ -9,6 +9,7 @@ extends Area2D
 @onready var shadow: Sprite2D = $Shadow
 @onready var tail_timer: Timer = $TailTimer
 @onready var bomb: Sprite2D = $Bomb
+@onready var dark_time_light: PointLight2D = $Bomb/DarkTimeLight
 
 
 func _ready() -> void:
@@ -30,6 +31,7 @@ func _ready() -> void:
 	Stage.instance.stage_camera.shake(20)
 	create_tween().tween_property(bomb,"scale",Vector2.ONE * 1,0.8)
 	create_tween().tween_property(bomb,"modulate:a",0,0.8)
+	create_tween().tween_property(dark_time_light,"energy",0,0.6)
 	fire_sprite.hide()
 	EffectManager.instance.play_explosion_effect(position,Vector2.ONE*2)
 	EffectManager.instance.play_smoke_effect(position,Vector2.ONE*2)
