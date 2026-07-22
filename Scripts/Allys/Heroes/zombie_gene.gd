@@ -61,9 +61,9 @@ func frame_changed():
 		if ally_sprite.frame == 14:
 			var target_pos: Vector2 = position
 			skill1_origin_position = position
-			target_pos.x += -20 if ally_sprite.flip_h else 20
-			create_tween().tween_property(self,"position",target_pos,0.2)
-			create_tween().tween_property(self,"modulate:a",0,0.2)
+			target_pos.x += -50 if ally_sprite.flip_h else 50
+			create_tween().tween_property(self,"position",target_pos,0.4)
+			create_tween().tween_property(self,"modulate:a",0,0.4)
 		if ally_sprite.frame == 22:
 			ally_sprite.pause()
 			delay_slash()
@@ -120,6 +120,8 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 
 func idle_process():
 	if skill_1_timer.is_stopped() and skill_1_condition_area.get_overlapping_bodies().size() >= 3:
+		var enemy: Enemy = skill_1_condition_area.get_overlapping_bodies()[0].owner
+		ally_sprite.flip_h = enemy.position.x < position.x
 		translate_to_new_state(AllyState.SPECIAL)
 		body_collision.disabled = true
 		ally_sprite.play("skill1_start")
@@ -147,10 +149,13 @@ func delay_slash():
 		var delay_slash_effect: Node2D = delay_slash_effect_scene.instantiate()
 		delay_slash_effect.position = enemy.hurt_box.global_position
 		Stage.instance.bullets.add_child(delay_slash_effect)
+		delay_slash_effect.scale *= 0.4
 		delay_slash_effect_list.append(delay_slash_effect)
 	await get_tree().create_timer(0.4,false).timeout
 	ally_sprite.play("skill1_end")
-	position = skill1_origin_position
+	var delta_pos: Vector2 = position - skill1_origin_position
+	position = skill1_origin_position - delta_pos
+	create_tween().tween_property(self,"position",skill1_origin_position,0.3)
 	create_tween().tween_property(self,"modulate:a",1,0.3)
 	pass
 
