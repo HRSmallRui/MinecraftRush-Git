@@ -165,6 +165,7 @@ func die(explosion: bool):
 		return
 	super(explosion)
 	lives_layer = 0
+	skill_3_shot_timer.stop()
 	pass
 
 
