@@ -23,6 +23,7 @@ extends Hero
 @onready var slash_audio: AudioStreamPlayer = $SlashAudio
 @onready var skill_3_release_audio: AudioStreamPlayer = $Skill3ReleaseAudio
 @onready var skill_3_audio: AudioStreamPlayer = $Skill3Audio
+@onready var skill_3_condition_area: Area2D = $UnitBody/Skill3ConditionArea
 
 var target_enemy_path: EnemyPath
 var move_to_start_point: bool
@@ -129,7 +130,7 @@ func idle_process():
 		return
 	super()
 	if ally_state == AllyState.IDLE:
-		if skill_3_timer.is_stopped() and skill_3_attack_area.get_overlapping_bodies().size() >= 3:
+		if skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 3:
 			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill3_start")
 			skill_3_timer.start()
@@ -185,7 +186,7 @@ func skill3_release():
 
 func battle():
 	if ally_sprite.animation == "idle":
-		if skill_3_timer.is_stopped() and skill_3_attack_area.get_overlapping_bodies().size() >= 3:
+		if skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 3:
 			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill3_start")
 			skill_3_timer.start()
