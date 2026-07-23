@@ -6,7 +6,10 @@
 [ext_resource type="Script" path="res://Scripts/Datas/BarrackData.gd" id="2_cpxbr"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="3_spyu5"]
 [ext_resource type="PackedScene" uid="uid://d2bgyaqeok6iu" path="res://Scenes/Allys/Soldiers/epee_soldier.tscn" id="3_vtyqs"]
+[ext_resource type="Resource" uid="uid://bqimkepnjxa4h" path="res://Library/TowerConfigs/BarrackTowers/EpeeChurch/Skill1/upgrade_damage_block_lv1.tres" id="4_kpvi5"]
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="4_olr0a"]
+[ext_resource type="Resource" uid="uid://ghjrijpl6efj" path="res://Library/TowerConfigs/BarrackTowers/EpeeChurch/Skill1/upgrade_damage_block_lv2.tres" id="5_lrcof"]
+[ext_resource type="Resource" uid="uid://q505p2e04678" path="res://Library/TowerConfigs/BarrackTowers/EpeeChurch/Skill1/upgrade_damage_block_lv3.tres" id="6_hk88w"]
 [ext_resource type="Texture2D" uid="uid://b37dcwqrx2mqe" path="res://Assets/Images/DefenceTowers/Barracks/UI/LV4-2/尖刺.png" id="7_b82ny"]
 [ext_resource type="Texture2D" uid="uid://dnjcw4b8id7qf" path="res://Assets/Images/DefenceTowers/Barracks/UI/LV4-2/尖刺select.png" id="8_4b5qf"]
 [ext_resource type="Texture2D" uid="uid://bef37n4qwavel" path="res://Assets/Images/DefenceTowers/Barracks/UI/LV4-2/尖刺disabled.png" id="9_hjwvj"]
@@ -47,21 +50,6 @@
 [ext_resource type="Texture2D" uid="uid://dkkjs06rsi3gv" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_26.png" id="40_dpc4q"]
 [ext_resource type="Texture2D" uid="uid://clo0pgh0x8v4b" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_27.png" id="41_hv486"]
 [ext_resource type="Texture2D" uid="uid://dtunb5swwu455" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_28.png" id="42_au1k1"]
-
-[sub_resource type="Resource" id="Resource_jwmpv"]
-script = ExtResource("3_spyu5")
-damage_low = 35
-damage_high = 45
-
-[sub_resource type="Resource" id="Resource_o3nx3"]
-script = ExtResource("3_spyu5")
-damage_low = 45
-damage_high = 55
-
-[sub_resource type="Resource" id="Resource_itfmw"]
-script = ExtResource("3_spyu5")
-damage_low = 50
-damage_high = 70
 
 [sub_resource type="Resource" id="Resource_l5pog"]
 script = ExtResource("2_cpxbr")
@@ -203,7 +191,7 @@ fill_to = Vector2(0.82906, 0.24359)
 [node name="EpeeChurch" instance=ExtResource("1_2axnk")]
 y_sort_enabled = true
 script = ExtResource("2_01nor")
-skill1_damage_list = Array[ExtResource("3_spyu5")]([SubResource("Resource_jwmpv"), SubResource("Resource_o3nx3"), SubResource("Resource_itfmw")])
+skill1_damage_list = Array[ExtResource("3_spyu5")]([ExtResource("4_kpvi5"), ExtResource("5_lrcof"), ExtResource("6_hk88w")])
 barrack_data = SubResource("Resource_l5pog")
 soldier_scene = ExtResource("3_vtyqs")
 is_new_tower = false
@@ -231,7 +219,7 @@ texture_disabled = SubResource("AtlasTexture_qaqtm")
 linked_tower = NodePath("../../..")
 skill_name = "尖刺"
 skill_prices = Array[int]([150, 100, 100])
-skill_intro = PackedStringArray("将大刀兵的伤害提高至35-45点。", "将大刀兵的伤害提高至45-55点。", "将大刀兵的伤害提高至50-70点。")
+skill_intro = PackedStringArray("将大刀兵的伤害提高至40-60点。", "将大刀兵的伤害提高至55-75点。", "将大刀兵的伤害提高至70-90点。")
 skill_words = "不会痛太久的……"
 
 [node name="TowerSkillButton2" parent="TowerUI/Circle" index="3" node_paths=PackedStringArray("linked_tower") instance=ExtResource("4_olr0a")]
