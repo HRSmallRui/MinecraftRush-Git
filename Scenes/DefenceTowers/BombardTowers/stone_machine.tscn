@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b6semrq10485e"]
+[gd_scene load_steps=48 format=3 uid="uid://b6semrq10485e"]
 
 [ext_resource type="PackedScene" uid="uid://bbhe3d6c7dhtc" path="res://Scenes/DefenceTowers/BombardTowers/bombard_tower.tscn" id="1_nsok0"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_7c1bu"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://1rskxqsxln01" path="res://Assets/Images/DefenceTowers/Bombards/Towers/LV4-3/无人机2.png" id="19_u7del"]
 [ext_resource type="AudioStream" uid="uid://djew332ofk6su" path="res://Assets/Sounds/FXs/DefenceTowers/PlaneController/plane.mp3" id="21_vvu06"]
 [ext_resource type="Texture2D" uid="uid://13pxqroo72xu" path="res://Assets/Images/UI/unit-select.png" id="23_rlda2"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="26_0ywmh"]
 
 [sub_resource type="Resource" id="Resource_n6640"]
 script = ExtResource("2_7c1bu")
@@ -50,6 +51,43 @@ region = Rect2(6, 6, 85, 85)
 [sub_resource type="AtlasTexture" id="AtlasTexture_to5e7"]
 atlas = ExtResource("11_la4xc")
 region = Rect2(6, 6, 85, 85)
+
+[sub_resource type="Animation" id="Animation_2y6qv"]
+resource_name = "loop"
+length = 0.5
+loop_mode = 2
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_7ncc0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8hnl"]
+_data = {
+"RESET": SubResource("Animation_7ncc0"),
+"loop": SubResource("Animation_2y6qv")
+}
 
 [sub_resource type="Animation" id="Animation_1e72w"]
 length = 0.001
@@ -206,6 +244,16 @@ texture = ExtResource("4_o4dwq")
 texture = ExtResource("4_5kaqi")
 offset = Vector2(-6, -23)
 
+[node name="DarkTimeLight" parent="BasedSprite" index="0" instance=ExtResource("26_0ywmh")]
+position = Vector2(30, -78)
+color = Color(1, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BasedSprite/DarkTimeLight" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_e8hnl")
+}
+autoplay = "loop"
+
 [node name="Radar" type="Node2D" parent="." index="11"]
 position = Vector2(-36, -3)
 scale = Vector2(0.619774, 0.619774)
@@ -235,6 +283,11 @@ texture_filter = 1
 position = Vector2(0, -100)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_u7del")
+
+[node name="DarkTimeLight" parent="Plane/PlaneSprite" index="0" instance=ExtResource("26_0ywmh")]
+position = Vector2(0, -10)
+color = Color(1, 0, 0, 1)
+energy = 0.5
 
 [node name="Shadow" type="Sprite2D" parent="Plane" index="1"]
 z_index = -1
