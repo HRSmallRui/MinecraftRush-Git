@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://b11hmbmp1qw1e"]
+[gd_scene load_steps=112 format=3 uid="uid://b11hmbmp1qw1e"]
 
 [ext_resource type="PackedScene" uid="uid://cw6pat17gtbr3" path="res://Scenes/DefenceTowers/MagicTower/magic_tower.tscn" id="1_kp7gh"]
 [ext_resource type="Texture2D" uid="uid://cnkija7i21j1h" path="res://Assets/Images/UI/InformationBar/magic-id-5.png" id="2_3pdru"]
@@ -91,6 +91,12 @@
 [ext_resource type="Texture2D" uid="uid://dy7hm0vkujmfh" path="res://Assets/Animations/Magicians/LV4-2/attack_24.png" id="88_bxo4d"]
 [ext_resource type="Texture2D" uid="uid://onowq0eh218n" path="res://Assets/Animations/Magicians/LV4-2/attack_25.png" id="89_r0tg3"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/MagicTowers/witch.gd" id="90_8b0vq"]
+[ext_resource type="PackedScene" uid="uid://dn8iefyckitfm" path="res://Scenes/Bullets/green_magic_ball.tscn" id="92_faus2"]
+[ext_resource type="PackedScene" uid="uid://d3865ubg6i7iq" path="res://Scenes/Bullets/witch_fog_ball.tscn" id="92_vkgh6"]
+[ext_resource type="PackedScene" uid="uid://c8wrjt7byyw7c" path="res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_curse_property.tscn" id="93_pkhm4"]
+[ext_resource type="PackedScene" uid="uid://cdjclvs3dsgfp" path="res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_c_urse_dot.tscn" id="94_ojkb3"]
+[ext_resource type="PackedScene" uid="uid://bkk3gn6slyxpu" path="res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_curse_property_lv2.tscn" id="94_vegi1"]
+[ext_resource type="PackedScene" uid="uid://cycshnhcpg6vm" path="res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_curse_property_lv3.tscn" id="95_0a7u5"]
 [ext_resource type="Texture2D" uid="uid://c03vs0vnys2bt" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-2/heart-green.png" id="105_r1ow5"]
 
 [sub_resource type="Resource" id="Resource_7nxyh"]
@@ -694,8 +700,13 @@ autoplay = "idle_front"
 offset = Vector2(-2, -15)
 script = ExtResource("90_8b0vq")
 witch_tower = NodePath("../..")
+fog_bullet_scene = ExtResource("92_vkgh6")
+curse_duration_list = Array[float]([5.0, 7.0, 10.0])
+curse_buff_scene_list = Array[PackedScene]([ExtResource("93_pkhm4"), ExtResource("94_vegi1"), ExtResource("95_0a7u5")])
+curse_dot_buff_scene = ExtResource("94_ojkb3")
 tower = NodePath("../..")
 summon_frame = 17
+magic_bullet_scene = ExtResource("92_faus2")
 
 [node name="MagicAnimationPlayer" type="AnimationPlayer" parent="TowerSprite/Witch" index="0"]
 libraries = {

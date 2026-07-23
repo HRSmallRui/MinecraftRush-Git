@@ -1,11 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://dnmwk5bg70pcm"]
+[gd_scene load_steps=32 format=3 uid="uid://dnmwk5bg70pcm"]
 
 [ext_resource type="Texture2D" uid="uid://bk6mhmybljx2l" path="res://Assets/Images/Effects/DustKill/0001.png" id="1_25wp2"]
 [ext_resource type="Script" path="res://Scripts/Skills/dust_sec_kill.gd" id="1_o18g7"]
 [ext_resource type="Texture2D" uid="uid://ud3nhi8tcire" path="res://Assets/Images/Effects/DustKill/0002.png" id="2_4fnp1"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="2_pcq4h"]
+[ext_resource type="Resource" uid="uid://dbkelrhtjdbfb" path="res://Library/TowerConfigs/MagicTowers/ProtectorChurch/sec_kill_damage_lv1.tres" id="3_qavv5"]
 [ext_resource type="Texture2D" uid="uid://c24wfebobqrld" path="res://Assets/Images/Effects/DustKill/0003.png" id="3_wtehp"]
 [ext_resource type="Texture2D" uid="uid://bo31pkam313dh" path="res://Assets/Images/Effects/DustKill/0004.png" id="4_7hvic"]
+[ext_resource type="Resource" uid="uid://d045hcx7s05q8" path="res://Library/TowerConfigs/MagicTowers/ProtectorChurch/sec_kill_damage_lv2.tres" id="4_wve62"]
 [ext_resource type="Texture2D" uid="uid://cyglnnn0ntyrn" path="res://Assets/Images/Effects/DustKill/0005.png" id="5_q1dhe"]
+[ext_resource type="Resource" uid="uid://d3of7bc1nwkuc" path="res://Library/TowerConfigs/MagicTowers/ProtectorChurch/sec_kill_damage_lv3.tres" id="5_xor8v"]
 [ext_resource type="Texture2D" uid="uid://blpj3q42wp5mx" path="res://Assets/Images/Effects/DustKill/0006.png" id="6_wsgnx"]
 [ext_resource type="Texture2D" uid="uid://eqty66s764x" path="res://Assets/Images/Effects/DustKill/0007.png" id="7_ei2y4"]
 [ext_resource type="Texture2D" uid="uid://mbra84ret4pt" path="res://Assets/Images/Effects/DustKill/0008.png" id="8_h23ar"]
@@ -24,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://rdvdudgygb3r" path="res://Assets/Images/Effects/DustKill/0021.png" id="21_ansyd"]
 [ext_resource type="Texture2D" uid="uid://crf5xn56jkmbb" path="res://Assets/Images/Effects/DustKill/0022.png" id="22_mqtig"]
 [ext_resource type="Texture2D" uid="uid://cq3dpjaj24qc8" path="res://Assets/Images/Effects/DustKill/0023.png" id="23_go21b"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="25_ftuy4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ugpk"]
 radius = 83.3333
@@ -110,15 +115,22 @@ z_index = -1
 y_sort_enabled = true
 scale = Vector2(0.3, 0.3)
 collision_layer = 0
-collision_mask = 96
+collision_mask = 196704
 script = ExtResource("1_o18g7")
+seckill_damage_list = Array[ExtResource("2_pcq4h")]([ExtResource("3_qavv5"), ExtResource("4_wve62"), ExtResource("5_xor8v")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.480001)
 shape = SubResource("CircleShape2D_7ugpk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_n8krg")
 autoplay = "default"
 frame_progress = 0.961693
+
+[node name="DarkTimeLight" parent="AnimatedSprite2D" instance=ExtResource("25_ftuy4")]
+position = Vector2(0, -7)
+scale = Vector2(4.17771, 2.97772)
+color = Color(1, 0.744421, 0.985357, 1)

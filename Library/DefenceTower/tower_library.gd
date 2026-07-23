@@ -8,7 +8,7 @@ static var archer_datas: Array[BasedTowerData] = [
 	10,16,0.5,360),
 	BasedTowerData.new("投石高塔","只要喝饱暗黑重油，这些紫皮投石手便会重拳出击，将敌人压在巨石之下。",48,69,1.5,360),
 	BasedTowerData.new("沙漠哨塔","沙漠中的刺客，手中的飞刃时刻瞄准着敌人的头颅，每次都有可能对敌人造成致命的伤害。",23,45,0.8,400),
-	BasedTowerData.new("劫掠哨塔","被顶层同类长期压迫的低等刌民奋起反抗，将怒火泄于战场，对同为刌民的帮凶敌人，每发箭矢都直击要害。",13,20,0.4,500)
+	BasedTowerData.new("劫掠哨塔","被顶层同类长期压迫的低等刌民奋起反抗，将怒火泄于战场，对同为刌民的帮凶敌人，每发箭矢都直击要害。",13,18,0.4,480)
 ]
 
 static var barrack_datas: Array[BarrackTowerData] = [

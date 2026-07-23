@@ -1,31 +1,19 @@
 extends SkillConditionArea2D
 
+@export var lightning_damage_list: Array[DamageBlock]
+@export var lightning_dizness_duration_list: Array[FloatSaver]
+
 
 func _ready() -> void:
-	var lighting_effect: Line2D = preload("res://Scenes/Effects/lightning.tscn").instantiate()
-	lighting_effect.position = position
-	Stage.instance.bullets.add_child(lighting_effect)
-	var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	explosion_effect.position = position
-	Stage.instance.bullets.add_child(explosion_effect)
+	EffectManager.instance.play_lightning_effect(position)
+	EffectManager.instance.play_explosion_effect(position)
 	AudioManager.instance.play_explosion_audio()
 	
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	
-	var damage: int
-	var dizness_time :float
-	
-	match skill_level:
-		1: 
-			damage = 75
-			dizness_time = 1
-		2: 
-			damage = 90
-			dizness_time = 1.5
-		3: 
-			damage = 125
-			dizness_time = 2
+	var damage: int = lightning_damage_list[skill_level-1].get_damage()
+	var dizness_time :float = lightning_dizness_duration_list[skill_level-1].saving_float_value
 	
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner

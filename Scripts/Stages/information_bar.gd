@@ -11,7 +11,7 @@ class_name InformationBar
 @onready var enemy_slot: HBoxContainer = $Panel/VBoxContainer/Slots/EnemySlot
 @onready var intro_label: Label = $Panel/VBoxContainer/Slots/IntroLabel
 
-@onready var head_texture: TextureRect = $Panel/PanelContainer/HeadTexture
+@onready var head_texture: TextureRect = $Panel/PanelContainer2/HeadTexture
 @onready var name_label: Label = $Panel/VBoxContainer/NameLabel
 
 var current_check_member: Node

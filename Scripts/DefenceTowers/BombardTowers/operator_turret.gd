@@ -1,5 +1,12 @@
 extends BombardTower
 
+@export var aoe_damage: DamageBlock
+@export_group("Skill1")
+@export var lightning_area_scene: PackedScene
+@export var lightning_damage_list: Array[DamageBlock]
+@export var lightning_dizness_duration_list: Array[FloatSaver]
+@export_group("Skill2")
+@export var robot_scene: PackedScene
 
 @onready var unit_move_area: Area2D = $UnitMoveArea
 @onready var flag_button: TextureButton = $TowerUI/Circle/FlagButton
@@ -72,7 +79,7 @@ func tower_skill_level_up(skill_id: int, skill_level: int):
 		lightning_sprite.show()
 	
 	if skill_id == 1 and skill_level == 1:
-		var robot: SummonAlly = preload("res://Scenes/Allys/SummonAllys/operator_robot.tscn").instantiate()
+		var robot: SummonAlly = robot_scene.instantiate()
 		robot.position = robot_position
 		linked_robot = robot
 		linked_robot.station_position = robot_position
