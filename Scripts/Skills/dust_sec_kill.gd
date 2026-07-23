@@ -1,6 +1,8 @@
 extends Area2D
 class_name DustSecKillArea2D
 
+@export var seckill_damage_list: Array[IntSaver]
+
 var level: int = 1
 
 
@@ -8,11 +10,7 @@ func _ready() -> void:
 	modulate.a = 0
 	create_tween().tween_property(self,"modulate:a",1,0.4)
 	await get_tree().create_timer(0.3,false).timeout
-	var damage: int
-	match level:
-		1: damage = 400
-		2: damage = 600
-		3: damage = 800
+	var damage: int = seckill_damage_list[level-1].saving_int_value
 	
 	for unit_body: UnitBody in get_overlapping_bodies():
 		var enemy: Enemy = unit_body.owner

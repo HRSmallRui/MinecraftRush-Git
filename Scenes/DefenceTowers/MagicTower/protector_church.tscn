@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b80evc1oc2kvb"]
+[gd_scene load_steps=77 format=3 uid="uid://b80evc1oc2kvb"]
 
 [ext_resource type="PackedScene" uid="uid://cw6pat17gtbr3" path="res://Scenes/DefenceTowers/MagicTower/magic_tower.tscn" id="1_8jdpb"]
 [ext_resource type="Texture2D" uid="uid://cfm3i5ji0kjkg" path="res://Assets/Images/UI/InformationBar/magic-id-4.png" id="2_dl6qr"]
@@ -9,13 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="4_rckvb"]
 [ext_resource type="Texture2D" uid="uid://dn2otgerw5wti" path="res://Assets/Images/DefenceTowers/Magics/UI/铁傀儡.png" id="5_6vsfd"]
 [ext_resource type="Texture2D" uid="uid://tmwp33dr57m4" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-1/LV4-1-tower.png" id="5_g03sn"]
+[ext_resource type="PackedScene" uid="uid://dnmwk5bg70pcm" path="res://Scenes/Skills/dust_sec_kill.tscn" id="5_uoeep"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="6_havfa"]
 [ext_resource type="Texture2D" uid="uid://cxcke55yoho1k" path="res://Assets/Animations/Magicians/LV4-1/attack_00.png" id="6_sjbti"]
 [ext_resource type="Texture2D" uid="uid://do35a5t83p6da" path="res://Assets/Images/DefenceTowers/Magics/UI/铁傀儡select.png" id="6_whfuf"]
 [ext_resource type="Texture2D" uid="uid://b5tc3arhc1jmn" path="res://Assets/Animations/Magicians/LV4-1/attack_back_00.png" id="7_gdu5b"]
+[ext_resource type="Resource" uid="uid://dbkelrhtjdbfb" path="res://Library/TowerConfigs/MagicTowers/ProtectorChurch/sec_kill_damage_lv1.tres" id="7_oithf"]
 [ext_resource type="Texture2D" uid="uid://c17j36iprgsv" path="res://Assets/Images/DefenceTowers/Magics/UI/铁傀儡no.png" id="7_va8ct"]
 [ext_resource type="Texture2D" uid="uid://bx8ocp0uow5sf" path="res://Assets/Animations/Magicians/LV4-1/attack_back_01.png" id="8_ammva"]
+[ext_resource type="Resource" uid="uid://d045hcx7s05q8" path="res://Library/TowerConfigs/MagicTowers/ProtectorChurch/sec_kill_damage_lv2.tres" id="8_bi7pn"]
 [ext_resource type="Texture2D" uid="uid://bjjaglw47b50i" path="res://Assets/Images/DefenceTowers/Magics/UI/尘解.png" id="8_q1w1h"]
 [ext_resource type="Texture2D" uid="uid://qye5k0glqq7q" path="res://Assets/Images/DefenceTowers/Magics/UI/尘解select.png" id="9_8tddd"]
+[ext_resource type="Resource" uid="uid://d3of7bc1nwkuc" path="res://Library/TowerConfigs/MagicTowers/ProtectorChurch/sec_kill_damage_lv3.tres" id="9_a6mc7"]
 [ext_resource type="Texture2D" uid="uid://bjm23q8540r5o" path="res://Assets/Animations/Magicians/LV4-1/attack_back_02.png" id="9_rk86w"]
 [ext_resource type="Texture2D" uid="uid://erjbxxmupcr3" path="res://Assets/Images/DefenceTowers/Magics/UI/尘解no.png" id="10_0ikjs"]
 [ext_resource type="Texture2D" uid="uid://brhk4803o2tek" path="res://Assets/Animations/Magicians/LV4-1/attack_back_03.png" id="10_0o2sq"]
@@ -312,6 +317,8 @@ level_damage_list = Array[ExtResource("3_n74to")]([SubResource("Resource_4ifho")
 dust_kill_waiting_time_list = Array[float]([22.0, 21.0, 20.0])
 iron_golem_scene = ExtResource("4_6kptk")
 attack_cd_list = Array[float]([1.5, 1.8, 2.1, 2.4, 2.7, 3.0])
+seckill_area_scene = ExtResource("5_uoeep")
+seckill_damage_list = Array[ExtResource("6_havfa")]([ExtResource("7_oithf"), ExtResource("8_bi7pn"), ExtResource("9_a6mc7")])
 start_data = SubResource("Resource_hwtnj")
 magician = NodePath("Wizard")
 tower_name = "守卫者教堂"
