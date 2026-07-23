@@ -5,6 +5,7 @@ extends Soldier
 @export var skill1_upgrade_damage_list: Array[DamageBlock]
 @export_group("Skill2","skill2")
 @export var skill2_damage_list: Array[DamageBlock]
+@export var skill2_release_possible: float
 @export_group("Skill3","skill3")
 @export var skill3_invincible_buff_scene: PackedScene
 @export var skill3_start_rebirth_possible_list: Array[float]
@@ -71,8 +72,7 @@ func frame_changed():
 func battle():
 	if ally_sprite.animation == "idle" and normal_attack_timer.is_stopped():
 		if soldier_skill_levels[1] > 0 and skill_2_timer.is_stopped():
-			var possible: float = 0.3
-			if randf_range(0,1) < possible:
+			if randf_range(0,1) < skill2_release_possible:
 				skill_2_timer.start()
 				normal_attack_timer.start()
 				ally_sprite.play("super_attack")
