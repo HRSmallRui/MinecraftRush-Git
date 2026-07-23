@@ -8,6 +8,14 @@ extends ShooterBullet
 @onready var condition_area: Area2D = $ConditionArea
 @onready var explosion_hit_area: Area2D = $ExplosionHitArea
 
+var has_exploded: bool
+
+
+func _ready() -> void:
+	super()
+	move_finshed.connect(on_move_finished)
+	pass
+
 
 func enemy_take_damage(enemy: Enemy):
 	super(enemy)
@@ -25,12 +33,18 @@ func enemy_take_damage(enemy: Enemy):
 			stone_bullet.bullet_special_tag_levels["stone_explosion"] = bullet_special_tag_levels["stone_explosion"]
 		Stage.instance.bullets.add_child(stone_bullet)
 		return
-	if bullet_special_tag_levels.has("stone_explosion"):
+	on_move_finished()
+	
+	pass
+
+
+func on_move_finished():
+	if bullet_special_tag_levels.has("stone_explosion") and !has_exploded:
+		has_exploded = true
 		EffectManager.instance.play_sprite_effect(stone_explosion_effect_scene,position)
 		AudioManager.instance.stone_explosion_audio.play()
 		var damage_block: DamageBlock = stone_explosion_damage_list[bullet_special_tag_levels["stone_explosion"]-1]
 		for box in explosion_hit_area.get_overlapping_areas():
 			var new_enemy: Enemy = box.owner
 			new_enemy.take_damage(damage_block.get_damage(),DataProcess.DamageType.PhysicsDamage,0,false,source,explosion,true)
-	
 	pass
