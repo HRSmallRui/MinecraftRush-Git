@@ -179,18 +179,18 @@
 
 [sub_resource type="Resource" id="Resource_650fy"]
 script = ExtResource("3_tqq0g")
-damage_low = 75
+damage_low = 100
 damage_high = 150
 
 [sub_resource type="Resource" id="Resource_afinb"]
 script = ExtResource("3_tqq0g")
-damage_low = 100
-damage_high = 180
+damage_low = 125
+damage_high = 200
 
 [sub_resource type="Resource" id="Resource_kxdsl"]
 script = ExtResource("3_tqq0g")
-damage_low = 130
-damage_high = 210
+damage_low = 150
+damage_high = 250
 
 [sub_resource type="Resource" id="Resource_dp710"]
 script = ExtResource("3_mh5l0")
@@ -761,15 +761,16 @@ script = ExtResource("2_maprn")
 aoe_damage_rate = 0.5
 skill1_upgrade_damage_list = Array[ExtResource("3_tqq0g")]([ExtResource("4_lvekp"), ExtResource("5_0b3ks"), ExtResource("6_ljd3t")])
 skill2_damage_list = Array[ExtResource("3_tqq0g")]([SubResource("Resource_650fy"), SubResource("Resource_afinb"), SubResource("Resource_kxdsl")])
+skill2_release_possible = 0.3
 skill3_invincible_buff_scene = ExtResource("7_ayhhy")
-skill3_start_rebirth_possible_list = Array[float]([0.6, 0.7, 0.8])
-skill3_rebirth_possible_delta = 0.2
+skill3_start_rebirth_possible_list = Array[float]([0.6, 0.75, 0.9])
+skill3_rebirth_possible_delta = 0.15
 skill3_rebirth_heal_rate_list = Array[float]([0.4, 0.6, 0.8])
 soldier_name_list = Array[String](["玛格丽特", "玛尔大", "加百列", "拉斐尔", "赫拉克勒斯", "忒修斯", "威廉·马歇尔", "圣克里斯托弗", "圣参孙", "圣乔治", "雨果", "赫尔曼", "罗杰 德 穆兰", "圣塞巴斯蒂安", "子路"])
 ally_level = 4
 ally_texture = ExtResource("3_afob0")
 start_data = SubResource("Resource_dp710")
-intercepting_range = 150
+intercepting_range = 175
 heal_speed = 30
 rebirth_time = 12
 
@@ -803,6 +804,8 @@ debug_color = Color(1, 1, 1, 0)
 visible = false
 position = Vector2(2.84217e-14, -95)
 energy = 2.68
+range_z_min = -5
+range_z_max = 5
 texture = SubResource("GradientTexture2D_sd8ol")
 texture_scale = 5.44
 
@@ -825,7 +828,7 @@ wait_time = 6.0
 one_shot = true
 
 [node name="Skill3DurationTimer" type="Timer" parent="." index="11"]
-wait_time = 4.0
+wait_time = 5.0
 one_shot = true
 
 [connection signal="timeout" from="Skill3DurationTimer" to="." method="_on_skill_3_duration_timer_timeout"]

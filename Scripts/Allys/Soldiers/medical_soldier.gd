@@ -61,6 +61,9 @@ func frame_changed():
 			for body in heal_area.get_overlapping_bodies():
 				var ally: Ally = body.owner
 				ally.current_data.heal(heal_data)
+				var heal_buff: HealBuff = medical_buff_scene.instantiate()
+				heal_buff.buff_level = soldier_skill_levels[2]
+				ally.buffs.add_child(heal_buff)
 	pass
 
 
