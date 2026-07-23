@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b6semrq10485e"]
+[gd_scene load_steps=49 format=3 uid="uid://b6semrq10485e"]
 
 [ext_resource type="PackedScene" uid="uid://bbhe3d6c7dhtc" path="res://Scenes/DefenceTowers/BombardTowers/bombard_tower.tscn" id="1_nsok0"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_7c1bu"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dbhfcarsc2d65" path="res://Scenes/Bullets/plane_super_shell.tscn" id="4_q3n61"]
 [ext_resource type="Texture2D" uid="uid://dyyiqccbfgn4h" path="res://Assets/Animations/Bombards/LV4-2/Dadar/底座.png" id="5_1c6rm"]
 [ext_resource type="Texture2D" uid="uid://di244pjtyyl2a" path="res://Assets/Images/DefenceTowers/UI/flag_button.png" id="5_8vvnx"]
+[ext_resource type="PackedScene" uid="uid://d37xkpksnmwd4" path="res://Scenes/Skills/plane_smoke_area.tscn" id="5_20jnb"]
 [ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="5_74hhs"]
 [ext_resource type="Resource" uid="uid://dbfqd0sxa3nnf" path="res://Library/TowerConfigs/BombardTowers/PlaneController/Skill2/another_damage_lv1.tres" id="6_3td11"]
 [ext_resource type="Texture2D" uid="uid://56fiob4r12eu" path="res://Assets/Animations/Bombards/LV4-2/Dadar/旋转轴.png" id="6_5caeu"]
@@ -52,6 +53,20 @@ region = Rect2(6, 6, 85, 85)
 atlas = ExtResource("11_la4xc")
 region = Rect2(6, 6, 85, 85)
 
+[sub_resource type="Animation" id="Animation_7ncc0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_2y6qv"]
 resource_name = "loop"
 length = 0.5
@@ -67,20 +82,6 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="Animation" id="Animation_7ncc0"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e8hnl"]
@@ -168,6 +169,7 @@ radius = 73.9444
 script = ExtResource("2_o6g3m")
 plane_shell_scene = ExtResource("3_l876v")
 plane_kill_shell_scene = ExtResource("4_q3n61")
+smoke_scene = ExtResource("5_20jnb")
 skill2_damage_one_list = Array[ExtResource("5_74hhs")]([ExtResource("6_3td11"), ExtResource("7_75i17"), ExtResource("8_xrstg")])
 skill2_damage_aoe_list = Array[ExtResource("9_oihle")]([ExtResource("10_vptyx"), ExtResource("11_kbgcv"), ExtResource("12_82p22")])
 start_data = SubResource("Resource_n6640")
