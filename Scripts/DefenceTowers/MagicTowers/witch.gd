@@ -1,6 +1,11 @@
 extends Magician
 
 @export var witch_tower: WitchTower
+@export var fog_bullet_scene: PackedScene
+@export_group("Skill2")
+@export var curse_duration_list: Array[float]
+@export var curse_buff_scene_list: Array[PackedScene]
+@export var curse_dot_buff_scene: PackedScene
 
 
 func anim_offset():
@@ -51,7 +56,7 @@ func frame_condition():
 
 
 func witch_summon_bullet(summon_pos: Vector2, target_pos: Vector2, move_type: Bullet.MoveType):
-	var magic_ball = load("res://Scenes/Bullets/green_magic_ball.tscn").instantiate() as Bullet
+	var magic_ball = magic_bullet_scene.instantiate() as Bullet
 	magic_ball.position = summon_pos
 	magic_ball.target_position = target_pos
 	magic_ball.source = tower
@@ -109,7 +114,7 @@ func lock_enemy(enemy: Enemy, id: int):
 
 
 func release_fog(locked_enemy: Enemy):
-	var magic_ball:Bullet = preload("res://Scenes/Bullets/witch_fog_ball.tscn").instantiate()
+	var magic_ball:Bullet = fog_bullet_scene.instantiate()
 	magic_ball.position = magic_heart.global_position
 	magic_ball.target_position = locked_enemy.hurt_box.global_position + locked_enemy.direction * locked_enemy.current_data.unit_move_speed * 2
 	magic_ball.bullet_special_tag_levels["witch_fog"] = tower.tower_skill_levels[0]
@@ -118,19 +123,10 @@ func release_fog(locked_enemy: Enemy):
 
 
 func release_curse(locked_enemy: Enemy):
-	var curse_dot: DotBuff = preload("res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_c_urse_dot.tscn").instantiate()
+	var curse_dot: DotBuff = curse_dot_buff_scene.instantiate()
 	curse_dot.buff_level = tower.tower_skill_levels[1]
-	var property_buff: PropertyBuff
-	match tower.tower_skill_levels[1]:
-		1: 
-			curse_dot.duration = 5
-			property_buff = preload("res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_curse_property.tscn").instantiate()
-		2: 
-			curse_dot.duration = 7
-			property_buff = preload("res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_curse_property_lv2.tscn").instantiate()
-		3: 
-			curse_dot.duration = 10
-			property_buff = preload("res://Scenes/Buffs/TowerBuffs/WitchTower/witch_dead_curse_property_lv3.tscn").instantiate()
+	var property_buff: PropertyBuff = curse_buff_scene_list[tower.tower_skill_levels[1]-1].instantiate()
+	property_buff.duration = curse_duration_list[tower.tower_skill_levels[1]-1]
 	locked_enemy.buffs.add_child(curse_dot)
 	locked_enemy.buffs.add_child(property_buff)
 	pass
