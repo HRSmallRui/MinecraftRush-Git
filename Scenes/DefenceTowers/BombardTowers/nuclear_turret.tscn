@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=3 uid="uid://qc61padocjhr"]
+[gd_scene load_steps=161 format=3 uid="uid://qc61padocjhr"]
 
 [ext_resource type="PackedScene" uid="uid://bbhe3d6c7dhtc" path="res://Scenes/DefenceTowers/BombardTowers/bombard_tower.tscn" id="1_ew7ih"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/BombardTowers/nuclear_turret.gd" id="2_5cwsu"]
@@ -79,6 +79,7 @@
 [ext_resource type="Texture2D" uid="uid://bre8nxnmvfd88" path="res://Assets/Animations/Bombards/LV4-2/Smoke/smoking0027.png" id="71_xoonj"]
 [ext_resource type="Texture2D" uid="uid://dfm7y7tsv1dgn" path="res://Assets/Animations/Bombards/LV4-2/Smoke/smoking0028.png" id="72_nrogg"]
 [ext_resource type="Texture2D" uid="uid://duxkgvlgqw1f0" path="res://Assets/Animations/Bombards/LV4-2/Smoke/smoking0029.png" id="73_mxaed"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="73_xwfva"]
 [ext_resource type="Texture2D" uid="uid://cjepbmoix7git" path="res://Assets/Animations/Bombards/LV4-2/Smoke/smoking0030.png" id="74_dosxc"]
 [ext_resource type="Texture2D" uid="uid://b67tv1pm8g0nn" path="res://Assets/Animations/Bombards/LV4-2/Smoke/smoking0031.png" id="75_cvh6x"]
 [ext_resource type="Texture2D" uid="uid://c6iyyx60kkdxy" path="res://Assets/Animations/Bombards/LV4-2/Smoke/smoking0032.png" id="76_n0riw"]
@@ -549,6 +550,21 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_qmqpd"]
+script = ExtResource("73_xwfva")
+damage_low = 120
+damage_high = 140
+
+[sub_resource type="Resource" id="Resource_k22in"]
+script = ExtResource("73_xwfva")
+damage_low = 160
+damage_high = 180
+
+[sub_resource type="Resource" id="Resource_vxnc2"]
+script = ExtResource("73_xwfva")
+damage_low = 200
+damage_high = 240
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_iyhdd"]
 animations = [{
 "frames": [{
@@ -906,7 +922,7 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 z_index = 100
 scale = Vector2(3.5, 3.5)
 collision_layer = 0
-collision_mask = 32
+collision_mask = 65568
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skill2HitArea" index="0"]
 scale = Vector2(1, 0.7)
@@ -923,6 +939,8 @@ offset = Vector2(0, -39.6356)
 script = ExtResource("66_lbg1r")
 explosion_effect_marker_group = [NodePath("MarkerGroup/Marker2D"), NodePath("MarkerGroup/Marker2D9"), NodePath("MarkerGroup/Marker2D2"), NodePath("MarkerGroup/Marker2D10"), NodePath("MarkerGroup/Marker2D11"), NodePath("MarkerGroup/Marker2D4"), NodePath("MarkerGroup/Marker2D12"), NodePath("MarkerGroup/Marker2D5"), NodePath("MarkerGroup/Marker2D13"), NodePath("MarkerGroup/Marker2D6"), NodePath("MarkerGroup/Marker2D14"), NodePath("MarkerGroup/Marker2D7"), NodePath("MarkerGroup/Marker2D15"), NodePath("MarkerGroup/Marker2D8"), NodePath("MarkerGroup/Marker2D16"), NodePath("MarkerGroup/Marker2D3"), NodePath("MarkerGroup/Marker2D17"), NodePath("MarkerGroup/Marker2D18"), NodePath("MarkerGroup/Marker2D19"), NodePath("MarkerGroup/Marker2D20"), NodePath("MarkerGroup/Marker2D21"), NodePath("MarkerGroup/Marker2D22"), NodePath("MarkerGroup/Marker2D23"), NodePath("MarkerGroup/Marker2D24"), NodePath("MarkerGroup/Marker2D25"), NodePath("MarkerGroup/Marker2D35"), NodePath("MarkerGroup/Marker2D36"), NodePath("MarkerGroup/Marker2D37"), NodePath("MarkerGroup/Marker2D38"), NodePath("MarkerGroup/Marker2D26"), NodePath("MarkerGroup/Marker2D27"), NodePath("MarkerGroup/Marker2D28"), NodePath("MarkerGroup/Marker2D29"), NodePath("MarkerGroup/Marker2D30"), NodePath("MarkerGroup/Marker2D31"), NodePath("MarkerGroup/Marker2D32"), NodePath("MarkerGroup/Marker2D33"), NodePath("MarkerGroup/Marker2D34")]
 nuclear_effect_color = Color(0.0497737, 0.114613, 0.0469287, 1)
+skill2_first_damage_list = Array[ExtResource("73_xwfva")]([SubResource("Resource_qmqpd"), SubResource("Resource_k22in"), SubResource("Resource_vxnc2")])
+skill2_existing_damage_list = Array[int]([6, 8, 10])
 summon_frame = 17
 tower = NodePath("..")
 shell_scene = ExtResource("67_gvwil")
