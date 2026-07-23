@@ -3,6 +3,7 @@ class_name Magician
 
 @export var tower: MagicTower
 @export var summon_frame: int
+@export var magic_bullet_scene: PackedScene
 
 @onready var magic_animation_player: AnimationPlayer = $MagicAnimationPlayer
 @onready var magic_heart: Sprite2D = $MagicHeart
@@ -41,7 +42,7 @@ func shoot():
 
 
 func summon_bullet(summon_pos: Vector2, target_pos: Vector2):
-	var magic_ball = load("res://Scenes/Bullets/magic_ball.tscn").instantiate() as Bullet
+	var magic_ball = magic_bullet_scene.instantiate() as Bullet
 	magic_ball.position = summon_pos
 	magic_ball.target_position = target_pos
 	magic_ball.damage = randi_range(tower.current_data.damage_low,tower.current_data.damage_high)

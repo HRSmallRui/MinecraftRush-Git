@@ -1,20 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://lmbebx44f6iu"]
+[gd_scene load_steps=8 format=3 uid="uid://lmbebx44f6iu"]
 
 [ext_resource type="PackedScene" uid="uid://caufauw6v502y" path="res://Scenes/Classes/bullet_class.tscn" id="1_jl0wp"]
 [ext_resource type="Texture2D" uid="uid://cvj5rlytuqmgm" path="res://Assets/Images/Bullets/magic_bullet1.png" id="2_1hmve"]
 [ext_resource type="Script" path="res://Scripts/Bullets/magic_ball.gd" id="2_cbcgd"]
 [ext_resource type="PackedScene" uid="uid://cuj1iate6751p" path="res://Scenes/Effects/magic_ball_tail.tscn" id="3_eh2mb"]
 [ext_resource type="PackedScene" uid="uid://crwgtgcc2ihhf" path="res://Scenes/Effects/magic_ball_hit.tscn" id="4_gs855"]
-[ext_resource type="Script" path="res://Scripts/DefenceTowers/light_component.gd" id="6_63ofp"]
-
-[sub_resource type="Gradient" id="Gradient_xm1bb"]
-colors = PackedColorArray(0.27451, 1, 0.968627, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4y71s"]
-gradient = SubResource("Gradient_xm1bb")
-fill = 1
-fill_from = Vector2(0.491453, 0.529915)
-fill_to = Vector2(0.82906, 0.24359)
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="6_onbr3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8x6c"]
 
@@ -29,18 +20,15 @@ bullet_speed = 800.0
 damage_source = "MagicBall"
 
 [node name="BulletSprite" parent="." index="0"]
+light_mask = 2
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_1hmve")
 
-[node name="LightComponent" type="PointLight2D" parent="BulletSprite" index="0"]
-scale = Vector2(0.801215, 0.801215)
-energy = 1.5
-texture = SubResource("GradientTexture2D_4y71s")
-texture_scale = 2.8
-script = ExtResource("6_63ofp")
+[node name="DarkTimeLight" parent="BulletSprite" index="0" instance=ExtResource("6_onbr3")]
+color = Color(0.717647, 1, 1, 1)
 
 [node name="HitBox" parent="." index="1"]
-collision_mask = 96
+collision_mask = 196704
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_u8x6c")

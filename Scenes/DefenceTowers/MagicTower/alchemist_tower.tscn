@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ldkqtfh72mey"]
+[gd_scene load_steps=57 format=3 uid="uid://ldkqtfh72mey"]
 
 [ext_resource type="PackedScene" uid="uid://cw6pat17gtbr3" path="res://Scenes/DefenceTowers/MagicTower/magic_tower.tscn" id="1_rayo3"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_61efh"]
@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://dupcyrd7kjija" path="res://Assets/Animations/Magicians/LV4-3/shoot_front_10.png" id="29_81nx5"]
 [ext_resource type="Texture2D" uid="uid://bufsmexsox7to" path="res://Assets/Animations/Magicians/LV4-3/shoot_front_11.png" id="30_7pll1"]
 [ext_resource type="Texture2D" uid="uid://conka4vs8vpxs" path="res://Assets/Animations/Magicians/LV4-3/shoot_front_12.png" id="31_4uhmy"]
+[ext_resource type="PackedScene" uid="uid://djeqpcpd5ncnu" path="res://Scenes/Bullets/orange_magic_ball.tscn" id="40_g47yb"]
+[ext_resource type="PackedScene" uid="uid://dyd3vf2e7nq0q" path="res://Scenes/Bullets/orange_magic_ball_gold.tscn" id="40_tg472"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/MagicTowers/alchemist.gd" id="84_mtpi7"]
 [ext_resource type="Texture2D" uid="uid://c03vs0vnys2bt" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-2/heart-green.png" id="85_7fn2c"]
 
@@ -696,7 +698,7 @@ skill_words = "诸君，我好兴奋口牙！"
 z_index = 100
 scale = Vector2(2.8, 2.8)
 collision_layer = 0
-collision_mask = 24
+collision_mask = 61464
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skill2ConditionArea" index="0"]
 scale = Vector2(1, 0.7)
@@ -715,8 +717,10 @@ animation = &"idle_front"
 autoplay = "idle_front"
 script = ExtResource("84_mtpi7")
 alchemist_tower = NodePath("../..")
+magic_ball_gold_scene = ExtResource("40_tg472")
 tower = NodePath("../..")
 summon_frame = 12
+magic_bullet_scene = ExtResource("40_g47yb")
 
 [node name="MagicAnimationPlayer" type="AnimationPlayer" parent="TowerSprite/Alchemist" index="0"]
 libraries = {
