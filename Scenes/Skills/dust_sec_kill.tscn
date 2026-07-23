@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dnmwk5bg70pcm"]
+[gd_scene load_steps=28 format=3 uid="uid://dnmwk5bg70pcm"]
 
 [ext_resource type="Texture2D" uid="uid://bk6mhmybljx2l" path="res://Assets/Images/Effects/DustKill/0001.png" id="1_25wp2"]
 [ext_resource type="Script" path="res://Scripts/Skills/dust_sec_kill.gd" id="1_o18g7"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://rdvdudgygb3r" path="res://Assets/Images/Effects/DustKill/0021.png" id="21_ansyd"]
 [ext_resource type="Texture2D" uid="uid://crf5xn56jkmbb" path="res://Assets/Images/Effects/DustKill/0022.png" id="22_mqtig"]
 [ext_resource type="Texture2D" uid="uid://cq3dpjaj24qc8" path="res://Assets/Images/Effects/DustKill/0023.png" id="23_go21b"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="25_ftuy4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ugpk"]
 radius = 83.3333
@@ -110,7 +111,7 @@ z_index = -1
 y_sort_enabled = true
 scale = Vector2(0.3, 0.3)
 collision_layer = 0
-collision_mask = 96
+collision_mask = 196704
 script = ExtResource("1_o18g7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -118,7 +119,13 @@ scale = Vector2(1, 0.480001)
 shape = SubResource("CircleShape2D_7ugpk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_n8krg")
 autoplay = "default"
 frame_progress = 0.961693
+
+[node name="DarkTimeLight" parent="AnimatedSprite2D" instance=ExtResource("25_ftuy4")]
+position = Vector2(0, -7)
+scale = Vector2(4.17771, 2.97772)
+color = Color(1, 0.744421, 0.985357, 1)

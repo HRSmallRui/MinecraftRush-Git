@@ -4,6 +4,7 @@ class_name ProtectorChurch
 @export var level_damage_list: Array[DamageBlock]
 @export var dust_kill_waiting_time_list: Array[float]
 @export var iron_golem_scene: PackedScene
+@export var attack_cd_list: Array[float]
 
 @onready var unit_move_area: Area2D = $UnitMoveArea
 @onready var first_move_rays: Node2D = $FirstMoveRays
@@ -177,6 +178,8 @@ func stop_attack():
 	rotate_animation_player.speed_scale = 1
 	ray_audio.stop()
 	ray_audio_2.stop()
+	normal_attack_timer.wait_time = attack_cd_list[damage_level]
+	print("protector church cd: ",normal_attack_timer.wait_time)
 	if ready_attack_timer.is_stopped():
 		normal_attack_timer.start()
 	else:
