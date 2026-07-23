@@ -85,7 +85,7 @@ func frame_condition():
 
 
 func summon_golen_bullet(summon_pos: Vector2, target_pos: Vector2):
-	var magic_ball = load("res://Scenes/Bullets/orange_magic_ball_gold.tscn").instantiate() as Bullet
+	var magic_ball = magic_ball_gold_scene.instantiate() as Bullet
 	magic_ball.position = summon_pos
 	magic_ball.target_position = target_pos
 	#magic_ball.damage = randi_range(tower.current_data.damage_low,tower.current_data.damage_high)
