@@ -1,21 +1,32 @@
-[gd_scene load_steps=75 format=3 uid="uid://b8eus3obad3v1"]
+[gd_scene load_steps=86 format=3 uid="uid://b8eus3obad3v1"]
 
 [ext_resource type="PackedScene" uid="uid://bbhe3d6c7dhtc" path="res://Scenes/DefenceTowers/BombardTowers/bombard_tower.tscn" id="1_gf2gn"]
 [ext_resource type="Texture2D" uid="uid://b5f55cp3lgk6x" path="res://Assets/Images/UI/InformationBar/bombard-id-4.png" id="2_nv6wh"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/BombardTowers/operator_turret.gd" id="2_o82kb"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_r4xg1"]
+[ext_resource type="Resource" uid="uid://udgnoomvdfv4" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/aoe_damage.tres" id="3_7al4v"]
+[ext_resource type="PackedScene" uid="uid://bi8knx1153ng0" path="res://Scenes/Skills/operator_lightning_area.tscn" id="4_80dl2"]
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="4_inv6x"]
 [ext_resource type="Texture2D" uid="uid://hh3pyt0mh3kr" path="res://Assets/Images/DefenceTowers/Bombards/UI/天谴.png" id="5_1cq53"]
+[ext_resource type="PackedScene" uid="uid://due2t5iyobq7e" path="res://Scenes/Allys/SummonAllys/operator_robot.tscn" id="5_dcklw"]
 [ext_resource type="Texture2D" uid="uid://b6vtceomhv5i4" path="res://Assets/Images/DefenceTowers/Bombards/Towers/LV4-1/based.png" id="5_j0j0w"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="5_yhsyl"]
 [ext_resource type="Texture2D" uid="uid://8mu3j1yahpb8" path="res://Assets/Images/DefenceTowers/Bombards/UI/天谴select.png" id="6_bem7w"]
+[ext_resource type="Resource" uid="uid://cvjvnvkir432j" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/lightning_damage_lv1.tres" id="6_u07ew"]
 [ext_resource type="Texture2D" uid="uid://bpmg4tj8rpevk" path="res://Assets/Images/DefenceTowers/Bombards/Towers/LV4-1/front_mask.png" id="6_v1dmq"]
+[ext_resource type="Resource" uid="uid://bacrnchsen2bi" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/lightning_damage_lv2.tres" id="7_k83xk"]
 [ext_resource type="Texture2D" uid="uid://2580hgpf7gxn" path="res://Assets/Images/DefenceTowers/Bombards/UI/天谴no.png" id="7_naij4"]
 [ext_resource type="Texture2D" uid="uid://cgltmjpt2toaj" path="res://Assets/Images/DefenceTowers/Bombards/Towers/LV4-1/mask.png" id="7_sroxh"]
+[ext_resource type="Resource" uid="uid://dsuvhnwlkujxo" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/lightning_damage_lv3.tres" id="8_ayg4m"]
 [ext_resource type="Texture2D" uid="uid://dy7vdykbfx458" path="res://Assets/Images/DefenceTowers/Bombards/UI/演算者机甲.png" id="8_ypuig"]
 [ext_resource type="Texture2D" uid="uid://cc7ivoo8ciooc" path="res://Assets/Images/DefenceTowers/Bombards/UI/演算者机甲select.png" id="9_2u26f"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="9_6fi34"]
+[ext_resource type="Resource" uid="uid://c1guiwb461bp8" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/dizness_duration_lv1.tres" id="10_6jb3d"]
 [ext_resource type="Texture2D" uid="uid://fpb0x3ynhrrc" path="res://Assets/Images/DefenceTowers/Bombards/UI/演算者机甲no.png" id="10_mxxoq"]
 [ext_resource type="Texture2D" uid="uid://di244pjtyyl2a" path="res://Assets/Images/DefenceTowers/UI/flag_button.png" id="11_axgy2"]
+[ext_resource type="Resource" uid="uid://b80ekssdxuv7h" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/dizness_duration_lv2.tres" id="11_ujfa7"]
 [ext_resource type="Texture2D" uid="uid://7xl2wnc5nk41" path="res://Assets/Images/DefenceTowers/UI/flag_button_select.png" id="12_3h3ne"]
+[ext_resource type="Resource" uid="uid://npmk7wtm18ro" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/dizness_duration_lv3.tres" id="12_xx2oh"]
 [ext_resource type="Texture2D" uid="uid://dh00obtr35ppy" path="res://Assets/Animations/Bombards/LV4-1/Attacker/attackground0001.png" id="15_rox0q"]
 [ext_resource type="Texture2D" uid="uid://fg1y0i3ubnh4" path="res://Assets/Images/DefenceTowers/UI/集结范围.png" id="16_im4ea"]
 [ext_resource type="Texture2D" uid="uid://cvv0uetg5uuwx" path="res://Assets/Animations/Bombards/LV4-1/Attacker/attackground-back0001.png" id="16_serso"]
@@ -346,8 +357,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_el2k8"]
 radius = 73.9444
 
-[node name="OperatorTurret" node_paths=PackedStringArray("bombard_tower_sprite") instance=ExtResource("1_gf2gn")]
+[node name="OperatorTurret" node_paths=PackedStringArray("bombard_tower_sprite") groups=["robot"] instance=ExtResource("1_gf2gn")]
 script = ExtResource("2_o82kb")
+aoe_damage = ExtResource("3_7al4v")
+lightning_area_scene = ExtResource("4_80dl2")
+lightning_damage_list = Array[ExtResource("5_yhsyl")]([ExtResource("6_u07ew"), ExtResource("7_k83xk"), ExtResource("8_ayg4m")])
+lightning_dizness_duration_list = Array[ExtResource("9_6fi34")]([ExtResource("10_6jb3d"), ExtResource("11_ujfa7"), ExtResource("12_xx2oh")])
+robot_scene = ExtResource("5_dcklw")
 start_data = SubResource("Resource_e2pca")
 bombard_tower_sprite = NodePath("TowerSprite/Attacker")
 tower_name = "演算者炮塔"

@@ -6,7 +6,7 @@ extends SummonAlly
 @onready var die_audio: AudioStreamPlayer = $DieAudio
 @onready var sec_kill_audio: AudioStreamPlayer = $SecKillAudio
 
-var sec_kill_possible: float = 0.04
+@export var sec_kill_possible: float = 0.04
 
 
 func anim_offset():
@@ -65,7 +65,7 @@ func rebirth():
 
 
 func battle():
-	if ally_sprite.animation == "idle" and normal_attack_timer.is_stopped() and current_intercepting_enemy != null:
+	if ally_sprite.animation == "idle" and normal_attack_timer.is_stopped():
 		if current_intercepting_enemy.enemy_type < Enemy.EnemyType.Super:
 			if randf_range(0,1) < sec_kill_possible:
 				ally_sprite.play("sec_kill")
