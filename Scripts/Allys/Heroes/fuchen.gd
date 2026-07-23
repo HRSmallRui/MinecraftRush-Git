@@ -156,6 +156,11 @@ func skill2_release():
 
 
 func battle():
+	if ally_sprite.animation == "idle":
+		if skill_levels[3] > 0 and skill_3_timer.is_stopped():
+			if skill_3_condition_area.get_overlapping_bodies().size() >= 4:
+				skill_3_release()
+				return
 	super()
 	pass
 
@@ -199,6 +204,11 @@ func move(target_pos:Vector2):
 		translate_to_new_state(AllyState.IDLE)
 		skill_4_duration_timer.stop()
 		skill_4_duration_timer.timeout.emit()
+	if ally_sprite.animation == "skill3" and ally_state != AllyState.DIE:
+		translate_to_new_state(AllyState.IDLE)
+		if current_intercepting_enemy != null:
+			current_intercepting_enemy.current_intercepting_units.erase(self)
+		current_intercepting_enemy = null
 	super(target_pos)
 	pass
 
