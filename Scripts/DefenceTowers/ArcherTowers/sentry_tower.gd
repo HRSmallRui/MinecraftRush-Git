@@ -7,6 +7,7 @@ class_name SentryTower
 @export var cage_dizness_buff_scene: PackedScene
 @export var cage_effect_scene: PackedScene
 @export var dizness_duration_list: Array[float]
+@export var cage_max_count: int
 
 @onready var unit_move_area: Area2D = $UnitMoveArea
 @onready var first_move_rays: Node2D = $FirstMoveRays
@@ -121,7 +122,7 @@ func get_valid_skill1_enemy() -> Enemy:
 		if enemy.enemy_buff_tags.has("is_caging"):
 			if enemy.enemy_buff_tags["is_caging"]: continue
 		if enemy.enemy_buff_tags.has("cage_count"):
-			if enemy.enemy_buff_tags["cage_count"] >= 4: continue
+			if enemy.enemy_buff_tags["cage_count"] >= cage_max_count: continue
 		enemy_list.append(enemy)
 	if enemy_list.is_empty(): return null
 	return shooter_list[0].get_lateset_enemy(enemy_list)
