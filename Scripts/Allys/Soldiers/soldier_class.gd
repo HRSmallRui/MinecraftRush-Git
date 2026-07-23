@@ -72,6 +72,7 @@ func soldier_sell():
 
 func soldier_level_up(new_soldier: Soldier):
 	new_soldier.position = position
+	new_soldier.intercepting_area.position = intercepting_area.position
 	new_soldier.station_position = station_position
 	if current_intercepting_enemy == null:
 		if ally_state == AllyState.DIE:
