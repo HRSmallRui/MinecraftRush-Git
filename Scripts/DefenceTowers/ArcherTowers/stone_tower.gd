@@ -1,6 +1,8 @@
 extends ArcherTower
 class_name StoneTower
 
+@export var extra_stone_damage_rate: FloatSaver
+
 @onready var skill_1_timer: Timer = $Skill1Timer
 
 

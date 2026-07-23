@@ -6,8 +6,8 @@ extends ArcherTower
 @onready var skill_2_area: Area2D = $Skill2Area
 @onready var shell_marker: Marker2D = $TowerSprite/ShellMarker
 
-var skill_2_damage_high_list: Array[int] = [200,300,400]
-var skill_2_damage_low_list: Array[int] = [100,150,200]
+@export var skill_2_damage_high_list: Array[int] = [200,300,400]
+@export var skill_2_damage_low_list: Array[int] = [100,150,200]
 
 
 func fighting_process():

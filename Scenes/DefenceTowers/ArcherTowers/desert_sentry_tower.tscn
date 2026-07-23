@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://1xdpsrqa5nu7" path="res://Scenes/Skills/desert_wolf.tscn" id="4_pn4mk"]
 [ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="4_vxy2b"]
 [ext_resource type="Texture2D" uid="uid://b1u5ifth4hyot" path="res://Assets/Images/DefenceTowers/Archers/UI/沙狼.png" id="5_ap656"]
-[ext_resource type="Resource" uid="uid://c27ja5enrppi5" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv1.tres" id="5_m0gxq"]
+[ext_resource type="Resource" uid="uid://h48xv16228ir" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv1.tres" id="5_m0gxq"]
 [ext_resource type="Texture2D" uid="uid://blyy83vpkbsgx" path="res://Assets/Images/DefenceTowers/Archers/UI/背后一刺.png" id="5_vtw1i"]
 [ext_resource type="Texture2D" uid="uid://bfkm37m2ts7vm" path="res://Assets/Images/DefenceTowers/Archers/Towers/LV4-2.png" id="5_wgc16"]
 [ext_resource type="Texture2D" uid="uid://c87e657pt37tt" path="res://Assets/Images/DefenceTowers/Archers/UI/背后一刺select.png" id="6_8tvc0"]
 [ext_resource type="Texture2D" uid="uid://crn0w5r42sxnj" path="res://Assets/Images/DefenceTowers/Archers/UI/沙狼select.png" id="6_plaeu"]
-[ext_resource type="Resource" uid="uid://d18roinqkakj3" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv2.tres" id="6_qnykw"]
-[ext_resource type="Resource" uid="uid://blldvc06tt16i" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv3.tres" id="7_41gb2"]
+[ext_resource type="Resource" uid="uid://i06g0udaf47o" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv2.tres" id="6_qnykw"]
+[ext_resource type="Resource" uid="uid://c2l66ngpyihbi" path="res://Library/TowerConfigs/ArcherTowers/DesertSentryTower/Skill1_SecKill/KillingDamage/killing_damage_lv3.tres" id="7_41gb2"]
 [ext_resource type="Texture2D" uid="uid://bify4tqvdp1h5" path="res://Assets/Images/DefenceTowers/Archers/UI/背后一刺disabled.png" id="7_ck6ui"]
 [ext_resource type="Texture2D" uid="uid://b5d53411slu81" path="res://Assets/Images/DefenceTowers/Archers/UI/沙狼disabled.png" id="7_si8tb"]
 [ext_resource type="Texture2D" uid="uid://xtdw2n8v54ra" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_00.png" id="13_dmirg"]
@@ -264,7 +264,7 @@ script = ExtResource("2_xrodq")
 DESERT_KILLER_SCENE = ExtResource("3_n0yms")
 desert_wolf_scene = ExtResource("4_pn4mk")
 killing_damage_list = Array[ExtResource("4_vxy2b")]([ExtResource("5_m0gxq"), ExtResource("6_qnykw"), ExtResource("7_41gb2")])
-killing_possible_list = Array[float]([0.2, 0.3, 0.4])
+killing_possible_list = Array[float]([0.3, 0.45, 0.6])
 wolf_damage_list = Array[int]([28, 52, 68])
 wold_dizness_time = Array[float]([1.0, 1.5, 2.0])
 start_data = SubResource("Resource_awl4y")
@@ -298,7 +298,7 @@ texture_disabled = SubResource("AtlasTexture_6jgr1")
 linked_tower = NodePath("../../..")
 skill_name = "背后一刺"
 skill_prices = Array[int]([300, 200, 200])
-skill_intro = PackedStringArray("对单个敌人造成115-135点真实伤害，并有20%概率立即秒杀目标。", "对单个敌人造成200-250点真实伤害，并有30%概率立即秒杀目标。", "对单个敌人造成310-400点真实伤害，并有40%概率立即秒杀目标。")
+skill_intro = PackedStringArray("对单个敌人造成115-135点真实伤害，并有30%概率立即秒杀目标。", "对单个敌人造成200-250点真实伤害，并有45%概率立即秒杀目标。", "对单个敌人造成310-400点真实伤害，并有60%概率立即秒杀目标。")
 skill_words = "安息吧"
 
 [node name="TowerSkillButton2" parent="TowerUI/Circle" index="2" node_paths=PackedStringArray("linked_tower") instance=ExtResource("4_6pb6d")]
