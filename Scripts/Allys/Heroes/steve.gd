@@ -78,7 +78,7 @@ func battle():
 		if skill_levels[2] > 0 and skill_2_timer.is_stopped():
 			#translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill_2")
-			skill_2_timer.start()
+			#skill_2_timer.start()
 			return
 		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and skill4_is_valid_to_release():
 			translate_to_new_state(AllyState.SPECIAL)
@@ -93,6 +93,7 @@ func battle():
 
 
 func skill_2_process():
+	skill_2_timer.start()
 	if current_intercepting_enemy != null:
 		var enemy = current_intercepting_enemy as Enemy
 		var damage_block: DamageBlock = skill2_damage_list[skill_levels[2]-1]
@@ -154,7 +155,7 @@ func on_logic_timer_timeout():
 		if skill_levels[3] > 0:
 			var health_rate = float(current_data.health) / start_data.health
 			if health_rate < 0.3 and skill_3_timer.is_stopped():
-				skill_3_timer.start()
+				#skill_3_timer.start()
 				golden_apple()
 				return
 	super()
@@ -162,6 +163,7 @@ func on_logic_timer_timeout():
 
 
 func after_golen_apple_eaten():
+	skill_3_timer.start()
 	var heal_data: int = skill3_heal_data_list[skill_levels[3]-1]
 	current_data.heal(heal_data)
 	get_exp(skill3_exp_get[skill_levels[3]-1])
