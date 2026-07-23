@@ -2,6 +2,8 @@ extends BombardTowerSprite
 
 @export var explosion_effect_marker_group: Array[Marker2D]
 @export var nuclear_effect_color: Color
+@export var skill2_first_damage_list: Array[DamageBlock]
+@export var skill2_existing_damage_list: Array[int]
 
 @onready var nuclear_relase: AudioStreamPlayer = $NuclearRelase
 @onready var plane_timer: Timer = $PlaneTimer
@@ -15,15 +17,14 @@ extends BombardTowerSprite
 @onready var skill_2_hit_area: Area2D = $"../Skill2HitArea"
 @onready var dot_timer: Timer = $DotTimer
 @onready var dot_during_timer: Timer = $DotDuringTimer
+@onready var skill_2_particle: GPUParticles2D = $Skill2Particle
 
 
 func summon_bullet(summon_pos: Vector2, target_pos: Vector2) -> Shell:
 	var shell: Shell = super(summon_pos,target_pos)
 	nuclear_relase.play(0.4)
 	glass_audio.play()
-	var smoke: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-	smoke.position = summon_marker.global_position
-	Stage.instance.bullets.add_child(smoke)
+	EffectManager.instance.play_smoke_effect(global_position)
 	return shell
 	pass
 
@@ -84,10 +85,8 @@ func frame_condition():
 func skill2_release():
 	air_audio.play()
 	glass_audio.play()
+	EffectManager.instance.play_explosion_effect(global_position)
 	for marker:Marker2D in explosion_effect_marker_group:
-		var explosion_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
-		explosion_effect.position = marker.global_position
-		Stage.instance.bullets.add_child(explosion_effect)
 		var nuclear_potion_effect: LingeringPotionShooter = preload("res://Scenes/Effects/lingering_potion_shooter.tscn").instantiate()
 		nuclear_potion_effect.position = marker.global_position
 		nuclear_potion_effect.potion_color = nuclear_effect_color
@@ -96,11 +95,7 @@ func skill2_release():
 		Stage.instance.bullets.add_child(nuclear_potion_effect)
 	AudioManager.instance.play_explosion_audio()
 	
-	var explosion_damage: int
-	match tower.tower_skill_levels[1]:
-		1: explosion_damage = randi_range(120,140)
-		2: explosion_damage = randi_range(160,180)
-		3: explosion_damage = randi_range(200,240)
+	var explosion_damage: int = skill2_first_damage_list[tower.tower_skill_levels[1]-1].get_damage()
 	for body in skill_2_hit_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.take_damage(explosion_damage,DataProcess.DamageType.TrueDamage,0,false,null,true,true)
@@ -116,11 +111,7 @@ func _on_dot_during_timer_timeout() -> void:
 
 
 func _on_dot_timer_timeout() -> void:
-	var damage: int
-	match tower.tower_skill_levels[1]:
-		1: damage = 6
-		2: damage = 8
-		3: damage = 10
+	var damage: int = skill2_existing_damage_list[tower.tower_skill_levels[1]-1]
 	
 	for body in skill_2_hit_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner

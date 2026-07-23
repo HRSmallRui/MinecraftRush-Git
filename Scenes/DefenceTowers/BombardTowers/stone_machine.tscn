@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b6semrq10485e"]
+[gd_scene load_steps=49 format=3 uid="uid://b6semrq10485e"]
 
 [ext_resource type="PackedScene" uid="uid://bbhe3d6c7dhtc" path="res://Scenes/DefenceTowers/BombardTowers/bombard_tower.tscn" id="1_nsok0"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_7c1bu"]
@@ -10,20 +10,30 @@
 [ext_resource type="PackedScene" uid="uid://dbhfcarsc2d65" path="res://Scenes/Bullets/plane_super_shell.tscn" id="4_q3n61"]
 [ext_resource type="Texture2D" uid="uid://dyyiqccbfgn4h" path="res://Assets/Animations/Bombards/LV4-2/Dadar/底座.png" id="5_1c6rm"]
 [ext_resource type="Texture2D" uid="uid://di244pjtyyl2a" path="res://Assets/Images/DefenceTowers/UI/flag_button.png" id="5_8vvnx"]
+[ext_resource type="PackedScene" uid="uid://d37xkpksnmwd4" path="res://Scenes/Skills/plane_smoke_area.tscn" id="5_20jnb"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="5_74hhs"]
+[ext_resource type="Resource" uid="uid://dbfqd0sxa3nnf" path="res://Library/TowerConfigs/BombardTowers/PlaneController/Skill2/another_damage_lv1.tres" id="6_3td11"]
 [ext_resource type="Texture2D" uid="uid://56fiob4r12eu" path="res://Assets/Animations/Bombards/LV4-2/Dadar/旋转轴.png" id="6_5caeu"]
 [ext_resource type="Texture2D" uid="uid://7xl2wnc5nk41" path="res://Assets/Images/DefenceTowers/UI/flag_button_select.png" id="6_nc4er"]
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="7_3ik68"]
+[ext_resource type="Resource" uid="uid://b72cwl1h61j8s" path="res://Library/TowerConfigs/BombardTowers/PlaneController/Skill2/another_damage_lv2.tres" id="7_75i17"]
 [ext_resource type="Texture2D" uid="uid://bg3vghkru33x2" path="res://Assets/Animations/Bombards/LV4-2/Dadar/盆子.png" id="7_xpm8c"]
 [ext_resource type="Texture2D" uid="uid://ivqbk4oikdkx" path="res://Assets/Images/DefenceTowers/Bombards/UI/烟幕掩护.png" id="8_3gcej"]
+[ext_resource type="Resource" uid="uid://b38uanyr51616" path="res://Library/TowerConfigs/BombardTowers/PlaneController/Skill2/another_damage_lv3.tres" id="8_xrstg"]
 [ext_resource type="Texture2D" uid="uid://d0ad4xtwp7x7t" path="res://Assets/Images/DefenceTowers/Bombards/UI/烟幕掩护select.png" id="9_8w5hf"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="9_oihle"]
 [ext_resource type="Texture2D" uid="uid://bsvb6uilfht26" path="res://Assets/Images/DefenceTowers/Bombards/UI/烟幕掩护no.png" id="10_v02wr"]
+[ext_resource type="Resource" uid="uid://cp0x46ddm5p6h" path="res://Library/TowerConfigs/BombardTowers/PlaneController/Skill2/exploson_damage_lv1.tres" id="10_vptyx"]
+[ext_resource type="Resource" uid="uid://cwkv7iq6fermd" path="res://Library/TowerConfigs/BombardTowers/PlaneController/Skill2/exploson_damage_lv2.tres" id="11_kbgcv"]
 [ext_resource type="Texture2D" uid="uid://5jy18vecpo27" path="res://Assets/Images/DefenceTowers/Bombards/UI/高能雷管.png" id="11_la4xc"]
+[ext_resource type="Resource" uid="uid://bmhd1jup33q24" path="res://Library/TowerConfigs/BombardTowers/PlaneController/Skill2/exploson_damage_lv3.tres" id="12_82p22"]
 [ext_resource type="Texture2D" uid="uid://ctpuq4wangnm0" path="res://Assets/Images/DefenceTowers/Bombards/UI/高能雷管select.png" id="12_qlfyw"]
 [ext_resource type="Texture2D" uid="uid://ca3amg46onxkx" path="res://Assets/Images/DefenceTowers/Bombards/UI/高能雷管no.png" id="13_xjvqh"]
 [ext_resource type="Texture2D" uid="uid://djqnwtl1embrg" path="res://Assets/Animations/Enemies/Shadow.png" id="19_5am4k"]
 [ext_resource type="Texture2D" uid="uid://1rskxqsxln01" path="res://Assets/Images/DefenceTowers/Bombards/Towers/LV4-3/无人机2.png" id="19_u7del"]
 [ext_resource type="AudioStream" uid="uid://djew332ofk6su" path="res://Assets/Sounds/FXs/DefenceTowers/PlaneController/plane.mp3" id="21_vvu06"]
 [ext_resource type="Texture2D" uid="uid://13pxqroo72xu" path="res://Assets/Images/UI/unit-select.png" id="23_rlda2"]
+[ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="26_0ywmh"]
 
 [sub_resource type="Resource" id="Resource_n6640"]
 script = ExtResource("2_7c1bu")
@@ -42,6 +52,43 @@ region = Rect2(6, 6, 85, 85)
 [sub_resource type="AtlasTexture" id="AtlasTexture_to5e7"]
 atlas = ExtResource("11_la4xc")
 region = Rect2(6, 6, 85, 85)
+
+[sub_resource type="Animation" id="Animation_7ncc0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2y6qv"]
+resource_name = "loop"
+length = 0.5
+loop_mode = 2
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8hnl"]
+_data = {
+"RESET": SubResource("Animation_7ncc0"),
+"loop": SubResource("Animation_2y6qv")
+}
 
 [sub_resource type="Animation" id="Animation_1e72w"]
 length = 0.001
@@ -122,6 +169,9 @@ radius = 73.9444
 script = ExtResource("2_o6g3m")
 plane_shell_scene = ExtResource("3_l876v")
 plane_kill_shell_scene = ExtResource("4_q3n61")
+smoke_scene = ExtResource("5_20jnb")
+skill2_damage_one_list = Array[ExtResource("5_74hhs")]([ExtResource("6_3td11"), ExtResource("7_75i17"), ExtResource("8_xrstg")])
+skill2_damage_aoe_list = Array[ExtResource("9_oihle")]([ExtResource("10_vptyx"), ExtResource("11_kbgcv"), ExtResource("12_82p22")])
 start_data = SubResource("Resource_n6640")
 tower_name = "无人机控制平台"
 tower_texture = ExtResource("2_7rt1n")
@@ -196,6 +246,16 @@ texture = ExtResource("4_o4dwq")
 texture = ExtResource("4_5kaqi")
 offset = Vector2(-6, -23)
 
+[node name="DarkTimeLight" parent="BasedSprite" index="0" instance=ExtResource("26_0ywmh")]
+position = Vector2(30, -78)
+color = Color(1, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BasedSprite/DarkTimeLight" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_e8hnl")
+}
+autoplay = "loop"
+
 [node name="Radar" type="Node2D" parent="." index="11"]
 position = Vector2(-36, -3)
 scale = Vector2(0.619774, 0.619774)
@@ -225,6 +285,11 @@ texture_filter = 1
 position = Vector2(0, -100)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_u7del")
+
+[node name="DarkTimeLight" parent="Plane/PlaneSprite" index="0" instance=ExtResource("26_0ywmh")]
+position = Vector2(0, -10)
+color = Color(1, 0, 0, 1)
+energy = 0.5
 
 [node name="Shadow" type="Sprite2D" parent="Plane" index="1"]
 z_index = -1

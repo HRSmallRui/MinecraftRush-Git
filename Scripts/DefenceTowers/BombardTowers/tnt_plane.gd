@@ -75,6 +75,7 @@ func summon_tnt():
 	tnt.position = sprite_player.global_position
 	Stage.instance.bullets.add_child(tnt)
 	tnt.hit_box.set_collision_mask_value(7,true)
+	tnt.hit_box.set_collision_layer_value(18,true)
 	pass
 
 

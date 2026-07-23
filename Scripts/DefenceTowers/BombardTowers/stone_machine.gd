@@ -3,6 +3,9 @@ class_name PlaneController
 
 @export var plane_shell_scene: PackedScene
 @export var plane_kill_shell_scene: PackedScene
+@export var smoke_scene: PackedScene
+@export var skill2_damage_one_list: Array[IntSaver]
+@export var skill2_damage_aoe_list: Array[DamageBlock]
 
 @onready var flag_button: TextureButton = $TowerUI/Circle/FlagButton
 @onready var first_move_rays: Node2D = $FirstMoveRays
@@ -166,7 +169,7 @@ func release_smoke():
 	AudioManager.instance.shoot_audio_1.play()
 	await get_tree().create_timer(0.1,false).timeout
 	
-	var plane_smoke_area: SkillConditionArea2D = preload("res://Scenes/Skills/plane_smoke_area.tscn").instantiate()
+	var plane_smoke_area: SkillConditionArea2D = smoke_scene.instantiate()
 	plane_smoke_area.position = plane.global_position
 	Stage.instance.bullets.add_child(plane_smoke_area)
 	pass

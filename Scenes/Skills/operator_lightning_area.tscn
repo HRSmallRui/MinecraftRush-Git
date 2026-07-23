@@ -1,6 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi8knx1153ng0"]
+[gd_scene load_steps=11 format=3 uid="uid://bi8knx1153ng0"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/operator_lightning_area.gd" id="1_28q1x"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="2_ax1kx"]
+[ext_resource type="Resource" uid="uid://cvjvnvkir432j" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/lightning_damage_lv1.tres" id="3_fcpcx"]
+[ext_resource type="Resource" uid="uid://bacrnchsen2bi" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/lightning_damage_lv2.tres" id="4_ixy3y"]
+[ext_resource type="Resource" uid="uid://dsuvhnwlkujxo" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/lightning_damage_lv3.tres" id="5_2brvv"]
+[ext_resource type="Script" path="res://Scripts/Datas/float_saver.gd" id="6_ei7a3"]
+[ext_resource type="Resource" uid="uid://c1guiwb461bp8" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/dizness_duration_lv1.tres" id="7_kxhc3"]
+[ext_resource type="Resource" uid="uid://b80ekssdxuv7h" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/dizness_duration_lv2.tres" id="8_pbpj4"]
+[ext_resource type="Resource" uid="uid://npmk7wtm18ro" path="res://Library/TowerConfigs/BombardTowers/OperatorTurret/Skill1/dizness_duration_lv3.tres" id="9_bdv2h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcsv2"]
 radius = 73.9444
@@ -10,6 +18,8 @@ scale = Vector2(1.5, 1.5)
 collision_layer = 0
 collision_mask = 96
 script = ExtResource("1_28q1x")
+lightning_damage_list = Array[ExtResource("2_ax1kx")]([ExtResource("3_fcpcx"), ExtResource("4_ixy3y"), ExtResource("5_2brvv")])
+lightning_dizness_duration_list = Array[ExtResource("6_ei7a3")]([ExtResource("7_kxhc3"), ExtResource("8_pbpj4"), ExtResource("9_bdv2h")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.7)

@@ -1,7 +1,7 @@
 extends BuffClass
 
 @export var explosion_damage_list: Array[DamageBlock]
-@export var another_damage_list: Array[int]
+@export var another_damage_list: Array[IntSaver]
 
 @onready var bullet: Sprite2D = $Bullet
 @onready var bombard_area: Area2D = $BombardArea
@@ -26,7 +26,7 @@ func remove_buff():
 	
 	if enemy.enemy_state != Enemy.EnemyState.DIE:
 		if enemy.enemy_type >= Enemy.EnemyType.Super:
-			enemy.take_damage(another_damage_list[buff_level-1],DataProcess.DamageType.ExplodeDamage,0,false,null,true,true,)
+			enemy.take_damage(another_damage_list[buff_level-1].saving_int_value,DataProcess.DamageType.ExplodeDamage,0,false,null,true,true,)
 		else:
 			enemy.sec_kill(true)
 	
