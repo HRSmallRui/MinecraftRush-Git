@@ -3,7 +3,8 @@ extends Enemy
 @onready var explosion_area: Area2D = $UnitBody/ExplosionArea
 @onready var shoot_audio: AudioStreamPlayer = $ShootAudio
 
-var explosion_damage: int = 140
+@export var explosion_damage: int
+@export var upper_explosion_damage: int
 
 
 func anim_offset():
@@ -22,7 +23,7 @@ func anim_offset():
 func add_new_buff_tag(tag_name: String, tag_level: int = 1):
 	if tag_name == "lightning":
 		explosion_area.scale = Vector2(2,2)
-		explosion_damage  = 280
+		explosion_damage  = upper_explosion_damage
 		remove_from_group("creeper")
 	pass
 
