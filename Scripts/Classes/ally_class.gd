@@ -173,16 +173,17 @@ func idle_process():
 		#print("move")
 		return
 	
-	if current_intercepting_enemy == null:
+	if current_intercepting_enemy == null and ally_sprite.animation == "idle":
 		if intercepting_area.has_overlapping_bodies():
 			var target_enemy: Enemy = get_intercepting_enemy()
 			if target_enemy != null:
 				go_to_intercept_enemy(target_enemy)
+				return
 	
 	if ally_state == AllyState.IDLE and far_attack_timer.is_stopped() and far_attack_area.has_overlapping_bodies() and far_attack_area.monitoring:
 		var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
 		far_attack_target_enemy = enemy
-		translate_to_new_state(AllyState.SPECIAL)
+		#translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.flip_h = enemy.position.x < position.x
 		ally_sprite.play("far_attack")
 		far_attack_timer.start()
