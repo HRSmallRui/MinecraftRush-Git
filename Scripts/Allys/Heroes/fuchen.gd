@@ -79,6 +79,7 @@ func frame_changed():
 	if ally_sprite.animation == "skill4_start" and ally_sprite.frame == 19:
 		ally_sprite.play("skill4_loop")
 		skill_4_duration_timer.start()
+		skill_4_timer.start()
 	pass
 
 
@@ -130,7 +131,6 @@ func idle_process():
 				skill_3_release()
 				return
 	super()
-	if ally_state != AllyState.IDLE: return
 	if ally_sprite.animation == "idle":
 		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and skill_4_condition_area.get_overlapping_bodies().size() >= 2:
 			var target_enemy: Enemy = get_skill4_target_enemy()
@@ -176,16 +176,12 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 
 
 func skill_3_release():
-	skill_3_timer.start()
 	ally_sprite.play("skill3")
-	translate_to_new_state(AllyState.SPECIAL)
 	pass
 
 
 func skill_4_release(target_enemy: Enemy):
-	skill_4_timer.start()
 	ally_sprite.play("skill4_start")
-	translate_to_new_state(AllyState.SPECIAL)
 	ally_sprite.flip_h = target_enemy.position.x < position.x
 	get_skill_4_linked_enemy.emit(target_enemy)
 	pass
@@ -204,11 +200,6 @@ func move(target_pos:Vector2):
 		translate_to_new_state(AllyState.IDLE)
 		skill_4_duration_timer.stop()
 		skill_4_duration_timer.timeout.emit()
-	if ally_sprite.animation == "skill3" and ally_state != AllyState.DIE:
-		translate_to_new_state(AllyState.IDLE)
-		if current_intercepting_enemy != null:
-			current_intercepting_enemy.current_intercepting_units.erase(self)
-		current_intercepting_enemy = null
 	super(target_pos)
 	pass
 
