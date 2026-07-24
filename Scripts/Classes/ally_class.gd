@@ -186,7 +186,7 @@ func idle_process():
 		#translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.flip_h = enemy.position.x < position.x
 		ally_sprite.play("far_attack")
-		far_attack_timer.start()
+		#far_attack_timer.start()
 	pass
 
 
@@ -532,6 +532,7 @@ func summon_bullet(bullet_scene: PackedScene,summon_pos: Vector2, target_pos: Ve
 
 
 func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage):
+	far_attack_timer.start()
 	if far_attack_area.has_overlapping_bodies():
 		far_attack_target_enemy = far_attack_area.get_overlapping_bodies()[0].owner
 	if far_attack_target_enemy == null: return
