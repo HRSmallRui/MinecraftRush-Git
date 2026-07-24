@@ -87,6 +87,8 @@ func frame_changed():
 		far_attack_audio.play()
 	
 	if ally_sprite.animation == "skill1" and ally_sprite.frame == 26:
+		skill_1_timer.start()
+		far_attack_timer.start()
 		var enemy: Enemy = get_skill1_enemy()
 		if enemy != null: skill1_target_enemy = enemy
 		if skill1_target_enemy == null: return
@@ -100,6 +102,7 @@ func frame_changed():
 		get_exp(skill1_exp_get[skill_levels[1]-1])
 	
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 21:
+		skill_2_timer.start()
 		skill2_effect_release.emit()
 		skill_2_preparation_effect.hide()
 		get_exp(skill2_exp_get[skill_levels[2]-1])
@@ -115,6 +118,7 @@ func frame_changed():
 		remain_skill3_count = skill3_bullet_count_list[skill_levels[3]-1]
 		ally_sprite.play("skill3_loop")
 		skill_3_shot_timer.start()
+		skill_3_timer.start()
 	
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 10:
 		var enemy: Enemy = current_intercepting_enemy
@@ -123,7 +127,7 @@ func frame_changed():
 		kill_possible += skill4_layer_adding_possible * (lives_layer - 1)
 		#prints("kill_possible:",kill_possible)
 		var show_text: String
-		if randf() < kill_possible and enemy.enemy_type < Enemy.EnemyType.Super and lives_layer >= 1:
+		if randf() < kill_possible and enemy.enemy_type < Enemy.EnemyType.Super and lives_layer > 1:
 			enemy.sec_kill(true)
 			show_text = "秒杀！"
 			lives_layer -= 2
@@ -171,10 +175,8 @@ func die(explosion: bool):
 
 func idle_process():
 	super()
-	if ally_state == AllyState.IDLE:
+	if ally_sprite.animation == "idle":
 		if skill_2_timer.is_stopped() and skill_2_attack_area.get_overlapping_bodies().size() >= 5 and skill_levels[2] > 0:
-			skill_2_timer.start()
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill2")
 			skill_2_preparation_effect.position = skill2_prepare_effect_pos
 			if ally_sprite.flip_h: skill_2_preparation_effect.position.x *= -1
@@ -184,19 +186,14 @@ func idle_process():
 		if skill_1_timer.is_stopped() and skill_levels[1] > 0 and far_attack_area.has_overlapping_bodies():
 			var enemy: Enemy = get_skill1_enemy()
 			if enemy != null:
-				skill_1_timer.start()
-				far_attack_timer.start()
 				skill1_target_enemy = enemy
-				translate_to_new_state(AllyState.SPECIAL)
 				ally_sprite.flip_h = skill1_target_enemy.position.x < position.x
 				ally_sprite.play("skill1")
 				return
 		
 		if skill_3_timer.is_stopped() and skill_levels[3] > 0 and far_attack_area.has_overlapping_bodies():
-			skill_3_timer.start()
 			var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
 			ally_sprite.flip_h = enemy.position.x < position.x
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill3_start")
 			last_skill3_pos = enemy.hurt_box.global_position
 			return
@@ -226,8 +223,6 @@ func translate_to_new_state(new_state: AllyState):
 func battle():
 	if ally_sprite.animation == "idle":
 		if skill_2_timer.is_stopped() and far_attack_area.get_overlapping_bodies().size() >= 5 and skill_levels[2] > 0:
-			skill_2_timer.start()
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill2")
 			skill_2_preparation_effect.position = skill2_prepare_effect_pos
 			if ally_sprite.flip_h: skill_2_preparation_effect.position.x *= -1
@@ -277,3 +272,10 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 			return false
 	var result: bool = super(damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack,deadly)
 	return result
+
+
+func move_animation(target_pos: Vector2):
+	super(target_pos)
+	skill_2_preparation_effect.hide()
+	skill_3_shot_timer.stop()
+	pass

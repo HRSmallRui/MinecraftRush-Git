@@ -73,6 +73,7 @@ func frame_changed():
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 14:
 		skill_2_audio.play()
 		skill_2_timer.start()
+		translate_to_new_state(AllyState.SPECIAL)
 		var damage: int = skill2_damage_list[skill_levels[2]-1]
 		var enemy: Enemy = current_intercepting_enemy
 		var show_pos: Vector2 = hurt_box.global_position
