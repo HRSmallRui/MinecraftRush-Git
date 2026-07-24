@@ -144,7 +144,7 @@ func skill_4_process():
 
 
 func golden_apple():
-	translate_to_new_state(AllyState.SPECIAL)
+	#translate_to_new_state(AllyState.SPECIAL)
 	ally_sprite.play("skill_3")
 	skill_3_audio.play()
 	pass
@@ -194,8 +194,6 @@ func skill2_is_valid_to_release() -> bool:
 
 func move(target_pos: Vector2):
 	if ally_sprite.animation == "skill_3" and ally_state != AllyState.DIE:
-		var target_state: AllyState = AllyState.IDLE if current_intercepting_enemy == null else AllyState.BATTLE
-		translate_to_new_state(target_state)
 		skill_3_audio.stop()
 		skill_3_timer.stop()
 	super(target_pos)
