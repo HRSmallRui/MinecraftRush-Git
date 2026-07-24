@@ -246,7 +246,6 @@ func battle():
 	if ally_sprite.animation == "idle":
 		if normal_attack_timer.is_stopped():
 			ally_sprite.play("attack")
-			normal_attack_timer.start()
 			return
 	pass
 
@@ -303,6 +302,7 @@ func anim_changed():
 
 
 func cause_damage(damage_type: int = 0):
+	normal_attack_timer.start()
 	if current_intercepting_enemy == null: return
 	match damage_type:
 		0:
