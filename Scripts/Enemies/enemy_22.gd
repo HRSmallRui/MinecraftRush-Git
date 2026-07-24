@@ -62,7 +62,7 @@ func translate_to_new_state(new_state: EnemyState):
 
 
 func battle():
-	if enemy_sprite.animation == "idle" and call_timer.is_stopped() and battle_timer.is_stopped() and silence_layers <= 0:
+	if enemy_sprite.animation == "idle" and call_timer.is_stopped()and silence_layers <= 0:
 		enemy_sprite.play("call")
 		call_timer.start()
 		call_audio.play()
