@@ -13,6 +13,8 @@ class_name InformationBar
 
 @onready var head_texture: TextureRect = $Panel/PanelContainer2/HeadTexture
 @onready var name_label: Label = $Panel/VBoxContainer/NameLabel
+@onready var panel_container: PanelContainer = $Panel/PanelContainer
+@onready var panel_container_2: PanelContainer = $Panel/PanelContainer2
 
 var current_check_member: Node
 var intro_list:Array[String] = [
@@ -43,7 +45,8 @@ func ui_process(member: Node):
 
 func _process(delta: float) -> void:
 	if current_check_member == null: return
-	$Panel/PanelContainer.show()
+	panel_container.show()
+	panel_container_2.show()
 	if current_check_member is ArcherTower: archer_process(current_check_member)
 	elif current_check_member is BarrackTower: barrack_process(current_check_member)
 	elif current_check_member is MagicTower: magic_process(current_check_member)
@@ -202,7 +205,8 @@ func skill_button_process(skill_button: SkillButton):
 	intro_label.show()
 	name_label.text = "  " + skill_button.skill_name
 	intro_label.text = skill_button.skill_intro
-	$Panel/PanelContainer.hide()
+	panel_container.hide()
+	panel_container_2.hide()
 	pass
 
 
