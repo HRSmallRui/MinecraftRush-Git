@@ -93,7 +93,6 @@ func teleport_move(target_pos: Vector2):
 	navigation_agent.target_position = position
 	navigation_timer.stop()
 	if move_tween != null: move_tween.kill()
-	Stage.instance.move_point_effect(target_pos)
 	pass
 
 
@@ -108,7 +107,6 @@ func teleport_finished():
 func move(target_pos:Vector2):
 	if is_fly:
 		super(target_pos)
-		Stage.instance.move_point_effect(target_pos)
 		Stage.instance.ui_process(null)
 	elif when_moving_mouse_in_path:
 		navigation_agent.target_position = target_pos
@@ -148,7 +146,6 @@ func navigation_move():
 	if current_intercepting_enemy != null: current_intercepting_enemy.current_intercepting_units.erase(self)
 	current_intercepting_enemy = null
 	translate_to_new_state(AllyState.MOVE)
-	Stage.instance.move_point_effect(navigation_agent.target_position)
 	#station_position = navigation_agent.target_position
 	pass
 
@@ -275,6 +272,7 @@ func ui_process(member: Node):
 
 
 func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage):
+	normal_attack_timer.start()
 	if far_attack_target_enemy == null: return
 	var summon_pos:Vector2 = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	var target_pos: Vector2 = far_attack_target_enemy.hurt_box.global_position

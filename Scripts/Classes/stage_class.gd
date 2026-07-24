@@ -272,6 +272,7 @@ func _on_click_area_input_event(viewport: Node, event: InputEvent, shape_idx: in
 			var hero = information_bar.current_check_member as Hero
 			hero.when_moving_mouse_in_path = Stage.instance.mouse_in_path
 			hero.move(get_local_mouse_position())
+			move_point_effect(get_local_mouse_position())
 		await get_tree().process_frame
 		if stage_ui == StageUI.Move: stop_effect()
 	pass # Replace with function body.
