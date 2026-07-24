@@ -102,6 +102,7 @@ func frame_changed():
 		AudioManager.instance.shoot_audio_1.play()
 		shoot_count += 1
 	if ally_sprite.animation == "super_far_attack" and ally_sprite.frame == 26:
+		far_attack_timer.start()
 		AudioManager.instance.shoot_audio_2.play()
 		if far_attack_target_enemy == null: return
 		ally_sprite.flip_h = far_attack_target_enemy.position.x < position.x
@@ -143,6 +144,7 @@ func frame_changed():
 	
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 22:
 		skill4_release()
+		skill_4_timer.start()
 		AudioManager.instance.shoot_audio_2.play()
 	pass
 
@@ -167,7 +169,7 @@ func passive_summon_arrow():
 
 
 func idle_process():
-	if skill_1_timer.is_stopped() and skill_levels[1] > 0 and skill1_can_release():
+	if skill_1_timer.is_stopped() and skill_levels[1] > 0 and skill1_can_release() and ally_sprite.animation == "idle":
 		skill_1_timer.start()
 		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("skill1_start")
@@ -178,46 +180,42 @@ func idle_process():
 	super()
 	if shoot_count >= 2 and far_attack_area.has_overlapping_bodies() and ally_sprite.animation == "far_attack":
 		far_attack_target_enemy = far_attack_area.get_overlapping_bodies()[0].owner
-		far_attack_timer.start()
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.flip_h = far_attack_target_enemy.position.x < position.x
 		ally_sprite.play("super_far_attack")
 		return
-	if ally_state == AllyState.IDLE:
-		if ally_state == AllyState.IDLE:
-			if skill_3_timer.is_stopped() and skill_levels[3] > 0 and skill_3_condition_area.has_overlapping_bodies():
-				skill_3_timer.start()
+	
+	if ally_sprite.animation == "idle":
+		if skill_3_timer.is_stopped() and skill_levels[3] > 0 and skill_3_condition_area.has_overlapping_bodies():
+			skill_3_timer.start()
+			translate_to_new_state(AllyState.SPECIAL)
+			ally_sprite.play("skill3")
+			skill3_locked_enemy = skill_3_condition_area.get_overlapping_bodies()[0].owner
+			skill3_locked_pos = skill3_locked_enemy.position
+			ally_sprite.flip_h = skill3_locked_enemy.position.x < position.x
+			body_collision.disabled = true
+			hurt_box.monitorable = false
+			var move_pos: Vector2 = position
+			move_pos.x += 40 if ally_sprite.flip_h else -40
+			create_tween().tween_property(self,"position",move_pos,0.3)
+			return
+		
+		if skill_4_timer.is_stopped() and skill_levels[4] > 0 and far_attack_area.get_overlapping_bodies().size() >= 3:
+			ally_sprite.play("skill4")
+			skill_4_attack_area.position = position
+			skill_4_second_attack_area.position = position
+			return
+		
+		if skill_2_timer.is_stopped() and skill_levels[2] > 0 and skill_2_condition_area.has_overlapping_bodies():
+			var target_enemy: Enemy = get_skill2_target_enemy()
+			if target_enemy != null:
+				skill_2_timer.start()
 				translate_to_new_state(AllyState.SPECIAL)
-				ally_sprite.play("skill3")
-				skill3_locked_enemy = skill_3_condition_area.get_overlapping_bodies()[0].owner
-				skill3_locked_pos = skill3_locked_enemy.position
-				ally_sprite.flip_h = skill3_locked_enemy.position.x < position.x
-				body_collision.disabled = true
-				hurt_box.monitorable = false
-				var move_pos: Vector2 = position
-				move_pos.x += 40 if ally_sprite.flip_h else -40
-				create_tween().tween_property(self,"position",move_pos,0.3)
-				return
-			
-			if skill_4_timer.is_stopped() and skill_levels[4] > 0 and far_attack_area.get_overlapping_bodies().size() >= 3:
-				skill_4_timer.start()
-				translate_to_new_state(AllyState.SPECIAL)
-				ally_sprite.play("skill4")
-				skill_4_attack_area.position = position
-				skill_4_second_attack_area.position = position
-				return
-			
-			if skill_2_timer.is_stopped() and skill_levels[2] > 0 and skill_2_condition_area.has_overlapping_bodies():
-				var target_enemy: Enemy = get_skill2_target_enemy()
-				if target_enemy != null:
-					skill_2_timer.start()
-					translate_to_new_state(AllyState.SPECIAL)
-					start_data.total_defence_rate = 1
-					current_data.update_total_defence_rate()
-					skill2_locked_enemy = target_enemy
-					ally_sprite.play("skill2")
-					ally_sprite.flip_h = target_enemy.position.x < position.x
-				return
+				start_data.total_defence_rate = 1
+				current_data.update_total_defence_rate()
+				skill2_locked_enemy = target_enemy
+				ally_sprite.play("skill2")
+				ally_sprite.flip_h = target_enemy.position.x < position.x
+			return
 		
 	pass
 
@@ -334,8 +332,6 @@ func battle():
 			create_tween().tween_property(self,"position",move_pos,0.3)
 			return
 		if skill_4_timer.is_stopped() and skill_levels[4] > 0 and far_attack_area.get_overlapping_bodies().size() >= 3:
-			skill_4_timer.start()
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill4")
 			skill_4_attack_area.position = position
 			skill_4_second_attack_area.position = position
