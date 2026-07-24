@@ -228,6 +228,7 @@ func level_up():
 
 
 func cause_damage(damage_type: int = 0):
+	normal_attack_timer.start()
 	if current_intercepting_enemy == null: return
 	match damage_type:
 		0:
