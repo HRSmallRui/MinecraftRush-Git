@@ -2,7 +2,7 @@ extends Enemy
 
 @onready var explosion_area: Area2D = $UnitBody/ExplosionArea
 
-var explosion_damage: int = 140
+@export var explosion_damage: int
 
 
 func anim_offset():
