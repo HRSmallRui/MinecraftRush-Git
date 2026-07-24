@@ -131,6 +131,7 @@ func move(target_pos:Vector2):
 				Stage.instance.ui_process(null)
 			else:
 				Stage.instance.stop_effect()
+	
 	pass
 
 
