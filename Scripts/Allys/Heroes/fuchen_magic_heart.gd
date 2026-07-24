@@ -7,12 +7,14 @@ extends Sprite2D
 @export var magic_ball_scene: PackedScene
 @export var magic_ball_damage: int
 @export var magic_ball_count_list: Array[int]
+@export var skill3_timer: Timer
 @export_group("Skill4")
 @export var ray_scene: PackedScene
 @export var move_point_scene: PackedScene
 @export var damage_per_sec_list: Array[int]
 @export var ray_duration: float
 @export var ray_during_timer: Timer
+@export var skill4_timer: Timer
 @export var ray_time_interval: float
 
 @onready var rotation_player: AnimationPlayer = $RotationPlayer
@@ -40,11 +42,15 @@ func _ready() -> void:
 
 func hero_frame_changed():
 	if ally_sprite.animation == "far_attack" and ally_sprite.frame == 17:
+		fuchen.far_attack_timer.start()
 		shoot()
+		if fuchen.far_attack_target_enemy != null:
+			ally_sprite.flip_h = fuchen.far_attack_target_enemy.position.x < fuchen.position.x
 	if ally_sprite.animation == "skill3" and ally_sprite.frame == 21:
 		skill_3_release()
 		skill_3_audio.play()
 		AudioManager.instance.magic_shot_audio.play()
+		skill3_timer.start()
 	pass
 
 
