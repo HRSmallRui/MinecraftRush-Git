@@ -488,6 +488,7 @@ func clear_buff():
 
 
 func face_change_direction(min_time: float = 6, max_time: float = 16):
+	if ally_sprite.animation != "idle": return
 	direction_change_timer.wait_time = randf_range(min_time,max_time)
 	direction_change_timer.start()
 	if ally_state == AllyState.IDLE:

@@ -65,19 +65,25 @@ func _ready() -> void:
 func frame_changed():
 	if ally_sprite.animation == "far_attack" and ally_sprite.frame == 26:
 		far_attack_frame()
+		far_attack_timer.start()
 		AudioManager.instance.shoot_audio_2.play()
 	if ally_sprite.animation == "attack" and ally_sprite.frame == 8:
 		cause_damage()
 	if ally_sprite.animation == "skill1" and ally_sprite.frame == 30:
+		skill_1_timer.start()
+		far_attack_timer.start()
 		skill1_release()
 		AudioManager.instance.shoot_audio_2.play()
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 26:
+		skill_2_timer.start()
+		far_attack_timer.start()
 		skill2_release()
 		AudioManager.instance.shoot_audio_2.play()
 	pass
 
 
 func cause_damage(damage_type: int = 0):
+	normal_attack_timer.start()
 	if current_intercepting_enemy == null: return
 	match damage_type:
 		0:
@@ -167,27 +173,22 @@ func move(target_pos:Vector2):
 
 
 func idle_process():
+	if skill_levels[2] > 0 and skill_2_timer.is_stopped() and far_attack_timer.is_stopped() and far_attack_area.has_overlapping_bodies():
+		var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
+		skill2_locked_enemy = enemy
+		ally_sprite.flip_h = enemy.position.x < position.x
+		ally_sprite.play("skill2")
+		return
+	if ally_sprite.animation != "idle": return
 	super()
-	if ally_state != AllyState.IDLE: return
+	if ally_sprite.animation != "idle": return
 	if skill_levels[1] > 0 and skill_1_timer.is_stopped():
 		var enemy:Enemy = skill1_can_be_released()
 		if enemy != null:
 			skill1_locked_enemy = enemy
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.flip_h = enemy.position.x < position.x
 			ally_sprite.play("skill1")
-			skill_1_timer.start()
-			far_attack_timer.start()
 			return
-	if skill_levels[2] > 0 and skill_2_timer.is_stopped() and far_attack_timer.is_stopped() and far_attack_area.has_overlapping_bodies():
-		var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
-		skill2_locked_enemy = enemy
-		translate_to_new_state(AllyState.SPECIAL)
-		ally_sprite.flip_h = enemy.position.x < position.x
-		ally_sprite.play("skill2")
-		skill_2_timer.start()
-		far_attack_timer.start()
-		return
 	pass
 
 
