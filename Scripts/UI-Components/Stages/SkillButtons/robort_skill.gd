@@ -69,9 +69,9 @@ func release_raining():
 	rain_shot_timer.start()
 	is_raining = true
 	if RainSystem.instance == null:
-		create_tween().tween_property(black_light,"energy",0.8,0.5)
+		create_tween().tween_property(black_light,"energy",0.4,0.4)
 	elif RainSystem.instance.current_rain_step <= RainSystem.RainStep.Small:
-		create_tween().tween_property(black_light,"energy",0.8,0.5)
+		create_tween().tween_property(black_light,"energy",0.2,0.4)
 	
 	await rain_timer.timeout
 	rain_audio_super.stop()

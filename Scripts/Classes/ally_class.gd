@@ -173,19 +173,20 @@ func idle_process():
 		#print("move")
 		return
 	
-	if current_intercepting_enemy == null:
+	if current_intercepting_enemy == null and ally_sprite.animation == "idle":
 		if intercepting_area.has_overlapping_bodies():
 			var target_enemy: Enemy = get_intercepting_enemy()
 			if target_enemy != null:
 				go_to_intercept_enemy(target_enemy)
+				return
 	
-	if ally_state == AllyState.IDLE and far_attack_timer.is_stopped() and far_attack_area.has_overlapping_bodies() and far_attack_area.monitoring:
+	if far_attack_timer.is_stopped() and far_attack_area.has_overlapping_bodies() and far_attack_area.monitoring and ally_sprite.animation == "idle":
 		var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
 		far_attack_target_enemy = enemy
-		translate_to_new_state(AllyState.SPECIAL)
+		#translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.flip_h = enemy.position.x < position.x
 		ally_sprite.play("far_attack")
-		far_attack_timer.start()
+		#far_attack_timer.start()
 	pass
 
 
@@ -211,13 +212,16 @@ func battle_process():
 					return
 	
 	if ally_sprite.animation == "idle" and current_intercepting_enemy == null:
-		if intercepting_area.has_overlapping_bodies():
-			var enemy: Enemy = get_intercepting_enemy()
-			if enemy != null:
-				go_to_intercept_enemy(enemy)
-				return
-		move_back()
-		return
+		if intercepting_area.position == station_position:
+			if intercepting_area.has_overlapping_bodies():
+				var enemy: Enemy = get_intercepting_enemy()
+				if enemy != null:
+					go_to_intercept_enemy(enemy)
+					return
+			move_back()
+			return
+		else:
+			move(station_position)
 	
 	if current_intercepting_enemy != null:
 		if current_intercepting_enemy.current_intercepting_units.size() > 0 and current_intercepting_enemy.current_intercepting_units[0] != self:
@@ -245,7 +249,6 @@ func battle():
 	if ally_sprite.animation == "idle":
 		if normal_attack_timer.is_stopped():
 			ally_sprite.play("attack")
-			normal_attack_timer.start()
 			return
 	pass
 
@@ -302,6 +305,7 @@ func anim_changed():
 
 
 func cause_damage(damage_type: int = 0):
+	normal_attack_timer.start()
 	if current_intercepting_enemy == null: return
 	match damage_type:
 		0:
@@ -404,6 +408,10 @@ func move_to_intercept(target_pos: Vector2):
 
 
 func move_back():
+	if intercepting_area.position != station_position:
+		translate_to_new_state(AllyState.MOVE)
+		move(intercepting_area.position)
+		return
 	if current_intercepting_enemy == null and intercepting_area.monitoring:
 		if intercepting_area.has_overlapping_bodies():
 			var enemy_list: Array[Enemy]
@@ -411,7 +419,7 @@ func move_back():
 				var enemy = body.owner as Enemy
 				if !enemy.interceptable: continue
 				enemy_list.append(enemy)
-		
+	
 	translate_to_new_state(AllyState.MOVE)
 	move_animation(station_position)
 	move_tween.finished.connect(func(): translate_to_new_state(AllyState.IDLE))
@@ -480,6 +488,7 @@ func clear_buff():
 
 
 func face_change_direction(min_time: float = 6, max_time: float = 16):
+	if ally_sprite.animation != "idle": return
 	direction_change_timer.wait_time = randf_range(min_time,max_time)
 	direction_change_timer.start()
 	if ally_state == AllyState.IDLE:
@@ -531,9 +540,11 @@ func summon_bullet(bullet_scene: PackedScene,summon_pos: Vector2, target_pos: Ve
 
 
 func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage):
+	far_attack_timer.start()
 	if far_attack_area.has_overlapping_bodies():
 		far_attack_target_enemy = far_attack_area.get_overlapping_bodies()[0].owner
 	if far_attack_target_enemy == null: return
+	ally_sprite.flip_h = far_attack_target_enemy.position.x < position.x
 	var summon_pos:Vector2 = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	var target_pos: Vector2 = far_attack_target_enemy.hurt_box.global_position
 	target_pos += far_attack_target_enemy.direction * far_attack_target_enemy.current_data.unit_move_speed * 2

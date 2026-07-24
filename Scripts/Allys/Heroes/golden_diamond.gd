@@ -106,9 +106,13 @@ func frame_changed():
 		far_attack_frame(DataProcess.DamageType.MagicDamage)
 		AudioManager.instance.magic_shot_audio.play()
 	if ally_sprite.animation == "skill1" and ally_sprite.frame == 9:
+		skill_1_timer.start()
+		chip -= 1
 		skill_1_audio.play()
 		summon_golems()
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 13:
+		chip -= 1
+		skill_2_timer.start()
 		if skill2_linked_tower == null:
 			skill_2_timer.stop()
 			chip += 1
@@ -133,6 +137,8 @@ func frame_changed():
 		if ally_sprite.frame == 12:
 			skill_3_audio_1.play()
 		if ally_sprite.frame == 35:
+			chip -= 1
+			skill_3_timer.start()
 			skill_3_audio_2.play()
 			var target_enemy_list: Array[Enemy]
 			for body in skill_3_area.get_overlapping_bodies():
@@ -149,6 +155,9 @@ func frame_changed():
 		if ally_sprite.frame == 20:
 			skill_4_audio_1.play()
 		if ally_sprite.frame == 37:
+			skill_4_timer.start()
+			chip -= 1
+			translate_to_new_state(AllyState.SPECIAL)
 			skill_4_audio_2.play()
 			var ally_list: Array[Ally]
 			for body in skill_4_area.get_overlapping_bodies():
@@ -180,19 +189,13 @@ func rebirth():
 
 func idle_process():
 	if skill_1_timer.is_stopped() and skill_1_area.has_overlapping_bodies() and skill_levels[1] > 0 and chip >= 2:
-		skill_1_timer.start()
-		chip -= 1
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("skill1")
 		return
 	if skill_4_timer.is_stopped() and skill_4_area.get_overlapping_bodies().size() >= 4 and skill_levels[4] > 0 and chip >= 1 and far_attack_area.has_overlapping_bodies():
-		skill_4_timer.start()
-		chip -= 1
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("skill4")
 		return
 	super()
-	if ally_state != AllyState.IDLE: return
+	if ally_sprite.animation != "idle": return
 	if skill_2_timer.is_stopped() and skill_2_area.has_overlapping_areas() and skill_levels[2] > 0 and chip >= 1:
 		var tower_list: Array[DefenceTower]
 		for area in skill_2_area.get_overlapping_areas():
@@ -200,15 +203,9 @@ func idle_process():
 			if tower.tower_type != DefenceTower.TowerType.Barrack: tower_list.append(tower)
 		if !tower_list.is_empty():
 			skill2_linked_tower = tower_list.pick_random() as DefenceTower
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill2")
-			skill_2_timer.start()
-			chip -= 1
 			return
 	if skill_3_timer.is_stopped() and far_attack_area.get_overlapping_bodies().size() >= 3 and skill_levels[3] > 0 and chip >= 1:
-		skill_3_timer.start()
-		chip -= 1
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("skill3")
 		return
 	pass
@@ -217,22 +214,13 @@ func idle_process():
 func battle():
 	if ally_sprite.animation == "idle":
 		if skill_1_timer.is_stopped() and skill_levels[1] > 0 and chip >= 2:
-			translate_to_new_state(AllyState.SPECIAL)
-			chip -= 1
-			skill_1_timer.start()
 			ally_sprite.play("skill1")
 			normal_attack_timer.start()
 			return
 		if skill_3_timer.is_stopped() and skill_levels[3] > 0 and chip >= 1:
-			translate_to_new_state(AllyState.SPECIAL)
-			chip -= 1
-			skill_3_timer.start()
 			ally_sprite.play("skill3")
 			return
 		if skill_4_timer.is_stopped() and skill_levels[4] > 0 and chip >= 1 and skill_4_area.get_overlapping_bodies().size() >= 4:
-			translate_to_new_state(AllyState.SPECIAL)
-			chip -= 1
-			skill_4_timer.start()
 			ally_sprite.play("skill4")
 			return
 	super()

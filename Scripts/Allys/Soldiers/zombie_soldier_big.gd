@@ -49,6 +49,7 @@ func frame_changed():
 				enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,true,)
 	
 	if ally_sprite.animation == "super_attack" and ally_sprite.frame == 21:
+		skill_2_timer.start()
 		super_attack_audio.play()
 		var heal_data: int = super_attack_heal_list[soldier_skill_levels[1]-1]
 		current_data.heal(heal_data)
@@ -61,9 +62,7 @@ func frame_changed():
 
 func battle():
 	if soldier_skill_levels[1] > 0 and skill_2_timer.is_stopped():
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("super_attack")
-		skill_2_timer.start()
 		return
 	super()
 	pass
@@ -77,7 +76,6 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 		#print(defence_possible)
 		if source is Enemy and !far_attack and randf() < defence_possible:
 			#is_defence = true
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("defence")
 			defence_audio.play()
 			var immue_rate: float = immune_rate_list[soldier_skill_levels[2]-1]

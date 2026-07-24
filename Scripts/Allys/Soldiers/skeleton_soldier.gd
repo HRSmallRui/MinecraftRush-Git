@@ -40,10 +40,8 @@ func idle_process():
 		locked_enemy = get_sec_kill_enemy()
 		if locked_enemy != null:
 			sec_kill_sprite.show()
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("sec_kill")
 			ally_sprite.flip_h = locked_enemy.global_position.x < global_position.x
-			skill_2_timer.start()
 			return
 	super()
 	pass
@@ -57,6 +55,7 @@ func frame_changed():
 		AudioManager.instance.shoot_audio_1.play()
 	if ally_sprite.animation == "sec_kill" and ally_sprite.frame == 20:
 		sec_kill_sprite.hide()
+		skill_2_timer.start()
 		AudioManager.instance.shoot_audio_2.play()
 		if locked_enemy == null: return
 		if locked_enemy.enemy_state == Enemy.EnemyState.DIE: return

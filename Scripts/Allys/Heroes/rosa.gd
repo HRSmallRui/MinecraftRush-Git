@@ -53,6 +53,7 @@ func anim_offset():
 func frame_changed():
 	if ally_sprite.animation == "far_attack" and ally_sprite.frame == 8:
 		far_attack_frame()
+		far_attack_timer.start()
 		AudioManager.instance.shoot_audio_2.play()
 	if ally_sprite.animation == "teleport" and ally_sprite.frame == 14:
 		teleport_finished()
@@ -71,6 +72,8 @@ func frame_changed():
 		ally_sprite.play()
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 14:
 		skill_2_audio.play()
+		skill_2_timer.start()
+		translate_to_new_state(AllyState.SPECIAL)
 		var damage: int = skill2_damage_list[skill_levels[2]-1]
 		var enemy: Enemy = current_intercepting_enemy
 		var show_pos: Vector2 = hurt_box.global_position
@@ -87,6 +90,7 @@ func frame_changed():
 			var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
 			skill3_locked_pos = enemy.hurt_box.global_position
 		skill3_process()
+		skill_3_timer.start()
 		AudioManager.instance.shoot_audio_2.play()
 	pass
 
@@ -156,7 +160,7 @@ func translate_to_new_state(new_state: AllyState):
 
 
 func _on_idle_animation_timer_timeout() -> void:
-	if ally_state == AllyState.IDLE:
+	if ally_sprite.animation == "idle":
 		ally_sprite.play("idle_special")
 	pass # Replace with function body.
 
@@ -213,13 +217,12 @@ func skill_1_release_oneshot(damage_type: DataProcess.DamageType):
 
 
 func idle_process():
+	if (far_attack_area.has_overlapping_bodies() or intercepting_area.has_overlapping_bodies()) and ally_sprite.animation == "idle_special":
+		ally_sprite.play("idle")
 	super()
-	if ally_state != AllyState.IDLE: return
 	#print(intercepting_area.get_overlapping_bodies())
-	if ally_sprite.animation == "idle":
+	if ally_sprite.animation == "idle" or ally_sprite.animation == "idle_special":
 		if far_attack_area.get_overlapping_bodies().size() >= 3 and skill_levels[3] > 0 and skill_3_timer.is_stopped():
-			skill_3_timer.start()
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill3")
 			var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
 			ally_sprite.flip_h = enemy.position.x < position.x
@@ -241,9 +244,7 @@ func idle_process():
 
 func battle():
 	if ally_sprite.animation == "idle" and skill_2_timer.is_stopped() and attacked_count >= 1:
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("skill2")
-		skill_2_timer.start()
 		return
 	super()
 	pass

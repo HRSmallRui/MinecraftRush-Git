@@ -144,8 +144,10 @@ func frame_changed():
 		normal_attack(summon_pos)
 	elif ally_sprite.animation == "far_attack" and ally_sprite.frame == 7:
 		if far_attack_target_enemy == null: return
+		far_attack_timer.start()
 		normal_attack(far_attack_target_enemy.position)
 	elif ally_sprite.animation == "skill1" and ally_sprite.frame == 19:
+		skill_1_timer.start()
 		release_skill1()
 	if ally_sprite.animation == "skill2":
 		if ally_sprite.frame == 25:
@@ -171,6 +173,8 @@ func frame_changed():
 			skill_4_animation_player.play_backwards("release")
 	
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 42:
+		translate_to_new_state(AllyState.SPECIAL)
+		skill_4_timer.start()
 		stop_time()
 		skill_4_shot_timer.start()
 	pass
@@ -247,14 +251,10 @@ func idle_process():
 			skill_2_timer.start()
 			return
 		if skill_levels[1] > 0 and skill_1_timer.is_stopped() and magic_book_area.get_overlapping_bodies().size() >= 3:
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill1")
-			skill_1_timer.start()
 			return
 		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and skill_3_area.get_overlapping_bodies().size() >= 10:
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill4")
-			skill_4_timer.start()
 			return
 		if skill_levels[3] > 0 and skill_3_timer.is_stopped() and skill_3_area.get_overlapping_bodies().size() >= 6:
 			translate_to_new_state(AllyState.SPECIAL)
@@ -350,9 +350,7 @@ func destroy_second_explosion(pos_list: Array[Vector2]):
 func battle():
 	if ally_sprite.animation == "idle":
 		if skill_1_timer.is_stopped() and skill_levels[1] > 0:
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill1")
-			skill_1_timer.start()
 			return
 		if skill_levels[2] > 0 and skill_2_timer.is_stopped() and skill2_can_release():
 			translate_to_new_state(AllyState.SPECIAL)
@@ -367,9 +365,7 @@ func battle():
 			return
 		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and current_intercepting_enemy != null:
 			if current_intercepting_enemy.enemy_type < Enemy.EnemyType.MiniBoss:
-				translate_to_new_state(AllyState.SPECIAL)
 				ally_sprite.play("skill4")
-				skill_4_timer.start()
 				return
 	super()
 	pass

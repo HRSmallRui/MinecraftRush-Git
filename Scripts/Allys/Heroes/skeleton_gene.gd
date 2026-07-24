@@ -67,6 +67,7 @@ func frame_changed():
 	
 	if ally_sprite.animation == "skill1" and ally_sprite.frame == 15 and far_attack_target_enemy != null:
 		if far_attack_target_enemy == null: return
+		skill_1_timer.start()
 		AudioManager.instance.shoot_audio_1.play()
 		var summon_pos: Vector2 = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 		var target_pos: Vector2 = far_attack_target_enemy.hurt_box.global_position
@@ -74,15 +75,17 @@ func frame_changed():
 		var bullet: Bullet = summon_bullet(skill1_bullet_scene,summon_pos,target_pos,skill1_damage,DataProcess.DamageType.PhysicsDamage)
 		bullet.broken_rate = 1
 		Stage.instance.bullets.add_child(bullet)
+	
+	if ally_sprite.animation == "skill2" and ally_sprite.frame == 21:
+		delay_skill2_release()
+		skill_2_timer.start()
 	pass
 
 
 func idle_process():
 	super()
-	if ally_state == AllyState.IDLE:
+	if ally_sprite.animation == "idle":
 		if far_attack_area.has_overlapping_bodies() and skill_1_timer.is_stopped():
-			skill_1_timer.start()
-			translate_to_new_state(AllyState.SPECIAL)
 			far_attack_target_enemy = get_skill1_enemy()
 			ally_sprite.flip_h = far_attack_target_enemy.position.x < position.x
 			ally_sprite.play("skill1")
@@ -100,10 +103,7 @@ func idle_process():
 				return
 		
 		if skill_2_condition_area.get_overlapping_bodies().size() >= 3 and skill_2_timer.is_stopped():
-			translate_to_new_state(AllyState.SPECIAL)
-			skill_2_timer.start()
 			ally_sprite.play("skill2")
-			delay_skill2_release()
 			return
 	pass
 
@@ -152,7 +152,6 @@ func get_skill1_enemy() -> Enemy:
 
 func delay_skill2_release():
 	skill_2_attack_area.position = skill_2_condition_area.global_position
-	await get_tree().create_timer(0.8,false).timeout
 	delay_skill2_damage()
 	for i in 80:
 		var bullet: Bullet = skill2_attack_effect_scene.instantiate()
@@ -175,4 +174,13 @@ func delay_skill2_damage():
 		var enemy: Enemy = body.owner
 		var damage: int = randi_range(skill2_damage_block.damage_low,skill2_damage_block.damage_high)
 		enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,true,null,false,true)
+	pass
+
+
+func battle():
+	if ally_sprite.animation == "idle":
+		if skill_2_timer.is_stopped():
+			ally_sprite.play("skill2")
+			return
+	super()
 	pass

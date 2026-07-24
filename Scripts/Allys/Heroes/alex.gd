@@ -66,8 +66,11 @@ func frame_changed():
 		cause_damage()
 	if ally_sprite.animation == "skill1" and ally_sprite.frame == 22:
 		skill_1_release()
+		skill_1_timer.start()
 	if ally_sprite.animation == "skill3":
 		if ally_sprite.frame == 12 or ally_sprite.frame == 22:
+			skill_3_timer.start()
+			translate_to_new_state(AllyState.SPECIAL)
 			var damage_block: DamageBlock = skill3_damage_list[skill_levels[3]-1]
 			var skill_damage:int = damage_block.get_damage()/2
 			for body in skill_3_attack_area.get_overlapping_bodies():
@@ -81,6 +84,8 @@ func frame_changed():
 			skill_3_audio.play()
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 35:
 		skill_4_release()
+		skill_4_timer.start()
+		translate_to_new_state(AllyState.SPECIAL)
 	pass
 
 
@@ -144,12 +149,10 @@ func skill_1_release():
 
 func idle_process():
 	super()
-	if ally_state != AllyState.IDLE: return
+	if ally_sprite.animation != "idle": return
 	if skill_levels[1] > 0 and skill_1_timer.is_stopped() and skill_1_condition_area.has_overlapping_bodies():
 		skill_1_linked_enemy = skill_1_condition_area.get_overlapping_bodies()[0].owner
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("skill1")
-		skill_1_timer.start()
 		ally_sprite.flip_h = skill_1_linked_enemy.global_position.x < global_position.x
 		anim_offset()
 		return
@@ -181,21 +184,16 @@ func battle():
 	if ally_sprite.animation == "idle":
 		if skill_levels[1] > 0 and skill_1_timer.is_stopped() and skill_1_condition_area.has_overlapping_bodies():
 			skill_1_linked_enemy = skill_1_condition_area.get_overlapping_bodies()[0].owner
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill1")
-			skill_1_timer.start()
 			ally_sprite.flip_h = skill_1_linked_enemy.global_position.x < global_position.x
-			anim_offset()
 			return
 		
 		if skill_levels[3] > 0 and skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 2:
 			skill_3_release()
-			skill_3_timer.start()
 			return
 		
 		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and skill_4_condition_area.has_overlapping_bodies():
 			skill_4_linked_enemy = skill_4_condition_area.get_overlapping_bodies()[0].owner
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill4")
 			
 			var enemy_path: EnemyPath = skill_4_linked_enemy.get_parent()
@@ -210,8 +208,6 @@ func battle():
 				is_skill4_add = false
 			#ally_sprite.flip_h = skill_4_linked_enemy.position.x < position.x
 			
-			skill_4_timer.start()
-			anim_offset()
 			skill_3_audio.play()
 			return
 	super()
@@ -219,7 +215,6 @@ func battle():
 
 
 func skill_3_release():
-	translate_to_new_state(AllyState.SPECIAL)
 	ally_sprite.play("skill3")
 	pass
 

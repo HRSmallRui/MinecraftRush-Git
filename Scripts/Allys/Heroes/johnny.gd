@@ -80,17 +80,20 @@ func frame_changed():
 		cause_damage()
 		heal_health()
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 11 and ally_state != AllyState.DIE:
+		skill_2_timer.start()
 		ally_sprite.play("skill2_loop")
 		skill_2_duration_timer.start()
 		skill_2_hit_timer.start()
 		skill_2_audio.play()
 	if ally_sprite.animation == "skill3" and ally_sprite.frame == 17 and ally_state != AllyState.DIE:
+		skill_3_timer.start()
 		ally_sprite.play("skill3_loop")
 		skill_3_duration_timer.start()
 		skill_3_hit_timer.start()
 	if ally_sprite.animation == "skill3" and ally_sprite.frame == 2:
 		skill_3_audio.play()
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 43:
+		skill_4_timer.start()
 		skill_4_audio.play()
 		if current_intercepting_enemy != null:
 			var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
@@ -174,23 +177,17 @@ func die(explsion: bool = false):
 func battle():
 	if ally_sprite.animation == "idle":
 		if skill_levels[2] > 0 and skill_2_timer.is_stopped() and skill_2_hit_area.get_overlapping_bodies().size() >= 3:
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill2")
-			skill_2_timer.start()
 			get_exp(skill2_exp_get[skill_levels[2]-1])
 			return
 		if skill_levels[3] > 0 and skill_3_timer.is_stopped() and current_intercepting_enemy != null:
 			if current_intercepting_enemy.current_data.health > 100:
-				translate_to_new_state(AllyState.SPECIAL)
 				ally_sprite.play("skill3")
-				skill_3_timer.start()
 				get_exp(skill2_exp_get[skill_levels[3]-1])
 				return
 		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and current_intercepting_enemy != null:
 			if current_intercepting_enemy.current_data.health > 150:
 				ally_sprite.play("skill4")
-				translate_to_new_state(AllyState.SPECIAL)
-				skill_4_timer.start()
 				get_exp(skill2_exp_get[skill_levels[4]-1])
 				return
 	super()
@@ -204,6 +201,8 @@ func move(target_pos:Vector2):
 	if ally_sprite.animation == "skill3_loop":
 		skill_3_duration_timer.stop()
 		_on_skill_3_duration_timer_timeout()
+	if ally_sprite.animation == "skill3":
+		skill_3_audio.stop()
 	super(target_pos)
 	pass
 

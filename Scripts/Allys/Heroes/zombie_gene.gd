@@ -95,6 +95,8 @@ func frame_changed():
 	if ally_sprite.animation == "skill3_start" and ally_sprite.frame == 29:
 		ally_sprite.pause()
 		skill3_release()
+		skill_3_timer.start()
+		translate_to_new_state(AllyState.SPECIAL)
 		await get_tree().create_timer(0.5,false).timeout
 		if ally_state != AllyState.DIE: ally_sprite.play("skill3_end")
 	pass
@@ -103,8 +105,8 @@ func frame_changed():
 func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: float, far_attack: bool = false, source: Node2D = null,explosion: bool = false,aoe_attack: bool = false, deadly: bool = true) -> bool:
 	var current_damage: int = damage
 	var is_defence: bool
-	if source != null and randf() < defence_possible and (ally_state != AllyState.SPECIAL and ally_state != AllyState.DIE):
-		if source is Enemy:
+	if source != null and randf() < defence_possible and ally_state != AllyState.DIE:
+		if source is Enemy and (ally_sprite.animation == "idle" or ally_sprite.animation == "attack"):
 			current_damage = float(damage) * (1-defence_immune_rate)
 			is_defence = true
 			#print(current_damage)
@@ -113,27 +115,25 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 		var enemy: Enemy = current_intercepting_enemy
 		var return_damage: int = float(damage) * defence_damage_rate
 		enemy.take_damage(return_damage,DataProcess.DamageType.TrueDamage,0,false)
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("defence")
 		defence_audio.play()
 	return result
 
 
 func idle_process():
-	if skill_1_timer.is_stopped() and skill_1_condition_area.get_overlapping_bodies().size() >= 3:
-		var enemy: Enemy = skill_1_condition_area.get_overlapping_bodies()[0].owner
-		ally_sprite.flip_h = enemy.position.x < position.x
-		translate_to_new_state(AllyState.SPECIAL)
-		body_collision.disabled = true
-		ally_sprite.play("skill1_start")
-		skill_1_timer.start()
-		return
-	super()
-	if ally_state == AllyState.IDLE:
-		if skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 3:
+	if ally_sprite.animation == "idle":
+		if skill_1_timer.is_stopped() and skill_1_condition_area.get_overlapping_bodies().size() >= 3:
+			var enemy: Enemy = skill_1_condition_area.get_overlapping_bodies()[0].owner
+			ally_sprite.flip_h = enemy.position.x < position.x
 			translate_to_new_state(AllyState.SPECIAL)
+			body_collision.disabled = true
+			ally_sprite.play("skill1_start")
+			skill_1_timer.start()
+			return
+	super()
+	if ally_sprite.animation == "idle":
+		if skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 3:
 			ally_sprite.play("skill3_start")
-			skill_3_timer.start()
 			return
 	pass
 
@@ -187,9 +187,7 @@ func skill3_release():
 func battle():
 	if ally_sprite.animation == "idle":
 		if skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 3:
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill3_start")
-			skill_3_timer.start()
 			return
 		if skill_1_timer.is_stopped() and normal_attack_timer.is_stopped():
 			normal_attack_timer.start()
