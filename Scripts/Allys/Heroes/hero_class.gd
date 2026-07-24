@@ -272,6 +272,7 @@ func ui_process(member: Node):
 
 
 func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage):
+	normal_attack_timer.start()
 	if far_attack_target_enemy == null: return
 	var summon_pos:Vector2 = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
 	var target_pos: Vector2 = far_attack_target_enemy.hurt_box.global_position
