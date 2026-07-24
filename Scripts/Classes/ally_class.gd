@@ -212,13 +212,16 @@ func battle_process():
 					return
 	
 	if ally_sprite.animation == "idle" and current_intercepting_enemy == null:
-		if intercepting_area.has_overlapping_bodies():
-			var enemy: Enemy = get_intercepting_enemy()
-			if enemy != null:
-				go_to_intercept_enemy(enemy)
-				return
-		move_back()
-		return
+		if intercepting_area.position == station_position:
+			if intercepting_area.has_overlapping_bodies():
+				var enemy: Enemy = get_intercepting_enemy()
+				if enemy != null:
+					go_to_intercept_enemy(enemy)
+					return
+			move_back()
+			return
+		else:
+			move(station_position)
 	
 	if current_intercepting_enemy != null:
 		if current_intercepting_enemy.current_intercepting_units.size() > 0 and current_intercepting_enemy.current_intercepting_units[0] != self:
@@ -405,6 +408,10 @@ func move_to_intercept(target_pos: Vector2):
 
 
 func move_back():
+	if intercepting_area.position != station_position:
+		translate_to_new_state(AllyState.MOVE)
+		move(intercepting_area.position)
+		return
 	if current_intercepting_enemy == null and intercepting_area.monitoring:
 		if intercepting_area.has_overlapping_bodies():
 			var enemy_list: Array[Enemy]
@@ -412,7 +419,7 @@ func move_back():
 				var enemy = body.owner as Enemy
 				if !enemy.interceptable: continue
 				enemy_list.append(enemy)
-		
+	
 	translate_to_new_state(AllyState.MOVE)
 	move_animation(station_position)
 	move_tween.finished.connect(func(): translate_to_new_state(AllyState.IDLE))
