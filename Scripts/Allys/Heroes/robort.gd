@@ -96,14 +96,20 @@ func frame_changed():
 			ally_sprite.show()
 	if ally_sprite.animation == "far_attack" and ally_sprite.frame == 16:
 		release_lightning()
+		translate_to_new_state(AllyState.SPECIAL)
+		far_attack_timer.start()
 		lightning_audio.play()
 	if ally_sprite.animation == "skill1" and ally_sprite.frame == 16:
+		skill_1_timer.start()
 		release_tornado()
 		robort_teleport_audio.play()
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 16:
+		skill_2_timer.start()
 		skill_2_audio.play(0.2)
 		release_flame()
 	if ally_sprite.animation == "skill3" and ally_sprite.frame == 18:
+		skill_3_timer.start()
+		translate_to_new_state(AllyState.SPECIAL)
 		release_earth_queake()
 		AudioManager.instance.play_explosion_audio()
 		EffectManager.instance.play_explosion_effect(global_position)
@@ -224,34 +230,27 @@ func strength_area_release(target_pos: Vector2):
 
 func idle_process():
 	super()
-	if ally_state != AllyState.IDLE: return
 	if ally_sprite.animation != "idle": return
 	if skill_levels[2] > 0 and skill_2_timer.is_stopped() and far_attack_area.has_overlapping_bodies():
 		skill2_locked_enemy = far_attack_area.get_overlapping_bodies()[0].owner
-		translate_to_new_state(AllyState.SPECIAL)
 		ally_sprite.play("skill2")
 		ally_sprite.flip_h = skill2_locked_enemy.position.x < position.x
-		skill_2_timer.start()
 		far_attack_timer.start()
 		return
 	if skill_levels[3] > 0 and skill_3_timer.is_stopped() and skill_3_condition_area.get_overlapping_bodies().size() >= 2:
 		var locked_enemy_path: EnemyPath = get_skill3_locked_enemy_path()
 		if locked_enemy_path != null:
 			skill3_locked_enemy_path = locked_enemy_path
-			translate_to_new_state(AllyState.SPECIAL)
 			if skill3_locked_enemy != null:
 				ally_sprite.flip_h = skill3_locked_enemy.position.x < position.x
 			ally_sprite.play("skill3")
-			skill_3_timer.start()
 			return
 	if skill_levels[1] > 0 and skill_1_timer.is_stopped() and skill_1_condition_area.has_overlapping_bodies():
 		var locked_enemy: Enemy = get_skill1_locked_enemy()
 		if locked_enemy != null:
 			skill1_locked_enemy = locked_enemy
-			translate_to_new_state(AllyState.SPECIAL)
 			ally_sprite.play("skill1")
 			ally_sprite.flip_h = locked_enemy.position.x < position.x
-			skill_1_timer.start()
 			far_attack_timer.start()
 			return
 	pass
