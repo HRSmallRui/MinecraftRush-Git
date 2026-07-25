@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var sprint_damage: int
+
 @onready var sprint_sprite: AnimatedSprite2D = $UnitBody/SprintSprite
 @onready var sprint_timer: Timer = $SprintTimer
 @onready var sprint_continue_timer: Timer = $SprintContinueTimer
@@ -90,7 +92,7 @@ func sprint():
 
 func _on_sprint_hit_area_area_entered(area: Area2D) -> void:
 	var ally: Ally = area.owner
-	ally.take_damage(70,DataProcess.DamageType.PhysicsDamage,0,false,self)
+	ally.take_damage(sprint_damage,DataProcess.DamageType.PhysicsDamage,0,false,self)
 	pass # Replace with function body.
 
 

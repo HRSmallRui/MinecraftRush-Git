@@ -2,7 +2,7 @@ extends Enemy
 
 @onready var far_attack_audio: AudioStreamPlayer = $FarAttackAudio
 @onready var explosion_area: Area2D = $UnitBody/ExplosionArea
-var explosion_damage: int = 75
+@export var explosion_damage: int = 75
 
 
 func add_new_buff_tag(tag_name: String, tag_level: int = 1):

@@ -8,7 +8,9 @@ extends Enemy
 @onready var explosion_area: Area2D = $UnitBody/ExplosionArea
 
 var has_damaged: bool = false
-var explosion_damage: int = 400
+@export var explosion_damage: int
+@export var upper_explosion_damage: int
+@export var super_damage_rate: float
 
 
 func anim_offset():
@@ -37,7 +39,7 @@ func frame_changed():
 		has_damaged = false
 	if enemy_sprite.animation == "super_attack" and enemy_sprite.frame == 16:
 		super_attack_audio.play()
-		var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high) * 4
+		var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high) * super_damage_rate
 		for body in super_attack_area.get_overlapping_bodies():
 			var ally: Ally = body.owner
 			ally.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,self,false,true,)
@@ -90,6 +92,6 @@ func die(explosion: bool = false):
 func add_new_buff_tag(tag_name: String, tag_level: int = 1):
 	if tag_name == "lightning":
 		explosion_area.scale *= 1.5
-		explosion_damage  = 500
+		explosion_damage  = upper_explosion_damage
 		remove_from_group("creeper")
 	pass

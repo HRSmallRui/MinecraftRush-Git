@@ -10,6 +10,7 @@ enum RainStep{
 }
 
 @export var start_rain_step: RainStep
+@export var start_processing: bool
 @export var step_color_list: Array[Color]
 @export_range(0,1,0.01) var step_energy_list: Array[float]
 @export var wave_step_list: Array[RainStep]
@@ -49,7 +50,8 @@ func _init() -> void:
 
 func _ready() -> void:
 	translate_to_rain_step(start_rain_step)
-	black_light.energy =step_energy_list[current_rain_step]
+	if !start_processing:
+		black_light.energy =step_energy_list[current_rain_step]
 	Stage.instance.wave_summon.connect(wave_step)
 	lightning_timer.start()
 	rain_step_label.modulate.a = 0

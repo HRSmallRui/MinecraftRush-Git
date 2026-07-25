@@ -2,7 +2,8 @@ extends Enemy
 
 @onready var explosion_area: Area2D = $UnitBody/ExplosionArea
 
-var explosion_damage: int = 200
+@export var explosion_damage: int
+@export var upper_explosion_damage: int
 
 
 func anim_offset():
@@ -44,6 +45,6 @@ func die(explosion: bool = false):
 func add_new_buff_tag(tag_name: String, tag_level: int = 1):
 	if tag_name == "lightning":
 		explosion_area.scale *= 1.5
-		explosion_damage  = 250
+		explosion_damage  = upper_explosion_damage
 		remove_from_group("creeper")
 	pass
