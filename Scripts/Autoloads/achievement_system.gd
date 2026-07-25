@@ -66,6 +66,12 @@ func add_achieve_temp_value(value_keywords: String):
 
 
 func get_achieve_temp() -> Array:
-	var sav: GameSaver = Stage.instance.stage_sav
-	return sav.property_bus["achievement_temp"]
-	pass
+	var sav: GameSaver
+	if Stage.instance != null:
+		sav = Stage.instance.stage_sav
+	else:
+		sav = Global.get_game_sav()
+	if sav.property_bus.has("achievement_temp"):
+		return sav.property_bus["achievement_temp"]
+	else:
+		return Array()

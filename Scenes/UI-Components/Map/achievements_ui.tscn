@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ps6dlr3u08l7"]
+[gd_scene load_steps=11 format=3 uid="uid://ps6dlr3u08l7"]
 
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="1_dwf67"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Map/achievements_ui.gd" id="1_lsmp5"]
-[ext_resource type="PackedScene" uid="uid://otco3sjwkpxq" path="res://Scenes/UI-Components/Map/achievement_card.tscn" id="2_tto8o"]
+[ext_resource type="PackedScene" uid="uid://dtkqascjoy1s1" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card.tscn" id="2_tto8o"]
 [ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="4_6ijas"]
+[ext_resource type="PackedScene" uid="uid://dx14w8ytlnh8j" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card_progress_value.tscn" id="4_g4xid"]
+[ext_resource type="PackedScene" uid="uid://cjqyl8c74fnle" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card_list_progress.tscn" id="5_1qj37"]
 
 [sub_resource type="Animation" id="Animation_sa7x5"]
 resource_name = "Entry"
@@ -355,199 +357,214 @@ sav_keyword = "FirstBlood"
 layout_mode = 2
 sav_keyword = "Level1Finished"
 
-[node name="AchievementCard4" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 6
 sav_keyword = "SearchInformation"
 
-[node name="AchievementCard5" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard4" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "TowerLV3"
 
-[node name="AchievementCard6" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue2" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 10
 sav_keyword = "SheepDead"
 
-[node name="AchievementCard7" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard5" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Boss1Dead"
 
-[node name="AchievementCard8" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue3" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 2500
 sav_keyword = "RoyalDefender"
 
-[node name="AchievementCard9" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue4" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 99
 sav_keyword = "RoyalGuardSkill1"
 
-[node name="AchievementCard10" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue5" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 2000
 sav_keyword = "RoyalGuardSkill2"
 
-[node name="AchievementCard11" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard6" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Stage4"
 
-[node name="AchievementCard12" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard7" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "PrayEvil"
 
-[node name="AchievementCard13" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue6" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 10
 sav_keyword = "SuperSkeleton"
 
-[node name="AchievementCard14" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard8" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Freddy"
 
-[node name="AchievementCard15" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue7" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 2000
 sav_keyword = "WildRegionCleaner"
 
-[node name="AchievementCard16" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue8" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 800
 sav_keyword = "Bloody"
 
-[node name="AchievementCard17" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue9" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 2000
 sav_keyword = "Killer"
 
-[node name="AchievementCard18" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard9" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Boss2Dead"
 
-[node name="AchievementCard19" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue10" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 3333
 sav_keyword = "ChurchDust"
 
-[node name="AchievementCard20" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue11" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 40000
 sav_keyword = "IronGolem"
 
-[node name="AchievementCard21" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard10" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "SandHuman"
 
-[node name="AchievementCard22" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard11" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "DancingCat"
 
-[node name="AchievementCard23" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard12" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Remilia"
 
-[node name="AchievementCard24" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard13" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "SunAchieve"
 
-[node name="AchievementCard25" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue12" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 666
 sav_keyword = "OperatorLightning"
 
-[node name="AchievementCard26" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue13" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 666
 sav_keyword = "OperatorSeckill"
 
-[node name="AchievementCard27" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue14" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 47
 sav_keyword = "DeSentrySeckill"
 
-[node name="AchievementCard28" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue15" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 4
 sav_keyword = "EpeeRebirth"
 
-[node name="AchievementCard30" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
-layout_mode = 2
-sav_keyword = "DeathKill"
-
-[node name="AchievementCard29" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard14" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Boss3Dead"
 
-[node name="AchievementCard31" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue16" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
+layout_mode = 2
+target_value = 20000
+sav_keyword = "DeathKill"
+
+[node name="AchievementCard15" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "TheForest"
 
-[node name="AchievementCard32" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard16" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "CARRION"
 
-[node name="AchievementCard33" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardListProgress" parent="ScrollContainer/VFlowContainer" instance=ExtResource("5_1qj37")]
 layout_mode = 2
+key_list = Array[String](["CrayonYellow", "CrayonBlue", "CrayonRed"])
 sav_keyword = "Primary"
 
-[node name="AchievementCard34" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard17" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "INSIDE"
 
-[node name="AchievementCard35" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard18" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "GAIA1"
 
-[node name="AchievementCard36" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard19" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Resident"
 
-[node name="AchievementCard38" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue17" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
+target_value = 200
 sav_keyword = "CurseDead"
 
-[node name="AchievementCard39" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCardProgressValue18" parent="ScrollContainer/VFlowContainer" instance=ExtResource("4_g4xid")]
 layout_mode = 2
-sav_keyword = "PluginPeople"
-
-[node name="AchievementCard40" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
-layout_mode = 2
+target_value = 120
 sav_keyword = "MagicianGold"
 
-[node name="AchievementCard41" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard20" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Boss4Dead"
 
-[node name="AchievementCard42" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard21" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Boss4DeadPerfect"
 
-[node name="AchievementCard44" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
-layout_mode = 2
-sav_keyword = "Chapter5Lily"
-
-[node name="AchievementCard43" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard22" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Boss5Dead"
 
-[node name="AchievementCard45" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard23" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+layout_mode = 2
+sav_keyword = "Chapter5Lily"
+
+[node name="AchievementCard24" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "kinito_pet"
 
-[node name="AchievementCard46" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard25" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "DNA_time"
 
-[node name="AchievementCard47" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard26" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "GyakutenSaiban"
 
-[node name="AchievementCard48" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard27" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "PrayGame2"
 
-[node name="AchievementCard49" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard28" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "Boss6Dead"
 
-[node name="AchievementCard50" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard29" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "MAIN_END"
 
-[node name="AchievementCard51" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard30" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "campaign_end"
 
-[node name="AchievementCard52" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard31" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "diamond!"
 
-[node name="AchievementCard53" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
+[node name="AchievementCard32" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "bedrock"
 

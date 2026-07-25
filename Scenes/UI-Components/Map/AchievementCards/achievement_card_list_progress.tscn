@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjqyl8c74fnle"]
+
+[ext_resource type="PackedScene" uid="uid://dtkqascjoy1s1" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card.tscn" id="1_8imtb"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Map/achievement_card_list_progress.gd" id="2_mrxss"]
+[ext_resource type="Texture2D" uid="uid://dj6ypxsmh8kyk" path="res://Assets/Images/UI/slide_under.png" id="3_ax5pl"]
+[ext_resource type="Texture2D" uid="uid://brb1renym82y5" path="res://Assets/Images/UI/slide_process.png" id="4_wnrhw"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="5_557kx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftiwn"]
+atlas = ExtResource("3_ax5pl")
+region = Rect2(4, 60, 519, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efl1i"]
+atlas = ExtResource("4_wnrhw")
+region = Rect2(4, 60, 515, 33)
+
+[node name="AchievementCardListProgress" instance=ExtResource("1_8imtb")]
+script = ExtResource("2_mrxss")
+key_list = Array[String]([])
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = 53.5
+offset_right = 416.5
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.327494, 0.327494)
+mouse_filter = 2
+max_value = 1.0
+step = 0.0
+value = 0.675
+texture_under = SubResource("AtlasTexture_ftiwn")
+texture_progress = SubResource("AtlasTexture_efl1i")
+
+[node name="ProgressLabel" type="Label" parent="." index="4"]
+offset_left = 275.0
+offset_top = 136.0
+offset_right = 799.0
+offset_bottom = 200.0
+scale = Vector2(0.219496, 0.219496)
+theme_override_fonts/font = ExtResource("5_557kx")
+theme_override_font_sizes/font_size = 64
+text = "1 / 2"
+horizontal_alignment = 1
