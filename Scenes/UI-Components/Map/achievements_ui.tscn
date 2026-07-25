@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ps6dlr3u08l7"]
+[gd_scene load_steps=11 format=3 uid="uid://ps6dlr3u08l7"]
 
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="1_dwf67"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Map/achievements_ui.gd" id="1_lsmp5"]
 [ext_resource type="PackedScene" uid="uid://dtkqascjoy1s1" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card.tscn" id="2_tto8o"]
 [ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="4_6ijas"]
 [ext_resource type="PackedScene" uid="uid://dx14w8ytlnh8j" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card_progress_value.tscn" id="4_g4xid"]
+[ext_resource type="PackedScene" uid="uid://cjqyl8c74fnle" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card_list_progress.tscn" id="5_1qj37"]
 
 [sub_resource type="Animation" id="Animation_sa7x5"]
 resource_name = "Entry"
@@ -487,6 +488,11 @@ sav_keyword = "TheForest"
 [node name="AchievementCard16" parent="ScrollContainer/VFlowContainer" instance=ExtResource("2_tto8o")]
 layout_mode = 2
 sav_keyword = "CARRION"
+
+[node name="AchievementCardListProgress" parent="ScrollContainer/VFlowContainer" instance=ExtResource("5_1qj37")]
+layout_mode = 2
+key_list = Array[String](["CrayonYellow", "CrayonBlue", "CrayonRed"])
+sav_keyword = "Primary"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
