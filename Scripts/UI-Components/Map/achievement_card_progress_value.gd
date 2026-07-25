@@ -2,7 +2,7 @@ extends AchiementCard
 
 @export var target_value: int
 
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var progress_label: Label = $ProgressLabel
 
 

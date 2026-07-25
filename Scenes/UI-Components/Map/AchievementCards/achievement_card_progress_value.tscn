@@ -1,52 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx14w8ytlnh8j"]
+[gd_scene load_steps=8 format=3 uid="uid://dx14w8ytlnh8j"]
 
 [ext_resource type="PackedScene" uid="uid://dtkqascjoy1s1" path="res://Scenes/UI-Components/Map/AchievementCards/achievement_card.tscn" id="1_ea3m5"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Map/achievement_card_progress_value.gd" id="2_vlbeq"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_2hl2m"]
+[ext_resource type="Texture2D" uid="uid://dj6ypxsmh8kyk" path="res://Assets/Images/UI/slide_under.png" id="3_eic14"]
+[ext_resource type="Texture2D" uid="uid://brb1renym82y5" path="res://Assets/Images/UI/slide_process.png" id="4_v4h1u"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kakb2"]
-bg_color = Color(0.344076, 0.344076, 0.344076, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_y45jn"]
+atlas = ExtResource("3_eic14")
+region = Rect2(4, 60, 519, 37)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy2jn"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fus0k"]
+atlas = ExtResource("4_v4h1u")
+region = Rect2(4, 60, 515, 33)
 
 [node name="AchievementCardProgressValue" instance=ExtResource("1_ea3m5")]
 script = ExtResource("2_vlbeq")
 target_value = 0
 
-[node name="ProgressBar" type="ProgressBar" parent="." index="3"]
+[node name="ProgressBar" type="TextureProgressBar" parent="." index="3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -98.5
-offset_top = 45.5
-offset_right = 1081.5
-offset_bottom = 100.5
+offset_left = -102.5
+offset_top = 53.5
+offset_right = 416.5
+offset_bottom = 90.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.16575, 0.16575)
+scale = Vector2(0.327494, 0.327494)
 mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_kakb2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_gy2jn")
 max_value = 1.0
 step = 0.0
-value = 1.0
-show_percentage = false
+value = 0.675
+texture_under = SubResource("AtlasTexture_y45jn")
+texture_progress = SubResource("AtlasTexture_fus0k")
 
 [node name="ProgressLabel" type="Label" parent="." index="4"]
 layout_mode = 0
-offset_left = 307.0
-offset_top = 123.0
-offset_right = 556.0
-offset_bottom = 187.0
-scale = Vector2(0.336943, 0.336943)
+offset_left = 275.0
+offset_top = 136.0
+offset_right = 799.0
+offset_bottom = 200.0
+scale = Vector2(0.219496, 0.219496)
 theme_override_fonts/font = ExtResource("3_2hl2m")
 theme_override_font_sizes/font_size = 64
 text = "1 / 2"
+horizontal_alignment = 1
