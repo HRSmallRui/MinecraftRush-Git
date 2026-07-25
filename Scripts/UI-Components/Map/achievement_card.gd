@@ -1,4 +1,5 @@
 extends TextureRect
+class_name AchiementCard
 
 var normal_texture: Texture
 var locked_texture: Texture
