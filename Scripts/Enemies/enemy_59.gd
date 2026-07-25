@@ -222,7 +222,7 @@ func recover():
 	pass
 
 
-func move_process(delta: float):
+func move_logic_process():
 	if ally_condition_area.has_overlapping_bodies() and skill_3_timer.is_stopped():
 		skill_3_timer.start()
 		translate_to_new_state(EnemyState.SPECIAL)
@@ -241,7 +241,7 @@ func move_process(delta: float):
 		enemy_sprite.play("skill2")
 		skill_2_finished = false
 		return
-	super(delta)
+	super()
 	pass
 
 
