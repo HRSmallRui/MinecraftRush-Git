@@ -245,6 +245,11 @@ func move_logic_process():
 	pass
 
 
+func special_process():
+	
+	pass
+
+
 func skill2_release():
 	var rect: Rect2 = Stage.instance.stage_camera.move_limit_shape.shape.get_rect()
 	var shape: CollisionShape2D = Stage.instance.stage_camera.move_limit_shape

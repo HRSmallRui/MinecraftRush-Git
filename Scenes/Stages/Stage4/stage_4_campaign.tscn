@@ -1,4 +1,4 @@
-[gd_scene load_steps=317 format=3 uid="uid://dn3gqlx2m6o54"]
+[gd_scene load_steps=314 format=3 uid="uid://dn3gqlx2m6o54"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_4y2mf"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_4_campaign.gd" id="2_4iw5u"]
@@ -80,9 +80,7 @@
 [ext_resource type="Resource" uid="uid://b7nqtiht68i7w" path="res://Library/SummonConfigs/Stage4/Campaign/path11.res" id="66_oo72l"]
 [ext_resource type="Resource" uid="uid://pibusobw2lm6" path="res://Library/SummonConfigs/Stage4/Campaign/path12.res" id="67_tbvrb"]
 [ext_resource type="Resource" uid="uid://ctwlaysm2p20r" path="res://Library/SummonConfigs/Stage4/Campaign/path13.res" id="68_3h1ti"]
-[ext_resource type="PackedScene" uid="uid://lw7qf5781u07" path="res://Scenes/Enemies/enemy_59.tscn" id="68_re1kg"]
 [ext_resource type="Resource" uid="uid://wyk1gtpwm75y" path="res://Library/SummonConfigs/Stage4/Campaign/path14.res" id="69_lybbf"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="69_o8c3y"]
 [ext_resource type="Resource" uid="uid://bscu48hnk62vo" path="res://Library/SummonConfigs/Stage4/Campaign/path15.res" id="70_vm4sq"]
 [ext_resource type="Resource" uid="uid://e86vo1kodnpg" path="res://Library/SummonConfigs/Stage4/Campaign/path16.res" id="71_lqpdt"]
 [ext_resource type="PackedScene" uid="uid://4j747edyffkd" path="res://Scenes/UI-Components/Stages/wave_button.tscn" id="73_jd3ca"]
@@ -261,28 +259,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 960, -19, -8.41847, -34.7963, 8.41847, 34.7963, 929, 754, -19.6431, -22.4492, 19.6431, 22.4492, 978, 876, 0, 0, 0, 0, 1066, 954, -11.2246, -11.7859, 11.2246, 11.7859, 1321, 1118, -7.85723, -22.4492, 7.85723, 22.4492, 1428, 1234, -0.561231, -14.592, 0.561231, 14.592, 1457, 1391, 0, 0, 0, 0, 1456, 1611)
 }
 point_count = 8
-
-[sub_resource type="Resource" id="Resource_5rp1x"]
-resource_local_to_scene = true
-script = ExtResource("69_o8c3y")
-health = -1
-dodge_rate = 0.0
-near_damage_low = -1
-near_damage_high = -1
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.4
 
 [sub_resource type="Curve2D" id="Curve2D_2v1i8"]
 _data = {
@@ -1474,12 +1450,6 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_4nk76")
 script = ExtResource("55_s7rew")
 path_summon_config = ExtResource("56_rtv7x")
-
-[node name="Enemy59" parent="Enemies/EnemyPath" index="0" instance=ExtResource("68_re1kg")]
-position = Vector2(944.599, 285.69)
-rotation = 1.61881
-progress = 305.08
-start_data = SubResource("Resource_5rp1x")
 
 [node name="EnemyPath2" type="Path2D" parent="Enemies" index="1"]
 y_sort_enabled = true
