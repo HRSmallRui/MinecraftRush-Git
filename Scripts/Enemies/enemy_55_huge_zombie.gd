@@ -140,8 +140,8 @@ func battle():
 	pass
 
 
-func move_process(delta: float):
-	super(delta)
+func move_logic_process():
+	super()
 	if skill_2_timer.is_stopped() and enemy_state == EnemyState.MOVE:
 		skill_2_timer.start()
 		translate_to_new_state(EnemyState.SPECIAL)
@@ -194,5 +194,5 @@ func false_die():
 
 func die_blood() -> Sprite2D:
 	var blood = super()
-	blood.scale *= 3
+	blood.scale *= 4
 	return blood
