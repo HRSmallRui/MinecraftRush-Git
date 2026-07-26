@@ -39,7 +39,7 @@ func remove_buff():
 func buff_start():
 	enemy = unit
 	plugin_effect.global_position = enemy.hurt_box.global_position
-	Achievement.achieve_int_add("PluginPeople",1,2000)
+	Achievement.achieve_int_add("PluginPeople",1,1000)
 	pass
 
 
