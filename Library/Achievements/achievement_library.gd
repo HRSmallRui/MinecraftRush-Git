@@ -12,7 +12,7 @@ static var achievement_library: Dictionary = {
 	"RoyalDefender": AchievementStruct.new("帝国捍卫者","在第一章节与第六章节杀死至少2500个敌人。"),
 	
 	"RoyalGuardSkill1": AchievementStruct.new("斩立决","皇家近卫军发动皇家审判累计处决99个敌人。"),
-	"RoyalGuardSkill2": AchievementStruct.new("不动壁垒","皇家近卫军抵挡远程攻击累计2000次。"),
+	"RoyalGuardSkill2": AchievementStruct.new("不动壁垒","皇家近卫军抵挡远程攻击累计999次。"),
 	"Stage4": AchievementStruct.new("惩奸除恶","第四关不放过任何一个敌人突破据点。"),
 	
 	"PrayEvil": AchievementStruct.new("称霸世界之恶性","掠夺三颗魔核。"),

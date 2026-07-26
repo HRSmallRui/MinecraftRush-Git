@@ -114,7 +114,7 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 		if defence_condition(enemy) and randf_range(0,1) < defence_possible:
 			ally_sprite.play("defence")
 			defence_audio.play()
-			if far_attack: Achievement.achieve_int_add("RoyalGuardSkill2",1,2000)
+			if far_attack: Achievement.achieve_int_add("RoyalGuardSkill2",1,999)
 			return false
 	return super(damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack, deadly)
 	pass
