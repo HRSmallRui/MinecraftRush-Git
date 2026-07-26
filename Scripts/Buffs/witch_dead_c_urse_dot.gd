@@ -28,7 +28,7 @@ func remove_buff():
 	explosion_damage = float(enemy.start_data.health) * rate
 	if explosion_damage < min_damage: explosion_damage = min_damage
 	if enemy.enemy_state == Enemy.EnemyState.DIE and !enemy.is_disappear_killing:
-		Achievement.achieve_int_add("CurseDead",1,200)
+		Achievement.achieve_int_add("CurseDead",1,20)
 		for body in explosion_area.get_overlapping_bodies():
 			var hurt_enemy: Enemy = body.owner
 			if hurt_enemy == unit: continue

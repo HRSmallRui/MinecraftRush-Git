@@ -43,7 +43,7 @@ static var achievement_library: Dictionary = {
 	"GAIA1": AchievementStruct.new("悲伤的沼泽","找到沼泽的八音盒并播放音乐。"),
 	"Resident": AchievementStruct.new("三光进村，寸草不生","搜刮林地府邸全部战利品。"),
 	#"L4D": AchievementStruct.new("你惊扰了Witch","激怒哭泣的Witch。"),
-	"CurseDead": AchievementStruct.new("不死者的诅咒","累计杀死200个持有女巫高塔施加的“死亡诅咒”的敌人。"),
+	"CurseDead": AchievementStruct.new("不死者的诅咒","累计杀死20个持有女巫高塔施加的“死亡诅咒”的敌人。"),
 	"PluginPeople": AchievementStruct.new("瘟神","医疗护卫队的士兵累计感染2000名敌人。"),
 	"MagicianGold": AchievementStruct.new("黄金雕像艺术锦标赛","将累计120名敌人变成金像。"),
 	"Boss4Dead": AchievementStruct.new("旧日支配者","击败远古守卫者。"),
