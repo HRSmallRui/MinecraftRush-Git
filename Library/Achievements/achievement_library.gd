@@ -23,7 +23,7 @@ static var achievement_library: Dictionary = {
 	"Killer": AchievementStruct.new("杀戮者","累计杀死2000个敌人。"),
 	"Boss2Dead": AchievementStruct.new("TANK!","击败泰坦丧尸。"),
 	"ChurchDust": AchievementStruct.new("尘归尘，土归土","让守卫者教堂尘解累计333个敌人。"),
-	"IronGolem": AchievementStruct.new("钢铁是怎样练成的","铁傀儡累计恢复40000生命。"),
+	"IronGolem": AchievementStruct.new("钢铁是怎样练成的","铁傀儡累计恢复5000生命。"),
 	
 	"SandHuman": AchievementStruct.new("我即沙，随风而散","让沙人融入沙漠。"),
 	"DancingCat": AchievementStruct.new("Ankha Dance!","让埃及猫猫跳摇摆舞。（你游戏还要不要了？！）"),
