@@ -17,7 +17,7 @@ func _ready() -> void:
 		if enemy.enemy_type >= Enemy.EnemyType.Super:
 			enemy.take_damage(damage,DataProcess.DamageType.MagicDamage,0,true,null,false,false)
 		else:
-			Achievement.achieve_int_add("ChurchDust",1,3333)
+			Achievement.achieve_int_add("ChurchDust",1,333)
 			enemy.disappear_kill()
 			var dust_effect: Sprite2D = preload("res://Scenes/Effects/dust_effect.tscn").instantiate()
 			dust_effect.position = enemy.position

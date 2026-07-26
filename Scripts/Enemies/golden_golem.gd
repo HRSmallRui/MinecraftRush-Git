@@ -7,7 +7,7 @@ var origin_enemy: Enemy
 
 func _ready() -> void:
 	super()
-	Achievement.achieve_int_add("MagicianGold",1,120)
+	Achievement.achieve_int_add("MagicianGold",1,79)
 	enemy_sprite.flip_h = direction.x < 0
 	Stage.instance.tree_exiting.connect(on_stage_exist)
 	start_data.health = float(origin_enemy.start_data.health) * 0.5

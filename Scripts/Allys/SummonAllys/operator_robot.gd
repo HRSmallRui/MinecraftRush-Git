@@ -38,7 +38,7 @@ func frame_changed():
 			if current_intercepting_enemy.enemy_type < Enemy.EnemyType.Super:
 				TextEffect.text_effect_show("秒杀",TextEffect.TextEffectType.SecKill,current_intercepting_enemy.hurt_box.global_position + Vector2(0,-30))
 				current_intercepting_enemy.sec_kill(true)
-				Achievement.achieve_int_add("OperatorSeckill",1,666)
+				Achievement.achieve_int_add("OperatorSeckill",1,66)
 	pass
 
 

@@ -55,5 +55,5 @@ func _on_heal_timer_timeout():
 	super()
 	var delta_health: int = current_data.health - before_health
 	if delta_health > 0:
-		Achievement.achieve_int_add("IronGolem",delta_health,40000)
+		Achievement.achieve_int_add("IronGolem",delta_health,5000)
 	pass
