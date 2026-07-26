@@ -30,7 +30,7 @@ static var achievement_library: Dictionary = {
 	"Remilia": AchievementStruct.new("胃炎满满","找到威严扫地机器人。"),
 	"SunAchieve": AchievementStruct.new("太阳！","沙漠关卡都是夜晚关卡。"),
 	"OperatorLightning": AchievementStruct.new("雷霆，击碎黑暗！","演算者炮塔累计召唤666次闪电。"),
-	"OperatorSeckill": AchievementStruct.new("电锯惊魂","让演算者机甲累计处决666名敌人。"),
+	"OperatorSeckill": AchievementStruct.new("电锯惊魂","让演算者机甲累计处决66名敌人。"),
 	"DeSentrySeckill": AchievementStruct.new("一个好人在什么情况下会杀人？","让沙漠哨塔累计处决47名敌人。"),
 	"EpeeRebirth": AchievementStruct.new("不生不灭，不垢不净","让一个大刀兵重复复活4次。"),
 	"Boss3Dead": AchievementStruct.new("殊途同归","击败巨型尸壳。"),
