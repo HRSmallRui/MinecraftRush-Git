@@ -25,7 +25,7 @@ func enemy_take_damage(enemy: Enemy):
 		var stone_bullet: Bullet = stone_bullet_scene.instantiate()
 		stone_bullet.position = position
 		stone_bullet.erase_enemy_list.append(enemy)
-		stone_bullet.damage = extra_stone_damage_rate.saving_float_value
+		stone_bullet.damage = extra_stone_damage_rate.saving_float_value * damage
 		var target_pos:Vector2 = hurt_box.global_position
 		target_pos += new_enemy.direction * new_enemy.current_data.unit_move_speed * 2
 		stone_bullet.target_position = target_pos
