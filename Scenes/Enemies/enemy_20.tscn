@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://o3xssgmrkof1"]
+[gd_scene load_steps=126 format=3 uid="uid://o3xssgmrkof1"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_cw4j4"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_20.gd" id="2_ffwmu"]
@@ -122,6 +122,7 @@
 [ext_resource type="AudioStream" uid="uid://cwt2rga6wmbip" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳出现1.wav" id="114_rylhk"]
 [ext_resource type="AudioStream" uid="uid://ddwrkohhv4ma2" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳出现2.wav" id="115_x0qcu"]
 [ext_resource type="AudioStream" uid="uid://cdlnobqdkucyt" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳出现3.wav" id="116_oo4mf"]
+[ext_resource type="PackedScene" uid="uid://bcs0sdt2sngqr" path="res://Scenes/Enemies/EnemyComponents/zombie_achieve_dead_component.tscn" id="123_chngp"]
 
 [sub_resource type="Resource" id="Resource_wcqex"]
 script = ExtResource("3_jfded")
@@ -528,3 +529,5 @@ autoplay = "idle"
 
 [node name="AppearAudioComponent" parent="." index="5" instance=ExtResource("113_nkiqh")]
 appear_audio_list = Array[AudioStream]([ExtResource("114_rylhk"), ExtResource("115_x0qcu"), ExtResource("116_oo4mf")])
+
+[node name="ZombieAchieveDeadComponent" parent="." index="8" instance=ExtResource("123_chngp")]

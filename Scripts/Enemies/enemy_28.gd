@@ -12,6 +12,8 @@ extends Enemy
 
 @export var skill_audio_list: Array[AudioStream]
 
+var has_bought: bool
+
 
 func anim_offset():
 	match enemy_sprite.animation:
@@ -48,10 +50,12 @@ func buy_soldier():
 	for ally in battle_group:
 		if ally.ally_group == Ally.AllyType.Soldiers:
 			if ally.ally_level < 3:
+				has_bought = true
 				ally.disappear_kill()
 				summon_soldier(ally.position)
 				Stage.instance.current_money += 1
 			elif ally.ally_level == 3 and !has_bought_lv3_soldier:
+				has_bought = true
 				ally.disappear_kill()
 				summon_soldier(ally.position)
 				Stage.instance.current_money += 2
@@ -121,4 +125,11 @@ func can_buy() -> bool:
 				return true
 	
 	return false
+	pass
+
+
+func achievement_enemy_die():
+	super()
+	if !has_bought:
+		Achievement.achieve_int_add("StopOrder",1,50)
 	pass

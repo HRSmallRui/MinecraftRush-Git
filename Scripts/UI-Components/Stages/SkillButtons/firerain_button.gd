@@ -4,6 +4,8 @@ extends SkillButton
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationComponent/NavigationAgent
 
+var release_count: int
+
 
 func _ready() -> void:
 	super()
@@ -16,6 +18,9 @@ func _ready() -> void:
 func skill_unlease_condition():
 	if (Stage.instance.mouse_in_path or Stage.instance.mouse_in_fire_extra_area) and !Stage.instance.mouse_in_fire_stop_area:
 		skill_unlease()
+		release_count += 1
+		if release_count >= 10:
+			Achievement.achieve_complete("Firerain")
 	pass
 
 

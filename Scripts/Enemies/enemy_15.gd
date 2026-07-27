@@ -4,6 +4,8 @@ extends Enemy
 @onready var teleport_audio: AudioStreamPlayer = $TeleportAudio
 @onready var teleport_audio_2: AudioStreamPlayer = $TeleportAudio2
 
+var has_teleported: bool
+
 
 func anim_offset():
 	match enemy_sprite.animation:
@@ -27,6 +29,8 @@ func frame_changed():
 
 
 func teleport():
+	has_teleported = true
+	
 	var teleport_effect: AnimatedSprite2D = preload("res://Scenes/Effects/bullet_explosion_effect.tscn").instantiate()
 	teleport_effect.modulate = Color.PURPLE
 	teleport_effect.scale *= 0.5
@@ -63,3 +67,10 @@ func die_blood() -> Sprite2D:
 	blood.modulate = Color.GRAY
 	blood.scale *= 1.2
 	return blood
+
+
+func achievement_enemy_die():
+	super()
+	if !has_teleported:
+		Achievement.achieve_int_add("EnderDeath",1,40)
+	pass

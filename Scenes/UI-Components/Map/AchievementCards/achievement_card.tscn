@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtkqascjoy1s1"]
+[gd_scene load_steps=7 format=3 uid="uid://dtkqascjoy1s1"]
 
 [ext_resource type="Texture2D" uid="uid://bonjt1po10rhp" path="res://Assets/Images/UI/Achievements/card_normal.tres" id="1_3xqdm"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Map/achievement_card.gd" id="2_4dejq"]
 [ext_resource type="Texture2D" uid="uid://dne5vt1ni2ox0" path="res://Assets/Images/UI/Achievements/MR1.png" id="3_1u4yh"]
+[ext_resource type="Shader" path="res://Assets/Shaders/achievement_card.gdshader" id="3_oscvx"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="4_or7xg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b051l"]
+resource_local_to_scene = true
+shader = ExtResource("3_oscvx")
+shader_parameter/mix_strength = 0.0
+shader_parameter/modulate_strength = 0.5
 
 [node name="AchievementCard" type="TextureRect"]
 mouse_filter = 2
@@ -12,6 +19,7 @@ script = ExtResource("2_4dejq")
 sav_keyword = "MR1"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_b051l")
 layout_mode = 0
 offset_left = 17.0
 offset_top = 17.0

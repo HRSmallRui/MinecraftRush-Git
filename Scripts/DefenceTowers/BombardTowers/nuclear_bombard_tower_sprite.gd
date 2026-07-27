@@ -17,7 +17,8 @@ extends BombardTowerSprite
 @onready var skill_2_hit_area: Area2D = $"../Skill2HitArea"
 @onready var dot_timer: Timer = $DotTimer
 @onready var dot_during_timer: Timer = $DotDuringTimer
-@onready var skill_2_particle: GPUParticles2D = $Skill2Particle
+
+var plane_release_count: int = 0
 
 
 func summon_bullet(summon_pos: Vector2, target_pos: Vector2) -> Shell:
@@ -40,6 +41,10 @@ func _process(delta: float) -> void:
 
 
 func release_TNT_plane(target_enemy: Enemy):
+	plane_release_count += 1
+	if plane_release_count >= 10:
+		Achievement.achieve_complete("NuclearSkill1")
+	
 	skill_1_animation_player.play("open")
 	push_audio.play()
 	plane_sprite.show()

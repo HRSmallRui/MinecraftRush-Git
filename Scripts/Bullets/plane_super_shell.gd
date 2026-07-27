@@ -1,6 +1,12 @@
 extends Bullet
 
 
+func _ready() -> void:
+	super()
+	Achievement.achieve_int_add("PlaneControllerSkill2",1,120)
+	pass
+
+
 func enemy_take_damage(enemy: Enemy):
 	var plane_kill_debuff: BuffClass = preload("res://Scenes/Buffs/TowerBuffs/plane_kill_debuff.tscn").instantiate()
 	plane_kill_debuff.buff_level = special_skill_level

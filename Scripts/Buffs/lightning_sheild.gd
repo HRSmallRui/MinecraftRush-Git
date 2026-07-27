@@ -5,6 +5,12 @@ extends PropertyBuff
 @onready var point_light_2d: PointLight2D = $PointLight2D
 
 
+func buff_start():
+	super()
+	Achievement.achieve_int_add("CreeperLightning",1,80)
+	pass
+
+
 func _process(delta: float) -> void:
 	super(delta)
 	if unit is Ally:
