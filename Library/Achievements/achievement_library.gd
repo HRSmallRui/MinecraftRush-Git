@@ -14,6 +14,7 @@ static var achievement_library: Dictionary = {
 	"RoyalGuardSkill1": AchievementStruct.new("斩立决","皇家近卫军发动皇家审判累计处决99个敌人。"),
 	"RoyalGuardSkill2": AchievementStruct.new("不动壁垒","皇家近卫军抵挡远程攻击累计999次。"),
 	"Stage4": AchievementStruct.new("惩奸除恶","第四关不放过任何一个敌人突破据点。"),
+	"Firerain": AchievementStruct.new("世界末日","在一场战斗中累计释放10次天降火雨。"),
 	
 	#chapter2
 	"PrayEvil": AchievementStruct.new("称霸世界之恶性","掠夺三颗魔核。"),
@@ -36,6 +37,7 @@ static var achievement_library: Dictionary = {
 	"DancingCat": AchievementStruct.new("Ankha Dance!","让埃及猫猫跳摇摆舞。（你游戏还要不要了？！）"),
 	"Remilia": AchievementStruct.new("胃炎满满","找到威严扫地机器人。"),
 	"SunAchieve": AchievementStruct.new("太阳！","沙漠关卡都是夜晚关卡。"),
+	"StopOrder": AchievementStruct.new("禁止通行","在5个军火商召唤侍从之前将其消灭。"),
 	"OperatorLightning": AchievementStruct.new("雷霆，击碎黑暗！","演算者炮塔累计召唤666次闪电。"),
 	"OperatorSeckill": AchievementStruct.new("电锯惊魂","让演算者机甲累计处决66名敌人。"),
 	"DeSentrySeckill": AchievementStruct.new("一个好人在什么情况下会杀人？","让沙漠哨塔累计处决47名敌人。"),
@@ -53,8 +55,6 @@ static var achievement_library: Dictionary = {
 	"INSIDE": AchievementStruct.new("深入","找到潜水艇。"),
 	"GAIA1": AchievementStruct.new("悲伤的沼泽","找到沼泽的八音盒并播放音乐。"),
 	"Resident": AchievementStruct.new("三光进村，寸草不生","搜刮林地府邸全部战利品。"),
-	"L4D": AchievementStruct.new("你惊扰了Witch","激怒哭泣的Witch。"),
-	"L4DWitch": AchievementStruct.new("传奇经历","杀死一只Witch。"),
 	"CreeperLightning": AchievementStruct.new("你是否清醒","为苦力怕类敌人累计施加80次闪电护盾。"),
 	"CurseDead": AchievementStruct.new("不死者的诅咒","累计杀死20个持有女巫高塔施加的“死亡诅咒”的敌人。"),
 	"PluginPeople": AchievementStruct.new("瘟神","医疗护卫队的士兵累计感染1000名敌人。"),
