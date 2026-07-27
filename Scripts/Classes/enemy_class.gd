@@ -396,6 +396,9 @@ func achievement_enemy_die():
 		Achievement.achieve_int_add("RoyalDefender",1,2500)
 	if stage_count >= 5 and stage_count <= 11:
 		Achievement.achieve_int_add("WildRegionCleaner",1,2000)
+	
+	if get_groups().has("undead"):
+		Achievement.achieve_int_add("UndeadKiller",1,1600)
 	pass
 
 
