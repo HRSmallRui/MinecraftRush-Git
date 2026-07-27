@@ -1,4 +1,4 @@
-[gd_scene load_steps=207 format=3 uid="uid://dk7q4k0117mlj"]
+[gd_scene load_steps=208 format=3 uid="uid://dk7q4k0117mlj"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_x6gj8"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_10.gd" id="2_32x7r"]
@@ -204,6 +204,7 @@
 [ext_resource type="AudioStream" uid="uid://1ihcphm08y0k" path="res://Assets/Sounds/FXs/Enemies/野区丧尸/入场2.wav" id="201_v2lkb"]
 [ext_resource type="AudioStream" uid="uid://djlcgm8lo1k27" path="res://Assets/Sounds/FXs/Enemies/野区丧尸/入场3.wav" id="202_kvtap"]
 [ext_resource type="AudioStream" uid="uid://dualeb4jn8x2f" path="res://Assets/Sounds/FXs/Enemies/野区丧尸/啃咬.ogg" id="203_1ggnj"]
+[ext_resource type="PackedScene" uid="uid://bcs0sdt2sngqr" path="res://Scenes/Enemies/EnemyComponents/zombie_achieve_dead_component.tscn" id="205_jvq5b"]
 
 [sub_resource type="Resource" id="Resource_rdb23"]
 script = ExtResource("4_ffing")
@@ -874,3 +875,5 @@ autostart = true
 stream = ExtResource("203_1ggnj")
 volume_db = 2.0
 bus = &"Sound"
+
+[node name="ZombieAchieveDeadComponent" parent="." index="10" instance=ExtResource("205_jvq5b")]

@@ -23,7 +23,7 @@ static var achievement_library: Dictionary = {
 	"WildRegionCleaner": AchievementStruct.new("野区清理者","在第二章节与第三章节杀死至少2000个敌人。"),
 	"DeadWalking": AchievementStruct.new("行尸走肉","累计杀死480只丧尸类敌人。"),
 	"UndeadKiller": AchievementStruct.new("亡灵杀手","累计杀死1600只亡灵类敌人。"),
-	"EnderDeath": AchievementStruct.new("快人一步","在瞬移之前累计杀死40只终末。"),
+	"EnderDeath": AchievementStruct.new("快人一步","在40只终末瞬移前将其消灭。"),
 	"Bloody": AchievementStruct.new("嗜血","累计杀死800个敌人。"),
 	"Killer": AchievementStruct.new("杀戮者","累计杀死2000个敌人。"),
 	"BlackStone": AchievementStruct.new("这会很痛","投石高塔累计扔出100个黑曜石。"),
