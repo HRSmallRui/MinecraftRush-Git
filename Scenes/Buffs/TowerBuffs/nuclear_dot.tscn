@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ditvm1d16vsia"]
+[gd_scene load_steps=4 format=3 uid="uid://ditvm1d16vsia"]
 
 [ext_resource type="PackedScene" uid="uid://bwifge7de0uys" path="res://Scenes/Buffs/dot_buff.tscn" id="1_mmk7w"]
 [ext_resource type="Script" path="res://Scripts/Classes/potion_particle_leader.gd" id="2_b1t21"]
+[ext_resource type="Script" path="res://Scripts/Buffs/nuclear_dot.gd" id="2_gnco7"]
 
 [node name="NuclearDot" instance=ExtResource("1_mmk7w")]
+script = ExtResource("2_gnco7")
 dot_damage = Array[int]([3])
 duration = 5.0
 buff_tag = "NuclearDot"
@@ -16,3 +18,5 @@ wait_time = 0.2
 script = ExtResource("2_b1t21")
 potion_color = Color(0.0779727, 0.160166, 0.0743625, 1)
 buff_vehicle = NodePath("..")
+
+[connection signal="on_dot_buff_damaged" from="." to="." method="_on_on_dot_buff_damaged"]

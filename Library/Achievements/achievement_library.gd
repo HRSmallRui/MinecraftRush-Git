@@ -43,7 +43,7 @@ static var achievement_library: Dictionary = {
 	"DeSentrySeckill": AchievementStruct.new("一个好人在什么情况下会杀人？","让沙漠哨塔累计处决47名敌人。"),
 	"DesertWolf": AchievementStruct.new("大狗嚼嚼嚼","沙漠哨塔通过沙狼累计眩晕480名敌人。"),
 	"EpeeRebirth": AchievementStruct.new("不生不灭，不垢不净","让一个大刀兵重复复活4次。"),
-	"NuclearPassive": AchievementStruct.new("身在辐中不知辐","湮灭炮塔通过放射病效果累计造成80000点伤害。"),
+	"NuclearPassive": AchievementStruct.new("身在辐中不知辐","湮灭炮塔通过放射病效果累计造成8000点伤害。"),
 	"NuclearSkill1": AchievementStruct.new("饱和打击","单座湮灭炮塔在战斗中累计释放15次活塞虫轰炸机。"),
 	"Boss3Dead": AchievementStruct.new("殊途同归","击败巨型尸壳。"),
 	"DeathKill": AchievementStruct.new("死神","累计杀死20000个敌人。"),
