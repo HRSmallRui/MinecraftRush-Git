@@ -37,7 +37,7 @@ static var achievement_library: Dictionary = {
 	"DancingCat": AchievementStruct.new("Ankha Dance!","让埃及猫猫跳摇摆舞。（你游戏还要不要了？！）"),
 	"Remilia": AchievementStruct.new("胃炎满满","找到威严扫地机器人。"),
 	"SunAchieve": AchievementStruct.new("太阳！","沙漠关卡都是夜晚关卡。"),
-	"StopOrder": AchievementStruct.new("禁止通行","在5个军火商召唤侍从之前将其消灭。"),
+	"StopOrder": AchievementStruct.new("士兵的名义","在50个军火商收买士兵之前将其消灭。"),
 	"OperatorLightning": AchievementStruct.new("雷霆，击碎黑暗！","演算者炮塔累计召唤666次闪电。"),
 	"OperatorSeckill": AchievementStruct.new("电锯惊魂","让演算者机甲累计处决66名敌人。"),
 	"DeSentrySeckill": AchievementStruct.new("一个好人在什么情况下会杀人？","让沙漠哨塔累计处决47名敌人。"),
