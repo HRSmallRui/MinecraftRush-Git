@@ -4,6 +4,12 @@ extends ShooterBullet
 @export var dizness_duration: float
 
 
+func _ready() -> void:
+	super()
+	Achievement.achieve_int_add("BlackStone",1,100)
+	pass
+
+
 func enemy_take_damage(enemy: Enemy):
 	AudioManager.instance.black_stone_hit_audio.play()
 	if enemy != null:
