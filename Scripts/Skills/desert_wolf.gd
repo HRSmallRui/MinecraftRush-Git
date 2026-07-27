@@ -74,4 +74,6 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		dizness_buff.buff_tag = "wolf_dizness"
 		dizness_buff.unit = unit
 		unit.buffs.add_child(dizness_buff)
+		if dizness_buff in unit.buffs.get_children():
+			Achievement.achieve_int_add("DesertWolf",1,480)
 	pass # Replace with function body.
