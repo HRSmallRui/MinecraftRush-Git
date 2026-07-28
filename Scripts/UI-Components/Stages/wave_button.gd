@@ -6,7 +6,9 @@ enum WaveButtonStyle
 	NORMAL,
 	FLY,
 	DANGER,
-	DANGER_FLY
+	DANGER_FLY,
+	BEDROCK,
+	BEDROCK_FLY
 }
 
 @export var linked_wave_panel: WavePanel
@@ -23,6 +25,10 @@ enum WaveButtonStyle
 @export var danger_hover_texture: Texture2D
 @export var danger_fly_texture: Texture2D
 @export var danger_fly_hover_texture: Texture2D
+@export var bedrock_texture: Texture2D
+@export var bedrock_hover_texture: Texture2D
+@export var bedrock_fly_texture: Texture2D
+@export var bedrock_fly_hover_texture: Texture2D
 
 @onready var texture_button: TextureButton = $TextureButton
 @onready var mouse_over_audio: AudioStreamPlayer = $MouseOverAudio
