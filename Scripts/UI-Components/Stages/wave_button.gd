@@ -214,6 +214,12 @@ func set_wave_button_style(wave_count: int):
 		WaveButtonStyle.DANGER_FLY:
 			texture_normal = danger_fly_texture
 			texture_hover = danger_fly_hover_texture
+		WaveButtonStyle.BEDROCK:
+			texture_normal = bedrock_texture
+			texture_hover = bedrock_hover_texture
+		WaveButtonStyle.BEDROCK_FLY:
+			texture_normal = bedrock_fly_texture
+			texture_hover = bedrock_fly_hover_texture
 	
 	texture_button.texture_normal = texture_normal
 	texture_button.texture_pressed = texture_normal
