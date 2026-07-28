@@ -124,6 +124,7 @@ func _ready() -> void:
 	#load_button.visible = OS.is_debug_build()
 	save_button.hide()
 	load_button.hide()
+	set_camera()
 	if OS.get_name() == "Android":
 		mobile_ui_scale()
 	#mobile_ui_scale()
@@ -137,6 +138,14 @@ func _ready() -> void:
 		challenge_mode_tip()
 	await get_tree().create_timer(0.4,false).timeout
 	wave_appear.emit(1)
+	pass
+
+
+func set_camera():
+	stage_camera.position_smoothing_enabled = false
+	stage_camera.position = hero_summon_marker.global_position
+	await get_tree().process_frame
+	stage_camera.position_smoothing_enabled = true
 	pass
 
 
