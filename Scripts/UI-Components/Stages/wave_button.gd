@@ -49,6 +49,7 @@ func _ready() -> void:
 
 func wave_show(wave_count: int):
 	hide()
+	set_wave_button_style(wave_count)
 	wave_over_screen_layer.hide()
 	if summon_text_list[wave_count-1] == null: return
 	
@@ -188,4 +189,27 @@ func on_back_button_mouse_enter():
 
 func on_back_button_mouse_exited():
 	hide_path_effect()
+	pass
+
+
+func set_wave_button_style(wave_count: int):
+	var texture_normal: Texture2D
+	var texture_hover: Texture2D
+	match summon_style_list[wave_count-1]:
+		WaveButtonStyle.NORMAL:
+			texture_normal = normal_texture
+			texture_hover = normal_hover_texture
+		WaveButtonStyle.FLY:
+			texture_normal = fly_texture
+			texture_hover = fly_hover_texture
+		WaveButtonStyle.DANGER:
+			texture_normal = danger_texture
+			texture_hover = danger_hover_texture
+		WaveButtonStyle.DANGER_FLY:
+			texture_normal = danger_fly_texture
+			texture_hover = danger_fly_hover_texture
+	
+	texture_button.texture_normal = texture_normal
+	texture_button.texture_pressed = texture_normal
+	texture_button.texture_hover = texture_hover
 	pass
