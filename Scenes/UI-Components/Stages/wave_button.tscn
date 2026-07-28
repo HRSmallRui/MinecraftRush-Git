@@ -1,11 +1,49 @@
-[gd_scene load_steps=14 format=3 uid="uid://4j747edyffkd"]
+[gd_scene load_steps=28 format=3 uid="uid://4j747edyffkd"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/wave_button.gd" id="1_7pa2y"]
-[ext_resource type="Texture2D" uid="uid://da82fg5nj0ajt" path="res://Assets/Images/UI/wave.png" id="1_o1kvr"]
-[ext_resource type="Texture2D" uid="uid://cpp10bpxlk5y8" path="res://Assets/Images/UI/wave-hover.png" id="2_lygix"]
-[ext_resource type="Texture2D" uid="uid://cu023vxrjm0no" path="res://Assets/Images/UI/wave-process.png" id="3_c32um"]
+[ext_resource type="Texture2D" uid="uid://da82fg5nj0ajt" path="res://Assets/Images/UI/WaveButtons/wave.png" id="1_o1kvr"]
+[ext_resource type="Texture2D" uid="uid://cpp10bpxlk5y8" path="res://Assets/Images/UI/WaveButtons/wave-hover.png" id="2_lygix"]
+[ext_resource type="Texture2D" uid="uid://cu023vxrjm0no" path="res://Assets/Images/UI/WaveButtons/wave-process.png" id="3_c32um"]
+[ext_resource type="Texture2D" uid="uid://bluuvwxck3ccl" path="res://Assets/Images/UI/WaveButtons/wave_fly.png" id="4_lch55"]
+[ext_resource type="Texture2D" uid="uid://bbcc0sm418mnb" path="res://Assets/Images/UI/WaveButtons/wave_fly_hover.png" id="5_0u6uh"]
 [ext_resource type="AudioStream" uid="uid://tigcnyfhwo1j" path="res://Assets/Sounds/FXs/UIs/MouseOver.ogg" id="5_1xoyb"]
+[ext_resource type="Texture2D" uid="uid://bu6wlu3co5uqj" path="res://Assets/Images/UI/WaveButtons/wave_danger.png" id="6_2te4r"]
 [ext_resource type="Texture2D" uid="uid://dwvhpx83gymml" path="res://Assets/Images/UI/wave-button-over.png" id="6_cbh16"]
+[ext_resource type="Texture2D" uid="uid://dltov8lwy57a" path="res://Assets/Images/UI/WaveButtons/wave_danger_hover.png" id="7_xvgia"]
+[ext_resource type="Texture2D" uid="uid://d1owqmxqtcp73" path="res://Assets/Images/UI/WaveButtons/wave_danger_fly.png" id="8_kxyvf"]
+[ext_resource type="Texture2D" uid="uid://cdq8e0xa45kug" path="res://Assets/Images/UI/WaveButtons/wave_danger_fly_hover.png" id="9_piix2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myks8"]
+atlas = ExtResource("1_o1kvr")
+region = Rect2(35, 33, 62, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2og0j"]
+atlas = ExtResource("2_lygix")
+region = Rect2(26, 26, 78, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65dlk"]
+atlas = ExtResource("4_lch55")
+region = Rect2(35, 33, 62, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi4k3"]
+atlas = ExtResource("5_0u6uh")
+region = Rect2(26, 26, 78, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hmvo"]
+atlas = ExtResource("6_2te4r")
+region = Rect2(35, 33, 62, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd7x8"]
+atlas = ExtResource("7_xvgia")
+region = Rect2(26, 26, 78, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybcmw"]
+atlas = ExtResource("8_kxyvf")
+region = Rect2(35, 33, 62, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jthup"]
+atlas = ExtResource("9_piix2")
+region = Rect2(26, 26, 78, 76)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oqak8"]
 atlas = ExtResource("1_o1kvr")
@@ -87,6 +125,14 @@ layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_7pa2y")
+normal_texture = SubResource("AtlasTexture_myks8")
+normal_hover_texture = SubResource("AtlasTexture_2og0j")
+fly_texture = SubResource("AtlasTexture_65dlk")
+fly_hover_texture = SubResource("AtlasTexture_fi4k3")
+danger_texture = SubResource("AtlasTexture_8hmvo")
+danger_hover_texture = SubResource("AtlasTexture_qd7x8")
+danger_fly_texture = SubResource("AtlasTexture_ybcmw")
+danger_fly_hover_texture = SubResource("AtlasTexture_jthup")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1

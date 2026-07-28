@@ -1,10 +1,28 @@
 extends Control
 class_name WaveButton
 
+enum WaveButtonStyle
+{
+	NORMAL,
+	FLY,
+	DANGER,
+	DANGER_FLY
+}
+
 @export var linked_wave_panel: WavePanel
 @export var wave_button_id: int = 0
 @export var linked_enemy_path: EnemyPath
 @export var summon_text_list: Array[WaveSummonTextList]
+@export var summon_style_list: Array[WaveButtonStyle]
+@export_group("WaveStyleTextures")
+@export var normal_texture: Texture2D
+@export var normal_hover_texture: Texture2D
+@export var fly_texture: Texture2D
+@export var fly_hover_texture: Texture2D
+@export var danger_texture: Texture2D
+@export var danger_hover_texture: Texture2D
+@export var danger_fly_texture: Texture2D
+@export var danger_fly_hover_texture: Texture2D
 
 @onready var texture_button: TextureButton = $TextureButton
 @onready var mouse_over_audio: AudioStreamPlayer = $MouseOverAudio
