@@ -6,7 +6,9 @@ enum WaveButtonStyle
 	NORMAL,
 	FLY,
 	DANGER,
-	DANGER_FLY
+	DANGER_FLY,
+	BEDROCK,
+	BEDROCK_FLY
 }
 
 @export var linked_wave_panel: WavePanel
@@ -23,6 +25,10 @@ enum WaveButtonStyle
 @export var danger_hover_texture: Texture2D
 @export var danger_fly_texture: Texture2D
 @export var danger_fly_hover_texture: Texture2D
+@export var bedrock_texture: Texture2D
+@export var bedrock_hover_texture: Texture2D
+@export var bedrock_fly_texture: Texture2D
+@export var bedrock_fly_hover_texture: Texture2D
 
 @onready var texture_button: TextureButton = $TextureButton
 @onready var mouse_over_audio: AudioStreamPlayer = $MouseOverAudio
@@ -208,6 +214,12 @@ func set_wave_button_style(wave_count: int):
 		WaveButtonStyle.DANGER_FLY:
 			texture_normal = danger_fly_texture
 			texture_hover = danger_fly_hover_texture
+		WaveButtonStyle.BEDROCK:
+			texture_normal = bedrock_texture
+			texture_hover = bedrock_hover_texture
+		WaveButtonStyle.BEDROCK_FLY:
+			texture_normal = bedrock_fly_texture
+			texture_hover = bedrock_fly_hover_texture
 	
 	texture_button.texture_normal = texture_normal
 	texture_button.texture_pressed = texture_normal
