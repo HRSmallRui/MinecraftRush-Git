@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://4j747edyffkd" path="res://Scenes/UI-Components/Stages/wave_button.tscn" id="18_uwlpl"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_summon_text.gd" id="19_8dqdp"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="20_d1v84"]
-[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/wave-direction.png" id="20_ktgfn"]
+[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="20_ktgfn"]
 [ext_resource type="Script" path="res://Scripts/path_config_load.gd" id="21_hwgxr"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter5.gd" id="21_xb07r"]
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="21_yxeu2"]
@@ -463,6 +463,7 @@ offset_bottom = 40.0
 linked_wave_panel = NodePath("../WavePanel")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("19_8dqdp")]([SubResource("Resource_tta2n"), null, SubResource("Resource_ni3e0"), SubResource("Resource_dom5o"), SubResource("Resource_g0y2k")])
+summon_style_list = Array[int]([0, 0, 0, 0, 0])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
@@ -479,6 +480,7 @@ offset_bottom = 598.0
 linked_wave_panel = NodePath("../WavePanel2")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("19_8dqdp")]([null, SubResource("Resource_q32nl"), SubResource("Resource_hklt1"), SubResource("Resource_jfm6k"), SubResource("Resource_1ap4f")])
+summon_style_list = Array[int]([0, 0, 0, 0, 0])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true

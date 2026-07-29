@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://bfxsbppmehrlo"]
+[gd_scene load_steps=164 format=3 uid="uid://bfxsbppmehrlo"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_uf25d"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_1_campaign_later.gd" id="2_o0b88"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://4j747edyffkd" path="res://Scenes/UI-Components/Stages/wave_button.tscn" id="10_el46h"]
 [ext_resource type="Texture2D" uid="uid://dtxr03b8jegiu" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_02.png" id="10_j0obd"]
 [ext_resource type="Texture2D" uid="uid://cvocfc7j2gysb" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_03.png" id="11_kyahn"]
-[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/wave-direction.png" id="11_tngnd"]
+[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="11_tngnd"]
 [ext_resource type="Resource" uid="uid://c5ebxwhgnjlym" path="res://Library/SummonConfigs/Stage1/Campaign/path1.res" id="11_w5h1r"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/teach_system.gd" id="12_8h6nn"]
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="12_motho"]
@@ -787,10 +787,6 @@ enemy_count = 10
 script = ExtResource("12_whpfc")
 wave_summon_text_list = Array[ExtResource("98_m3yo4")]([SubResource("Resource_2myl2"), SubResource("Resource_im1wu")])
 
-[sub_resource type="Resource" id="Resource_soxhj"]
-script = ExtResource("12_whpfc")
-wave_summon_text_list = Array[ExtResource("98_m3yo4")]([])
-
 [sub_resource type="Resource" id="Resource_d0ntj"]
 script = ExtResource("13_kyk0k")
 enemy_name = "尸国杂兵"
@@ -1283,7 +1279,8 @@ offset_right = 1830.0
 offset_bottom = 736.0
 linked_wave_panel = NodePath("../WavePanel")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath")
-summon_text_list = Array[ExtResource("12_whpfc")]([SubResource("Resource_4t7cw"), SubResource("Resource_22l5k"), null, SubResource("Resource_umkc0"), SubResource("Resource_anwsw"), SubResource("Resource_7eyel"), SubResource("Resource_ptk7g"), SubResource("Resource_u6f4b"), SubResource("Resource_soxhj")])
+summon_text_list = Array[ExtResource("12_whpfc")]([SubResource("Resource_4t7cw"), SubResource("Resource_22l5k"), null, SubResource("Resource_umkc0"), SubResource("Resource_anwsw"), SubResource("Resource_7eyel"), SubResource("Resource_ptk7g"), SubResource("Resource_u6f4b")])
+summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="1"]
 show_behind_parent = true
@@ -1300,6 +1297,7 @@ linked_wave_panel = NodePath("../WavePanel2")
 wave_button_id = 1
 linked_enemy_path = NodePath("../../Enemies/EnemyPath2")
 summon_text_list = Array[ExtResource("12_whpfc")]([null, null, SubResource("Resource_vs22j"), SubResource("Resource_v72yq"), SubResource("Resource_0gwrj"), SubResource("Resource_7niuk"), SubResource("Resource_gtmur"), SubResource("Resource_1k4nt")])
+summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="1"]
 show_behind_parent = true

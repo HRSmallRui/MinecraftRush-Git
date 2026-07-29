@@ -79,7 +79,7 @@
 [ext_resource type="Resource" uid="uid://c1k7kjpuccox0" path="res://Library/SummonConfigs/Stage19/Diamond/path5.res" id="56_1x40g"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_summon_text.gd" id="56_2x11i"]
 [ext_resource type="Resource" uid="uid://e2cbc3inqpe0" path="res://Library/SummonConfigs/Stage19/Diamond/path6.res" id="57_aysqg"]
-[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/wave-direction.png" id="57_bqyvj"]
+[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="57_bqyvj"]
 [ext_resource type="Script" path="res://Scripts/path_config_save.gd" id="58_cnkhe"]
 [ext_resource type="Resource" uid="uid://dot56g4mwv2w2" path="res://Library/SummonConfigs/Stage19/Diamond/path7.res" id="58_oapra"]
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="58_u0mdp"]
@@ -880,6 +880,7 @@ offset_bottom = 578.0
 linked_wave_panel = NodePath("../WavePanel2")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("56_2x11i")]([null, SubResource("Resource_yw3i8"), SubResource("Resource_4mtbb"), null, SubResource("Resource_pahv3")])
+summon_style_list = Array[int]([0, 0, 1, 0, 1])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
 show_behind_parent = true
@@ -896,6 +897,7 @@ offset_bottom = 1181.0
 linked_wave_panel = NodePath("../WavePanel3")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath4")
 summon_text_list = Array[ExtResource("56_2x11i")]([null, SubResource("Resource_6tlji"), null, SubResource("Resource_cigw3"), SubResource("Resource_0x118")])
+summon_style_list = Array[int]([0, 0, 0, 0, 1])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="4"]
 show_behind_parent = true
@@ -912,6 +914,7 @@ offset_bottom = 1230.0
 linked_wave_panel = NodePath("../WavePanel4")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath7")
 summon_text_list = Array[ExtResource("56_2x11i")]([SubResource("Resource_ks54y"), null, SubResource("Resource_eci8p"), SubResource("Resource_3hf0h"), SubResource("Resource_euf5w")])
+summon_style_list = Array[int]([0, 0, 0, 1, 0])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton3" index="4"]
 show_behind_parent = true
