@@ -18,7 +18,7 @@ var exp_rate: float
 @onready var navigation_timer: Timer = $NavigationComponent/NavigationTimer
 @onready var navigation_agent: NavigationAgent2D = $NavigationComponent/NavigationAgent2D
 
-static var hero_level_xps: Array[int] = [1300,2340,3978,6365,9548,13367,17377,20852,25022]
+static var hero_level_xps: Array[int] = [1300,2540,4378,6965,10348,14367,17577,22252,26622]
 
 var teleport_target_position: Vector2
 var when_moving_mouse_in_path: bool
