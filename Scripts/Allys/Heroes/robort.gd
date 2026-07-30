@@ -96,6 +96,8 @@ func frame_changed():
 			ally_sprite.show()
 	if ally_sprite.animation == "far_attack" and ally_sprite.frame == 16:
 		release_lightning()
+		if skill_levels[4] > 0:
+			get_skill_exp(4)
 		translate_to_new_state(AllyState.SPECIAL)
 		far_attack_timer.start()
 		lightning_audio.play()
@@ -260,7 +262,7 @@ func release_tornado():
 	if skill1_locked_enemy == null: 
 		skill_1_timer.stop()
 		return
-	get_exp(skill1_exp_get[skill_levels[1]-1])
+	get_skill_exp(1)
 	var tornado_vihicle: PathFollow2D = PathFollow2D.new()
 	tornado_vihicle.loop = false
 	tornado_vihicle.rotates = false
@@ -291,7 +293,7 @@ func get_skill1_locked_enemy() -> Enemy:
 
 func release_flame():
 	if skill2_locked_enemy == null: return
-	get_exp(skill2_exp_get[skill_levels[2]-1])
+	get_skill_exp(2)
 	skill_2_hit_area.monitoring = true
 	ally_sprite.flip_h = skill2_locked_enemy.position.x < position.x
 	skill_2_hit_area.global_position = far_attack_marker_flip.global_position if ally_sprite.flip_h else far_attack_marker.global_position
@@ -334,7 +336,7 @@ func release_earth_queake():
 	var self_progress: float = skill3_locked_enemy_path.curve.get_closest_offset(position)
 	loop_add_earth_area(true)
 	loop_add_earth_area(false)
-	get_exp(skill3_exp_get[skill_levels[3]-1])
+	get_skill_exp(3)
 	skill3_locked_enemy_path = null
 	pass
 
