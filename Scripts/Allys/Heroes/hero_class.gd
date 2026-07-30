@@ -212,8 +212,9 @@ func get_exp(xp_point: int):
 
 
 func level_up():
-	translate_to_new_state(AllyState.SPECIAL)
-	ally_sprite.play("rebirth")
+	#translate_to_new_state(AllyState.SPECIAL)
+	if ally_state != AllyState.SPECIAL:
+		ally_sprite.play("rebirth")
 	AudioManager.instance.level_up_audio.play(0.2)
 	hero_level += 1
 	hero_exp = 0
