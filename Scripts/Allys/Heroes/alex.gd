@@ -80,12 +80,14 @@ func frame_changed():
 				dizness_buff.duration = 1
 				dizness_buff.buff_tag = "alex_dizness_3"
 				enemy.buffs.add_child(dizness_buff)
+			get_skill_exp(3)
 		if ally_sprite.frame == 12:
 			skill_3_audio.play()
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 35:
 		skill_4_release()
 		skill_4_timer.start()
 		translate_to_new_state(AllyState.SPECIAL)
+		get_skill_exp(4)
 	pass
 
 
@@ -114,7 +116,7 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 			skill_2_timer.start()
 			sheild.duration = skill2_duration_list[skill_levels[2]-1]
 			buffs.add_child(sheild)
-			get_exp(skill2_exp_get[skill_levels[2]-1])
+			get_skill_exp(2)
 	return super(damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack, deadly)
 	pass
 
@@ -143,7 +145,7 @@ func skill_1_release():
 	lighting_bullet.target_position += skill_1_linked_enemy.direction * skill_1_linked_enemy.current_data.unit_move_speed * 2
 	lighting_bullet.source = self
 	Stage.instance.bullets.add_child(lighting_bullet)
-	get_exp(skill1_exp_get[skill_levels[1]-1])
+	get_skill_exp(1)
 	pass
 
 

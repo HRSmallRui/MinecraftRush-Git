@@ -106,7 +106,7 @@ func skill_2_process():
 			broken_buff.buff_blocks[0].operation_data = -broken_armor
 			enemy.buffs.add_child(broken_buff)
 		
-			get_exp(skill2_exp_get[skill_levels[2]-1])
+			get_skill_exp(2)
 	pass
 
 
@@ -121,7 +121,7 @@ func skill_4_process():
 	var damage: int = skill4_damage_list[skill_levels[4]-1]
 	for enemy in in_area_enemy_list:
 		enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,self,true,true)
-		get_exp(skill4_exp_get[skill_levels[4]-1])
+		get_skill_exp(4)
 		
 	for enemy in in_area_enemy_list:
 		if enemy.enemy_state != Enemy.EnemyState.DIE and enemy.enemy_type < Enemy.EnemyType.Super:
@@ -166,7 +166,7 @@ func after_golen_apple_eaten():
 	skill_3_timer.start()
 	var heal_data: int = skill3_heal_data_list[skill_levels[3]-1]
 	current_data.heal(heal_data)
-	get_exp(skill3_exp_get[skill_levels[3]-1])
+	get_skill_exp(3)
 	var heal_buff: HealBuff = skill3_heal_buff_scene.instantiate()
 	heal_buff.duration = skill3_heal_duration_list[skill_levels[3]-1]
 	buffs.add_child(heal_buff)

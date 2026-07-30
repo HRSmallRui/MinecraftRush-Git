@@ -141,7 +141,7 @@ func idle_process():
 
 
 func skill2_release():
-	get_exp(skill2_exp_get[skill_levels[2]-1])
+	get_skill_exp(2)
 	skill_2_audio.play()
 	skill_2_timer.start()
 	#translate_to_new_state(AllyState.SPECIAL)

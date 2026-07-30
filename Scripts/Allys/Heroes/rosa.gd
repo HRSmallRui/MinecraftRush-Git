@@ -73,7 +73,7 @@ func frame_changed():
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 14:
 		skill_2_audio.play()
 		skill_2_timer.start()
-		translate_to_new_state(AllyState.SPECIAL)
+		get_skill_exp(2)
 		var damage: int = skill2_damage_list[skill_levels[2]-1]
 		var enemy: Enemy = current_intercepting_enemy
 		var show_pos: Vector2 = hurt_box.global_position
@@ -83,13 +83,13 @@ func frame_changed():
 		if enemy.take_damage(damage,DataProcess.DamageType.ExplodeDamage,0,false,self,true,false,) and enemy.enemy_type < Enemy.EnemyType.Boss:
 			var broken_buff: PropertyBuff = rosa_broken_buff_scene.instantiate()
 			enemy.buffs.add_child(broken_buff)
-	if ally_sprite.animation == "skill2" and ally_sprite.frame == 24:
-		get_exp(skill2_exp_get[skill_levels[2]-1])
+		
 	if ally_sprite.animation == "skill3" and ally_sprite.frame == 8:
 		if far_attack_area.has_overlapping_bodies():
 			var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
 			skill3_locked_pos = enemy.hurt_box.global_position
 		skill3_process()
+		get_skill_exp(3)
 		skill_3_timer.start()
 		AudioManager.instance.shoot_audio_2.play()
 	pass

@@ -85,7 +85,7 @@ func shoot():
 
 
 func skill_3_release():
-	fuchen.get_exp(fuchen.skill3_exp_get[fuchen.skill_levels[3]-1])
+	fuchen.get_skill_exp(4)
 	var loop_count: int = magic_ball_count_list[fuchen.skill_levels[3]-1]
 	var in_range_list: Array[Enemy]
 	for body in trace_area.get_overlapping_bodies():

@@ -18,7 +18,7 @@ var exp_rate: float
 @onready var navigation_timer: Timer = $NavigationComponent/NavigationTimer
 @onready var navigation_agent: NavigationAgent2D = $NavigationComponent/NavigationAgent2D
 
-static var hero_level_xps = [1300,2500,5800,13100,19600,29400,44100,66100,90000]
+static var hero_level_xps: Array[int] = [1300,2540,4378,6965,10348,14367,17577,22252,26622]
 
 var teleport_target_position: Vector2
 var when_moving_mouse_in_path: bool
@@ -212,8 +212,9 @@ func get_exp(xp_point: int):
 
 
 func level_up():
-	translate_to_new_state(AllyState.SPECIAL)
-	ally_sprite.play("rebirth")
+	#translate_to_new_state(AllyState.SPECIAL)
+	if ally_state != AllyState.SPECIAL:
+		ally_sprite.play("rebirth")
 	AudioManager.instance.level_up_audio.play(0.2)
 	hero_level += 1
 	hero_exp = 0
@@ -283,4 +284,17 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 	var bullet: Bullet = summon_bullet(far_attack_bullet_scene,summon_pos,target_pos,damage,damage_type)
 	Stage.instance.bullets.add_child(bullet)
 	get_exp(int(float(damage) * exp_rate))
+	pass
+
+
+func get_skill_exp(skill_id: int):
+	match skill_id:
+		1:
+			get_exp(skill1_exp_get[skill_levels[1]-1])
+		2:
+			get_exp(skill2_exp_get[skill_levels[2]-1])
+		3:
+			get_exp(skill3_exp_get[skill_levels[3]-1])
+		4:
+			get_exp(skill4_exp_get[skill_levels[4]-1])
 	pass

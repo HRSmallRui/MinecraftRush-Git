@@ -149,12 +149,14 @@ func frame_changed():
 	elif ally_sprite.animation == "skill1" and ally_sprite.frame == 19:
 		skill_1_timer.start()
 		release_skill1()
+		get_skill_exp(1)
 	if ally_sprite.animation == "skill2":
 		if ally_sprite.frame == 25:
 			if is_power_type: ally_sprite.play("skill2_power")
 			else: ally_sprite.play("skill2_end")
 		elif ally_sprite.frame == 5:
 			soul_kill()
+			get_skill_exp(2)
 		elif ally_sprite.frame == 17:
 			var heal_rate: float = skill2_heal_rate_list[skill_levels[2]-1]
 			var heal_data: int = float(start_data.health) * heal_rate
@@ -167,6 +169,7 @@ func frame_changed():
 		skill_3_release()
 		await get_tree().create_timer(2,false).timeout
 		if ally_state != AllyState.DIE:
+			get_skill_exp(3)
 			skill_3_fire_effect.hide()
 			ally_sprite.play()
 			create_tween().tween_property(total_control_ring,"scale",Vector2.ONE,0.5)
@@ -177,6 +180,7 @@ func frame_changed():
 		skill_4_timer.start()
 		stop_time()
 		skill_4_shot_timer.start()
+		get_skill_exp(4)
 	pass
 
 

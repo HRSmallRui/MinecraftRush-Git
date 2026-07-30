@@ -129,6 +129,7 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 
 
 func on_normal_attack_hit(target_enemy: Enemy):
+	get_skill_exp(3)
 	var broken_buff: PropertyBuff = skill3_broken_buff_scene.instantiate()
 	broken_buff.buff_blocks[0] = skill3_property_block_list[skill_levels[3]-1]
 	target_enemy.buffs.add_child(broken_buff)

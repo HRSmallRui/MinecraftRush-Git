@@ -32,7 +32,7 @@ enum VersionType{
 #game_sav_path
 #user://Sav
 #res://Savs/Sav
-var current_sav_slot: int = 1
+var current_sav_slot: int = 2
 var cursor_show: bool
 var stage_first: bool = true
 

@@ -97,7 +97,7 @@ func frame_changed():
 		Stage.instance.bullets.add_child(dust)
 		EffectManager.instance.play_explosion_effect(dust.position,Vector2.ONE,Color.DARK_GREEN)
 		AudioManager.instance.play_explosion_audio()
-		get_exp(skill2_exp_get[skill_levels[2]-1])
+		get_skill_exp(2)
 		await get_tree().physics_frame
 		await get_tree().physics_frame
 		for body in skill_2_hit_area.get_overlapping_bodies():
@@ -115,6 +115,7 @@ func frame_changed():
 		salem_big_bullet.bullet_special_tag_levels["passive"] = skill_levels[0]
 		salem_big_bullet.bullet_special_tag_levels["explosion"] = skill_levels[1]
 		Stage.instance.bullets.add_child(salem_big_bullet)
+		get_skill_exp(4)
 	pass
 
 

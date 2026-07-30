@@ -99,13 +99,13 @@ func frame_changed():
 		var bullet: Bullet = summon_bullet(skill1_bullet_scene,summon_pos,target_pos,damage,DataProcess.DamageType.TrueDamage)
 		Stage.instance.bullets.add_child(bullet)
 		AudioManager.instance.shoot_audio_2.play()
-		get_exp(skill1_exp_get[skill_levels[1]-1])
+		get_skill_exp(1)
 	
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 21:
 		skill_2_timer.start()
 		skill2_effect_release.emit()
 		skill_2_preparation_effect.hide()
-		get_exp(skill2_exp_get[skill_levels[2]-1])
+		get_skill_exp(2)
 		var damage_block: DamageBlock = skill2_damage_list[skill_levels[2]-1]
 		for body in skill_2_attack_area.get_overlapping_bodies():
 			var enemy: Enemy = body.owner
@@ -138,7 +138,7 @@ func frame_changed():
 			show_text = "重击！"
 		skill_4_slash_audio.play()
 		TextEffect.text_effect_show(show_text,TextEffect.TextEffectType.SecKill,enemy.hurt_box.global_position + Vector2(0,-30))
-		get_exp(skill4_exp_get[skill_levels[4]-1])
+		get_skill_exp(4)
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 28:
 		skill_2_finish_audio.play()
 	pass
@@ -245,7 +245,7 @@ func _on_skill_3_shot_timer_timeout() -> void:
 	if remain_skill3_count <= 0:
 		skill_3_shot_timer.stop()
 		translate_to_new_state(AllyState.IDLE)
-		get_exp(skill3_exp_get[skill_levels[3]-1])
+		get_skill_exp(3)
 		return
 	if far_attack_area.has_overlapping_bodies():
 		var enemy: Enemy = far_attack_area.get_overlapping_bodies()[0].owner
