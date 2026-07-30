@@ -285,3 +285,16 @@ func far_attack_frame(damage_type: DataProcess.DamageType = DataProcess.DamageTy
 	Stage.instance.bullets.add_child(bullet)
 	get_exp(int(float(damage) * exp_rate))
 	pass
+
+
+func get_skill_exp(skill_id: int):
+	match skill_id:
+		1:
+			get_exp(skill1_exp_get[skill_levels[1]-1])
+		2:
+			get_exp(skill2_exp_get[skill_levels[2]-1])
+		3:
+			get_exp(skill3_exp_get[skill_levels[3]-1])
+		4:
+			get_exp(skill4_exp_get[skill_levels[4]-1])
+	pass
