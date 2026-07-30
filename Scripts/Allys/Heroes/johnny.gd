@@ -95,6 +95,7 @@ func frame_changed():
 	if ally_sprite.animation == "skill4" and ally_sprite.frame == 43:
 		skill_4_timer.start()
 		skill_4_audio.play()
+		get_skill_exp(4)
 		if current_intercepting_enemy != null:
 			var dizness_buff: DiznessBuff = dizness_buff_scene.instantiate()
 			dizness_buff.duration = skill4_dizness_duration
@@ -113,7 +114,7 @@ func heal_health():
 	if skill_levels[1] == 0: heal_data = 0
 	else: 
 		heal_data = skill1_heal_health_list[skill_levels[1]-1]
-		get_exp(skill1_exp_get[skill_levels[1]-1])
+		get_skill_exp(1)
 	current_data.heal(heal_data)
 	pass
 
@@ -131,6 +132,7 @@ func _on_skill_2_duration_timer_timeout() -> void:
 	skill_2_hit_timer.stop()
 	if ally_state != AllyState.DIE:
 		ally_sprite.play("skill2_end")
+	get_skill_exp(2)
 	pass # Replace with function body.
 
 
@@ -139,6 +141,7 @@ func _on_skill_3_duration_timer_timeout() -> void:
 	skill_3_audio.stop()
 	if ally_state != AllyState.DIE:
 		ally_sprite.play("skill3_end")
+	get_skill_exp(3)
 	pass # Replace with function body.
 
 
@@ -178,17 +181,14 @@ func battle():
 	if ally_sprite.animation == "idle":
 		if skill_levels[2] > 0 and skill_2_timer.is_stopped() and skill_2_hit_area.get_overlapping_bodies().size() >= 3:
 			ally_sprite.play("skill2")
-			get_exp(skill2_exp_get[skill_levels[2]-1])
 			return
 		if skill_levels[3] > 0 and skill_3_timer.is_stopped() and current_intercepting_enemy != null:
 			if current_intercepting_enemy.current_data.health > 100:
 				ally_sprite.play("skill3")
-				get_exp(skill2_exp_get[skill_levels[3]-1])
 				return
 		if skill_levels[4] > 0 and skill_4_timer.is_stopped() and current_intercepting_enemy != null:
 			if current_intercepting_enemy.current_data.health > 150:
 				ally_sprite.play("skill4")
-				get_exp(skill2_exp_get[skill_levels[4]-1])
 				return
 	super()
 	pass
