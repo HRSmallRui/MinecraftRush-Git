@@ -110,6 +110,7 @@ func frame_changed():
 		chip -= 1
 		skill_1_audio.play()
 		summon_golems()
+		get_skill_exp(1)
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 13:
 		chip -= 1
 		skill_2_timer.start()
@@ -118,6 +119,7 @@ func frame_changed():
 			chip += 1
 			return
 		skill_2_audio.play()
+		get_skill_exp(2)
 		var during_time: float = skill2_during_time_list[skill_levels[2]-1]
 		var tower_buff: TowerBuff = skill2_tower_buff_scene.instantiate()
 		tower_buff.duration = during_time
@@ -149,6 +151,7 @@ func frame_changed():
 				chip -= 1
 				type = 2
 			skill3_add_buff(type,target_enemy_list)
+			get_skill_exp(3)
 			chip += mini(target_enemy_list.size() / 5, 3)
 	
 	if ally_sprite.animation == "skill4":
@@ -158,6 +161,7 @@ func frame_changed():
 			skill_4_timer.start()
 			chip -= 1
 			translate_to_new_state(AllyState.SPECIAL)
+			get_skill_exp(4)
 			skill_4_audio_2.play()
 			var ally_list: Array[Ally]
 			for body in skill_4_area.get_overlapping_bodies():
