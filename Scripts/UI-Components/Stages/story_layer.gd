@@ -47,8 +47,9 @@ func disappear():
 	create_tween().tween_property(subtitle,"modulate:a",0,disappear_time)
 	
 	await get_tree().create_timer(disappear_time,process_mode == ProcessMode.PROCESS_MODE_ALWAYS).timeout
-	queue_free()
+	#queue_free()
 	get_tree().paused = false
+	on_queue_free()
 	pass
 
 
@@ -59,4 +60,9 @@ func cg_play(cg_texture: Texture, cg_appear_time: float, cg_during_time: float):
 	create_tween().tween_property(cg_player,"modulate:a",1,0.5)
 	await get_tree().create_timer(cg_during_time * waiting_time_total_scale,process_mode == ProcessMode.PROCESS_MODE_ALWAYS).timeout
 	create_tween().tween_property(cg_player,"modulate:a",0,0.5)
+	pass
+
+
+func on_queue_free():
+	queue_free()
 	pass
