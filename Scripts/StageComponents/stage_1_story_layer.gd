@@ -7,8 +7,8 @@ extends StoryLayer
 
 func _ready() -> void:
 	super()
-	await get_tree().create_timer(86).timeout
-	create_tween().tween_property(opening,"volume_db",-50,4)
+	await get_tree().create_timer(82).timeout
+	create_tween().tween_property(opening,"volume_db",-50,8)
 	pass
 
 
