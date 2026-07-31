@@ -55,6 +55,7 @@ func _on_restart_button_pressed() -> void:
 	$AnimationPlayer.play("Exit")
 	await $AnimationPlayer.animation_finished
 	get_tree().paused = false
+	Stage.instance.on_paused.emit(false)
 	get_tree().reload_current_scene()
 	pass # Replace with function body.
 
