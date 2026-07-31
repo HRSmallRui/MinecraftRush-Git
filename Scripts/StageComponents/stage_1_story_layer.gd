@@ -5,9 +5,10 @@ extends StoryLayer
 @onready var opening: AudioStreamPlayer = $Opening
 
 
-func disappear():
+func _ready() -> void:
 	super()
-	create_tween().tween_property(opening,"volume_db",-100,0.5)
+	await get_tree().create_timer(86).timeout
+	create_tween().tween_property(opening,"volume_db",-50,4)
 	pass
 
 
