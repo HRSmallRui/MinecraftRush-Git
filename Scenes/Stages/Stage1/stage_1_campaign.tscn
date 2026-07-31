@@ -1,73 +1,159 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfd3li1xts23r"]
+[gd_scene load_steps=29 format=3 uid="uid://cfd3li1xts23r"]
 
 [ext_resource type="AudioStream" uid="uid://bid2c6pwsfvvv" path="res://Assets/Sounds/Music/opening.mp3" id="1_2fdh5"]
-[ext_resource type="Script" path="res://Scripts/Stages/stage_1_opening.gd" id="1_bdi5g"]
-[ext_resource type="PackedScene" uid="uid://bfxsbppmehrlo" path="res://Scenes/Stages/Stage1/stage_1_campaign_later.tscn" id="2_3rvee"]
-[ext_resource type="FontFile" uid="uid://dsfgk2j8mabcb" path="res://Assets/Fonts/simsun.ttc" id="3_0i8vf"]
+[ext_resource type="PackedScene" uid="uid://doqtusnl6v3jq" path="res://Scenes/StageComponents/story_layer.tscn" id="1_lg3sf"]
+[ext_resource type="Script" path="res://Scripts/StageComponents/stage_1_story_layer.gd" id="2_ci7ot"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/dialog_block.gd" id="3_31kxk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egakv"]
-bg_color = Color(0.273873, 0.273873, 0.273873, 0.443137)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[sub_resource type="Resource" id="Resource_rflkm"]
+script = ExtResource("3_31kxk")
+dialog_text = "焦土终会复生，但伤疤永不弥合"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 1.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m60kk"]
-bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.443137)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[sub_resource type="Resource" id="Resource_dma4n"]
+script = ExtResource("3_31kxk")
+dialog_text = "世间万物没有什么是永恒的"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
 
-[node name="Stage1Opening" type="CanvasLayer"]
-script = ExtResource("1_bdi5g")
-stage_scene = ExtResource("2_3rvee")
+[sub_resource type="Resource" id="Resource_igphu"]
+script = ExtResource("3_31kxk")
+dialog_text = "自然那些伟大的传说"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_ddohj"]
+script = ExtResource("3_31kxk")
+dialog_text = "无法描述的过去"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
 
-[node name="Opening" type="AudioStreamPlayer" parent="."]
+[sub_resource type="Resource" id="Resource_mgwht"]
+script = ExtResource("3_31kxk")
+dialog_text = "终会在某一天烟消云散"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_odw4q"]
+script = ExtResource("3_31kxk")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_ho3pb"]
+script = ExtResource("3_31kxk")
+dialog_text = "我们用两代人的光阴编制了谎言"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_oq73l"]
+script = ExtResource("3_31kxk")
+dialog_text = "说和平已然被砌进了宏伟的城墙中"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_kad6h"]
+script = ExtResource("3_31kxk")
+dialog_text = "安宁将随着钟摆永恒往复"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_44ss7"]
+script = ExtResource("3_31kxk")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_0ico7"]
+script = ExtResource("3_31kxk")
+dialog_text = "但直到有一天"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_f8eoi"]
+script = ExtResource("3_31kxk")
+dialog_text = "它还是被打破了"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_smn63"]
+script = ExtResource("3_31kxk")
+dialog_text = "或者说"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_xmq8u"]
+script = ExtResource("3_31kxk")
+dialog_text = "终于被打破了"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_iymps"]
+script = ExtResource("3_31kxk")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_fjwwx"]
+script = ExtResource("3_31kxk")
+dialog_text = "我们看到他们卷土重来，势如破竹"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_qi16l"]
+script = ExtResource("3_31kxk")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_lj0wl"]
+script = ExtResource("3_31kxk")
+dialog_text = "或许真正的和平永远不会到来，战争永远都在"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_pd6wl"]
+script = ExtResource("3_31kxk")
+dialog_text = "但"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_dde0i"]
+script = ExtResource("3_31kxk")
+dialog_text = "请听那炮火连绵的喧嚣"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_pbljc"]
+script = ExtResource("3_31kxk")
+dialog_text = "请看那狼烟四起的边境"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_r38ed"]
+script = ExtResource("3_31kxk")
+dialog_text = "我们需要你，守卫者……"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_txfxh"]
+script = ExtResource("3_31kxk")
+dialog_text = "我们需要你比任何史官都更早写下这场战争的终章……"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_22tgl"]
+script = ExtResource("3_31kxk")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[node name="Stage1CampaignOpening" instance=ExtResource("1_lg3sf")]
+script = ExtResource("2_ci7ot")
+ending_time = 150.0
+dialog_list = Array[ExtResource("3_31kxk")]([SubResource("Resource_rflkm"), SubResource("Resource_dma4n"), SubResource("Resource_igphu"), SubResource("Resource_ddohj"), SubResource("Resource_mgwht"), SubResource("Resource_odw4q"), SubResource("Resource_ho3pb"), SubResource("Resource_oq73l"), SubResource("Resource_kad6h"), SubResource("Resource_44ss7"), SubResource("Resource_0ico7"), SubResource("Resource_f8eoi"), SubResource("Resource_smn63"), SubResource("Resource_xmq8u"), SubResource("Resource_iymps"), SubResource("Resource_fjwwx"), SubResource("Resource_qi16l"), SubResource("Resource_lj0wl"), SubResource("Resource_pd6wl"), SubResource("Resource_dde0i"), SubResource("Resource_pbljc"), SubResource("Resource_r38ed"), SubResource("Resource_txfxh"), SubResource("Resource_22tgl")])
+
+[node name="Opening" type="AudioStreamPlayer" parent="." index="0"]
 stream = ExtResource("1_2fdh5")
-autoplay = true
-
-[node name="Subtitle" type="Label" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -958.0
-offset_top = -88.0
-offset_right = 958.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("3_0i8vf")
-theme_override_font_sizes/font_size = 64
-text = "焦土终会复生，但伤疤永不弥合"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SkipButton" type="Button" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -254.0
-offset_top = 41.0
-offset_right = -122.0
-offset_bottom = 148.0
-grow_horizontal = 0
-scale = Vector2(1.54343, 1.54343)
-theme_override_font_sizes/font_size = 72
-theme_override_styles/hover = SubResource("StyleBoxFlat_egakv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_m60kk")
-theme_override_styles/normal = SubResource("StyleBoxFlat_m60kk")
-text = ">>"
-
-[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
+bus = &"Music"
