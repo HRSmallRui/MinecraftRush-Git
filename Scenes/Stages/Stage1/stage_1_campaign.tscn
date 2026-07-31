@@ -1,10 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://cfd3li1xts23r"]
+[gd_scene load_steps=35 format=3 uid="uid://cfd3li1xts23r"]
 
 [ext_resource type="AudioStream" uid="uid://bid2c6pwsfvvv" path="res://Assets/Sounds/Music/opening.mp3" id="1_2fdh5"]
 [ext_resource type="PackedScene" uid="uid://doqtusnl6v3jq" path="res://Scenes/StageComponents/story_layer.tscn" id="1_lg3sf"]
 [ext_resource type="PackedScene" uid="uid://bfxsbppmehrlo" path="res://Scenes/Stages/Stage1/stage_1_campaign_later.tscn" id="2_3rvee"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/stage_1_story_layer.gd" id="2_ci7ot"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/dialog_block.gd" id="3_31kxk"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/cg_texture_block.gd" id="5_hufed"]
+[ext_resource type="Texture2D" uid="uid://jpphp6mykt5" path="res://Assets/Images/CGs/Stage1CG.png" id="6_o2el7"]
+[ext_resource type="Texture2D" uid="uid://whf7qairwi8o" path="res://Assets/Images/CGs/Stage1CG2.png" id="6_urits"]
 
 [sub_resource type="Resource" id="Resource_rflkm"]
 script = ExtResource("3_31kxk")
@@ -150,13 +153,31 @@ dialog_text = ""
 text_color = Color(1, 1, 1, 1)
 text_exist_time = 85.0
 
+[sub_resource type="Resource" id="Resource_sb0ip"]
+script = ExtResource("5_hufed")
+cg_texture = ExtResource("6_o2el7")
+cg_appear_time = 2.0
+cg_during_time = 69.0
+
+[sub_resource type="Resource" id="Resource_81p22"]
+script = ExtResource("5_hufed")
+cg_texture = ExtResource("6_urits")
+cg_appear_time = 72.0
+cg_during_time = 14.0
+
 [node name="Stage1CampaignOpening" instance=ExtResource("1_lg3sf")]
 script = ExtResource("2_ci7ot")
 stage1_scene = ExtResource("2_3rvee")
 ending_time = 86.0
 dialog_list = Array[ExtResource("3_31kxk")]([SubResource("Resource_rflkm"), SubResource("Resource_dma4n"), SubResource("Resource_igphu"), SubResource("Resource_ddohj"), SubResource("Resource_mgwht"), SubResource("Resource_odw4q"), SubResource("Resource_ho3pb"), SubResource("Resource_oq73l"), SubResource("Resource_kad6h"), SubResource("Resource_44ss7"), SubResource("Resource_0ico7"), SubResource("Resource_f8eoi"), SubResource("Resource_smn63"), SubResource("Resource_xmq8u"), SubResource("Resource_iymps"), SubResource("Resource_fjwwx"), SubResource("Resource_qi16l"), SubResource("Resource_lj0wl"), SubResource("Resource_pd6wl"), SubResource("Resource_dde0i"), SubResource("Resource_pbljc"), SubResource("Resource_r38ed"), SubResource("Resource_txfxh"), SubResource("Resource_22tgl")])
+cg_list = Array[ExtResource("5_hufed")]([SubResource("Resource_sb0ip"), SubResource("Resource_81p22")])
 
 [node name="Opening" type="AudioStreamPlayer" parent="." index="0"]
 stream = ExtResource("1_2fdh5")
 autoplay = true
 bus = &"Music"
+
+[node name="CGPlayer" parent="." index="2"]
+position = Vector2(960, 540)
+scale = Vector2(0.752079, 0.752079)
+centered = true
