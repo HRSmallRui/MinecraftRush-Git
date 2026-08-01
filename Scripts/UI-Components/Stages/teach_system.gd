@@ -289,9 +289,11 @@ func build_tower():
 	await based_tower.tower_button.pressed
 	tower_click_component.hide()
 	tower_build_component.show()
+	var button_position: Vector2 = archer_marker_android.global_position if OS.get_name() == "Android" else archer_marker.global_position
+	tower_build_component.position = button_position
 	var archer_button: TextureButton = $"../Towers/DefenceTowerBased4/TowerUI/Circle/ArcherButton"
 	create_tween().tween_property(tower_point,"scale",Vector2.ONE*0.5,0.2)
-	create_tween().tween_property(tower_point,"global_position",archer_marker.global_position,0.2)
+	create_tween().tween_property(tower_point,"global_position",button_position,0.2)
 	story_layer.subtitle_change("单击此处，建造一座基础弓箭塔",0.2,Color.WHITE)
 	await archer_button.pressed
 	await get_tree().process_frame
