@@ -462,15 +462,6 @@ dialog_text = "单击此处，建造防御塔来抵御他们的攻势"
 text_color = Color(1, 1, 1, 1)
 text_exist_time = 36.0
 
-[sub_resource type="Gradient" id="Gradient_s5g5n"]
-offsets = PackedFloat32Array(0.95098, 0.995098)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1pcl1"]
-gradient = SubResource("Gradient_s5g5n")
-fill = 2
-fill_from = Vector2(0.529915, 0.538462)
-
 [sub_resource type="Animation" id="Animation_ekxot"]
 length = 0.001
 tracks/0/type = "value"
@@ -704,6 +695,15 @@ _data = {
 "name_appear": SubResource("Animation_pxd63"),
 "unfold": SubResource("Animation_gvm3w")
 }
+
+[sub_resource type="Gradient" id="Gradient_s5g5n"]
+offsets = PackedFloat32Array(0.95098, 0.995098)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1pcl1"]
+gradient = SubResource("Gradient_s5g5n")
+fill = 2
+fill_from = Vector2(0.529915, 0.538462)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx4fl"]
 bg_color = Color(0.237539, 0.237539, 0.237539, 0.435294)
@@ -1121,6 +1121,135 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
+[node name="TowerIntro" type="Node2D" parent="TeachSystem/StopLayer" index="1"]
+
+[node name="IntroSprite" type="Sprite2D" parent="TeachSystem/StopLayer/TowerIntro" index="0"]
+position = Vector2(960, 427)
+scale = Vector2(1.33368, 1.33368)
+texture = ExtResource("15_daeof")
+region_enabled = true
+region_rect = Rect2(416, 0, 0, 561)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/StopLayer/TowerIntro" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_jkjb4")
+}
+
+[node name="Label1" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="2"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 519.0
+offset_top = 343.0
+offset_right = 775.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "射手高台"
+
+[node name="Label2" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="3"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 799.0
+offset_top = 343.0
+offset_right = 927.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "兵营"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="4"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 1052.0
+offset_top = 343.0
+offset_right = 1308.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "法师高塔"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="5"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 1313.0
+offset_top = 343.0
+offset_right = 1569.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "红石炮塔"
+horizontal_alignment = 1
+
+[node name="IntroLabel1" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="6"]
+offset_left = 490.0
+offset_top = 609.0
+offset_right = 1163.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "良好的射击速率"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="IntroLabel2" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="7"]
+offset_left = 756.0
+offset_top = 609.0
+offset_right = 1429.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "训练士兵拦截敌人"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="IntroLabel3" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="8"]
+offset_left = 1015.0
+offset_top = 609.0
+offset_right = 1688.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "高伤害护甲穿刺"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="IntroLabel4" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="9"]
+offset_left = 1293.0
+offset_top = 609.0
+offset_right = 1966.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "造成范围伤害"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
 [node name="IntroLabel" type="Label" parent="TeachSystem" index="2"]
 visible = false
 z_index = 2
@@ -1216,136 +1345,7 @@ energy = 0.8
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="TowerIntro" type="Node2D" parent="TeachSystem" index="8"]
-
-[node name="IntroSprite" type="Sprite2D" parent="TeachSystem/TowerIntro" index="0"]
-position = Vector2(960, 427)
-scale = Vector2(1.33368, 1.33368)
-texture = ExtResource("15_daeof")
-region_enabled = true
-region_rect = Rect2(416, 0, 0, 561)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/TowerIntro" index="1"]
-libraries = {
-"": SubResource("AnimationLibrary_jkjb4")
-}
-
-[node name="Label1" type="Label" parent="TeachSystem/TowerIntro" index="2"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 519.0
-offset_top = 343.0
-offset_right = 775.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "射手高台"
-
-[node name="Label2" type="Label" parent="TeachSystem/TowerIntro" index="3"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 799.0
-offset_top = 343.0
-offset_right = 927.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "兵营"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="TeachSystem/TowerIntro" index="4"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 1052.0
-offset_top = 343.0
-offset_right = 1308.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "法师高塔"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="TeachSystem/TowerIntro" index="5"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 1313.0
-offset_top = 343.0
-offset_right = 1569.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "红石炮塔"
-horizontal_alignment = 1
-
-[node name="IntroLabel1" type="Label" parent="TeachSystem/TowerIntro" index="6"]
-offset_left = 490.0
-offset_top = 609.0
-offset_right = 1163.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "良好的射击速率"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="IntroLabel2" type="Label" parent="TeachSystem/TowerIntro" index="7"]
-offset_left = 756.0
-offset_top = 609.0
-offset_right = 1429.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "训练士兵拦截敌人"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="IntroLabel3" type="Label" parent="TeachSystem/TowerIntro" index="8"]
-offset_left = 1015.0
-offset_top = 609.0
-offset_right = 1688.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "高伤害护甲穿刺"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="IntroLabel4" type="Label" parent="TeachSystem/TowerIntro" index="9"]
-offset_left = 1293.0
-offset_top = 609.0
-offset_right = 1966.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "造成范围伤害"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="SkipButton" type="Button" parent="TeachSystem" index="9"]
+[node name="SkipButton" type="Button" parent="TeachSystem" index="8"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1371,7 +1371,7 @@ libraries = {
 }
 autoplay = "process"
 
-[node name="TowerClickComponent" type="Control" parent="TeachSystem" index="10"]
+[node name="TowerClickComponent" type="Control" parent="TeachSystem" index="9"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 10
@@ -1406,7 +1406,7 @@ offset_top = 511.0
 offset_right = 2004.0
 offset_bottom = 1739.0
 
-[node name="TowerBuildComponent" type="Control" parent="TeachSystem" index="11"]
+[node name="TowerBuildComponent" type="Control" parent="TeachSystem" index="10"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 10
@@ -1442,7 +1442,7 @@ offset_top = 434.0
 offset_right = 1995.0
 offset_bottom = 1662.0
 
-[node name="ArcherMarker" type="Marker2D" parent="TeachSystem" index="12"]
+[node name="ArcherMarker" type="Marker2D" parent="TeachSystem" index="11"]
 position = Vector2(986, 394)
 
 [node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("10_el46h")]
