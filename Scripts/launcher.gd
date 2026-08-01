@@ -161,5 +161,6 @@ func save_game_sav(file_path: String):
 
 
 func _on_mouse_selection_check_pressed() -> void:
-	
+	user_sav.extra_property["cursor_show"] = mouse_selection_check.button_pressed
+	Global.sav_user_sav(user_sav)
 	pass # Replace with function body.
