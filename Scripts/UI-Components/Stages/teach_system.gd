@@ -263,9 +263,9 @@ func firerain_tutorial():
 
 func _on_skip_button_pressed() -> void:
 	get_tree().paused = false
-	Stage.instance.add_child(warning_scene.instantiate())
+	#Stage.instance.add_child(warning_scene.instantiate())
 	Stage.instance.summon_hero()
-	
+	Stage.instance.can_control = true
 	queue_free()
 	pass # Replace with function body.
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=3 uid="uid://bfxsbppmehrlo"]
+[gd_scene load_steps=179 format=3 uid="uid://bfxsbppmehrlo"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_uf25d"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_1_campaign_later.gd" id="2_o0b88"]
@@ -113,6 +113,8 @@
 [ext_resource type="PackedScene" uid="uid://bck1eh6yn7iii" path="res://Scenes/UI-Components/Stages/tutorial_warning.tscn" id="104_3w5l8"]
 [ext_resource type="PackedScene" uid="uid://doqtusnl6v3jq" path="res://Scenes/StageComponents/story_layer.tscn" id="105_givyn"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/dialog_block.gd" id="106_w2al5"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="109_58no0"]
+[ext_resource type="Texture2D" uid="uid://dy4e5740gddnu" path="res://Assets/Images/UI/button_hover.png" id="110_cr4jw"]
 [ext_resource type="Texture2D" uid="uid://dnrxg6tdwx1mp" path="res://Assets/Animations/StageComponents/Sheep/dead_0.png" id="123_dy5ms"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrbi4"]
@@ -696,6 +698,50 @@ _data = {
 "unfold": SubResource("Animation_gvm3w")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fc1w"]
+atlas = ExtResource("109_58no0")
+region = Rect2(98, 192, 331, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8evsj"]
+atlas = ExtResource("110_cr4jw")
+region = Rect2(68, 162, 391, 203)
+
+[sub_resource type="Animation" id="Animation_1ym38"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_myn4b"]
+resource_name = "process"
+length = 23.0
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1111, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0, 754, -0.25, 0, 0.25, 0, 754, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 2.5, 22.5, 23)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1tdas"]
+_data = {
+"RESET": SubResource("Animation_1ym38"),
+"process": SubResource("Animation_myn4b")
+}
+
 [sub_resource type="Gradient" id="Gradient_s5g5n"]
 offsets = PackedFloat32Array(0.95098, 0.995098)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -704,78 +750,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_s5g5n")
 fill = 2
 fill_from = Vector2(0.529915, 0.538462)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx4fl"]
-bg_color = Color(0.237539, 0.237539, 0.237539, 0.435294)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhlqq"]
-bg_color = Color(0, 0, 0, 0.435294)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
-
-[sub_resource type="Animation" id="Animation_1ym38"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1281, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1111, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_myn4b"]
-resource_name = "process"
-length = 10.5
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1281, -0.25, 0, 0.25, 0, 1281, -0.25, 0, 0.25, 0, 1281, -0.25, 0, 0.25, 0, 1281, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2, 2.5, 10)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(1111, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0, 896, -0.25, 0, 0.25, 0, 896, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2, 2.5, 10, 10.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1tdas"]
-_data = {
-"RESET": SubResource("Animation_1ym38"),
-"process": SubResource("Animation_myn4b")
-}
 
 [sub_resource type="Resource" id="Resource_dtmfa"]
 script = ExtResource("13_kyk0k")
@@ -935,9 +909,6 @@ armor_tip_button_scene = ExtResource("3_va8nk")
 enemy_scene_list = Array[PackedScene]([ExtResource("3_kkfxg"), ExtResource("4_m34qa")])
 current_money = 250
 stage_summon_config = ExtResource("3_0ugup")
-
-[node name="StageCamera" parent="." index="3"]
-min_zoom_length_desktop = 1.5
 
 [node name="PreparationMusic" parent="Musics" index="0"]
 stream = ExtResource("2_t274y")
@@ -1252,6 +1223,43 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="SkipButton" type="TextureButton" parent="TeachSystem/StopLayer" index="2"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = 31.0
+offset_right = -32.0
+offset_bottom = 174.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_1fc1w")
+texture_hover = SubResource("AtlasTexture_8evsj")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/StopLayer/SkipButton" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_1tdas")
+}
+autoplay = "process"
+
+[node name="Label" type="Label" parent="TeachSystem/StopLayer/SkipButton" index="1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 320.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "跳过教程"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="IntroLabel" type="Label" parent="TeachSystem" index="2"]
 visible = false
 z_index = 2
@@ -1348,34 +1356,7 @@ energy = 0.8
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="SkipButton" type="Button" parent="TeachSystem" index="8"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -639.0
-offset_top = 31.0
-offset_right = -9.0
-offset_bottom = 182.0
-grow_horizontal = 0
-grow_vertical = 0
-focus_mode = 0
-theme_override_font_sizes/font_size = 72
-theme_override_styles/hover = SubResource("StyleBoxFlat_fx4fl")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mhlqq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mhlqq")
-text = "憋叭叭了，赶紧的"
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/SkipButton" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_1tdas")
-}
-autoplay = "process"
-
-[node name="TowerClickComponent" type="Control" parent="TeachSystem" index="9"]
+[node name="TowerClickComponent" type="Control" parent="TeachSystem" index="8"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 10
@@ -1410,7 +1391,7 @@ offset_top = 511.0
 offset_right = 2004.0
 offset_bottom = 1739.0
 
-[node name="TowerBuildComponent" type="Control" parent="TeachSystem" index="10"]
+[node name="TowerBuildComponent" type="Control" parent="TeachSystem" index="9"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 10
@@ -1449,10 +1430,10 @@ offset_top = 37.0
 offset_right = 1008.0
 offset_bottom = 1265.0
 
-[node name="ArcherMarker" type="Marker2D" parent="TeachSystem" index="11"]
+[node name="ArcherMarker" type="Marker2D" parent="TeachSystem" index="10"]
 position = Vector2(986, 394)
 
-[node name="ArcherMarkerAndroid" type="Marker2D" parent="TeachSystem" index="12"]
+[node name="ArcherMarkerAndroid" type="Marker2D" parent="TeachSystem" index="11"]
 position = Vector2(968, 376)
 
 [node name="WaveButtons" parent="." index="16"]
@@ -1516,7 +1497,7 @@ polygon = PackedVector2Array(270, 481, 873, 486, 956, 371, 999, 249, 1024, 135, 
 [node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(421, 527)
 
-[connection signal="pressed" from="TeachSystem/SkipButton" to="TeachSystem" method="_on_skip_button_pressed"]
+[connection signal="pressed" from="TeachSystem/StopLayer/SkipButton" to="TeachSystem" method="_on_skip_button_pressed"]
 
 [editable path="Towers/DefenceTowerBased4"]
 [editable path="TeachSystem/StoryLayer"]
