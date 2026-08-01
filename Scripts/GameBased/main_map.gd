@@ -66,6 +66,7 @@ func _init() -> void:
 func _ready() -> void:
 	Global.stage_first = true
 	HeroGlobal.clear_hero_scene()
+	move_to_last_stage()
 	
 	if OS.get_name() == "Android":
 		camera.zoom *= 1.5
@@ -319,4 +320,17 @@ func bedrock_finish():
 		if !current_sav.level_difficulty_completed.has(keyword): return
 	current_sav.compeleted_keywords.append("bedrock")
 	Global.sav_game_sav(current_sav)
+	pass
+
+
+func move_to_last_stage():
+	if current_sav.property_bus.has("last_stage"):
+		var flag_level: int = current_sav.property_bus["last_stage"]
+		for flag: LevelFlag in flags.get_children():
+			if flag.flag_level == flag_level:
+				camera.position_smoothing_enabled = false
+				camera.position = flag.global_position
+				await get_tree().process_frame
+				camera.position_smoothing_enabled = true
+				break
 	pass

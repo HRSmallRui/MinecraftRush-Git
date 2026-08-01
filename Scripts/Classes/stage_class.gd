@@ -117,6 +117,7 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	stage_sav.property_bus["last_stage"] = stage_count
 	Global.stage_first = false
 	zoom_slider.hide()
 	zoom_button.hide()
