@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 class_name TeachSystem
 
 @export var reinforce_unlock_scene: PackedScene
@@ -10,7 +10,7 @@ class_name TeachSystem
 @onready var intro_label: Label = $IntroLabel
 @onready var enemy_point_1: PointLight2D = $ShowComponent/EnemyPoint1
 @onready var directional_light: DirectionalLight2D = $DirectionalLight
-@onready var all_stop: ColorRect = $AllStop
+@onready var all_stop: ColorRect = $StopLayer/AllStop
 @onready var wave_click_component: Control = $WaveClickComponent
 @onready var tower_point: PointLight2D = $TowerPoint
 
@@ -26,6 +26,7 @@ func _ready() -> void:
 	Stage.instance.update_player_status()
 	directional_light.energy = 0
 	intro_label.text = ""
+	Stage.instance.stage_camera.zoom = Vector2.ONE
 	opening()
 	await get_tree().create_timer(28).timeout
 	step1()
@@ -57,12 +58,12 @@ func step1():
 	get_tree().paused = false
 	change_intro_text("",0)
 	change_intro_text("敌人会从这里出现",0.5)
-	Stage.instance.stage_camera.position = Vector2(1920,0)
+	Stage.instance.stage_camera.position = $ShowComponent/EnemyPoint1.global_position
 	Stage.instance.stage_camera.position_clamp()
 	enemy_point_animation($ShowComponent/EnemyPoint1,2.8)
 	enemy_point_animation($ShowComponent/EnemyPoint2,2.8)
 	change_intro_text("不要让他们突破据点",3)
-	Stage.instance.stage_camera.position = $ShowComponent/HomePoint.position
+	Stage.instance.stage_camera.position = $ShowComponent/HomePoint.global_position
 	Stage.instance.stage_camera.position_clamp()
 	home_point_animation()
 	change_intro_text("",6)
@@ -97,6 +98,7 @@ func home_point_animation():
 
 func step2():
 	enemy_point_animation($ShowComponent/EnemyPoint1,0.5)
+	Stage.instance.stage_camera.zoom_clamp()
 	Stage.instance.stage_camera.position = $ShowComponent/EnemyPoint1.position
 	Stage.instance.stage_camera.position_clamp()
 	change_intro_text("单击此处，准备迎接敌人的进攻",0)

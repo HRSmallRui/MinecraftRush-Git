@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://bfxsbppmehrlo"]
+[gd_scene load_steps=172 format=3 uid="uid://bfxsbppmehrlo"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_uf25d"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_1_campaign_later.gd" id="2_o0b88"]
@@ -111,6 +111,8 @@
 [ext_resource type="PackedScene" uid="uid://kodaiwqt343w" path="res://Scenes/TipUI/heroskill_unlock.tscn" id="102_tecm7"]
 [ext_resource type="PackedScene" uid="uid://b1i3simwvcxqa" path="res://Scenes/TipUI/firerain_unlock.tscn" id="103_kp2n4"]
 [ext_resource type="PackedScene" uid="uid://bck1eh6yn7iii" path="res://Scenes/UI-Components/Stages/tutorial_warning.tscn" id="104_3w5l8"]
+[ext_resource type="PackedScene" uid="uid://doqtusnl6v3jq" path="res://Scenes/StageComponents/story_layer.tscn" id="105_givyn"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/dialog_block.gd" id="106_w2al5"]
 [ext_resource type="Texture2D" uid="uid://dnrxg6tdwx1mp" path="res://Assets/Animations/StageComponents/Sheep/dead_0.png" id="123_dy5ms"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrbi4"]
@@ -393,6 +395,42 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1070, -9, 2.0979, -52.9637, -2.0979, 52.9637, 1069, 141, 5.61231, -22.4492, -5.61231, 22.4492, 1032, 298, 30.6305, -67.4519, -30.6305, 67.4519, 976, 429, 10.6066, -8.48528, -10.6066, 8.48528, 928, 502, 0, 0, 0, 0, 793, 516, 0, 0, 0, 0, 41, 505)
 }
 point_count = 7
+
+[sub_resource type="Resource" id="Resource_kyr70"]
+script = ExtResource("106_w2al5")
+dialog_text = "欢迎归来，将军"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
+
+[sub_resource type="Resource" id="Resource_ul0uq"]
+script = ExtResource("106_w2al5")
+dialog_text = "我知道这个时间把你召回有些不合时宜，但我们需要“守护”的力量"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 3.0
+
+[sub_resource type="Resource" id="Resource_kid3r"]
+script = ExtResource("106_w2al5")
+dialog_text = "我不知道离开战场那么久你是否还记得怎么建立防线与指挥战斗"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 8.0
+
+[sub_resource type="Resource" id="Resource_gf4rm"]
+script = ExtResource("106_w2al5")
+dialog_text = "有一小支分队绕过了防线正在朝这边移动"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 13.0
+
+[sub_resource type="Resource" id="Resource_7s0m0"]
+script = ExtResource("106_w2al5")
+dialog_text = "很高兴你回来的时候记得临时拼凑一支队伍，那么皇城这边暂且交由你负责"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 16.0
+
+[sub_resource type="Resource" id="Resource_5p4gq"]
+script = ExtResource("106_w2al5")
+dialog_text = "我们需要抓紧时间建立防线"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 24.0
 
 [sub_resource type="Gradient" id="Gradient_s5g5n"]
 offsets = PackedFloat32Array(0.95098, 0.995098)
@@ -869,7 +907,7 @@ current_money = 250
 stage_summon_config = ExtResource("3_0ugup")
 
 [node name="StageCamera" parent="." index="3"]
-min_zoom_length_mobile = 1.0
+min_zoom_length_desktop = 1.5
 
 [node name="PreparationMusic" parent="Musics" index="0"]
 stream = ExtResource("2_t274y")
@@ -1008,8 +1046,17 @@ position = Vector2(1515, 781)
 [node name="DefenceTowerBased12" parent="Towers" index="10" instance=ExtResource("6_s654h")]
 position = Vector2(1516, 604)
 
-[node name="TeachSystem" type="CanvasLayer" parent="." index="13"]
+[node name="TeachSystem" type="Control" parent="." index="14"]
 process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("12_8h6nn")
 reinforce_unlock_scene = ExtResource("100_eahil")
 hero_unlock_scene = ExtResource("101_t6ijq")
@@ -1017,7 +1064,25 @@ hero_skill_unlock_scene = ExtResource("102_tecm7")
 fire_unlock_scene = ExtResource("103_kp2n4")
 warning_scene = ExtResource("104_3w5l8")
 
-[node name="AllStop" type="ColorRect" parent="TeachSystem" index="0"]
+[node name="StoryLayer" parent="TeachSystem" index="0" instance=ExtResource("105_givyn")]
+process_mode = 3
+ending_time = 1000.0
+dialog_list = Array[ExtResource("106_w2al5")]([SubResource("Resource_kyr70"), SubResource("Resource_ul0uq"), SubResource("Resource_kid3r"), SubResource("Resource_gf4rm"), SubResource("Resource_7s0m0"), SubResource("Resource_5p4gq")])
+
+[node name="ColorRect" parent="TeachSystem/StoryLayer" index="0"]
+visible = false
+
+[node name="Subtitle" parent="TeachSystem/StoryLayer" index="2"]
+offset_top = -92.0
+offset_bottom = -4.0
+
+[node name="SkipButton" parent="TeachSystem/StoryLayer" index="3"]
+visible = false
+
+[node name="StopLayer" type="CanvasLayer" parent="TeachSystem" index="1"]
+layer = 10
+
+[node name="AllStop" type="ColorRect" parent="TeachSystem/StopLayer" index="0"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1025,8 +1090,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="IntroLabel" type="Label" parent="TeachSystem" index="1"]
+[node name="IntroLabel" type="Label" parent="TeachSystem" index="2"]
+visible = false
 z_index = 2
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1043,7 +1110,7 @@ text = "将军你好"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShowComponent" type="Control" parent="TeachSystem" index="2"]
+[node name="ShowComponent" type="Control" parent="TeachSystem" index="3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1072,12 +1139,12 @@ range_z_max = 200
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="DirectionalLight" type="DirectionalLight2D" parent="TeachSystem" index="3"]
+[node name="DirectionalLight" type="DirectionalLight2D" parent="TeachSystem" index="4"]
 energy = 0.0
 blend_mode = 1
 range_z_max = 0
 
-[node name="WaveClickComponent" type="Control" parent="TeachSystem" index="4"]
+[node name="WaveClickComponent" type="Control" parent="TeachSystem" index="5"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -1104,21 +1171,21 @@ offset_top = 784.0
 offset_right = 2955.0
 offset_bottom = 1868.0
 
-[node name="TowerPoint" type="PointLight2D" parent="TeachSystem" index="5"]
+[node name="TowerPoint" type="PointLight2D" parent="TeachSystem" index="6"]
 visible = false
 position = Vector2(1066, 466)
 energy = 0.8
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="EnemyPoint3" type="PointLight2D" parent="TeachSystem" index="6"]
+[node name="EnemyPoint3" type="PointLight2D" parent="TeachSystem" index="7"]
 visible = false
 position = Vector2(1639, 688)
 energy = 0.8
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="TowerIntro" type="Node2D" parent="TeachSystem" index="7"]
+[node name="TowerIntro" type="Node2D" parent="TeachSystem" index="8"]
 
 [node name="IntroSprite" type="Sprite2D" parent="TeachSystem/TowerIntro" index="0"]
 position = Vector2(960, 427)
@@ -1247,7 +1314,8 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SkipButton" type="Button" parent="TeachSystem" index="8"]
+[node name="SkipButton" type="Button" parent="TeachSystem" index="9"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -1327,3 +1395,5 @@ polygon = PackedVector2Array(270, 481, 873, 486, 956, 371, 999, 249, 1024, 135, 
 position = Vector2(421, 527)
 
 [connection signal="pressed" from="TeachSystem/SkipButton" to="TeachSystem" method="_on_skip_button_pressed"]
+
+[editable path="TeachSystem/StoryLayer"]
