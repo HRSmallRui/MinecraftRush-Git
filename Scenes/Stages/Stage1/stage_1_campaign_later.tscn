@@ -1094,6 +1094,7 @@ hero_unlock_scene = ExtResource("101_t6ijq")
 hero_skill_unlock_scene = ExtResource("102_tecm7")
 fire_unlock_scene = ExtResource("103_kp2n4")
 warning_scene = ExtResource("104_3w5l8")
+metadata/_edit_use_anchors_ = true
 
 [node name="StoryLayer" parent="TeachSystem" index="0" instance=ExtResource("105_givyn")]
 process_mode = 3
@@ -1275,6 +1276,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="EnemyPoint1" type="PointLight2D" parent="TeachSystem/ShowComponent" index="0"]
 visible = false
@@ -1364,6 +1366,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fx4fl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mhlqq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mhlqq")
 text = "憋叭叭了，赶紧的"
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/SkipButton" index="0"]
 libraries = {
@@ -1411,39 +1414,47 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 10
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 968.0
+offset_top = 374.0
+offset_right = 1008.0
+offset_bottom = 414.0
 
 [node name="Panel" type="Panel" parent="TeachSystem/TowerBuildComponent" index="0"]
 layout_mode = 0
-offset_left = -45.0
-offset_top = -67.0
-offset_right = 950.0
-offset_bottom = 1161.0
+offset_left = -1032.0
+offset_top = -464.0
+offset_right = -37.0
+offset_bottom = 764.0
 
 [node name="Panel2" type="Panel" parent="TeachSystem/TowerBuildComponent" index="1"]
 layout_mode = 0
-offset_left = 639.0
-offset_top = -870.0
-offset_right = 2138.0
-offset_bottom = 358.0
+offset_left = -348.0
+offset_top = -1267.0
+offset_right = 1151.0
+offset_bottom = -39.0
 
 [node name="Panel3" type="Panel" parent="TeachSystem/TowerBuildComponent" index="2"]
 layout_mode = 0
-offset_left = 1023.0
-offset_top = -17.0
-offset_right = 2522.0
-offset_bottom = 1211.0
+offset_left = 36.0
+offset_top = -414.0
+offset_right = 1535.0
+offset_bottom = 814.0
 
 [node name="Panel4" type="Panel" parent="TeachSystem/TowerBuildComponent" index="3"]
 layout_mode = 0
-offset_left = 496.0
-offset_top = 434.0
-offset_right = 1995.0
-offset_bottom = 1662.0
+offset_left = -491.0
+offset_top = 37.0
+offset_right = 1008.0
+offset_bottom = 1265.0
 
 [node name="ArcherMarker" type="Marker2D" parent="TeachSystem" index="11"]
 position = Vector2(986, 394)
+
+[node name="ArcherMarkerAndroid" type="Marker2D" parent="TeachSystem" index="12"]
+position = Vector2(968, 376)
+
+[node name="WaveButtons" parent="." index="16"]
+metadata/_edit_use_anchors_ = true
 
 [node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("10_el46h")]
 offset_left = 1830.0
@@ -1454,6 +1465,7 @@ linked_wave_panel = NodePath("../WavePanel")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("12_whpfc")]([SubResource("Resource_4t7cw"), SubResource("Resource_22l5k"), null, SubResource("Resource_umkc0"), SubResource("Resource_anwsw"), SubResource("Resource_7eyel"), SubResource("Resource_ptk7g"), SubResource("Resource_u6f4b")])
 summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0])
+metadata/_edit_use_anchors_ = true
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="1"]
 show_behind_parent = true
@@ -1471,6 +1483,7 @@ wave_button_id = 1
 linked_enemy_path = NodePath("../../Enemies/EnemyPath2")
 summon_text_list = Array[ExtResource("12_whpfc")]([null, null, SubResource("Resource_vs22j"), SubResource("Resource_v72yq"), SubResource("Resource_0gwrj"), SubResource("Resource_7niuk"), SubResource("Resource_gtmur"), SubResource("Resource_1k4nt")])
 summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0])
+metadata/_edit_use_anchors_ = true
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="1"]
 show_behind_parent = true
@@ -1485,6 +1498,7 @@ offset_left = 1457.0
 offset_top = 673.0
 offset_right = 2061.0
 offset_bottom = 967.0
+metadata/_edit_use_anchors_ = true
 
 [node name="WavePanel2" parent="WaveButtons" index="3" instance=ExtResource("12_motho")]
 layout_mode = 0
@@ -1492,6 +1506,7 @@ offset_left = 1112.0
 offset_top = 46.0
 offset_right = 1716.0
 offset_bottom = 340.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(270, 481, 873, 486, 956, 371, 999, 249, 1024, 135, 1026, -1, 1114, 1, 1122, 76, 1092, 255, 998, 494, 1376, 588, 1744, 695, 1922, 691, 1919, 773, 1679, 778, 1033, 591, 284, 567)

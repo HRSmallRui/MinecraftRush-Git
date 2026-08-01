@@ -17,6 +17,7 @@ class_name TeachSystem
 @onready var tower_build_component: Control = $TowerBuildComponent
 @onready var story_layer: StoryLayer = $StoryLayer
 @onready var archer_marker: Marker2D = $ArcherMarker
+@onready var archer_marker_android: Marker2D = $ArcherMarkerAndroid
 
 
 func _ready() -> void:
@@ -199,6 +200,7 @@ func step4():
 	story_layer.subtitle_change("继续战斗吧！",34.4,Color.WHITE)
 	await get_tree().create_timer(38).timeout
 	change_intro_text("",0.1)
+	story_layer.subtitle_change("",0.1,Color.WHITE)
 	Stage.instance.zoom_slider.mouse_filter = Control.MOUSE_FILTER_STOP
 	all_stop.hide()
 	create_tween().tween_property(directional_light,"energy",0,0.4)
@@ -206,6 +208,8 @@ func step4():
 	wave_click_component.hide()
 	get_tree().paused = false
 	Stage.instance.can_control = true
+	Stage.instance.stage_camera.process_mode = Node.PROCESS_MODE_INHERIT
+	Stage.instance.information_bar.process_mode = Node.PROCESS_MODE_INHERIT
 	await Stage.instance.wave_summon
 	reinforce_tutorial()
 	await Stage.instance.wave_summon
