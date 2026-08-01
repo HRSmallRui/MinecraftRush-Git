@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=3 uid="uid://bfxsbppmehrlo"]
+[gd_scene load_steps=177 format=3 uid="uid://bfxsbppmehrlo"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_uf25d"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_1_campaign_later.gd" id="2_o0b88"]
@@ -431,6 +431,36 @@ script = ExtResource("106_w2al5")
 dialog_text = "我们需要抓紧时间建立防线"
 text_color = Color(1, 1, 1, 1)
 text_exist_time = 24.0
+
+[sub_resource type="Resource" id="Resource_47bpq"]
+script = ExtResource("106_w2al5")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 28.0
+
+[sub_resource type="Resource" id="Resource_7pqi8"]
+script = ExtResource("106_w2al5")
+dialog_text = "敌人会从这里出现"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 28.6
+
+[sub_resource type="Resource" id="Resource_vgcxl"]
+script = ExtResource("106_w2al5")
+dialog_text = "不要让他们突破据点"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 31.0
+
+[sub_resource type="Resource" id="Resource_fqhu2"]
+script = ExtResource("106_w2al5")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 34.0
+
+[sub_resource type="Resource" id="Resource_45gqh"]
+script = ExtResource("106_w2al5")
+dialog_text = "单击此处，建造防御塔来抵御他们的攻势"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 36.0
 
 [sub_resource type="Gradient" id="Gradient_s5g5n"]
 offsets = PackedFloat32Array(0.95098, 0.995098)
@@ -1057,6 +1087,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("12_8h6nn")
 reinforce_unlock_scene = ExtResource("100_eahil")
 hero_unlock_scene = ExtResource("101_t6ijq")
@@ -1067,7 +1098,7 @@ warning_scene = ExtResource("104_3w5l8")
 [node name="StoryLayer" parent="TeachSystem" index="0" instance=ExtResource("105_givyn")]
 process_mode = 3
 ending_time = 1000.0
-dialog_list = Array[ExtResource("106_w2al5")]([SubResource("Resource_kyr70"), SubResource("Resource_ul0uq"), SubResource("Resource_kid3r"), SubResource("Resource_gf4rm"), SubResource("Resource_7s0m0"), SubResource("Resource_5p4gq")])
+dialog_list = Array[ExtResource("106_w2al5")]([SubResource("Resource_kyr70"), SubResource("Resource_ul0uq"), SubResource("Resource_kid3r"), SubResource("Resource_gf4rm"), SubResource("Resource_7s0m0"), SubResource("Resource_5p4gq"), SubResource("Resource_47bpq"), SubResource("Resource_7pqi8"), SubResource("Resource_vgcxl"), SubResource("Resource_fqhu2"), SubResource("Resource_45gqh")])
 
 [node name="ColorRect" parent="TeachSystem/StoryLayer" index="0"]
 visible = false
@@ -1340,6 +1371,80 @@ libraries = {
 }
 autoplay = "process"
 
+[node name="TowerClickComponent" type="Control" parent="TeachSystem" index="10"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="TeachSystem/TowerClickComponent" index="0"]
+layout_mode = 0
+offset_top = -55.0
+offset_right = 995.0
+offset_bottom = 1173.0
+
+[node name="Panel2" type="Panel" parent="TeachSystem/TowerClickComponent" index="1"]
+layout_mode = 0
+offset_left = 638.0
+offset_top = -810.0
+offset_right = 2137.0
+offset_bottom = 418.0
+
+[node name="Panel3" type="Panel" parent="TeachSystem/TowerClickComponent" index="2"]
+layout_mode = 0
+offset_left = 1126.0
+offset_top = -2.0
+offset_right = 2625.0
+offset_bottom = 1226.0
+
+[node name="Panel4" type="Panel" parent="TeachSystem/TowerClickComponent" index="3"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 511.0
+offset_right = 2004.0
+offset_bottom = 1739.0
+
+[node name="TowerBuildComponent" type="Control" parent="TeachSystem" index="11"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="TeachSystem/TowerBuildComponent" index="0"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -67.0
+offset_right = 950.0
+offset_bottom = 1161.0
+
+[node name="Panel2" type="Panel" parent="TeachSystem/TowerBuildComponent" index="1"]
+layout_mode = 0
+offset_left = 639.0
+offset_top = -870.0
+offset_right = 2138.0
+offset_bottom = 358.0
+
+[node name="Panel3" type="Panel" parent="TeachSystem/TowerBuildComponent" index="2"]
+layout_mode = 0
+offset_left = 1023.0
+offset_top = -17.0
+offset_right = 2522.0
+offset_bottom = 1211.0
+
+[node name="Panel4" type="Panel" parent="TeachSystem/TowerBuildComponent" index="3"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 434.0
+offset_right = 1995.0
+offset_bottom = 1662.0
+
+[node name="ArcherMarker" type="Marker2D" parent="TeachSystem" index="12"]
+position = Vector2(986, 394)
+
 [node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("10_el46h")]
 offset_left = 1830.0
 offset_top = 736.0
@@ -1396,4 +1501,5 @@ position = Vector2(421, 527)
 
 [connection signal="pressed" from="TeachSystem/SkipButton" to="TeachSystem" method="_on_skip_button_pressed"]
 
+[editable path="Towers/DefenceTowerBased4"]
 [editable path="TeachSystem/StoryLayer"]

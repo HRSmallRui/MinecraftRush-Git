@@ -13,6 +13,10 @@ class_name TeachSystem
 @onready var all_stop: ColorRect = $StopLayer/AllStop
 @onready var wave_click_component: Control = $WaveClickComponent
 @onready var tower_point: PointLight2D = $TowerPoint
+@onready var tower_click_component: Control = $TowerClickComponent
+@onready var tower_build_component: Control = $TowerBuildComponent
+@onready var story_layer: StoryLayer = $StoryLayer
+@onready var archer_marker: Marker2D = $ArcherMarker
 
 
 func _ready() -> void:
@@ -31,7 +35,7 @@ func _ready() -> void:
 	await get_tree().create_timer(28).timeout
 	step1()
 	await get_tree().create_timer(6.5).timeout
-	step2()
+	build_tower()
 	pass
 
 
@@ -55,7 +59,7 @@ func change_intro_text(new_text: String,delay_time: float):
 
 
 func step1():
-	get_tree().paused = false
+	#get_tree().paused = false
 	change_intro_text("",0)
 	change_intro_text("敌人会从这里出现",0.5)
 	Stage.instance.stage_camera.position = $ShowComponent/EnemyPoint1.global_position
@@ -123,23 +127,6 @@ func step3():
 	await get_tree().create_timer(0.11).timeout
 	enemy_point_1.show()
 	
-	var based_tower = Stage.instance.towers.get_child(3) as DefenceTower
-	change_intro_text("建造防御塔来抵御他们的攻势",2)
-	Stage.instance.stage_camera.position = Vector2(1920/2, 1080/2)
-	Stage.instance.stage_camera.position_clamp()
-	tower_point.energy = 0
-	tower_point.show()
-	await get_tree().create_timer(2).timeout
-	create_tween().tween_property(tower_point,"energy",0.8,0.4)
-	create_tween().tween_property(enemy_point_1,"energy",0,0.4)
-	await get_tree().create_timer(0.6).timeout
-	based_tower.process_mode = Node.PROCESS_MODE_ALWAYS
-	based_tower._on_tower_button_pressed()
-	create_tween().tween_property(tower_point,"scale",Vector2.ONE * 2,0.4)
-	await get_tree().create_timer(1).timeout
-	based_tower.tower_panel_ui.show_panel(0,1)
-	await get_tree().create_timer(1).timeout
-	first_building(based_tower)
 	pass
 
 
@@ -250,3 +237,54 @@ func _on_skip_button_pressed() -> void:
 	
 	queue_free()
 	pass # Replace with function body.
+
+
+func build_tower():
+	Stage.instance.stage_camera.zoom_clamp()
+	Stage.instance.stage_camera.process_mode = Node.PROCESS_MODE_ALWAYS
+	var based_tower = Stage.instance.towers.get_child(3) as DefenceTower
+	Stage.instance.stage_camera.position = based_tower.global_position
+	tower_point.energy = 0
+	tower_point.show()
+	await get_tree().create_timer(2).timeout
+	create_tween().tween_property(tower_point,"energy",0.8,0.4)
+	create_tween().tween_property(enemy_point_1,"energy",0,0.4)
+	await get_tree().create_timer(0.6).timeout
+	based_tower.process_mode = Node.PROCESS_MODE_ALWAYS
+	all_stop.hide()
+	tower_click_component.show()
+	create_tween().tween_property(tower_point,"scale",Vector2.ONE * 2,0.4)
+	await based_tower.tower_button.pressed
+	tower_click_component.hide()
+	tower_build_component.show()
+	var archer_button: TextureButton = $"../Towers/DefenceTowerBased4/TowerUI/Circle/ArcherButton"
+	create_tween().tween_property(tower_point,"scale",Vector2.ONE*0.5,0.2)
+	create_tween().tween_property(tower_point,"global_position",archer_marker.global_position,0.2)
+	story_layer.subtitle_change("单击此处，建造一座基础弓箭塔",0.2,Color.WHITE)
+	await archer_button.pressed
+	await get_tree().process_frame
+	var defence_tower: DefenceTower = Stage.instance.towers.get_child(-1)
+	defence_tower.process_mode = Node.PROCESS_MODE_ALWAYS
+	create_tween().tween_property(directional_light,"energy",0,0.5)
+	create_tween().tween_property(tower_point,"energy",0,0.5)
+	tower_build_component.hide()
+	all_stop.show()
+	await get_tree().create_timer(2.5).timeout
+	wave_click()
+	pass
+
+
+func wave_click():
+	story_layer.subtitle_change("单击此处准备迎接敌人的进攻",0.2,Color.WHITE)
+	create_tween().tween_property(directional_light,"energy",0.4,0.4)
+	Stage.instance.stage_camera.position = enemy_point_1.global_position
+	all_stop.hide()
+	wave_click_component.show()
+	$ShowComponent/EnemyPoint1.show()
+	await Stage.instance.wave_summon
+	create_tween().tween_property(enemy_point_1,"energy",0,0.4)
+	create_tween().tween_property(directional_light,"energy",0,0.4)
+	change_intro_text("",1)
+	await get_tree().create_timer(2).timeout
+	step3()
+	pass
