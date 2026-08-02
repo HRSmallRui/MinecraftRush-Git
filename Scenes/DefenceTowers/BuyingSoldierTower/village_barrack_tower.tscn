@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://35ca4tcwg7oh"]
+[gd_scene load_steps=17 format=3 uid="uid://35ca4tcwg7oh"]
 
 [ext_resource type="PackedScene" uid="uid://bt1fb5p0tpyur" path="res://Scenes/DefenceTowers/BuyingSoldierTower/buying_soldier_tower.tscn" id="1_lp56g"]
 [ext_resource type="PackedScene" uid="uid://1rsgbwfy6qr4" path="res://Scenes/DefenceTowers/buying_soldier_button.tscn" id="2_3o4gf"]
 [ext_resource type="Texture2D" uid="uid://bh53q1tukk4uj" path="res://Assets/Images/UI/InformationBar/Towers/village_barrack.png" id="2_80l2e"]
 [ext_resource type="Texture2D" uid="uid://cgw57na5mv36i" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_farmer.png" id="3_5swfk"]
 [ext_resource type="PackedScene" uid="uid://bsrvi5u46udkf" path="res://Scenes/Allys/BuyingSoldiers/village_soldier_farmer.tscn" id="3_iunrh"]
+[ext_resource type="Texture2D" uid="uid://dl6wx6jksl660" path="res://Assets/Images/DefenceTowers/Specials/村民小屋.png" id="3_rdemb"]
 [ext_resource type="Texture2D" uid="uid://dfc2ed84yhx75" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_farmer-select.png" id="4_6slxp"]
 [ext_resource type="Texture2D" uid="uid://bn2cohjrdte27" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_farmer-no.png" id="5_v0dkn"]
 [ext_resource type="PackedScene" uid="uid://u64iewnd0ai5" path="res://Scenes/Allys/BuyingSoldiers/village_soldier_blacksmith.tscn" id="7_8h6er"]
@@ -33,6 +34,19 @@ tower_intro = "战扎城内的民兵，经过简单训练之后即可快速出�
 soldier_count_limit = 4
 tower_name = "村民小屋"
 tower_texture = ExtResource("2_80l2e")
+
+[node name="TowerSprite" type="Sprite2D" parent="TowerPart" index="0"]
+position = Vector2(0, -48)
+scale = Vector2(1.27292, 1.27292)
+texture = ExtResource("3_rdemb")
+
+[node name="TowerButton" parent="." index="2"]
+offset_left = -64.0
+offset_top = -114.0
+offset_right = 61.0
+
+[node name="Circle" parent="TowerUI" index="4"]
+position = Vector2(0, -47)
 
 [node name="BuyingSoldierButton" parent="TowerUI/Circle" index="2" node_paths=PackedStringArray("linked_tower") instance=ExtResource("2_3o4gf")]
 offset_left = -126.251
