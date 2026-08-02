@@ -99,5 +99,6 @@ func update_soldiers_position():
 	allocate_position(move_center_position)
 	for soldier in buying_soldier_list:
 		if soldier.ally_state == Ally.AllyState.IDLE or soldier.ally_state == Ally.AllyState.MOVE:
-			soldier.move_back()
+			soldier.move(soldier.station_position)
+			soldier.intercepting_area.position = move_center_position
 	pass
