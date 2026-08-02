@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsrvi5u46udkf"]
+
+[ext_resource type="PackedScene" uid="uid://7fj20d0o1hcc" path="res://Scenes/Allys/BuyingSoldiers/buying_soldier.tscn" id="1_tjfne"]
+[ext_resource type="Script" path="res://Scripts/Allys/BuyingSoldiers/village_soldier_farmer.gd" id="2_8p4bf"]
+[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_fsxnj"]
+
+[sub_resource type="Resource" id="Resource_040ks"]
+script = ExtResource("3_fsxnj")
+health = 60
+dodge_rate = 0.0
+near_damage_low = 2
+near_damage_high = 4
+near_attack_speed = 1.0
+near_hit_rate = 1.0
+far_damage_low = 0
+far_damage_high = 0
+far_attack_speed = 0.0
+far_damage_range = 0
+armor = 0.1
+physic_immune = false
+magic_defence = 0.0
+magic_immune = false
+explode_defence = 0.0
+explode_immune = false
+total_defence_rate = 0.0
+unit_move_speed = 2.2
+
+[node name="VillageSoldierFarmer" instance=ExtResource("1_tjfne")]
+script = ExtResource("2_8p4bf")
+name_list = PackedStringArray("王田根", "张土娃", "李锄禾", "赵耙子", "郑老栓", "陈荒年", "刘茬子")
+start_data = SubResource("Resource_040ks")
+intercepting_range = 120
+heal_speed = 6

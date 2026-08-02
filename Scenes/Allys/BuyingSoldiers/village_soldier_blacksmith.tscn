@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://u64iewnd0ai5"]
+
+[ext_resource type="PackedScene" uid="uid://7fj20d0o1hcc" path="res://Scenes/Allys/BuyingSoldiers/buying_soldier.tscn" id="1_ki5re"]
+[ext_resource type="Script" path="res://Scripts/Allys/BuyingSoldiers/village_soldier_blacksmith.gd" id="2_ppnwc"]
+[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_o3de3"]
+
+[sub_resource type="Resource" id="Resource_e77gs"]
+script = ExtResource("3_o3de3")
+health = 80
+dodge_rate = 0.0
+near_damage_low = 4
+near_damage_high = 8
+near_attack_speed = 1.0
+near_hit_rate = 1.0
+far_damage_low = 0
+far_damage_high = 0
+far_attack_speed = 0.0
+far_damage_range = 0
+armor = 0.3
+physic_immune = false
+magic_defence = 0.0
+magic_immune = false
+explode_defence = 0.0
+explode_immune = false
+total_defence_rate = 0.0
+unit_move_speed = 0.0
+
+[node name="VillageSoldierBlacksmith" instance=ExtResource("1_ki5re")]
+script = ExtResource("2_ppnwc")
+name_list = PackedStringArray("赵铁柱", "刘铁锤", "陈铁狗", "张炉灰", "孙铁蛋", "冯铁拐", "王铁锁", "赵德柱")
+start_data = SubResource("Resource_e77gs")
+intercepting_range = 120
+heal_speed = 8
