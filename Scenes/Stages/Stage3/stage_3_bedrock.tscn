@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://ccw48pc5xb1on"]
+[gd_scene load_steps=175 format=3 uid="uid://ccw48pc5xb1on"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_wypgk"]
 [ext_resource type="PackedScene" uid="uid://44npbgu1xrd5" path="res://Scenes/Enemies/enemy_0.tscn" id="2_d77y4"]
@@ -107,6 +107,7 @@
 [ext_resource type="Resource" uid="uid://d3ca4fxxhx5q5" path="res://Library/SummonConfigs/Stage3/Bedrock/path5.res" id="98_jg4a0"]
 [ext_resource type="Resource" uid="uid://dmmvs5dyj56ru" path="res://Library/SummonConfigs/Stage3/Bedrock/path6.res" id="99_8680d"]
 [ext_resource type="Resource" uid="uid://dxd0saunarx2r" path="res://Library/SummonConfigs/Stage3/Bedrock/path7.res" id="100_r1jsw"]
+[ext_resource type="PackedScene" uid="uid://dyvnf6x6g5dom" path="res://Scenes/StageComponents/fire_sprite.tscn" id="101_1pr1a"]
 [ext_resource type="Resource" uid="uid://0kux6matxr2o" path="res://Library/SummonConfigs/Stage3/Bedrock/path8.res" id="101_fqgl3"]
 [ext_resource type="Resource" uid="uid://dncryt4dojuj1" path="res://Library/SummonConfigs/Stage3/Bedrock/path9.res" id="102_vmahb"]
 [ext_resource type="Resource" uid="uid://bj8kuho6ytqlm" path="res://Library/SummonConfigs/Stage3/Bedrock/path10.res" id="103_1i3bx"]
@@ -123,6 +124,7 @@
 [ext_resource type="Resource" uid="uid://b4hwbuo8u6pb4" path="res://Library/SummonConfigs/Stage3/Bedrock/path1.res" id="114_tn47g"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="114_vbm2i"]
 [ext_resource type="PackedScene" uid="uid://68jse87rauc4" path="res://Scenes/DefenceTowers/BombardTowers/bombard_tower_lv_2.tscn" id="117_21q44"]
+[ext_resource type="PackedScene" uid="uid://35ca4tcwg7oh" path="res://Scenes/DefenceTowers/BuyingSoldierTower/village_barrack_tower.tscn" id="117_w0ovx"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter1.gd" id="121_usdvy"]
 
 [sub_resource type="Resource" id="Resource_j4qmi"]
@@ -776,6 +778,21 @@ polygon = PackedVector2Array(3211, 555, 3098, 515, 2983, 564, 2950, 640, 2976, 7
 [node name="Flag" parent="Background" index="23"]
 position = Vector2(97, 595)
 
+[node name="FireSprite" parent="Background" index="25" instance=ExtResource("101_1pr1a")]
+position = Vector2(402, 59)
+
+[node name="FireSprite2" parent="Background" index="26" instance=ExtResource("101_1pr1a")]
+position = Vector2(553, 112)
+
+[node name="FireSprite3" parent="Background" index="27" instance=ExtResource("101_1pr1a")]
+position = Vector2(387, 175)
+
+[node name="FireSprite4" parent="Background" index="28" instance=ExtResource("101_1pr1a")]
+position = Vector2(334, 78)
+
+[node name="FireSprite5" parent="Background" index="29" instance=ExtResource("101_1pr1a")]
+position = Vector2(577, 17)
+
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_kuojd")
 
@@ -929,6 +946,9 @@ position = Vector2(0, -164)
 
 [node name="BombardTowerLV2" parent="Towers" index="21" instance=ExtResource("117_21q44")]
 position = Vector2(677, 481)
+
+[node name="VillageBarrackTower" parent="Towers" index="22" instance=ExtResource("117_w0ovx")]
+position = Vector2(565, 297)
 
 [node name="CollisionShape2D" parent="ClickArea" index="0"]
 position = Vector2(1603.5, 542.5)

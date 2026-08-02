@@ -15,7 +15,6 @@ func die(explosion: bool = false):
 	super(explosion)
 	linked_buying_tower.buying_soldier_list.erase(self)
 	linked_buying_tower.update_soldiers_position()
-	linked_buying_tower.update_buying_soldier_brothers()
 	await get_tree().create_timer(8,false).timeout
 	queue_free()
 	pass

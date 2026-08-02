@@ -1,0 +1,77 @@
+[gd_scene load_steps=17 format=3 uid="uid://35ca4tcwg7oh"]
+
+[ext_resource type="PackedScene" uid="uid://bt1fb5p0tpyur" path="res://Scenes/DefenceTowers/BuyingSoldierTower/buying_soldier_tower.tscn" id="1_lp56g"]
+[ext_resource type="PackedScene" uid="uid://1rsgbwfy6qr4" path="res://Scenes/DefenceTowers/buying_soldier_button.tscn" id="2_3o4gf"]
+[ext_resource type="Texture2D" uid="uid://bh53q1tukk4uj" path="res://Assets/Images/UI/InformationBar/Towers/village_barrack.png" id="2_80l2e"]
+[ext_resource type="Texture2D" uid="uid://cgw57na5mv36i" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_farmer.png" id="3_5swfk"]
+[ext_resource type="PackedScene" uid="uid://bsrvi5u46udkf" path="res://Scenes/Allys/BuyingSoldiers/village_soldier_farmer.tscn" id="3_iunrh"]
+[ext_resource type="Texture2D" uid="uid://dl6wx6jksl660" path="res://Assets/Images/DefenceTowers/Specials/村民小屋.png" id="3_rdemb"]
+[ext_resource type="Texture2D" uid="uid://dfc2ed84yhx75" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_farmer-select.png" id="4_6slxp"]
+[ext_resource type="Texture2D" uid="uid://bn2cohjrdte27" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_farmer-no.png" id="5_v0dkn"]
+[ext_resource type="PackedScene" uid="uid://u64iewnd0ai5" path="res://Scenes/Allys/BuyingSoldiers/village_soldier_blacksmith.tscn" id="7_8h6er"]
+[ext_resource type="Texture2D" uid="uid://38wjo6wc0gkx" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_blacksmith.png" id="7_yvmhj"]
+[ext_resource type="Texture2D" uid="uid://bx51xubmuplfs" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_blacksmith-select.png" id="8_hsfdl"]
+[ext_resource type="Texture2D" uid="uid://dpclawf503nv" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/VillageBarrack/villager_blacksmith-no.png" id="9_vy60e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxhd5"]
+atlas = ExtResource("3_5swfk")
+region = Rect2(17, 18, 62, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayu10"]
+atlas = ExtResource("5_v0dkn")
+region = Rect2(17, 18, 62, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13no1"]
+atlas = ExtResource("7_yvmhj")
+region = Rect2(17, 18, 62, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgah5"]
+atlas = ExtResource("9_vy60e")
+region = Rect2(17, 18, 62, 61)
+
+[node name="VillageBarrackTower" instance=ExtResource("1_lp56g")]
+tower_intro = "战扎城内的民兵，经过简单训练之后即可快速出击"
+soldier_count_limit = 4
+tower_name = "村民小屋"
+tower_texture = ExtResource("2_80l2e")
+
+[node name="TowerSprite" type="Sprite2D" parent="TowerPart" index="0"]
+position = Vector2(0, -48)
+scale = Vector2(1.27292, 1.27292)
+texture = ExtResource("3_rdemb")
+
+[node name="TowerButton" parent="." index="2"]
+offset_left = -64.0
+offset_top = -114.0
+offset_right = 61.0
+
+[node name="Circle" parent="TowerUI" index="4"]
+position = Vector2(0, -47)
+
+[node name="BuyingSoldierButton" parent="TowerUI/Circle" index="2" node_paths=PackedStringArray("linked_tower") instance=ExtResource("2_3o4gf")]
+offset_left = -126.251
+offset_top = -127.499
+offset_right = -64.2506
+offset_bottom = -66.4994
+texture_normal = SubResource("AtlasTexture_lxhd5")
+texture_pressed = SubResource("AtlasTexture_lxhd5")
+texture_hover = ExtResource("4_6slxp")
+texture_disabled = SubResource("AtlasTexture_ayu10")
+linked_tower = NodePath("../../..")
+button_key = "VillageSoldierFarmer"
+price = 30
+soldier_scene = ExtResource("3_iunrh")
+
+[node name="BuyingSoldierButton2" parent="TowerUI/Circle" index="3" node_paths=PackedStringArray("linked_tower") instance=ExtResource("2_3o4gf")]
+offset_left = 63.7494
+offset_top = -127.5
+offset_right = 125.75
+offset_bottom = -66.4998
+texture_normal = SubResource("AtlasTexture_13no1")
+texture_pressed = SubResource("AtlasTexture_13no1")
+texture_hover = ExtResource("8_hsfdl")
+texture_disabled = SubResource("AtlasTexture_cgah5")
+linked_tower = NodePath("../../..")
+button_key = "VillageSoldierBlacksmith"
+price = 45
+soldier_scene = ExtResource("7_8h6er")

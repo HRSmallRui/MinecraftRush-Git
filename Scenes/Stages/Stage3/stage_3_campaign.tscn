@@ -1,4 +1,4 @@
-[gd_scene load_steps=306 format=3 uid="uid://rcg1lfxfefu4"]
+[gd_scene load_steps=308 format=3 uid="uid://rcg1lfxfefu4"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_xvwvm"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_3_campaign.gd" id="2_uvqui"]
@@ -120,6 +120,7 @@
 [ext_resource type="Resource" uid="uid://dmcbvnvocbx2q" path="res://Library/SummonConfigs/Stage3/Campaign/path7.res" id="101_t2c42"]
 [ext_resource type="Resource" uid="uid://bu0621jtw4k50" path="res://Library/SummonConfigs/Stage3/Campaign/path8.res" id="102_64656"]
 [ext_resource type="Resource" uid="uid://bg7bfauerrfgg" path="res://Library/SummonConfigs/Stage3/Campaign/path9.res" id="103_oi2ub"]
+[ext_resource type="PackedScene" uid="uid://dyvnf6x6g5dom" path="res://Scenes/StageComponents/fire_sprite.tscn" id="103_ssfo6"]
 [ext_resource type="Resource" uid="uid://brb14wn1t0qn8" path="res://Library/SummonConfigs/Stage3/Campaign/path10.res" id="104_ed25g"]
 [ext_resource type="Resource" uid="uid://b2vbwmpd3n7is" path="res://Library/SummonConfigs/Stage3/Campaign/path11.res" id="105_ieea1"]
 [ext_resource type="Resource" uid="uid://b6r82jk6bsa15" path="res://Library/SummonConfigs/Stage3/Campaign/path12.res" id="106_5vl6q"]
@@ -127,6 +128,7 @@
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="112_qaw62"]
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="115_jk1v3"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="116_8cjv6"]
+[ext_resource type="PackedScene" uid="uid://35ca4tcwg7oh" path="res://Scenes/DefenceTowers/BuyingSoldierTower/village_barrack_tower.tscn" id="118_yyt0x"]
 
 [sub_resource type="Resource" id="Resource_dl525"]
 script = ExtResource("2_wfi6c")
@@ -1250,9 +1252,10 @@ enemy_count = 18
 script = ExtResource("56_1rxho")
 wave_summon_text_list = Array[ExtResource("112_qaw62")]([SubResource("Resource_ijlvb"), SubResource("Resource_1wdcg"), SubResource("Resource_c8ydn"), SubResource("Resource_fpnd5")])
 
-[node name="Stage3Campaign" instance=ExtResource("1_xvwvm")]
+[node name="Stage3Campaign" node_paths=PackedStringArray("fire_sprite_list") instance=ExtResource("1_xvwvm")]
 script = ExtResource("2_uvqui")
 magic_defence_tip_scene = ExtResource("3_wbumf")
+fire_sprite_list = [NodePath("Background/FireSprite"), NodePath("Background/FireSprite2"), NodePath("Background/FireSprite3"), NodePath("Background/FireSprite4"), NodePath("Background/FireSprite5")]
 stage_count = 3
 enemy_scene_list = Array[PackedScene]([ExtResource("3_dsewc"), ExtResource("4_gd04t"), ExtResource("5_rp5t1"), ExtResource("6_7202s"), ExtResource("7_2jiyd"), ExtResource("8_a313h"), ExtResource("9_u4gi6"), ExtResource("10_jo27k")])
 current_money = 350
@@ -1322,7 +1325,7 @@ position = Vector2(614, 861)
 flip_h = true
 
 [node name="Sheep6" parent="Background" index="8" instance=ExtResource("9_e2tca")]
-position = Vector2(724, 387)
+position = Vector2(751, 303)
 flip_h = true
 
 [node name="Sheep7" parent="Background" index="9" instance=ExtResource("9_e2tca")]
@@ -1401,6 +1404,21 @@ polygon = PackedVector2Array(3211, 555, 3098, 515, 2983, 564, 2950, 640, 2976, 7
 
 [node name="Flag" parent="Background" index="23"]
 position = Vector2(97, 595)
+
+[node name="FireSprite" parent="Background" index="25" instance=ExtResource("103_ssfo6")]
+position = Vector2(402, 59)
+
+[node name="FireSprite2" parent="Background" index="26" instance=ExtResource("103_ssfo6")]
+position = Vector2(553, 112)
+
+[node name="FireSprite3" parent="Background" index="27" instance=ExtResource("103_ssfo6")]
+position = Vector2(387, 175)
+
+[node name="FireSprite4" parent="Background" index="28" instance=ExtResource("103_ssfo6")]
+position = Vector2(334, 78)
+
+[node name="FireSprite5" parent="Background" index="29" instance=ExtResource("103_ssfo6")]
+position = Vector2(577, 17)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_kuojd")
@@ -1499,62 +1517,65 @@ position = Vector2(539, 657)
 [node name="DefenceTowerBased5" parent="Towers" index="4" instance=ExtResource("9_prc6s")]
 position = Vector2(358, 712)
 
-[node name="DefenceTowerBased6" parent="Towers" index="5" instance=ExtResource("9_prc6s")]
-position = Vector2(677, 481)
-
-[node name="DefenceTowerBased7" parent="Towers" index="6" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased7" parent="Towers" index="5" instance=ExtResource("9_prc6s")]
 position = Vector2(2213, 465)
 
-[node name="DefenceTowerBased8" parent="Towers" index="7" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased8" parent="Towers" index="6" instance=ExtResource("9_prc6s")]
 position = Vector2(2457, 460)
 
-[node name="DefenceTowerBased9" parent="Towers" index="8" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased9" parent="Towers" index="7" instance=ExtResource("9_prc6s")]
 position = Vector2(2639, 399)
 
-[node name="DefenceTowerBased10" parent="Towers" index="9" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased10" parent="Towers" index="8" instance=ExtResource("9_prc6s")]
 position = Vector2(2604, 249)
 
-[node name="DefenceTowerBased11" parent="Towers" index="10" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased11" parent="Towers" index="9" instance=ExtResource("9_prc6s")]
 position = Vector2(2859, 342)
 
-[node name="DefenceTowerBased12" parent="Towers" index="11" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased12" parent="Towers" index="10" instance=ExtResource("9_prc6s")]
 position = Vector2(2819, 489)
 
-[node name="DefenceTowerBased13" parent="Towers" index="12" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased13" parent="Towers" index="11" instance=ExtResource("9_prc6s")]
 position = Vector2(2733, 634)
 
-[node name="DefenceTowerBased14" parent="Towers" index="13" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased14" parent="Towers" index="12" instance=ExtResource("9_prc6s")]
 position = Vector2(2850, 798)
 
-[node name="DefenceTowerBased15" parent="Towers" index="14" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased15" parent="Towers" index="13" instance=ExtResource("9_prc6s")]
 position = Vector2(2684, 939)
 
-[node name="DefenceTowerBased16" parent="Towers" index="15" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased16" parent="Towers" index="14" instance=ExtResource("9_prc6s")]
 position = Vector2(2646, 754)
 
-[node name="DefenceTowerBased17" parent="Towers" index="16" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased17" parent="Towers" index="15" instance=ExtResource("9_prc6s")]
 position = Vector2(2890, 890)
 
-[node name="DefenceTowerBased18" parent="Towers" index="17" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased18" parent="Towers" index="16" instance=ExtResource("9_prc6s")]
 position = Vector2(2571, 619)
 
-[node name="DefenceTowerBased19" parent="Towers" index="18" instance=ExtResource("9_prc6s")]
+[node name="DefenceTowerBased19" parent="Towers" index="17" instance=ExtResource("9_prc6s")]
 position = Vector2(2339, 623)
 
-[node name="WallArhcer" parent="Towers" index="19" instance=ExtResource("108_g1scg")]
+[node name="WallArhcer" parent="Towers" index="18" instance=ExtResource("108_g1scg")]
 position = Vector2(1209, 527)
 
-[node name="WallArhcer2" parent="Towers" index="20" instance=ExtResource("108_g1scg")]
+[node name="WallArhcer2" parent="Towers" index="19" instance=ExtResource("108_g1scg")]
 position = Vector2(1209, 586)
 
 [node name="TowerSprite" parent="Towers/WallArhcer2" index="7"]
 position = Vector2(0, 128)
 
-[node name="WallArhcer3" parent="Towers" index="21" instance=ExtResource("108_g1scg")]
+[node name="WallArhcer3" parent="Towers" index="20" instance=ExtResource("108_g1scg")]
 position = Vector2(1209, 474)
 
 [node name="TowerSprite" parent="Towers/WallArhcer3" index="7"]
 position = Vector2(0, -164)
+
+[node name="VillageBarrackTower" parent="Towers" index="21" instance=ExtResource("118_yyt0x")]
+position = Vector2(551, 261)
+
+[node name="VillageBarrackTower2" parent="Towers" index="22" instance=ExtResource("118_yyt0x")]
+position = Vector2(677, 481)
 
 [node name="DragTipButton" parent="StageUI/TipsContainer" index="0" instance=ExtResource("5_ygspy")]
 layout_mode = 2
@@ -1661,18 +1682,18 @@ polygon = PackedVector2Array(-16, 615, 290, 608, 508, 548, 509, 488, 418, 363, 3
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="PathArea" index="1"]
 polygon = PackedVector2Array(1300, 497, 1326, 585, 1547, 578, 1578, 609, 2119, 614, 2150, 589, 2564, 583, 2765, 601, 2818, 610, 2806, 640, 2718, 706, 2687, 802, 2703, 872, 2754, 954, 2799, 1035, 2799, 1077, 2798, 1094, 2887, 1081, 2888, 1022, 2827, 898, 2785, 827, 2799, 747, 2909, 668, 2925, 627, 2951, 635, 2995, 551, 2721, 511, 2790, 429, 2803, 300, 2723, 157, 2683, 62, 2685, -8, 2596, -2, 2593, 80, 2630, 188, 2702, 309, 2698, 419, 2606, 467, 2466, 495, 2140, 498, 2102, 450, 1597, 453, 1547, 491)
 
-[node name="Level3UnlockTip" parent="." index="17" instance=ExtResource("100_xkhgm")]
-
-[node name="Node2D" type="Node2D" parent="." index="18"]
+[node name="Node2D" type="Node2D" parent="." index="17"]
 script = ExtResource("115_jk1v3")
 max_wave_count = 13
 process_summon_blocks = Array[ExtResource("116_8cjv6")]([ExtResource("95_nuvso"), ExtResource("96_safci"), ExtResource("97_ve6nw"), ExtResource("98_yclbp"), ExtResource("99_7c02u"), ExtResource("100_v6ts7"), ExtResource("101_t2c42"), ExtResource("102_64656"), ExtResource("103_oi2ub"), ExtResource("104_ed25g"), ExtResource("105_ieea1"), ExtResource("106_5vl6q")])
 
-[node name="ExplosionMarker" type="Marker2D" parent="." index="19"]
+[node name="ExplosionMarker" type="Marker2D" parent="." index="18"]
 position = Vector2(490, 14)
 
-[node name="HeroSummonMarker" parent="." index="24"]
+[node name="HeroSummonMarker" parent="." index="23"]
 position = Vector2(94, 661)
+
+[node name="Level3UnlockTip" parent="." index="24" instance=ExtResource("100_xkhgm")]
 
 [editable path="Towers/WallArhcer2"]
 [editable path="Towers/WallArhcer3"]

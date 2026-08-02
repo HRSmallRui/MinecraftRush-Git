@@ -1,6 +1,7 @@
 extends Stage
 
 @export var magic_defence_tip_scene: PackedScene
+@export var fire_sprite_list: Array[AnimatedSprite2D]
 
 @onready var explosion_marker: Marker2D = $ExplosionMarker
 
@@ -9,6 +10,8 @@ func _ready() -> void:
 	super()
 	for block: Array in stage_sav.tower_unlock_sav:
 		block[2] = true
+	for fire in fire_sprite_list:
+		fire.hide()
 	pass
 
 
@@ -22,6 +25,8 @@ func wave_tip(wave_count: int):
 			EffectManager.instance.play_smoke_effect(explosion_marker.global_position,Vector2.ONE*3)
 			AudioManager.instance.play_explosion_audio()
 			stage_camera.position = explosion_marker.position
+			for fire in fire_sprite_list:
+				fire.show()
 	pass
 
 
