@@ -1,4 +1,4 @@
-[gd_scene load_steps=307 format=3 uid="uid://rcg1lfxfefu4"]
+[gd_scene load_steps=308 format=3 uid="uid://rcg1lfxfefu4"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_xvwvm"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_3_campaign.gd" id="2_uvqui"]
@@ -120,6 +120,7 @@
 [ext_resource type="Resource" uid="uid://dmcbvnvocbx2q" path="res://Library/SummonConfigs/Stage3/Campaign/path7.res" id="101_t2c42"]
 [ext_resource type="Resource" uid="uid://bu0621jtw4k50" path="res://Library/SummonConfigs/Stage3/Campaign/path8.res" id="102_64656"]
 [ext_resource type="Resource" uid="uid://bg7bfauerrfgg" path="res://Library/SummonConfigs/Stage3/Campaign/path9.res" id="103_oi2ub"]
+[ext_resource type="PackedScene" uid="uid://dyvnf6x6g5dom" path="res://Scenes/StageComponents/fire_sprite.tscn" id="103_ssfo6"]
 [ext_resource type="Resource" uid="uid://brb14wn1t0qn8" path="res://Library/SummonConfigs/Stage3/Campaign/path10.res" id="104_ed25g"]
 [ext_resource type="Resource" uid="uid://b2vbwmpd3n7is" path="res://Library/SummonConfigs/Stage3/Campaign/path11.res" id="105_ieea1"]
 [ext_resource type="Resource" uid="uid://b6r82jk6bsa15" path="res://Library/SummonConfigs/Stage3/Campaign/path12.res" id="106_5vl6q"]
@@ -1251,9 +1252,10 @@ enemy_count = 18
 script = ExtResource("56_1rxho")
 wave_summon_text_list = Array[ExtResource("112_qaw62")]([SubResource("Resource_ijlvb"), SubResource("Resource_1wdcg"), SubResource("Resource_c8ydn"), SubResource("Resource_fpnd5")])
 
-[node name="Stage3Campaign" instance=ExtResource("1_xvwvm")]
+[node name="Stage3Campaign" node_paths=PackedStringArray("fire_sprite_list") instance=ExtResource("1_xvwvm")]
 script = ExtResource("2_uvqui")
 magic_defence_tip_scene = ExtResource("3_wbumf")
+fire_sprite_list = [NodePath("Background/FireSprite"), NodePath("Background/FireSprite2"), NodePath("Background/FireSprite3"), NodePath("Background/FireSprite4"), NodePath("Background/FireSprite5")]
 stage_count = 3
 enemy_scene_list = Array[PackedScene]([ExtResource("3_dsewc"), ExtResource("4_gd04t"), ExtResource("5_rp5t1"), ExtResource("6_7202s"), ExtResource("7_2jiyd"), ExtResource("8_a313h"), ExtResource("9_u4gi6"), ExtResource("10_jo27k")])
 current_money = 350
@@ -1402,6 +1404,21 @@ polygon = PackedVector2Array(3211, 555, 3098, 515, 2983, 564, 2950, 640, 2976, 7
 
 [node name="Flag" parent="Background" index="23"]
 position = Vector2(97, 595)
+
+[node name="FireSprite" parent="Background" index="25" instance=ExtResource("103_ssfo6")]
+position = Vector2(402, 59)
+
+[node name="FireSprite2" parent="Background" index="26" instance=ExtResource("103_ssfo6")]
+position = Vector2(553, 112)
+
+[node name="FireSprite3" parent="Background" index="27" instance=ExtResource("103_ssfo6")]
+position = Vector2(387, 175)
+
+[node name="FireSprite4" parent="Background" index="28" instance=ExtResource("103_ssfo6")]
+position = Vector2(334, 78)
+
+[node name="FireSprite5" parent="Background" index="29" instance=ExtResource("103_ssfo6")]
+position = Vector2(577, 17)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_kuojd")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=225 format=3 uid="uid://b68h88jlw6158"]
+[gd_scene load_steps=226 format=3 uid="uid://b68h88jlw6158"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_2dr7a"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_1ml0w"]
@@ -109,6 +109,7 @@
 [ext_resource type="Resource" uid="uid://63btg6mhn5xs" path="res://Library/SummonConfigs/Stage3/Diamond/path6.res" id="99_avm3y"]
 [ext_resource type="Resource" uid="uid://dqaid1v6omxsy" path="res://Library/SummonConfigs/Stage3/Diamond/path7.res" id="100_5b057"]
 [ext_resource type="Resource" uid="uid://btsssqpvtt0cr" path="res://Library/SummonConfigs/Stage3/Diamond/path8.res" id="101_ohqwy"]
+[ext_resource type="PackedScene" uid="uid://dyvnf6x6g5dom" path="res://Scenes/StageComponents/fire_sprite.tscn" id="101_tkcq0"]
 [ext_resource type="Resource" uid="uid://c3wfgp11o64gw" path="res://Library/SummonConfigs/Stage3/Diamond/path9.res" id="102_7jf8p"]
 [ext_resource type="Resource" uid="uid://du0nn1n37c2kw" path="res://Library/SummonConfigs/Stage3/Diamond/path10.res" id="103_l63wv"]
 [ext_resource type="Resource" uid="uid://htlknemoj8dr" path="res://Library/SummonConfigs/Stage3/Diamond/path11.res" id="104_pcdqt"]
@@ -1024,6 +1025,21 @@ polygon = PackedVector2Array(3211, 555, 3098, 515, 2983, 564, 2950, 640, 2976, 7
 
 [node name="Flag" parent="Background" index="23"]
 position = Vector2(97, 595)
+
+[node name="FireSprite" parent="Background" index="25" instance=ExtResource("101_tkcq0")]
+position = Vector2(402, 59)
+
+[node name="FireSprite2" parent="Background" index="26" instance=ExtResource("101_tkcq0")]
+position = Vector2(553, 112)
+
+[node name="FireSprite3" parent="Background" index="27" instance=ExtResource("101_tkcq0")]
+position = Vector2(387, 175)
+
+[node name="FireSprite4" parent="Background" index="28" instance=ExtResource("101_tkcq0")]
+position = Vector2(334, 78)
+
+[node name="FireSprite5" parent="Background" index="29" instance=ExtResource("101_tkcq0")]
+position = Vector2(577, 17)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_kuojd")
