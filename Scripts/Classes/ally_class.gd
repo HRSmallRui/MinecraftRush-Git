@@ -409,7 +409,7 @@ func move_to_intercept(target_pos: Vector2):
 
 
 func move_back():
-	if intercepting_area.position != station_position:
+	if intercepting_area.position != station_position and self is Hero:
 		translate_to_new_state(AllyState.MOVE)
 		move(intercepting_area.position)
 		return
