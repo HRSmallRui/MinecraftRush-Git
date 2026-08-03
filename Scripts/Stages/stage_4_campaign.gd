@@ -1,5 +1,7 @@
 extends Stage
 
+@export_file("*.png") var stage_view1_path: String
+@export_file("*.png") var stage_view2_path: String
 @export_group("防御塔")
 @export var hide_left_based: DefenceTower
 @export var hide_left_based_2: DefenceTower
@@ -42,6 +44,7 @@ func wave_tip(wave_count: int):
 
 
 func left_road_appear():
+	stage_map.map_image = load(stage_view1_path)
 	explosion_animation(left_explosion_markers)
 	create_tween().tween_property(hide_tree_left,"modulate:a",0,0.8)
 	create_tween().tween_property(hide_path_left,"modulate:a",0,0.8)
@@ -68,6 +71,7 @@ func explosion_animation(explosion_marker_list: Array[Marker2D]):
 
 
 func right_road_appear():
+	stage_map.map_image = load(stage_view2_path)
 	explosion_animation(right_explosion_markers)
 	create_tween().tween_property(hide_tree_right,"modulate:a",0,1.4)
 	create_tween().tween_property(hide_path_right,"modulate:a",0,1.4)
