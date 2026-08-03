@@ -27,8 +27,7 @@ func anim_offset():
 	pass
 
 
-func cause_damage(damage_type: int = 0):
-	super(damage_type)
+func on_normal_attack_hit(target_enemy: Enemy):
 	if soldier_skill_levels[0] > 0:
 		var heal_data: int = damage_heal_data_list[soldier_skill_levels[0]-1]
 		current_data.heal(heal_data)
