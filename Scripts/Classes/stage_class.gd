@@ -41,6 +41,7 @@ static var instance: Stage
 @export var unlocked_tower_list = [true,true,true,true]
 @export var stage_environment_tags: Array[String]
 @export var stage_map_start_image: Texture2D
+@export var hero_sprite_flip: bool
 @export_group("怪物生成配置文件")
 @export var stage_summon_config: StageSummonConfig
 
@@ -90,6 +91,7 @@ var is_win: bool = false
 var is_special_wave: bool = false
 var mouse_relative_velocity: Vector2
 var can_pause: bool = true
+var stage_based_position: Vector2 = Vector2.ZERO
 
 var pause_ui: PackedScene = preload("res://Scenes/UI-Components/Stages/pause_ui.tscn")
 #var enemy_count: int = 0
@@ -469,6 +471,7 @@ func summon_hero(summon_pos:Vector2 = hero_summon_marker.position):
 	hero.position = summon_pos
 	hero.station_position = hero.position
 	allys.add_child(hero)
+	hero.ally_sprite.flip_h = hero_sprite_flip
 	hero_list.append(hero)
 	pass
 
