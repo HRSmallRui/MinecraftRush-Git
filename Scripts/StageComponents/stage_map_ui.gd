@@ -23,6 +23,11 @@ func _ready() -> void:
 	update_map_image()
 	enemy_multi_instance.multimesh.instance_count = 1000
 	ally_multi_instance.multimesh.instance_count = 1000
+	await get_tree().process_frame
+	camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
+	camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
+	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
+	map_camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
 	pass
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=374 format=3 uid="uid://dhc0nhxlersp8"]
+[gd_scene load_steps=376 format=3 uid="uid://dhc0nhxlersp8"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_2g2g5"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_7_campaign.gd" id="2_5l11u"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dk7q4k0117mlj" path="res://Scenes/Enemies/enemy_10.tscn" id="3_m5lnd"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="3_onrgf"]
 [ext_resource type="Texture2D" uid="uid://pe1sf035jhvg" path="res://Assets/Animations/StageComponents/保护点.png" id="3_svmy5"]
+[ext_resource type="Texture2D" uid="uid://da103x5iicqss" path="res://Assets/Images/Stages/Stage7/stage7-full.png" id="3_vcxwv"]
 [ext_resource type="PackedScene" uid="uid://y81bpwffuh4c" path="res://Scenes/Enemies/enemy_11.tscn" id="4_iupig"]
 [ext_resource type="AudioStream" uid="uid://by4n5nvfb1ild" path="res://Assets/Sounds/Music/雨林-战斗2.mp3" id="4_prdyt"]
 [ext_resource type="Script" path="res://Scripts/Stages/protection_point.gd" id="4_q7o8x"]
@@ -27,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dcjvqgkc5u8ik" path="res://Scenes/Enemies/enemy_18.tscn" id="11_7dupd"]
 [ext_resource type="Texture2D" uid="uid://c0uuer5s44da" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_00.png" id="12_ip4rj"]
 [ext_resource type="PackedScene" uid="uid://dhk77uir0k7i6" path="res://Scenes/Enemies/enemy_55.tscn" id="12_pniws"]
+[ext_resource type="Texture2D" uid="uid://bpntkrwa5a0f4" path="res://Assets/Images/Stages/Stage7/stage7.png" id="13_eyq8c"]
 [ext_resource type="Texture2D" uid="uid://ego8sj3iico5" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_01.png" id="13_npyvk"]
 [ext_resource type="Texture2D" uid="uid://dk210bd4neqfn" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_02.png" id="14_npuvj"]
 [ext_resource type="Texture2D" uid="uid://bjhyc67g3u31t" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_03.png" id="15_khekh"]
@@ -1691,10 +1693,13 @@ wave_summon_text_list = Array[ExtResource("65_grojk")]([SubResource("Resource_1g
 [node name="Stage7Campaign" node_paths=PackedStringArray("explosion_markers") instance=ExtResource("1_2g2g5")]
 script = ExtResource("2_5l11u")
 explosion_markers = [NodePath("Background/BasedSprite/ExplosionMarker"), NodePath("Background/BasedSprite/ExplosionMarker2"), NodePath("Background/BasedSprite/ExplosionMarker3"), NodePath("Background/BasedSprite/ExplosionMarker4"), NodePath("Background/BasedSprite/ExplosionMarker5"), NodePath("Background/BasedSprite/ExplosionMarker6"), NodePath("Background/BasedSprite/ExplosionMarker7"), NodePath("Background/BasedSprite/ExplosionMarker8"), NodePath("Background/BasedSprite/ExplosionMarker9"), NodePath("Background/BasedSprite/ExplosionMarker10")]
+later_map_image = ExtResource("3_vcxwv")
 stage_count = 7
 enemy_scene_list = Array[PackedScene]([ExtResource("3_m5lnd"), ExtResource("4_iupig"), ExtResource("5_o2r6w"), ExtResource("6_qxk1s"), ExtResource("7_e4smn"), ExtResource("8_vqt4o"), ExtResource("9_usswa"), ExtResource("10_1i50h"), ExtResource("11_7dupd"), ExtResource("12_pniws")])
 current_money = 1600
 total_waves = 16
+stage_map_start_image = ExtResource("13_eyq8c")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_s253q")
 
 [node name="StageCamera" parent="." index="3"]
