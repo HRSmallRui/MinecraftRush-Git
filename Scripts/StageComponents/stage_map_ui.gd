@@ -7,6 +7,7 @@ class_name StageMapUI
 		if has_node("MapButton"): update_map_image()
 
 @onready var map_button: TextureButton = $MapButton
+@onready var camera_control: Control = $MapButton/CameraControl
 
 
 func _ready() -> void:
@@ -17,5 +18,10 @@ func _ready() -> void:
 func update_map_image():
 	map_button.texture_normal = map_image
 	map_button.position.x = -map_button.size.x
-	map_button.position.y = -0.5 * map_button.size.y
+	pass
+
+
+func _process(delta: float) -> void:
+	camera_control.position = Stage.instance.stage_camera.get_screen_center_position()
+	camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
 	pass
