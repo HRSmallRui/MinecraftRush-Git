@@ -9,15 +9,14 @@
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="4_skj7h"]
 [ext_resource type="PackedScene" uid="uid://ctqg01hruyfxe" path="res://Scenes/Enemies/enemy_3.tscn" id="5_3mqqo"]
 [ext_resource type="Texture2D" uid="uid://cc3pyy24qmtpi" path="res://Assets/Images/Stages/Stage2/stage2-based.png" id="5_lw5w4"]
-[ext_resource type="Texture2D" uid="uid://bdjfwd6hfdjuc" path="res://Assets/Images/Stages/Stage2/valley.png" id="6_mchjs"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_pdou5"]
 [ext_resource type="PackedScene" uid="uid://cu5yypfgmssji" path="res://Scenes/Enemies/enemy_8.tscn" id="6_sgjwo"]
-[ext_resource type="Texture2D" uid="uid://bc5346uy7bb4t" path="res://Assets/Images/Stages/Stage2/stage2-mask1.png" id="7_lunk7"]
 [ext_resource type="Texture2D" uid="uid://dw27br0mbf2yy" path="res://Assets/Images/Stages/Stage2/stage2-view.png" id="7_vuijn"]
 [ext_resource type="PackedScene" uid="uid://cdiktf378osju" path="res://Scenes/StageComponents/sheep.tscn" id="8_yi8if"]
 [ext_resource type="Texture2D" uid="uid://da37ocyiqim4h" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_01.png" id="9_7c0qx"]
 [ext_resource type="Texture2D" uid="uid://1unef0rjx3es" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_02.png" id="10_x2dvd"]
 [ext_resource type="Texture2D" uid="uid://cl3tg3ey1bo5r" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_03.png" id="11_q3qwi"]
+[ext_resource type="Texture2D" uid="uid://c27k1smxitruj" path="res://Assets/Images/Stages/Stage2/valley_clip.png" id="12_dmopx"]
 [ext_resource type="Texture2D" uid="uid://doqw0uc2kpd6x" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_04.png" id="12_ox7l5"]
 [ext_resource type="Texture2D" uid="uid://d3jqvpbq0t5fk" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_05.png" id="13_2oyqm"]
 [ext_resource type="Texture2D" uid="uid://cgquroes7npan" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_06.png" id="14_mj0ik"]
@@ -67,6 +66,7 @@
 [ext_resource type="Resource" uid="uid://ddux14oyuhdoa" path="res://Library/SummonConfigs/Stage2/Diamond/path4.res" id="54_3qqmm"]
 [ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="54_gy3qw"]
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="55_8bb7a"]
+[ext_resource type="Texture2D" uid="uid://dwc1i6vx37vkc" path="res://Assets/Images/Stages/Stage2/tree_mask.png" id="55_ffdh2"]
 [ext_resource type="Resource" uid="uid://b5ug0onuylsl7" path="res://Library/SummonConfigs/Stage2/Diamond/path5.res" id="55_nn1g1"]
 [ext_resource type="Resource" uid="uid://cusckxn7kppow" path="res://Library/SummonConfigs/Stage2/Diamond/path6.res" id="56_dlvk7"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="60_3ypkj"]
@@ -516,7 +516,8 @@ position = Vector2(1558, 996)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/BasedSprite" index="1"]
 z_index = -1
-texture = ExtResource("6_mchjs")
+position = Vector2(0, 55)
+texture = ExtResource("12_dmopx")
 centered = false
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
@@ -526,64 +527,64 @@ offset = Vector2(-7, -22)
 region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
-[node name="Mask1" type="Sprite2D" parent="Background" index="3"]
-y_sort_enabled = true
-position = Vector2(3, 1075)
-texture = ExtResource("7_lunk7")
-centered = false
-offset = Vector2(-3, -1075)
-
-[node name="Sheep" parent="Background" index="4" instance=ExtResource("8_yi8if")]
+[node name="Sheep" parent="Background" index="3" instance=ExtResource("8_yi8if")]
 position = Vector2(1112, 971)
 flip_h = true
 
-[node name="Sheep2" parent="Background" index="5" instance=ExtResource("8_yi8if")]
+[node name="Sheep2" parent="Background" index="4" instance=ExtResource("8_yi8if")]
 position = Vector2(544, 587)
 flip_h = true
 
-[node name="Sheep3" parent="Background" index="6" instance=ExtResource("8_yi8if")]
+[node name="Sheep3" parent="Background" index="5" instance=ExtResource("8_yi8if")]
 position = Vector2(512, 561)
 
-[node name="Sheep4" parent="Background" index="7" instance=ExtResource("8_yi8if")]
+[node name="Sheep4" parent="Background" index="6" instance=ExtResource("8_yi8if")]
 position = Vector2(488, 607)
 
-[node name="Sheep5" parent="Background" index="8" instance=ExtResource("8_yi8if")]
+[node name="Sheep5" parent="Background" index="7" instance=ExtResource("8_yi8if")]
 position = Vector2(462, 576)
 
-[node name="Sheep6" parent="Background" index="9" instance=ExtResource("8_yi8if")]
+[node name="Sheep6" parent="Background" index="8" instance=ExtResource("8_yi8if")]
 position = Vector2(521, 450)
 
-[node name="Sheep7" parent="Background" index="10" instance=ExtResource("8_yi8if")]
+[node name="Sheep7" parent="Background" index="9" instance=ExtResource("8_yi8if")]
 position = Vector2(372, 469)
 
-[node name="Sheep8" parent="Background" index="11" instance=ExtResource("8_yi8if")]
+[node name="Sheep8" parent="Background" index="10" instance=ExtResource("8_yi8if")]
 position = Vector2(270, 397)
 flip_h = true
 
-[node name="Sheep9" parent="Background" index="12" instance=ExtResource("8_yi8if")]
+[node name="Sheep9" parent="Background" index="11" instance=ExtResource("8_yi8if")]
 position = Vector2(542, 473)
 flip_h = true
 
-[node name="Sheep10" parent="Background" index="13" instance=ExtResource("8_yi8if")]
+[node name="Sheep10" parent="Background" index="12" instance=ExtResource("8_yi8if")]
 position = Vector2(562, 437)
 flip_h = true
 
-[node name="Sheep11" parent="Background" index="14" instance=ExtResource("8_yi8if")]
+[node name="Sheep11" parent="Background" index="13" instance=ExtResource("8_yi8if")]
 position = Vector2(1306, 518)
 flip_h = true
 
-[node name="Sheep12" parent="Background" index="15" instance=ExtResource("8_yi8if")]
+[node name="Sheep12" parent="Background" index="14" instance=ExtResource("8_yi8if")]
 position = Vector2(1205, 570)
 
-[node name="FlagAnim" type="AnimatedSprite2D" parent="Background" index="16"]
+[node name="FlagAnim" type="AnimatedSprite2D" parent="Background" index="15"]
 position = Vector2(1728, 779)
 scale = Vector2(0.460631, 0.460631)
 sprite_frames = SubResource("SpriteFrames_p8fkw")
 autoplay = "default"
 offset = Vector2(127.56, -217.251)
 
-[node name="Flag" parent="Background" index="17"]
+[node name="Flag" parent="Background" index="16"]
 position = Vector2(1490, 994)
+
+[node name="Mask1" type="Sprite2D" parent="Background" index="18"]
+y_sort_enabled = true
+position = Vector2(3, 1080)
+texture = ExtResource("55_ffdh2")
+centered = false
+offset = Vector2(0, -337)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_mikv3")

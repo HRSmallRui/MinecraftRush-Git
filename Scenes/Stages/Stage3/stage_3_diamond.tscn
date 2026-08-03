@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://nymsao7yy471" path="res://Scenes/Enemies/enemy_5.tscn" id="6_1qgti"]
 [ext_resource type="PackedScene" uid="uid://cwfhgx3m8ssx7" path="res://Scenes/Enemies/enemy_6.tscn" id="7_lgih1"]
 [ext_resource type="Texture2D" uid="uid://n0wspjo2af5f" path="res://Assets/Images/Stages/Stage3/stage3-based.png" id="7_y707x"]
-[ext_resource type="Texture2D" uid="uid://b3ttk26v55xbu" path="res://Assets/Images/Stages/Stage3/Stage3-mask1.png" id="8_07qpj"]
 [ext_resource type="PackedScene" uid="uid://cu5yypfgmssji" path="res://Scenes/Enemies/enemy_8.tscn" id="8_745eo"]
 [ext_resource type="PackedScene" uid="uid://cmi4sbej8syn" path="res://Scenes/Enemies/enemy_9.tscn" id="9_33q0p"]
 [ext_resource type="Texture2D" uid="uid://dbyq78ggwv7fg" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_00.png" id="9_ks0qq"]
@@ -21,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cvocfc7j2gysb" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_03.png" id="12_o4mu8"]
 [ext_resource type="Texture2D" uid="uid://cfhggo6tigaqj" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_04.png" id="13_b2dtx"]
 [ext_resource type="Texture2D" uid="uid://baqf0y7snhcow" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_05.png" id="14_pjmwo"]
+[ext_resource type="Texture2D" uid="uid://bmo35ca6h3utl" path="res://Assets/Images/Stages/Stage3/wall.png" id="15_o807n"]
 [ext_resource type="Texture2D" uid="uid://8g63wx0re2m5" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_06.png" id="15_yxpe1"]
 [ext_resource type="Texture2D" uid="uid://7f8wvivfnrt2" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_07.png" id="16_iybxb"]
 [ext_resource type="Texture2D" uid="uid://d4jfqanrn88wd" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_08.png" id="17_adgfe"]
@@ -56,7 +56,6 @@
 [ext_resource type="Texture2D" uid="uid://cf55nl516rt2y" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_38.png" id="47_kqfnk"]
 [ext_resource type="Texture2D" uid="uid://37ylyhasw01s" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_39.png" id="48_r6eig"]
 [ext_resource type="Texture2D" uid="uid://dbgkx5qsn1ixu" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_40.png" id="49_yqb6i"]
-[ext_resource type="Texture2D" uid="uid://d1p5jbylgd4r2" path="res://Assets/Images/Stages/Stage3/Stage3-mask2.png" id="50_oq7ic"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="51_0h83t"]
 [ext_resource type="PackedScene" uid="uid://cdiktf378osju" path="res://Scenes/StageComponents/sheep.tscn" id="52_u66rc"]
 [ext_resource type="Texture2D" uid="uid://dnrxg6tdwx1mp" path="res://Assets/Animations/StageComponents/Sheep/dead_0.png" id="53_i3wgw"]
@@ -64,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://1unef0rjx3es" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_02.png" id="55_t884y"]
 [ext_resource type="Texture2D" uid="uid://cl3tg3ey1bo5r" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_03.png" id="56_kp2ep"]
 [ext_resource type="Texture2D" uid="uid://doqw0uc2kpd6x" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_04.png" id="57_gl8hn"]
+[ext_resource type="Texture2D" uid="uid://b3fd04otrairw" path="res://Assets/Images/Stages/Stage3/tree_mask.png" id="57_w30vr"]
 [ext_resource type="Texture2D" uid="uid://d3jqvpbq0t5fk" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_05.png" id="58_6bp43"]
 [ext_resource type="Texture2D" uid="uid://cgquroes7npan" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_06.png" id="59_epr7d"]
 [ext_resource type="Texture2D" uid="uid://c73bc8vc47gfj" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_07.png" id="60_dq0e8"]
@@ -903,8 +903,9 @@ position = Vector2(94, 658)
 
 [node name="Wall" type="Sprite2D" parent="Background/BasedSprite" index="1"]
 z_index = 2
-texture = ExtResource("8_07qpj")
+texture = ExtResource("15_o807n")
 centered = false
+offset = Vector2(772, 0)
 
 [node name="FlagAnim" type="AnimatedSprite2D" parent="Background/BasedSprite/Wall" index="0"]
 position = Vector2(1243, 1001)
@@ -920,8 +921,10 @@ autoplay = "default"
 
 [node name="Trees" type="Sprite2D" parent="Background/BasedSprite" index="2"]
 z_index = 2
-texture = ExtResource("50_oq7ic")
+position = Vector2(2918, 1080)
+texture = ExtResource("57_w30vr")
 centered = false
+offset = Vector2(0, -565)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(97, 718)
