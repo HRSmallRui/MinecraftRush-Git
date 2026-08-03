@@ -13,6 +13,7 @@ class_name StageMapUI
 @onready var map_camera_control: Control = $MapUILayer/CenterContainer/MapTexture/MapCameraControl
 @onready var center_container: CenterContainer = $MapUILayer/CenterContainer
 @onready var enemy_multi_instance: MultiMeshInstance2D = $MapUILayer/CenterContainer/MapTexture/EnemyMultiInstance
+@onready var ally_multi_instance: MultiMeshInstance2D = $MapUILayer/CenterContainer/MapTexture/AllyMultiInstance
 
 var map_texture_mouse_in: bool
 var enemy_list: Array[Enemy]
@@ -21,6 +22,7 @@ var ally_list: Array[Ally]
 func _ready() -> void:
 	update_map_image()
 	enemy_multi_instance.multimesh.instance_count = 1000
+	ally_multi_instance.multimesh.instance_count = 1000
 	pass
 
 
@@ -94,15 +96,30 @@ func _input(event: InputEvent) -> void:
 
 func _on_update_timer_timeout() -> void:
 	update_enemy_points()
+	update_ally_points()
 	pass # Replace with function body.
 
 
 func update_enemy_points():
-	enemy_multi_instance.multimesh.visible_instance_count = enemy_list.size()
 	var idx: int = 0
 	for enemy in enemy_list:
 		var t: Transform2D = Transform2D()
-		t.origin = enemy.global_position if enemy.visible else Vector2.ZERO
+		if !enemy.visible: continue
+		if enemy.position.x < 0 or enemy.position.y < 0: continue
+		if enemy.position.x > map_texture.size.x or enemy.position.y > map_texture.size.y: continue
+		t.origin = enemy.global_position
 		enemy_multi_instance.multimesh.set_instance_transform_2d(idx,t)
+		idx += 1
+	enemy_multi_instance.multimesh.visible_instance_count = idx
+	pass
+
+
+func update_ally_points():
+	ally_multi_instance.multimesh.visible_instance_count = ally_list.size()
+	var idx: int = 0
+	for ally in ally_list:
+		var t: Transform2D = Transform2D()
+		t.origin = ally.global_position
+		ally_multi_instance.multimesh.set_instance_transform_2d(idx,t)
 		idx += 1
 	pass
