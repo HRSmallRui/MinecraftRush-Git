@@ -133,11 +133,3 @@ func position_clamp():
 func shake(shake_strength: float):
 	offset_strength = shake_strength
 	pass
-
-
-func _on_zoom_slider_value_changed(value: float) -> void:
-	if !Stage.instance.can_control: return
-	zoom.x = lerpf(min_zoom,max_zoom,value)
-	zoom.y = zoom.x
-	zoom_clamp()
-	pass # Replace with function body.

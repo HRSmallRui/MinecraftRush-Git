@@ -69,16 +69,10 @@ static var instance: Stage
 @onready var player_status: VBoxContainer = $StageUI/PlayerStatus
 @onready var lable_marker: Marker2D = $StageUI/PlayerStatus/LableMarker
 @onready var pause_button: TextureButton = $StageUI/PauseButton
-@onready var zoom_slider: HSlider = $StageUI/ZoomSlider
-@onready var zoom_animation_player: AnimationPlayer = $StageUI/ZoomAnimationPlayer
-@onready var zoom_button: Button = $StageUI/ZoomButton
 @onready var click_area: Area2D = $ClickArea
 @onready var wave_buttons: Control = $WaveButtons
 @onready var dead_body_node: Node2D = $Background/DeadBodyNode
 @onready var danger_tip_layer: Control = $StageUI/DangerTipLayer
-
-@onready var save_button: Button = $StageUI/SaveButton
-@onready var load_button: Button = $StageUI/LoadButton
 
 var stage_ui: StageUI = StageUI.None
 var can_control: bool = true
@@ -119,12 +113,8 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	stage_sav.property_bus["last_stage"] = stage_count
 	Global.stage_first = false
-	zoom_slider.hide()
-	zoom_button.hide()
 	#save_button.visible = OS.is_debug_build()
 	#load_button.visible = OS.is_debug_build()
-	save_button.hide()
-	load_button.hide()
 	set_camera()
 	if OS.get_name() == "Android":
 		mobile_ui_scale()
@@ -561,14 +551,6 @@ func tower_check():
 	pass
 
 
-func _on_zoom_button_pressed() -> void:
-	if snappedf(zoom_button.position.x,0.1) == 1685:
-		zoom_animation_player.play("zoom_hide")
-	if snappedf(zoom_button.position.x,0.1) == 1830:
-		zoom_animation_player.play("zoom_show")
-	pass # Replace with function body.
-
-
 func get_closest_enemy_path(target_pos: Vector2) -> EnemyPath:
 	var path_list: Array[EnemyPath]
 	for enemy_path: EnemyPath in enemies.get_children():
@@ -609,46 +591,3 @@ func get_current_techno_level(slot_id: int) -> int:
 	var tech_level: int = stage_sav.upgrade_sav[slot_id]
 	return clampi(tech_level,0,limit_tech_level)
 	pass
-
-
-func _on_save_button_pressed() -> void:
-	var battle_sav: BattleSaver = BattleSaver.new()
-	battle_sav.stage_health = current_health
-	battle_sav.stage_money = current_money
-	battle_sav.stage_wave = current_wave
-	battle_sav.next_wave_time = wave_next_timer.time_left
-	battle_sav.next_wave_during_time = wave_during_timer.time_left
-	for enemy_path: EnemyPath in enemies.get_children():
-		print(enemy_path.name)
-		var enemy_pack: PackedScene = PackedScene.new()
-		enemy_pack.pack(enemy_path)
-		battle_sav.enemy_path_groups.append(enemy_pack)
-	for ally in allys.get_children():
-		print(ally.name)
-		var ally_pack: PackedScene = PackedScene.new()
-		ally_pack.pack(ally)
-		battle_sav.ally_group.append(ally_pack)
-	for bullet in bullets.get_children():
-		print(bullet.name)
-		var bullet_pack: PackedScene = PackedScene.new()
-		bullet_pack.pack(bullet)
-		battle_sav.bullet_group.append(bullet_pack)
-	for tower in towers.get_children():
-		print(tower.name)
-		var tower_pack: PackedScene = PackedScene.new()
-		tower_pack.pack(tower)
-		battle_sav.tower_group.append(tower_pack)
-	ResourceSaver.save(battle_sav,"res://Savs/battle_sav.tres")
-	pass # Replace with function body.
-
-
-func _on_load_button_pressed() -> void:
-	var battle_sav: BattleSaver = load("res://Savs/battle_sav.tres") as BattleSaver
-	if battle_sav == null: return
-	
-	for enemy_path in enemies.get_children():
-		enemy_path.queue_free()
-	for enemy_path_pack in battle_sav.enemy_path_groups:
-		var enemy_path: EnemyPath = enemy_path_pack.instantiate()
-		enemies.add_child(enemy_path)
-	pass # Replace with function body.
