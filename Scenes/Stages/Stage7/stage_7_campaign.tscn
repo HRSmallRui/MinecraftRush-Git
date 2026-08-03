@@ -15,12 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://csuw2h1ql0whd" path="res://Assets/Sounds/FXs/Heroes/Alex/破土.wav" id="5_aykm1"]
 [ext_resource type="Texture2D" uid="uid://dprd33dcdf0mt" path="res://Assets/Images/Stages/Stage7/mask1.png" id="5_gce3u"]
 [ext_resource type="PackedScene" uid="uid://dflclh8ifqjuo" path="res://Scenes/Enemies/enemy_12.tscn" id="5_o2r6w"]
-[ext_resource type="Texture2D" uid="uid://c77akitvab0om" path="res://Assets/Images/Stages/Stage7/stage7-tree_mask1.png" id="6_6u5su"]
 [ext_resource type="Texture2D" uid="uid://m7qu7x665y26" path="res://Assets/Images/Stages/Stage7/mask2.png" id="6_oluav"]
 [ext_resource type="PackedScene" uid="uid://j30jxo8yq22y" path="res://Scenes/Enemies/enemy_13.tscn" id="6_qxk1s"]
 [ext_resource type="Texture2D" uid="uid://bjuyrrmybrxnu" path="res://Assets/Images/Stages/Stage7/mask3.png" id="7_14gog"]
 [ext_resource type="PackedScene" uid="uid://dopjybnq4qjjp" path="res://Scenes/Enemies/enemy_14.tscn" id="7_e4smn"]
-[ext_resource type="Texture2D" uid="uid://cmq5pcbu385si" path="res://Assets/Images/Stages/Stage7/stage7-tree_mask2.png" id="7_r4o5h"]
 [ext_resource type="Texture2D" uid="uid://co4pyrn7fgrao" path="res://Assets/Images/Stages/Stage7/mask4.png" id="8_bkn0p"]
 [ext_resource type="PackedScene" uid="uid://c6e3ejy2ssbh2" path="res://Scenes/Enemies/enemy_15.tscn" id="8_vqt4o"]
 [ext_resource type="PackedScene" uid="uid://124m4svlgvi0" path="res://Scenes/Enemies/enemy_16.tscn" id="9_usswa"]
@@ -44,7 +42,9 @@
 [ext_resource type="Texture2D" uid="uid://vwn3wq6qskcy" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_13.png" id="25_asxks"]
 [ext_resource type="Texture2D" uid="uid://b3jlnuwdh5xvv" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_14.png" id="26_cowrc"]
 [ext_resource type="Texture2D" uid="uid://b34xyohqdfph4" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_15.png" id="27_eoiqx"]
+[ext_resource type="Texture2D" uid="uid://bkaehpb1q8r70" path="res://Assets/Images/Stages/Stage7/TreeMask2.png" id="27_gq0of"]
 [ext_resource type="Texture2D" uid="uid://bmpaye6dhsi6w" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_16.png" id="28_rhh17"]
+[ext_resource type="Texture2D" uid="uid://cnjpex316nrw" path="res://Assets/Images/Stages/Stage7/TreeMask1.png" id="28_s1a68"]
 [ext_resource type="Texture2D" uid="uid://d0ybfu53futlt" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_17.png" id="29_lia0u"]
 [ext_resource type="Texture2D" uid="uid://b1epckos4110j" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_18.png" id="30_nl3nb"]
 [ext_resource type="PackedScene" uid="uid://i2ikd0xvj08u" path="res://Scenes/StageComponents/rain_layer.tscn" id="31_m8eux"]
@@ -1733,18 +1733,22 @@ texture = ExtResource("3_svmy5")
 script = ExtResource("4_q7o8x")
 
 [node name="PathMask1" type="Sprite2D" parent="Background/BasedSprite" index="2"]
+position = Vector2(894, 1112)
 texture = ExtResource("5_gce3u")
 centered = false
 
 [node name="PathMask2" type="Sprite2D" parent="Background/BasedSprite" index="3"]
+position = Vector2(986, 712)
 texture = ExtResource("6_oluav")
 centered = false
 
 [node name="PathMask3" type="Sprite2D" parent="Background/BasedSprite" index="4"]
+position = Vector2(1240, 491)
 texture = ExtResource("7_14gog")
 centered = false
 
 [node name="PathMask4" type="Sprite2D" parent="Background/BasedSprite" index="5"]
+position = Vector2(1420, 259)
 texture = ExtResource("8_bkn0p")
 centered = false
 
@@ -1801,13 +1805,14 @@ region_rect = Rect2(40, 38, 40, 73)
 
 [node name="TreeMask1" type="Sprite2D" parent="Background" index="5"]
 position = Vector2(390, 581)
-texture = ExtResource("6_6u5su")
+texture = ExtResource("27_gq0of")
 centered = false
 offset = Vector2(-390, -581)
 
 [node name="TreeMask2" type="Sprite2D" parent="Background" index="6"]
 z_index = 1
-texture = ExtResource("7_r4o5h")
+position = Vector2(0, 720)
+texture = ExtResource("28_s1a68")
 centered = false
 
 [node name="CoconutTrees" type="Node2D" parent="Background" index="7"]
