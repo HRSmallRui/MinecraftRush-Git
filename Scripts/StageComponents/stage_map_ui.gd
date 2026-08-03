@@ -46,16 +46,13 @@ func _process(delta: float) -> void:
 
 
 func _on_map_button_pressed() -> void:
-	map_ui_layer.show()
-	Stage.instance.can_control = false
+	on_ui_layer_show()
 	pass # Replace with function body.
 
 
 func _on_panel_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
-		map_ui_layer.hide()
-		map_texture_mouse_in = false
-		Stage.instance.can_control = true
+		on_ui_layer_hide()
 	pass # Replace with function body.
 
 
@@ -88,9 +85,11 @@ func _on_map_texture_mouse_exited() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("escape") and map_ui_layer.visible:
-		map_ui_layer.hide()
-		map_texture_mouse_in = false
-		Stage.instance.can_control = true
+		on_ui_layer_hide()
+	
+	if event.is_action_released("map_visible"):
+		if map_ui_layer.visible: on_ui_layer_hide()
+		else: on_ui_layer_show()
 	pass
 
 
@@ -126,4 +125,17 @@ func update_ally_points():
 		ally_multi_instance.multimesh.set_instance_transform_2d(idx,t)
 		idx += 1
 	ally_multi_instance.multimesh.visible_instance_count = idx
+	pass
+
+
+func on_ui_layer_show():
+	map_ui_layer.show()
+	Stage.instance.can_control = false
+	pass
+
+
+func on_ui_layer_hide():
+	map_ui_layer.hide()
+	map_texture_mouse_in = false
+	Stage.instance.can_control = true
 	pass
