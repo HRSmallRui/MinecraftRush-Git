@@ -36,9 +36,9 @@ func update_map_image():
 
 
 func _process(delta: float) -> void:
-	camera_control.position = Stage.instance.stage_camera.get_screen_center_position()
+	camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
 	camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
-	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position()
+	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
 	map_camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
 	if map_ui_layer.visible:
 		update_map_input()
@@ -105,9 +105,10 @@ func update_enemy_points():
 	for enemy in enemy_list:
 		var t: Transform2D = Transform2D()
 		if !enemy.visible: continue
-		if enemy.position.x < 0 or enemy.position.y < 0: continue
-		if enemy.position.x > map_texture.size.x or enemy.position.y > map_texture.size.y: continue
-		t.origin = enemy.global_position
+		var point_position: Vector2 = enemy.global_position - Stage.instance.stage_based_position
+		if point_position.x < 0 or point_position.y < 0: continue
+		if point_position.x > map_texture.size.x or point_position.y > map_texture.size.y: continue
+		t.origin = point_position
 		enemy_multi_instance.multimesh.set_instance_transform_2d(idx,t)
 		idx += 1
 	enemy_multi_instance.multimesh.visible_instance_count = idx
@@ -115,11 +116,14 @@ func update_enemy_points():
 
 
 func update_ally_points():
-	ally_multi_instance.multimesh.visible_instance_count = ally_list.size()
 	var idx: int = 0
 	for ally in ally_list:
 		var t: Transform2D = Transform2D()
-		t.origin = ally.global_position
+		var point_position: Vector2 = ally.global_position - Stage.instance.stage_based_position
+		if point_position.x < 0 or point_position.y < 0: continue
+		if point_position.x > map_texture.size.x or point_position.y > map_texture.size.y: continue
+		t.origin = point_position
 		ally_multi_instance.multimesh.set_instance_transform_2d(idx,t)
 		idx += 1
+	ally_multi_instance.multimesh.visible_instance_count = idx
 	pass
