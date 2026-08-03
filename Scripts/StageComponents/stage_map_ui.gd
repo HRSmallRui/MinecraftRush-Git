@@ -79,3 +79,11 @@ func _on_map_texture_mouse_entered() -> void:
 func _on_map_texture_mouse_exited() -> void:
 	map_texture_mouse_in = false
 	pass # Replace with function body.
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("escape") and map_ui_layer.visible:
+		map_ui_layer.hide()
+		map_texture_mouse_in = false
+		Stage.instance.can_control = true
+	pass
