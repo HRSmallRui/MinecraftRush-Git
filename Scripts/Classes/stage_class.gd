@@ -40,6 +40,7 @@ static var instance: Stage
 @export var current_wave: int = 0
 @export var unlocked_tower_list = [true,true,true,true]
 @export var stage_environment_tags: Array[String]
+@export var stage_map_start_image: Texture2D
 @export_group("怪物生成配置文件")
 @export var stage_summon_config: StageSummonConfig
 
@@ -73,6 +74,7 @@ static var instance: Stage
 @onready var wave_buttons: Control = $WaveButtons
 @onready var dead_body_node: Node2D = $Background/DeadBodyNode
 @onready var danger_tip_layer: Control = $StageUI/DangerTipLayer
+@onready var stage_map: StageMapUI = $StageUI/StageMap
 
 var stage_ui: StageUI = StageUI.None
 var can_control: bool = true
@@ -112,6 +114,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	stage_sav.property_bus["last_stage"] = stage_count
+	stage_map.map_image = stage_map_start_image
 	Global.stage_first = false
 	#save_button.visible = OS.is_debug_build()
 	#load_button.visible = OS.is_debug_build()
