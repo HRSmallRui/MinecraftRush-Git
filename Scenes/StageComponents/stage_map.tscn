@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://50j231gfo2lj"]
+[gd_scene load_steps=11 format=3 uid="uid://50j231gfo2lj"]
 
 [ext_resource type="Texture2D" uid="uid://dsviwmsk3ct40" path="res://Assets/Images/Stages/Stage1/stage1-view.png" id="1_3o05u"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/stage_map_ui.gd" id="1_l2xfb"]
@@ -12,6 +12,24 @@ atlas = ExtResource("1_3o05u")
 shader = ExtResource("3_0le7y")
 shader_parameter/outline_width = 10.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_imri7"]
+size = Vector2(32, -32)
+
+[sub_resource type="MultiMesh" id="MultiMesh_nw8vi"]
+mesh = SubResource("QuadMesh_imri7")
+
+[sub_resource type="Gradient" id="Gradient_eo5q1"]
+offsets = PackedFloat32Array(0.709738, 0.78839)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6s6q"]
+gradient = SubResource("Gradient_eo5q1")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="StageMapUI" type="Control"]
 layout_mode = 3
@@ -113,6 +131,7 @@ mouse_filter = 2
 
 [node name="MapTexture" type="TextureRect" parent="MapUILayer/CenterContainer"]
 self_modulate = Color(1, 1, 1, 0.862745)
+clip_children = 2
 layout_mode = 2
 mouse_filter = 0
 texture = ExtResource("1_3o05u")
@@ -163,7 +182,16 @@ offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
 
+[node name="EnemyMultiInstance" type="MultiMeshInstance2D" parent="MapUILayer/CenterContainer/MapTexture"]
+multimesh = SubResource("MultiMesh_nw8vi")
+texture = SubResource("GradientTexture2D_s6s6q")
+
+[node name="UpdateTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
 [connection signal="pressed" from="MapButton" to="." method="_on_map_button_pressed"]
 [connection signal="gui_input" from="MapUILayer/Panel" to="." method="_on_panel_gui_input"]
 [connection signal="mouse_entered" from="MapUILayer/CenterContainer/MapTexture" to="." method="_on_map_texture_mouse_entered"]
 [connection signal="mouse_exited" from="MapUILayer/CenterContainer/MapTexture" to="." method="_on_map_texture_mouse_exited"]
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]

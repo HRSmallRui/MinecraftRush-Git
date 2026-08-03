@@ -12,12 +12,15 @@ class_name StageMapUI
 @onready var map_texture: TextureRect = $MapUILayer/CenterContainer/MapTexture
 @onready var map_camera_control: Control = $MapUILayer/CenterContainer/MapTexture/MapCameraControl
 @onready var center_container: CenterContainer = $MapUILayer/CenterContainer
+@onready var enemy_multi_instance: MultiMeshInstance2D = $MapUILayer/CenterContainer/MapTexture/EnemyMultiInstance
 
 var map_texture_mouse_in: bool
-
+var enemy_list: Array[Enemy]
+var ally_list: Array[Ally]
 
 func _ready() -> void:
 	update_map_image()
+	enemy_multi_instance.multimesh.instance_count = 1000
 	pass
 
 
@@ -86,4 +89,20 @@ func _input(event: InputEvent) -> void:
 		map_ui_layer.hide()
 		map_texture_mouse_in = false
 		Stage.instance.can_control = true
+	pass
+
+
+func _on_update_timer_timeout() -> void:
+	update_enemy_points()
+	pass # Replace with function body.
+
+
+func update_enemy_points():
+	enemy_multi_instance.multimesh.visible_instance_count = enemy_list.size()
+	var idx: int = 0
+	for enemy in enemy_list:
+		var t: Transform2D = Transform2D()
+		t.origin = enemy.global_position if enemy.visible else Vector2.ZERO
+		enemy_multi_instance.multimesh.set_instance_transform_2d(idx,t)
+		idx += 1
 	pass

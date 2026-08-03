@@ -107,6 +107,7 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	Stage.instance.stage_map.enemy_list.append(self)
 	#Stage.instance.enemy_count += 1
 	logic_timer.timeout.connect(on_logic_timer_timeout)
 	update_health_bar()
@@ -313,6 +314,7 @@ func translate_to_new_state(new_state: EnemyState):
 			current_data.unit_move_speed = 0
 			pass
 		EnemyState.DIE:
+			Stage.instance.stage_map.enemy_list.erase(self)
 			achievement_enemy_die()
 			enemy_died.emit()
 			enemy_sprite.pause()
