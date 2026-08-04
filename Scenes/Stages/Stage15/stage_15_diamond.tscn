@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_iwslf"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_foms2"]
+[ext_resource type="Texture2D" uid="uid://dcstba0vesk2q" path="res://Assets/Images/Stages/Stage15/stage15_3.png" id="2_o6nau"]
 [ext_resource type="AudioStream" uid="uid://bmv12x8leo1qe" path="res://Assets/Sounds/Music/厌国-准备3.mp3" id="3_t7mbt"]
 [ext_resource type="AudioStream" uid="uid://c20mhx2c3axhq" path="res://Assets/Sounds/Music/厌国-战斗3.mp3" id="4_hs1vy"]
 [ext_resource type="AudioStream" uid="uid://dfgrfv6fo5v76" path="res://Assets/Sounds/Music/chapter4_boss.mp3" id="5_4kdt8"]
 [ext_resource type="Texture2D" uid="uid://b4y8xqhvfnllh" path="res://Assets/Images/Stages/Stage15/stage15-based.png" id="6_silpe"]
 [ext_resource type="Texture2D" uid="uid://pe1sf035jhvg" path="res://Assets/Animations/StageComponents/保护点.png" id="7_qtgrh"]
 [ext_resource type="Script" path="res://Scripts/Stages/protection_point.gd" id="8_y6nur"]
-[ext_resource type="Texture2D" uid="uid://b7cfo7417ijyx" path="res://Assets/Images/Stages/Stage15/path_masks.png" id="9_4luap"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="10_igw4p"]
 [ext_resource type="Texture2D" uid="uid://c0uuer5s44da" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_00.png" id="11_mgywg"]
 [ext_resource type="Texture2D" uid="uid://ego8sj3iico5" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_01.png" id="12_toxvs"]
@@ -72,7 +72,6 @@
 [ext_resource type="Script" path="res://Scripts/path_config_save.gd" id="95_mwwfg"]
 [ext_resource type="Resource" uid="uid://1mwk10tkwc0h" path="res://Library/SummonConfigs/diamond_template.res" id="96_oga6c"]
 [ext_resource type="Script" path="res://Scripts/path_config_load.gd" id="102_rjg85"]
-
 
 [sub_resource type="Resource" id="Resource_6x1lv"]
 script = ExtResource("2_foms2")
@@ -358,6 +357,7 @@ stage_mode = 1
 current_health = 1
 current_money = 2000
 total_waves = 5
+stage_map_start_image = ExtResource("2_o6nau")
 stage_summon_config = SubResource("Resource_6x1lv")
 
 [node name="StageCamera" parent="." index="3"]
@@ -391,22 +391,6 @@ script = ExtResource("8_y6nur")
 position = Vector2(1851, 1252)
 texture = ExtResource("7_qtgrh")
 script = ExtResource("8_y6nur")
-
-[node name="PathMask1" type="Sprite2D" parent="Background/BasedSprite" index="3"]
-visible = false
-position = Vector2(-2, 744)
-texture = ExtResource("9_4luap")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 742, 449, 482)
-
-[node name="PathMask2" type="Sprite2D" parent="Background/BasedSprite" index="4"]
-visible = false
-position = Vector2(1776, 708)
-texture = ExtResource("9_4luap")
-centered = false
-region_enabled = true
-region_rect = Rect2(1777, 707, 323, 420)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(481, 1258)

@@ -1,17 +1,68 @@
-[gd_scene load_steps=7 format=3 uid="uid://50j231gfo2lj"]
+[gd_scene load_steps=16 format=3 uid="uid://50j231gfo2lj"]
 
 [ext_resource type="Texture2D" uid="uid://dsviwmsk3ct40" path="res://Assets/Images/Stages/Stage1/stage1-view.png" id="1_3o05u"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/stage_map_ui.gd" id="1_l2xfb"]
 [ext_resource type="Shader" path="res://Assets/Shaders/light.gdshader" id="3_0le7y"]
-[ext_resource type="Texture2D" uid="uid://c65gdtuvn5f4u" path="res://Assets/Images/Stages/Stage20/stage20.png" id="3_erchp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48h51"]
 atlas = ExtResource("1_3o05u")
+
+[sub_resource type="QuadMesh" id="QuadMesh_imri7"]
+size = Vector2(32, -32)
+
+[sub_resource type="MultiMesh" id="MultiMesh_nw8vi"]
+mesh = SubResource("QuadMesh_imri7")
+
+[sub_resource type="Gradient" id="Gradient_eo5q1"]
+offsets = PackedFloat32Array(0.709738, 0.78839)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vy83m"]
+gradient = SubResource("Gradient_eo5q1")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_jb83a"]
+size = Vector2(32, -32)
+
+[sub_resource type="MultiMesh" id="MultiMesh_7egv6"]
+mesh = SubResource("QuadMesh_jb83a")
+
+[sub_resource type="Gradient" id="Gradient_sbymd"]
+offsets = PackedFloat32Array(0.709738, 0.78839)
+colors = PackedColorArray(0, 1, 1, 1, 0, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kfyi6"]
+gradient = SubResource("Gradient_sbymd")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pm2f0"]
 shader = ExtResource("3_0le7y")
 shader_parameter/outline_width = 10.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6s6q"]
+gradient = SubResource("Gradient_eo5q1")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nctqt"]
+gradient = SubResource("Gradient_sbymd")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="StageMapUI" type="Control"]
 layout_mode = 3
@@ -34,11 +85,20 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -2100.0
-offset_bottom = 2600.0
+offset_left = -1920.0
+offset_bottom = 1080.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("3_erchp")
+focus_mode = 0
+texture_normal = ExtResource("1_3o05u")
+
+[node name="EnemyMultiInstance" type="MultiMeshInstance2D" parent="MapButton"]
+multimesh = SubResource("MultiMesh_nw8vi")
+texture = SubResource("GradientTexture2D_vy83m")
+
+[node name="AllyMultiInstance" type="MultiMeshInstance2D" parent="MapButton"]
+multimesh = SubResource("MultiMesh_7egv6")
+texture = SubResource("GradientTexture2D_kfyi6")
 
 [node name="CameraControl" type="Control" parent="MapButton"]
 material = SubResource("ShaderMaterial_pm2f0")
@@ -87,7 +147,7 @@ offset_bottom = 540.0
 mouse_filter = 2
 
 [node name="MapUILayer" type="CanvasLayer" parent="."]
-layer = 10
+layer = 11
 visible = false
 
 [node name="Panel" type="Panel" parent="MapUILayer"]
@@ -112,9 +172,18 @@ mouse_filter = 2
 
 [node name="MapTexture" type="TextureRect" parent="MapUILayer/CenterContainer"]
 self_modulate = Color(1, 1, 1, 0.862745)
+clip_children = 2
 layout_mode = 2
 mouse_filter = 0
 texture = ExtResource("1_3o05u")
+
+[node name="EnemyMultiInstance" type="MultiMeshInstance2D" parent="MapUILayer/CenterContainer/MapTexture"]
+multimesh = SubResource("MultiMesh_nw8vi")
+texture = SubResource("GradientTexture2D_s6s6q")
+
+[node name="AllyMultiInstance" type="MultiMeshInstance2D" parent="MapUILayer/CenterContainer/MapTexture"]
+multimesh = SubResource("MultiMesh_7egv6")
+texture = SubResource("GradientTexture2D_nctqt")
 
 [node name="MapCameraControl" type="Control" parent="MapUILayer/CenterContainer/MapTexture"]
 material = SubResource("ShaderMaterial_pm2f0")
@@ -162,7 +231,12 @@ offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
 
+[node name="UpdateTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
 [connection signal="pressed" from="MapButton" to="." method="_on_map_button_pressed"]
 [connection signal="gui_input" from="MapUILayer/Panel" to="." method="_on_panel_gui_input"]
 [connection signal="mouse_entered" from="MapUILayer/CenterContainer/MapTexture" to="." method="_on_map_texture_mouse_entered"]
 [connection signal="mouse_exited" from="MapUILayer/CenterContainer/MapTexture" to="." method="_on_map_texture_mouse_exited"]
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]

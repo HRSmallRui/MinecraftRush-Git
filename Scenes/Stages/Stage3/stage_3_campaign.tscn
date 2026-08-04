@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="4_e0ess"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="4_gd04t"]
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="4_m37da"]
-[ext_resource type="Texture2D" uid="uid://b3ttk26v55xbu" path="res://Assets/Images/Stages/Stage3/Stage3-mask1.png" id="4_s07fw"]
-[ext_resource type="Texture2D" uid="uid://d1p5jbylgd4r2" path="res://Assets/Images/Stages/Stage3/Stage3-mask2.png" id="5_0ls8g"]
 [ext_resource type="PackedScene" uid="uid://bjaqbbyu6ihm7" path="res://Scenes/Enemies/enemy_2.tscn" id="5_rp5t1"]
 [ext_resource type="PackedScene" uid="uid://b6ot0a5pdjonq" path="res://Scenes/UI-Components/TipButtons/drag_tip_button.tscn" id="5_ygspy"]
 [ext_resource type="PackedScene" uid="uid://u2adgh7wjmdi" path="res://Scenes/Enemies/enemy_4.tscn" id="6_7202s"]
@@ -35,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://d4jfqanrn88wd" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_08.png" id="15_43wbp"]
 [ext_resource type="Texture2D" uid="uid://btlmpulbitdm1" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_09.png" id="16_8issp"]
 [ext_resource type="Texture2D" uid="uid://bjqkovx5wcc4u" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_10.png" id="17_4u8je"]
+[ext_resource type="Texture2D" uid="uid://bmo35ca6h3utl" path="res://Assets/Images/Stages/Stage3/wall.png" id="17_vrf6t"]
 [ext_resource type="Texture2D" uid="uid://bnmtf6gvk1608" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_11.png" id="18_5fxf3"]
 [ext_resource type="Texture2D" uid="uid://bpwh6hhc6xt6w" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_12.png" id="19_ccn8h"]
 [ext_resource type="Texture2D" uid="uid://dtse3fle86uu3" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_13.png" id="20_blj1k"]
@@ -77,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://cgquroes7npan" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_06.png" id="57_ue8to"]
 [ext_resource type="Texture2D" uid="uid://c73bc8vc47gfj" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_07.png" id="58_jn152"]
 [ext_resource type="Texture2D" uid="uid://ot1dpveesu13" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_08.png" id="59_iqp2f"]
+[ext_resource type="Texture2D" uid="uid://b3fd04otrairw" path="res://Assets/Images/Stages/Stage3/tree_mask.png" id="59_jw7cq"]
 [ext_resource type="Texture2D" uid="uid://c1o1lbyrt4a3m" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_09.png" id="60_ae6pb"]
 [ext_resource type="Texture2D" uid="uid://c758ce4fbs3ss" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_10.png" id="61_pk3ld"]
 [ext_resource type="Texture2D" uid="uid://c7d1j5tsm5tcb" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_11.png" id="62_pl32c"]
@@ -1282,8 +1282,9 @@ position = Vector2(94, 658)
 
 [node name="Wall" type="Sprite2D" parent="Background/BasedSprite" index="1"]
 z_index = 2
-texture = ExtResource("4_s07fw")
+texture = ExtResource("17_vrf6t")
 centered = false
+offset = Vector2(772, 0)
 
 [node name="FlagAnim" type="AnimatedSprite2D" parent="Background/BasedSprite/Wall" index="0"]
 position = Vector2(1243, 1001)
@@ -1299,8 +1300,10 @@ autoplay = "default"
 
 [node name="Trees" type="Sprite2D" parent="Background/BasedSprite" index="2"]
 z_index = 2
-texture = ExtResource("5_0ls8g")
+position = Vector2(2918, 1080)
+texture = ExtResource("59_jw7cq")
 centered = false
+offset = Vector2(0, -565)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(97, 718)

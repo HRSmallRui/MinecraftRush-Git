@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://m0jphe37ag5m"]
+[gd_scene load_steps=131 format=3 uid="uid://m0jphe37ag5m"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_faw8d"]
 [ext_resource type="PackedScene" uid="uid://d0mpofppk7l0a" path="res://Scenes/Enemies/enemy_29.tscn" id="2_3r2sf"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dyxr3bawtqjel" path="res://Scenes/Enemies/enemy_35.tscn" id="8_66pgg"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="8_l53ns"]
 [ext_resource type="PackedScene" uid="uid://dldv6lkqb3cu0" path="res://Scenes/Enemies/enemy_36.tscn" id="9_2uky4"]
-[ext_resource type="Texture2D" uid="uid://dgjf37kuaglga" path="res://Assets/Images/Stages/Stage19/stage19-mask.png" id="9_7si7s"]
 [ext_resource type="Texture2D" uid="uid://dnrxg6tdwx1mp" path="res://Assets/Animations/StageComponents/Sheep/dead_0.png" id="10_imxlf"]
 [ext_resource type="PackedScene" uid="uid://d2c404kk7xb4d" path="res://Scenes/Enemies/enemy_37.tscn" id="10_l68g3"]
 [ext_resource type="Texture2D" uid="uid://da37ocyiqim4h" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_01.png" id="11_7cl2i"]
@@ -34,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dy8rqmkt0rg2t" path="res://Scenes/Enemies/enemy_50.tscn" id="17_p8fjq"]
 [ext_resource type="Texture2D" uid="uid://ot1dpveesu13" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_08.png" id="18_8i887"]
 [ext_resource type="PackedScene" uid="uid://bhr0uppyoi7w4" path="res://Scenes/Enemies/enemy_52.tscn" id="18_d8y6f"]
+[ext_resource type="Texture2D" uid="uid://faoxrs5dir34" path="res://Assets/Images/Stages/Stage19/stage19.png" id="19_jamdt"]
 [ext_resource type="Texture2D" uid="uid://c1o1lbyrt4a3m" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_09.png" id="19_okjbi"]
 [ext_resource type="Texture2D" uid="uid://c758ce4fbs3ss" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_10.png" id="20_6gena"]
 [ext_resource type="Texture2D" uid="uid://c7d1j5tsm5tcb" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_11.png" id="21_37hn7"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://bsf1qcjwdp58e" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_14.png" id="24_7hw54"]
 [ext_resource type="Texture2D" uid="uid://bhb8ugkilqy6j" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_15.png" id="25_722qv"]
 [ext_resource type="Texture2D" uid="uid://cinntnb6jxdwq" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_16.png" id="26_3ttcw"]
+[ext_resource type="Texture2D" uid="uid://dnuycs1jsrns4" path="res://Assets/Images/Stages/Stage19/front_mask.png" id="26_6wiuh"]
 [ext_resource type="Texture2D" uid="uid://c8gtpqqq07oas" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_17.png" id="27_jrx55"]
 [ext_resource type="Texture2D" uid="uid://c0ah34dg60f8r" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_18.png" id="28_cnhae"]
 [ext_resource type="Texture2D" uid="uid://b3xsm14st5bgy" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_19.png" id="29_0yomj"]
@@ -380,6 +381,8 @@ current_health = 1
 current_money = 1600
 total_waves = 1
 unlocked_tower_list = [false, true, false, true]
+stage_map_start_image = ExtResource("19_jamdt")
+hero_sprite_flip = true
 
 [node name="StageCamera" parent="." index="3"]
 position = Vector2(3480, 455)
@@ -427,10 +430,10 @@ region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
 [node name="Stage19-mask" type="Sprite2D" parent="Background" index="5"]
-position = Vector2(63, 1430)
-texture = ExtResource("9_7si7s")
+position = Vector2(2, 1400)
+texture = ExtResource("26_6wiuh")
 centered = false
-offset = Vector2(-63, -1430)
+offset = Vector2(-2, -123)
 
 [node name="Sheeps" type="Node2D" parent="Background" index="6"]
 y_sort_enabled = true

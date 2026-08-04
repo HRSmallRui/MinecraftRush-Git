@@ -43,6 +43,7 @@ func anim_offset():
 
 func frame_changed():
 	if ally_sprite.animation == "attack" and ally_sprite.frame == 20:
+		normal_attack_timer.start()
 		var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
 		var enemy_hit_list: Array[Enemy]
 		for body in passive_attack_area.get_overlapping_bodies():

@@ -121,6 +121,7 @@ func _ready() -> void:
 	unit_body.position = Vector2.ZERO
 	unit_body.global_rotation = 0
 	await get_tree().process_frame
+	Stage.instance.stage_map.enemy_list.append(self)
 	ui_process(Stage.instance.information_bar.current_check_member)
 	show()
 	battle_length = intercepting_marker.position.x
@@ -313,6 +314,7 @@ func translate_to_new_state(new_state: EnemyState):
 			current_data.unit_move_speed = 0
 			pass
 		EnemyState.DIE:
+			Stage.instance.stage_map.enemy_list.erase(self)
 			achievement_enemy_die()
 			enemy_died.emit()
 			enemy_sprite.pause()
