@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://dl078bajd4yht"]
+[gd_scene load_steps=167 format=3 uid="uid://dl078bajd4yht"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_0ygpf"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_vvmgv"]
@@ -12,11 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://brhja3o23uh1m" path="res://Assets/Sounds/Music/ANTITHESIS_1.mp3" id="8_qyxqu"]
 [ext_resource type="Script" path="res://Scripts/Stages/protection_point.gd" id="9_ckfe6"]
 [ext_resource type="AudioStream" uid="uid://maomracc3hke" path="res://Assets/Sounds/Music/ANTITHESIS_loop.mp3" id="9_unkle"]
-[ext_resource type="Texture2D" uid="uid://bwtrlbgmnhbng" path="res://Assets/Images/Stages/Stage20/stage20-path_mask.png" id="10_xyshh"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="11_3kmav"]
-[ext_resource type="Texture2D" uid="uid://cbferplqf3p6o" path="res://Assets/Images/Stages/Stage20/tree_mask.png" id="12_jgn2s"]
-[ext_resource type="Texture2D" uid="uid://dqmu54pv6fr7j" path="res://Assets/Images/Stages/Stage20/stage20-wall.png" id="13_qlr4p"]
 [ext_resource type="Texture2D" uid="uid://4bgbpqdntumk" path="res://Assets/Animations/Flags/HatingFlag/flow_00.png" id="14_exi0o"]
+[ext_resource type="Texture2D" uid="uid://cn1s3eacc60u6" path="res://Assets/Images/Stages/Stage20/Wall.png" id="14_ilpk2"]
 [ext_resource type="Texture2D" uid="uid://b0l8ctuov2jvp" path="res://Assets/Animations/Flags/HatingFlag/flow_01.png" id="15_nrpbj"]
 [ext_resource type="Texture2D" uid="uid://ppt8xcet7xwc" path="res://Assets/Animations/Flags/HatingFlag/flow_02.png" id="16_k32ui"]
 [ext_resource type="Texture2D" uid="uid://cin6ehcfxb3r1" path="res://Assets/Animations/Flags/HatingFlag/flow_03.png" id="17_1non7"]
@@ -121,9 +119,12 @@
 [ext_resource type="Script" path="res://Scripts/path_config_save.gd" id="85_ehvhe"]
 [ext_resource type="PackedScene" uid="uid://cqecwgdj58avl" path="res://Scenes/Stages/Stage20/stage_20_hating_emperor.tscn" id="86_lyrq3"]
 [ext_resource type="Resource" uid="uid://1mwk10tkwc0h" path="res://Library/SummonConfigs/diamond_template.res" id="86_p181r"]
+[ext_resource type="Texture2D" uid="uid://3fuetf5o4r2y" path="res://Assets/Images/Stages/Stage20/Trees1.png" id="88_25nui"]
+[ext_resource type="Texture2D" uid="uid://c3usb7bxuxlrj" path="res://Assets/Images/Stages/Stage20/Trees2.png" id="89_vlhyq"]
 [ext_resource type="Script" path="res://Scripts/path_config_load.gd" id="89_w4aa5"]
+[ext_resource type="Texture2D" uid="uid://cigmpmw2oq42c" path="res://Assets/Images/Stages/Stage20/Trees3.png" id="90_3crns"]
+[ext_resource type="Texture2D" uid="uid://b7it8vp2ohcm1" path="res://Assets/Images/Stages/Stage20/Trees4.png" id="91_i6oo2"]
 [ext_resource type="PackedScene" uid="uid://d13s4xxuiqsra" path="res://Scenes/StageComponents/camera_up_down_component.tscn" id="116_r62j5"]
-
 
 [sub_resource type="Resource" id="Resource_3x3fn"]
 script = ExtResource("2_vvmgv")
@@ -689,11 +690,6 @@ position = Vector2(695, 2501)
 texture = ExtResource("8_7vebu")
 script = ExtResource("9_ckfe6")
 
-[node name="PathMask" type="Sprite2D" parent="Background/BasedSprite" index="4"]
-visible = false
-texture = ExtResource("10_xyshh")
-centered = false
-
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(79, 1442)
 texture = ExtResource("11_3kmav")
@@ -743,37 +739,9 @@ offset = Vector2(-7, -22)
 region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
-[node name="TreeMask1" type="Sprite2D" parent="Background" index="9"]
-position = Vector2(60, 1190)
-texture = ExtResource("12_jgn2s")
-offset = Vector2(65, -238)
-region_enabled = true
-region_rect = Rect2(0, 692, 256, 536)
-
-[node name="TreeMask2" type="Sprite2D" parent="Background" index="10"]
-position = Vector2(1890, 1287)
-texture = ExtResource("12_jgn2s")
-offset = Vector2(-29, -337)
-region_enabled = true
-region_rect = Rect2(1602, 610, 498, 673)
-
-[node name="TreeMask3" type="Sprite2D" parent="Background" index="11"]
-position = Vector2(170, 2606)
-texture = ExtResource("12_jgn2s")
-offset = Vector2(45, -406)
-region_enabled = true
-region_rect = Rect2(0, 1796, 432, 804)
-
-[node name="TreeMask4" type="Sprite2D" parent="Background" index="12"]
-position = Vector2(1900, 2607)
-texture = ExtResource("12_jgn2s")
-offset = Vector2(-40, -447)
-region_enabled = true
-region_rect = Rect2(1610, 1719, 490, 881)
-
-[node name="Wall" type="Sprite2D" parent="Background" index="13"]
+[node name="Wall" type="Sprite2D" parent="Background" index="9"]
 position = Vector2(692, 494)
-texture = ExtResource("13_qlr4p")
+texture = ExtResource("14_ilpk2")
 centered = false
 offset = Vector2(-692, -494)
 
@@ -911,14 +879,14 @@ debug_color = Color(0.961688, 1.54018e-06, 0.511678, 0)
 top_level = true
 position = Vector2(1032, 739)
 
-[node name="Flag9" type="AnimatedSprite2D" parent="Background" index="14"]
+[node name="Flag9" type="AnimatedSprite2D" parent="Background" index="10"]
 position = Vector2(790.5, 672.5)
 sprite_frames = SubResource("SpriteFrames_y1icq")
 autoplay = "default"
 offset = Vector2(7, -112)
 script = ExtResource("54_v620d")
 
-[node name="Flag10" type="AnimatedSprite2D" parent="Background" index="15"]
+[node name="Flag10" type="AnimatedSprite2D" parent="Background" index="11"]
 position = Vector2(1342, 883)
 sprite_frames = SubResource("SpriteFrames_y1icq")
 autoplay = "default"
@@ -926,8 +894,28 @@ frame_progress = 0.513868
 offset = Vector2(7, -112)
 script = ExtResource("54_v620d")
 
-[node name="Flag" parent="Background" index="16"]
+[node name="Flag" parent="Background" index="12"]
 position = Vector2(79, 1318)
+
+[node name="Tree1" type="Sprite2D" parent="Background" index="14"]
+position = Vector2(39, 2600)
+texture = ExtResource("88_25nui")
+offset = Vector2(176, -402)
+
+[node name="Tree2" type="Sprite2D" parent="Background" index="15"]
+position = Vector2(1793, 2603)
+texture = ExtResource("89_vlhyq")
+offset = Vector2(66, -444)
+
+[node name="Tree3" type="Sprite2D" parent="Background" index="16"]
+position = Vector2(45, 1215)
+texture = ExtResource("90_3crns")
+offset = Vector2(80, -263)
+
+[node name="Tree4" type="Sprite2D" parent="Background" index="17"]
+position = Vector2(1871, 1286)
+texture = ExtResource("91_i6oo2")
+offset = Vector2(-18, -337)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_wogwj")
@@ -1211,7 +1199,7 @@ position = Vector2(1302, 1798)
 [node name="DefenceTowerBased41" parent="Towers" index="38" instance=ExtResource("80_dj65b")]
 position = Vector2(761, 1747)
 
-[node name="CameraUpDownComponent" parent="StageUI" index="15" node_paths=PackedStringArray("up_marker", "down_marker") instance=ExtResource("116_r62j5")]
+[node name="CameraUpDownComponent" parent="StageUI" index="11" node_paths=PackedStringArray("up_marker", "down_marker") instance=ExtResource("116_r62j5")]
 up_marker = NodePath("../../UpMarker")
 down_marker = NodePath("../../DownMarker")
 

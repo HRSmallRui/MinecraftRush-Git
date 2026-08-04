@@ -14,6 +14,7 @@ func buff_start():
 		freeze_sprite = unit.enemy_sprite
 		freeze_sprite.frame_changed.disconnect(unit.frame_changed)
 		unit.silence_layers += 1
+		unit.logic_timer.paused = true
 	current_animation = freeze_sprite.animation
 	current_frame = freeze_sprite.frame
 	unit.set_process(false)
@@ -37,6 +38,7 @@ func remove_buff():
 		if unit.enemy_state != Enemy.EnemyState.DIE:
 			freeze_sprite.frame_changed.connect(unit.frame_changed)
 			unit.silence_layers -= 1
+			unit.logic_timer.paused = false
 		#await get_tree().process_frame
 		#if unit.enemy_state != Enemy.EnemyState.DIE:
 			#unit.enemy_sprite.play("idle")

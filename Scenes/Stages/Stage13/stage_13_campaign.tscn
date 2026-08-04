@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://b4l46vi84x6w3"]
+[gd_scene load_steps=247 format=3 uid="uid://b4l46vi84x6w3"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_1pc2d"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_4ov1y"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://d2c404kk7xb4d" path="res://Scenes/Enemies/enemy_37.tscn" id="7_lxg8a"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="8_krd3w"]
 [ext_resource type="PackedScene" uid="uid://bccm6sjsetyyj" path="res://Scenes/Enemies/enemy_39.tscn" id="8_rccd4"]
-[ext_resource type="Texture2D" uid="uid://c1jtxaycidmry" path="res://Assets/Images/Stages/Stage13/tree_mask.png" id="9_r3yrq"]
 [ext_resource type="PackedScene" uid="uid://d20lg48d4560c" path="res://Scenes/Enemies/enemy_40.tscn" id="9_umn75"]
 [ext_resource type="PackedScene" uid="uid://epbrqrye6e8k" path="res://Scenes/Enemies/enemy_41.tscn" id="10_gtpu4"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_path.gd" id="10_qj6hp"]
@@ -26,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://cg2x8a8ereft3" path="res://Library/SummonConfigs/Stage13/Campaign/path1.res" id="11_xy50m"]
 [ext_resource type="Texture2D" uid="uid://bxshn0yuldw15" path="res://Assets/Images/Stages/Stage13/crayon.png" id="12_3cxts"]
 [ext_resource type="Resource" uid="uid://bwt6hlmo8mjb5" path="res://Library/SummonConfigs/Stage13/Campaign/path2.res" id="12_askb0"]
+[ext_resource type="Texture2D" uid="uid://bus5x34qfdr3b" path="res://Assets/Images/Stages/Stage13/stage13.png" id="12_do8bm"]
 [ext_resource type="Script" path="res://Scripts/path_config_save.gd" id="12_yr1fe"]
 [ext_resource type="AudioStream" uid="uid://b0ufax7bx3qis" path="res://Assets/Sounds/FXs/Stages/pick_crayon.mp3" id="13_73yk3"]
 [ext_resource type="Resource" uid="uid://hv1y7g61uerm" path="res://Library/SummonConfigs/Stage13/Campaign/path3.res" id="13_rt3ax"]
@@ -58,11 +58,18 @@
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_summon_text.gd" id="25_0cy43"]
 [ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="25_mw4vd"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/music_box.gd" id="26_0l30a"]
-[ext_resource type="Texture2D" uid="uid://clg8axkffndvn" path="res://Assets/Images/Stages/Stage13/musicbox.png" id="27_a57xe"]
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="27_cemyn"]
 [ext_resource type="AudioStream" uid="uid://cot14ouub526n" path="res://Assets/Sounds/FXs/Stages/悲伤的沼泽.mp3" id="28_xrk3u"]
 [ext_resource type="PackedScene" uid="uid://32u5i6wwhrqy" path="res://Scenes/Effects/lingering_potion_shooter.tscn" id="29_woogu"]
 [ext_resource type="PackedScene" uid="uid://dlggpawrxkxx5" path="res://Scenes/TipUI/special_towers_unlock_ui.tscn" id="33_ecpu7"]
+[ext_resource type="Texture2D" uid="uid://cus6rtdkhn3us" path="res://Assets/Images/Stages/Stage13/musicbox-2.png" id="37_khn26"]
+[ext_resource type="Texture2D" uid="uid://cet11k5jik107" path="res://Assets/Images/Stages/Stage13/Tree1.png" id="40_8p8bv"]
+[ext_resource type="Texture2D" uid="uid://be8qlwmnoe4d5" path="res://Assets/Images/Stages/Stage13/Tree2.png" id="41_ptvfe"]
+[ext_resource type="Texture2D" uid="uid://duhxf5orqap65" path="res://Assets/Images/Stages/Stage13/Tree3.png" id="42_5vygv"]
+[ext_resource type="Texture2D" uid="uid://cn4vvjr7c6x0k" path="res://Assets/Images/Stages/Stage13/Tree4.png" id="43_rkgbr"]
+[ext_resource type="Texture2D" uid="uid://bxofp8ywdycfl" path="res://Assets/Images/Stages/Stage13/WaterTreeMask1.png" id="44_736x7"]
+[ext_resource type="Texture2D" uid="uid://jjh8bs0oro8k" path="res://Assets/Images/Stages/Stage13/WaterTreeMask2.png" id="45_dcrh2"]
+[ext_resource type="Texture2D" uid="uid://crb7d8vaxvqs3" path="res://Assets/Images/Stages/Stage13/WaterTreeMask3.png" id="46_hihc1"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter4.gd" id="47_5fn68"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="47_sgiol"]
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="56_u30p6"]
@@ -188,8 +195,11 @@ size = Vector2(126, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0qsi"]
 size = Vector2(20, 22)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_abygm"]
+load_path = "res://.godot/imported/musicbox.png-d018958ce54fd1aded6f179f2acffced.s3tc.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5om0n"]
-atlas = ExtResource("27_a57xe")
+atlas = SubResource("CompressedTexture2D_abygm")
 region = Rect2(47, 30, 8, 15)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kxb6l"]
@@ -977,6 +987,8 @@ stage_count = 13
 enemy_scene_list = Array[PackedScene]([ExtResource("2_tkmqv"), ExtResource("3_p3ix0"), ExtResource("4_n81r3"), ExtResource("5_lmvo1"), ExtResource("6_fxbtg"), ExtResource("7_lxg8a"), ExtResource("8_rccd4"), ExtResource("9_umn75"), ExtResource("10_gtpu4"), ExtResource("11_6l0gd")])
 current_money = 2000
 total_waves = 15
+stage_map_start_image = ExtResource("12_do8bm")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_wsscf")
 
 [node name="StageCamera" parent="." index="3"]
@@ -1025,39 +1037,7 @@ offset = Vector2(-7, -22)
 region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
-[node name="TreeMask" type="Sprite2D" parent="Background" index="5"]
-position = Vector2(1371, 2199)
-texture = ExtResource("9_r3yrq")
-centered = false
-offset = Vector2(-266, -533)
-region_enabled = true
-region_rect = Rect2(1103, 1666, 538, 534)
-
-[node name="TreeMask2" type="Sprite2D" parent="Background" index="6"]
-position = Vector2(645, 1911)
-texture = ExtResource("9_r3yrq")
-centered = false
-offset = Vector2(-645, -900)
-region_enabled = true
-region_rect = Rect2(0, 1006, 1061, 982)
-
-[node name="TreeMask3" type="Sprite2D" parent="Background" index="7"]
-position = Vector2(609, 867)
-texture = ExtResource("9_r3yrq")
-centered = false
-offset = Vector2(-609, -657)
-region_enabled = true
-region_rect = Rect2(0, 211, 1254, 668)
-
-[node name="TreeMask4" type="Sprite2D" parent="Background" index="8"]
-position = Vector2(1859, 1461)
-texture = ExtResource("9_r3yrq")
-centered = false
-offset = Vector2(-328, -1302)
-region_enabled = true
-region_rect = Rect2(1529, 162, 671, 1318)
-
-[node name="BlueCrayon" type="Area2D" parent="Background" index="9"]
+[node name="BlueCrayon" type="Area2D" parent="Background" index="5"]
 position = Vector2(970, 957)
 scale = Vector2(0.25, 0.25)
 collision_layer = 2
@@ -1091,7 +1071,7 @@ libraries = {
 }
 autoplay = "loop"
 
-[node name="INSIDE" type="Area2D" parent="Background" index="10"]
+[node name="INSIDE" type="Area2D" parent="Background" index="6"]
 position = Vector2(837, 221)
 collision_layer = 2
 collision_mask = 0
@@ -1105,15 +1085,14 @@ sprite_frames = SubResource("SpriteFrames_vgysy")
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_l8of4")
 
-[node name="MusicBox" type="Area2D" parent="Background" index="11"]
+[node name="MusicBox" type="Area2D" parent="Background" index="7"]
 position = Vector2(1589, 387)
 script = ExtResource("26_0l30a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/MusicBox" index="0"]
 position = Vector2(0, -6)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("27_a57xe")
-region_enabled = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("37_khn26")
 region_rect = Rect2(100, 90, 242, 205)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/MusicBox" index="1"]
@@ -1132,8 +1111,43 @@ exist_time = 98.77
 move_length = 120.0
 interval_time = 0.4
 
-[node name="Flag" parent="Background" index="12"]
+[node name="Flag" parent="Background" index="8"]
 position = Vector2(909, 2066)
+
+[node name="TreeMask1" type="Sprite2D" parent="Background" index="10"]
+position = Vector2(584, 1969)
+texture = ExtResource("40_8p8bv")
+offset = Vector2(-87, -469)
+
+[node name="TreeMask2" type="Sprite2D" parent="Background" index="11"]
+position = Vector2(626, 881)
+texture = ExtResource("41_ptvfe")
+offset = Vector2(2, -326)
+
+[node name="TreeMask3" type="Sprite2D" parent="Background" index="12"]
+position = Vector2(1341, 2213)
+texture = ExtResource("42_5vygv")
+offset = Vector2(19, -281)
+
+[node name="TreeMask4" type="Sprite2D" parent="Background" index="13"]
+position = Vector2(1781, 1463)
+texture = ExtResource("43_rkgbr")
+offset = Vector2(85, -641)
+
+[node name="WaterTreeMask1" type="Sprite2D" parent="Background" index="14"]
+position = Vector2(106, 471)
+texture = ExtResource("44_736x7")
+offset = Vector2(20, -176)
+
+[node name="WaterTreeMask2" type="Sprite2D" parent="Background" index="15"]
+position = Vector2(1970, 162)
+texture = ExtResource("45_dcrh2")
+offset = Vector2(-22, -71)
+
+[node name="WaterTreeMask3" type="Sprite2D" parent="Background" index="16"]
+position = Vector2(639, 185)
+texture = ExtResource("46_hihc1")
+offset = Vector2(-5, -84)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_kxb6l")

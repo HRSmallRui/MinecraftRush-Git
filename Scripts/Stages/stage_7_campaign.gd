@@ -2,6 +2,7 @@ extends Stage
 
 
 @export var explosion_markers: Array[Marker2D]
+@export var later_map_image: Texture2D
 @onready var path_mask_1: Sprite2D = $Background/BasedSprite/PathMask1
 @onready var path_mask_2: Sprite2D = $Background/BasedSprite/PathMask2
 @onready var path_mask_3: Sprite2D = $Background/BasedSprite/PathMask3
@@ -41,6 +42,7 @@ func loop_explosion():
 
 
 func path_disappear_animation():
+	stage_map.map_image = later_map_image
 	create_tween().tween_property(path_mask_1,"modulate:a",0,0.4)
 	await get_tree().create_timer(0.3,false).timeout
 	create_tween().tween_property(path_mask_2,"modulate:a",0,0.4)

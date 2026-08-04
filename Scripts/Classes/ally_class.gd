@@ -82,6 +82,13 @@ func _enter_tree() -> void:
 	current_data = start_data.duplicate(true)
 	current_data.owner = self
 	current_data.start_data = start_data
+	Stage.instance.stage_map.ally_list.append(self)
+	pass
+
+
+func _exit_tree() -> void:
+	if Stage.instance.stage_map != null:
+		Stage.instance.stage_map.ally_list.erase(self)
 	pass
 
 

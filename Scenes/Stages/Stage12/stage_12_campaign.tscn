@@ -1,4 +1,4 @@
-[gd_scene load_steps=267 format=3 uid="uid://byent32y45aqj"]
+[gd_scene load_steps=270 format=3 uid="uid://byent32y45aqj"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_7uln6"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_12_campaign.gd" id="2_7rile"]
@@ -11,20 +11,23 @@
 [ext_resource type="PackedScene" uid="uid://d0mpofppk7l0a" path="res://Scenes/Enemies/enemy_29.tscn" id="4_lw7lv"]
 [ext_resource type="Texture2D" uid="uid://bcl4nw64isinn" path="res://Assets/Images/Stages/Stage12/stage12-based.png" id="5_cjher"]
 [ext_resource type="PackedScene" uid="uid://dk81pa88qj7rh" path="res://Scenes/Enemies/enemy_30.tscn" id="5_ep12v"]
-[ext_resource type="Texture2D" uid="uid://ckmnb2r1u5ddj" path="res://Assets/Images/Stages/Stage12/TreeMask.png" id="6_d5li5"]
 [ext_resource type="PackedScene" uid="uid://dny4v8gl6x6b" path="res://Scenes/Enemies/enemy_31.tscn" id="6_if6t8"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_qvtxj"]
 [ext_resource type="PackedScene" uid="uid://dkm4khot84thm" path="res://Scenes/Enemies/enemy_32.tscn" id="7_25pa1"]
-[ext_resource type="Texture2D" uid="uid://cxox7qcw2727f" path="res://Assets/Images/Stages/Stage12/temple_based.png" id="7_r8jjj"]
 [ext_resource type="PackedScene" uid="uid://epbrqrye6e8k" path="res://Scenes/Enemies/enemy_41.tscn" id="8_hnxld"]
 [ext_resource type="Texture2D" uid="uid://c0uuer5s44da" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_00.png" id="9_gj3ur"]
+[ext_resource type="Texture2D" uid="uid://bup8u6tkwk5en" path="res://Assets/Images/Stages/Stage12/stage12.png" id="10_1f03h"]
 [ext_resource type="Texture2D" uid="uid://ego8sj3iico5" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_01.png" id="10_p4xdf"]
 [ext_resource type="Texture2D" uid="uid://dk210bd4neqfn" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_02.png" id="11_ojb8w"]
 [ext_resource type="Texture2D" uid="uid://bjhyc67g3u31t" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_03.png" id="12_xtwpc"]
 [ext_resource type="Texture2D" uid="uid://dsb4y6fjxerpo" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_04.png" id="13_guubo"]
 [ext_resource type="Texture2D" uid="uid://4r2ikcbaovk0" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_05.png" id="14_1igw7"]
+[ext_resource type="Texture2D" uid="uid://bmtqgsx7wr11x" path="res://Assets/Images/Stages/Stage12/temple.png" id="15_fnk0y"]
 [ext_resource type="Texture2D" uid="uid://dt1sv3gwf3omb" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_06.png" id="15_g31vk"]
+[ext_resource type="Texture2D" uid="uid://dre2fslpjnma7" path="res://Assets/Images/Stages/Stage12/Trees3.png" id="15_xkf8y"]
 [ext_resource type="Texture2D" uid="uid://ck6qcydweceuj" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_07.png" id="16_v3ad0"]
+[ext_resource type="Texture2D" uid="uid://ddk5g8fehgkal" path="res://Assets/Images/Stages/Stage12/Trees2.png" id="16_vy3qf"]
+[ext_resource type="Texture2D" uid="uid://dfa37gf7gy5ks" path="res://Assets/Images/Stages/Stage12/Trees1.png" id="17_p3pjy"]
 [ext_resource type="Texture2D" uid="uid://dt0yfk0jto15k" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_08.png" id="17_vleiq"]
 [ext_resource type="Texture2D" uid="uid://bt2d6o67ytvmo" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_09.png" id="18_nid03"]
 [ext_resource type="Texture2D" uid="uid://c8xtlkyqfv4so" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_10.png" id="19_ysy0f"]
@@ -1157,6 +1160,8 @@ stage_count = 12
 enemy_scene_list = Array[PackedScene]([ExtResource("4_lw7lv"), ExtResource("5_ep12v"), ExtResource("6_if6t8"), ExtResource("7_25pa1"), ExtResource("8_hnxld")])
 current_money = 1500
 total_waves = 15
+stage_map_start_image = ExtResource("10_1f03h")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_01nt3")
 
 [node name="StageCamera" parent="." index="3"]
@@ -1172,133 +1177,126 @@ stream = ExtResource("2_myb68")
 [node name="BattleMusic" parent="Musics" index="1"]
 stream = ExtResource("3_fvguo")
 
-[node name="Tree4" type="Sprite2D" parent="Background" index="0"]
-y_sort_enabled = true
-position = Vector2(1977, 513)
-texture = ExtResource("6_d5li5")
-offset = Vector2(-12, -149)
-region_enabled = true
-region_rect = Rect2(1819, 92, 281, 542)
-
-[node name="Tree3" type="Sprite2D" parent="Background" index="1"]
-y_sort_enabled = true
-position = Vector2(349, 185)
-texture = ExtResource("6_d5li5")
-offset = Vector2(473, 14)
-region_enabled = true
-region_rect = Rect2(481.801, 0, 660.199, 399)
-
-[node name="Tree5" type="Sprite2D" parent="Background" index="2"]
-y_sort_enabled = true
-position = Vector2(1283, 278)
-texture = ExtResource("6_d5li5")
-offset = Vector2(166, -81)
-region_enabled = true
-region_rect = Rect2(1142, 0, 594, 399)
-
-[node name="Tree2" type="Sprite2D" parent="Background" index="3"]
-y_sort_enabled = true
-position = Vector2(348, 126)
-texture = ExtResource("6_d5li5")
-offset = Vector2(-88, -29)
-region_enabled = true
-region_rect = Rect2(-3, -14, 517, 218)
-
-[node name="BasedSprite" parent="Background" index="4"]
+[node name="BasedSprite" parent="Background" index="0"]
 texture = ExtResource("5_cjher")
 
 [node name="ProtectionPoint" parent="Background/BasedSprite" index="0"]
 position = Vector2(1369, 1517)
 
 [node name="TempleBased" type="Sprite2D" parent="Background/BasedSprite" index="1"]
-texture = ExtResource("7_r8jjj")
+position = Vector2(1606, 0)
+texture = ExtResource("15_fnk0y")
 centered = false
 
-[node name="Flag2" type="Sprite2D" parent="Background" index="6"]
+[node name="Tree4" type="Sprite2D" parent="Background/BasedSprite" index="2"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1973, 513)
+texture = ExtResource("15_xkf8y")
+offset = Vector2(-12, -149)
+region_rect = Rect2(1819, 92, 281, 542)
+
+[node name="Tree3" type="Sprite2D" parent="Background/BasedSprite" index="3"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(620, 185)
+texture = ExtResource("16_vy3qf")
+offset = Vector2(473, 14)
+region_rect = Rect2(481.801, 0, 1214.2, 399)
+
+[node name="Tree2" type="Sprite2D" parent="Background/BasedSprite" index="4"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(348, 106)
+texture = ExtResource("17_p3pjy")
+offset = Vector2(-88, -29)
+region_rect = Rect2(-3, -14, 517, 218)
+
+[node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(1457, 1528)
 texture = ExtResource("6_qvtxj")
 offset = Vector2(-7, -22)
 region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
-[node name="CoconutTree" type="AnimatedSprite2D" parent="Background" index="7"]
+[node name="CoconutTree" type="AnimatedSprite2D" parent="Background" index="3"]
 position = Vector2(1444, 904)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree2" type="AnimatedSprite2D" parent="Background" index="8"]
+[node name="CoconutTree2" type="AnimatedSprite2D" parent="Background" index="4"]
 position = Vector2(1977, 908)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree3" type="AnimatedSprite2D" parent="Background" index="9"]
+[node name="CoconutTree3" type="AnimatedSprite2D" parent="Background" index="5"]
 position = Vector2(1634, 1047)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree4" type="AnimatedSprite2D" parent="Background" index="10"]
+[node name="CoconutTree4" type="AnimatedSprite2D" parent="Background" index="6"]
 position = Vector2(1928, 1245)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree5" type="AnimatedSprite2D" parent="Background" index="11"]
+[node name="CoconutTree5" type="AnimatedSprite2D" parent="Background" index="7"]
 position = Vector2(1643, 1431)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree6" type="AnimatedSprite2D" parent="Background" index="12"]
+[node name="CoconutTree6" type="AnimatedSprite2D" parent="Background" index="8"]
 position = Vector2(870, 1286)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree7" type="AnimatedSprite2D" parent="Background" index="13"]
+[node name="CoconutTree7" type="AnimatedSprite2D" parent="Background" index="9"]
 position = Vector2(418, 968)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree8" type="AnimatedSprite2D" parent="Background" index="14"]
+[node name="CoconutTree8" type="AnimatedSprite2D" parent="Background" index="10"]
 position = Vector2(265, 628)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree9" type="AnimatedSprite2D" parent="Background" index="15"]
+[node name="CoconutTree9" type="AnimatedSprite2D" parent="Background" index="11"]
 position = Vector2(807, 586)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree10" type="AnimatedSprite2D" parent="Background" index="16"]
+[node name="CoconutTree10" type="AnimatedSprite2D" parent="Background" index="12"]
 position = Vector2(1441, 471)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CoconutTree11" type="AnimatedSprite2D" parent="Background" index="17"]
+[node name="CoconutTree11" type="AnimatedSprite2D" parent="Background" index="13"]
 position = Vector2(1749, 590)
 sprite_frames = SubResource("SpriteFrames_0u10w")
 autoplay = "default"
 offset = Vector2(-29, -109)
 script = ExtResource("29_gs061")
 
-[node name="CARRION" type="Node2D" parent="Background" index="18"]
+[node name="CARRION" type="Node2D" parent="Background" index="14"]
 position = Vector2(1510, 572)
 script = ExtResource("31_elxux")
 
@@ -1336,14 +1334,14 @@ libraries = {
 }
 speed_scale = 2.0
 
-[node name="Axe" type="Sprite2D" parent="Background" index="19"]
+[node name="Axe" type="Sprite2D" parent="Background" index="15"]
 position = Vector2(346, 1275)
 texture = ExtResource("35_ns02c")
 offset = Vector2(19, -17)
 region_enabled = true
 region_rect = Rect2(123, 137, 56, 41)
 
-[node name="WoodenHouse" type="Sprite2D" parent="Background" index="20"]
+[node name="WoodenHouse" type="Sprite2D" parent="Background" index="16"]
 position = Vector2(181, 956)
 texture = ExtResource("35_ns02c")
 offset = Vector2(17, -26)
@@ -1357,7 +1355,7 @@ texture = ExtResource("35_ns02c")
 region_enabled = true
 region_rect = Rect2(14, 106, 95, 46)
 
-[node name="CamFire" type="Sprite2D" parent="Background" index="21"]
+[node name="CamFire" type="Sprite2D" parent="Background" index="17"]
 position = Vector2(172, 978)
 texture = ExtResource("36_1u2vw")
 script = ExtResource("37_7igk7")
@@ -1383,7 +1381,7 @@ collision_mask = 0
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_j3y35")
 
-[node name="Cat" type="Sprite2D" parent="Background" index="22"]
+[node name="Cat" type="Sprite2D" parent="Background" index="18"]
 position = Vector2(1703, 1381)
 scale = Vector2(0.564661, 0.564661)
 texture = ExtResource("68_c4lf0")
@@ -1398,7 +1396,7 @@ texture = ExtResource("68_c4lf0")
 region_enabled = true
 region_rect = Rect2(14, 22, 163, 109)
 
-[node name="YellowCrayon" type="Area2D" parent="Background" index="23"]
+[node name="YellowCrayon" type="Area2D" parent="Background" index="19"]
 position = Vector2(1741, 245)
 scale = Vector2(0.25, 0.25)
 collision_layer = 2
@@ -1431,7 +1429,7 @@ libraries = {
 }
 autoplay = "loop"
 
-[node name="Switch" type="Area2D" parent="Background" index="24"]
+[node name="Switch" type="Area2D" parent="Background" index="20"]
 position = Vector2(1809, 229)
 scale = Vector2(2.31105, 2.31105)
 collision_layer = 2
@@ -1453,7 +1451,7 @@ bus = &"Sound"
 position = Vector2(-3.02893, -1.10567)
 shape = SubResource("RectangleShape2D_8w3fb")
 
-[node name="Flag" parent="Background" index="25"]
+[node name="Flag" parent="Background" index="21"]
 position = Vector2(1292, 1536)
 
 [node name="StageNavigationRegion" parent="." index="8"]

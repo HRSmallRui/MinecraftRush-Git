@@ -117,6 +117,7 @@ func update_move_limit():
 	#print(move_limit_shape.shape.get_rect())
 	left_top_position = move_limit_shape.shape.get_rect().position + move_limit_shape.position
 	right_down_position = move_limit_shape.shape.get_rect().end + move_limit_shape.position
+	Stage.instance.stage_based_position = left_top_position
 	pass
 
 
@@ -133,11 +134,3 @@ func position_clamp():
 func shake(shake_strength: float):
 	offset_strength = shake_strength
 	pass
-
-
-func _on_zoom_slider_value_changed(value: float) -> void:
-	if !Stage.instance.can_control: return
-	zoom.x = lerpf(min_zoom,max_zoom,value)
-	zoom.y = zoom.x
-	zoom_clamp()
-	pass # Replace with function body.

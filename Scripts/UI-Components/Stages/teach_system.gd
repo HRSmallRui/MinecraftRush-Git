@@ -23,6 +23,7 @@ class_name TeachSystem
 func _ready() -> void:
 	if Stage.instance.stage_sav.level_sav[1][1] > 0:
 		queue_free()
+		get_tree().paused = false
 		return
 	await get_tree().process_frame
 	Stage.instance.can_control = false

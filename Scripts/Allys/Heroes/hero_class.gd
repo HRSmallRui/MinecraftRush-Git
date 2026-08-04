@@ -189,6 +189,8 @@ func die(explosion: bool):
 		navigation_timer.stop()
 		station_position = position
 		move_tween.kill()
+	station_position = position
+	intercepting_area.position = station_position
 	super(explosion)
 	pass
 

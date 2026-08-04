@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dipm7keamvmsj"]
+[gd_scene load_steps=105 format=3 uid="uid://dipm7keamvmsj"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_kphv4"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_cfyfj"]
@@ -12,11 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://duo0sby5qmfjj" path="res://Scenes/Enemies/enemy_23.tscn" id="6_buysu"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_rb8kq"]
 [ext_resource type="PackedScene" uid="uid://cmwosu03bhpc3" path="res://Scenes/Enemies/enemy_24.tscn" id="7_cm2m1"]
-[ext_resource type="Texture2D" uid="uid://b7c2vflxjrceu" path="res://Assets/Images/Stages/Stage9/temple_mask.png" id="7_gxg5v"]
 [ext_resource type="Texture2D" uid="uid://c5a43no2dy62g" path="res://Assets/Images/Stages/Stage9/front_mask.png" id="8_otn37"]
 [ext_resource type="PackedScene" uid="uid://bogv4dflqaoej" path="res://Scenes/Enemies/enemy_25.tscn" id="8_sh4xc"]
 [ext_resource type="Texture2D" uid="uid://tbi35kvicm8n" path="res://Assets/Images/Stages/Stage9/houses.png" id="9_vd0i1"]
 [ext_resource type="PackedScene" uid="uid://esqxnl1cqlby" path="res://Scenes/Enemies/enemy_26.tscn" id="9_yhg3t"]
+[ext_resource type="Texture2D" uid="uid://srp7iwuto1ln" path="res://Assets/Images/Stages/Stage9/stage9.png" id="10_62ik4"]
+[ext_resource type="Texture2D" uid="uid://bq05cptpgrxdk" path="res://Assets/Images/Stages/Stage9/沙漠神殿.png" id="18_it7ua"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter3.gd" id="26_57vps"]
 [ext_resource type="PackedScene" uid="uid://battap0mupbot" path="res://Scenes/StageComponents/hot_wave_system.tscn" id="27_1drla"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_path.gd" id="28_7gdjr"]
@@ -365,6 +366,7 @@ current_health = 1
 current_money = 1600
 total_waves = 5
 stage_environment_tags = Array[String](["desert"])
+stage_map_start_image = ExtResource("10_62ik4")
 stage_summon_config = SubResource("Resource_bbij1")
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -390,44 +392,14 @@ offset = Vector2(-7, -22)
 region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
-[node name="TempleMask" type="Sprite2D" parent="Background" index="3"]
-position = Vector2(1158, 1066)
-texture = ExtResource("7_gxg5v")
-centered = false
-offset = Vector2(-1158, -1066)
-
-[node name="TempleMask4" type="Sprite2D" parent="Background" index="4"]
-position = Vector2(1344, 1191)
-texture = ExtResource("7_gxg5v")
-centered = false
-offset = Vector2(-24, -326)
-region_enabled = true
-region_rect = Rect2(1320, 864, 656, 336)
-
-[node name="TempleMask2" type="Sprite2D" parent="Background" index="5"]
-position = Vector2(1339, 1162)
-texture = ExtResource("8_otn37")
-centered = false
-offset = Vector2(-51, -197)
-region_enabled = true
-region_rect = Rect2(1288, 966, 83, 229)
-
-[node name="TempleMask3" type="Sprite2D" parent="Background" index="6"]
-position = Vector2(1229, 1135)
-texture = ExtResource("8_otn37")
-centered = false
-offset = Vector2(-5, -170)
-region_enabled = true
-region_rect = Rect2(1224, 966, 64, 229)
-
-[node name="House1" type="Sprite2D" parent="Background" index="7"]
+[node name="House1" type="Sprite2D" parent="Background" index="3"]
 position = Vector2(256, 1317)
 texture = ExtResource("9_vd0i1")
 offset = Vector2(-6, -26)
 region_enabled = true
 region_rect = Rect2(277, 82, 142, 108)
 
-[node name="House2" type="Sprite2D" parent="Background" index="8"]
+[node name="House2" type="Sprite2D" parent="Background" index="4"]
 position = Vector2(1991, 1343)
 texture = ExtResource("9_vd0i1")
 offset = Vector2(-6, -26)
@@ -435,7 +407,7 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2(277, 82, 142, 108)
 
-[node name="House3" type="Sprite2D" parent="Background" index="9"]
+[node name="House3" type="Sprite2D" parent="Background" index="5"]
 position = Vector2(230, 748)
 texture = ExtResource("9_vd0i1")
 offset = Vector2(-6, -26)
@@ -443,21 +415,21 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2(277, 82, 142, 108)
 
-[node name="House4" type="Sprite2D" parent="Background" index="10"]
+[node name="House4" type="Sprite2D" parent="Background" index="6"]
 position = Vector2(138, 1133)
 texture = ExtResource("9_vd0i1")
 offset = Vector2(-6, -26)
 region_enabled = true
 region_rect = Rect2(166, 291, 189, 136)
 
-[node name="House5" type="Sprite2D" parent="Background" index="11"]
+[node name="House5" type="Sprite2D" parent="Background" index="7"]
 position = Vector2(1067, 1465)
 texture = ExtResource("9_vd0i1")
 offset = Vector2(-6, -26)
 region_enabled = true
 region_rect = Rect2(166, 291, 189, 136)
 
-[node name="House6" type="Sprite2D" parent="Background" index="12"]
+[node name="House6" type="Sprite2D" parent="Background" index="8"]
 position = Vector2(2052, 157)
 texture = ExtResource("9_vd0i1")
 offset = Vector2(1, -10)
@@ -465,14 +437,14 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2(166, 291, 189, 136)
 
-[node name="Well" type="Sprite2D" parent="Background" index="13"]
+[node name="Well" type="Sprite2D" parent="Background" index="9"]
 position = Vector2(76, 1368)
 texture = ExtResource("9_vd0i1")
 offset = Vector2(0, -26)
 region_enabled = true
 region_rect = Rect2(44, 84, 99, 71)
 
-[node name="HotWaveSystem" parent="Background" index="14" instance=ExtResource("27_1drla")]
+[node name="HotWaveSystem" parent="Background" index="10" instance=ExtResource("27_1drla")]
 wave_hot_sun_steps = Array[int]([1, 2, 0, 1, 2])
 start_hot_sun_step = 1
 
@@ -486,12 +458,41 @@ position = Vector2(1050, 732)
 shape = SubResource("RectangleShape2D_m4lhq")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
-[node name="DustStorm" parent="Background" index="15" instance=ExtResource("28_8twnl")]
+[node name="DustStorm" parent="Background" index="11" instance=ExtResource("28_8twnl")]
 position = Vector2(182, 36)
 wave_dust_show_time = Array[float]([0.0, 6.0, 8.0, 10.0, 12.0])
 
-[node name="Flag" parent="Background" index="16"]
+[node name="Flag" parent="Background" index="12"]
 position = Vector2(212, 92)
+
+[node name="TempleMask" type="Sprite2D" parent="Background" index="14"]
+position = Vector2(1154, 1093)
+texture = ExtResource("18_it7ua")
+offset = Vector2(371, -86)
+
+[node name="TempleMask4" type="Sprite2D" parent="Background" index="15"]
+position = Vector2(1528, 1218)
+texture = ExtResource("18_it7ua")
+centered = false
+offset = Vector2(-206, -398)
+region_enabled = true
+region_rect = Rect2(277, 93, 648, 466)
+
+[node name="TempleMask2" type="Sprite2D" parent="Background" index="16"]
+position = Vector2(1251, 1143)
+texture = ExtResource("8_otn37")
+centered = false
+offset = Vector2(-18, -160)
+region_enabled = true
+region_rect = Rect2(1, 1, 57, 205)
+
+[node name="TempleMask3" type="Sprite2D" parent="Background" index="17"]
+position = Vector2(1309, 1183)
+texture = ExtResource("8_otn37")
+centered = false
+offset = Vector2(-28, -200)
+region_enabled = true
+region_rect = Rect2(50, 1, 68, 205)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_d8g51")
