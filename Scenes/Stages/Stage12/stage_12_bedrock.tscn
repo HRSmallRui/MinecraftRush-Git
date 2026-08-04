@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://bku4dlccoh84e"]
+[gd_scene load_steps=119 format=3 uid="uid://bku4dlccoh84e"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_e26ye"]
 [ext_resource type="PackedScene" uid="uid://d0mpofppk7l0a" path="res://Scenes/Enemies/enemy_29.tscn" id="2_7amsk"]
@@ -9,12 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://bcl4nw64isinn" path="res://Assets/Images/Stages/Stage12/stage12-based.png" id="5_x3p2c"]
 [ext_resource type="PackedScene" uid="uid://dkm4khot84thm" path="res://Scenes/Enemies/enemy_32.tscn" id="5_xvgcn"]
 [ext_resource type="PackedScene" uid="uid://epbrqrye6e8k" path="res://Scenes/Enemies/enemy_41.tscn" id="6_d1th8"]
-[ext_resource type="Texture2D" uid="uid://ckmnb2r1u5ddj" path="res://Assets/Images/Stages/Stage12/TreeMask.png" id="6_y8hqf"]
-[ext_resource type="Texture2D" uid="uid://cxox7qcw2727f" path="res://Assets/Images/Stages/Stage12/temple_based.png" id="7_55r8p"]
+[ext_resource type="Texture2D" uid="uid://bup8u6tkwk5en" path="res://Assets/Images/Stages/Stage12/stage12.png" id="7_oiswb"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="8_5n8ju"]
 [ext_resource type="Texture2D" uid="uid://c0uuer5s44da" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_00.png" id="9_cko5g"]
 [ext_resource type="Texture2D" uid="uid://ego8sj3iico5" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_01.png" id="10_3ytr0"]
+[ext_resource type="Texture2D" uid="uid://dre2fslpjnma7" path="res://Assets/Images/Stages/Stage12/Trees3.png" id="10_e847k"]
+[ext_resource type="Texture2D" uid="uid://ddk5g8fehgkal" path="res://Assets/Images/Stages/Stage12/Trees2.png" id="11_hd1pv"]
+[ext_resource type="Texture2D" uid="uid://bmtqgsx7wr11x" path="res://Assets/Images/Stages/Stage12/temple.png" id="11_pvbkw"]
 [ext_resource type="Texture2D" uid="uid://dk210bd4neqfn" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_02.png" id="11_sc6g0"]
+[ext_resource type="Texture2D" uid="uid://dfa37gf7gy5ks" path="res://Assets/Images/Stages/Stage12/Trees1.png" id="12_3o3nw"]
 [ext_resource type="Texture2D" uid="uid://bjhyc67g3u31t" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_03.png" id="12_10iuk"]
 [ext_resource type="Texture2D" uid="uid://dsb4y6fjxerpo" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_04.png" id="13_wugx8"]
 [ext_resource type="Texture2D" uid="uid://4r2ikcbaovk0" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_05.png" id="14_76mc3"]
@@ -373,6 +376,8 @@ current_health = 1
 current_money = 2200
 total_waves = 1
 unlocked_tower_list = [false, true, true, false]
+stage_map_start_image = ExtResource("7_oiswb")
+hero_sprite_flip = true
 
 [node name="StageCamera" parent="." index="3"]
 position = Vector2(1372, 1518)
@@ -397,32 +402,30 @@ position = Vector2(1369, 1517)
 [node name="Tree4" type="Sprite2D" parent="Background/BasedSprite" index="1"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(1977, 513)
-texture = ExtResource("6_y8hqf")
+position = Vector2(1973, 513)
+texture = ExtResource("10_e847k")
 offset = Vector2(-12, -149)
-region_enabled = true
 region_rect = Rect2(1819, 92, 281, 542)
 
 [node name="Tree3" type="Sprite2D" parent="Background/BasedSprite" index="2"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(620, 191)
-texture = ExtResource("6_y8hqf")
+position = Vector2(620, 185)
+texture = ExtResource("11_hd1pv")
 offset = Vector2(473, 14)
-region_enabled = true
 region_rect = Rect2(481.801, 0, 1214.2, 399)
 
 [node name="Tree2" type="Sprite2D" parent="Background/BasedSprite" index="3"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(348, 126)
-texture = ExtResource("6_y8hqf")
+position = Vector2(348, 106)
+texture = ExtResource("12_3o3nw")
 offset = Vector2(-88, -29)
-region_enabled = true
 region_rect = Rect2(-3, -14, 517, 218)
 
 [node name="TempleBased" type="Sprite2D" parent="Background/BasedSprite" index="4"]
-texture = ExtResource("7_55r8p")
+position = Vector2(1601, 0)
+texture = ExtResource("11_pvbkw")
 centered = false
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]

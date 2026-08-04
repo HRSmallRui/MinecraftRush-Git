@@ -82,6 +82,13 @@ func _enter_tree() -> void:
 	current_data = start_data.duplicate(true)
 	current_data.owner = self
 	current_data.start_data = start_data
+	Stage.instance.stage_map.ally_list.append(self)
+	pass
+
+
+func _exit_tree() -> void:
+	if Stage.instance.stage_map != null:
+		Stage.instance.stage_map.ally_list.erase(self)
 	pass
 
 
@@ -304,17 +311,18 @@ func anim_changed():
 	pass
 
 
-func cause_damage(damage_type: int = 0):
+func cause_damage(damage_count: int = 0, damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage,
+broken_rate: float = 0):
 	normal_attack_timer.start()
 	if current_intercepting_enemy == null: return
-	match damage_type:
+	match damage_count:
 		0:
 			var target_enemy: Enemy = current_intercepting_enemy
 			var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
 			if randf_range(0,1) < 0.1:
 				attack_text_effect()
 			AudioManager.instance.battle_audio_play()
-			if target_enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self):
+			if target_enemy.take_damage(damage,damage_type,broken_rate,false,self):
 				if target_enemy.enemy_state != Enemy.EnemyState.DIE:
 					on_normal_attack_hit(target_enemy)
 	pass
@@ -408,7 +416,7 @@ func move_to_intercept(target_pos: Vector2):
 
 
 func move_back():
-	if intercepting_area.position != station_position:
+	if intercepting_area.position != station_position and self is Hero:
 		translate_to_new_state(AllyState.MOVE)
 		move(intercepting_area.position)
 		return

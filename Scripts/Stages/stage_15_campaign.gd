@@ -6,6 +6,8 @@ extends Stage
 @export var left_path_mask: Sprite2D
 @export var left_explosion_markers: Array[Marker2D]
 @export var left_hideen_tower2: DefenceTower
+@export var later_map_image1: Texture2D
+@export var later_map_image2: Texture2D
 
 @export var path_right_list: Array[EnemyPath]
 @export var path_right_collision: CollisionPolygon2D
@@ -85,8 +87,12 @@ func wave_tip(wave_count: int):
 	match wave_count:
 		6:
 			open_path_left()
+			stage_map.map_image = later_map_image1
+			stage_map_start_image = null
 		8:
 			open_path_right()
+			stage_map.map_image = later_map_image2
+			later_map_image1 = null
 	pass
 
 

@@ -1,15 +1,15 @@
-[gd_scene load_steps=164 format=3 uid="uid://bfxsbppmehrlo"]
+[gd_scene load_steps=180 format=3 uid="uid://bfxsbppmehrlo"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_uf25d"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_1_campaign_later.gd" id="2_o0b88"]
 [ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="2_t274y"]
 [ext_resource type="Texture2D" uid="uid://b2a6u1rok4t8h" path="res://Assets/Images/Stages/Stage1/stage1-based.png" id="2_yqrqb"]
 [ext_resource type="Resource" uid="uid://e54aa2hy38t6" path="res://Assets/Resources/StageSummonConfigs/stage_1_campaign_later.tres" id="3_0ugup"]
-[ext_resource type="Texture2D" uid="uid://c8gmdhh2o6jgd" path="res://Assets/Images/Stages/Stage1/stage1-wall.png" id="3_bvto7"]
 [ext_resource type="PackedScene" uid="uid://44npbgu1xrd5" path="res://Scenes/Enemies/enemy_0.tscn" id="3_kkfxg"]
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="3_uostc"]
 [ext_resource type="PackedScene" uid="uid://d11w8wb6ou4nk" path="res://Scenes/UI-Components/TipButtons/ArmorTipButton.tscn" id="3_va8nk"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="4_m34qa"]
+[ext_resource type="Texture2D" uid="uid://dsviwmsk3ct40" path="res://Assets/Images/Stages/Stage1/stage1-view.png" id="6_0ykbt"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_jdvbq"]
 [ext_resource type="PackedScene" uid="uid://d0sta1lv6shgl" path="res://Scenes/DefenceTowers/defence_tower_based.tscn" id="6_s654h"]
 [ext_resource type="Texture2D" uid="uid://dbyq78ggwv7fg" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_00.png" id="8_mcs6y"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://4j747edyffkd" path="res://Scenes/UI-Components/Stages/wave_button.tscn" id="10_el46h"]
 [ext_resource type="Texture2D" uid="uid://dtxr03b8jegiu" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_02.png" id="10_j0obd"]
 [ext_resource type="Texture2D" uid="uid://cvocfc7j2gysb" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_03.png" id="11_kyahn"]
+[ext_resource type="Texture2D" uid="uid://c4vh2doe3f68h" path="res://Assets/Images/Stages/Stage1/WallLevel1.png" id="11_of52y"]
 [ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="11_tngnd"]
 [ext_resource type="Resource" uid="uid://c5ebxwhgnjlym" path="res://Library/SummonConfigs/Stage1/Campaign/path1.res" id="11_w5h1r"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/teach_system.gd" id="12_8h6nn"]
@@ -111,6 +112,10 @@
 [ext_resource type="PackedScene" uid="uid://kodaiwqt343w" path="res://Scenes/TipUI/heroskill_unlock.tscn" id="102_tecm7"]
 [ext_resource type="PackedScene" uid="uid://b1i3simwvcxqa" path="res://Scenes/TipUI/firerain_unlock.tscn" id="103_kp2n4"]
 [ext_resource type="PackedScene" uid="uid://bck1eh6yn7iii" path="res://Scenes/UI-Components/Stages/tutorial_warning.tscn" id="104_3w5l8"]
+[ext_resource type="PackedScene" uid="uid://doqtusnl6v3jq" path="res://Scenes/StageComponents/story_layer.tscn" id="105_givyn"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/dialog_block.gd" id="106_w2al5"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="109_58no0"]
+[ext_resource type="Texture2D" uid="uid://dy4e5740gddnu" path="res://Assets/Images/UI/button_hover.png" id="110_cr4jw"]
 [ext_resource type="Texture2D" uid="uid://dnrxg6tdwx1mp" path="res://Assets/Animations/StageComponents/Sheep/dead_0.png" id="123_dy5ms"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrbi4"]
@@ -394,14 +399,71 @@ _data = {
 }
 point_count = 7
 
-[sub_resource type="Gradient" id="Gradient_s5g5n"]
-offsets = PackedFloat32Array(0.95098, 0.995098)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_kyr70"]
+script = ExtResource("106_w2al5")
+dialog_text = "欢迎归来，将军"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 0.0
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1pcl1"]
-gradient = SubResource("Gradient_s5g5n")
-fill = 2
-fill_from = Vector2(0.529915, 0.538462)
+[sub_resource type="Resource" id="Resource_ul0uq"]
+script = ExtResource("106_w2al5")
+dialog_text = "我知道这个时间把你召回有些不合时宜，但我们需要“守护”的力量"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 3.0
+
+[sub_resource type="Resource" id="Resource_kid3r"]
+script = ExtResource("106_w2al5")
+dialog_text = "我不知道离开战场那么久你是否还记得怎么建立防线与指挥战斗"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 8.0
+
+[sub_resource type="Resource" id="Resource_gf4rm"]
+script = ExtResource("106_w2al5")
+dialog_text = "有一小支分队绕过了防线正在朝这边移动"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 13.0
+
+[sub_resource type="Resource" id="Resource_7s0m0"]
+script = ExtResource("106_w2al5")
+dialog_text = "很高兴你回来的时候记得临时拼凑一支队伍，那么皇城这边暂且交由你负责"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 16.0
+
+[sub_resource type="Resource" id="Resource_5p4gq"]
+script = ExtResource("106_w2al5")
+dialog_text = "我们需要抓紧时间建立防线"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 24.0
+
+[sub_resource type="Resource" id="Resource_47bpq"]
+script = ExtResource("106_w2al5")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 28.0
+
+[sub_resource type="Resource" id="Resource_7pqi8"]
+script = ExtResource("106_w2al5")
+dialog_text = "敌人会从这里出现"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 28.6
+
+[sub_resource type="Resource" id="Resource_vgcxl"]
+script = ExtResource("106_w2al5")
+dialog_text = "不要让他们突破据点"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 31.0
+
+[sub_resource type="Resource" id="Resource_fqhu2"]
+script = ExtResource("106_w2al5")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 34.0
+
+[sub_resource type="Resource" id="Resource_45gqh"]
+script = ExtResource("106_w2al5")
+dialog_text = "单击此处，建造防御塔来抵御他们的攻势"
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 36.0
 
 [sub_resource type="Animation" id="Animation_ekxot"]
 length = 0.001
@@ -637,40 +699,23 @@ _data = {
 "unfold": SubResource("Animation_gvm3w")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx4fl"]
-bg_color = Color(0.237539, 0.237539, 0.237539, 0.435294)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fc1w"]
+atlas = ExtResource("109_58no0")
+region = Rect2(98, 192, 331, 143)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhlqq"]
-bg_color = Color(0, 0, 0, 0.435294)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+[sub_resource type="AtlasTexture" id="AtlasTexture_8evsj"]
+atlas = ExtResource("110_cr4jw")
+region = Rect2(68, 162, 391, 203)
 
 [sub_resource type="Animation" id="Animation_1ym38"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
+tracks/0/path = NodePath(".:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1281, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1111, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
@@ -678,29 +723,18 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_myn4b"]
 resource_name = "process"
-length = 10.5
+length = 23.0
 step = 0.1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
+tracks/0/path = NodePath(".:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1281, -0.25, 0, 0.25, 0, 1281, -0.25, 0, 0.25, 0, 1281, -0.25, 0, 0.25, 0, 1281, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2, 2.5, 10)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(1111, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0, 896, -0.25, 0, 0.25, 0, 896, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2, 2.5, 10, 10.5)
+"points": PackedFloat32Array(1111, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0, 754, -0.25, 0, 0.25, 0, 754, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 2.5, 22.5, 23)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tdas"]
@@ -708,6 +742,15 @@ _data = {
 "RESET": SubResource("Animation_1ym38"),
 "process": SubResource("Animation_myn4b")
 }
+
+[sub_resource type="Gradient" id="Gradient_s5g5n"]
+offsets = PackedFloat32Array(0.95098, 0.995098)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1pcl1"]
+gradient = SubResource("Gradient_s5g5n")
+fill = 2
+fill_from = Vector2(0.529915, 0.538462)
 
 [sub_resource type="Resource" id="Resource_dtmfa"]
 script = ExtResource("13_kyk0k")
@@ -866,10 +909,8 @@ script = ExtResource("2_o0b88")
 armor_tip_button_scene = ExtResource("3_va8nk")
 enemy_scene_list = Array[PackedScene]([ExtResource("3_kkfxg"), ExtResource("4_m34qa")])
 current_money = 250
+stage_map_start_image = ExtResource("6_0ykbt")
 stage_summon_config = ExtResource("3_0ugup")
-
-[node name="StageCamera" parent="." index="3"]
-min_zoom_length_mobile = 1.0
 
 [node name="PreparationMusic" parent="Musics" index="0"]
 stream = ExtResource("2_t274y")
@@ -885,7 +926,7 @@ position = Vector2(417, 520)
 
 [node name="Wall" type="Sprite2D" parent="Background" index="1"]
 z_index = 2
-texture = ExtResource("3_bvto7")
+texture = ExtResource("11_of52y")
 centered = false
 
 [node name="FlagAnim" type="AnimatedSprite2D" parent="Background/Wall" index="0"]
@@ -1008,16 +1049,46 @@ position = Vector2(1515, 781)
 [node name="DefenceTowerBased12" parent="Towers" index="10" instance=ExtResource("6_s654h")]
 position = Vector2(1516, 604)
 
-[node name="TeachSystem" type="CanvasLayer" parent="." index="13"]
+[node name="TeachSystem" type="Control" parent="." index="14"]
 process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("12_8h6nn")
 reinforce_unlock_scene = ExtResource("100_eahil")
 hero_unlock_scene = ExtResource("101_t6ijq")
 hero_skill_unlock_scene = ExtResource("102_tecm7")
 fire_unlock_scene = ExtResource("103_kp2n4")
 warning_scene = ExtResource("104_3w5l8")
+metadata/_edit_use_anchors_ = true
 
-[node name="AllStop" type="ColorRect" parent="TeachSystem" index="0"]
+[node name="StoryLayer" parent="TeachSystem" index="0" instance=ExtResource("105_givyn")]
+process_mode = 3
+layer = 11
+ending_time = 1000.0
+dialog_list = Array[ExtResource("106_w2al5")]([SubResource("Resource_kyr70"), SubResource("Resource_ul0uq"), SubResource("Resource_kid3r"), SubResource("Resource_gf4rm"), SubResource("Resource_7s0m0"), SubResource("Resource_5p4gq"), SubResource("Resource_47bpq"), SubResource("Resource_7pqi8"), SubResource("Resource_vgcxl"), SubResource("Resource_fqhu2"), SubResource("Resource_45gqh")])
+
+[node name="ColorRect" parent="TeachSystem/StoryLayer" index="0"]
+visible = false
+
+[node name="Subtitle" parent="TeachSystem/StoryLayer" index="2"]
+offset_top = -92.0
+offset_bottom = -4.0
+
+[node name="SkipButton" parent="TeachSystem/StoryLayer" index="3"]
+visible = false
+
+[node name="StopLayer" type="CanvasLayer" parent="TeachSystem" index="1"]
+layer = 10
+
+[node name="AllStop" type="ColorRect" parent="TeachSystem/StopLayer" index="0"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1025,8 +1096,176 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="IntroLabel" type="Label" parent="TeachSystem" index="1"]
+[node name="TowerIntro" type="Node2D" parent="TeachSystem/StopLayer" index="1"]
+
+[node name="IntroSprite" type="Sprite2D" parent="TeachSystem/StopLayer/TowerIntro" index="0"]
+position = Vector2(960, 427)
+scale = Vector2(1.33368, 1.33368)
+texture = ExtResource("15_daeof")
+region_enabled = true
+region_rect = Rect2(416, 0, 0, 561)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/StopLayer/TowerIntro" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_jkjb4")
+}
+
+[node name="Label1" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="2"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 519.0
+offset_top = 343.0
+offset_right = 775.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "射手高台"
+
+[node name="Label2" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="3"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 799.0
+offset_top = 343.0
+offset_right = 927.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "兵营"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="4"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 1052.0
+offset_top = 343.0
+offset_right = 1308.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "法师高塔"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="5"]
+visible = false
+modulate = Color(1, 0.509804, 0, 1)
+offset_left = 1313.0
+offset_top = 343.0
+offset_right = 1569.0
+offset_bottom = 407.0
+scale = Vector2(0.391345, 0.391345)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "红石炮塔"
+horizontal_alignment = 1
+
+[node name="IntroLabel1" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="6"]
+offset_left = 490.0
+offset_top = 609.0
+offset_right = 1163.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "良好的射击速率"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="IntroLabel2" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="7"]
+offset_left = 756.0
+offset_top = 609.0
+offset_right = 1429.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "训练士兵拦截敌人"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="IntroLabel3" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="8"]
+offset_left = 1015.0
+offset_top = 609.0
+offset_right = 1688.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "高伤害护甲穿刺"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="IntroLabel4" type="Label" parent="TeachSystem/StopLayer/TowerIntro" index="9"]
+offset_left = 1293.0
+offset_top = 609.0
+offset_right = 1966.0
+offset_bottom = 785.0
+scale = Vector2(0.227488, 0.227488)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "造成范围伤害"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SkipButton" type="TextureButton" parent="TeachSystem/StopLayer" index="2"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = 31.0
+offset_right = -32.0
+offset_bottom = 174.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_1fc1w")
+texture_hover = SubResource("AtlasTexture_8evsj")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/StopLayer/SkipButton" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_1tdas")
+}
+autoplay = "process"
+
+[node name="Label" type="Label" parent="TeachSystem/StopLayer/SkipButton" index="1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 320.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_pmal7")
+theme_override_font_sizes/font_size = 64
+text = "跳过教程"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IntroLabel" type="Label" parent="TeachSystem" index="2"]
+visible = false
 z_index = 2
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1043,11 +1282,12 @@ text = "将军你好"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShowComponent" type="Control" parent="TeachSystem" index="2"]
+[node name="ShowComponent" type="Control" parent="TeachSystem" index="3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="EnemyPoint1" type="PointLight2D" parent="TeachSystem/ShowComponent" index="0"]
 visible = false
@@ -1072,12 +1312,12 @@ range_z_max = 200
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="DirectionalLight" type="DirectionalLight2D" parent="TeachSystem" index="3"]
+[node name="DirectionalLight" type="DirectionalLight2D" parent="TeachSystem" index="4"]
 energy = 0.0
 blend_mode = 1
 range_z_max = 0
 
-[node name="WaveClickComponent" type="Control" parent="TeachSystem" index="4"]
+[node name="WaveClickComponent" type="Control" parent="TeachSystem" index="5"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -1104,173 +1344,102 @@ offset_top = 784.0
 offset_right = 2955.0
 offset_bottom = 1868.0
 
-[node name="TowerPoint" type="PointLight2D" parent="TeachSystem" index="5"]
+[node name="TowerPoint" type="PointLight2D" parent="TeachSystem" index="6"]
 visible = false
 position = Vector2(1066, 466)
 energy = 0.8
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="EnemyPoint3" type="PointLight2D" parent="TeachSystem" index="6"]
+[node name="EnemyPoint3" type="PointLight2D" parent="TeachSystem" index="7"]
 visible = false
 position = Vector2(1639, 688)
 energy = 0.8
 texture = SubResource("GradientTexture2D_1pcl1")
 texture_scale = 2.76
 
-[node name="TowerIntro" type="Node2D" parent="TeachSystem" index="7"]
-
-[node name="IntroSprite" type="Sprite2D" parent="TeachSystem/TowerIntro" index="0"]
-position = Vector2(960, 427)
-scale = Vector2(1.33368, 1.33368)
-texture = ExtResource("15_daeof")
-region_enabled = true
-region_rect = Rect2(416, 0, 0, 561)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/TowerIntro" index="1"]
-libraries = {
-"": SubResource("AnimationLibrary_jkjb4")
-}
-
-[node name="Label1" type="Label" parent="TeachSystem/TowerIntro" index="2"]
+[node name="TowerClickComponent" type="Control" parent="TeachSystem" index="8"]
 visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 519.0
-offset_top = 343.0
-offset_right = 775.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "射手高台"
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Label2" type="Label" parent="TeachSystem/TowerIntro" index="3"]
+[node name="Panel" type="Panel" parent="TeachSystem/TowerClickComponent" index="0"]
+layout_mode = 0
+offset_top = -55.0
+offset_right = 995.0
+offset_bottom = 1173.0
+
+[node name="Panel2" type="Panel" parent="TeachSystem/TowerClickComponent" index="1"]
+layout_mode = 0
+offset_left = 638.0
+offset_top = -810.0
+offset_right = 2137.0
+offset_bottom = 418.0
+
+[node name="Panel3" type="Panel" parent="TeachSystem/TowerClickComponent" index="2"]
+layout_mode = 0
+offset_left = 1126.0
+offset_top = -2.0
+offset_right = 2625.0
+offset_bottom = 1226.0
+
+[node name="Panel4" type="Panel" parent="TeachSystem/TowerClickComponent" index="3"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 511.0
+offset_right = 2004.0
+offset_bottom = 1739.0
+
+[node name="TowerBuildComponent" type="Control" parent="TeachSystem" index="9"]
 visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 799.0
-offset_top = 343.0
-offset_right = 927.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "兵营"
-horizontal_alignment = 1
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+anchors_preset = 0
+offset_left = 968.0
+offset_top = 374.0
+offset_right = 1008.0
+offset_bottom = 414.0
+mouse_filter = 2
 
-[node name="Label3" type="Label" parent="TeachSystem/TowerIntro" index="4"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 1052.0
-offset_top = 343.0
-offset_right = 1308.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "法师高塔"
-horizontal_alignment = 1
+[node name="Panel" type="Panel" parent="TeachSystem/TowerBuildComponent" index="0"]
+layout_mode = 0
+offset_left = -1032.0
+offset_top = -464.0
+offset_right = -37.0
+offset_bottom = 764.0
 
-[node name="Label4" type="Label" parent="TeachSystem/TowerIntro" index="5"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 1313.0
-offset_top = 343.0
-offset_right = 1569.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "红石炮塔"
-horizontal_alignment = 1
+[node name="Panel2" type="Panel" parent="TeachSystem/TowerBuildComponent" index="1"]
+layout_mode = 0
+offset_left = -348.0
+offset_top = -1267.0
+offset_right = 1151.0
+offset_bottom = -39.0
 
-[node name="IntroLabel1" type="Label" parent="TeachSystem/TowerIntro" index="6"]
-offset_left = 490.0
-offset_top = 609.0
-offset_right = 1163.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "良好的射击速率"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
+[node name="Panel3" type="Panel" parent="TeachSystem/TowerBuildComponent" index="2"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -414.0
+offset_right = 1535.0
+offset_bottom = 814.0
 
-[node name="IntroLabel2" type="Label" parent="TeachSystem/TowerIntro" index="7"]
-offset_left = 756.0
-offset_top = 609.0
-offset_right = 1429.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "训练士兵拦截敌人"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
+[node name="Panel4" type="Panel" parent="TeachSystem/TowerBuildComponent" index="3"]
+layout_mode = 0
+offset_left = -491.0
+offset_top = 37.0
+offset_right = 1008.0
+offset_bottom = 1265.0
 
-[node name="IntroLabel3" type="Label" parent="TeachSystem/TowerIntro" index="8"]
-offset_left = 1015.0
-offset_top = 609.0
-offset_right = 1688.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "高伤害护甲穿刺"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
+[node name="ArcherMarker" type="Marker2D" parent="TeachSystem" index="10"]
+position = Vector2(986, 394)
 
-[node name="IntroLabel4" type="Label" parent="TeachSystem/TowerIntro" index="9"]
-offset_left = 1293.0
-offset_top = 609.0
-offset_right = 1966.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("13_pmal7")
-theme_override_font_sizes/font_size = 64
-text = "造成范围伤害"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
+[node name="ArcherMarkerAndroid" type="Marker2D" parent="TeachSystem" index="11"]
+position = Vector2(968, 376)
 
-[node name="SkipButton" type="Button" parent="TeachSystem" index="8"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -639.0
-offset_top = 31.0
-offset_right = -9.0
-offset_bottom = 182.0
-grow_horizontal = 0
-grow_vertical = 0
-focus_mode = 0
-theme_override_font_sizes/font_size = 72
-theme_override_styles/hover = SubResource("StyleBoxFlat_fx4fl")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mhlqq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mhlqq")
-text = "憋叭叭了，赶紧的"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/SkipButton" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_1tdas")
-}
-autoplay = "process"
+[node name="WaveButtons" parent="." index="16"]
+metadata/_edit_use_anchors_ = true
 
 [node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("10_el46h")]
 offset_left = 1830.0
@@ -1281,6 +1450,7 @@ linked_wave_panel = NodePath("../WavePanel")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("12_whpfc")]([SubResource("Resource_4t7cw"), SubResource("Resource_22l5k"), null, SubResource("Resource_umkc0"), SubResource("Resource_anwsw"), SubResource("Resource_7eyel"), SubResource("Resource_ptk7g"), SubResource("Resource_u6f4b")])
 summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0])
+metadata/_edit_use_anchors_ = true
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="1"]
 show_behind_parent = true
@@ -1298,6 +1468,7 @@ wave_button_id = 1
 linked_enemy_path = NodePath("../../Enemies/EnemyPath2")
 summon_text_list = Array[ExtResource("12_whpfc")]([null, null, SubResource("Resource_vs22j"), SubResource("Resource_v72yq"), SubResource("Resource_0gwrj"), SubResource("Resource_7niuk"), SubResource("Resource_gtmur"), SubResource("Resource_1k4nt")])
 summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0])
+metadata/_edit_use_anchors_ = true
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton2" index="1"]
 show_behind_parent = true
@@ -1312,6 +1483,7 @@ offset_left = 1457.0
 offset_top = 673.0
 offset_right = 2061.0
 offset_bottom = 967.0
+metadata/_edit_use_anchors_ = true
 
 [node name="WavePanel2" parent="WaveButtons" index="3" instance=ExtResource("12_motho")]
 layout_mode = 0
@@ -1319,6 +1491,7 @@ offset_left = 1112.0
 offset_top = 46.0
 offset_right = 1716.0
 offset_bottom = 340.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(270, 481, 873, 486, 956, 371, 999, 249, 1024, 135, 1026, -1, 1114, 1, 1122, 76, 1092, 255, 998, 494, 1376, 588, 1744, 695, 1922, 691, 1919, 773, 1679, 778, 1033, 591, 284, 567)
@@ -1326,4 +1499,7 @@ polygon = PackedVector2Array(270, 481, 873, 486, 956, 371, 999, 249, 1024, 135, 
 [node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(421, 527)
 
-[connection signal="pressed" from="TeachSystem/SkipButton" to="TeachSystem" method="_on_skip_button_pressed"]
+[connection signal="pressed" from="TeachSystem/StopLayer/SkipButton" to="TeachSystem" method="_on_skip_button_pressed"]
+
+[editable path="Towers/DefenceTowerBased4"]
+[editable path="TeachSystem/StoryLayer"]

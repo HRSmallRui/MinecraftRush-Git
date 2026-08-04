@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://be2c615bkcde"]
+[gd_scene load_steps=120 format=3 uid="uid://be2c615bkcde"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_6xx03"]
 [ext_resource type="PackedScene" uid="uid://dk7q4k0117mlj" path="res://Scenes/Enemies/enemy_10.tscn" id="2_kwicb"]
@@ -17,16 +17,17 @@
 [ext_resource type="PackedScene" uid="uid://c328l6ss6k570" path="res://Scenes/Enemies/enemy_17.tscn" id="9_32hki"]
 [ext_resource type="PackedScene" uid="uid://dcjvqgkc5u8ik" path="res://Scenes/Enemies/enemy_18.tscn" id="10_f0egb"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="10_sefer"]
-[ext_resource type="Texture2D" uid="uid://c77akitvab0om" path="res://Assets/Images/Stages/Stage7/stage7-tree_mask1.png" id="11_qe78v"]
-[ext_resource type="Texture2D" uid="uid://cmq5pcbu385si" path="res://Assets/Images/Stages/Stage7/stage7-tree_mask2.png" id="12_t8r0h"]
+[ext_resource type="Texture2D" uid="uid://da103x5iicqss" path="res://Assets/Images/Stages/Stage7/stage7-full.png" id="11_7daho"]
 [ext_resource type="Texture2D" uid="uid://c0uuer5s44da" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_00.png" id="13_10g2d"]
 [ext_resource type="Texture2D" uid="uid://ego8sj3iico5" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_01.png" id="14_jkpda"]
 [ext_resource type="Texture2D" uid="uid://dk210bd4neqfn" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_02.png" id="15_mk8i2"]
 [ext_resource type="Texture2D" uid="uid://bjhyc67g3u31t" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_03.png" id="16_vmfcu"]
 [ext_resource type="Texture2D" uid="uid://dsb4y6fjxerpo" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_04.png" id="17_vjujb"]
 [ext_resource type="Texture2D" uid="uid://4r2ikcbaovk0" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_05.png" id="18_du1vu"]
+[ext_resource type="Texture2D" uid="uid://bkaehpb1q8r70" path="res://Assets/Images/Stages/Stage7/TreeMask2.png" id="19_64aby"]
 [ext_resource type="Texture2D" uid="uid://dt1sv3gwf3omb" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_06.png" id="19_ecwi1"]
 [ext_resource type="Texture2D" uid="uid://ck6qcydweceuj" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_07.png" id="20_6iq41"]
+[ext_resource type="Texture2D" uid="uid://cnjpex316nrw" path="res://Assets/Images/Stages/Stage7/TreeMask1.png" id="20_egaia"]
 [ext_resource type="Texture2D" uid="uid://dt0yfk0jto15k" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_08.png" id="21_105xx"]
 [ext_resource type="Texture2D" uid="uid://bt2d6o67ytvmo" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_09.png" id="22_eljs0"]
 [ext_resource type="Texture2D" uid="uid://c8xtlkyqfv4so" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_10.png" id="23_qtnhk"]
@@ -446,6 +447,8 @@ current_health = 1
 current_money = 2200
 total_waves = 1
 unlocked_tower_list = [true, true, true, false]
+stage_map_start_image = ExtResource("11_7daho")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_n0r0h")
 
 [node name="StageCamera" parent="." index="3"]
@@ -496,13 +499,14 @@ region_rect = Rect2(40, 38, 40, 73)
 
 [node name="TreeMask1" type="Sprite2D" parent="Background" index="5"]
 position = Vector2(390, 581)
-texture = ExtResource("11_qe78v")
+texture = ExtResource("19_64aby")
 centered = false
 offset = Vector2(-390, -581)
 
 [node name="TreeMask2" type="Sprite2D" parent="Background" index="6"]
 z_index = 1
-texture = ExtResource("12_t8r0h")
+position = Vector2(0, 722)
+texture = ExtResource("20_egaia")
 centered = false
 
 [node name="CoconutTrees" type="Node2D" parent="Background" index="7"]

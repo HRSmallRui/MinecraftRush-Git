@@ -48,4 +48,6 @@ static var bombard_datas : Array[BasedTowerData] = [
 static var buying_soldier_datas: Dictionary = {
 	"DesertSoldier1": BarrackTowerData.new("沙漠佣兵","另一伙沙漠游牧部落的常规士兵，他们不止为钱，还为了，正义！",160,10,15,0,0),
 	"DesertSoldier2": BarrackTowerData.new("佣兵头领","这伙亡命之徒的头头，“战斗”与“金钱”是他们的信仰，但请他们出动需要更多的代价……",380,20,35,0.5,0),
+	"VillageSoldierFarmer": BarrackTowerData.new("村民农夫","面对侵犯自己家园的恶棍，这些老实的农民也会抄起棍棒参与战斗，“抄家伙！”",60,2,4,0.1,0),
+	"VillageSoldierBlacksmith": BarrackTowerData.new("村民铁匠","拥有比农夫更好的身体素质和更加精良的装备，不过请这些老师傅上战场可能要多花点金钱。",80,4,8,0.2,0)
 }

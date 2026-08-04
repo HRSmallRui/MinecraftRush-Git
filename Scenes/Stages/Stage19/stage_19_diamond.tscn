@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://byvx08majo6v3"]
+[gd_scene load_steps=176 format=3 uid="uid://byvx08majo6v3"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_tc4kg"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_bjgry"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://d2c404kk7xb4d" path="res://Scenes/Enemies/enemy_37.tscn" id="10_jlnru"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="10_trtdm"]
 [ext_resource type="PackedScene" uid="uid://g8kevs3lebju" path="res://Scenes/Enemies/enemy_38.tscn" id="11_j8cl4"]
-[ext_resource type="Texture2D" uid="uid://dgjf37kuaglga" path="res://Assets/Images/Stages/Stage19/stage19-mask.png" id="11_lpj1m"]
 [ext_resource type="PackedScene" uid="uid://bccm6sjsetyyj" path="res://Scenes/Enemies/enemy_39.tscn" id="12_7ijt3"]
 [ext_resource type="Texture2D" uid="uid://dnrxg6tdwx1mp" path="res://Assets/Animations/StageComponents/Sheep/dead_0.png" id="12_fgxua"]
 [ext_resource type="PackedScene" uid="uid://d20lg48d4560c" path="res://Scenes/Enemies/enemy_40.tscn" id="13_a2kdd"]
@@ -28,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cl3tg3ey1bo5r" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_03.png" id="15_nai18"]
 [ext_resource type="PackedScene" uid="uid://cwe0lexv3xqbi" path="res://Scenes/Enemies/enemy_43.tscn" id="16_4bcr2"]
 [ext_resource type="Texture2D" uid="uid://doqw0uc2kpd6x" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_04.png" id="16_aanx2"]
+[ext_resource type="Texture2D" uid="uid://faoxrs5dir34" path="res://Assets/Images/Stages/Stage19/stage19.png" id="17_77s42"]
 [ext_resource type="Texture2D" uid="uid://d3jqvpbq0t5fk" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_05.png" id="17_aatm1"]
 [ext_resource type="Texture2D" uid="uid://cgquroes7npan" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_06.png" id="18_i07hb"]
 [ext_resource type="PackedScene" uid="uid://bhr0uppyoi7w4" path="res://Scenes/Enemies/enemy_52.tscn" id="18_wsl2l"]
@@ -92,6 +92,7 @@
 [ext_resource type="PackedScene" uid="uid://yx461wtx88m6" path="res://Scenes/DefenceTowers/ArcherTowers/skeleton_archer_tower.tscn" id="67_mb6ca"]
 [ext_resource type="PackedScene" uid="uid://tf7do34gqsgt" path="res://Scenes/DefenceTowers/BarrackTowers/skeleton_barrack.tscn" id="68_ib5kd"]
 [ext_resource type="PackedScene" uid="uid://dty3c22jvjcnc" path="res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_zombie.tscn" id="69_fl2gm"]
+[ext_resource type="Texture2D" uid="uid://dnuycs1jsrns4" path="res://Assets/Images/Stages/Stage19/front_mask.png" id="69_k6o1l"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="71_q80ad"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="72_8ixaj"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/extra_hero_summon_manager.gd" id="80_qnv7k"]
@@ -601,6 +602,8 @@ enemy_scene_list = Array[PackedScene]([ExtResource("2_n1f3x"), ExtResource("3_5f
 current_health = 1
 current_money = 800
 total_waves = 5
+stage_map_start_image = ExtResource("17_77s42")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_7je1m")
 
 [node name="StageCamera" parent="." index="3"]
@@ -648,13 +651,7 @@ offset = Vector2(-7, -22)
 region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
-[node name="Stage19-mask" type="Sprite2D" parent="Background" index="5"]
-position = Vector2(63, 1445)
-texture = ExtResource("11_lpj1m")
-centered = false
-offset = Vector2(-63, -1430)
-
-[node name="Sheeps" type="Node2D" parent="Background" index="6"]
+[node name="Sheeps" type="Node2D" parent="Background" index="5"]
 y_sort_enabled = true
 
 [node name="DeadSheep" type="Sprite2D" parent="Background/Sheeps" index="0"]
@@ -707,14 +704,14 @@ position = Vector2(3092, 180)
 texture = ExtResource("12_fgxua")
 flip_h = true
 
-[node name="FlagAnim" type="AnimatedSprite2D" parent="Background" index="7"]
+[node name="FlagAnim" type="AnimatedSprite2D" parent="Background" index="6"]
 position = Vector2(2955, 332)
 scale = Vector2(0.460631, 0.460631)
 sprite_frames = SubResource("SpriteFrames_kgxo3")
 autoplay = "default"
 offset = Vector2(127.56, -217.251)
 
-[node name="Lawyer" type="Area2D" parent="Background" index="8"]
+[node name="Lawyer" type="Area2D" parent="Background" index="7"]
 position = Vector2(2603, 1104)
 collision_layer = 2
 collision_mask = 0
@@ -735,8 +732,14 @@ bus = &"Sound"
 visible = false
 texture = ExtResource("54_5lavv")
 
-[node name="Flag" parent="Background" index="9"]
+[node name="Flag" parent="Background" index="8"]
 position = Vector2(3482, 395)
+
+[node name="Stage19-mask" type="Sprite2D" parent="Background" index="10"]
+position = Vector2(2, 1400)
+texture = ExtResource("69_k6o1l")
+centered = false
+offset = Vector2(-2, -123)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_l5aqg")

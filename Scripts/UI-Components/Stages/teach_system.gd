@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 class_name TeachSystem
 
 @export var reinforce_unlock_scene: PackedScene
@@ -10,14 +10,20 @@ class_name TeachSystem
 @onready var intro_label: Label = $IntroLabel
 @onready var enemy_point_1: PointLight2D = $ShowComponent/EnemyPoint1
 @onready var directional_light: DirectionalLight2D = $DirectionalLight
-@onready var all_stop: ColorRect = $AllStop
+@onready var all_stop: ColorRect = $StopLayer/AllStop
 @onready var wave_click_component: Control = $WaveClickComponent
 @onready var tower_point: PointLight2D = $TowerPoint
+@onready var tower_click_component: Control = $TowerClickComponent
+@onready var tower_build_component: Control = $TowerBuildComponent
+@onready var story_layer: StoryLayer = $StoryLayer
+@onready var archer_marker: Marker2D = $ArcherMarker
+@onready var archer_marker_android: Marker2D = $ArcherMarkerAndroid
 
 
 func _ready() -> void:
 	if Stage.instance.stage_sav.level_sav[1][1] > 0:
 		queue_free()
+		get_tree().paused = false
 		return
 	await get_tree().process_frame
 	Stage.instance.can_control = false
@@ -26,11 +32,12 @@ func _ready() -> void:
 	Stage.instance.update_player_status()
 	directional_light.energy = 0
 	intro_label.text = ""
+	Stage.instance.stage_camera.zoom = Vector2.ONE
 	opening()
 	await get_tree().create_timer(28).timeout
 	step1()
 	await get_tree().create_timer(6.5).timeout
-	step2()
+	build_tower()
 	pass
 
 
@@ -54,16 +61,15 @@ func change_intro_text(new_text: String,delay_time: float):
 
 
 func step1():
-	get_tree().paused = false
+	#get_tree().paused = false
 	change_intro_text("",0)
 	change_intro_text("敌人会从这里出现",0.5)
-	Stage.instance.stage_camera.position = Vector2(1920,0)
+	Stage.instance.stage_camera.position = Vector2(960,540)
 	Stage.instance.stage_camera.position_clamp()
+	Stage.instance.stage_camera.process_mode = Node.PROCESS_MODE_ALWAYS
 	enemy_point_animation($ShowComponent/EnemyPoint1,2.8)
 	enemy_point_animation($ShowComponent/EnemyPoint2,2.8)
 	change_intro_text("不要让他们突破据点",3)
-	Stage.instance.stage_camera.position = $ShowComponent/HomePoint.position
-	Stage.instance.stage_camera.position_clamp()
 	home_point_animation()
 	change_intro_text("",6)
 	pass
@@ -97,6 +103,7 @@ func home_point_animation():
 
 func step2():
 	enemy_point_animation($ShowComponent/EnemyPoint1,0.5)
+	Stage.instance.stage_camera.zoom_clamp()
 	Stage.instance.stage_camera.position = $ShowComponent/EnemyPoint1.position
 	Stage.instance.stage_camera.position_clamp()
 	change_intro_text("单击此处，准备迎接敌人的进攻",0)
@@ -115,29 +122,26 @@ func step2():
 
 func step3():
 	all_stop.show()
+	story_layer.subtitle_change("很好，他们来了",0.5,Color.WHITE)
 	change_intro_text("很好，他们来了！",0.5)
 	get_tree().paused = true
 	enemy_point_animation(enemy_point_1,0.1)
 	await get_tree().create_timer(0.11).timeout
 	enemy_point_1.show()
-	
-	var based_tower = Stage.instance.towers.get_child(3) as DefenceTower
-	change_intro_text("建造防御塔来抵御他们的攻势",2)
-	Stage.instance.stage_camera.position = Vector2(1920/2, 1080/2)
-	Stage.instance.stage_camera.position_clamp()
-	tower_point.energy = 0
-	tower_point.show()
-	await get_tree().create_timer(2).timeout
-	create_tween().tween_property(tower_point,"energy",0.8,0.4)
+	await get_tree().create_timer(1.5).timeout
+	story_layer.subtitle_change("",0.5,Color.WHITE)
+	get_tree().paused = false
 	create_tween().tween_property(enemy_point_1,"energy",0,0.4)
-	await get_tree().create_timer(0.6).timeout
-	based_tower.process_mode = Node.PROCESS_MODE_ALWAYS
-	based_tower._on_tower_button_pressed()
-	create_tween().tween_property(tower_point,"scale",Vector2.ONE * 2,0.4)
-	await get_tree().create_timer(1).timeout
-	based_tower.tower_panel_ui.show_panel(0,1)
-	await get_tree().create_timer(1).timeout
-	first_building(based_tower)
+	create_tween().tween_property(directional_light,"energy",0,0.4)
+	var enemy = Stage.instance.enemies.get_child(0).get_child(0) as Enemy
+	await enemy.current_data.die
+	await get_tree().create_timer(0.5).timeout
+	get_tree().paused = true
+	$EnemyPoint3.show()
+	$EnemyPoint3.position = enemy.position
+	enemy_point_animation($EnemyPoint3,4)
+	Stage.instance.stage_camera.position = enemy.position
+	step4()
 	pass
 
 
@@ -162,14 +166,16 @@ func first_building(tower: DefenceTower):
 func step4():
 	change_intro_text("消灭敌人可以获得绿宝石，这是建造与升级防御塔的必要资源",1)
 	change_intro_text("共有四种防御塔可供使用",4)
+	story_layer.subtitle_change("消灭敌人可以获得绿宝石，这是建造与升级防御塔的必要资源",1,Color.WHITE)
+	story_layer.subtitle_change("共有四种防御塔可供使用",4,Color.WHITE)
 	await get_tree().create_timer(4).timeout
-	$TowerIntro/AnimationPlayer.play("unfold")
-	$TowerIntro.show()
-	await $TowerIntro/AnimationPlayer.animation_finished
-	$TowerIntro/AnimationPlayer.play("name_appear")
-	await $TowerIntro/AnimationPlayer.animation_finished
-	$TowerIntro/AnimationPlayer.play("intro_appear")
-	await $TowerIntro/AnimationPlayer.animation_finished
+	$StopLayer/TowerIntro/AnimationPlayer.play("unfold")
+	$StopLayer/TowerIntro.show()
+	await $StopLayer/TowerIntro/AnimationPlayer.animation_finished
+	$StopLayer/TowerIntro/AnimationPlayer.play("name_appear")
+	await $StopLayer/TowerIntro/AnimationPlayer.animation_finished
+	$StopLayer/TowerIntro/AnimationPlayer.play("intro_appear")
+	await $StopLayer/TowerIntro/AnimationPlayer.animation_finished
 	change_intro_text("不同防御塔有各自不同的特点以及适应场合",0.5)
 	change_intro_text("这些防御塔也有各自善于应对的场合与难以应付的敌人",2)
 	change_intro_text("根据不同场合选择对应的防御塔来应对，合理搭配不同防御塔的使用，能够做到优势互补",5)
@@ -181,15 +187,30 @@ func step4():
 	change_intro_text("右上角为暂停按钮，可以帮助你争取一些思考战局的时间",30)
 	change_intro_text("部分情况可能会被破坏",34)
 	change_intro_text("继续战斗吧！",34.6)
+	
+	story_layer.subtitle_change("不同防御塔有各自不同的特点以及适应场合",0.5,Color.WHITE)
+	story_layer.subtitle_change("这些防御塔也有各自善于应对的场合与难以应付的敌人",2,Color.WHITE)
+	story_layer.subtitle_change("根据不同场合选择对应的防御塔来应对，合理搭配不同防御塔的使用，能够做到优势互补",5,Color.WHITE)
+	story_layer.subtitle_change("这样能够做到在任何敌人面前都能保留优势区间",9,Color.WHITE)
+	story_layer.subtitle_change("左上角分别为生命值，当前所剩绿宝石与敌人波次",12,Color.WHITE)
+	story_layer.subtitle_change("如果防线被突破，会依据敌人的“代价”扣除相应生命值，减到0时当前关卡失败",15,Color.WHITE)
+	story_layer.subtitle_change("战役结束后会根据所剩生命给予评价，评价给予的下界之星可以在外部升级后勤来应对日后强大的敌人",20,Color.WHITE)
+	story_layer.subtitle_change("某些情况下，波次信息可能会受到干扰，这种情况下请谨慎对待",26,Color.WHITE)
+	story_layer.subtitle_change("右上角为暂停按钮，可以帮助你争取一些思考战局的时间",30,Color.WHITE)
+	story_layer.subtitle_change("部分情况可能会被破坏",34,Color.WHITE)
+	story_layer.subtitle_change("继续战斗吧！",34.4,Color.WHITE)
 	await get_tree().create_timer(38).timeout
 	change_intro_text("",0.1)
+	story_layer.subtitle_change("",0.1,Color.WHITE)
 	Stage.instance.zoom_slider.mouse_filter = Control.MOUSE_FILTER_STOP
 	all_stop.hide()
 	create_tween().tween_property(directional_light,"energy",0,0.4)
-	create_tween().tween_property($TowerIntro,"modulate:a",0,0.4)
+	create_tween().tween_property($StopLayer/TowerIntro,"modulate:a",0,0.4)
 	wave_click_component.hide()
 	get_tree().paused = false
 	Stage.instance.can_control = true
+	Stage.instance.stage_camera.process_mode = Node.PROCESS_MODE_INHERIT
+	Stage.instance.information_bar.process_mode = Node.PROCESS_MODE_INHERIT
 	await Stage.instance.wave_summon
 	reinforce_tutorial()
 	await Stage.instance.wave_summon
@@ -243,8 +264,64 @@ func firerain_tutorial():
 
 func _on_skip_button_pressed() -> void:
 	get_tree().paused = false
-	Stage.instance.add_child(warning_scene.instantiate())
+	#Stage.instance.add_child(warning_scene.instantiate())
 	Stage.instance.summon_hero()
-	
+	Stage.instance.can_control = true
 	queue_free()
 	pass # Replace with function body.
+
+
+func build_tower():
+	Stage.instance.information_bar.process_mode = Node.PROCESS_MODE_ALWAYS
+	Stage.instance.stage_camera.zoom_clamp()
+	Stage.instance.stage_camera.process_mode = Node.PROCESS_MODE_ALWAYS
+	var based_tower = Stage.instance.towers.get_child(3) as DefenceTower
+	Stage.instance.stage_camera.position = based_tower.global_position
+	tower_point.energy = 0
+	tower_point.show()
+	await get_tree().create_timer(2).timeout
+	create_tween().tween_property(tower_point,"energy",0.8,0.4)
+	create_tween().tween_property(enemy_point_1,"energy",0,0.4)
+	await get_tree().create_timer(0.6).timeout
+	based_tower.process_mode = Node.PROCESS_MODE_ALWAYS
+	all_stop.hide()
+	tower_click_component.show()
+	create_tween().tween_property(tower_point,"scale",Vector2.ONE * 2,0.4)
+	await based_tower.tower_button.pressed
+	tower_click_component.hide()
+	tower_build_component.show()
+	var button_position: Vector2 = archer_marker_android.global_position if OS.get_name() == "Android" else archer_marker.global_position
+	tower_build_component.position = button_position
+	var archer_button: TextureButton = $"../Towers/DefenceTowerBased4/TowerUI/Circle/ArcherButton"
+	create_tween().tween_property(tower_point,"scale",Vector2.ONE*0.5,0.2)
+	create_tween().tween_property(tower_point,"global_position",button_position,0.2)
+	story_layer.subtitle_change("单击此处，建造一座基础弓箭塔",0.2,Color.WHITE)
+	await archer_button.pressed
+	await get_tree().process_frame
+	var defence_tower: DefenceTower = Stage.instance.towers.get_child(-1)
+	defence_tower.process_mode = Node.PROCESS_MODE_ALWAYS
+	create_tween().tween_property(directional_light,"energy",0,0.5)
+	create_tween().tween_property(tower_point,"energy",0,0.5)
+	tower_build_component.hide()
+	all_stop.show()
+	await get_tree().create_timer(2.5).timeout
+	wave_click()
+	pass
+
+
+func wave_click():
+	get_tree().paused = false
+	story_layer.subtitle_change("单击此处准备迎接敌人的进攻",0.2,Color.WHITE)
+	create_tween().tween_property(directional_light,"energy",0.4,0.4)
+	Stage.instance.stage_camera.position = enemy_point_1.global_position
+	all_stop.hide()
+	wave_click_component.show()
+	$ShowComponent/EnemyPoint1.show()
+	create_tween().tween_property(enemy_point_1,"energy",1,0.4)
+	await Stage.instance.wave_summon
+	create_tween().tween_property(enemy_point_1,"energy",0,0.4)
+	create_tween().tween_property(directional_light,"energy",0,0.4)
+	change_intro_text("",1)
+	await get_tree().create_timer(2).timeout
+	step3()
+	pass

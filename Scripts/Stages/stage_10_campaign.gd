@@ -1,6 +1,7 @@
 extends Stage
 
 @export var enemy_path_list: Array[EnemyPath]
+@export var later_map_image: Texture2D
 
 @onready var stage_10_mask: Sprite2D = $"Background/BasedSprite/Stage10-mask"
 @onready var collision_polygon_2d_3: CollisionPolygon2D = $PathArea/CollisionPolygon2D3
@@ -11,6 +12,8 @@ func wave_tip(wave_count: int):
 	if wave_count == 8:
 		await get_tree().create_timer(6,false).timeout
 		stage_10_mask.hide()
+		stage_map.map_image = later_map_image
+		stage_map_start_image = null
 		for enemy_path in enemy_path_list:
 			enemy_path.enabled = true
 		collision_polygon_2d_3.disabled = false

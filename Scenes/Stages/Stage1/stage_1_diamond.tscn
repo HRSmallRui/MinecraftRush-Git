@@ -1,14 +1,15 @@
-[gd_scene load_steps=190 format=3 uid="uid://8ill5dh47wc"]
+[gd_scene load_steps=181 format=3 uid="uid://8ill5dh47wc"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_441pr"]
 [ext_resource type="PackedScene" uid="uid://44npbgu1xrd5" path="res://Scenes/Enemies/enemy_0.tscn" id="2_i114b"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_unrb7"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="3_qj83f"]
+[ext_resource type="Texture2D" uid="uid://dsviwmsk3ct40" path="res://Assets/Images/Stages/Stage1/stage1-view.png" id="4_1xuvp"]
 [ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="4_x4ci1"]
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="5_ywtve"]
 [ext_resource type="Texture2D" uid="uid://b2a6u1rok4t8h" path="res://Assets/Images/Stages/Stage1/stage1-based.png" id="6_gstny"]
-[ext_resource type="Texture2D" uid="uid://c8gmdhh2o6jgd" path="res://Assets/Images/Stages/Stage1/stage1-wall.png" id="8_mkpb5"]
 [ext_resource type="Texture2D" uid="uid://dbyq78ggwv7fg" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_00.png" id="9_rfgh2"]
+[ext_resource type="Texture2D" uid="uid://c4vh2doe3f68h" path="res://Assets/Images/Stages/Stage1/WallLevel1.png" id="9_yfsun"]
 [ext_resource type="Texture2D" uid="uid://b3cm0yxaorpjo" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_01.png" id="10_pmd67"]
 [ext_resource type="Texture2D" uid="uid://dtxr03b8jegiu" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_02.png" id="11_cxtnt"]
 [ext_resource type="Texture2D" uid="uid://cvocfc7j2gysb" path="res://Assets/Animations/StageComponents/Flag1/flag_noshadow_03.png" id="12_oia1o"]
@@ -104,10 +105,7 @@
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter1.gd" id="97_wn7f0"]
 [ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="98_wrj8r"]
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="99_5pg2b"]
-[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/teach_system.gd" id="100_hj41u"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="100_j30hd"]
-[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="101_f4nbl"]
-[ext_resource type="Texture2D" uid="uid://dqevt0jvop0q1" path="res://Assets/Images/UI/Pages/防御塔介绍-new1.png" id="102_m8smm"]
 
 [sub_resource type="Resource" id="Resource_o45bx"]
 script = ExtResource("2_unrb7")
@@ -671,249 +669,6 @@ summon_list = Array[ExtResource("95_g78ph")]([SubResource("Resource_thkky"), Sub
 script = ExtResource("93_kluge")
 wave_summon_list = Array[ExtResource("94_vx5yv")]([SubResource("Resource_gqlbc"), SubResource("Resource_3ffnt"), SubResource("Resource_b1xoj"), SubResource("Resource_4nrna"), SubResource("Resource_5ckx5")])
 
-[sub_resource type="Gradient" id="Gradient_s5g5n"]
-offsets = PackedFloat32Array(0.95098, 0.995098)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1pcl1"]
-gradient = SubResource("Gradient_s5g5n")
-fill = 2
-fill_from = Vector2(0.529915, 0.538462)
-
-[sub_resource type="Animation" id="Animation_ekxot"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IntroSprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(416, 0, 0, 561)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label1:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Label3:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Label4:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("IntroLabel1:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("IntroLabel2:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("IntroLabel3:visible_ratio")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("IntroLabel4:visible_ratio")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_oh870"]
-resource_name = "intro_appear"
-length = 1.5
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IntroLabel1:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("IntroLabel2:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.2, 0.5)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("IntroLabel3:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.4, 0.7)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("IntroLabel4:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.6, 0.9)
-}
-
-[sub_resource type="Animation" id="Animation_pxd63"]
-resource_name = "name_appear"
-length = 1.2
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label1:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label3:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Label4:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.8),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_gvm3w"]
-resource_name = "unfold"
-length = 0.6
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IntroSprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(416, 0, 0, 561), Rect2(0, 0, 821, 561)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkjb4"]
-_data = {
-"RESET": SubResource("Animation_ekxot"),
-"intro_appear": SubResource("Animation_oh870"),
-"name_appear": SubResource("Animation_pxd63"),
-"unfold": SubResource("Animation_gvm3w")
-}
-
 [sub_resource type="Resource" id="Resource_dtmfa"]
 script = ExtResource("97_wn7f0")
 enemy_name = "尸国杂兵"
@@ -990,6 +745,7 @@ enemy_scene_list = Array[PackedScene]([ExtResource("2_i114b"), ExtResource("3_qj
 current_health = 1
 current_money = 260
 total_waves = 5
+stage_map_start_image = ExtResource("4_1xuvp")
 stage_summon_config = SubResource("Resource_o45bx")
 
 [node name="PreparationMusic" parent="Musics" index="0"]
@@ -1006,7 +762,7 @@ position = Vector2(417, 520)
 
 [node name="Wall" type="Sprite2D" parent="Background" index="1"]
 z_index = 2
-texture = ExtResource("8_mkpb5")
+texture = ExtResource("9_yfsun")
 centered = false
 
 [node name="FlagAnim" type="AnimatedSprite2D" parent="Background/Wall" index="0"]
@@ -1129,240 +885,6 @@ position = Vector2(1515, 781)
 [node name="DefenceTowerBased12" parent="Towers" index="10" instance=ExtResource("94_u6eyc")]
 position = Vector2(1516, 604)
 
-[node name="TeachSystem" type="CanvasLayer" parent="." index="13"]
-process_mode = 3
-script = ExtResource("100_hj41u")
-
-[node name="AllStop" type="ColorRect" parent="TeachSystem" index="0"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="IntroLabel" type="Label" parent="TeachSystem" index="1"]
-z_index = 2
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -59.0
-offset_bottom = -27.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 32
-text = "将军你好"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ShowComponent" type="Control" parent="TeachSystem" index="2"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="EnemyPoint1" type="PointLight2D" parent="TeachSystem/ShowComponent" index="0"]
-visible = false
-position = Vector2(1830, 732)
-energy = 0.8
-texture = SubResource("GradientTexture2D_1pcl1")
-texture_scale = 2.76
-
-[node name="EnemyPoint2" type="PointLight2D" parent="TeachSystem/ShowComponent" index="1"]
-visible = false
-position = Vector2(1074, 78)
-energy = 0.8
-texture = SubResource("GradientTexture2D_1pcl1")
-texture_scale = 2.76
-
-[node name="HomePoint" type="PointLight2D" parent="TeachSystem/ShowComponent" index="2"]
-visible = false
-position = Vector2(427, 521)
-scale = Vector2(0.816233, 0.816233)
-energy = 0.8
-range_z_max = 200
-texture = SubResource("GradientTexture2D_1pcl1")
-texture_scale = 2.76
-
-[node name="DirectionalLight" type="DirectionalLight2D" parent="TeachSystem" index="3"]
-energy = 0.0
-blend_mode = 1
-range_z_max = 0
-
-[node name="WaveClickComponent" type="Control" parent="TeachSystem" index="4"]
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="TeachSystem/WaveClickComponent" index="0"]
-layout_mode = 0
-offset_right = 1801.0
-offset_bottom = 1084.0
-
-[node name="Panel2" type="Panel" parent="TeachSystem/WaveClickComponent" index="1"]
-layout_mode = 0
-offset_left = 1139.0
-offset_top = -424.0
-offset_right = 2940.0
-offset_bottom = 660.0
-
-[node name="Panel3" type="Panel" parent="TeachSystem/WaveClickComponent" index="2"]
-layout_mode = 0
-offset_left = 1154.0
-offset_top = 784.0
-offset_right = 2955.0
-offset_bottom = 1868.0
-
-[node name="TowerPoint" type="PointLight2D" parent="TeachSystem" index="5"]
-visible = false
-position = Vector2(1066, 466)
-energy = 0.8
-texture = SubResource("GradientTexture2D_1pcl1")
-texture_scale = 2.76
-
-[node name="EnemyPoint3" type="PointLight2D" parent="TeachSystem" index="6"]
-visible = false
-position = Vector2(1639, 688)
-energy = 0.8
-texture = SubResource("GradientTexture2D_1pcl1")
-texture_scale = 2.76
-
-[node name="TowerIntro" type="Node2D" parent="TeachSystem" index="7"]
-
-[node name="IntroSprite" type="Sprite2D" parent="TeachSystem/TowerIntro" index="0"]
-position = Vector2(960, 427)
-scale = Vector2(1.33368, 1.33368)
-texture = ExtResource("102_m8smm")
-region_enabled = true
-region_rect = Rect2(416, 0, 0, 561)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TeachSystem/TowerIntro" index="1"]
-libraries = {
-"": SubResource("AnimationLibrary_jkjb4")
-}
-
-[node name="Label1" type="Label" parent="TeachSystem/TowerIntro" index="2"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 519.0
-offset_top = 343.0
-offset_right = 775.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "射手高台"
-
-[node name="Label2" type="Label" parent="TeachSystem/TowerIntro" index="3"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 799.0
-offset_top = 343.0
-offset_right = 927.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "兵营"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="TeachSystem/TowerIntro" index="4"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 1052.0
-offset_top = 343.0
-offset_right = 1308.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "法师高塔"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="TeachSystem/TowerIntro" index="5"]
-visible = false
-modulate = Color(1, 0.509804, 0, 1)
-offset_left = 1313.0
-offset_top = 343.0
-offset_right = 1569.0
-offset_bottom = 407.0
-scale = Vector2(0.391345, 0.391345)
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "红石炮塔"
-horizontal_alignment = 1
-
-[node name="IntroLabel1" type="Label" parent="TeachSystem/TowerIntro" index="6"]
-offset_left = 490.0
-offset_top = 609.0
-offset_right = 1163.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "良好的射击速率"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="IntroLabel2" type="Label" parent="TeachSystem/TowerIntro" index="7"]
-offset_left = 756.0
-offset_top = 609.0
-offset_right = 1429.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "训练士兵拦截敌人"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="IntroLabel3" type="Label" parent="TeachSystem/TowerIntro" index="8"]
-offset_left = 1015.0
-offset_top = 609.0
-offset_right = 1688.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "高伤害护甲穿刺"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="IntroLabel4" type="Label" parent="TeachSystem/TowerIntro" index="9"]
-offset_left = 1293.0
-offset_top = 609.0
-offset_right = 1966.0
-offset_bottom = 785.0
-scale = Vector2(0.227488, 0.227488)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("101_f4nbl")
-theme_override_font_sizes/font_size = 64
-text = "造成范围伤害"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
 [node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("95_adqfm")]
 offset_left = 1830.0
 offset_top = 736.0
@@ -1414,5 +936,5 @@ offset_bottom = 340.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(270, 481, 873, 486, 956, 371, 999, 249, 1024, 135, 1026, -1, 1114, 1, 1122, 76, 1092, 255, 998, 494, 1376, 588, 1744, 695, 1922, 691, 1919, 773, 1679, 778, 1033, 591, 284, 567)
 
-[node name="HeroSummonMarker" parent="." index="22"]
+[node name="HeroSummonMarker" parent="." index="21"]
 position = Vector2(421, 527)

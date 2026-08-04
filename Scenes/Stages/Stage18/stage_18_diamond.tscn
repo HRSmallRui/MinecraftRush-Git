@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=3 uid="uid://gpe07pr87wlw"]
+[gd_scene load_steps=209 format=3 uid="uid://gpe07pr87wlw"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_q7n8k"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_4twoc"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b2iqwbkrbhr2q" path="res://Assets/Images/Stages/Stage18/stage18-based.png" id="7_600dd"]
 [ext_resource type="PackedScene" uid="uid://cu5yypfgmssji" path="res://Scenes/Enemies/enemy_8.tscn" id="8_jqdj8"]
 [ext_resource type="PackedScene" uid="uid://cmi4sbej8syn" path="res://Scenes/Enemies/enemy_9.tscn" id="9_i4a8v"]
+[ext_resource type="Texture2D" uid="uid://bfv0l8wvlhfx1" path="res://Assets/Images/Stages/Stage18/stage18.png" id="9_r60fg"]
 [ext_resource type="PackedScene" uid="uid://d07pbdmj8g6nf" path="res://Scenes/Enemies/enemy_49.tscn" id="10_1ykar"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="10_3qtw8"]
 [ext_resource type="PackedScene" uid="uid://civkk3fm2ol6" path="res://Scenes/Enemies/enemy_51.tscn" id="11_3b7ku"]
@@ -70,9 +71,12 @@
 [ext_resource type="Resource" uid="uid://cfsukx3vuysej" path="res://Library/SummonConfigs/Stage18/Diamond/path6.res" id="89_xxy0m"]
 [ext_resource type="Resource" uid="uid://ddgtk2bvtuluj" path="res://Library/SummonConfigs/Stage18/Diamond/path7.res" id="90_rqnr4"]
 [ext_resource type="Resource" uid="uid://b5pnojb7ibd8t" path="res://Library/SummonConfigs/Stage18/Diamond/path8.res" id="91_amfgc"]
+[ext_resource type="Texture2D" uid="uid://duvpikdcp3inw" path="res://Assets/Images/Stages/Stage18/trees1.png" id="91_iwg3j"]
 [ext_resource type="Texture2D" uid="uid://bfhvapkruvlxi" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_00.png" id="92_5q3ig"]
 [ext_resource type="Resource" uid="uid://d48tyhe34m64" path="res://Library/SummonConfigs/Stage18/Diamond/path9.res" id="92_65mnw"]
+[ext_resource type="Texture2D" uid="uid://5tqmvxtjwft1" path="res://Assets/Images/Stages/Stage18/trees2.png" id="92_86mjq"]
 [ext_resource type="Texture2D" uid="uid://bhtojqaoy0bfd" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_01.png" id="93_bhm16"]
+[ext_resource type="Texture2D" uid="uid://c5bydtwcn18sw" path="res://Assets/Images/Stages/Stage18/singal_tree.png" id="93_oant6"]
 [ext_resource type="Resource" uid="uid://b02ktg66hqfme" path="res://Library/SummonConfigs/Stage18/Diamond/path10.res" id="93_rwocb"]
 [ext_resource type="Resource" uid="uid://b3tm4c35milr5" path="res://Library/SummonConfigs/Stage18/Diamond/path11.res" id="94_asram"]
 [ext_resource type="Texture2D" uid="uid://b1bpi8i343gth" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_02.png" id="94_drvvj"]
@@ -116,7 +120,6 @@
 [ext_resource type="Texture2D" uid="uid://clo0pgh0x8v4b" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_27.png" id="119_5n1yq"]
 [ext_resource type="Texture2D" uid="uid://dtunb5swwu455" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_28.png" id="120_l4kif"]
 [ext_resource type="Script" path="res://Scripts/StageComponents/fire_sprite.gd" id="121_7gt85"]
-[ext_resource type="Texture2D" uid="uid://d3pwdgxq2pr4f" path="res://Assets/Images/Stages/Stage18/tree_masks.png" id="122_cc4pa"]
 [ext_resource type="Script" path="res://Scripts/Stages/hide_area.gd" id="123_oux23"]
 [ext_resource type="PackedScene" uid="uid://d0sta1lv6shgl" path="res://Scenes/DefenceTowers/defence_tower_based.tscn" id="124_7tfsf"]
 
@@ -773,6 +776,7 @@ enemy_scene_list = Array[PackedScene]([ExtResource("4_ghga8"), ExtResource("5_y7
 current_health = 1
 current_money = 600
 total_waves = 5
+stage_map_start_image = ExtResource("9_r60fg")
 stage_summon_config = SubResource("Resource_275g3")
 
 [node name="StageCamera" parent="." index="3"]
@@ -817,8 +821,7 @@ region_rect = Rect2(40, 38, 40, 73)
 [node name="Wall" type="Sprite2D" parent="Background" index="3"]
 position = Vector2(1569, 1598)
 texture = ExtResource("11_6fsrx")
-centered = false
-offset = Vector2(-1569, -1598)
+offset = Vector2(0, -800)
 
 [node name="FireSprite" type="AnimatedSprite2D" parent="Background/Wall" index="0"]
 position = Vector2(119, -457)
@@ -937,56 +940,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_2tdjm")
 autoplay = "default"
 
-[node name="TreeMask" type="Sprite2D" parent="Background" index="4"]
-position = Vector2(2382, 497)
-texture = ExtResource("122_cc4pa")
-offset = Vector2(264, -248)
-region_enabled = true
-region_rect = Rect2(1837, 0, 1613, 503)
-
-[node name="TreeMask2" type="Sprite2D" parent="Background" index="5"]
-position = Vector2(3326, 1599)
-texture = ExtResource("122_cc4pa")
-offset = Vector2(-316, -499)
-region_enabled = true
-region_rect = Rect2(2561, 595, 889, 1005)
-
-[node name="TreeMask3" type="Sprite2D" parent="Background" index="6"]
-position = Vector2(470, 1580)
-texture = ExtResource("122_cc4pa")
-offset = Vector2(0, -126)
-region_enabled = true
-region_rect = Rect2(351, 1321, 224, 263)
-
-[node name="TreeMask4" type="Sprite2D" parent="Background" index="7"]
-position = Vector2(114, 1317)
-texture = ExtResource("122_cc4pa")
-offset = Vector2(0, -126)
-region_enabled = true
-region_rect = Rect2(351, 1321, 224, 263)
-
-[node name="TreeMask5" type="Sprite2D" parent="Background" index="8"]
-position = Vector2(108, 248)
-texture = ExtResource("122_cc4pa")
-offset = Vector2(0, -126)
-region_enabled = true
-region_rect = Rect2(351, 1321, 224, 263)
-
-[node name="TreeMask6" type="Sprite2D" parent="Background" index="9"]
-position = Vector2(415, 393)
-texture = ExtResource("122_cc4pa")
-offset = Vector2(0, -126)
-region_enabled = true
-region_rect = Rect2(351, 1321, 224, 263)
-
-[node name="TreeMask7" type="Sprite2D" parent="Background" index="10"]
-position = Vector2(1009, 1109)
-texture = ExtResource("122_cc4pa")
-offset = Vector2(0, -126)
-region_enabled = true
-region_rect = Rect2(351, 1321, 224, 263)
-
-[node name="Fires" type="Node2D" parent="Background" index="11"]
+[node name="Fires" type="Node2D" parent="Background" index="4"]
 y_sort_enabled = true
 
 [node name="FireSprite7" type="AnimatedSprite2D" parent="Background/Fires" index="0"]
@@ -1064,7 +1018,7 @@ range_z_max = 10
 texture = SubResource("GradientTexture2D_e6l0s")
 texture_scale = 1.49
 
-[node name="HideArea" type="Area2D" parent="Background" index="12"]
+[node name="HideArea" type="Area2D" parent="Background" index="5"]
 position = Vector2(488, 393)
 collision_layer = 0
 collision_mask = 352
@@ -1073,7 +1027,7 @@ script = ExtResource("123_oux23")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/HideArea" index="0"]
 polygon = PackedVector2Array(904, 410, 836, 528, 898, 563, 1314, 576, 1269, 503, 1265, 452)
 
-[node name="Sheeps" type="Node2D" parent="Background" index="13"]
+[node name="Sheeps" type="Node2D" parent="Background" index="6"]
 y_sort_enabled = true
 
 [node name="DeadSheep" type="Sprite2D" parent="Background/Sheeps" index="0"]
@@ -1135,8 +1089,43 @@ position = Vector2(2202, 1115)
 texture = ExtResource("83_j06hi")
 flip_h = true
 
-[node name="Flag" parent="Background" index="14"]
+[node name="Flag" parent="Background" index="7"]
 position = Vector2(145, 648.5)
+
+[node name="Tree1" type="Sprite2D" parent="Background" index="9"]
+position = Vector2(2310, 490)
+texture = ExtResource("91_iwg3j")
+offset = Vector2(335, -239)
+
+[node name="Tree2" type="Sprite2D" parent="Background" index="10"]
+position = Vector2(3297, 1601)
+texture = ExtResource("92_86mjq")
+offset = Vector2(-292, -504)
+
+[node name="Tree3" type="Sprite2D" parent="Background" index="11"]
+position = Vector2(110, 252)
+texture = ExtResource("93_oant6")
+offset = Vector2(-2, -131)
+
+[node name="Tree4" type="Sprite2D" parent="Background" index="12"]
+position = Vector2(420, 397)
+texture = ExtResource("93_oant6")
+offset = Vector2(-2, -131)
+
+[node name="Tree5" type="Sprite2D" parent="Background" index="13"]
+position = Vector2(1017, 1115)
+texture = ExtResource("93_oant6")
+offset = Vector2(-2, -131)
+
+[node name="Tree6" type="Sprite2D" parent="Background" index="14"]
+position = Vector2(471, 1585)
+texture = ExtResource("93_oant6")
+offset = Vector2(-2, -131)
+
+[node name="Tree7" type="Sprite2D" parent="Background" index="15"]
+position = Vector2(115, 1321)
+texture = ExtResource("93_oant6")
+offset = Vector2(-2, -131)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_21vye")

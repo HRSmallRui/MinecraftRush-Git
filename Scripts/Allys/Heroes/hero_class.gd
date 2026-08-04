@@ -189,6 +189,8 @@ func die(explosion: bool):
 		navigation_timer.stop()
 		station_position = position
 		move_tween.kill()
+	station_position = position
+	intercepting_area.position = station_position
 	super(explosion)
 	pass
 
@@ -228,14 +230,15 @@ func level_up():
 	pass
 
 
-func cause_damage(damage_type: int = 0):
+func cause_damage(damage_count: int = 0, damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage,
+broken_rate: float = 0):
 	normal_attack_timer.start()
 	if current_intercepting_enemy == null: return
-	match damage_type:
+	match damage_count:
 		0:
 			var target_enemy: Enemy = current_intercepting_enemy
 			var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
-			if current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self):
+			if current_intercepting_enemy.take_damage(damage,damage_type,broken_rate,false,self):
 				get_exp(int(float(damage) * exp_rate))
 				if target_enemy.enemy_state != Enemy.EnemyState.DIE:
 					on_normal_attack_hit(target_enemy)

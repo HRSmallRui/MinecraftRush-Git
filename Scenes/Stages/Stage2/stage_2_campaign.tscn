@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=3 uid="uid://de6r78ksmfvev"]
+[gd_scene load_steps=178 format=3 uid="uid://de6r78ksmfvev"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_o6bbr"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_2_campaign.gd" id="2_6ve6i"]
@@ -12,19 +12,19 @@
 [ext_resource type="PackedScene" uid="uid://bpa30l3yll0if" path="res://Scenes/UI-Components/TipButtons/barrack_tip_button.tscn" id="4_sanf4"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="4_uewcl"]
 [ext_resource type="PackedScene" uid="uid://bjaqbbyu6ihm7" path="res://Scenes/Enemies/enemy_2.tscn" id="5_dut11"]
-[ext_resource type="Texture2D" uid="uid://bc5346uy7bb4t" path="res://Assets/Images/Stages/Stage2/stage2-mask1.png" id="5_ln1aq"]
 [ext_resource type="PackedScene" uid="uid://ctqg01hruyfxe" path="res://Scenes/Enemies/enemy_3.tscn" id="6_u7rin"]
-[ext_resource type="Texture2D" uid="uid://bdjfwd6hfdjuc" path="res://Assets/Images/Stages/Stage2/valley.png" id="7_k7xus"]
 [ext_resource type="PackedScene" uid="uid://cu5yypfgmssji" path="res://Scenes/Enemies/enemy_8.tscn" id="7_qvhw3"]
 [ext_resource type="PackedScene" uid="uid://cdiktf378osju" path="res://Scenes/StageComponents/sheep.tscn" id="8_f3u8e"]
 [ext_resource type="PackedScene" uid="uid://d0sta1lv6shgl" path="res://Scenes/DefenceTowers/defence_tower_based.tscn" id="8_tnix8"]
 [ext_resource type="Texture2D" uid="uid://da37ocyiqim4h" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_01.png" id="9_n7hc2"]
 [ext_resource type="Texture2D" uid="uid://1unef0rjx3es" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_02.png" id="10_nd31p"]
+[ext_resource type="Texture2D" uid="uid://dw27br0mbf2yy" path="res://Assets/Images/Stages/Stage2/stage2-view.png" id="10_o20g0"]
 [ext_resource type="Texture2D" uid="uid://cl3tg3ey1bo5r" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_03.png" id="11_20l4b"]
 [ext_resource type="Texture2D" uid="uid://doqw0uc2kpd6x" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_04.png" id="12_4uik5"]
 [ext_resource type="Texture2D" uid="uid://d3jqvpbq0t5fk" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_05.png" id="13_77ro7"]
 [ext_resource type="Texture2D" uid="uid://cgquroes7npan" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_06.png" id="14_wqpoh"]
 [ext_resource type="Texture2D" uid="uid://c73bc8vc47gfj" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_07.png" id="15_i766h"]
+[ext_resource type="Texture2D" uid="uid://c27k1smxitruj" path="res://Assets/Images/Stages/Stage2/valley_clip.png" id="15_r5k46"]
 [ext_resource type="Texture2D" uid="uid://ot1dpveesu13" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_08.png" id="16_14y63"]
 [ext_resource type="Texture2D" uid="uid://c1o1lbyrt4a3m" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_09.png" id="17_wvuru"]
 [ext_resource type="Texture2D" uid="uid://c758ce4fbs3ss" path="res://Assets/Animations/StageComponents/Flag2/scene_flag_10.png" id="18_a38ht"]
@@ -74,6 +74,7 @@
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="54_4ssl7"]
 [ext_resource type="Resource" uid="uid://btk5kyoqogtei" path="res://Library/SummonConfigs/Stage2/Campaign/path5.res" id="54_ml8as"]
 [ext_resource type="PackedScene" uid="uid://cpxbcc7iotru2" path="res://Scenes/TipUI/level_2_unlock_tip.tscn" id="57_7dybd"]
+[ext_resource type="Texture2D" uid="uid://dwc1i6vx37vkc" path="res://Assets/Images/Stages/Stage2/tree_mask.png" id="61_lthk5"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="64_uo0c6"]
 
 [sub_resource type="Resource" id="Resource_gp0sq"]
@@ -850,6 +851,8 @@ stage_count = 2
 enemy_scene_list = Array[PackedScene]([ExtResource("3_rv5fm"), ExtResource("4_uewcl"), ExtResource("5_dut11"), ExtResource("6_u7rin"), ExtResource("7_qvhw3")])
 current_money = 320
 total_waves = 10
+stage_map_start_image = ExtResource("10_o20g0")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_gp0sq")
 
 [node name="PreparationMusic" parent="Musics" index="0"]
@@ -866,7 +869,8 @@ position = Vector2(1558, 996)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/BasedSprite" index="1"]
 z_index = -1
-texture = ExtResource("7_k7xus")
+position = Vector2(0, 55)
+texture = ExtResource("15_r5k46")
 centered = false
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
@@ -876,63 +880,56 @@ offset = Vector2(-7, -22)
 region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
-[node name="Mask1" type="Sprite2D" parent="Background" index="3"]
-y_sort_enabled = true
-position = Vector2(3, 1075)
-texture = ExtResource("5_ln1aq")
-centered = false
-offset = Vector2(-3, -1075)
-
-[node name="Sheep" parent="Background" index="4" instance=ExtResource("8_f3u8e")]
+[node name="Sheep" parent="Background" index="3" instance=ExtResource("8_f3u8e")]
 position = Vector2(1112, 971)
 flip_h = true
 
-[node name="Sheep2" parent="Background" index="5" instance=ExtResource("8_f3u8e")]
+[node name="Sheep2" parent="Background" index="4" instance=ExtResource("8_f3u8e")]
 position = Vector2(544, 587)
 flip_h = true
 
-[node name="Sheep3" parent="Background" index="6" instance=ExtResource("8_f3u8e")]
+[node name="Sheep3" parent="Background" index="5" instance=ExtResource("8_f3u8e")]
 position = Vector2(512, 561)
 
-[node name="Sheep4" parent="Background" index="7" instance=ExtResource("8_f3u8e")]
+[node name="Sheep4" parent="Background" index="6" instance=ExtResource("8_f3u8e")]
 position = Vector2(488, 607)
 
-[node name="Sheep5" parent="Background" index="8" instance=ExtResource("8_f3u8e")]
+[node name="Sheep5" parent="Background" index="7" instance=ExtResource("8_f3u8e")]
 position = Vector2(462, 576)
 
-[node name="Sheep6" parent="Background" index="9" instance=ExtResource("8_f3u8e")]
+[node name="Sheep6" parent="Background" index="8" instance=ExtResource("8_f3u8e")]
 position = Vector2(521, 450)
 
-[node name="Sheep7" parent="Background" index="10" instance=ExtResource("8_f3u8e")]
+[node name="Sheep7" parent="Background" index="9" instance=ExtResource("8_f3u8e")]
 position = Vector2(372, 469)
 
-[node name="Sheep8" parent="Background" index="11" instance=ExtResource("8_f3u8e")]
+[node name="Sheep8" parent="Background" index="10" instance=ExtResource("8_f3u8e")]
 position = Vector2(270, 397)
 flip_h = true
 
-[node name="Sheep9" parent="Background" index="12" instance=ExtResource("8_f3u8e")]
+[node name="Sheep9" parent="Background" index="11" instance=ExtResource("8_f3u8e")]
 position = Vector2(542, 473)
 flip_h = true
 
-[node name="Sheep10" parent="Background" index="13" instance=ExtResource("8_f3u8e")]
+[node name="Sheep10" parent="Background" index="12" instance=ExtResource("8_f3u8e")]
 position = Vector2(562, 437)
 flip_h = true
 
-[node name="Sheep11" parent="Background" index="14" instance=ExtResource("8_f3u8e")]
+[node name="Sheep11" parent="Background" index="13" instance=ExtResource("8_f3u8e")]
 position = Vector2(1306, 518)
 flip_h = true
 
-[node name="Sheep12" parent="Background" index="15" instance=ExtResource("8_f3u8e")]
+[node name="Sheep12" parent="Background" index="14" instance=ExtResource("8_f3u8e")]
 position = Vector2(1205, 570)
 
-[node name="FlagAnim" type="AnimatedSprite2D" parent="Background" index="16"]
+[node name="FlagAnim" type="AnimatedSprite2D" parent="Background" index="15"]
 position = Vector2(1728, 779)
 scale = Vector2(0.460631, 0.460631)
 sprite_frames = SubResource("SpriteFrames_p8fkw")
 autoplay = "default"
 offset = Vector2(127.56, -217.251)
 
-[node name="Kabi" type="Sprite2D" parent="Background" index="17"]
+[node name="Kabi" type="Sprite2D" parent="Background" index="16"]
 position = Vector2(411, 62)
 scale = Vector2(0.409217, 0.409217)
 texture = ExtResource("51_y5ndm")
@@ -961,8 +958,15 @@ position = Vector2(5.48573, 54.8573)
 scale = Vector2(1.27244, 0.745289)
 texture = SubResource("GradientTexture2D_sk857")
 
-[node name="Flag" parent="Background" index="18"]
+[node name="Flag" parent="Background" index="17"]
 position = Vector2(1490, 994)
+
+[node name="Mask1" type="Sprite2D" parent="Background" index="19"]
+y_sort_enabled = true
+position = Vector2(3, 1080)
+texture = ExtResource("61_lthk5")
+centered = false
+offset = Vector2(0, -337)
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_mikv3")

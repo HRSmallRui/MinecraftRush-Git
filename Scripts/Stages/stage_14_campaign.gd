@@ -7,6 +7,7 @@ extends Stage
 @export var enemy_path_shape_1: CollisionPolygon2D
 @export var explosion_list_1: Array[Marker2D]
 @export var hidden_tower_list_1: Array[DefenceTower]
+@export var later_map_image1: Texture2D
 
 @export_group("PathOpen2")
 @export var path_mask2: Sprite2D
@@ -14,14 +15,19 @@ extends Stage
 @export var enemy_path_shape_2: CollisionPolygon2D
 @export var explosion_list_2: Array[Marker2D]
 @export var hidden_tower_list_2: Array[DefenceTower]
+@export var later_map_image2: Texture2D
 
 
 func wave_tip(wave_count: int):
 	match wave_count:
 		4:
 			open_path_1()
+			stage_map.map_image = later_map_image1
+			stage_map_start_image = null
 		8:
 			open_path_2()
+			stage_map.map_image = later_map_image2
+			later_map_image1 = null
 	pass
 
 
