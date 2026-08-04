@@ -7,6 +7,7 @@ extends Stage
 @export var on_region_expand_tower_list: Array[DefenceTower]
 @export var region_expand_fire_region_list: Array[NavigationRegion2D]
 @export var on_region_expand_path_list: Array[EnemyPath]
+@export var region_map_image: Texture2D
 @export_group("Path Opening")
 @export var start_lightning_markers: Array[Marker2D]
 @export var left_marker_list: Array[Marker2D]
@@ -19,17 +20,16 @@ extends Stage
 @export var explosion_scene: PackedScene
 @export var smoke_scene: PackedScene
 @export var path_opening_path_list: Array[EnemyPath]
+@export var opening_path_map_image: Texture2D
 
 @onready var region_marker: Marker2D = $RegionMarker
 @onready var later_camera_shape: CollisionShape2D = $StageCamera/CollisionShape2D2
 @onready var lightning_markers: Node2D = $LightningMarkers
 @onready var tower_destroy_area: Area2D = $TowerDestroyArea
-@onready var camera_up_down_component: Control = $StageUI/CameraUpDownComponent
 
 
 func _ready() -> void:
 	super()
-	camera_up_down_component.hide()
 	var time:Dictionary = Time.get_datetime_dict_from_system()
 	print(time)
 	if time.hour == 16 and time.minute == 4:
@@ -74,7 +74,7 @@ func expand_regopn():
 		region.enabled = true
 	for path in on_region_expand_path_list:
 		path.enabled = true
-	camera_up_down_component.show()
+	stage_map.map_image = region_map_image
 	pass
 
 
@@ -109,6 +109,7 @@ func open_path():
 	
 	path_opening_area_shape.disabled = false
 	path_opening_fire_region.enabled = true
+	stage_map.map_image = opening_path_map_image
 	pass
 
 

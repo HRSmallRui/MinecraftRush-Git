@@ -1,5 +1,6 @@
 extends Stage
 
+@export var later_map_image: Texture2D
 @export_group("StoryLayers")
 @export_subgroup("StepStory")
 @export var begin_story_layer_scene: PackedScene
@@ -63,6 +64,7 @@ func into_story():
 	add_child(explosion_story_layer)
 	await get_tree().create_timer(explosion_story_layer.ending_time + 1,false).timeout
 	
+	stage_map.on_ui_layer_hide()
 	var story_layer: StoryLayer = cooperation_story_layer_scene.instantiate()
 	add_child(story_layer)
 	ui_process(null)
@@ -83,6 +85,7 @@ func wave_tip(wave_count: int):
 	if wave_count == 7:
 		await get_tree().create_timer(50,false).timeout
 		expend_region()
+		stage_map.map_image = later_map_image
 	elif wave_count == 8:
 		await get_tree().create_timer(30,false).timeout
 		into_story()

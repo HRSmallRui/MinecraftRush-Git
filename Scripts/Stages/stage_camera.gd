@@ -117,6 +117,7 @@ func update_move_limit():
 	#print(move_limit_shape.shape.get_rect())
 	left_top_position = move_limit_shape.shape.get_rect().position + move_limit_shape.position
 	right_down_position = move_limit_shape.shape.get_rect().end + move_limit_shape.position
+	Stage.instance.stage_based_position = left_top_position
 	pass
 
 

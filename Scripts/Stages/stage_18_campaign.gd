@@ -5,6 +5,7 @@ extends Stage
 @export var later_disable_path_list: Array[EnemyPath]
 @export var later_enable_path_list: Array[EnemyPath]
 @export var destroy_wall_scene: PackedScene
+@export var later_map_image: Texture2D
 
 @onready var camera_collision_shape: CollisionShape2D = $StageCamera/CollisionShape2D
 @onready var firerain_random_region_2: NavigationRegion2D = $FirerainRandomRegions/FirerainRandomRegion2
@@ -43,4 +44,5 @@ func open_path():
 	firerain_random_region_2.enabled = true
 	stage_camera.min_zoom_length_desktop = 0.9
 	stage_camera.position = camera_marker.global_position
+	stage_map.map_image = later_map_image
 	pass
