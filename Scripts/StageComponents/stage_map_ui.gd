@@ -42,9 +42,9 @@ func update_map_image():
 
 
 func _process(delta: float) -> void:
-	camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
+	camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position - Stage.instance.stage_camera.offset
 	camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
-	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
+	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position - Stage.instance.stage_camera.offset
 	map_camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
 	if map_ui_layer.visible:
 		update_map_input()

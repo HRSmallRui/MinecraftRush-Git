@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://wxqlcjy8dro7"]
+[gd_scene load_steps=102 format=3 uid="uid://wxqlcjy8dro7"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_fkkfp"]
 [ext_resource type="AudioStream" uid="uid://casgpi1dse00h" path="res://Assets/Sounds/Music/沙漠-准备2.mp3" id="2_1tjhj"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://duo0sby5qmfjj" path="res://Scenes/Enemies/enemy_23.tscn" id="6_dec6k"]
 [ext_resource type="Script" path="res://Scripts/Stages/protection_point.gd" id="6_hkegs"]
 [ext_resource type="PackedScene" uid="uid://cmwosu03bhpc3" path="res://Scenes/Enemies/enemy_24.tscn" id="7_0xvah"]
-[ext_resource type="Texture2D" uid="uid://c5lm52narmedm" path="res://Assets/Images/Stages/Stage10/stage10-mask.png" id="7_64q1j"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="8_3g6lx"]
 [ext_resource type="PackedScene" uid="uid://bogv4dflqaoej" path="res://Scenes/Enemies/enemy_25.tscn" id="8_k0fi6"]
 [ext_resource type="PackedScene" uid="uid://esqxnl1cqlby" path="res://Scenes/Enemies/enemy_26.tscn" id="9_bi3gi"]
@@ -21,12 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://tbi35kvicm8n" path="res://Assets/Images/Stages/Stage9/houses.png" id="10_0e1oj"]
 [ext_resource type="PackedScene" uid="uid://bcq26o20y1cum" path="res://Scenes/Enemies/enemy_27.tscn" id="10_t540f"]
 [ext_resource type="PackedScene" uid="uid://5ukpvpcb74dj" path="res://Scenes/Enemies/enemy_28.tscn" id="11_fdgbf"]
-[ext_resource type="Script" path="res://Scripts/StageComponents/remilia.gd" id="11_ynx5b"]
-[ext_resource type="Texture2D" uid="uid://h6kaudk81rrf" path="res://Assets/Images/Stages/Stage10/威严扫地机器人.png" id="12_o1yq2"]
-[ext_resource type="AudioStream" uid="uid://d0cdoc7rnivf1" path="res://Assets/Sounds/FXs/Stages/扫地机器人.mp3" id="13_vf13k"]
-[ext_resource type="Script" path="res://Scripts/StageComponents/sun_shine.gd" id="14_fn68c"]
-[ext_resource type="AudioStream" uid="uid://qlp0c66je5o8" path="res://Assets/Sounds/FXs/Stages/将军.mp3" id="15_gslbu"]
-[ext_resource type="Texture2D" uid="uid://cdjnx32wnsonh" path="res://Assets/Images/Stages/Stage10/radio.png" id="16_3l1cc"]
+[ext_resource type="Texture2D" uid="uid://b66e66dr5qr3t" path="res://Assets/Images/Stages/Stage10/stage10_2.png" id="12_02d0a"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_path.gd" id="17_e7f8d"]
 [ext_resource type="PackedScene" uid="uid://b1gc7660mlhiq" path="res://Scenes/StageComponents/dust_storm.tscn" id="17_wo6rp"]
 [ext_resource type="Resource" uid="uid://bsup48if7eaay" path="res://Library/SummonConfigs/Stage10/Diamond/path1.res" id="18_36ygr"]
@@ -35,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://cs60cx1cx7llc" path="res://Library/SummonConfigs/Stage10/Diamond/path4.res" id="21_cdh4n"]
 [ext_resource type="Resource" uid="uid://01ygloqibhd8" path="res://Library/SummonConfigs/Stage10/Diamond/path5.res" id="22_f35tv"]
 [ext_resource type="Resource" uid="uid://bvtnl52l6jebr" path="res://Library/SummonConfigs/Stage10/Diamond/path6.res" id="23_mmfh0"]
+[ext_resource type="PackedScene" uid="uid://ceinxjwiqdhxg" path="res://Scenes/StageComponents/remilia.tscn" id="23_se7ol"]
 [ext_resource type="Resource" uid="uid://darf6wwekb0fn" path="res://Library/SummonConfigs/Stage10/Diamond/path7.res" id="24_g4w8w"]
 [ext_resource type="Resource" uid="uid://f7ob7fuaulhe" path="res://Library/SummonConfigs/Stage10/Diamond/path8.res" id="25_8shhd"]
 [ext_resource type="Resource" uid="uid://kbsn4j23qhaq" path="res://Library/SummonConfigs/Stage10/Diamond/path9.res" id="26_l6xyb"]
@@ -64,301 +59,6 @@ hero_skill_cooling_fast = Array[float]([20.0, 40.0, 60.0, 65.0])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh5nl"]
 size = Vector2(2100, 1200)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bbmu0"]
-radius = 104.962
-
-[sub_resource type="Animation" id="Animation_7pqop"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Head:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-31, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1822, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(882, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MoveAudio:volume_db")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-4, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_wmkn1"]
-resource_name = "leave"
-length = 8.0
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.4)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Head:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-31, -0.25, 0, 0.25, 0, -61.5288, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.4)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1822, -0.25, 0, 0.25, 0, 2177, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.8, 2)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(882, -0.25, 0, 0.25, 0, 882, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.8, 2)
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MoveAudio:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MoveAudio:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -40, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4, 8)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_axhp4"]
-_data = {
-"RESET": SubResource("Animation_7pqop"),
-"leave": SubResource("Animation_wmkn1")
-}
-
-[sub_resource type="Animation" id="Animation_acywb"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Radio:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Radio:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-61, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Radio:scale:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Radio:scale:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_qcaqd"]
-resource_name = "loop"
-length = 0.6
-loop_mode = 2
-step = 0.6
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Radio:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Radio:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-21, -0.25, 0, 0.25, 0, -81, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Radio:scale:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Radio:scale:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.402985, -0.25, 0, 0.25, 0, 1.29851, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-
-[sub_resource type="Animation" id="Animation_m360u"]
-resource_name = "start"
-length = 0.3
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Radio:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Radio:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-61, -0.25, 0, 0.25, 0, -21, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Radio:scale:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Radio:scale:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.402985, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_20lfc"]
-_data = {
-"RESET": SubResource("Animation_acywb"),
-"loop": SubResource("Animation_qcaqd"),
-"start": SubResource("Animation_m360u")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5wuug"]
-radius = 80.6226
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfycm"]
 size = Vector2(2130, 1221)
@@ -624,6 +324,7 @@ current_health = 1
 current_money = 1000
 total_waves = 5
 stage_environment_tags = Array[String](["desert"])
+stage_map_start_image = ExtResource("12_02d0a")
 stage_summon_config = SubResource("Resource_8bbaf")
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
@@ -646,11 +347,6 @@ position = Vector2(72, 490)
 position = Vector2(1468, 1143)
 texture = ExtResource("5_h12s5")
 script = ExtResource("6_hkegs")
-
-[node name="Stage10-mask" type="Sprite2D" parent="Background/BasedSprite" index="2"]
-visible = false
-texture = ExtResource("7_64q1j")
-centered = false
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(64, 566)
@@ -702,83 +398,7 @@ offset = Vector2(-6, -26)
 region_enabled = true
 region_rect = Rect2(166, 291, 189, 136)
 
-[node name="Remilia" type="Node2D" parent="Background" index="9"]
-position = Vector2(1822, 882)
-scale = Vector2(0.276293, 0.276293)
-script = ExtResource("11_ynx5b")
-
-[node name="Shadow" type="Sprite2D" parent="Background/Remilia" index="0"]
-z_index = -1
-texture = ExtResource("12_o1yq2")
-region_enabled = true
-region_rect = Rect2(176, 366, 167, 48)
-
-[node name="Machine" type="Sprite2D" parent="Background/Remilia" index="1"]
-position = Vector2(0, -21)
-texture = ExtResource("12_o1yq2")
-region_enabled = true
-region_rect = Rect2(182, 242, 156, 67)
-
-[node name="Head" type="Sprite2D" parent="Background/Remilia" index="2"]
-position = Vector2(0, -31)
-texture = ExtResource("12_o1yq2")
-region_enabled = true
-region_rect = Rect2(170, 82, 187, 100)
-
-[node name="ClickArea" type="Area2D" parent="Background/Remilia" index="3"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Remilia/ClickArea" index="0"]
-position = Vector2(0, -21.7159)
-scale = Vector2(0.743612, 0.743612)
-shape = SubResource("CircleShape2D_bbmu0")
-
-[node name="MoveAudio" type="AudioStreamPlayer" parent="Background/Remilia" index="4"]
-stream = ExtResource("13_vf13k")
-volume_db = -4.0
-bus = &"Sound"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Remilia" index="5"]
-libraries = {
-"": SubResource("AnimationLibrary_axhp4")
-}
-
-[node name="SunShine" type="Node2D" parent="Background" index="10"]
-visible = false
-position = Vector2(171, 733)
-scale = Vector2(0.281018, 0.281018)
-script = ExtResource("14_fn68c")
-
-[node name="EmojiMusic" type="AudioStreamPlayer" parent="Background/SunShine" index="0"]
-stream = ExtResource("15_gslbu")
-
-[node name="Shadow" type="Sprite2D" parent="Background/SunShine" index="1"]
-texture = ExtResource("16_3l1cc")
-region_enabled = true
-region_rect = Rect2(8, 195, 154, 35)
-
-[node name="Radio" type="Sprite2D" parent="Background/SunShine" index="2"]
-position = Vector2(0, -61)
-texture = ExtResource("16_3l1cc")
-region_enabled = true
-region_rect = Rect2(16, 6, 136, 134)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/SunShine" index="3"]
-libraries = {
-"": SubResource("AnimationLibrary_20lfc")
-}
-speed_scale = 2.0
-
-[node name="ClickArea" type="Area2D" parent="Background/SunShine" index="4"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/SunShine/ClickArea" index="0"]
-position = Vector2(0, -44)
-shape = SubResource("CircleShape2D_5wuug")
-
-[node name="HotWaveSystem" parent="Background" index="11" instance=ExtResource("9_r8vno")]
+[node name="HotWaveSystem" parent="Background" index="9" instance=ExtResource("9_r8vno")]
 wave_hot_sun_steps = Array[int]([1, 1, 2, 1, 2])
 start_hot_sun_step = 1
 
@@ -792,12 +412,14 @@ position = Vector2(1055, 600.5)
 shape = SubResource("RectangleShape2D_gfycm")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
-[node name="DustStorm" parent="Background" index="12" instance=ExtResource("17_wo6rp")]
+[node name="DustStorm" parent="Background" index="10" instance=ExtResource("17_wo6rp")]
 position = Vector2(182, 36)
 wave_dust_show_time = Array[float]([0.0, 5.0, 8.0, 10.0, 15.0])
 
-[node name="Flag" parent="Background" index="13"]
+[node name="Flag" parent="Background" index="11"]
 position = Vector2(64, 439)
+
+[node name="Remilia" parent="Background" index="13" instance=ExtResource("23_se7ol")]
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_ov1ka")
@@ -1059,8 +681,5 @@ process_summon_blocks = Array[ExtResource("40_5ujjo")]([ExtResource("18_36ygr"),
 
 [node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(72, 494)
-
-[connection signal="input_event" from="Background/Remilia/ClickArea" to="Background/Remilia" method="_on_click_area_input_event"]
-[connection signal="input_event" from="Background/SunShine/ClickArea" to="Background/SunShine" method="_on_click_area_input_event"]
 
 [editable path="Background/HotWaveSystem"]
