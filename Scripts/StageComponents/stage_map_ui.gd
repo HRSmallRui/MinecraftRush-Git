@@ -21,6 +21,7 @@ var ally_list: Array[Ally]
 
 func _ready() -> void:
 	update_map_image()
+	Stage.instance.ui_update.connect(ui_process)
 	enemy_multi_instance.multimesh.instance_count = 1000
 	ally_multi_instance.multimesh.instance_count = 1000
 	await get_tree().process_frame
@@ -41,9 +42,9 @@ func update_map_image():
 
 
 func _process(delta: float) -> void:
-	camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
+	camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position - Stage.instance.stage_camera.offset
 	camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
-	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
+	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position - Stage.instance.stage_camera.offset
 	map_camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
 	if map_ui_layer.visible:
 		update_map_input()
@@ -136,6 +137,7 @@ func update_ally_points():
 func on_ui_layer_show():
 	map_ui_layer.show()
 	Stage.instance.can_control = false
+	Stage.instance.ui_process(null)
 	pass
 
 
@@ -143,4 +145,12 @@ func on_ui_layer_hide():
 	map_ui_layer.hide()
 	map_texture_mouse_in = false
 	Stage.instance.can_control = true
+	pass
+
+
+func ui_process(member: Node):
+	if Stage.instance.stage_ui == Stage.StageUI.None or Stage.instance.stage_ui == Stage.StageUI.Check:
+		map_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	else:
+		map_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	pass

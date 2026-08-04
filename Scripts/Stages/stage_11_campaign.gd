@@ -1,5 +1,7 @@
 extends Stage
 
+@export var later_map_image: Texture2D
+
 @onready var mask: Sprite2D = $Background/BasedSprite/Mask
 @onready var defence_tower_based_hide: DefenceTower = $Towers/DefenceTowerBasedHide
 @onready var defence_tower_based_hide_2: DefenceTower = $Towers/DefenceTowerBasedHide2
@@ -15,6 +17,8 @@ func wave_tip(wave_count: int):
 	defence_tower_based_hide_2.show()
 	collision_polygon_2d_3.disabled = false
 	firerain_random_region_3.enabled = true
+	stage_map_start_image = null
+	stage_map.map_image = later_map_image
 	pass
 
 

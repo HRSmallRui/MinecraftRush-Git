@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://d22f5027bxvb6"]
+[gd_scene load_steps=55 format=3 uid="uid://d22f5027bxvb6"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_rbp5m"]
 [ext_resource type="PackedScene" uid="uid://bbn8cyt45bue8" path="res://Scenes/Enemies/enemy_19.tscn" id="2_ht6j7"]
@@ -11,11 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://duo0sby5qmfjj" path="res://Scenes/Enemies/enemy_23.tscn" id="6_5euqh"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_elemw"]
 [ext_resource type="PackedScene" uid="uid://cmwosu03bhpc3" path="res://Scenes/Enemies/enemy_24.tscn" id="7_ps5jn"]
-[ext_resource type="Texture2D" uid="uid://b7c2vflxjrceu" path="res://Assets/Images/Stages/Stage9/temple_mask.png" id="7_tk0ax"]
 [ext_resource type="PackedScene" uid="uid://bogv4dflqaoej" path="res://Scenes/Enemies/enemy_25.tscn" id="8_5veon"]
 [ext_resource type="Texture2D" uid="uid://c5a43no2dy62g" path="res://Assets/Images/Stages/Stage9/front_mask.png" id="8_hm2jo"]
 [ext_resource type="PackedScene" uid="uid://esqxnl1cqlby" path="res://Scenes/Enemies/enemy_26.tscn" id="9_i32rr"]
 [ext_resource type="Texture2D" uid="uid://tbi35kvicm8n" path="res://Assets/Images/Stages/Stage9/houses.png" id="9_k4nyo"]
+[ext_resource type="Texture2D" uid="uid://srp7iwuto1ln" path="res://Assets/Images/Stages/Stage9/stage9.png" id="10_evrqy"]
+[ext_resource type="Texture2D" uid="uid://bq05cptpgrxdk" path="res://Assets/Images/Stages/Stage9/沙漠神殿.png" id="14_l784m"]
 [ext_resource type="PackedScene" uid="uid://b8eus3obad3v1" path="res://Scenes/DefenceTowers/BombardTowers/operator_turret.tscn" id="21_7mfxs"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter3.gd" id="25_mm6dt"]
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="27_h86ox"]
@@ -130,6 +131,7 @@ current_money = 1500
 total_waves = 1
 unlocked_tower_list = [true, false, false, false]
 stage_environment_tags = Array[String](["desert"])
+stage_map_start_image = ExtResource("10_evrqy")
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
 position = Vector2(1050, 720)
@@ -155,34 +157,33 @@ region_enabled = true
 region_rect = Rect2(40, 38, 40, 73)
 
 [node name="TempleMask" type="Sprite2D" parent="Background" index="3"]
-position = Vector2(1158, 1066)
-texture = ExtResource("7_tk0ax")
-centered = false
-offset = Vector2(-1158, -1066)
+position = Vector2(1154, 1093)
+texture = ExtResource("14_l784m")
+offset = Vector2(371, -86)
 
 [node name="TempleMask4" type="Sprite2D" parent="Background" index="4"]
-position = Vector2(1344, 1191)
-texture = ExtResource("7_tk0ax")
+position = Vector2(1528, 1218)
+texture = ExtResource("14_l784m")
 centered = false
-offset = Vector2(-24, -326)
+offset = Vector2(-206, -398)
 region_enabled = true
-region_rect = Rect2(1320, 864, 656, 336)
+region_rect = Rect2(277, 93, 648, 466)
 
 [node name="TempleMask2" type="Sprite2D" parent="Background" index="5"]
-position = Vector2(1339, 1162)
+position = Vector2(1251, 1143)
 texture = ExtResource("8_hm2jo")
 centered = false
-offset = Vector2(-51, -197)
+offset = Vector2(-18, -160)
 region_enabled = true
-region_rect = Rect2(1288, 966, 83, 229)
+region_rect = Rect2(1, 1, 57, 205)
 
 [node name="TempleMask3" type="Sprite2D" parent="Background" index="6"]
-position = Vector2(1229, 1135)
+position = Vector2(1309, 1183)
 texture = ExtResource("8_hm2jo")
 centered = false
-offset = Vector2(-5, -170)
+offset = Vector2(-28, -200)
 region_enabled = true
-region_rect = Rect2(1224, 966, 64, 229)
+region_rect = Rect2(50, 1, 68, 205)
 
 [node name="House1" type="Sprite2D" parent="Background" index="7"]
 position = Vector2(256, 1317)

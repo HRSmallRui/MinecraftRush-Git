@@ -1,14 +1,14 @@
-[gd_scene load_steps=232 format=3 uid="uid://bu6a8xqxp3wgt"]
+[gd_scene load_steps=234 format=3 uid="uid://bu6a8xqxp3wgt"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_1y8m3"]
 [ext_resource type="AudioStream" uid="uid://c6x3cgnnajyfc" path="res://Assets/Sounds/Music/沙漠-准备1.mp3" id="2_2cgkv"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_2d3sd"]
 [ext_resource type="Texture2D" uid="uid://2yhux5a81kx8" path="res://Assets/Images/Stages/Stage11/stage11-based.png" id="2_2hooi"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_11_campaign.gd" id="2_ue6m1"]
+[ext_resource type="Texture2D" uid="uid://dp60ynxkp5dq7" path="res://Assets/Images/Stages/Stage11/stage11_2.png" id="3_5abl7"]
 [ext_resource type="PackedScene" uid="uid://bbn8cyt45bue8" path="res://Scenes/Enemies/enemy_19.tscn" id="3_dwpe4"]
 [ext_resource type="AudioStream" uid="uid://dibi14vyf80g0" path="res://Assets/Sounds/Music/沙漠-战斗1.mp3" id="3_eghks"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="3_f8pga"]
-[ext_resource type="Texture2D" uid="uid://dvqpukq76njye" path="res://Assets/Images/Stages/Stage11/stage11-mask.png" id="3_ntlx5"]
 [ext_resource type="Texture2D" uid="uid://bbdmcqx3w74oi" path="res://Assets/Images/Stages/Stage11/sea-tree.png" id="3_rib0g"]
 [ext_resource type="Texture2D" uid="uid://c0uuer5s44da" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_00.png" id="4_85ie1"]
 [ext_resource type="PackedScene" uid="uid://o3xssgmrkof1" path="res://Scenes/Enemies/enemy_20.tscn" id="4_b67b6"]
@@ -32,8 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://bt2d6o67ytvmo" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_09.png" id="13_60e2c"]
 [ext_resource type="Texture2D" uid="uid://c8xtlkyqfv4so" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_10.png" id="14_mpecp"]
 [ext_resource type="Texture2D" uid="uid://pas1eckjhn5q" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_11.png" id="15_nhsum"]
+[ext_resource type="Texture2D" uid="uid://xibrwnv5r53g" path="res://Assets/Images/Stages/Stage11/stage11.png" id="15_yyp7e"]
 [ext_resource type="Texture2D" uid="uid://c7nidr04kii3w" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_12.png" id="16_3q6p0"]
 [ext_resource type="Texture2D" uid="uid://vwn3wq6qskcy" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_13.png" id="17_x1wl3"]
+[ext_resource type="Texture2D" uid="uid://cbhgwsxerrf5b" path="res://Assets/Images/Stages/Stage11/mask.png" id="18_qublj"]
 [ext_resource type="Texture2D" uid="uid://b3jlnuwdh5xvv" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_14.png" id="18_w8ufv"]
 [ext_resource type="Texture2D" uid="uid://b34xyohqdfph4" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_15.png" id="19_8dsy5"]
 [ext_resource type="Texture2D" uid="uid://bmpaye6dhsi6w" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_16.png" id="20_05ivi"]
@@ -922,10 +924,13 @@ wave_summon_text_list = Array[ExtResource("40_1vi6l")]([SubResource("Resource_k0
 
 [node name="Stage11Campaign" instance=ExtResource("1_1y8m3")]
 script = ExtResource("2_ue6m1")
+later_map_image = ExtResource("3_5abl7")
 stage_count = 11
 enemy_scene_list = Array[PackedScene]([ExtResource("3_dwpe4"), ExtResource("4_b67b6"), ExtResource("5_plfyp"), ExtResource("6_5t6pp"), ExtResource("7_tr6tg"), ExtResource("8_cs2ai"), ExtResource("9_l2gad"), ExtResource("10_f5wbq"), ExtResource("11_lvcrr"), ExtResource("12_yjpc4"), ExtResource("13_0ud4q")])
 current_money = 800
 total_waves = 16
+stage_map_start_image = ExtResource("15_yyp7e")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_qa1cc")
 
 [node name="StageCamera" parent="." index="3"]
@@ -949,7 +954,8 @@ texture = ExtResource("2_2hooi")
 position = Vector2(1830, 1400)
 
 [node name="Mask" type="Sprite2D" parent="Background/BasedSprite" index="1"]
-texture = ExtResource("3_ntlx5")
+position = Vector2(-3, 107)
+texture = ExtResource("18_qublj")
 centered = false
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
