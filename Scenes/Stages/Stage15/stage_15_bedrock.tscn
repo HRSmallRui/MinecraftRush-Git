@@ -1,13 +1,13 @@
 [gd_scene load_steps=114 format=3 uid="uid://c6wbagokaqbfi"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_t6x20"]
+[ext_resource type="Texture2D" uid="uid://dcstba0vesk2q" path="res://Assets/Images/Stages/Stage15/stage15_3.png" id="2_5yidm"]
 [ext_resource type="AudioStream" uid="uid://bmv12x8leo1qe" path="res://Assets/Sounds/Music/厌国-准备3.mp3" id="3_pqav3"]
 [ext_resource type="AudioStream" uid="uid://c20mhx2c3axhq" path="res://Assets/Sounds/Music/厌国-战斗3.mp3" id="4_eobl1"]
 [ext_resource type="AudioStream" uid="uid://dfgrfv6fo5v76" path="res://Assets/Sounds/Music/chapter4_boss.mp3" id="5_i8ftq"]
 [ext_resource type="Texture2D" uid="uid://b4y8xqhvfnllh" path="res://Assets/Images/Stages/Stage15/stage15-based.png" id="6_1cd1g"]
 [ext_resource type="Texture2D" uid="uid://pe1sf035jhvg" path="res://Assets/Animations/StageComponents/保护点.png" id="7_afxx5"]
 [ext_resource type="Script" path="res://Scripts/Stages/protection_point.gd" id="8_41iy2"]
-[ext_resource type="Texture2D" uid="uid://b7cfo7417ijyx" path="res://Assets/Images/Stages/Stage15/path_masks.png" id="9_wphwe"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="10_kogar"]
 [ext_resource type="Texture2D" uid="uid://c0uuer5s44da" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_00.png" id="11_6wplv"]
 [ext_resource type="Texture2D" uid="uid://ego8sj3iico5" path="res://Assets/Images/Stages/Stage7/CoconutTreeAnimation/loop_01.png" id="12_7cgr1"]
@@ -72,7 +72,6 @@
 [ext_resource type="Resource" uid="uid://b3ktn3aodt1b2" path="res://Library/SummonConfigs/bedrock_template.res" id="71_b7v3p"]
 [ext_resource type="Script" path="res://Scripts/path_config_save.gd" id="71_bnroc"]
 [ext_resource type="Script" path="res://Scripts/path_config_load.gd" id="73_qi8j2"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_becky"]
 size = Vector2(2100, 1300)
@@ -382,6 +381,7 @@ current_health = 1
 current_money = 2000
 total_waves = 1
 unlocked_tower_list = [true, false, true, true]
+stage_map_start_image = ExtResource("2_5yidm")
 
 [node name="StageCamera" parent="." index="3"]
 position = Vector2(1114, 1006)
@@ -414,22 +414,6 @@ script = ExtResource("8_41iy2")
 position = Vector2(1851, 1252)
 texture = ExtResource("7_afxx5")
 script = ExtResource("8_41iy2")
-
-[node name="PathMask1" type="Sprite2D" parent="Background/BasedSprite" index="3"]
-visible = false
-position = Vector2(-2, 744)
-texture = ExtResource("9_wphwe")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 742, 449, 482)
-
-[node name="PathMask2" type="Sprite2D" parent="Background/BasedSprite" index="4"]
-visible = false
-position = Vector2(1776, 708)
-texture = ExtResource("9_wphwe")
-centered = false
-region_enabled = true
-region_rect = Rect2(1777, 707, 323, 420)
 
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(481, 1258)

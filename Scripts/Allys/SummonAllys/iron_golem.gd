@@ -23,6 +23,7 @@ func anim_offset():
 func frame_changed():
 	if ally_sprite.animation == "attack" and ally_sprite.frame == 20:
 		aoe_hit_audio.play()
+		normal_attack_timer.start()
 		for unit_body: UnitBody in attack_area.get_overlapping_bodies():
 			var enemy: Enemy = unit_body.owner
 			var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
