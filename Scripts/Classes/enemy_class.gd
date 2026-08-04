@@ -107,7 +107,6 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-	Stage.instance.stage_map.enemy_list.append(self)
 	#Stage.instance.enemy_count += 1
 	logic_timer.timeout.connect(on_logic_timer_timeout)
 	update_health_bar()
@@ -122,6 +121,7 @@ func _ready() -> void:
 	unit_body.position = Vector2.ZERO
 	unit_body.global_rotation = 0
 	await get_tree().process_frame
+	Stage.instance.stage_map.enemy_list.append(self)
 	ui_process(Stage.instance.information_bar.current_check_member)
 	show()
 	battle_length = intercepting_marker.position.x
