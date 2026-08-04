@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://05u6aueicvo4"]
+[gd_scene load_steps=67 format=3 uid="uid://05u6aueicvo4"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/stage_class.gd" id="1_ofsr0"]
 [ext_resource type="PackedScene" uid="uid://qb21t1op36gk" path="res://Scenes/Stages/audio_manager.tscn" id="2_f35mx"]
@@ -167,128 +167,6 @@ animations = [{
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1xsfs"]
 shader = ExtResource("37_u8c4p")
-
-[sub_resource type="Animation" id="Animation_5uuwq"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1935, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../ZoomButton:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1830, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../ZoomButton:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["<"]
-}
-
-[sub_resource type="Animation" id="Animation_lyc8w"]
-resource_name = "zoom_hide"
-length = 0.5
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../ZoomButton:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1685, -0.25, 0, 0.25, 0, 1830, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1707, -0.25, 0, 0.25, 0, 1935, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../ZoomButton:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [">", "<"]
-}
-
-[sub_resource type="Animation" id="Animation_yla56"]
-resource_name = "zoom_show"
-length = 0.5
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1935, -0.25, 0, 0.25, 0, 1707, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../ZoomButton:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1830, -0.25, 0, 0.25, 0, 1685, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../ZoomButton:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["<", ">"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ybv54"]
-_data = {
-"RESET": SubResource("Animation_5uuwq"),
-"zoom_hide": SubResource("Animation_lyc8w"),
-"zoom_show": SubResource("Animation_yla56")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyo5f"]
 size = Vector2(1953, 1105)
@@ -625,12 +503,6 @@ texture = ExtResource("41_hwc7g")
 position = Vector2(0, -32)
 scale = Vector2(0.513811, 0.513811)
 texture = ExtResource("42_wvx6k")
-
-[node name="ZoomAnimationPlayer" type="AnimationPlayer" parent="StageUI"]
-root_node = NodePath("")
-libraries = {
-"": SubResource("AnimationLibrary_ybv54")
-}
 
 [node name="DragLabel" type="Label" parent="StageUI"]
 visible = false
