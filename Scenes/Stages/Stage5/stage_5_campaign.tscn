@@ -1,13 +1,14 @@
-[gd_scene load_steps=172 format=3 uid="uid://qk1m7tnjyouj"]
+[gd_scene load_steps=173 format=3 uid="uid://qk1m7tnjyouj"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_a8slk"]
 [ext_resource type="PackedScene" uid="uid://44npbgu1xrd5" path="res://Scenes/Enemies/enemy_0.tscn" id="2_dxtvt"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_eghpy"]
+[ext_resource type="Script" path="res://Scripts/Stages/stage_5_campaign.gd" id="2_ullmn"]
 [ext_resource type="AudioStream" uid="uid://c0w8tappnuj1c" path="res://Assets/Sounds/Music/雨林-准备1.mp3" id="3_hy1bg"]
-[ext_resource type="Script" path="res://Library/SummonConfigs/preload_config.gd" id="3_pm1fa"]
 [ext_resource type="PackedScene" uid="uid://chwj011y6s28h" path="res://Scenes/Enemies/enemy_1.tscn" id="3_vg5ld"]
 [ext_resource type="PackedScene" uid="uid://u2adgh7wjmdi" path="res://Scenes/Enemies/enemy_4.tscn" id="4_dnstm"]
 [ext_resource type="AudioStream" uid="uid://ctfffwa4ensw2" path="res://Assets/Sounds/Music/雨林-战斗1.mp3" id="4_o7k3y"]
+[ext_resource type="PackedScene" uid="uid://11nxcsftojgm" path="res://Scenes/Stages/Stage5/story_layer_stage_5.tscn" id="5_6dm1v"]
 [ext_resource type="Texture2D" uid="uid://br5xp8m4spcop" path="res://Assets/Images/Stages/Stage5/Stage5-based.png" id="5_mpjoh"]
 [ext_resource type="PackedScene" uid="uid://cwbpaqknpx70u" path="res://Scenes/Enemies/enemy_7.tscn" id="5_yblmh"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="6_8n3jt"]
@@ -673,16 +674,20 @@ script = ExtResource("13_w18kx")
 wave_summon_text_list = Array[ExtResource("21_frs68")]([SubResource("Resource_fqpen"), SubResource("Resource_0db2r"), SubResource("Resource_bc3u5"), SubResource("Resource_jr4b2")])
 
 [node name="Stage5Campaign" instance=ExtResource("1_a8slk")]
+script = ExtResource("2_ullmn")
+witch_tower_texture = ExtResource("24_wqsur")
+witch_tower_name = "守卫者教堂"
+witch_tower_group = 2
+witch_tower_id = 3
+special_tower_unlock_scene = ExtResource("23_02p8t")
+story_layer_scene = ExtResource("5_6dm1v")
 stage_count = 5
 enemy_scene_list = Array[PackedScene]([ExtResource("2_dxtvt"), ExtResource("3_vg5ld"), ExtResource("4_dnstm"), ExtResource("5_yblmh"), ExtResource("6_deama"), ExtResource("7_p1mfg"), ExtResource("8_cnyd1"), ExtResource("9_3yr58"), ExtResource("10_2aela"), ExtResource("11_olw2n")])
 current_money = 800
 total_waves = 14
 stage_map_start_image = ExtResource("12_gvots")
+hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_oklnm")
-
-[node name="EnemyScenePreloadConfig2" type="Node" parent="." index="1"]
-script = ExtResource("3_pm1fa")
-chapter2_preload = true
 
 [node name="PreparationMusic" parent="Musics" index="0"]
 stream = ExtResource("3_hy1bg")
@@ -733,7 +738,7 @@ shape = SubResource("CircleShape2D_wouy7")
 [node name="Flag" parent="Background" index="6"]
 position = Vector2(1074, 1013)
 
-[node name="StageNavigationRegion" parent="." index="9"]
+[node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_2g8o7")
 
 [node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
@@ -917,16 +922,11 @@ offset_bottom = 582.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(1154, -14, 1161, 161, 1196, 326, 1264, 438, 1353, 490, 1327, 586, 1256, 735, 1156, 810, 1100, 813, 965, 730, 892, 616, 819, 528, 611, 401, 378, 367, 217, 357, 93, 322, 0, 237, -6, 399, 35, 415, 175, 460, 321, 474, 504, 495, 673, 553, 776, 648, 853, 752, 887, 796, 925, 829, 1038, 897, 1098, 967, 1096, 1088, 1213, 1091, 1205, 976, 1179, 907, 1227, 888, 1350, 795, 1424, 639, 1479, 499, 1617, 398, 1922, 367, 1920, 260, 1642, 279, 1549, 310, 1432, 411, 1384, 392, 1310, 316, 1269, 160, 1265, -12)
 
-[node name="SpecialTowersUnlockUI" parent="." index="20" instance=ExtResource("23_02p8t")]
-show_texture = ExtResource("24_wqsur")
-show_name = "守卫者教堂"
-tower_group = 2
-
-[node name="Node2D" type="Node2D" parent="." index="21" node_paths=PackedStringArray("enemy_parnt_node")]
+[node name="Node2D" type="Node2D" parent="." index="19" node_paths=PackedStringArray("enemy_parnt_node")]
 script = ExtResource("27_ld2jk")
 enemy_parnt_node = NodePath("../Enemies")
 max_wave_count = 14
 process_summon_blocks = Array[ExtResource("28_mc88d")]([ExtResource("8_pr4ot"), ExtResource("9_iwfgw"), ExtResource("10_7t4wp"), ExtResource("11_mprn4"), ExtResource("12_8q0bx"), ExtResource("13_thek0"), ExtResource("14_4yet1"), ExtResource("15_2ofc4"), ExtResource("16_ncgvf")])
 
-[node name="HeroSummonMarker" parent="." index="24"]
+[node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(1153, 1011)
