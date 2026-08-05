@@ -98,9 +98,10 @@ func start_data_process():
 	pass
 
 
-func cause_damage(damage_type: int = 0):
+func cause_damage(damage_count: int = 0, damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage,
+broken_rate: float = 0):
 	if current_intercepting_enemy == null: return
-	match damage_type:
+	match damage_count:
 		0:
 			var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
 			current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self)
