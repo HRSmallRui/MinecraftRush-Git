@@ -1690,8 +1690,9 @@ enemy_count = 1
 script = ExtResource("62_vva6o")
 wave_summon_text_list = Array[ExtResource("65_grojk")]([SubResource("Resource_1guxj")])
 
-[node name="Stage7Campaign" node_paths=PackedStringArray("explosion_markers") instance=ExtResource("1_2g2g5")]
+[node name="Stage7Campaign" node_paths=PackedStringArray("hidden_tower_list", "explosion_markers") instance=ExtResource("1_2g2g5")]
 script = ExtResource("2_5l11u")
+hidden_tower_list = [NodePath("Towers/DefenceTowerBased32"), NodePath("Towers/DefenceTowerBased31"), NodePath("Towers/DefenceTowerBased30"), NodePath("Towers/DefenceTowerBased29")]
 explosion_markers = [NodePath("Background/BasedSprite/ExplosionMarker"), NodePath("Background/BasedSprite/ExplosionMarker2"), NodePath("Background/BasedSprite/ExplosionMarker3"), NodePath("Background/BasedSprite/ExplosionMarker4"), NodePath("Background/BasedSprite/ExplosionMarker5"), NodePath("Background/BasedSprite/ExplosionMarker6"), NodePath("Background/BasedSprite/ExplosionMarker7"), NodePath("Background/BasedSprite/ExplosionMarker8"), NodePath("Background/BasedSprite/ExplosionMarker9"), NodePath("Background/BasedSprite/ExplosionMarker10")]
 later_map_image = ExtResource("3_vcxwv")
 stage_count = 7
@@ -2269,7 +2270,7 @@ position = Vector2(1532, 279)
 based_skin = 3
 
 [node name="DefenceTowerBased15" parent="Towers" index="12" instance=ExtResource("43_iw6pf")]
-position = Vector2(1927, 151)
+position = Vector2(1976, 180)
 based_skin = 3
 
 [node name="DefenceTowerBased16" parent="Towers" index="13" instance=ExtResource("43_iw6pf")]
@@ -2322,6 +2323,26 @@ based_skin = 3
 
 [node name="DefenceTowerBased28" parent="Towers" index="25" instance=ExtResource("43_iw6pf")]
 position = Vector2(2745, 896)
+based_skin = 3
+
+[node name="DefenceTowerBased29" parent="Towers" index="26" instance=ExtResource("43_iw6pf")]
+visible = false
+position = Vector2(1446, 594)
+based_skin = 3
+
+[node name="DefenceTowerBased30" parent="Towers" index="27" instance=ExtResource("43_iw6pf")]
+visible = false
+position = Vector2(1422, 827)
+based_skin = 3
+
+[node name="DefenceTowerBased31" parent="Towers" index="28" instance=ExtResource("43_iw6pf")]
+visible = false
+position = Vector2(1658, 470)
+based_skin = 3
+
+[node name="DefenceTowerBased32" parent="Towers" index="29" instance=ExtResource("43_iw6pf")]
+visible = false
+position = Vector2(1667, 710)
 based_skin = 3
 
 [node name="PauseButton" parent="StageUI" index="3"]
