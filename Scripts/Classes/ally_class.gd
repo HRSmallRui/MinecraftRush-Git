@@ -228,7 +228,7 @@ func battle_process():
 			move_back()
 			return
 		else:
-			move(station_position)
+			move_back()
 	
 	if current_intercepting_enemy != null:
 		if current_intercepting_enemy.current_intercepting_units.size() > 0 and current_intercepting_enemy.current_intercepting_units[0] != self:
