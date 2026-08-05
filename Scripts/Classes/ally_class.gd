@@ -219,16 +219,13 @@ func battle_process():
 					return
 	
 	if ally_sprite.animation == "idle" and current_intercepting_enemy == null:
-		if intercepting_area.position == station_position:
-			if intercepting_area.has_overlapping_bodies():
-				var enemy: Enemy = get_intercepting_enemy()
-				if enemy != null:
-					go_to_intercept_enemy(enemy)
-					return
-			move_back()
-			return
-		else:
-			move_back()
+		if intercepting_area.has_overlapping_bodies():
+			var enemy: Enemy = get_intercepting_enemy()
+			if enemy != null:
+				go_to_intercept_enemy(enemy)
+				return
+		move_back()
+		return
 	
 	if current_intercepting_enemy != null:
 		if current_intercepting_enemy.current_intercepting_units.size() > 0 and current_intercepting_enemy.current_intercepting_units[0] != self:
