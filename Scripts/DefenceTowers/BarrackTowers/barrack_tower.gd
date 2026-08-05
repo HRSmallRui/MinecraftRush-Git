@@ -111,9 +111,6 @@ func destroy_tower():
 func tower_level_up(type: TowerType, id: int):
 	super(type,id)
 	var new_tower: BarrackTower = Stage.instance.towers.get_child(-1)
-	for soldier in soldier_list:
-		if soldier.current_intercepting_enemy != null:
-			soldier.current_intercepting_enemy.current_intercepting_units.erase(soldier)
 	if new_tower.unit_count <= unit_count:
 		for i in new_tower.unit_count:
 			level_up_summon_soldier(new_tower,i)
