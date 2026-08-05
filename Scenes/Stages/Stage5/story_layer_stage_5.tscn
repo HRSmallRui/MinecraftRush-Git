@@ -1,0 +1,73 @@
+[gd_scene load_steps=16 format=3 uid="uid://11nxcsftojgm"]
+
+[ext_resource type="PackedScene" uid="uid://doqtusnl6v3jq" path="res://Scenes/StageComponents/story_layer.tscn" id="1_ev0gq"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/dialog_block.gd" id="2_7nep0"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/cg_texture_block.gd" id="3_kfq1r"]
+[ext_resource type="Texture2D" uid="uid://bbm4fbg7jhgra" path="res://Assets/Images/CGs/Stage5CG.png" id="4_gbacr"]
+[ext_resource type="Texture2D" uid="uid://ccl2p5j5yey80" path="res://Assets/Images/CGs/Stage20CG2.png" id="5_6ldke"]
+
+[sub_resource type="Resource" id="Resource_eudi5"]
+script = ExtResource("2_7nep0")
+dialog_text = "野区入口……我很久没来过这里了"
+text_color = Color(0, 1, 1, 1)
+text_exist_time = 1.0
+
+[sub_resource type="Resource" id="Resource_fr0yx"]
+script = ExtResource("2_7nep0")
+dialog_text = "儿时，父亲经常带我走这条路"
+text_color = Color(0, 1, 1, 1)
+text_exist_time = 5.0
+
+[sub_resource type="Resource" id="Resource_2gihu"]
+script = ExtResource("2_7nep0")
+dialog_text = "现在这条路已经快要被草淹没了"
+text_color = Color(0, 1, 1, 1)
+text_exist_time = 9.0
+
+[sub_resource type="Resource" id="Resource_pgr0f"]
+script = ExtResource("2_7nep0")
+dialog_text = "我不知道为什么那所谓传说中能扭转战局的神器的碎片会散落在人族帝国的领域"
+text_color = Color(0, 1, 1, 1)
+text_exist_time = 12.0
+
+[sub_resource type="Resource" id="Resource_r2h4e"]
+script = ExtResource("2_7nep0")
+dialog_text = "还是这个充满怪物的野区丛林"
+text_color = Color(0, 1, 1, 1)
+text_exist_time = 20.0
+
+[sub_resource type="Resource" id="Resource_o7pfl"]
+script = ExtResource("2_7nep0")
+dialog_text = "也不知道为什么他们能够知道这个碎片就在人族帝国这里"
+text_color = Color(0, 1, 1, 1)
+text_exist_time = 23.0
+
+[sub_resource type="Resource" id="Resource_0sybo"]
+script = ExtResource("2_7nep0")
+dialog_text = ""
+text_color = Color(1, 1, 1, 1)
+text_exist_time = 28.0
+
+[sub_resource type="Resource" id="Resource_x6pi6"]
+script = ExtResource("2_7nep0")
+dialog_text = "我抚摸着颈部挂的护身符项链，祈祷着这一切能够顺利地结束"
+text_color = Color(0, 1, 1, 1)
+text_exist_time = 30.0
+
+[sub_resource type="Resource" id="Resource_nctob"]
+script = ExtResource("3_kfq1r")
+cg_texture = ExtResource("4_gbacr")
+cg_appear_time = 2.0
+cg_during_time = 20.0
+
+[sub_resource type="Resource" id="Resource_paf5o"]
+script = ExtResource("3_kfq1r")
+cg_texture = ExtResource("5_6ldke")
+cg_appear_time = 29.0
+cg_during_time = 8.0
+
+[node name="StoryLayerStage5" instance=ExtResource("1_ev0gq")]
+process_mode = 3
+ending_time = 38.0
+dialog_list = Array[ExtResource("2_7nep0")]([SubResource("Resource_eudi5"), SubResource("Resource_fr0yx"), SubResource("Resource_2gihu"), SubResource("Resource_pgr0f"), SubResource("Resource_r2h4e"), SubResource("Resource_o7pfl"), SubResource("Resource_0sybo"), SubResource("Resource_x6pi6")])
+cg_list = Array[ExtResource("3_kfq1r")]([SubResource("Resource_nctob"), SubResource("Resource_paf5o")])
