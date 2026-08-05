@@ -14,10 +14,14 @@ class_name StageMapUI
 @onready var center_container: CenterContainer = $MapUILayer/CenterContainer
 @onready var enemy_multi_instance: MultiMeshInstance2D = $MapUILayer/CenterContainer/MapTexture/EnemyMultiInstance
 @onready var ally_multi_instance: MultiMeshInstance2D = $MapUILayer/CenterContainer/MapTexture/AllyMultiInstance
+@onready var holding_timer: Timer = $HoldingTimer
+@onready var map_show_button: TextureButton = $MapShowButton
+
 
 var map_texture_mouse_in: bool
 var enemy_list: Array[Enemy]
 var ally_list: Array[Ally]
+
 
 func _ready() -> void:
 	update_map_image()
@@ -154,3 +158,30 @@ func ui_process(member: Node):
 	else:
 		map_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	pass
+
+
+func map_button_hide():
+	map_button.hide()
+	map_show_button.show()
+	pass
+
+
+func _on_map_button_button_up() -> void:
+	holding_timer.stop()
+	pass # Replace with function body.
+
+
+func _on_map_button_button_down() -> void:
+	holding_timer.start()
+	pass # Replace with function body.
+
+
+func _on_map_show_b_utton_pressed() -> void:
+	map_button.show()
+	map_show_button.hide()
+	pass # Replace with function body.
+
+
+func _on_holding_timer_timeout() -> void:
+	map_button_hide()
+	pass # Replace with function body.
