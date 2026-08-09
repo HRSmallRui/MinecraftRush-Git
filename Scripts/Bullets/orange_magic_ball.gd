@@ -22,6 +22,7 @@ func hit_effect():
 	super()
 	if !has_summon_liquid and !bullet_special_tag_levels["fly"]:
 		summon_liquid(position + Vector2(0,10))
+		has_summon_liquid = true
 	pass
 
 

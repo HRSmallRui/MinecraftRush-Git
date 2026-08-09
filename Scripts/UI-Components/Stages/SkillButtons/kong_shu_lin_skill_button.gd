@@ -14,6 +14,12 @@ func _ready() -> void:
 	pass
 
 
+func skill_unlease_condition():
+	if Stage.instance.mouse_in_path or Stage.instance.mouse_in_fire_extra_area:
+		skill_unlease()
+	pass
+
+
 func skill_unlease():
 	super()
 	var summon_pos: Vector2 = Stage.instance.get_local_mouse_position()

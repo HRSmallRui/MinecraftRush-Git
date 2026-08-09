@@ -165,7 +165,7 @@ func _physics_process(delta: float) -> void:
 		if hit_box.get_overlapping_areas().size() == 0: return
 		else:
 			var has_damaged: bool = false
-			for hurt_box: HurtBox in hit_box.get_overlapping_areas():
+			for hurt_box: Area2D in hit_box.get_overlapping_areas():
 				var unit = hurt_box.owner
 				if unit is Ally: 
 					if unit.ally_state == Ally.AllyState.DIE or unit in erase_ally_list: continue

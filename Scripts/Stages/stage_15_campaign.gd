@@ -22,6 +22,8 @@ extends Stage
 @export var boss_scene: PackedScene
 
 @onready var boss_path: EnemyPath = $Enemies/BossPath
+@onready var explosion_watch_marker_1: Marker2D = $ExplosionWatchMarker1
+@onready var explosion_watch_marker_2: Marker2D = $ExplosionWatchMarker2
 
 var stage_step: int = 0
 
@@ -85,11 +87,11 @@ func delay_win():
 
 func wave_tip(wave_count: int):
 	match wave_count:
-		6:
+		8:
 			open_path_left()
 			stage_map.map_image = later_map_image1
 			stage_map_start_image = null
-		8:
+		10:
 			open_path_right()
 			stage_map.map_image = later_map_image2
 			later_map_image1 = null
@@ -98,6 +100,7 @@ func wave_tip(wave_count: int):
 
 func open_path_left():
 	explosion(left_explosion_markers)
+	Stage.instance.stage_camera.position = explosion_watch_marker_1.global_position
 	for path in path_left_list:
 		path.enabled = true
 	path_left_collision.disabled = false
@@ -109,6 +112,7 @@ func open_path_left():
 
 func open_path_right():
 	explosion(right_explosion_markers)
+	Stage.instance.stage_camera.position = explosion_watch_marker_2.global_position
 	for path in path_right_list:
 		path.enabled = true
 	path_right_collision.disabled = false
