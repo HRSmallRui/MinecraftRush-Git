@@ -5,7 +5,7 @@ extends SkillButton
 
 
 func skill_unlease_condition():
-	if Stage.instance.mouse_in_path and !Stage.instance.mouse_in_fire_stop_area:
+	if (Stage.instance.mouse_in_path or Stage.instance.mouse_in_fire_extra_area) and !Stage.instance.mouse_in_fire_stop_area:
 		skill_unlease()
 	pass
 
