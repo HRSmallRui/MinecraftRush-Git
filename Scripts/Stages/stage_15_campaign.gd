@@ -85,11 +85,11 @@ func delay_win():
 
 func wave_tip(wave_count: int):
 	match wave_count:
-		6:
+		8:
 			open_path_left()
 			stage_map.map_image = later_map_image1
 			stage_map_start_image = null
-		8:
+		10:
 			open_path_right()
 			stage_map.map_image = later_map_image2
 			later_map_image1 = null
