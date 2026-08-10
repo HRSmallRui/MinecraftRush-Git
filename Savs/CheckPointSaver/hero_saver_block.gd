@@ -1,0 +1,2 @@
+extends AllyPackedSavBlock
+class_name HeroPackedSavBlock

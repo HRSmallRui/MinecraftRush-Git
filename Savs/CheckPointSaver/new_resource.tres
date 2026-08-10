@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CheckPointSaver" load_steps=6 format=3 uid="uid://dyrmb7ohp4atj"]
+
+[ext_resource type="Script" path="res://Savs/CheckPointSaver/hero_saver_block.gd" id="1_v4u0u"]
+[ext_resource type="Script" path="res://Savs/CheckPointSaver/check_point_saver.gd" id="2_lu7i6"]
+[ext_resource type="Script" path="res://Savs/CheckPointSaver/tower_packed_sav_block.gd" id="4_j33oj"]
+
+[sub_resource type="Resource" id="Resource_fxwm2"]
+script = ExtResource("1_v4u0u")
+ally_position = Vector2(0, 0)
+ally_station_position = Vector2(0, 0)
+ally_intercepting_area_pos = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_4ygqv"]
+script = ExtResource("4_j33oj")
+tower_position = Vector2(0, 0)
+tower_skill_levels = Array[int]([])
+
+[resource]
+script = ExtResource("2_lu7i6")
+is_battleing = false
+current_health = 0
+current_money = 0
+current_wave_count = 0
+hero_sav_block_list = Array[ExtResource("1_v4u0u")]([SubResource("Resource_fxwm2")])
+tower_sav_block_list = Array[ExtResource("4_j33oj")]([SubResource("Resource_4ygqv")])
