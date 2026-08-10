@@ -70,8 +70,9 @@ func into_story():
 	ui_process(null)
 	first_music_player_process()
 	#await get_tree().create_timer(12).timeout
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(0.2).timeout
 	add_cooperators()
+	clear_enemies()
 	#battle_music_player.stop_music()
 	#battle_music_player.queue_free()
 	await get_tree().create_timer(0.2,false).timeout
@@ -194,4 +195,15 @@ func first_music_player_process():
 	battle_music_player.set_volume(-100,2)
 	await get_tree().create_timer(2).timeout
 	battle_music_player.queue_free()
+	pass
+
+
+func clear_enemies():
+	for enemy_path: EnemyPath in enemies.get_children():
+		for enemy in enemy_path.get_children():
+			if enemy is Enemy:
+				if enemy.enemy_id <= 9 or enemy.enemy_id == 49 or enemy.enemy_id == 51:
+					enemy.translate_to_new_state(Enemy.EnemyState.DIE)
+					enemy.hide()
+					enemy.delay_free()
 	pass

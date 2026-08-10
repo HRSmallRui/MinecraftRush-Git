@@ -348,7 +348,7 @@ func anim_finished():
 
 
 func _on_heal_timer_timeout() -> void:
-	if ally_state != AllyState.IDLE: return
+	if ally_state != AllyState.IDLE or ally_sprite.animation != "idle": return
 	current_data.heal(heal_speed)
 	pass # Replace with function body.
 
