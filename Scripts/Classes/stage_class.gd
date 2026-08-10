@@ -14,6 +14,8 @@ signal on_prepare_music_stop
 signal on_battle_music_stop
 signal on_boss_music_stop
 
+signal on_check_point_enabled
+
 enum StageMode{
 	Campaign,
 	Diamond,
@@ -596,4 +598,9 @@ func get_closest_main_enemy_path(target_pos: Vector2) -> EnemyPath:
 func get_current_techno_level(slot_id: int) -> int:
 	var tech_level: int = stage_sav.upgrade_sav[slot_id]
 	return clampi(tech_level,0,limit_tech_level)
+	pass
+
+
+func on_check_point_saver_forced(saver: CheckPointSaver):
+	
 	pass

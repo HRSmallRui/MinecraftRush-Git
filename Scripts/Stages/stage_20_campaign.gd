@@ -140,4 +140,5 @@ func win(wait_time: float = 3):
 	if is_win: return
 	is_win = true
 	on_wining.emit()
+	on_check_point_enabled.emit()
 	pass

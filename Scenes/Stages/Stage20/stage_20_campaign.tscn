@@ -1,4 +1,4 @@
-[gd_scene load_steps=571 format=3 uid="uid://ca5jlulfaihj5"]
+[gd_scene load_steps=573 format=3 uid="uid://ca5jlulfaihj5"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_p4gcj"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_8xxdd"]
@@ -251,6 +251,8 @@
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter4.gd" id="238_bbxfo"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter6.gd" id="239_e33e5"]
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="243_2ywgr"]
+[ext_resource type="Texture2D" uid="uid://cj6d55iukwq5p" path="res://Assets/Images/Stages/Stage14/Chest/0001.png" id="252_adrf4"]
+[ext_resource type="Script" path="res://Scripts/StageComponents/check_point_node.gd" id="252_n22lm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixdhv"]
 atlas = ExtResource("29_x0t84")
@@ -3356,7 +3358,18 @@ process_summon_blocks = Array[ExtResource("62_k3iig")]([ExtResource("56_k1573"),
 [node name="HeroSummonMarker" parent="." index="29"]
 position = Vector2(2035, 1436)
 
-[node name="CheckPointNode" type="Node" parent="." index="30"]
+[node name="CheckPointNode" type="CanvasLayer" parent="." index="30"]
+layer = 10
+script = ExtResource("252_n22lm")
+
+[node name="TextureRect" type="TextureRect" parent="CheckPointNode" index="0"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 33.0
+offset_top = 117.0
+offset_right = 141.0
+offset_bottom = 225.0
+mouse_filter = 2
+texture = ExtResource("252_adrf4")
 
 [connection signal="input_event" from="Background/Wall/BeggarClickArea" to="Background/Wall/BeggarClickArea" method="_on_input_event"]
 [connection signal="input_event" from="Background/MagicHeart/MagicHeartClickArea" to="Background/MagicHeart" method="_on_magic_heart_click_area_input_event"]
