@@ -6,22 +6,16 @@ static var instance: CheckPointNode
 
 func _ready() -> void:
 	Stage.instance.on_check_point_enabled.connect(on_stage_saver_point_enabled)
-	await get_tree().process_frame
+	await get_tree().create_timer(2,false).timeout
 	on_stage_saver_point_enabled()
 	pass
 
 
 func on_stage_saver_point_enabled():
 	var check_point_saver: CheckPointSaver = CheckPointSaver.new()
-	for hero: Hero in Stage.instance.hero_list:
-		var hero_block: HeroPackedSavBlock = HeroPackedSavBlock.new()
-		var packed_scene: PackedScene = PackedScene.new()
-		packed_scene.pack(hero)
-		hero_block.ally_packed_scene = packed_scene
-		hero_block.ally_position = hero.position
-		hero_block.ally_station_position = hero.station_position
-		hero_block.ally_intercepting_area_pos = hero.intercepting_area.position
-		check_point_saver.hero_sav_block_list.append(hero_block)
+	if not Stage.instance.hero_list.is_empty():
+		var hero: Hero = Stage.instance.hero_list[0]
+		check_point_saver.hero_position = hero.position
 	for tower: DefenceTower in Stage.instance.towers.get_children():
 		var tower_block: TowerPackedSavBlock = TowerPackedSavBlock.new()
 		var tower_scene: PackedScene = PackedScene.new()
