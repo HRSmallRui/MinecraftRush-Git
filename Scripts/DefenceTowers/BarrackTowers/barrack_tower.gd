@@ -17,13 +17,13 @@ var origin_tower_data: BarrackData
 func _enter_tree() -> void:
 	if Stage.instance.ui_update.is_connected(Callable(self,"ui_process")): return
 	barrack_data = barrack_data.duplicate()
+	super()
 	origin_tower_data = barrack_data.duplicate(true)
 	var barrack_level: int = clampi(Stage.instance.stage_sav.upgrade_sav[1],0,Stage.instance.limit_tech_level)
 	if barrack_level >= 1: start_tower_range *= 1.2
 	if barrack_level >= 2: barrack_data.soldier_health *= 1.2
 	if barrack_level >= 3: barrack_data.armor += 0.1
 	if barrack_level >= 4: barrack_data.rebirth_time = int(barrack_data.rebirth_time * 0.8)
-	super()
 	
 	pass
 

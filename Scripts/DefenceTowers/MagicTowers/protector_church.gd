@@ -50,7 +50,6 @@ func first_move():
 		if ray.is_colliding():
 			var target_pos = ray.get_collision_point() + ray.target_position * 0.5
 			golem_position = target_pos
-			first_move_rays.queue_free()
 			return
 	#print(golem_position)
 	pass

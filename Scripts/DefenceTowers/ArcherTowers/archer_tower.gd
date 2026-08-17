@@ -16,11 +16,11 @@ var origin_data: NormalTowerData
 
 func _enter_tree() -> void:
 	if Stage.instance.ui_update.is_connected(Callable(self,"ui_process")): return
+	super()
 	origin_data = start_data.duplicate(true)
 	var archer_level: int = clampi(Stage.instance.stage_sav.upgrade_sav[0],0,Stage.instance.limit_tech_level)
 	if archer_level >= 1: start_tower_range  = int(start_tower_range * 1.15)
 	if archer_level >= 2: tower_value -= 10 * tower_level
-	super()
 	current_data = start_data.duplicate(true)
 	pass
 

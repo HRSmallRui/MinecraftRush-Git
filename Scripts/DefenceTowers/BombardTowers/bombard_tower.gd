@@ -15,6 +15,7 @@ var origin_tower_data: NormalTowerData
 
 func _enter_tree() -> void:
 	if Stage.instance.ui_update.is_connected(Callable(self,"ui_process")): return
+	super()
 	start_data = start_data.duplicate()
 	origin_tower_data = start_data.duplicate(true)
 	var tech_level:int = clampi(Stage.instance.stage_sav.upgrade_sav[3],0,Stage.instance.limit_tech_level)
@@ -22,7 +23,6 @@ func _enter_tree() -> void:
 	if tech_level >= 2:
 		start_data.damage_low = DataProcess.upgrade_damage(start_data.damage_low,0.1)
 		start_data.damage_high = DataProcess.upgrade_damage(start_data.damage_high,0.1)
-	super()
 	current_data = start_data.duplicate(true)
 	
 	pass
