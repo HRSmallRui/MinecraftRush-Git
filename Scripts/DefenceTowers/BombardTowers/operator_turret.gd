@@ -68,7 +68,6 @@ func first_move():
 		if ray.is_colliding():
 			var target_pos = ray.get_collision_point() + ray.target_position * 0.5
 			robot_position = target_pos
-			first_move_rays.queue_free()
 			return
 	pass
 
@@ -117,3 +116,19 @@ func destroy_tower():
 	if linked_robot != null:
 		linked_robot.sell_ally()
 	pass
+
+
+func initialize_tower_skill():
+	super()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	first_move()
+	if tower_skill_levels[1] > 0:
+		var skill_level: int = tower_skill_levels[1]
+		tower_skill_level_up(1,1)
+		tower_skill_levels[1] = skill_level
+		if linked_robot != null:
+			linked_robot.level = skill_level
+			linked_robot.update_level_data()
+		

@@ -36,3 +36,14 @@ func sell_ally():
 		current_intercepting_enemy.current_intercepting_units.erase(self)
 	queue_free()
 	pass
+
+
+func update_level_data():
+	start_data = unit_list[level-1].duplicate(true)
+	current_data.ready_data(start_data)
+	current_data.update_data()
+	heal_speed = heal_speed_list[level-1]
+	if ally_state == AllyState.DIE:
+		rebirth()
+		rebirth_timer.stop()
+	pass
