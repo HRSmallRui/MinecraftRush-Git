@@ -268,3 +268,19 @@ func destroy_tower():
 	if iron_golem != null:
 		iron_golem.sell_ally()
 	pass
+
+
+func initialize_tower_skill():
+	super()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	first_move()
+	if tower_skill_levels[0] > 0:
+		var skill_level: int = tower_skill_levels[0]
+		tower_skill_level_up(0,1)
+		tower_skill_levels[0] = skill_level
+		if iron_golem != null:
+			iron_golem.level = skill_level
+			iron_golem.update_level_data()
+	pass

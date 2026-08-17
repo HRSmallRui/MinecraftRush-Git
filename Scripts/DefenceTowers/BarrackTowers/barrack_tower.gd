@@ -132,17 +132,25 @@ func level_up_summon_soldier(new_tower:BarrackTower,i: int):
 func tower_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
 	for soldier in soldier_list:
-		soldier.soldier_skill_level_up(skill_id,skill_level)
+		if skill_level > 0:
+			soldier.soldier_skill_level_up(skill_id,skill_level)
 	pass
 
 
 func initialize_soldiers():
-	for soldier in soldier_list:
-		soldier.soldier_skill_levels = tower_skill_levels.duplicate()
+	for skill_id in tower_skill_levels.size():
+		if tower_skill_levels[skill_id] == 0: continue
+		tower_skill_level_up(skill_id,tower_skill_levels[skill_id])
 	pass
 
 
 func ready_to_save():
 	super()
 	barrack_data = origin_tower_data
+	pass
+
+
+func initialize_tower_skill():
+	super()
+	
 	pass

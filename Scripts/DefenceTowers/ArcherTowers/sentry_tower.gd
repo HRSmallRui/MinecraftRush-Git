@@ -158,3 +158,18 @@ func fighting_process():
 			timer.start()
 	super()
 	pass
+
+
+func initialize_tower_skill():
+	super()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	first_move()
+	if tower_skill_levels[1] > 0:
+		summon_soldiers()
+		for changer in soldier_list:
+			changer.level = tower_skill_levels[1]
+			changer.update_level_data()
+		move(soldier_position)
+	pass

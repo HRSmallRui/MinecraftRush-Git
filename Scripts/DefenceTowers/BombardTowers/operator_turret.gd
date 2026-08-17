@@ -116,3 +116,19 @@ func destroy_tower():
 	if linked_robot != null:
 		linked_robot.sell_ally()
 	pass
+
+
+func initialize_tower_skill():
+	super()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	first_move()
+	if tower_skill_levels[1] > 0:
+		var skill_level: int = tower_skill_levels[1]
+		tower_skill_level_up(1,1)
+		tower_skill_levels[1] = skill_level
+		if linked_robot != null:
+			linked_robot.level = skill_level
+			linked_robot.update_level_data()
+		
