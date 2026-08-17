@@ -53,15 +53,18 @@ var is_locked: bool = false:
 var tower_damage_buffs: Array[TowerPropertyBuffBlock]
 var tower_range_buffs: Array[TowerPropertyBuffBlock]
 var tower_attack_speed_buffs: Array[TowerPropertyBuffBlock]
+var origin_tower_range: int
 
 
 func _enter_tree() -> void:
 	current_tower_range = start_tower_range
+	origin_tower_range = start_tower_range
 	pass
 
 
 func _ready() -> void:
 	Stage.instance.ui_update.connect(ui_process)
+	initialize_tower_skill()
 	
 	if OS.get_name() == "Android":
 		circle.scale = Vector2.ONE
@@ -237,4 +240,14 @@ func update_tower_range():
 			current_tower_range = float(current_tower_range) * property_block.operation_data
 	
 	current_tower_range = max(0,current_tower_range)
+	pass
+
+
+func initialize_tower_skill():
+	
+	pass
+
+
+func ready_to_save():
+	start_tower_range = origin_tower_range
 	pass

@@ -14,6 +14,7 @@ const LOCKED = preload("res://Assets/Images/DefenceTowers/UI/locked.tres")
 @onready var mouse_over_audio: AudioStreamPlayer = $MouseOverAudio
 
 var locked: bool = false
+var current_price: int
 
 
 func _enter_tree() -> void:
@@ -22,10 +23,20 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	current_price = price
 	if tower_type == DefenceTower.TowerType.Archer and clampi(Stage.instance.stage_sav.upgrade_sav[0],0,Stage.instance.limit_tech_level) >= 2:
-		price -= 10
-	price_label.text = str(price)
+		current_price -= 10
+	signal_connect()
+	price_label.text = str(current_price)
 	lock_condition()
+	pass
+
+
+func signal_connect():
+	if pressed.is_connected(Callable(self,"_on_pressed")): return
+	pressed.connect(_on_pressed)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	pass
 
 
@@ -39,7 +50,7 @@ func lock():
 
 
 func _process(delta: float) -> void:
-	disabled = Stage.instance.current_money < price
+	disabled = Stage.instance.current_money < current_price
 	price_label.modulate = Color.GRAY if disabled else Color.YELLOW
 	pass
 

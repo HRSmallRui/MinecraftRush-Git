@@ -50,7 +50,6 @@ func first_move():
 		if ray.is_colliding():
 			var target_pos = ray.get_collision_point() + ray.target_position * 0.5
 			golem_position = target_pos
-			first_move_rays.queue_free()
 			return
 	#print(golem_position)
 	pass
@@ -268,4 +267,20 @@ func destroy_tower():
 	super()
 	if iron_golem != null:
 		iron_golem.sell_ally()
+	pass
+
+
+func initialize_tower_skill():
+	super()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	first_move()
+	if tower_skill_levels[0] > 0:
+		var skill_level: int = tower_skill_levels[0]
+		tower_skill_level_up(0,1)
+		tower_skill_levels[0] = skill_level
+		if iron_golem != null:
+			iron_golem.level = skill_level
+			iron_golem.update_level_data()
 	pass

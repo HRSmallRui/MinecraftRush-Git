@@ -19,6 +19,7 @@ class_name TowerSkillButton
 @onready var click_audio: AudioStreamPlayer = $ClickAudio
 
 var gray_disabled_texture: Texture
+var current_prices: Array[int]
 
 
 func update_skill_level():
@@ -34,19 +35,20 @@ func update_skill_level():
 		set_process(false)
 	else:
 		panel.show()
-		price_label.text = str(skill_prices[skill_level])
+		price_label.text = str(current_prices[skill_level])
 		texture_disabled = gray_disabled_texture
 		set_process(true)
 	pass
 
 
 func _ready() -> void:
-	skill_prices = skill_prices.duplicate()
+	signal_connect()
+	current_prices = skill_prices.duplicate()
 	if linked_tower is BombardTower:
 		var level: int = clampi(Stage.instance.stage_sav.upgrade_sav[3],0,Stage.instance.limit_tech_level)
 		if level >= 3:
 			for i in skill_prices.size():
-				skill_prices[i] = int(skill_prices[i] * 0.8)
+				current_prices[i] = int(skill_prices[i] * 0.8)
 			#print(skill_prices)
 	
 	gray_disabled_texture = texture_disabled
@@ -56,9 +58,17 @@ func _ready() -> void:
 	pass
 
 
+func signal_connect():
+	if pressed.is_connected(Callable(self,"_on_pressed")): return
+	pressed.connect(_on_pressed)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	pass
+
+
 func _process(delta: float) -> void:
 	var skill_level: int = linked_tower.tower_skill_levels[skill_id]
-	disabled = Stage.instance.current_money < skill_prices[skill_level]
+	disabled = Stage.instance.current_money < current_prices[skill_level]
 	price_label.modulate = Color.GRAY if disabled else Color.YELLOW
 	pass
 

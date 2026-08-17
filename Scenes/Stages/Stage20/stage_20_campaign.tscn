@@ -1,4 +1,4 @@
-[gd_scene load_steps=571 format=3 uid="uid://ca5jlulfaihj5"]
+[gd_scene load_steps=572 format=3 uid="uid://ca5jlulfaihj5"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_p4gcj"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_8xxdd"]
@@ -251,6 +251,7 @@
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter4.gd" id="238_bbxfo"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter6.gd" id="239_e33e5"]
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="243_2ywgr"]
+[ext_resource type="PackedScene" uid="uid://bl88unwoesifi" path="res://Scenes/UI-Components/Stages/check_point_node.tscn" id="252_n3ofu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixdhv"]
 atlas = ExtResource("29_x0t84")
@@ -3356,7 +3357,7 @@ process_summon_blocks = Array[ExtResource("62_k3iig")]([ExtResource("56_k1573"),
 [node name="HeroSummonMarker" parent="." index="29"]
 position = Vector2(2035, 1436)
 
-[node name="CheckPointNode" type="Node" parent="." index="30"]
+[node name="CheckPointNode" parent="." index="30" instance=ExtResource("252_n3ofu")]
 
 [connection signal="input_event" from="Background/Wall/BeggarClickArea" to="Background/Wall/BeggarClickArea" method="_on_input_event"]
 [connection signal="input_event" from="Background/MagicHeart/MagicHeartClickArea" to="Background/MagicHeart" method="_on_magic_heart_click_area_input_event"]
