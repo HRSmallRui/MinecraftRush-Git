@@ -1,7 +1,11 @@
 extends CanvasLayer
 class_name CheckPointNode
 
+signal on_loading_confirm
+
 static var instance: CheckPointNode
+
+@onready var ui_layer: Control = $UILayer
 
 var save_saver: bool:
 	set(v):
@@ -13,7 +17,13 @@ var load_saver: bool:
 
 
 func _ready() -> void:
-	Stage.instance.on_check_point_enabled.connect(on_stage_saver_point_enabled)
+	var sav: CheckPointSaver
+	if OS.get_name() == "Windows" and OS.is_debug_build():
+		sav = debug_load_sav()
+	if sav == null: return
+	
+	get_tree().paused = true
+	ui_layer.show()
 	pass
 
 
@@ -63,8 +73,20 @@ func debug_load_sav() -> CheckPointSaver:
 	return sav
 
 
+func release_load_sav() -> CheckPointSaver:
+	var dir_path: String = "user://CheckPointSaver/Sav" + str(Global.current_sav_slot) + "/stage" \
+	+ str(Stage.instance.stage_count) + "_check_point_saver.tres"
+	var sav: CheckPointSaver = load(dir_path)
+	return sav
+
+
 func release_sav(sav: CheckPointSaver):
-	
+	var dir_path: String = "user://CheckPointSaver/Sav" + str(Global.current_sav_slot) + "/"
+	var path: String = dir_path + "stage" + str(Stage.instance.stage_count) + "_check_point_saver.tres"
+	var dir: DirAccess = DirAccess.open("res://")
+	if !dir.dir_exists(dir_path):
+		dir.make_dir(dir_path)
+	ResourceSaver.save(sav,path)
 	pass
 
 
@@ -87,6 +109,21 @@ func load_checkpoint_saver():
 		tower.tower_skill_levels = tower_block.tower_skill_levels.duplicate()
 		Stage.instance.towers.add_child(tower)
 	
+	Stage.instance.hero_summon_marker.global_position = sav.hero_position
 	Stage.instance.current_health = sav.current_health
 	Stage.instance.current_money = sav.current_money
 	pass
+
+
+func _on_yes_button_pressed() -> void:
+	get_tree().paused = false
+	on_loading_confirm.emit()
+	load_checkpoint_saver()
+	queue_free()
+	pass # Replace with function body.
+
+
+func _on_no_button_pressed() -> void:
+	get_tree().paused = false
+	queue_free()
+	pass # Replace with function body.
