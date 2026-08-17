@@ -3,11 +3,17 @@ class_name CheckPointNode
 
 static var instance: CheckPointNode
 
+var save_saver: bool:
+	set(v):
+		on_stage_saver_point_enabled()
+
+var load_saver: bool:
+	set(v):
+		load_checkpoint_saver()
+
 
 func _ready() -> void:
 	Stage.instance.on_check_point_enabled.connect(on_stage_saver_point_enabled)
-	await get_tree().create_timer(2,false).timeout
-	on_stage_saver_point_enabled()
 	pass
 
 
@@ -49,6 +55,32 @@ func debug_sav(sav: CheckPointSaver):
 	pass
 
 
+func debug_load_sav() -> CheckPointSaver:
+	var dir_path: String = "res://Savs/CheckPointSaver/Sav" + str(Global.current_sav_slot) + "/stage" \
+	+ str(Stage.instance.stage_count) + "_check_point_saver.tres"
+	var sav: CheckPointSaver = load(dir_path)
+	return sav
+
+
 func release_sav(sav: CheckPointSaver):
 	
+	pass
+
+
+func load_checkpoint_saver():
+	var sav: CheckPointSaver
+	if OS.get_name() == "Windows" and OS.is_debug_build():
+		sav = debug_load_sav()
+	
+	if sav == null: return
+	
+	for tower:DefenceTower in Stage.instance.towers.get_children():
+		tower.destroy_tower()
+	for tower:DefenceTower in Stage.instance.towers.get_children():
+		tower.queue_free()
+	for tower_block in sav.tower_sav_block_list:
+		var tower: DefenceTower = tower_block.tower_packed_scene.instantiate()
+		tower.position = tower_block.tower_position
+		tower.tower_skill_levels = tower_block.tower_skill_levels.duplicate()
+		Stage.instance.towers.add_child(tower)
 	pass
