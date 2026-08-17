@@ -53,10 +53,12 @@ var is_locked: bool = false:
 var tower_damage_buffs: Array[TowerPropertyBuffBlock]
 var tower_range_buffs: Array[TowerPropertyBuffBlock]
 var tower_attack_speed_buffs: Array[TowerPropertyBuffBlock]
+var origin_tower_range: int
 
 
 func _enter_tree() -> void:
 	current_tower_range = start_tower_range
+	origin_tower_range = start_tower_range
 	pass
 
 
@@ -243,4 +245,9 @@ func update_tower_range():
 
 func initialize_tower_skill():
 	
+	pass
+
+
+func ready_to_save():
+	start_tower_range = origin_tower_range
 	pass

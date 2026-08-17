@@ -10,10 +10,13 @@ var current_data: NormalTowerData
 var target_list: Array[Enemy]
 var last_target: Enemy
 
+var origin_tower_data: NormalTowerData
+
 
 func _enter_tree() -> void:
 	if Stage.instance.ui_update.is_connected(Callable(self,"ui_process")): return
 	start_data = start_data.duplicate()
+	origin_tower_data = start_data.duplicate(true)
 	var tech_level:int = clampi(Stage.instance.stage_sav.upgrade_sav[3],0,Stage.instance.limit_tech_level)
 	if tech_level >= 1: start_tower_range *= 1.1
 	if tech_level >= 2:
@@ -95,4 +98,10 @@ func update_tower_attack_speed():
 			current_data.attack_speed += property_block.operation_data
 		elif property_block.operation_type == TowerBuff.OperationType.Multiply:
 			current_data.attack_speed *= property_block.operation_data
+	pass
+
+
+func ready_to_save():
+	super()
+	start_data = origin_tower_data
 	pass

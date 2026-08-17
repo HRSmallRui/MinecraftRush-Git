@@ -25,6 +25,7 @@ func on_stage_saver_point_enabled():
 	for tower: DefenceTower in Stage.instance.towers.get_children():
 		var tower_block: TowerPackedSavBlock = TowerPackedSavBlock.new()
 		var tower_scene: PackedScene = PackedScene.new()
+		tower.ready_to_save()
 		tower_scene.pack(tower)
 		tower_block.tower_packed_scene = tower_scene
 		tower_block.tower_position = tower.position

@@ -11,10 +11,13 @@ class_name BarrackTower
 @export var is_new_tower: bool = true
 var soldier_list: Array[Soldier]
 
+var origin_tower_data: BarrackData
+
 
 func _enter_tree() -> void:
 	if Stage.instance.ui_update.is_connected(Callable(self,"ui_process")): return
 	barrack_data = barrack_data.duplicate()
+	origin_tower_data = barrack_data.duplicate(true)
 	var barrack_level: int = clampi(Stage.instance.stage_sav.upgrade_sav[1],0,Stage.instance.limit_tech_level)
 	if barrack_level >= 1: start_tower_range *= 1.2
 	if barrack_level >= 2: barrack_data.soldier_health *= 1.2
@@ -136,4 +139,10 @@ func tower_skill_level_up(skill_id: int, skill_level: int):
 func initialize_soldiers():
 	for soldier in soldier_list:
 		soldier.soldier_skill_levels = tower_skill_levels.duplicate()
+	pass
+
+
+func ready_to_save():
+	super()
+	barrack_data = origin_tower_data
 	pass
