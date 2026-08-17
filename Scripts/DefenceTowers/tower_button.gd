@@ -24,8 +24,17 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if tower_type == DefenceTower.TowerType.Archer and clampi(Stage.instance.stage_sav.upgrade_sav[0],0,Stage.instance.limit_tech_level) >= 2:
 		price -= 10
+	signal_connect()
 	price_label.text = str(price)
 	lock_condition()
+	pass
+
+
+func signal_connect():
+	if pressed.is_connected(Callable(self,"_on_pressed")): return
+	pressed.connect(_on_pressed)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	pass
 
 

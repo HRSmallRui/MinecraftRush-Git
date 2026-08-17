@@ -80,6 +80,8 @@ func load_checkpoint_saver():
 		tower.queue_free()
 	for tower_block in sav.tower_sav_block_list:
 		var tower: DefenceTower = tower_block.tower_packed_scene.instantiate()
+		if tower is BarrackTower:
+			tower.is_new_tower = true
 		tower.position = tower_block.tower_position
 		tower.tower_skill_levels = tower_block.tower_skill_levels.duplicate()
 		Stage.instance.towers.add_child(tower)

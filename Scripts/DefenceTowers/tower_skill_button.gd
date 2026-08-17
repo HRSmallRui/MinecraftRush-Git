@@ -41,6 +41,7 @@ func update_skill_level():
 
 
 func _ready() -> void:
+	signal_connect()
 	skill_prices = skill_prices.duplicate()
 	if linked_tower is BombardTower:
 		var level: int = clampi(Stage.instance.stage_sav.upgrade_sav[3],0,Stage.instance.limit_tech_level)
@@ -53,6 +54,14 @@ func _ready() -> void:
 	skill_point_container_2.visible = skill_prices.size() >= 2
 	skill_point_container_3.visible = skill_prices.size() >= 3
 	update_skill_level()
+	pass
+
+
+func signal_connect():
+	if pressed.is_connected(Callable(self,"_on_pressed")): return
+	pressed.connect(_on_pressed)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	pass
 
 
