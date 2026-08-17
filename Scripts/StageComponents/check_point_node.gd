@@ -86,4 +86,7 @@ func load_checkpoint_saver():
 		tower.position = tower_block.tower_position
 		tower.tower_skill_levels = tower_block.tower_skill_levels.duplicate()
 		Stage.instance.towers.add_child(tower)
+	
+	Stage.instance.current_health = sav.current_health
+	Stage.instance.current_money = sav.current_money
 	pass
