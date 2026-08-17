@@ -62,6 +62,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	Stage.instance.ui_update.connect(ui_process)
+	initialize_tower_skill()
 	
 	if OS.get_name() == "Android":
 		circle.scale = Vector2.ONE
@@ -237,4 +238,9 @@ func update_tower_range():
 			current_tower_range = float(current_tower_range) * property_block.operation_data
 	
 	current_tower_range = max(0,current_tower_range)
+	pass
+
+
+func initialize_tower_skill():
+	
 	pass
