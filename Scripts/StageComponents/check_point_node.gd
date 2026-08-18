@@ -6,6 +6,7 @@ signal on_loading_confirm
 static var instance: CheckPointNode
 
 @onready var ui_layer: Control = $UILayer
+@onready var texture_rect: TextureRect = $TextureRect
 
 var save_saver: bool:
 	set(v):
@@ -51,6 +52,8 @@ func on_stage_saver_point_enabled():
 	check_point_saver.current_money = Stage.instance.current_money
 	check_point_saver.current_wave_count = Stage.instance.current_wave
 	save_check_point_saver(check_point_saver)
+	
+	save_texture_animation()
 	pass
 
 
@@ -134,3 +137,10 @@ func _on_no_button_pressed() -> void:
 	get_tree().paused = false
 	hide()
 	pass # Replace with function body.
+
+
+func save_texture_animation():
+	create_tween().tween_property(texture_rect,"modulate:a",1,0.5)
+	await get_tree().create_timer(2).timeout
+	create_tween().tween_property(texture_rect,"modulate:a",0,0.5)
+	pass
