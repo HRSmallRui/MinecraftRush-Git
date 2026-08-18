@@ -2399,6 +2399,7 @@ region_rect = Rect2(194, 273, 174, 61)
 [node name="FireEndParticle" type="GPUParticles2D" parent="UnitBody" index="1"]
 process_mode = 3
 visible = false
+light_mask = 2
 material = SubResource("ShaderMaterial_u4dp3")
 position = Vector2(0, -200)
 scale = Vector2(10, 10)
@@ -2713,6 +2714,7 @@ bus = &"Sound"
 
 [node name="EndSkillEffect" type="Sprite2D" parent="." index="29"]
 top_level = true
+light_mask = 2
 position = Vector2(-40, -42)
 scale = Vector2(2, 2)
 texture = ExtResource("443_eu8ct")
@@ -2739,5 +2741,9 @@ grow_vertical = 2
 [node name="DieReleaseAudio" type="AudioStreamPlayer" parent="." index="32"]
 stream = ExtResource("446_h70tm")
 bus = &"Sound"
+
+[node name="RecoverTimer" type="Timer" parent="." index="35"]
+wait_time = 12.0
+one_shot = true
 
 [editable path="BossUI"]

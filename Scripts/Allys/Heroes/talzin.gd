@@ -82,14 +82,15 @@ func frame_changed():
 	pass
 
 
-func cause_damage(damage_type: int = 0):
+func cause_damage(damage_count: int = 0, damage_type: DataProcess.DamageType = DataProcess.DamageType.PhysicsDamage,
+broken_rate: float = 0):
 	normal_attack_timer.start()
 	if current_intercepting_enemy == null: return
-	match damage_type:
+	match damage_count:
 		0:
 			var target_enemy: Enemy = current_intercepting_enemy
 			var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
-			var broken_rate: float = 0 if skill_levels[3] == 0 else 1
+			broken_rate = 0 if skill_levels[3] == 0 else 1
 			if current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.PhysicsDamage,broken_rate,false,self):
 				get_exp(int(float(damage) * exp_rate))
 				if target_enemy.enemy_state != Enemy.EnemyState.DIE:

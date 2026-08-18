@@ -1,6 +1,6 @@
 extends Stage
 
-
+@export var hidden_tower_list: Array[DefenceTower]
 @export var explosion_markers: Array[Marker2D]
 @export var later_map_image: Texture2D
 @onready var path_mask_1: Sprite2D = $Background/BasedSprite/PathMask1
@@ -25,6 +25,9 @@ func path_show():
 	enemy_path_7.enabled = true
 	enemy_path_8.enabled = true
 	enemy_path_9.enabled = true
+	
+	for tower in hidden_tower_list:
+		tower.show()
 	pass
 
 

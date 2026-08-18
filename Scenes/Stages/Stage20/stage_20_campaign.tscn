@@ -1,4 +1,4 @@
-[gd_scene load_steps=571 format=3 uid="uid://ca5jlulfaihj5"]
+[gd_scene load_steps=572 format=3 uid="uid://ca5jlulfaihj5"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_p4gcj"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_8xxdd"]
@@ -251,6 +251,7 @@
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter4.gd" id="238_bbxfo"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter6.gd" id="239_e33e5"]
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="243_2ywgr"]
+[ext_resource type="PackedScene" uid="uid://bl88unwoesifi" path="res://Scenes/UI-Components/Stages/check_point_node.tscn" id="252_n3ofu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixdhv"]
 atlas = ExtResource("29_x0t84")
@@ -1221,13 +1222,13 @@ wave_summon_text_list = Array[ExtResource("229_3fv1b")]([SubResource("Resource_b
 
 [sub_resource type="Resource" id="Resource_cqyrd"]
 script = ExtResource("238_bbxfo")
-enemy_name = "厌国战士"
-enemy_count = 1
+enemy_name = "幻翼"
+enemy_count = 15
 
 [sub_resource type="Resource" id="Resource_fowgc"]
 script = ExtResource("239_e33e5")
-enemy_name = "尸国斗剑士"
-enemy_count = 1
+enemy_name = "厌国投弹手"
+enemy_count = 2
 
 [sub_resource type="Resource" id="Resource_g86x4"]
 script = ExtResource("58_t4ase")
@@ -1388,7 +1389,7 @@ wave_summon_text_list = Array[ExtResource("229_3fv1b")]([SubResource("Resource_r
 [sub_resource type="Resource" id="Resource_tvth3"]
 script = ExtResource("238_bbxfo")
 enemy_name = "幻翼"
-enemy_count = 16
+enemy_count = 9
 
 [sub_resource type="Resource" id="Resource_f3byn"]
 script = ExtResource("58_t4ase")
@@ -1534,7 +1535,7 @@ wave_summon_text_list = Array[ExtResource("229_3fv1b")]([SubResource("Resource_r
 [sub_resource type="Resource" id="Resource_5jiv3"]
 script = ExtResource("238_bbxfo")
 enemy_name = "幻翼"
-enemy_count = 14
+enemy_count = 8
 
 [sub_resource type="Resource" id="Resource_wxvw4"]
 script = ExtResource("58_t4ase")
@@ -1716,7 +1717,7 @@ enemy_count = 3
 [sub_resource type="Resource" id="Resource_ob3ck"]
 script = ExtResource("238_bbxfo")
 enemy_name = "幻翼"
-enemy_count = 26
+enemy_count = 14
 
 [sub_resource type="Resource" id="Resource_vybku"]
 script = ExtResource("58_t4ase")
@@ -1903,7 +1904,7 @@ wave_summon_text_list = Array[ExtResource("229_3fv1b")]([SubResource("Resource_j
 [sub_resource type="Resource" id="Resource_footm"]
 script = ExtResource("238_bbxfo")
 enemy_name = "幻翼"
-enemy_count = 19
+enemy_count = 15
 
 [sub_resource type="Resource" id="Resource_gx2lg"]
 script = ExtResource("58_t4ase")
@@ -2095,7 +2096,7 @@ wave_summon_text_list = Array[ExtResource("229_3fv1b")]([SubResource("Resource_f
 [sub_resource type="Resource" id="Resource_cbr84"]
 script = ExtResource("238_bbxfo")
 enemy_name = "幻翼"
-enemy_count = 20
+enemy_count = 15
 
 [sub_resource type="Resource" id="Resource_n4avc"]
 script = ExtResource("58_t4ase")
@@ -2311,11 +2312,12 @@ wave_summon_list = Array[ExtResource("63_7nvey")]([SubResource("Resource_fvwwr")
 [sub_resource type="CircleShape2D" id="CircleShape2D_tc1cq"]
 radius = 57.3149
 
-[node name="Stage20Campaign" node_paths=PackedStringArray("on_region_expand_tower_list", "region_expand_fire_region_list", "on_region_expand_path_list", "start_lightning_markers", "left_marker_list", "right_marker_list", "on_path_open_tower_list", "path_opening_mask", "path_opening_area_shape", "path_opening_fire_region", "path_opening_path_list") instance=ExtResource("1_p4gcj")]
+[node name="Stage20Campaign" node_paths=PackedStringArray("wave_button_list", "on_region_expand_tower_list", "region_expand_fire_region_list", "on_region_expand_path_list", "start_lightning_markers", "left_marker_list", "right_marker_list", "on_path_open_tower_list", "path_opening_mask", "path_opening_area_shape", "path_opening_fire_region", "path_opening_path_list") instance=ExtResource("1_p4gcj")]
 script = ExtResource("2_1465h")
 steve_sp_scene = ExtResource("3_6ywyi")
 steve_skill_button_scene = ExtResource("4_ub52h")
 steve_sp_intro_scene = ExtResource("5_lq4h8")
+wave_button_list = [NodePath("WaveButtons/WaveButton"), NodePath("WaveButtons/WaveButton2"), NodePath("WaveButtons/WaveButton3"), NodePath("WaveButtons/WaveButton4"), NodePath("WaveButtons/WaveButton5"), NodePath("WaveButtons/WaveButton6"), NodePath("WaveButtons/WaveButton7"), NodePath("WaveButtons/WaveButton8")]
 on_region_expand_tower_list = [NodePath("Towers/DefenceTowerBased9"), NodePath("Towers/DefenceTowerBased16"), NodePath("Towers/DefenceTowerBased17")]
 region_expand_fire_region_list = [NodePath("FirerainRandomRegions/FirerainRandomRegion2"), NodePath("FirerainRandomRegions/FirerainRandomRegion3")]
 on_region_expand_path_list = [NodePath("Enemies/EnemyPath13"), NodePath("Enemies/EnemyPath14"), NodePath("Enemies/EnemyPath15"), NodePath("Enemies/EnemyPath16"), NodePath("Enemies/EnemyPath17"), NodePath("Enemies/EnemyPath18")]
@@ -3355,6 +3357,8 @@ process_summon_blocks = Array[ExtResource("62_k3iig")]([ExtResource("56_k1573"),
 
 [node name="HeroSummonMarker" parent="." index="29"]
 position = Vector2(2035, 1436)
+
+[node name="CheckPointNode" parent="." index="30" instance=ExtResource("252_n3ofu")]
 
 [connection signal="input_event" from="Background/Wall/BeggarClickArea" to="Background/Wall/BeggarClickArea" method="_on_input_event"]
 [connection signal="input_event" from="Background/MagicHeart/MagicHeartClickArea" to="Background/MagicHeart" method="_on_magic_heart_click_area_input_event"]

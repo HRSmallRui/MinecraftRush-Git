@@ -11,16 +11,19 @@ class_name BarrackTower
 @export var is_new_tower: bool = true
 var soldier_list: Array[Soldier]
 
+var origin_tower_data: BarrackData
+
 
 func _enter_tree() -> void:
 	if Stage.instance.ui_update.is_connected(Callable(self,"ui_process")): return
 	barrack_data = barrack_data.duplicate()
+	super()
+	origin_tower_data = barrack_data.duplicate(true)
 	var barrack_level: int = clampi(Stage.instance.stage_sav.upgrade_sav[1],0,Stage.instance.limit_tech_level)
 	if barrack_level >= 1: start_tower_range *= 1.2
 	if barrack_level >= 2: barrack_data.soldier_health *= 1.2
 	if barrack_level >= 3: barrack_data.armor += 0.1
 	if barrack_level >= 4: barrack_data.rebirth_time = int(barrack_data.rebirth_time * 0.8)
-	super()
 	
 	pass
 
@@ -62,7 +65,6 @@ func first_move():
 		if ray.is_colliding():
 			var target_pos = ray.get_collision_point() + ray.target_position * 0.5
 			move(target_pos)
-			first_move_rays.queue_free()
 			return
 	pass
 
@@ -74,6 +76,7 @@ func summon_soldiers():
 		soldier.tower = self
 		Stage.instance.allys.add_child(soldier)
 		soldier_list.append(soldier)
+	initialize_soldiers()
 	pass
 
 
@@ -111,9 +114,6 @@ func destroy_tower():
 func tower_level_up(type: TowerType, id: int):
 	super(type,id)
 	var new_tower: BarrackTower = Stage.instance.towers.get_child(-1)
-	for soldier in soldier_list:
-		if soldier.current_intercepting_enemy != null:
-			soldier.current_intercepting_enemy.current_intercepting_units.erase(soldier)
 	if new_tower.unit_count <= unit_count:
 		for i in new_tower.unit_count:
 			level_up_summon_soldier(new_tower,i)
@@ -132,5 +132,25 @@ func level_up_summon_soldier(new_tower:BarrackTower,i: int):
 func tower_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
 	for soldier in soldier_list:
-		soldier.soldier_skill_level_up(skill_id,skill_level)
+		if skill_level > 0:
+			soldier.soldier_skill_level_up(skill_id,skill_level)
+	pass
+
+
+func initialize_soldiers():
+	for skill_id in tower_skill_levels.size():
+		if tower_skill_levels[skill_id] == 0: continue
+		tower_skill_level_up(skill_id,tower_skill_levels[skill_id])
+	pass
+
+
+func ready_to_save():
+	super()
+	barrack_data = origin_tower_data
+	pass
+
+
+func initialize_tower_skill():
+	super()
+	
 	pass

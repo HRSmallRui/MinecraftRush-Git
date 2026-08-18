@@ -74,18 +74,24 @@ func soldier_level_up(new_soldier: Soldier):
 	new_soldier.position = position
 	new_soldier.intercepting_area.position = intercepting_area.position
 	new_soldier.station_position = station_position
-	if current_intercepting_enemy == null:
-		if ally_state == AllyState.DIE:
+	new_soldier.ally_sprite.flip_h = ally_sprite.flip_h
+	new_soldier.current_intercepting_enemy = current_intercepting_enemy
+	new_soldier.translate_to_new_state(ally_state)
+	match ally_state:
+		AllyState.MOVE:
+			if current_intercepting_enemy == null:
+				new_soldier.move_back()
+			else:
+				current_intercepting_enemy.current_intercepting_units.append(new_soldier)
+				new_soldier.current_intercepting_enemy = current_intercepting_enemy
+				new_soldier.move_to_intercept(current_intercepting_enemy.intercepting_marker.global_position)
+		AllyState.BATTLE:
+			new_soldier.current_intercepting_enemy = current_intercepting_enemy
+			if current_intercepting_enemy != null:
+				current_intercepting_enemy.current_intercepting_units.append(new_soldier)
+		AllyState.DIE:
 			new_soldier.rebirth()
-		else:
-			new_soldier.move_back()
-	else:
-		current_intercepting_enemy.current_intercepting_units.erase(self)
-		current_intercepting_enemy.current_intercepting_units.append(new_soldier)
-		new_soldier.current_intercepting_enemy = current_intercepting_enemy
-		new_soldier.move_to_intercept(current_intercepting_enemy.intercepting_marker.global_position)
-		#new_soldier.move_back()
-	
+	translate_to_new_state(AllyState.DIE)
 	queue_free()
 	pass
 

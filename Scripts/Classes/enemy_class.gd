@@ -213,6 +213,7 @@ func move_process(delta:float):
 		Stage.instance.current_money += bounty
 		queue_free()
 		Stage.instance.enemy_die()
+		Stage.instance.stage_map.enemy_list.erase(self)
 	enemy_sprite.flip_h = direction.x < 0
 	if direction.y < -7:
 		enemy_sprite.play("move_back")
