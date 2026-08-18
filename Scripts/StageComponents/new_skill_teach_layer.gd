@@ -23,6 +23,8 @@ func _ready() -> void:
 	Stage.instance.information_bar.process_mode = Node.PROCESS_MODE_ALWAYS
 	Stage.instance.stage_camera.process_mode = Node.PROCESS_MODE_ALWAYS
 	Stage.instance.stage_camera.position = boss.global_position
+	Stage.instance.stage_camera.zoom = Vector2.ONE * 2
+	Stage.instance.stage_camera.zoom_clamp()
 	
 	await get_tree().create_timer(2).timeout
 	Stage.instance.ui_process(skill_button,Stage.StageUI.Check)

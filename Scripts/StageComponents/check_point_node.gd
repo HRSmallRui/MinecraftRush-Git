@@ -16,6 +16,11 @@ var load_saver: bool:
 		load_checkpoint_saver()
 
 
+func _init() -> void:
+	instance = self
+	pass
+
+
 func _ready() -> void:
 	var sav: CheckPointSaver
 	if OS.get_name() == "Windows" and OS.is_debug_build():
@@ -44,6 +49,7 @@ func on_stage_saver_point_enabled():
 	
 	check_point_saver.current_health = Stage.instance.current_health
 	check_point_saver.current_money = Stage.instance.current_money
+	check_point_saver.current_wave_count = Stage.instance.current_wave
 	save_check_point_saver(check_point_saver)
 	pass
 
@@ -112,6 +118,7 @@ func load_checkpoint_saver():
 	Stage.instance.hero_summon_marker.global_position = sav.hero_position
 	Stage.instance.current_health = sav.current_health
 	Stage.instance.current_money = sav.current_money
+	Stage.instance.current_wave = sav.current_wave_count
 	pass
 
 
@@ -119,11 +126,11 @@ func _on_yes_button_pressed() -> void:
 	get_tree().paused = false
 	on_loading_confirm.emit()
 	load_checkpoint_saver()
-	queue_free()
+	hide()
 	pass # Replace with function body.
 
 
 func _on_no_button_pressed() -> void:
 	get_tree().paused = false
-	queue_free()
+	hide()
 	pass # Replace with function body.

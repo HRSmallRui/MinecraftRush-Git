@@ -76,7 +76,7 @@ func set_scale_rate():
 
 
 func update_map_input():
-	if map_texture_mouse_in and Input.is_action_pressed("click"):
+	if map_texture_mouse_in and Input.is_action_pressed("click") and Stage.instance.can_control:
 		var camera_pos: Vector2 = map_texture.get_local_mouse_position() + Stage.instance.stage_based_position
 		Stage.instance.stage_camera.position = camera_pos
 		Stage.instance.stage_camera.position_clamp()

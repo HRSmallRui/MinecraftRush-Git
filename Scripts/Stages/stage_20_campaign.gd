@@ -3,6 +3,7 @@ extends Stage
 @export var steve_sp_scene: PackedScene
 @export var steve_skill_button_scene: PackedScene
 @export var steve_sp_intro_scene: PackedScene
+@export var wave_button_list: Array[WaveButton]
 @export_group("Region Expanding")
 @export var on_region_expand_tower_list: Array[DefenceTower]
 @export var region_expand_fire_region_list: Array[NavigationRegion2D]
@@ -26,10 +27,12 @@ extends Stage
 @onready var later_camera_shape: CollisionShape2D = $StageCamera/CollisionShape2D2
 @onready var lightning_markers: Node2D = $LightningMarkers
 @onready var tower_destroy_area: Area2D = $TowerDestroyArea
+@onready var check_point_node: CheckPointNode = $CheckPointNode
 
 
 func _ready() -> void:
 	super()
+	check_point_node.on_loading_confirm.connect(on_checkpoint_loading_confirm)
 	var time:Dictionary = Time.get_datetime_dict_from_system()
 	print(time)
 	if time.hour == 16 and time.minute == 4:
@@ -65,9 +68,14 @@ func add_hero_skill_button():
 
 func expand_regopn():
 	await get_tree().create_timer(20,false).timeout
+	expand_region_process()
+	stage_camera.position = region_marker.global_position
+	pass
+
+
+func expand_region_process():
 	stage_camera.move_limit_shape = later_camera_shape
 	stage_camera.update_move_limit()
-	stage_camera.position = region_marker.global_position
 	for tower in on_region_expand_tower_list:
 		tower.show()
 	for region in region_expand_fire_region_list:
@@ -107,6 +115,11 @@ func open_path():
 		AudioManager.instance.play_explosion_audio()
 		await get_tree().create_timer(0.3,false).timeout
 	
+	open_path_process()
+	pass
+
+
+func open_path_process():
 	path_opening_area_shape.disabled = false
 	path_opening_fire_region.enabled = true
 	stage_map.map_image = opening_path_map_image
@@ -140,5 +153,22 @@ func win(wait_time: float = 3):
 	if is_win: return
 	is_win = true
 	on_wining.emit()
-	on_check_point_enabled.emit()
+	check_point_node.on_stage_saver_point_enabled()
+	pass
+
+
+func on_checkpoint_loading_confirm():
+	expand_region_process()
+	open_path_process()
+	for path in path_opening_path_list:
+		path.enabled = true
+	path_opening_mask.hide()
+	ready_for_new_wave = false
+	wave_buttons.hide()
+	await get_tree().create_timer(3,false).timeout
+	unlock_skill()
+	for wave_button in wave_button_list:
+		wave_button.hide()
+	is_win = true
+	on_wining.emit()
 	pass

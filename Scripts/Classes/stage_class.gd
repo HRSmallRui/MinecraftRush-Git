@@ -14,8 +14,6 @@ signal on_prepare_music_stop
 signal on_battle_music_stop
 signal on_boss_music_stop
 
-signal on_check_point_enabled
-
 enum StageMode{
 	Campaign,
 	Diamond,
