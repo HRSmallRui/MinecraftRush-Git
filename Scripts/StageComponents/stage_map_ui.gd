@@ -56,6 +56,7 @@ func _process(delta: float) -> void:
 
 
 func _on_map_button_pressed() -> void:
+	if not Stage.instance.can_control: return
 	on_ui_layer_show()
 	pass # Replace with function body.
 
@@ -97,7 +98,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("escape") and map_ui_layer.visible:
 		on_ui_layer_hide()
 	
-	if event.is_action_released("map_visible"):
+	if event.is_action_released("map_visible") and Stage.instance.can_control:
 		if map_ui_layer.visible: on_ui_layer_hide()
 		else: on_ui_layer_show()
 	pass

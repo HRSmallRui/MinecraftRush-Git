@@ -51,6 +51,7 @@ shader = ExtResource("2_xfwpj")
 shader_parameter/hue_shift = 0.567
 
 [node name="HatingDarkEndArea" type="Area2D"]
+light_mask = 2
 collision_layer = 0
 collision_mask = 24
 script = ExtResource("1_03yn3")
@@ -65,6 +66,7 @@ shape = SubResource("CircleShape2D_cgefb")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="FireSprite" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 material = SubResource("ShaderMaterial_miy2l")
 rotation = -2.42444
 sprite_frames = SubResource("SpriteFrames_fnpwn")
@@ -72,6 +74,7 @@ autoplay = "default"
 
 [node name="TailLine" type="Line2D" parent="."]
 top_level = true
+light_mask = 2
 points = PackedVector2Array(-117, -118, 2, 2)
 width_curve = SubResource("Curve_1kmc0")
 gradient = SubResource("Gradient_g4htk")
@@ -88,6 +91,7 @@ wait_time = 0.01
 autostart = true
 
 [node name="Bomb" type="Sprite2D" parent="."]
+light_mask = 2
 material = SubResource("ShaderMaterial_aig7h")
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(0.2, 0.2)

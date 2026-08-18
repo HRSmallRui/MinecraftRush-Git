@@ -59,7 +59,6 @@ func first_move():
 		if ray.is_colliding():
 			var target_pos = ray.get_collision_point() + ray.target_position * 0.5
 			soldier_position = target_pos
-			first_move_rays.queue_free()
 			return
 	pass
 
@@ -158,4 +157,19 @@ func fighting_process():
 			timer.wait_time = dizness_time - 0.4
 			timer.start()
 	super()
+	pass
+
+
+func initialize_tower_skill():
+	super()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	first_move()
+	if tower_skill_levels[1] > 0:
+		summon_soldiers()
+		for changer in soldier_list:
+			changer.level = tower_skill_levels[1]
+			changer.update_level_data()
+		move(soldier_position)
 	pass

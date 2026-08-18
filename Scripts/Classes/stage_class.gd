@@ -597,3 +597,8 @@ func get_current_techno_level(slot_id: int) -> int:
 	var tech_level: int = stage_sav.upgrade_sav[slot_id]
 	return clampi(tech_level,0,limit_tech_level)
 	pass
+
+
+func on_check_point_saver_forced(saver: CheckPointSaver):
+	
+	pass
