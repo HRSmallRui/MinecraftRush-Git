@@ -76,6 +76,7 @@ enum SkillElement{
 @onready var die_white_mask: ColorRect = $DieLayer/DieWhiteMask
 @onready var die_white_circle: Sprite2D = $UnitBody/DieWhiteCircle
 @onready var die_release_audio: AudioStreamPlayer = $DieReleaseAudio
+@onready var recover_timer: Timer = $RecoverTimer
 
 var teleport_marker_list: Array[Marker2D]
 var summon_marker_list: Array[Marker2D]
@@ -108,12 +109,13 @@ func _ready() -> void:
 	end_skill_effect.hide()
 	end_skill_effect.modulate.a = 0
 	init_marker_list()
+	recover_timer.timeout.connect(recover)
 	#start_data.health = 12000
 	#current_data.health = 12000
 	translate_to_new_state(EnemyState.SPECIAL)
 	enemy_sprite.play("into")
 	boss_ui.name_label.text = boss_name
-	start_data.total_defence_rate = 0.5
+	start_data.total_defence_rate = 0.95
 	current_data.update_total_defence_rate()
 	hurt_box.monitorable = false
 	body_collision.disabled = true
@@ -258,13 +260,14 @@ func broken():
 	current_data.update_total_defence_rate()
 	create_tween().tween_property(self,"shader_line_size",0,0.8)
 	create_tween().tween_property(self,"shader_line_color:a",0,0.8)
+	recover_timer.start()
 	pass
 
 
 func recover():
 	shader_line_color = Color.PURPLE
 	shader_line_color.a = 0
-	start_data.total_defence_rate = 0.5
+	start_data.total_defence_rate = 0.95
 	current_data.update_total_defence_rate()
 	create_tween().tween_property(self,"shader_line_size",45,0.8)
 	create_tween().tween_property(self,"shader_line_color:a",1,0.8)
@@ -379,9 +382,12 @@ func special_process():
 func into_final_step():
 	is_end_step = true
 	lightning_skill_1_timer.wait_time = 14
-	end_skill_timer.start()
+	end_skill_timer.stop()
 	lightning_skill_1_timer.start()
 	summon_count_limit = 10
+	start_data.total_defence_rate = 0.95
+	current_data.update_total_defence_rate()
+	current_data.heal(int(0.15 * start_data.health))
 	pass
 
 
