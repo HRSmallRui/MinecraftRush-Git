@@ -1,7 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=24 format=3 uid="uid://66ipi8u04xnk"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
+[ext_resource type="Texture2D" uid="uid://cvc5pqffrv7f" path="res://Assets/Images/UI/HeroHall/HeadTexs/Steve.png" id="2_uh2x2"]
+[ext_resource type="Texture2D" uid="uid://b65o81wdbsw7l" path="res://Assets/Images/UI/HeroHall/HeadTexs/Fuchen.png" id="3_exkjp"]
+[ext_resource type="Texture2D" uid="uid://blkv4e7adri14" path="res://Assets/Images/UI/HeroHall/HeadTexs/艾利克斯.png" id="4_sacur"]
+[ext_resource type="Texture2D" uid="uid://lml6a7lv7geb" path="res://Assets/Images/UI/HeroHall/HeadTexs/塔尔辛.png" id="5_a4ilj"]
+[ext_resource type="Texture2D" uid="uid://byxg4yikn8enj" path="res://Assets/Images/UI/HeroHall/HeadTexs/鲁伯特.png" id="6_01urd"]
+[ext_resource type="Texture2D" uid="uid://dyxtitvr2ciw2" path="res://Assets/Images/UI/HeroHall/HeadTexs/空树林.png" id="7_7h8ow"]
+[ext_resource type="Texture2D" uid="uid://nee1x705546" path="res://Assets/Images/UI/HeroHall/HeadTexs/金钻.png" id="8_4unyy"]
+[ext_resource type="Texture2D" uid="uid://cwi5sukxylub0" path="res://Assets/Images/UI/HeroHall/HeadTexs/塞勒姆.png" id="9_5oneg"]
+[ext_resource type="Texture2D" uid="uid://dt5shjj5mtblw" path="res://Assets/Images/UI/HeroHall/HeadTexs/乔尼.png" id="10_hxvwc"]
+[ext_resource type="Texture2D" uid="uid://dacm8l0x22p6q" path="res://Assets/Images/UI/HeroHall/HeadTexs/Mike.png" id="11_m0k18"]
+[ext_resource type="Texture2D" uid="uid://buvpgsqxhku2p" path="res://Assets/Images/UI/HeroHall/HeadTexs/蔷薇.png" id="12_4a8ma"]
+[ext_resource type="Texture2D" uid="uid://c5150r63utidg" path="res://Assets/Images/UI/HeroHall/HeadTexs/史蒂夫SP.png" id="13_cbuk7"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/hero_select_button.gd" id="15_mgeqs"]
+[ext_resource type="AudioStream" uid="uid://i0to3f5pe1rc" path="res://Assets/Sounds/FXs/UIs/MC_Click.mp3" id="16_i1wde"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -60,6 +74,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ya1wa")
+hero_head_texture_list = Array[Texture2D]([ExtResource("2_uh2x2"), ExtResource("3_exkjp"), ExtResource("4_sacur"), ExtResource("5_a4ilj"), ExtResource("6_01urd"), ExtResource("7_7h8ow"), ExtResource("8_4unyy"), ExtResource("9_5oneg"), ExtResource("10_hxvwc"), ExtResource("11_m0k18"), ExtResource("12_4a8ma"), ExtResource("13_cbuk7")])
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.627451)
@@ -108,4 +123,147 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
 text = "返回"
 
+[node name="SelectHeroUI" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 760.0
+offset_top = 583.0
+offset_right = 760.0
+offset_bottom = 583.0
+
+[node name="HeroTexture" type="TextureButton" parent="SelectHeroUI"]
+layout_mode = 0
+offset_right = 526.0
+offset_bottom = 526.0
+scale = Vector2(0.388307, 0.388307)
+focus_mode = 0
+texture_normal = ExtResource("2_uh2x2")
+
+[node name="HeroScrollContainer" type="ScrollContainer" parent="SelectHeroUI"]
+visible = false
+layout_mode = 0
+offset_left = 208.0
+offset_top = -433.0
+offset_right = 752.0
+offset_bottom = 1751.0
+scale = Vector2(0.387371, 0.387371)
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SelectHeroUI/HeroScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="HeroSelectButton0" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("2_uh2x2")
+script = ExtResource("15_mgeqs")
+
+[node name="HeroSelectButton1" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("3_exkjp")
+script = ExtResource("15_mgeqs")
+hero_id = 1
+
+[node name="HeroSelectButton2" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("4_sacur")
+script = ExtResource("15_mgeqs")
+hero_id = 2
+
+[node name="HeroSelectButton3" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("5_a4ilj")
+script = ExtResource("15_mgeqs")
+hero_id = 3
+
+[node name="HeroSelectButton4" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("6_01urd")
+script = ExtResource("15_mgeqs")
+hero_id = 4
+
+[node name="HeroSelectButton7" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("9_5oneg")
+script = ExtResource("15_mgeqs")
+hero_id = 7
+
+[node name="HeroSelectButton8" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("10_hxvwc")
+script = ExtResource("15_mgeqs")
+hero_id = 8
+
+[node name="HeroSelectButton10" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("12_4a8ma")
+script = ExtResource("15_mgeqs")
+hero_id = 10
+
+[node name="HeroSelectButton5" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("7_7h8ow")
+script = ExtResource("15_mgeqs")
+hero_id = 5
+
+[node name="HeroSelectButton6" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("8_4unyy")
+script = ExtResource("15_mgeqs")
+hero_id = 6
+
+[node name="HeroSelectButton11" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("13_cbuk7")
+script = ExtResource("15_mgeqs")
+hero_id = 11
+
+[node name="HeroSelectButton9" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("11_m0k18")
+script = ExtResource("15_mgeqs")
+hero_id = 9
+
+[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_i1wde")
+volume_db = 2.0
+bus = &"Sound"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SelectHeroUI/HeroTexture" to="." method="_on_hero_texture_pressed"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton0" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton1" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton2" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton3" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton4" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton7" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton8" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton10" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton5" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton6" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton11" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton9" to="." method="_on_hero_select_button_hero_select"]
