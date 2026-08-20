@@ -8,6 +8,7 @@ class_name BedUI
 @onready var hero_texture: TextureButton = $SelectHeroUI/HeroTexture
 @onready var click_audio: AudioStreamPlayer = $ClickAudio
 @onready var hero_scroll_container: ScrollContainer = $SelectHeroUI/HeroScrollContainer
+@onready var disable_hero: CheckBox = $SelectHeroUI/DisableHero
 
 var digital_saver: DigitalFightingSaver
 
@@ -22,6 +23,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	update_hero_texture()
+	update_hero_ban_status()
 	pass
 
 
@@ -61,3 +63,18 @@ func _on_hero_select_button_hero_select(select_id: int) -> void:
 func _on_hero_texture_pressed() -> void:
 	hero_scroll_container.visible = !hero_scroll_container.visible
 	pass # Replace with function body.
+
+
+func _on_disable_hero_button_pressed() -> void:
+	hero_scroll_container.hide()
+	digital_saver.ban_hero = ! digital_saver.ban_hero
+	DigitalFightingSaver.save_digital_fighting_saver(digital_saver)
+	update_hero_ban_status()
+	pass # Replace with function body.
+
+
+func update_hero_ban_status():
+	disable_hero.button_pressed = digital_saver.ban_hero
+	hero_texture.disabled = digital_saver.ban_hero
+	hero_texture.modulate = Color.DIM_GRAY if hero_texture.disabled else Color.WHITE
+	pass

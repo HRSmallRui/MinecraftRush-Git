@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=28 format=3 uid="uid://66ipi8u04xnk"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://c5150r63utidg" path="res://Assets/Images/UI/HeroHall/HeadTexs/史蒂夫SP.png" id="13_cbuk7"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/hero_select_button.gd" id="15_mgeqs"]
 [ext_resource type="AudioStream" uid="uid://i0to3f5pe1rc" path="res://Assets/Sounds/FXs/UIs/MC_Click.mp3" id="16_i1wde"]
+[ext_resource type="Texture2D" uid="uid://dn6osr6o4hg84" path="res://Assets/Images/UI/checkbox_select.png" id="16_sh51b"]
+[ext_resource type="Texture2D" uid="uid://dp1qx85r5tt8a" path="res://Assets/Images/UI/checkbox.png" id="17_te5ir"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -65,6 +67,14 @@ corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psxqy"]
+atlas = ExtResource("16_sh51b")
+region = Rect2(16, 18, 65, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydmu7"]
+atlas = ExtResource("17_te5ir")
+region = Rect2(16, 18, 65, 65)
 
 [node name="BedUI" type="Control"]
 layout_mode = 3
@@ -137,6 +147,38 @@ offset_bottom = 526.0
 scale = Vector2(0.388307, 0.388307)
 focus_mode = 0
 texture_normal = ExtResource("2_uh2x2")
+
+[node name="DisableHero" type="CheckBox" parent="SelectHeroUI"]
+offset_left = -68.0
+offset_top = 220.0
+offset_right = 5.0
+offset_bottom = 293.0
+scale = Vector2(1.35066, 1.35066)
+focus_mode = 0
+theme_override_icons/checked = SubResource("AtlasTexture_psxqy")
+theme_override_icons/unchecked = SubResource("AtlasTexture_ydmu7")
+button_pressed = true
+
+[node name="Label" type="Label" parent="SelectHeroUI"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 230.0
+offset_right = 234.0
+offset_bottom = 314.0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 48
+text = "禁用英雄"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DisableHeroButton" type="Button" parent="SelectHeroUI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -69.0
+offset_top = 218.0
+offset_right = 248.0
+offset_bottom = 323.0
+focus_mode = 0
 
 [node name="HeroScrollContainer" type="ScrollContainer" parent="SelectHeroUI"]
 visible = false
@@ -255,6 +297,7 @@ bus = &"Sound"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SelectHeroUI/HeroTexture" to="." method="_on_hero_texture_pressed"]
+[connection signal="pressed" from="SelectHeroUI/DisableHeroButton" to="." method="_on_disable_hero_button_pressed"]
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton0" to="." method="_on_hero_select_button_hero_select"]
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton1" to="." method="_on_hero_select_button_hero_select"]
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton2" to="." method="_on_hero_select_button_hero_select"]
