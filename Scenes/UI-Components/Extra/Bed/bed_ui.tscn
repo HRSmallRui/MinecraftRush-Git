@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=34 format=3 uid="uid://66ipi8u04xnk"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
@@ -18,6 +18,12 @@
 [ext_resource type="AudioStream" uid="uid://i0to3f5pe1rc" path="res://Assets/Sounds/FXs/UIs/MC_Click.mp3" id="16_i1wde"]
 [ext_resource type="Texture2D" uid="uid://dn6osr6o4hg84" path="res://Assets/Images/UI/checkbox_select.png" id="16_sh51b"]
 [ext_resource type="Texture2D" uid="uid://dp1qx85r5tt8a" path="res://Assets/Images/UI/checkbox.png" id="17_te5ir"]
+[ext_resource type="PackedScene" uid="uid://d3dbyviyakdgp" path="res://Scenes/UI-Components/Extra/Bed/upgrade_button.tscn" id="18_4s4gw"]
+[ext_resource type="Texture2D" uid="uid://1gt3uw1ogmkw" path="res://Assets/Images/UI/Upgrade/Barrack.png" id="19_t1fjc"]
+[ext_resource type="Texture2D" uid="uid://lurtbin8e3pm" path="res://Assets/Images/UI/Upgrade/Magic.png" id="20_u0mtr"]
+[ext_resource type="Texture2D" uid="uid://dwv4y4trbacj8" path="res://Assets/Images/UI/Upgrade/bombard.png" id="21_2wo7q"]
+[ext_resource type="Texture2D" uid="uid://cv2y7jv8s2tj" path="res://Assets/Images/UI/Upgrade/Firerain.png" id="22_uxltf"]
+[ext_resource type="Texture2D" uid="uid://dqrq6oovwd4k" path="res://Assets/Images/UI/Upgrade/Reinforce.png" id="23_kehq2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -133,12 +139,74 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
 text = "返回"
 
+[node name="UpgradeUI" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1166.0
+offset_top = 303.0
+offset_right = 1166.0
+offset_bottom = 303.0
+scale = Vector2(1.36404, 1.36404)
+
+[node name="GridContainer" type="GridContainer" parent="UpgradeUI"]
+layout_mode = 0
+offset_right = 398.0
+offset_bottom = 247.0
+theme_override_constants/h_separation = 55
+theme_override_constants/v_separation = 55
+columns = 3
+
+[node name="UpgradeButton1" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+bed_ui = NodePath("../../..")
+
+[node name="UpgradeButton2" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 1
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("19_t1fjc")
+
+[node name="UpgradeButton3" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 2
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("20_u0mtr")
+
+[node name="UpgradeButton4" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 3
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("21_2wo7q")
+
+[node name="UpgradeButton5" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 4
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("22_uxltf")
+
+[node name="UpgradeButton6" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 5
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("23_kehq2")
+
+[node name="Label" type="Label" parent="UpgradeUI"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 48
+text = "科技升级"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SelectHeroUI" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 760.0
-offset_top = 583.0
-offset_right = 760.0
-offset_bottom = 583.0
+offset_left = 826.0
+offset_top = 282.0
+offset_right = 826.0
+offset_bottom = 282.0
 
 [node name="HeroTexture" type="TextureButton" parent="SelectHeroUI"]
 layout_mode = 0
@@ -149,6 +217,7 @@ focus_mode = 0
 texture_normal = ExtResource("2_uh2x2")
 
 [node name="DisableHero" type="CheckBox" parent="SelectHeroUI"]
+layout_mode = 0
 offset_left = -68.0
 offset_top = 220.0
 offset_right = 5.0
@@ -184,9 +253,9 @@ focus_mode = 0
 visible = false
 layout_mode = 0
 offset_left = 208.0
-offset_top = -433.0
+offset_top = -248.0
 offset_right = 752.0
-offset_bottom = 1751.0
+offset_bottom = 1936.0
 scale = Vector2(0.387371, 0.387371)
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
