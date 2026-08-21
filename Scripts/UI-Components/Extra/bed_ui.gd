@@ -56,11 +56,13 @@ func _on_hero_select_button_hero_select(select_id: int) -> void:
 	digital_saver.hero_id = select_id
 	update_hero_texture()
 	hero_scroll_container.hide()
+	click_audio.play()
 	pass # Replace with function body.
 
 
 func _on_hero_texture_pressed() -> void:
 	hero_scroll_container.visible = !hero_scroll_container.visible
+	click_audio.play()
 	pass # Replace with function body.
 
 

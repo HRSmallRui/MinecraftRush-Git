@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=35 format=3 uid="uid://66ipi8u04xnk"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dwv4y4trbacj8" path="res://Assets/Images/UI/Upgrade/bombard.png" id="21_2wo7q"]
 [ext_resource type="Texture2D" uid="uid://cv2y7jv8s2tj" path="res://Assets/Images/UI/Upgrade/Firerain.png" id="22_uxltf"]
 [ext_resource type="Texture2D" uid="uid://dqrq6oovwd4k" path="res://Assets/Images/UI/Upgrade/Reinforce.png" id="23_kehq2"]
+[ext_resource type="Texture2D" uid="uid://cc1jewnmvveus" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage1/DigitalFightingStage1-view.png" id="24_p2s62"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -358,6 +359,30 @@ mouse_filter = 1
 texture_normal = ExtResource("11_m0k18")
 script = ExtResource("15_mgeqs")
 hero_id = 9
+
+[node name="StageSelectUI" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 358.0
+offset_top = 329.0
+offset_right = 358.0
+offset_bottom = 329.0
+
+[node name="StageTexture" type="TextureRect" parent="StageSelectUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("24_p2s62")
+
+[node name="Label" type="Label" parent="StageSelectUI"]
+offset_left = -1.0
+offset_top = -100.0
+offset_right = 483.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 48
+text = "地图选择"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ClickAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_i1wde")

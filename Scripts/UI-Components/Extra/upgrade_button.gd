@@ -33,4 +33,5 @@ func _pressed() -> void:
 	if upgrade_level > 5:
 		upgrade_level = 0
 	bed_ui.digital_saver.tech_level_list[upgrade_type] = upgrade_level
+	bed_ui.click_audio.play()
 	pass
