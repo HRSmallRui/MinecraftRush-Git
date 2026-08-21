@@ -6,6 +6,7 @@ class_name DigitalFightingSaver
 @export var summon_block_list: Array[SummonWaveBlock]
 @export var ban_hero: bool = false
 @export var select_map_id: int
+@export var difficulty: GameSaver.Difficulty = GameSaver.Difficulty.NORMAL
 
 
 static func get_digital_fighting_saver() -> DigitalFightingSaver:

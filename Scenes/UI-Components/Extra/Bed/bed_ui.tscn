@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=38 format=3 uid="uid://66ipi8u04xnk"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://buvpgsqxhku2p" path="res://Assets/Images/UI/HeroHall/HeadTexs/蔷薇.png" id="12_4a8ma"]
 [ext_resource type="Texture2D" uid="uid://c5150r63utidg" path="res://Assets/Images/UI/HeroHall/HeadTexs/史蒂夫SP.png" id="13_cbuk7"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/hero_select_button.gd" id="15_mgeqs"]
+[ext_resource type="Texture2D" uid="uid://bf1biha8us8aj" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage2/DigitalFightingStage2-view.png" id="15_nw7tk"]
 [ext_resource type="AudioStream" uid="uid://i0to3f5pe1rc" path="res://Assets/Sounds/FXs/UIs/MC_Click.mp3" id="16_i1wde"]
 [ext_resource type="Texture2D" uid="uid://dn6osr6o4hg84" path="res://Assets/Images/UI/checkbox_select.png" id="16_sh51b"]
 [ext_resource type="Texture2D" uid="uid://dp1qx85r5tt8a" path="res://Assets/Images/UI/checkbox.png" id="17_te5ir"]
@@ -25,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cv2y7jv8s2tj" path="res://Assets/Images/UI/Upgrade/Firerain.png" id="22_uxltf"]
 [ext_resource type="Texture2D" uid="uid://dqrq6oovwd4k" path="res://Assets/Images/UI/Upgrade/Reinforce.png" id="23_kehq2"]
 [ext_resource type="Texture2D" uid="uid://cc1jewnmvveus" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage1/DigitalFightingStage1-view.png" id="24_p2s62"]
+[ext_resource type="Texture2D" uid="uid://dmicwrk5uv4w6" path="res://Assets/Images/UI/pause_continue_hover.png" id="26_3i8xt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -83,6 +85,10 @@ region = Rect2(16, 18, 65, 65)
 atlas = ExtResource("17_te5ir")
 region = Rect2(16, 18, 65, 65)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u0n6"]
+atlas = ExtResource("26_3i8xt")
+region = Rect2(30, 17, 80, 94)
+
 [node name="BedUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -92,6 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ya1wa")
 hero_head_texture_list = Array[Texture2D]([ExtResource("2_uh2x2"), ExtResource("3_exkjp"), ExtResource("4_sacur"), ExtResource("5_a4ilj"), ExtResource("6_01urd"), ExtResource("7_7h8ow"), ExtResource("8_4unyy"), ExtResource("9_5oneg"), ExtResource("10_hxvwc"), ExtResource("11_m0k18"), ExtResource("12_4a8ma"), ExtResource("13_cbuk7")])
+stage_view_texture_list = Array[Texture2D]([ExtResource("24_p2s62"), ExtResource("15_nw7tk")])
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.627451)
@@ -374,6 +381,7 @@ offset_bottom = 40.0
 texture = ExtResource("24_p2s62")
 
 [node name="Label" type="Label" parent="StageSelectUI"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = -100.0
 offset_right = 483.0
@@ -383,6 +391,26 @@ theme_override_font_sizes/font_size = 48
 text = "地图选择"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="StageSelectUI"]
+layout_mode = 0
+offset_left = -41.0
+offset_top = 31.0
+offset_right = 39.0
+offset_bottom = 125.0
+scale = Vector2(-2.2, 2.2)
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_3u0n6")
+
+[node name="RightButton" type="TextureButton" parent="StageSelectUI"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 31.0
+offset_right = 593.0
+offset_bottom = 125.0
+scale = Vector2(2.2, 2.2)
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_3u0n6")
 
 [node name="ClickAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_i1wde")
@@ -404,3 +432,5 @@ bus = &"Sound"
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton6" to="." method="_on_hero_select_button_hero_select"]
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton11" to="." method="_on_hero_select_button_hero_select"]
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton9" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="pressed" from="StageSelectUI/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="StageSelectUI/RightButton" to="." method="_on_right_button_pressed"]
