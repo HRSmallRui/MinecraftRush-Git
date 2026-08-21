@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxl7aht8d3o6i"]
+
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/enemy_summon_editor.gd" id="1_p0k8u"]
+[ext_resource type="Texture2D" uid="uid://cs0pc8baxwnxu" path="res://Assets/Images/UI/InformationBar/尸国杂兵.png" id="2_2h07x"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/enemy_summon_block_editor.gd" id="2_5e44n"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_cyd4x"]
+[ext_resource type="FontFile" uid="uid://drfv8ak22g1rm" path="res://Assets/Fonts/simhei.ttf" id="5_vsqyb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1xpp"]
+bg_color = Color(0, 0, 0, 0.513726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fpuv"]
+bg_color = Color(0, 0, 0, 0.427451)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2vnx"]
+bg_color = Color(0, 0, 0, 0.572549)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="EnemySummonEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p0k8u")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h1xpp")
+
+[node name="EnemySummonBlockEditor" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 104.0
+offset_right = 612.0
+offset_bottom = 372.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7fpuv")
+script = ExtResource("2_5e44n")
+
+[node name="PopupButton" type="Button" parent="EnemySummonBlockEditor"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 30.0
+offset_right = 474.0
+offset_bottom = 170.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2vnx")
+
+[node name="EnemyTexture" type="TextureRect" parent="EnemySummonBlockEditor/PopupButton"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 143.0
+offset_bottom = 127.0
+texture = ExtResource("2_2h07x")
+
+[node name="EnemyNameLabel" type="Label" parent="EnemySummonBlockEditor/PopupButton"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_right = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_cyd4x")
+theme_override_font_sizes/font_size = 24
+text = "尸国杂兵"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="EnemySummonBlockEditor"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 180.0
+offset_right = 464.0
+offset_bottom = 225.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_vsqyb")
+theme_override_font_sizes/font_size = 36
+text = "0"
+alignment = 2
+
+[node name="LineEdit2" type="LineEdit" parent="EnemySummonBlockEditor"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 180.0
+offset_right = 251.0
+offset_bottom = 225.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_vsqyb")
+theme_override_font_sizes/font_size = 36
+text = "0"
+alignment = 2
+
+[node name="IntervalTimeLabel" type="Label" parent="EnemySummonBlockEditor"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = -74.0
+offset_right = 164.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.726577, 0.726577)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_cyd4x")
+theme_override_font_sizes/font_size = 24
+text = "间隔时间/秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SummonCountLabel" type="Label" parent="EnemySummonBlockEditor"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -71.0
+offset_right = -65.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.726577, 0.726577)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_cyd4x")
+theme_override_font_sizes/font_size = 24
+text = "生成数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = 104.0
+offset_right = -110.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
