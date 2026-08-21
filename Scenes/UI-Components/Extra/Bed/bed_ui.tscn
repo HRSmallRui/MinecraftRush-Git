@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=40 format=3 uid="uid://66ipi8u04xnk"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cc1jewnmvveus" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage1/DigitalFightingStage1-view.png" id="24_p2s62"]
 [ext_resource type="Texture2D" uid="uid://dmicwrk5uv4w6" path="res://Assets/Images/UI/pause_continue_hover.png" id="26_3i8xt"]
 [ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="28_wt5ed"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/enemy_summon_editor.gd" id="29_nj5x1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -457,6 +458,16 @@ offset_top = 855.0
 offset_right = 767.0
 offset_bottom = 998.0
 button_title = "进入地图"
+
+[node name="EnemySummonEditor" type="Control" parent="." node_paths=PackedStringArray("bed_ui")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("29_nj5x1")
+bed_ui = NodePath("..")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="DifficultyButton" to="." method="_on_difficulty_button_pressed"]
