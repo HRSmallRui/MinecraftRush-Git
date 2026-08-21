@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=39 format=3 uid="uid://66ipi8u04xnk"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://dqrq6oovwd4k" path="res://Assets/Images/UI/Upgrade/Reinforce.png" id="23_kehq2"]
 [ext_resource type="Texture2D" uid="uid://cc1jewnmvveus" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage1/DigitalFightingStage1-view.png" id="24_p2s62"]
 [ext_resource type="Texture2D" uid="uid://dmicwrk5uv4w6" path="res://Assets/Images/UI/pause_continue_hover.png" id="26_3i8xt"]
+[ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="28_wt5ed"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -99,6 +100,7 @@ grow_vertical = 2
 script = ExtResource("1_ya1wa")
 hero_head_texture_list = Array[Texture2D]([ExtResource("2_uh2x2"), ExtResource("3_exkjp"), ExtResource("4_sacur"), ExtResource("5_a4ilj"), ExtResource("6_01urd"), ExtResource("7_7h8ow"), ExtResource("8_4unyy"), ExtResource("9_5oneg"), ExtResource("10_hxvwc"), ExtResource("11_m0k18"), ExtResource("12_4a8ma"), ExtResource("13_cbuk7")])
 stage_view_texture_list = Array[Texture2D]([ExtResource("24_p2s62"), ExtResource("15_nw7tk")])
+metadata/_edit_vertical_guides_ = [599.0]
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.627451)
@@ -146,6 +148,37 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fcp1e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
 text = "返回"
+
+[node name="EnemyEditorButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 669.0
+offset_right = 593.0
+offset_bottom = 815.0
+scale = Vector2(0.839596, 0.839596)
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_fcp1e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
+text = "编辑刷怪"
+
+[node name="DifficultyButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 669.0
+offset_right = 1067.0
+offset_bottom = 815.0
+scale = Vector2(0.839596, 0.839596)
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_fcp1e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
+text = "难度：普通"
 
 [node name="UpgradeUI" type="Control" parent="."]
 anchors_preset = 0
@@ -417,7 +450,16 @@ stream = ExtResource("16_i1wde")
 volume_db = 2.0
 bus = &"Sound"
 
+[node name="NormalButton" parent="." instance=ExtResource("28_wt5ed")]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 855.0
+offset_right = 767.0
+offset_bottom = 998.0
+button_title = "进入地图"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="DifficultyButton" to="." method="_on_difficulty_button_pressed"]
 [connection signal="pressed" from="SelectHeroUI/HeroTexture" to="." method="_on_hero_texture_pressed"]
 [connection signal="pressed" from="SelectHeroUI/DisableHeroButton" to="." method="_on_disable_hero_button_pressed"]
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton0" to="." method="_on_hero_select_button_hero_select"]
@@ -434,3 +476,4 @@ bus = &"Sound"
 [connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton9" to="." method="_on_hero_select_button_hero_select"]
 [connection signal="pressed" from="StageSelectUI/LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="StageSelectUI/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="NormalButton" to="." method="_on_normal_button_pressed"]
