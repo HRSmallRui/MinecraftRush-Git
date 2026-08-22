@@ -62,29 +62,31 @@ text = "尸国杂兵"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="LineEditTimeInterval" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 180.0
-offset_right = 464.0
+offset_right = 467.063
 offset_bottom = 225.0
-focus_mode = 0
 theme_override_fonts/font = ExtResource("4_1kcts")
 theme_override_font_sizes/font_size = 36
 text = "0"
 alignment = 2
+virtual_keyboard_type = 2
+select_all_on_focus = true
 
-[node name="LineEdit2" type="LineEdit" parent="."]
+[node name="LineEditSummonCount" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 171.0
 offset_top = 180.0
-offset_right = 251.0
+offset_right = 254.063
 offset_bottom = 225.0
-focus_mode = 0
 theme_override_fonts/font = ExtResource("4_1kcts")
 theme_override_font_sizes/font_size = 36
 text = "0"
 alignment = 2
+virtual_keyboard_type = 2
+select_all_on_focus = true
 
 [node name="IntervalTimeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -129,3 +131,6 @@ theme_override_font_sizes/font_size = 24
 text = "生成数量"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="text_submitted" from="LineEditTimeInterval" to="." method="_on_line_edit_time_interval_text_submitted"]
+[connection signal="text_submitted" from="LineEditSummonCount" to="." method="_on_line_edit_summon_count_text_submitted"]
