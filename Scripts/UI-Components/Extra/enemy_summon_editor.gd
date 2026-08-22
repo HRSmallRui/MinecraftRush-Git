@@ -43,32 +43,44 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_add_enemy_button_1_pressed() -> void:
-	
+	var block: EnemySummonBlockDigitalFighting = EnemySummonBlockDigitalFighting.new()
+	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
+	add_enemy_summon_block(summon_list_1,enemy_block_scene.instantiate(),block)
 	pass # Replace with function body.
 
 
 func _on_add_time_button_1_pressed() -> void:
-	
+	var block: WaitTimeBlock = WaitTimeBlock.new()
+	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
+	add_time_interbal_block(summon_list_1,time_block_scene.instantiate(),block)
 	pass # Replace with function body.
 
 
 func _on_add_enemy_button_2_pressed() -> void:
-	
+	var block: EnemySummonBlockDigitalFighting = EnemySummonBlockDigitalFighting.new()
+	digital_fighting_saver.summon_block_list[1].summon_list.append(block)
+	add_enemy_summon_block(summon_list_2,enemy_block_scene.instantiate(),block)
 	pass # Replace with function body.
 
 
 func _on_add_time_button_2_pressed() -> void:
-	
+	var block: WaitTimeBlock = WaitTimeBlock.new()
+	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
+	add_time_interbal_block(summon_list_1,time_block_scene.instantiate(),block)
 	pass # Replace with function body.
 
 
 func _on_add_enemy_button_3_pressed() -> void:
-	
+	var block: EnemySummonBlockDigitalFighting = EnemySummonBlockDigitalFighting.new()
+	digital_fighting_saver.summon_block_list[2].summon_list.append(block)
+	add_enemy_summon_block(summon_list_3,enemy_block_scene.instantiate(),block)
 	pass # Replace with function body.
 
 
 func _on_add_time_button_3_pressed() -> void:
-	
+	var block: WaitTimeBlock = WaitTimeBlock.new()
+	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
+	add_time_interbal_block(summon_list_1,time_block_scene.instantiate(),block)
 	pass # Replace with function body.
 
 
@@ -80,10 +92,12 @@ func summon_blocks_initalize():
 
 
 func add_enemy_summon_block(parent_list: Control, block: EnemySummonBlockEditor, linked_block: EnemySummonBlockDigitalFighting):
-	
+	block.linked_block = linked_block
+	parent_list.add_child(block)
 	pass
 
 
 func add_time_interbal_block(parent_list: Control, block: TimeIntervalBlockEditor, linked_block: WaitTimeBlock):
-	
+	block.linked_block = linked_block
+	parent_list.add_child(block)
 	pass

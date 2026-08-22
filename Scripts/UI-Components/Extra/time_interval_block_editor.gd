@@ -3,6 +3,9 @@ class_name TimeIntervalBlockEditor
 
 @onready var line_edit: LineEdit = $LineEdit
 
+var linked_block: WaitTimeBlock
+var time_interval: float
+
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	new_text = str(new_text.to_float())

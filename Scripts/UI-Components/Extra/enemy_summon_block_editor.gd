@@ -10,6 +10,7 @@ var enemy_id: int
 var enemy_summon_count: int
 var summon_time_interval: float
 var enemy_texture: Texture2D
+var linked_block: EnemySummonBlockDigitalFighting
 
 
 func _on_line_edit_time_interval_text_submitted(new_text: String) -> void:
