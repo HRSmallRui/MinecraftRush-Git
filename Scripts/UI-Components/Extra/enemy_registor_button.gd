@@ -1,5 +1,6 @@
 extends Button
 
+@export var enemy_summon_editor: EnemySummonEditor
 @export var enemy_texture: Texture2D
 @export var enemy_id: int
 @export var enemy_name: String
