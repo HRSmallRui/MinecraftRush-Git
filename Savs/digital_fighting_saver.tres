@@ -1,13 +1,29 @@
-[gd_resource type="Resource" script_class="DigitalFightingSaver" load_steps=3 format=3 uid="uid://cbj4l2430wydj"]
+[gd_resource type="Resource" script_class="DigitalFightingSaver" load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://Savs/DigitalFightingSaver/digital_fighting_saver.gd" id="1_m1hsp"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="3_7iq4l"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="3_xcjmg"]
+
+[sub_resource type="Resource" id="Resource_8tcx2"]
+script = ExtResource("3_7iq4l")
+calculate_time = false
+summon_list = Array[ExtResource("3_xcjmg")]([])
+
+[sub_resource type="Resource" id="Resource_gpvvb"]
+script = ExtResource("3_7iq4l")
+calculate_time = false
+summon_list = Array[ExtResource("3_xcjmg")]([])
+
+[sub_resource type="Resource" id="Resource_1t18n"]
+script = ExtResource("3_7iq4l")
+calculate_time = false
+summon_list = Array[ExtResource("3_xcjmg")]([])
 
 [resource]
 script = ExtResource("1_m1hsp")
 hero_id = 0
 tech_level_list = Array[int]([0, 0, 0, 0, 0, 0])
-summon_block_list = Array[ExtResource("3_7iq4l")]([])
+summon_block_list = Array[ExtResource("3_7iq4l")]([SubResource("Resource_8tcx2"), SubResource("Resource_gpvvb"), SubResource("Resource_1t18n")])
 ban_hero = false
 select_map_id = 1
 difficulty = 0

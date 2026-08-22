@@ -1,10 +1,11 @@
-[gd_scene load_steps=63 format=3 uid="uid://dxl7aht8d3o6i"]
+[gd_scene load_steps=68 format=3 uid="uid://dxl7aht8d3o6i"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/enemy_summon_editor.gd" id="1_p0k8u"]
 [ext_resource type="Texture2D" uid="uid://cs0pc8baxwnxu" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国杂兵.png" id="2_2h07x"]
 [ext_resource type="PackedScene" uid="uid://sm8eojs28d73" path="res://Scenes/UI-Components/Extra/Bed/enemy_summon_block_editor.tscn" id="2_kkaqf"]
 [ext_resource type="PackedScene" uid="uid://ccr71cef1eucw" path="res://Scenes/UI-Components/Extra/Bed/enemy_registor_button.tscn" id="3_anjrk"]
 [ext_resource type="Texture2D" uid="uid://cxhdvqrktfg5l" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国皮甲兵.png" id="3_mlwgj"]
+[ext_resource type="PackedScene" uid="uid://c77j6ndah6e4u" path="res://Scenes/UI-Components/Extra/Bed/time_interval_block_editor.tscn" id="3_v1w4d"]
 [ext_resource type="Texture2D" uid="uid://b4p5shu1hxykb" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国小鬼.png" id="4_cn0k6"]
 [ext_resource type="Texture2D" uid="uid://comwl0ri8gw60" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/鸡骑士.png" id="5_gno1a"]
 [ext_resource type="Texture2D" uid="uid://ccdjennpkjoik" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国正规军.png" id="6_pr3ws"]
@@ -61,9 +62,31 @@
 [ext_resource type="Texture2D" uid="uid://rjau6jutldek" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter6/戮.png" id="57_8pbe8"]
 [ext_resource type="Texture2D" uid="uid://cfo3wla3fehah" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/巨型尸壳.png" id="60_ntjyf"]
 [ext_resource type="Texture2D" uid="uid://blvximn1e4idw" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter5/LIVER.png" id="61_uqf1i"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="63_xqxlo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1xpp"]
 bg_color = Color(0, 0, 0, 0.513726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccolf"]
+bg_color = Color(0.147672, 0.147672, 0.147672, 0.376471)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6fxs"]
+bg_color = Color(0, 0, 0, 0.505882)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujfsg"]
+bg_color = Color(0, 0, 0, 0.376471)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [node name="EnemySummonEditor" type="Control"]
 layout_mode = 3
@@ -73,6 +96,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p0k8u")
+enemy_block_scene = ExtResource("2_kkaqf")
+time_block_scene = ExtResource("3_v1w4d")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.627451)
@@ -84,31 +109,47 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h1xpp")
 
-[node name="EnemySummonBlockEditor" parent="." instance=ExtResource("2_kkaqf")]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 502.0
-offset_bottom = 268.0
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 110.0
-offset_top = 104.0
-offset_right = -110.0
-offset_bottom = -104.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -845.0
+offset_top = -419.0
+offset_right = 845.0
+offset_bottom = 411.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 80
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(510, 268)
 layout_mode = 2
+vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+[node name="SummonList1" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(510, 268)
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="SummonList2" type="VBoxContainer" parent="HBoxContainer/ScrollContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer3" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(510, 268)
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="SummonList3" type="VBoxContainer" parent="HBoxContainer/ScrollContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 visible = false
@@ -527,3 +568,113 @@ enemy_summon_editor = NodePath("../../..")
 enemy_texture = ExtResource("61_uqf1i")
 enemy_id = 58
 enemy_name = "LIVER"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1710.0
+offset_top = 29.0001
+offset_right = 2024.0
+offset_bottom = 175.0
+scale = Vector2(0.563487, 0.563487)
+focus_mode = 0
+theme_override_fonts/font = ExtResource("63_xqxlo")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_ccolf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6fxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfsg")
+text = "关闭"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 968.0
+offset_right = 976.0
+offset_bottom = 1114.0
+scale = Vector2(0.555091, 0.555091)
+theme_override_constants/separation = 230
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="AddEnemyButton1" type="Button" parent="HBoxContainer2/HBoxContainer1"]
+custom_minimum_size = Vector2(314, 146)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("63_xqxlo")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_ccolf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6fxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfsg")
+text = "添加敌人"
+
+[node name="AddTimeButton1" type="Button" parent="HBoxContainer2/HBoxContainer1"]
+custom_minimum_size = Vector2(314, 146)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("63_xqxlo")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_ccolf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6fxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfsg")
+text = "添加间隔时间"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="AddEnemyButton2" type="Button" parent="HBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(314, 146)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("63_xqxlo")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_ccolf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6fxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfsg")
+text = "添加敌人"
+
+[node name="AddTimeButton2" type="Button" parent="HBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(314, 146)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("63_xqxlo")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_ccolf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6fxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfsg")
+text = "添加间隔时间"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="AddEnemyButton3" type="Button" parent="HBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(314, 146)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("63_xqxlo")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_ccolf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6fxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfsg")
+text = "添加敌人"
+
+[node name="AddTimeButton3" type="Button" parent="HBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(314, 146)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("63_xqxlo")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_ccolf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6fxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujfsg")
+text = "添加间隔时间"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer1/AddEnemyButton1" to="." method="_on_add_enemy_button_1_pressed"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer1/AddTimeButton1" to="." method="_on_add_time_button_1_pressed"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer2/AddEnemyButton2" to="." method="_on_add_enemy_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer2/AddTimeButton2" to="." method="_on_add_time_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer3/AddEnemyButton3" to="." method="_on_add_enemy_button_3_pressed"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer3/AddTimeButton3" to="." method="_on_add_time_button_3_pressed"]

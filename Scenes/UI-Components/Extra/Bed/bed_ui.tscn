@@ -101,6 +101,7 @@ grow_vertical = 2
 script = ExtResource("1_ya1wa")
 hero_head_texture_list = Array[Texture2D]([ExtResource("2_uh2x2"), ExtResource("3_exkjp"), ExtResource("4_sacur"), ExtResource("5_a4ilj"), ExtResource("6_01urd"), ExtResource("7_7h8ow"), ExtResource("8_4unyy"), ExtResource("9_5oneg"), ExtResource("10_hxvwc"), ExtResource("11_m0k18"), ExtResource("12_4a8ma"), ExtResource("13_cbuk7")])
 stage_view_texture_list = Array[Texture2D]([ExtResource("24_p2s62"), ExtResource("15_nw7tk")])
+enemy_summon_editor_scene = ExtResource("29_056j3")
 metadata/_edit_vertical_guides_ = [599.0]
 
 [node name="Panel" type="Panel" parent="."]
@@ -459,11 +460,8 @@ offset_right = 767.0
 offset_bottom = 998.0
 button_title = "进入地图"
 
-[node name="EnemySummonEditor" parent="." node_paths=PackedStringArray("bed_ui") instance=ExtResource("29_056j3")]
-layout_mode = 1
-bed_ui = NodePath("..")
-
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="EnemyEditorButton" to="." method="_on_enemy_editor_button_pressed"]
 [connection signal="pressed" from="DifficultyButton" to="." method="_on_difficulty_button_pressed"]
 [connection signal="pressed" from="SelectHeroUI/HeroTexture" to="." method="_on_hero_texture_pressed"]
 [connection signal="pressed" from="SelectHeroUI/DisableHeroButton" to="." method="_on_disable_hero_button_pressed"]
