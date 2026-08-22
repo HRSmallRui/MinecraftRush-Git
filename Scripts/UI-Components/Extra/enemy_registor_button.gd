@@ -1,4 +1,5 @@
 extends Button
+class_name EnemyRegestorButton
 
 @export var enemy_summon_editor: EnemySummonEditor
 @export var enemy_texture: Texture2D

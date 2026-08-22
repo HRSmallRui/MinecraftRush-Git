@@ -20,6 +20,7 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [node name="EnemySummonBlockEditor" type="Panel"]
+custom_minimum_size = Vector2(502, 268)
 offset_left = 110.0
 offset_top = 104.0
 offset_right = 612.0
@@ -36,7 +37,7 @@ offset_bottom = 170.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_u2vnx")
 
-[node name="EnemyTexture" type="TextureRect" parent="PopupButton"]
+[node name="EnemyTextureRect" type="TextureRect" parent="PopupButton"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = -1.0
@@ -132,5 +133,6 @@ text = "生成数量"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="PopupButton" to="." method="_on_popup_button_pressed"]
 [connection signal="text_submitted" from="LineEditTimeInterval" to="." method="_on_line_edit_time_interval_text_submitted"]
 [connection signal="text_submitted" from="LineEditSummonCount" to="." method="_on_line_edit_summon_count_text_submitted"]
