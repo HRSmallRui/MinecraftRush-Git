@@ -53,6 +53,7 @@ func _on_add_enemy_button_1_pressed() -> void:
 	var enemy_block: EnemySummonBlockEditor = enemy_block_scene.instantiate()
 	enemy_block.list_id = 0
 	add_enemy_summon_block(summon_list_1,enemy_block,block)
+	on_cancel_click()
 	pass # Replace with function body.
 
 
@@ -62,6 +63,7 @@ func _on_add_time_button_1_pressed() -> void:
 	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 	time_block.list_id = 0
 	add_time_interbal_block(summon_list_1,time_block,block)
+	on_cancel_click()
 	pass # Replace with function body.
 
 
@@ -71,6 +73,7 @@ func _on_add_enemy_button_2_pressed() -> void:
 	var enemy_block: EnemySummonBlockEditor = enemy_block_scene.instantiate()
 	enemy_block.list_id = 1
 	add_enemy_summon_block(summon_list_2,enemy_block,block)
+	on_cancel_click()
 	pass # Replace with function body.
 
 
@@ -80,6 +83,7 @@ func _on_add_time_button_2_pressed() -> void:
 	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 	time_block.list_id = 1
 	add_time_interbal_block(summon_list_2,time_block,block)
+	on_cancel_click()
 	pass # Replace with function body.
 
 
@@ -89,6 +93,7 @@ func _on_add_enemy_button_3_pressed() -> void:
 	var enemy_block: EnemySummonBlockEditor = enemy_block_scene.instantiate()
 	enemy_block.list_id = 2
 	add_enemy_summon_block(summon_list_3,enemy_block,block)
+	on_cancel_click()
 	pass # Replace with function body.
 
 
@@ -98,6 +103,7 @@ func _on_add_time_button_3_pressed() -> void:
 	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 	time_block.list_id = 2
 	add_time_interbal_block(summon_list_3,time_block,block)
+	on_cancel_click()
 	pass # Replace with function body.
 
 
@@ -116,6 +122,7 @@ func add_enemy_summon_block(parent_list: Control, block: EnemySummonBlockEditor,
 	block.linked_block = linked_block
 	block.trash_button.connect(trash_enemy_block_editor)
 	block.id_change_request.connect(on_editor_change_request)
+	block.on_cancel_click.connect(on_cancel_click)
 	parent_list.add_child(block)
 	block.enemy_name_label.text = data_name_library[block.enemy_id]
 	block.enemy_texture_rect.texture = data_texture_library[block.enemy_id]
@@ -125,6 +132,7 @@ func add_enemy_summon_block(parent_list: Control, block: EnemySummonBlockEditor,
 func add_time_interbal_block(parent_list: Control, block: TimeIntervalBlockEditor, linked_block: WaitTimeBlock):
 	block.linked_block = linked_block
 	block.trash_button.connect(trash_time_block_editor)
+	block.on_cancel_click.connect(on_cancel_click)
 	parent_list.add_child(block)
 	pass
 
@@ -132,12 +140,14 @@ func add_time_interbal_block(parent_list: Control, block: TimeIntervalBlockEdito
 func trash_enemy_block_editor(editor: EnemySummonBlockEditor):
 	editor.queue_free()
 	digital_fighting_saver.summon_block_list[editor.list_id].summon_list.erase(editor.linked_block)
+	on_cancel_click()
 	pass
 
 
 func trash_time_block_editor(editor: TimeIntervalBlockEditor):
 	editor.queue_free()
 	digital_fighting_saver.summon_block_list[editor.list_id].summon_list.erase(editor.linked_block)
+	on_cancel_click()
 	pass
 
 
@@ -176,6 +186,11 @@ func change_editor(change_id: int):
 		current_request_editor.enemy_texture_rect.texture = data_texture_library[current_request_editor.enemy_id]
 		current_request_editor.linked_block.enemy_id = change_id
 	
+	on_cancel_click()
+	pass
+
+
+func on_cancel_click():
 	enemy_select_container.hide()
 	current_request_editor = null
 	pass

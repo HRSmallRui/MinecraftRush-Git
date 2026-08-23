@@ -3,6 +3,7 @@ class_name EnemySummonBlockEditor
 
 signal trash_button(editor: EnemySummonBlockEditor)
 signal id_change_request(requester: EnemySummonBlockEditor)
+signal on_cancel_click
 
 @onready var line_edit_time_interval: LineEdit = $LineEditTimeInterval
 @onready var line_edit_summon_count: LineEdit = $LineEditSummonCount
@@ -59,4 +60,24 @@ func _on_popup_button_pressed() -> void:
 
 func _on_trash_button_pressed() -> void:
 	trash_button.emit(self)
+	pass # Replace with function body.
+
+
+func _on_line_edit_time_interval_focus_entered() -> void:
+	on_cancel_click.emit()
+	pass # Replace with function body.
+
+
+func _on_line_edit_summon_count_focus_entered() -> void:
+	on_cancel_click.emit()
+	pass # Replace with function body.
+
+
+func _on_line_edit_summon_count_focus_exited() -> void:
+	on_cancel_click.emit()
+	pass # Replace with function body.
+
+
+func _on_line_edit_time_interval_focus_exited() -> void:
+	on_cancel_click.emit()
 	pass # Replace with function body.

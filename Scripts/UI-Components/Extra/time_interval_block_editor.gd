@@ -2,6 +2,7 @@ extends Panel
 class_name TimeIntervalBlockEditor
 
 signal trash_button(editor: TimeIntervalBlockEditor)
+signal on_cancel_click
 
 @onready var line_edit: LineEdit = $LineEdit
 
@@ -30,4 +31,14 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 
 func _on_trash_button_pressed() -> void:
 	trash_button.emit(self)
+	pass # Replace with function body.
+
+
+func _on_line_edit_focus_entered() -> void:
+	on_cancel_click.emit()
+	pass # Replace with function body.
+
+
+func _on_line_edit_focus_exited() -> void:
+	on_cancel_click.emit()
 	pass # Replace with function body.
