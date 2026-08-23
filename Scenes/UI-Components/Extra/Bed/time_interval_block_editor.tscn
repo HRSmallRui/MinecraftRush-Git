@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://c77j6ndah6e4u"]
+[gd_scene load_steps=8 format=3 uid="uid://c77j6ndah6e4u"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/time_interval_block_editor.gd" id="1_bp3e1"]
 [ext_resource type="Texture2D" uid="uid://bhe2i0ciou46g" path="res://Assets/Images/UI/DataUIs/timer.res" id="2_q6jje"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_n12mk"]
+[ext_resource type="Texture2D" uid="uid://cikybo262yisy" path="res://Assets/Images/UI/delete_no.png" id="4_yya2e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fpuv"]
 bg_color = Color(0, 0, 0, 0.427451)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyj20"]
+bg_color = Color(0, 0, 0, 0.74902)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luhjg"]
+bg_color = Color(0, 0, 0, 0.572549)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -22,8 +37,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7fpuv")
 script = ExtResource("1_bp3e1")
 
 [node name="Timer" type="Sprite2D" parent="."]
-position = Vector2(94, 139)
-scale = Vector2(2.14967, 2.14967)
+position = Vector2(200, 143)
+scale = Vector2(1.66457, 1.66457)
 texture = ExtResource("2_q6jje")
 
 [node name="TimeLabel" type="Label" parent="."]
@@ -47,12 +62,26 @@ horizontal_alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 174.0
+offset_left = 322.0
 offset_top = 124.0
 offset_right = 485.0
-offset_bottom = 171.0
+offset_bottom = 182.0
 theme_override_font_sizes/font_size = 36
 text = "0"
 alignment = 2
 
+[node name="TrashButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 100.0
+offset_right = 289.0
+offset_bottom = 356.0
+scale = Vector2(0.349142, 0.349142)
+focus_mode = 0
+mouse_filter = 1
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dyj20")
+theme_override_styles/normal = SubResource("StyleBoxFlat_luhjg")
+icon = ExtResource("4_yya2e")
+
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]

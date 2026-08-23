@@ -45,42 +45,54 @@ func _input(event: InputEvent) -> void:
 func _on_add_enemy_button_1_pressed() -> void:
 	var block: EnemySummonBlockDigitalFighting = EnemySummonBlockDigitalFighting.new()
 	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
-	add_enemy_summon_block(summon_list_1,enemy_block_scene.instantiate(),block)
+	var enemy_block: EnemySummonBlockEditor = enemy_block_scene.instantiate()
+	enemy_block.list_id = 0
+	add_enemy_summon_block(summon_list_1,enemy_block,block)
 	pass # Replace with function body.
 
 
 func _on_add_time_button_1_pressed() -> void:
 	var block: WaitTimeBlock = WaitTimeBlock.new()
 	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
-	add_time_interbal_block(summon_list_1,time_block_scene.instantiate(),block)
+	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
+	time_block.list_id = 0
+	add_time_interbal_block(summon_list_1,time_block,block)
 	pass # Replace with function body.
 
 
 func _on_add_enemy_button_2_pressed() -> void:
 	var block: EnemySummonBlockDigitalFighting = EnemySummonBlockDigitalFighting.new()
 	digital_fighting_saver.summon_block_list[1].summon_list.append(block)
-	add_enemy_summon_block(summon_list_2,enemy_block_scene.instantiate(),block)
+	var enemy_block: EnemySummonBlockEditor = enemy_block_scene.instantiate()
+	enemy_block.list_id = 1
+	add_enemy_summon_block(summon_list_2,enemy_block,block)
 	pass # Replace with function body.
 
 
 func _on_add_time_button_2_pressed() -> void:
 	var block: WaitTimeBlock = WaitTimeBlock.new()
 	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
-	add_time_interbal_block(summon_list_1,time_block_scene.instantiate(),block)
+	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
+	time_block.list_id = 1
+	add_time_interbal_block(summon_list_1,time_block,block)
 	pass # Replace with function body.
 
 
 func _on_add_enemy_button_3_pressed() -> void:
 	var block: EnemySummonBlockDigitalFighting = EnemySummonBlockDigitalFighting.new()
 	digital_fighting_saver.summon_block_list[2].summon_list.append(block)
-	add_enemy_summon_block(summon_list_3,enemy_block_scene.instantiate(),block)
+	var enemy_block: EnemySummonBlockEditor = enemy_block_scene.instantiate()
+	enemy_block.list_id = 2
+	add_enemy_summon_block(summon_list_3,enemy_block,block)
 	pass # Replace with function body.
 
 
 func _on_add_time_button_3_pressed() -> void:
 	var block: WaitTimeBlock = WaitTimeBlock.new()
 	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
-	add_time_interbal_block(summon_list_1,time_block_scene.instantiate(),block)
+	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
+	time_block.list_id = 2
+	add_time_interbal_block(summon_list_1,time_block,block)
 	pass # Replace with function body.
 
 
@@ -88,16 +100,32 @@ func summon_blocks_initalize():
 	if digital_fighting_saver.summon_block_list.is_empty():
 		for i in 3:
 			digital_fighting_saver.summon_block_list.append(SummonWaveBlock.new())
+	
+	
 	pass
 
 
 func add_enemy_summon_block(parent_list: Control, block: EnemySummonBlockEditor, linked_block: EnemySummonBlockDigitalFighting):
 	block.linked_block = linked_block
+	block.trash_button.connect(trash_enemy_block_editor)
 	parent_list.add_child(block)
 	pass
 
 
 func add_time_interbal_block(parent_list: Control, block: TimeIntervalBlockEditor, linked_block: WaitTimeBlock):
 	block.linked_block = linked_block
+	block.trash_button.connect(trash_time_block_editor)
 	parent_list.add_child(block)
+	pass
+
+
+func trash_enemy_block_editor(editor: EnemySummonBlockEditor):
+	editor.queue_free()
+	digital_fighting_saver.summon_block_list[editor.list_id].summon_list.erase(editor.linked_block)
+	pass
+
+
+func trash_time_block_editor(editor: TimeIntervalBlockEditor):
+	editor.queue_free()
+	digital_fighting_saver.summon_block_list[editor.list_id].summon_list.erase(editor.linked_block)
 	pass
