@@ -4,6 +4,7 @@ class_name BedUI
 @export var hero_head_texture_list: Array[Texture2D]
 @export var stage_view_texture_list: Array[Texture2D]
 @export_file("*.tscn") var stage_path_list: Array[String]
+@export var enemy_summon_editor_scene: PackedScene
 
 @onready var back_button: Button = $BackButton
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -15,6 +16,7 @@ class_name BedUI
 @onready var difficulty_button: Button = $DifficultyButton
 
 var digital_saver: DigitalFightingSaver
+var enemy_summon_editor: EnemySummonEditor
 
 
 func _init() -> void:
@@ -48,7 +50,7 @@ func back():
 
 
 func _input(event: InputEvent) -> void:
-	if ExtraContent.instance.can_control and event.is_action_released("escape"):
+	if ExtraContent.instance.can_control and event.is_action_released("escape") and enemy_summon_editor == null:
 		back()
 	pass
 
@@ -145,4 +147,12 @@ func update_difficulty_button():
 
 func _on_normal_button_pressed() -> void:
 	
+	pass # Replace with function body.
+
+
+func _on_enemy_editor_button_pressed() -> void:
+	ExtraContent.instance.ui_state = ExtraContent.ExtraUIState.None
+	enemy_summon_editor = enemy_summon_editor_scene.instantiate()
+	enemy_summon_editor.bed_ui = self
+	add_child(enemy_summon_editor)
 	pass # Replace with function body.
