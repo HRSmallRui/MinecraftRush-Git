@@ -1,12 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3dbyviyakdgp"]
+[gd_scene load_steps=7 format=3 uid="uid://d3dbyviyakdgp"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Components/Extra/upgrade_button.gd" id="1_70lx1"]
 [ext_resource type="Texture2D" uid="uid://bcglomkfwq15i" path="res://Assets/Images/UI/Upgrade/Archer.png" id="2_swsko"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_tgtsi"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d60dk"]
+bg_color = Color(0.241156, 0.241156, 0.241156, 0.619608)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3s5o"]
+bg_color = Color(0, 0, 0, 0.772549)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bltis"]
+bg_color = Color(0, 0, 0, 0.619608)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="UpgradeButton" type="Button"]
 custom_minimum_size = Vector2(96, 96)
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_d60dk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m3s5o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bltis")
 script = ExtResource("1_70lx1")
 upgrade_texture = ExtResource("2_swsko")
 
