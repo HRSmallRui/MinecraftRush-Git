@@ -11,7 +11,6 @@ signal trash_button(editor: EnemySummonBlockEditor)
 var enemy_id: int
 var enemy_summon_count: int
 var summon_time_interval: float
-var enemy_texture: Texture2D
 var linked_block: EnemySummonBlockDigitalFighting
 var list_id: int
 

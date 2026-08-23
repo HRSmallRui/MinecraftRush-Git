@@ -111,6 +111,8 @@ func add_enemy_summon_block(parent_list: Control, block: EnemySummonBlockEditor,
 	block.linked_block = linked_block
 	block.trash_button.connect(trash_enemy_block_editor)
 	parent_list.add_child(block)
+	block.enemy_name_label.text = data_name_library[block.enemy_id]
+	block.enemy_texture_rect.texture = data_texture_library[block.enemy_id]
 	pass
 
 
