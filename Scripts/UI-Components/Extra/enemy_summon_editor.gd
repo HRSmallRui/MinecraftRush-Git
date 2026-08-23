@@ -74,7 +74,7 @@ func _on_add_time_button_2_pressed() -> void:
 	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
 	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 	time_block.list_id = 1
-	add_time_interbal_block(summon_list_1,time_block,block)
+	add_time_interbal_block(summon_list_2,time_block,block)
 	pass # Replace with function body.
 
 
@@ -92,7 +92,7 @@ func _on_add_time_button_3_pressed() -> void:
 	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
 	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 	time_block.list_id = 2
-	add_time_interbal_block(summon_list_1,time_block,block)
+	add_time_interbal_block(summon_list_3,time_block,block)
 	pass # Replace with function body.
 
 
@@ -101,7 +101,9 @@ func summon_blocks_initalize():
 		for i in 3:
 			digital_fighting_saver.summon_block_list.append(SummonWaveBlock.new())
 	
-	
+	list_initialize(summon_list_1,digital_fighting_saver.summon_block_list[0].summon_list,0)
+	list_initialize(summon_list_2,digital_fighting_saver.summon_block_list[1].summon_list,1)
+	list_initialize(summon_list_3,digital_fighting_saver.summon_block_list[2].summon_list,2)
 	pass
 
 
@@ -128,4 +130,17 @@ func trash_enemy_block_editor(editor: EnemySummonBlockEditor):
 func trash_time_block_editor(editor: TimeIntervalBlockEditor):
 	editor.queue_free()
 	digital_fighting_saver.summon_block_list[editor.list_id].summon_list.erase(editor.linked_block)
+	pass
+
+
+func list_initialize(list_container: VBoxContainer, block_list: Array[SummonBlock], list_id: int):
+	for block in block_list:
+		if block is EnemySummonBlockDigitalFighting:
+			var editor_block: EnemySummonBlockEditor = enemy_block_scene.instantiate()
+			editor_block.list_id = list_id
+			add_enemy_summon_block(list_container,editor_block,block)
+		if block is WaitTimeBlock:
+			var editor_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
+			editor_block.list_id = list_id
+			add_time_interbal_block(list_container,editor_block,block)
 	pass

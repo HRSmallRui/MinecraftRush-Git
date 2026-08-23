@@ -16,6 +16,16 @@ var linked_block: EnemySummonBlockDigitalFighting
 var list_id: int
 
 
+func _ready() -> void:
+	if linked_block != null:
+		enemy_id = linked_block.enemy_id
+		enemy_summon_count = linked_block.summon_count
+		summon_time_interval = linked_block.time_interval
+	line_edit_summon_count.text = str(enemy_summon_count)
+	line_edit_time_interval.text = str(summon_time_interval)
+	pass
+
+
 func _on_line_edit_time_interval_text_submitted(new_text: String) -> void:
 	new_text = str(new_text.to_float())
 	
@@ -24,6 +34,8 @@ func _on_line_edit_time_interval_text_submitted(new_text: String) -> void:
 	
 	line_edit_time_interval.text = new_text
 	line_edit_time_interval.release_focus()
+	
+	linked_block.time_interval = new_text.to_float()
 	pass # Replace with function body.
 
 
@@ -35,6 +47,8 @@ func _on_line_edit_summon_count_text_submitted(new_text: String) -> void:
 	
 	line_edit_summon_count.text = new_text
 	line_edit_summon_count.release_focus()
+	
+	linked_block.summon_count = new_text.to_int()
 	pass # Replace with function body.
 
 
