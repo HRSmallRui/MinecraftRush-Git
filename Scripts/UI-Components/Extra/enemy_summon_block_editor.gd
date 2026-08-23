@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 func _on_line_edit_time_interval_text_submitted(new_text: String) -> void:
-	new_text = str(new_text.to_float())
+	new_text = str(maxf(0,new_text.to_float()))
 	
 	if new_text == "":
 		new_text = "0"
@@ -39,7 +39,7 @@ func _on_line_edit_time_interval_text_submitted(new_text: String) -> void:
 
 
 func _on_line_edit_summon_count_text_submitted(new_text: String) -> void:
-	new_text = str(new_text.to_int())
+	new_text = str(maxi(0,new_text.to_int()))
 	
 	if new_text == "":
 		new_text = "0"

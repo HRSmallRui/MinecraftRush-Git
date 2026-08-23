@@ -71,7 +71,7 @@ func _on_add_enemy_button_2_pressed() -> void:
 
 func _on_add_time_button_2_pressed() -> void:
 	var block: WaitTimeBlock = WaitTimeBlock.new()
-	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
+	digital_fighting_saver.summon_block_list[1].summon_list.append(block)
 	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 	time_block.list_id = 1
 	add_time_interbal_block(summon_list_2,time_block,block)
@@ -89,7 +89,7 @@ func _on_add_enemy_button_3_pressed() -> void:
 
 func _on_add_time_button_3_pressed() -> void:
 	var block: WaitTimeBlock = WaitTimeBlock.new()
-	digital_fighting_saver.summon_block_list[0].summon_list.append(block)
+	digital_fighting_saver.summon_block_list[2].summon_list.append(block)
 	var time_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 	time_block.list_id = 2
 	add_time_interbal_block(summon_list_3,time_block,block)
