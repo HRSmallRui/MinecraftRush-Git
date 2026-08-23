@@ -17,7 +17,8 @@ signal on_boss_music_stop
 enum StageMode{
 	Campaign,
 	Diamond,
-	Bedrock
+	Bedrock,
+	DigitalFighting
 }
 
 enum StageUI{
