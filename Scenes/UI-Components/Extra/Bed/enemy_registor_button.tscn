@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccr71cef1eucw"]
+
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/enemy_registor_button.gd" id="1_6jv8i"]
+[ext_resource type="Texture2D" uid="uid://cs0pc8baxwnxu" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国杂兵.png" id="1_ga5w2"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_1epku"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6g5f"]
+bg_color = Color(0.230315, 0.230315, 0.230315, 0.572549)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgyrf"]
+bg_color = Color(0, 0, 0, 0.717647)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3st5d"]
+bg_color = Color(0, 0, 0, 0.572549)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="EnemyRegistorButton" type="Button"]
+custom_minimum_size = Vector2(360, 140)
+focus_mode = 0
+mouse_filter = 1
+theme_override_styles/hover = SubResource("StyleBoxFlat_b6g5f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vgyrf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3st5d")
+script = ExtResource("1_6jv8i")
+
+[node name="EnemyTextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 143.0
+offset_bottom = 127.0
+texture = ExtResource("1_ga5w2")
+
+[node name="EnemyNameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_right = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_1epku")
+theme_override_font_sizes/font_size = 24
+text = "尸国杂兵"
+horizontal_alignment = 1
+vertical_alignment = 1

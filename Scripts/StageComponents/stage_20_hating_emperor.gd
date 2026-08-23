@@ -89,6 +89,7 @@ func on_win():
 	skill_shot_timer.stop()
 	await get_tree().create_timer(2,false).timeout
 	skill_can_release_list = [false,false,false,false]
+	Stage.instance.stage_map.on_ui_layer_hide()
 	summon_boss()
 	pass
 
