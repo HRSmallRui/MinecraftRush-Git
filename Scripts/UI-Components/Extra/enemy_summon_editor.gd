@@ -5,14 +5,19 @@ class_name EnemySummonEditor
 @export var enemy_block_scene: PackedScene
 @export var time_block_scene: PackedScene
 
-@onready var v_box_container: VBoxContainer = $ScrollContainer/VBoxContainer
+@onready var v_box_container: VBoxContainer = $EnemySelectContainer/VBoxContainer
 @onready var summon_list_1: VBoxContainer = $HBoxContainer/ScrollContainer/SummonList1
 @onready var summon_list_2: VBoxContainer = $HBoxContainer/ScrollContainer2/SummonList2
 @onready var summon_list_3: VBoxContainer = $HBoxContainer/ScrollContainer3/SummonList3
+@onready var marker_1: Marker2D = $Marker1
+@onready var marker_2: Marker2D = $Marker2
+@onready var marker_3: Marker2D = $Marker3
+@onready var enemy_select_container: ScrollContainer = $EnemySelectContainer
 
 var data_name_library: Dictionary
 var data_texture_library: Dictionary
 var digital_fighting_saver: DigitalFightingSaver
+var current_request_editor: EnemySummonBlockEditor
 
 func _ready() -> void:
 	library_initialize()
@@ -110,6 +115,7 @@ func summon_blocks_initalize():
 func add_enemy_summon_block(parent_list: Control, block: EnemySummonBlockEditor, linked_block: EnemySummonBlockDigitalFighting):
 	block.linked_block = linked_block
 	block.trash_button.connect(trash_enemy_block_editor)
+	block.id_change_request.connect(on_editor_change_request)
 	parent_list.add_child(block)
 	block.enemy_name_label.text = data_name_library[block.enemy_id]
 	block.enemy_texture_rect.texture = data_texture_library[block.enemy_id]
@@ -145,4 +151,31 @@ func list_initialize(list_container: VBoxContainer, block_list: Array[SummonBloc
 			var editor_block: TimeIntervalBlockEditor = time_block_scene.instantiate()
 			editor_block.list_id = list_id
 			add_time_interbal_block(list_container,editor_block,block)
+	pass
+
+
+func on_editor_change_request(editor: EnemySummonBlockEditor):
+	if current_request_editor == editor:
+		current_request_editor = null
+		enemy_select_container.hide()
+		return
+	
+	current_request_editor = editor
+	enemy_select_container.show()
+	var target_pos: Vector2 = marker_1.position if editor.list_id == 0 else\
+	marker_2.position if editor.list_id == 1 else marker_3.position
+	enemy_select_container.position = target_pos
+	
+	pass
+
+
+func change_editor(change_id: int):
+	if current_request_editor != null:
+		current_request_editor.enemy_id = change_id
+		current_request_editor.enemy_name_label.text = data_name_library[current_request_editor.enemy_id]
+		current_request_editor.enemy_texture_rect.texture = data_texture_library[current_request_editor.enemy_id]
+		current_request_editor.linked_block.enemy_id = change_id
+	
+	enemy_select_container.hide()
+	current_request_editor = null
 	pass

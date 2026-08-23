@@ -14,3 +14,8 @@ func _ready() -> void:
 	enemy_texture_rect.texture = enemy_texture
 	enemy_name_label.text = enemy_name
 	pass
+
+
+func _pressed() -> void:
+	enemy_summon_editor.change_editor(enemy_id)
+	pass

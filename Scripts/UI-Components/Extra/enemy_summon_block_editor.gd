@@ -2,6 +2,7 @@ extends Panel
 class_name EnemySummonBlockEditor
 
 signal trash_button(editor: EnemySummonBlockEditor)
+signal id_change_request(requester: EnemySummonBlockEditor)
 
 @onready var line_edit_time_interval: LineEdit = $LineEditTimeInterval
 @onready var line_edit_summon_count: LineEdit = $LineEditSummonCount
@@ -52,7 +53,7 @@ func _on_line_edit_summon_count_text_submitted(new_text: String) -> void:
 
 
 func _on_popup_button_pressed() -> void:
-	
+	id_change_request.emit(self)
 	pass # Replace with function body.
 
 
