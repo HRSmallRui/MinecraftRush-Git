@@ -31,7 +31,7 @@ var steve_skill_type: SteveSkillType = SteveSkillType.Front
 
 func _ready() -> void:
 	super()
-	skill_level = Global.get_hero_skill_level(11)
+	skill_level = Stage.instance.get_hero_skill_level(11)
 	
 	pass
 

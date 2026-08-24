@@ -107,6 +107,8 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	if Stage.instance.stage_mode == Stage.StageMode.DigitalFighting:
+		show_tip = false
 	#Stage.instance.enemy_count += 1
 	logic_timer.timeout.connect(on_logic_timer_timeout)
 	update_health_bar()

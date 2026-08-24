@@ -7,7 +7,7 @@ extends SkillButton
 
 func skill_unlease():
 	super()
-	var level: int = Global.get_hero_skill_level(0)
+	var level: int = Stage.instance.get_hero_skill_level(0)
 	var count: int = potion_count_list[level]
 	var mouse_position: Vector2 = Stage.instance.get_local_mouse_position()
 	for i in count:
