@@ -49,6 +49,7 @@ func summon_hero(summon_pos:Vector2 = hero_summon_marker.position):
 func _process(delta: float) -> void:
 	super(delta)
 	current_money = 1000
+	current_health = 20
 	pass
 
 
@@ -57,4 +58,15 @@ func initalize_load_enemy():
 		for summon_block:SummonBlock in wave_block.summon_list:
 			if summon_block is EnemySummonBlockDigitalFighting:
 				load(EnemyPath.enemy_registor_path_list[summon_block.enemy_id])
+	pass
+
+
+func lose():
+	
+	pass
+
+
+func win(wait_time: float = 3):
+	super(wait_time)
+	
 	pass
