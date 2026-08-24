@@ -33,6 +33,7 @@ func show_achieve_bar(achieve_keywords: String):
 
 
 func achieve_complete(keywords: String):
+	if Global.current_sav_slot == 0: return
 	var sav: GameSaver = Stage.instance.stage_sav
 	if !keywords in sav.compeleted_keywords:
 		sav.compeleted_keywords.append(keywords)
@@ -42,6 +43,7 @@ func achieve_complete(keywords: String):
 
 
 func achieve_int_add(keywords: String, add_value: int ,complete_count: int):
+	if Global.current_sav_slot == 0: return
 	var sav: GameSaver = Stage.instance.stage_sav
 	if keywords in sav.compeleted_keywords: return
 	if keywords in sav.number_count_achievements:
@@ -56,6 +58,7 @@ func achieve_int_add(keywords: String, add_value: int ,complete_count: int):
 
 
 func add_achieve_temp_value(value_keywords: String):
+	if Global.current_sav_slot == 0: return
 	var sav: GameSaver = Stage.instance.stage_sav
 	if !sav.property_bus.has("achievement_temp"):
 		sav.property_bus["achievement_temp"] = Array()

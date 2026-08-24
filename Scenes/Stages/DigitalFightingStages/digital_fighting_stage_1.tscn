@@ -1,31 +1,172 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2i84ugs2pra0"]
+[gd_scene load_steps=25 format=3 uid="uid://b2i84ugs2pra0"]
 
 [ext_resource type="PackedScene" uid="uid://b2n0fuyf7vsqy" path="res://Scenes/Stages/DigitalFightingStages/digital_fighting_stage.tscn" id="1_pyfk5"]
+[ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="2_0x03x"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="2_k3hvl"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="3_mpk6m"]
+[ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="3_refyj"]
+[ext_resource type="Texture2D" uid="uid://dwggryrqpr7dh" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage1/DigitalFightingStage1-based.png" id="4_vyrkx"]
+[ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="5_4te16"]
+[ext_resource type="Script" path="res://Library/EnemySummon/BossWaveConfig/boss_wave_pool_unit.gd" id="8_334cm"]
+[ext_resource type="Script" path="res://Library/EnemySummon/BossWaveConfig/boss_wave_config.gd" id="9_f4k8j"]
+[ext_resource type="PackedScene" uid="uid://d0sta1lv6shgl" path="res://Scenes/DefenceTowers/defence_tower_based.tscn" id="10_mfn6b"]
+[ext_resource type="PackedScene" uid="uid://4j747edyffkd" path="res://Scenes/UI-Components/Stages/wave_button.tscn" id="11_dy2gs"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_summon_text.gd" id="12_hqeen"]
+[ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="13_xmahr"]
+[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="14_tbx43"]
+[ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="15_wa52l"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_r3ofl"]
+vertices = PackedVector2Array(1925.95, 0.953125, 1921.04, 1077.98, -5, 1076.01, -5.99219, -6.95313)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -17, 1936, -9, 1931, 1088, -15, 1086)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3bbhf"]
+vertices = PackedVector2Array(1917, 619, -0.476563, 620.977, 2.50781, 560.961, 1923.88, 554.039)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-7, 551, 1935, 544, 1926, 629, -11, 631)])
 
 [sub_resource type="Resource" id="Resource_ovoob"]
 resource_local_to_scene = true
 script = ExtResource("2_k3hvl")
 wave_summon_list = Array[ExtResource("3_mpk6m")]([])
 
+[sub_resource type="Resource" id="Resource_i1th2"]
+script = ExtResource("9_f4k8j")
+enemy_pool = Array[ExtResource("8_334cm")]([])
+start_danger_level = 0
+interval_update_time = 0.0
+
+[sub_resource type="Curve2D" id="Curve2D_vk587"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -55, 558, 0, 0, 0, 0, 2006, 556)
+}
+point_count = 2
+
 [sub_resource type="Resource" id="Resource_mx86s"]
 resource_local_to_scene = true
 script = ExtResource("2_k3hvl")
 wave_summon_list = Array[ExtResource("3_mpk6m")]([])
+
+[sub_resource type="Curve2D" id="Curve2D_0fw1c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -56, 617, 0, 0, 0, 0, 2008, 622)
+}
+point_count = 2
 
 [sub_resource type="Resource" id="Resource_jb6n6"]
 resource_local_to_scene = true
 script = ExtResource("2_k3hvl")
 wave_summon_list = Array[ExtResource("3_mpk6m")]([])
 
+[sub_resource type="Resource" id="Resource_11nmq"]
+script = ExtResource("12_hqeen")
+wave_summon_text_list = Array[ExtResource("13_xmahr")]([])
+
 [node name="DigitalFightingStage1" instance=ExtResource("1_pyfk5")]
+hero_sprite_flip = true
+
+[node name="PreparationMusic" parent="Musics" index="0"]
+stream = ExtResource("2_0x03x")
+
+[node name="BattleMusic" parent="Musics" index="1"]
+stream = ExtResource("3_refyj")
+
+[node name="BasedSprite" parent="Background" index="0"]
+texture = ExtResource("4_vyrkx")
+
+[node name="ProtectionPoint" parent="Background/BasedSprite" index="0"]
+position = Vector2(1858, 584)
+
+[node name="Flag" parent="Background" index="2"]
+position = Vector2(1860, 535)
+
+[node name="Flag2" type="Sprite2D" parent="Background" index="3"]
+position = Vector2(1860, 645)
+texture = ExtResource("5_4te16")
+offset = Vector2(-7, -22)
+region_enabled = true
+region_rect = Rect2(40, 38, 40, 73)
+
+[node name="StageNavigationRegion" parent="." index="8"]
+navigation_polygon = SubResource("NavigationPolygon_r3ofl")
+
+[node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_3bbhf")
 
 [node name="EnemyPath" parent="Enemies" index="0"]
 path_summon_config = SubResource("Resource_ovoob")
+boss_wave_config = SubResource("Resource_i1th2")
 
 [node name="EnemyPath2" parent="Enemies" index="1"]
+curve = SubResource("Curve2D_vk587")
 path_summon_config = SubResource("Resource_mx86s")
 
 [node name="EnemyPath3" parent="Enemies" index="2"]
+curve = SubResource("Curve2D_0fw1c")
 path_summon_config = SubResource("Resource_jb6n6")
+
+[node name="DefenceTowerBased" parent="Towers" index="0" instance=ExtResource("10_mfn6b")]
+position = Vector2(193, 510)
+
+[node name="DefenceTowerBased2" parent="Towers" index="1" instance=ExtResource("10_mfn6b")]
+position = Vector2(492, 510)
+
+[node name="DefenceTowerBased3" parent="Towers" index="2" instance=ExtResource("10_mfn6b")]
+position = Vector2(788, 510)
+
+[node name="DefenceTowerBased4" parent="Towers" index="3" instance=ExtResource("10_mfn6b")]
+position = Vector2(1087, 510)
+
+[node name="DefenceTowerBased5" parent="Towers" index="4" instance=ExtResource("10_mfn6b")]
+position = Vector2(1364, 510)
+
+[node name="DefenceTowerBased6" parent="Towers" index="5" instance=ExtResource("10_mfn6b")]
+position = Vector2(1665, 510)
+
+[node name="DefenceTowerBased7" parent="Towers" index="6" instance=ExtResource("10_mfn6b")]
+position = Vector2(1731, 668)
+
+[node name="DefenceTowerBased8" parent="Towers" index="7" instance=ExtResource("10_mfn6b")]
+position = Vector2(1538, 668)
+
+[node name="DefenceTowerBased9" parent="Towers" index="8" instance=ExtResource("10_mfn6b")]
+position = Vector2(1234, 668)
+
+[node name="DefenceTowerBased10" parent="Towers" index="9" instance=ExtResource("10_mfn6b")]
+position = Vector2(944, 667)
+
+[node name="DefenceTowerBased11" parent="Towers" index="10" instance=ExtResource("10_mfn6b")]
+position = Vector2(638, 667)
+
+[node name="DefenceTowerBased12" parent="Towers" index="11" instance=ExtResource("10_mfn6b")]
+position = Vector2(338, 667)
+
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("11_dy2gs")]
+offset_left = 64.0
+offset_top = 591.0
+offset_right = 64.0
+offset_bottom = 591.0
+linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
+summon_text_list = Array[ExtResource("12_hqeen")]([SubResource("Resource_11nmq")])
+summon_style_list = Array[int]([0])
+
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
+show_behind_parent = true
+rotation = -3.16209
+scale = Vector2(0.942457, 0.942457)
+texture = ExtResource("14_tbx43")
+
+[node name="WavePanel" parent="WaveButtons" index="1" instance=ExtResource("15_wa52l")]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 521.0
+offset_right = 714.0
+offset_bottom = 815.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
+polygon = PackedVector2Array(-7, 548, 1930, 543, 1928, 634, -19, 634)
+
+[node name="HeroSummonMarker" parent="." index="21"]
+position = Vector2(1860, 589)

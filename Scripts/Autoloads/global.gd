@@ -93,7 +93,6 @@ func get_game_sav(sav_slot: int = current_sav_slot) -> GameSaver:
 
 
 func sav_user_sav(user_sav: UserSaver):
-	if current_sav_slot == 0: return
 	var user_sav_path: String = "res://Savs/UserSav.res" if OS.is_debug_build() else "user://UserSav.res"
 	if OS.get_name() == "Android": user_sav_path = OS.get_user_data_dir() + "UserSav.res"
 	ResourceSaver.save(user_sav,user_sav_path)
@@ -101,6 +100,7 @@ func sav_user_sav(user_sav: UserSaver):
 
 
 func sav_game_sav(game_sav: GameSaver, sav_slot = current_sav_slot):
+	if current_sav_slot == 0: return
 	var game_sav_path_front = "res://Savs/Sav" if OS.is_debug_build() else "user://Sav"
 	if OS.get_name() == "Android": game_sav_path_front = OS.get_user_data_dir() + "Sav"
 	var game_sav_path = game_sav_path_front + str(sav_slot) + ".tres"
