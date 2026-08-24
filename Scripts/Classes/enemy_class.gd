@@ -533,7 +533,8 @@ func boss_music_play():
 	await get_tree().create_timer(1,false).timeout
 	Stage.instance.preparation_music.stop()
 	Stage.instance.battle_music.stop()
-	Stage.instance.boss_music.play()
+	if not Stage.instance.boss_music.playing:
+		Stage.instance.boss_music.play()
 	Stage.instance.on_prepare_music_stop.emit()
 	Stage.instance.on_battle_music_stop.emit()
 	Stage.instance.on_boss_music_playing.emit()
@@ -541,6 +542,7 @@ func boss_music_play():
 
 
 func boss_die_time():
+	if Stage.instance.stage_mode == Stage.instance.StageMode.DigitalFighting: return
 	Stage.instance.stage_camera.position = self.position
 	Stage.instance.stage_camera.shake(10)
 	#create_tween().tween_property(Stage.instance.stage_camera,"zoom",Vector2.ONE * 2,0.3)

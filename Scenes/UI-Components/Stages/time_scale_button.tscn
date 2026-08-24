@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccnkr0dmpuudl"]
+
+[ext_resource type="FontFile" uid="uid://drfv8ak22g1rm" path="res://Assets/Fonts/simhei.ttf" id="1_2nlpj"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/time_scale_button.gd" id="2_3lc3w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nu4i"]
+bg_color = Color(0.147672, 0.147672, 0.147672, 0.376471)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds7sm"]
+bg_color = Color(0, 0, 0, 0.505882)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td2ev"]
+bg_color = Color(0, 0, 0, 0.376471)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="TimeScaleButton" type="Button"]
+offset_left = 1656.0
+offset_top = 16.0
+offset_right = 1892.0
+offset_bottom = 169.0
+scale = Vector2(0.563487, 0.563487)
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_2nlpj")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_5nu4i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ds7sm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_td2ev")
+text = ">"
+script = ExtResource("2_3lc3w")

@@ -147,6 +147,7 @@ func update_difficulty_button():
 
 func _on_normal_button_pressed() -> void:
 	Global.current_sav_slot = 0
+	HeroGlobal.load_async(HeroGlobal.hero_scene_path_list[digital_saver.hero_id])
 	Global.change_scene(stage_path_list[digital_saver.select_map_id])
 	pass # Replace with function body.
 

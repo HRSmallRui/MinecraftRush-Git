@@ -101,6 +101,7 @@ var pause_ui: PackedScene = preload("res://Scenes/UI-Components/Stages/pause_ui.
 func _init() -> void:
 	instance = self
 	stage_sav = Global.get_game_sav()
+	Global.time_scale = 1
 	pass
 
 

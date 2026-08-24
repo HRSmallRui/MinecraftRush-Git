@@ -13,6 +13,7 @@ var total_caused_damage: int
 
 func _ready() -> void:
 	get_tree().paused = true
+	Global.time_scale = 1
 	
 	end_label.text = "敌人总数：" + str(enemy_total_count) + "\n"
 	end_label.text += "杀敌数量：" + str(enemy_kill_count) + "\n"

@@ -38,6 +38,8 @@ func _ready() -> void:
 		if path_id >= 3: break
 		enemy_path.path_summon_config.wave_summon_list.append(digital_sav.summon_block_list[path_id])
 		path_id += 1
+	
+	initalize_load_enemy()
 	pass
 
 
@@ -64,7 +66,7 @@ func initalize_load_enemy():
 	for wave_block: SummonWaveBlock in digital_sav.summon_block_list:
 		for summon_block:SummonBlock in wave_block.summon_list:
 			if summon_block is EnemySummonBlockDigitalFighting:
-				load(EnemyPath.enemy_registor_path_list[summon_block.enemy_id])
+				enemy_scene_list.append(load(EnemyPath.enemy_registor_path_list[summon_block.enemy_id]))
 	pass
 
 
