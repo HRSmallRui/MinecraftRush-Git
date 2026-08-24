@@ -1,14 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://cahxy3qu28hsl"]
+[gd_scene load_steps=7 format=3 uid="uid://b2i84ugs2pra0"]
 
-[ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_jivs7"]
-[ext_resource type="Script" path="res://Scripts/Stages/digital_fighting_stage.gd" id="2_ufq06"]
+[ext_resource type="PackedScene" uid="uid://b2n0fuyf7vsqy" path="res://Scenes/Stages/DigitalFightingStages/digital_fighting_stage.tscn" id="1_pyfk5"]
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="2_k3hvl"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="3_mpk6m"]
 
-[node name="DigitalFightingStage1" instance=ExtResource("1_jivs7")]
-script = ExtResource("2_ufq06")
-stage_count = 20
-stage_mode = 3
-current_money = 1000
-total_waves = 1
+[sub_resource type="Resource" id="Resource_ovoob"]
+resource_local_to_scene = true
+script = ExtResource("2_k3hvl")
+wave_summon_list = Array[ExtResource("3_mpk6m")]([])
 
-[node name="StageMap" parent="StageUI" index="10"]
-visible = false
+[sub_resource type="Resource" id="Resource_mx86s"]
+resource_local_to_scene = true
+script = ExtResource("2_k3hvl")
+wave_summon_list = Array[ExtResource("3_mpk6m")]([])
+
+[sub_resource type="Resource" id="Resource_jb6n6"]
+resource_local_to_scene = true
+script = ExtResource("2_k3hvl")
+wave_summon_list = Array[ExtResource("3_mpk6m")]([])
+
+[node name="DigitalFightingStage1" instance=ExtResource("1_pyfk5")]
+
+[node name="EnemyPath" parent="Enemies" index="0"]
+path_summon_config = SubResource("Resource_ovoob")
+
+[node name="EnemyPath2" parent="Enemies" index="1"]
+path_summon_config = SubResource("Resource_mx86s")
+
+[node name="EnemyPath3" parent="Enemies" index="2"]
+path_summon_config = SubResource("Resource_jb6n6")

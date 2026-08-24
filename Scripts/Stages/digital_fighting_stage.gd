@@ -1,4 +1,5 @@
 extends Stage
+class_name DigitalFightingStage
 
 var digital_sav: DigitalFightingSaver
 
