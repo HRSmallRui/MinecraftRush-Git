@@ -5,6 +5,11 @@ class_name DigitalFightingStage
 
 var digital_sav: DigitalFightingSaver
 
+var enemy_total_count: int = 0
+var enemy_pass_count: int = 0
+var enemy_kill_count: int = 0
+var total_caused_damage: int = 0
+
 
 func _init() -> void:
 	Global.current_sav_slot = 0
@@ -70,5 +75,40 @@ func lose():
 
 func win(wait_time: float = 3):
 	super(wait_time)
-	stage_UI_layer.add_child(digital_win_ui_scene.instantiate())
+	await get_tree().create_timer(wait_time,false).timeout
+	var digital_fighting_ui: DigitalFightingEndUI = digital_win_ui_scene.instantiate()
+	digital_fighting_ui.enemy_total_count = enemy_total_count
+	digital_fighting_ui.enemy_kill_count = enemy_kill_count
+	digital_fighting_ui.enemy_pass_count = enemy_pass_count
+	digital_fighting_ui.total_caused_damage = total_caused_damage
+	add_child(digital_fighting_ui)
+	pass
+
+
+func lives_taken(damage: int):
+	super(damage)
+	enemy_pass_count += 1
+	pass
+
+
+func enemy_die():
+	super()
+	enemy_kill_count += 1
+	pass
+
+
+func enemy_initalize(enemy: Enemy):
+	super(enemy)
+	enemy.current_data.on_take_damage.connect(on_enemy_take_damage)
+	enemy_total_count += 1
+	pass
+
+
+func final_boss_die():
+	
+	pass
+
+
+func on_enemy_take_damage(damage_event_data: DamageEventData):
+	total_caused_damage += damage_event_data.final_damage
 	pass

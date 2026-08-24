@@ -610,3 +610,8 @@ func get_hero_skill_level(hero_id: int) -> int:
 	if hero_id >= stage_sav.hero_sav.size(): return 0
 	var hero_sav: HeroSavBlock = stage_sav.hero_sav[hero_id]
 	return hero_sav.skill_levels[4]
+
+
+func enemy_initalize(enemy: Enemy):
+	
+	pass
