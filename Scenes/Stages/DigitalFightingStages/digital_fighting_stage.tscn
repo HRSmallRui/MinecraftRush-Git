@@ -1,16 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2n0fuyf7vsqy"]
+[gd_scene load_steps=9 format=3 uid="uid://b2n0fuyf7vsqy"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_xfgpi"]
 [ext_resource type="Script" path="res://Scripts/Stages/digital_fighting_stage.gd" id="2_cipyw"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_path.gd" id="3_ptufm"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="4_dpfu1"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="5_lt68b"]
-
-[sub_resource type="Curve2D" id="Curve2D_qe3an"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -52, 589, 0, 0, 0, 0, 2013, 588)
-}
-point_count = 2
 
 [sub_resource type="Resource" id="Resource_fionk"]
 resource_local_to_scene = true
@@ -34,16 +28,16 @@ stage_mode = 3
 total_waves = 1
 
 [node name="EnemyPath" type="Path2D" parent="Enemies" index="0"]
-curve = SubResource("Curve2D_qe3an")
 script = ExtResource("3_ptufm")
 path_summon_config = SubResource("Resource_fionk")
 
 [node name="EnemyPath2" type="Path2D" parent="Enemies" index="1"]
-curve = SubResource("Curve2D_qe3an")
 script = ExtResource("3_ptufm")
 path_summon_config = SubResource("Resource_wdeep")
 
 [node name="EnemyPath3" type="Path2D" parent="Enemies" index="2"]
-curve = SubResource("Curve2D_qe3an")
 script = ExtResource("3_ptufm")
 path_summon_config = SubResource("Resource_5vyfr")
+
+[node name="StageMap" parent="StageUI" index="10"]
+visible = false

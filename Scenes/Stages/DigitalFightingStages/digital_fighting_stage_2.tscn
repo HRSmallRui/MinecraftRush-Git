@@ -1,31 +1,205 @@
-[gd_scene load_steps=7 format=3 uid="uid://0punv0ox2f01"]
+[gd_scene load_steps=23 format=3 uid="uid://0punv0ox2f01"]
 
 [ext_resource type="PackedScene" uid="uid://b2n0fuyf7vsqy" path="res://Scenes/Stages/DigitalFightingStages/digital_fighting_stage.tscn" id="1_spbf5"]
+[ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="2_jrt6u"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="2_lc176"]
+[ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="3_hcflb"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="3_ni6kn"]
+[ext_resource type="Texture2D" uid="uid://dsgr1pb3x8vk8" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage2/DigitalFightingStage2-based.png" id="4_jccii"]
+[ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="5_57py3"]
+[ext_resource type="PackedScene" uid="uid://4j747edyffkd" path="res://Scenes/UI-Components/Stages/wave_button.tscn" id="8_6a30l"]
+[ext_resource type="PackedScene" uid="uid://d0sta1lv6shgl" path="res://Scenes/DefenceTowers/defence_tower_based.tscn" id="8_n6vok"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_summon_text.gd" id="9_n5y85"]
+[ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="10_8cu60"]
+[ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="11_kk76g"]
+[ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="12_pdxi5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dd8hd"]
+vertices = PackedVector2Array(1942.92, -2.04688, 1935.07, 1088, -16, 1088, -16, -11.9375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-26, -22, 1953, -12, 1945, 1098, -26, 1098)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_k7tdn"]
+vertices = PackedVector2Array(1113.13, 499, 1113.12, 498.992, 1318.53, 497, 1553.48, 145, -0.148438, 151.953, 5.22656, 84.9688, 1616.35, 80, 1656.29, 155.281, 1684.94, 89.5234, 1749.96, 140.406, 1695.28, 179.359, 1787.27, 219.82, 1730.27, 280.094, 1797.9, 301.898, 1714.45, 380.281, 1786.37, 376.789, 1746.22, 452.328, 1670.7, 432.789, 1684.96, 498.273, 1506.85, 478.867, 1597.34, 536.242, 1460, 553.039, 1325.52, 561.008, 1178.76, 567.992, 980.828, 567, 815.406, 503.008, 730.57, 491.758, 853.852, 572, 771.008, 572.977, 685.961, 554.406, 627.789, 453.469, 559.641, 503.281, 544.281, 427.93, 482.039, 491.898, 460.258, 424.063, 435.18, 498.438, 396.023, 443.898, 303.211, 526.078, 370.867, 544.531, 274.852, 588.469, 341.07, 615.82, 267.156, 701, 338.961, 674.031, 352.859, 730.719, 319.023, 806.633, 393.109, 777.32, 416.578, 885.852, 449.531, 820.398, 553.563, 920.82, 491.883, 843.688, 560.578, 852.023, 672.023, 904.18, 645.844, 848.938, 826.32, 863.102, 728.867, 820.578, 832.539, 793.922, 960.063, 852.969, 978.859, 785.023, 1201.47, 874, 1126.29, 796.977, 1349.71, 878.023, 1321.28, 808.969, 1526.64, 827.008, 1548.53, 900.992, 1918.68, 821.148, 1916.29, 900.023)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 3, 6, 8, 9), PackedInt32Array(10, 7, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(14, 12, 13, 15, 16), PackedInt32Array(17, 14, 16, 18), PackedInt32Array(19, 17, 18, 20, 21), PackedInt32Array(2, 19, 21, 22, 23), PackedInt32Array(0, 2, 23, 24, 25), PackedInt32Array(26, 25, 24, 27, 28, 29), PackedInt32Array(30, 26, 29, 31, 32), PackedInt32Array(32, 31, 33, 34), PackedInt32Array(34, 33, 35, 36), PackedInt32Array(37, 36, 35, 38), PackedInt32Array(39, 37, 38, 40, 41), PackedInt32Array(41, 40, 42), PackedInt32Array(41, 42, 43, 44), PackedInt32Array(44, 43, 45, 46), PackedInt32Array(46, 45, 47, 48), PackedInt32Array(48, 47, 49), PackedInt32Array(48, 49, 50, 51), PackedInt32Array(51, 50, 52), PackedInt32Array(53, 51, 52, 54, 55), PackedInt32Array(56, 53, 55, 57), PackedInt32Array(58, 56, 57, 59), PackedInt32Array(60, 58, 59, 61, 62), PackedInt32Array(63, 60, 62, 64, 65)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-4, 75, 1617, 70, 1689, 80, 1758, 134, 1797, 217, 1808, 302, 1796, 380, 1754, 459, 1690, 507, 1600, 546, 1461, 563, 1326, 571, 1179, 578, 981, 577, 854, 582, 770, 583, 683, 564, 557, 513, 482, 502, 439, 508, 379, 551, 351, 618, 349, 673, 362, 726, 400, 770, 455, 812, 495, 834, 561, 842, 644, 839, 726, 811, 831, 784, 979, 775, 1127, 787, 1322, 799, 1527, 817, 1929, 811, 1926, 910, 1548, 911, 1349, 888, 1201, 884, 960, 863, 828, 873, 674, 914, 553, 931, 412, 895, 311, 813, 257, 703, 265, 586, 295, 520, 391, 435, 459, 414, 546, 418, 631, 444, 733, 482, 816, 493, 1113, 489, 1318, 487, 1505, 469, 1665, 424, 1705, 376, 1720, 281, 1687, 186, 1653, 165, 1553, 155, -11, 162)])
+
+[sub_resource type="Curve2D" id="Curve2D_ca0kr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1973, 862, 56.5, 0.5, -56.5, -0.5, 1616, 866, 57.5, 7, -57.5, -7, 1290, 847, 45.5, 1.5, -45.5, -1.5, 966, 822, 39.5, -11.5, -39.5, 11.5, 789, 836, 42, -5, -42, 5, 661, 885, 57, 12.5, -57, -12.5, 507, 885, 0, 0, 0, 0, 378, 820, 13.551, 39.0332, -13.551, -39.0332, 310, 711, -10.8597, 47.7142, 10.8597, -47.7142, 309, 583, -45.5, 21, 45.5, -21, 405, 472, -46, -2.5, 46, 2.5, 529, 461, -16.5, -9, 16.5, 9, 694, 521, -93.5, -1.5, 93.5, 1.5, 806, 540, 0, 0, 0, 0, 1191, 542, -89.5, 25.5, 89.5, -25.5, 1527, 514, -38, 28.5, 38, -28.5, 1704, 439, -11.0402, 36.0976, 11.0402, -36.0976, 1760, 356, 5.15905, 39.685, -5.15905, -39.685, 1764, 264, 7.54015, 19.8425, -7.54015, -19.8425, 1726, 166, 33.3354, 16.2709, -33.3354, -16.2709, 1673, 124, 0, 0, 0, 0, 1345, 118, 0, 0, 0, 0, -95, 117)
+}
+point_count = 23
 
 [sub_resource type="Resource" id="Resource_ovoob"]
 resource_local_to_scene = true
 script = ExtResource("2_lc176")
 wave_summon_list = Array[ExtResource("3_ni6kn")]([])
 
+[sub_resource type="Curve2D" id="Curve2D_2ocly"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1974, 828, 56.5, 0.5, -56.5, -0.5, 1613, 832, 57.5, 7, -57.5, -7, 1291, 810, 45.5, 1.5, -45.5, -1.5, 966, 786, 39.5, -11.5, -39.5, 11.5, 784, 805, 42, -5, -42, 5, 657, 842, 57, 12.5, -57, -12.5, 519, 848, 0, 0, 0, 0, 400, 786, 6, 48, -6, -48, 346, 700, -8.5, 34.5, 8.5, -34.5, 345, 591, -45.5, 21, 45.5, -21, 411, 513, -46, -2.5, 46, 2.5, 515, 495, -16.5, -9, 16.5, 9, 658, 542, -93.5, -1.5, 93.5, 1.5, 794, 571, 0, 0, 0, 0, 1193, 567, -89.5, 25.5, 89.5, -25.5, 1534, 543, -38, 28.5, 38, -28.5, 1719, 470, -11.0402, 36.0976, 11.0402, -36.0976, 1788, 366, 5.15905, 39.685, -5.15905, -39.685, 1793, 256, 7.54015, 19.8425, -7.54015, -19.8425, 1753, 151, 33.3354, 16.2709, -33.3354, -16.2709, 1683, 94, 0, 0, 0, 0, 1343, 85, 0, 0, 0, 0, -95, 86)
+}
+point_count = 23
+
 [sub_resource type="Resource" id="Resource_mx86s"]
 resource_local_to_scene = true
 script = ExtResource("2_lc176")
 wave_summon_list = Array[ExtResource("3_ni6kn")]([])
+
+[sub_resource type="Curve2D" id="Curve2D_cq8kj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1973, 890, 56.5, 0.5, -56.5, -0.5, 1612, 898, 57.5, 7, -57.5, -7, 1288, 878, 45.5, 1.5, -45.5, -1.5, 960, 858, 39.5, -11.5, -39.5, 11.5, 792, 878, 42, -5, -42, 5, 664, 910, 57, 12.5, -57, -12.5, 500, 917, 0, 0, 0, 0, 348, 834, 13.551, 39.0332, -13.551, -39.0332, 275, 714, -16.163, 45.9465, 16.163, -45.9465, 289, 565, -45.5, 21, 45.5, -21, 398, 446, -46, -2.5, 46, 2.5, 533, 432, -16.5, -9, 16.5, 9, 699, 485, -93.5, -1.5, 93.5, 1.5, 806, 502, 0, 0, 0, 0, 1190, 502, -89.5, 25.5, 89.5, -25.5, 1519, 481, -24.2114, 28.5, 24.2114, -28.5, 1688, 410, -5.3833, 29.7337, 5.3833, -29.7337, 1731, 327, 5.15905, 39.685, -5.15905, -39.685, 1727, 248, 8.59962, 17.4587, -8.59962, -17.4587, 1697, 177, 30.9516, 5.1465, -30.9516, -5.1465, 1636, 149, 0, 0, 0, 0, 1343, 150, 0, 0, 0, 0, -100, 147)
+}
+point_count = 23
 
 [sub_resource type="Resource" id="Resource_jb6n6"]
 resource_local_to_scene = true
 script = ExtResource("2_lc176")
 wave_summon_list = Array[ExtResource("3_ni6kn")]([])
 
+[sub_resource type="Resource" id="Resource_11nmq"]
+script = ExtResource("9_n5y85")
+wave_summon_text_list = Array[ExtResource("10_8cu60")]([])
+
 [node name="DigitalFightingStage2" instance=ExtResource("1_spbf5")]
 
+[node name="PreparationMusic" parent="Musics" index="0"]
+stream = ExtResource("2_jrt6u")
+
+[node name="BattleMusic" parent="Musics" index="1"]
+stream = ExtResource("3_hcflb")
+
+[node name="BasedSprite" parent="Background" index="0"]
+texture = ExtResource("4_jccii")
+
+[node name="ProtectionPoint" parent="Background/BasedSprite" index="0"]
+position = Vector2(116, 116)
+
+[node name="Flag" parent="Background" index="2"]
+position = Vector2(121, 63)
+
+[node name="Flag2" type="Sprite2D" parent="Background" index="3"]
+position = Vector2(121, 176)
+texture = ExtResource("5_57py3")
+offset = Vector2(-7, -22)
+region_enabled = true
+region_rect = Rect2(40, 38, 40, 73)
+
+[node name="StageNavigationRegion" parent="." index="8"]
+navigation_polygon = SubResource("NavigationPolygon_dd8hd")
+
+[node name="FirerainRandomRegion" parent="FirerainRandomRegions" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_k7tdn")
+
 [node name="EnemyPath" parent="Enemies" index="0"]
+curve = SubResource("Curve2D_ca0kr")
 path_summon_config = SubResource("Resource_ovoob")
 
 [node name="EnemyPath2" parent="Enemies" index="1"]
+curve = SubResource("Curve2D_2ocly")
 path_summon_config = SubResource("Resource_mx86s")
 
 [node name="EnemyPath3" parent="Enemies" index="2"]
+curve = SubResource("Curve2D_cq8kj")
 path_summon_config = SubResource("Resource_jb6n6")
+
+[node name="DefenceTowerBased" parent="Towers" index="0" instance=ExtResource("8_n6vok")]
+position = Vector2(324, 196)
+
+[node name="DefenceTowerBased2" parent="Towers" index="1" instance=ExtResource("8_n6vok")]
+position = Vector2(635, 196)
+
+[node name="DefenceTowerBased3" parent="Towers" index="2" instance=ExtResource("8_n6vok")]
+position = Vector2(940, 196)
+
+[node name="DefenceTowerBased4" parent="Towers" index="3" instance=ExtResource("8_n6vok")]
+position = Vector2(1230, 196)
+
+[node name="DefenceTowerBased5" parent="Towers" index="4" instance=ExtResource("8_n6vok")]
+position = Vector2(1629, 200)
+
+[node name="DefenceTowerBased6" parent="Towers" index="5" instance=ExtResource("8_n6vok")]
+position = Vector2(1659, 330)
+
+[node name="DefenceTowerBased7" parent="Towers" index="6" instance=ExtResource("8_n6vok")]
+position = Vector2(1492, 436)
+
+[node name="DefenceTowerBased8" parent="Towers" index="7" instance=ExtResource("8_n6vok")]
+position = Vector2(1466, 189)
+
+[node name="DefenceTowerBased9" parent="Towers" index="8" instance=ExtResource("8_n6vok")]
+position = Vector2(1352, 604)
+
+[node name="DefenceTowerBased10" parent="Towers" index="9" instance=ExtResource("8_n6vok")]
+position = Vector2(1704, 544)
+
+[node name="DefenceTowerBased11" parent="Towers" index="10" instance=ExtResource("8_n6vok")]
+position = Vector2(910, 467)
+
+[node name="DefenceTowerBased12" parent="Towers" index="11" instance=ExtResource("8_n6vok")]
+position = Vector2(420, 591)
+
+[node name="DefenceTowerBased13" parent="Towers" index="12" instance=ExtResource("8_n6vok")]
+position = Vector2(487, 785)
+
+[node name="DefenceTowerBased14" parent="Towers" index="13" instance=ExtResource("8_n6vok")]
+position = Vector2(852, 910)
+
+[node name="DefenceTowerBased15" parent="Towers" index="14" instance=ExtResource("8_n6vok")]
+position = Vector2(286, 450)
+
+[node name="DefenceTowerBased16" parent="Towers" index="15" instance=ExtResource("8_n6vok")]
+position = Vector2(806, 613)
+
+[node name="DefenceTowerBased17" parent="Towers" index="16" instance=ExtResource("8_n6vok")]
+position = Vector2(1215, 462)
+
+[node name="DefenceTowerBased18" parent="Towers" index="17" instance=ExtResource("8_n6vok")]
+position = Vector2(530, 391)
+
+[node name="DefenceTowerBased19" parent="Towers" index="18" instance=ExtResource("8_n6vok")]
+position = Vector2(230, 769)
+
+[node name="DefenceTowerBased20" parent="Towers" index="19" instance=ExtResource("8_n6vok")]
+position = Vector2(754, 764)
+
+[node name="DefenceTowerBased21" parent="Towers" index="20" instance=ExtResource("8_n6vok")]
+position = Vector2(1188, 919)
+
+[node name="DefenceTowerBased22" parent="Towers" index="21" instance=ExtResource("8_n6vok")]
+position = Vector2(1079, 747)
+
+[node name="DefenceTowerBased23" parent="Towers" index="22" instance=ExtResource("8_n6vok")]
+position = Vector2(1493, 790)
+
+[node name="DefenceTowerBased24" parent="Towers" index="23" instance=ExtResource("8_n6vok")]
+position = Vector2(1450, 938)
+
+[node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("8_6a30l")]
+offset_left = 1836.0
+offset_top = 862.0
+offset_right = 1836.0
+offset_bottom = 862.0
+linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/EnemyPath")
+summon_text_list = Array[ExtResource("9_n5y85")]([SubResource("Resource_11nmq")])
+summon_style_list = Array[int]([0])
+
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
+show_behind_parent = true
+rotation = -0.011415
+scale = Vector2(0.942457, 0.942457)
+texture = ExtResource("11_kk76g")
+
+[node name="WavePanel" parent="WaveButtons" index="1" instance=ExtResource("12_pdxi5")]
+layout_mode = 0
+offset_left = 1460.0
+offset_top = 789.0
+offset_right = 2064.0
+offset_bottom = 1083.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
+polygon = PackedVector2Array(-4, 78, 1647, 74, 1689, 84, 1740, 115, 1775, 165, 1798, 217, 1810, 288, 1803, 350, 1793, 397, 1758, 457, 1697, 505, 1634, 535, 1506, 556, 1343, 574, 777, 583, 700, 566, 581, 522, 500, 498, 435, 510, 384, 550, 351, 593, 347, 670, 360, 724, 415, 789, 498, 840, 597, 846, 688, 831, 771, 796, 868, 782, 978, 777, 1501, 814, 1612, 820, 1865, 814, 1926, 811, 1927, 899, 1683, 903, 1551, 909, 1433, 895, 1170, 877, 959, 860, 822, 874, 684, 913, 610, 927, 524, 928, 406, 886, 350, 850, 293, 777, 258, 678, 267, 584, 295, 532, 345, 464, 431, 418, 532, 420, 624, 442, 724, 484, 835, 495, 1126, 488, 1336, 486, 1510, 471, 1655, 431, 1712, 355, 1721, 257, 1681, 180, 1647, 159, 1460, 158, -7, 166)
+
+[node name="HeroSummonMarker" parent="." index="21"]
+position = Vector2(118, 121)

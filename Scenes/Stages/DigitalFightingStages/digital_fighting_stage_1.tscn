@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b2i84ugs2pra0"]
+[gd_scene load_steps=26 format=3 uid="uid://b2i84ugs2pra0"]
 
 [ext_resource type="PackedScene" uid="uid://b2n0fuyf7vsqy" path="res://Scenes/Stages/DigitalFightingStages/digital_fighting_stage.tscn" id="1_pyfk5"]
 [ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="2_0x03x"]
@@ -25,6 +25,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -17, 1936, -9, 193
 vertices = PackedVector2Array(1917, 619, -0.476563, 620.977, 2.50781, 560.961, 1923.88, 554.039)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-7, 551, 1935, 544, 1926, 629, -11, 631)])
+
+[sub_resource type="Curve2D" id="Curve2D_qp0eu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -56, 587, 0, 0, 0, 0, 2006, 590)
+}
+point_count = 2
 
 [sub_resource type="Resource" id="Resource_ovoob"]
 resource_local_to_scene = true
@@ -95,6 +101,7 @@ navigation_polygon = SubResource("NavigationPolygon_r3ofl")
 navigation_polygon = SubResource("NavigationPolygon_3bbhf")
 
 [node name="EnemyPath" parent="Enemies" index="0"]
+curve = SubResource("Curve2D_qp0eu")
 path_summon_config = SubResource("Resource_ovoob")
 boss_wave_config = SubResource("Resource_i1th2")
 
