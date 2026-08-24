@@ -1,6 +1,8 @@
 extends Stage
 class_name DigitalFightingStage
 
+@export var digital_win_ui_scene: PackedScene
+
 var digital_sav: DigitalFightingSaver
 
 
@@ -68,5 +70,5 @@ func lose():
 
 func win(wait_time: float = 3):
 	super(wait_time)
-	
+	stage_UI_layer.add_child(digital_win_ui_scene.instantiate())
 	pass

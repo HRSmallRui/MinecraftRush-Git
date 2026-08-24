@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2n0fuyf7vsqy"]
+[gd_scene load_steps=10 format=3 uid="uid://b2n0fuyf7vsqy"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_xfgpi"]
 [ext_resource type="Script" path="res://Scripts/Stages/digital_fighting_stage.gd" id="2_cipyw"]
+[ext_resource type="PackedScene" uid="uid://cwbhngqcdhrhr" path="res://Scenes/UI-Components/Stages/digital_fighting_end_ui.tscn" id="3_p7wwf"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_path.gd" id="3_ptufm"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="4_dpfu1"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="5_lt68b"]
@@ -23,6 +24,7 @@ wave_summon_list = Array[ExtResource("5_lt68b")]([])
 
 [node name="DigitalFightingStage" instance=ExtResource("1_xfgpi")]
 script = ExtResource("2_cipyw")
+digital_win_ui_scene = ExtResource("3_p7wwf")
 stage_count = 20
 stage_mode = 3
 total_waves = 1
