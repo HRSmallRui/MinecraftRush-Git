@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b45c342rsgrth"]
+[gd_scene load_steps=16 format=3 uid="uid://b45c342rsgrth"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
 [ext_resource type="Texture2D" uid="uid://cqx34wicbeheb" path="res://Assets/Images/UI/InformationBar/arrow-id-1.png" id="2_5thd4"]
 [ext_resource type="Texture2D" uid="uid://bsrop5coppykb" path="res://Assets/Images/UI/InformationBar/barrack-id-1.png" id="3_fnd1t"]
+[ext_resource type="PackedScene" uid="uid://bh6bhoq6syug1" path="res://Scenes/UI-Components/Stages/tower_button.tscn" id="3_jtflk"]
 [ext_resource type="Texture2D" uid="uid://b2v7pohn1ykq7" path="res://Assets/Images/UI/InformationBar/magic-id-1.png" id="4_ffibk"]
 [ext_resource type="Texture2D" uid="uid://b7ynfqlyos1pt" path="res://Assets/Images/UI/InformationBar/bombard-id-1.png" id="5_qj2ts"]
 [ext_resource type="Texture2D" uid="uid://cy32b5g1skhvi" path="res://Assets/Images/UI/InformationBar/reinforce.png" id="7_2pnuy"]
@@ -140,8 +141,7 @@ layout_mode = 2
 layout_mode = 2
 columns = 2
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer"]
-custom_minimum_size = Vector2(300, 400)
+[node name="TowerButton" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" instance=ExtResource("3_jtflk")]
 layout_mode = 2
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
