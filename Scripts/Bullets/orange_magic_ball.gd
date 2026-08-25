@@ -1,5 +1,7 @@
 extends MagicBall
 
+@export var liquid_scene: PackedScene
+
 var has_summon_liquid: bool = false
 
 
@@ -27,7 +29,8 @@ func hit_effect():
 
 
 func summon_liquid(liquid_pos: Vector2):
-	var alchemist_liquid: Area2D = preload("res://Scenes/Skills/alchemist_liquid.tscn").instantiate()
+	var alchemist_liquid: SkillConditionArea2D = liquid_scene.instantiate()
 	alchemist_liquid.position = liquid_pos
+	alchemist_liquid.skill_level = special_skill_level
 	Stage.instance.bullets.add_child(alchemist_liquid)
 	pass

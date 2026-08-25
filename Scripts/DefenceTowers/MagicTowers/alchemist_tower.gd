@@ -1,17 +1,15 @@
 extends MagicTower
 class_name AlchemistTower
 
+@export var liquid_damage_list: Array[IntSaver]
+@export var liquid_property_block_list: Array[PropertyBuffBlock]
 
 @onready var skill_1_timer: Timer = $Skill1Timer
-@onready var skill_2_condition_area: Area2D = $Skill2ConditionArea
-@onready var skill_2_dot_timer: Timer = $Skill2DotTimer
-
 
 
 func _ready() -> void:
 	super()
 	await get_tree().process_frame
-	skill_2_condition_area.scale = tower_area.scale
 	pass
 
 
@@ -44,38 +42,6 @@ func get_valid_skill1_enemy() -> Enemy:
 	pass
 
 
-func get_valid_skill2_allys() -> Array[Ally]:
-	var ally_list: Array[Ally]
-	for body in skill_2_condition_area.get_overlapping_bodies():
-		var ally: Ally = body.owner
-		ally_list.append(ally)
-	if ally_list.size() <= 5: return ally_list
-	for ally in ally_list:
-		if ally.ally_buff_tags.has("alchemist_support"): ally_list.erase(ally)
-		if ally_list.size() <= 5: break
-	if ally_list.size() <= 5: return ally_list
-	ally_list.resize(5)
-	return ally_list
-	pass
-
-
 func tower_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
-	if skill_id == 1 and skill_level == 1:
-		skill_2_dot_timer.start()
 	pass
-
-
-func _on_skill_2_dot_timer_timeout() -> void:
-	for body in skill_2_condition_area.get_overlapping_bodies():
-		var ally: Ally = body.owner
-		var heal_buff: HealBuff = preload("res://Scenes/Buffs/TowerBuffs/Alchemist/alchemist_heal_buff.tscn").instantiate()
-		heal_buff.buff_level = tower_skill_levels[1]
-		var support_buff: PropertyBuff
-		match tower_skill_levels[1]:
-			1: support_buff = preload("res://Scenes/Buffs/TowerBuffs/Alchemist/alchemist_support_buff_lv1.tscn").instantiate()
-			2: support_buff = preload("res://Scenes/Buffs/TowerBuffs/Alchemist/alchemist_support_buff_lv2.tscn").instantiate()
-			3: support_buff = preload("res://Scenes/Buffs/TowerBuffs/Alchemist/alchemist_support_buff_lv3.tscn").instantiate()
-		ally.buffs.add_child(support_buff)
-		ally.buffs.add_child(heal_buff)
-	pass # Replace with function body.

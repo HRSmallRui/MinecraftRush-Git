@@ -1,30 +1,38 @@
-[gd_scene load_steps=57 format=3 uid="uid://ldkqtfh72mey"]
+[gd_scene load_steps=64 format=3 uid="uid://ldkqtfh72mey"]
 
 [ext_resource type="PackedScene" uid="uid://cw6pat17gtbr3" path="res://Scenes/DefenceTowers/MagicTower/magic_tower.tscn" id="1_rayo3"]
 [ext_resource type="Script" path="res://Scripts/Datas/TowerData.gd" id="2_61efh"]
 [ext_resource type="Script" path="res://Scripts/DefenceTowers/MagicTowers/alchemist_tower.gd" id="2_acey3"]
 [ext_resource type="Texture2D" uid="uid://cylocvvujfjke" path="res://Assets/Images/UI/InformationBar/magic-id-6.png" id="2_s1s7q"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="3_6cyu1"]
 [ext_resource type="PackedScene" uid="uid://cjpn07gcbekr1" path="res://Scenes/DefenceTowers/tower_skill_button.tscn" id="4_h0tgt"]
+[ext_resource type="Resource" uid="uid://dmpgvfpqkbgu2" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_damage_lv0.tres" id="4_u6277"]
+[ext_resource type="Resource" uid="uid://bpm625r7wf0q1" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_damage_lv1.tres" id="5_3pab7"]
 [ext_resource type="Texture2D" uid="uid://bk0puxs31qyj2" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-3/LV4-3-tower.png" id="5_8eqgd"]
 [ext_resource type="Texture2D" uid="uid://kpwo2cowmbg7" path="res://Assets/Images/DefenceTowers/Magics/UI/点金术.png" id="6_0rn2g"]
+[ext_resource type="Resource" uid="uid://dp2v4o662oydi" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_damage_lv2.tres" id="6_3wbs6"]
 [ext_resource type="Texture2D" uid="uid://brdiodh510ud0" path="res://Assets/Animations/Magicians/LV4-3/shoot_front_00.png" id="6_avwcj"]
+[ext_resource type="Script" path="res://Scripts/Buffs/property_buff_block.gd" id="7_bibgx"]
 [ext_resource type="Texture2D" uid="uid://saisc3av1b7h" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_00.png" id="7_bjwmi"]
 [ext_resource type="Texture2D" uid="uid://dno04hh1qevu7" path="res://Assets/Images/DefenceTowers/Magics/UI/点金术select.png" id="7_y8ia4"]
+[ext_resource type="Resource" uid="uid://cgge73q2qhtxl" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_block_lv0.tres" id="8_h8bkj"]
 [ext_resource type="Texture2D" uid="uid://bk70wcxo3ian0" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_01.png" id="8_k1xov"]
 [ext_resource type="Texture2D" uid="uid://fmy382ar6l4e" path="res://Assets/Images/DefenceTowers/Magics/UI/点金术no.png" id="8_ofx63"]
-[ext_resource type="Texture2D" uid="uid://2qnqh7mbqx6c" path="res://Assets/Images/DefenceTowers/Magics/UI/兴奋剂.png" id="9_sc3ae"]
+[ext_resource type="Resource" uid="uid://b1sefdh2xv6wf" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_block_lv1.tres" id="9_rp667"]
 [ext_resource type="Texture2D" uid="uid://dgj6vp5g4200" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_02.png" id="9_sevnd"]
 [ext_resource type="Texture2D" uid="uid://djt1mlgmikk14" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_03.png" id="10_anmsq"]
-[ext_resource type="Texture2D" uid="uid://dnefixnxxr7xu" path="res://Assets/Images/DefenceTowers/Magics/UI/兴奋剂select.png" id="10_jrudb"]
+[ext_resource type="Resource" uid="uid://meeqn5qldht2" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_block_lv2.tres" id="10_x6via"]
 [ext_resource type="Texture2D" uid="uid://b7hxsj3l7ou6c" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_04.png" id="11_vpgxs"]
-[ext_resource type="Texture2D" uid="uid://b1ixtbb0mynr6" path="res://Assets/Images/DefenceTowers/Magics/UI/兴奋剂no.png" id="11_wrj10"]
 [ext_resource type="Texture2D" uid="uid://ekep4uoqd4hl" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_05.png" id="12_alaux"]
 [ext_resource type="Texture2D" uid="uid://b2ibk04cv31v0" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_06.png" id="13_vff1s"]
 [ext_resource type="Texture2D" uid="uid://bm3bxwb5osmln" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_07.png" id="14_sckeh"]
 [ext_resource type="Texture2D" uid="uid://dt4qshto13w11" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_08.png" id="15_1a3u0"]
 [ext_resource type="Texture2D" uid="uid://bflj1d8vl5sr5" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_09.png" id="16_p04be"]
 [ext_resource type="Texture2D" uid="uid://dy0ls182l3t04" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_10.png" id="17_e8ile"]
+[ext_resource type="Texture2D" uid="uid://eag8ci0jt03n" path="res://Assets/Images/DefenceTowers/Magics/UI/粘稠液体.png" id="17_lcan7"]
+[ext_resource type="Texture2D" uid="uid://455hooqnwtcc" path="res://Assets/Images/DefenceTowers/Magics/UI/粘稠液体select.png" id="18_cjdos"]
 [ext_resource type="Texture2D" uid="uid://b6oexygd4l6dd" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_11.png" id="18_vpy52"]
+[ext_resource type="Texture2D" uid="uid://qtial4i4voyx" path="res://Assets/Images/DefenceTowers/Magics/UI/粘稠液体no.png" id="19_78dmk"]
 [ext_resource type="Texture2D" uid="uid://w3waxvkch08t" path="res://Assets/Animations/Magicians/LV4-3/shoot_back_12.png" id="19_x88kk"]
 [ext_resource type="Texture2D" uid="uid://dp8xgy5vycwul" path="res://Assets/Animations/Magicians/LV4-3/shoot_front_01.png" id="20_8mjo5"]
 [ext_resource type="Texture2D" uid="uid://dh4wlxlln3m4p" path="res://Assets/Animations/Magicians/LV4-3/shoot_front_02.png" id="21_gjgun"]
@@ -58,15 +66,12 @@ atlas = ExtResource("8_ofx63")
 region = Rect2(6, 6, 85, 85)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eu6qe"]
-atlas = ExtResource("9_sc3ae")
+atlas = ExtResource("17_lcan7")
 region = Rect2(6, 6, 85, 85)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_buanl"]
-atlas = ExtResource("11_wrj10")
+atlas = ExtResource("19_78dmk")
 region = Rect2(6, 6, 85, 85)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_n3ykp"]
-radius = 73.9444
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ect83"]
 animations = [{
@@ -642,8 +647,10 @@ _data = {
 "move": SubResource("Animation_qevuo")
 }
 
-[node name="AlchemistTower" node_paths=PackedStringArray("magician", "linked_areas") instance=ExtResource("1_rayo3")]
+[node name="AlchemistTower" node_paths=PackedStringArray("magician") instance=ExtResource("1_rayo3")]
 script = ExtResource("2_acey3")
+liquid_damage_list = Array[ExtResource("3_6cyu1")]([ExtResource("4_u6277"), ExtResource("5_3pab7"), ExtResource("6_3wbs6")])
+liquid_property_block_list = Array[ExtResource("7_bibgx")]([ExtResource("8_h8bkj"), ExtResource("9_rp667"), ExtResource("10_x6via")])
 start_data = SubResource("Resource_ic8tq")
 magician = NodePath("TowerSprite/Alchemist")
 tower_name = "炼金术士"
@@ -653,7 +660,6 @@ tower_level = 4
 tower_value = 800
 start_tower_range = 380
 tower_skill_levels = Array[int]([0, 0])
-linked_areas = [NodePath("TowerArea"), NodePath("Skill2ConditionArea")]
 
 [node name="TowerButton" parent="." index="2"]
 offset_left = -53.0
@@ -685,27 +691,16 @@ offset_right = 138.749
 offset_bottom = -55.0002
 texture_normal = SubResource("AtlasTexture_eu6qe")
 texture_pressed = SubResource("AtlasTexture_eu6qe")
-texture_hover = ExtResource("10_jrudb")
+texture_hover = ExtResource("18_cjdos")
 texture_disabled = SubResource("AtlasTexture_buanl")
 linked_tower = NodePath("../../..")
-skill_name = "兴奋剂"
+skill_name = "粘稠液体"
 skill_id = 1
-skill_prices = Array[int]([200, 160, 160])
-skill_intro = PackedStringArray("提高射程范围内所有我方单位15%攻击力，移动速度增加60%，攻击间隔减少20%，每秒恢复自身5点生命，持续10秒。", "提高射程范围内所有我方单位20%攻击力，移动速度增加60%，攻击间隔减少20%，每秒恢复自身10点生命，持续10秒。", "提高射程范围内所有我方单位25%攻击力，移动速度增加60%，攻击间隔减少20%，每秒恢复自身15点生命，持续10秒。")
-skill_words = "诸君，我好兴奋口牙！"
+skill_prices = Array[int]([120, 80])
+skill_intro = PackedStringArray("炼金术士生成的液体对敌人的减速效果提高至50%，并额外对敌人每0.2秒造成5点魔法伤害。", "炼金术士生成的液体对敌人的减速效果提高至60%，并额外对敌人每0.2秒造成6点魔法伤害。")
+skill_words = "到此为止吧！"
 
-[node name="Skill2ConditionArea" type="Area2D" parent="." index="7"]
-z_index = 100
-scale = Vector2(2.8, 2.8)
-collision_layer = 0
-collision_mask = 61464
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Skill2ConditionArea" index="0"]
-scale = Vector2(1, 0.7)
-shape = SubResource("CircleShape2D_n3ykp")
-debug_color = Color(0, 0.6, 0.701961, 0)
-
-[node name="TowerSprite" parent="." index="8"]
+[node name="TowerSprite" parent="." index="7"]
 position = Vector2(0, 21)
 sprite_frames = SubResource("SpriteFrames_ect83")
 offset = Vector2(-5, -91)
@@ -745,11 +740,6 @@ libraries = {
 [node name="SummonMarker" type="Marker2D" parent="TowerSprite/Alchemist" index="2"]
 position = Vector2(15, 6)
 
-[node name="Skill1Timer" type="Timer" parent="." index="10"]
+[node name="Skill1Timer" type="Timer" parent="." index="9"]
 wait_time = 21.0
 one_shot = true
-
-[node name="Skill2DotTimer" type="Timer" parent="." index="11"]
-wait_time = 0.1
-
-[connection signal="timeout" from="Skill2DotTimer" to="." method="_on_skill_2_dot_timer_timeout"]

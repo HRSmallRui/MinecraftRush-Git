@@ -1,10 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://58wvbpt3jvtd"]
+[gd_scene load_steps=16 format=3 uid="uid://58wvbpt3jvtd"]
 
 [ext_resource type="Script" path="res://Scripts/Skills/alchemist_liquid.gd" id="1_audfn"]
 [ext_resource type="Texture2D" uid="uid://hj4liqyndlgs" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-3/Alchemist_quid.png" id="1_kjiy0"]
 [ext_resource type="AudioStream" uid="uid://bsn52x18c1tkf" path="res://Assets/Sounds/FXs/Enemies/史莱姆/史莱姆攻击1.wav" id="2_ntpde"]
 [ext_resource type="AudioStream" uid="uid://sehnxvlavjwu" path="res://Assets/Sounds/FXs/Enemies/史莱姆/大型史莱姆1.wav" id="3_upmdf"]
 [ext_resource type="AudioStream" uid="uid://d8sn0pw5ay13" path="res://Assets/Sounds/FXs/Enemies/史莱姆/大型史莱姆4.wav" id="4_alus2"]
+[ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="5_lx5w8"]
+[ext_resource type="Script" path="res://Scripts/Buffs/property_buff_block.gd" id="6_8kkh6"]
+[ext_resource type="Resource" uid="uid://dmpgvfpqkbgu2" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_damage_lv0.tres" id="6_ty8b1"]
+[ext_resource type="Resource" uid="uid://bpm625r7wf0q1" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_damage_lv1.tres" id="7_mbnki"]
+[ext_resource type="Resource" uid="uid://dp2v4o662oydi" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_damage_lv2.tres" id="8_uja6g"]
+[ext_resource type="Resource" uid="uid://cgge73q2qhtxl" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_block_lv0.tres" id="10_ky5hx"]
+[ext_resource type="Resource" uid="uid://b1sefdh2xv6wf" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_block_lv1.tres" id="11_avow2"]
+[ext_resource type="Resource" uid="uid://meeqn5qldht2" path="res://Library/TowerConfigs/MagicTowers/AlchemistTower/liquid_block_lv2.tres" id="12_0hw0w"]
+[ext_resource type="PackedScene" uid="uid://fg15kvvpd81a" path="res://Scenes/Buffs/TowerBuffs/alchemist_speed_debuff.tscn" id="13_1dray"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uxqxs"]
 radius = 73.9444
@@ -15,6 +24,9 @@ collision_layer = 0
 collision_mask = 32
 script = ExtResource("1_audfn")
 appear_audio_list = Array[AudioStream]([ExtResource("2_ntpde"), ExtResource("3_upmdf"), ExtResource("4_alus2")])
+damage_list = Array[ExtResource("5_lx5w8")]([ExtResource("6_ty8b1"), ExtResource("7_mbnki"), ExtResource("8_uja6g")])
+speed_low_property_block_list = Array[ExtResource("6_8kkh6")]([ExtResource("10_ky5hx"), ExtResource("11_avow2"), ExtResource("12_0hw0w")])
+speed_buff_scene = ExtResource("13_1dray")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.7)

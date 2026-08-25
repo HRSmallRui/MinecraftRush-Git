@@ -1,6 +1,9 @@
-extends Area2D
+extends SkillConditionArea2D
 
 @export var appear_audio_list: Array[AudioStream]
+@export var damage_list: Array[IntSaver]
+@export var speed_low_property_block_list: Array[PropertyBuffBlock]
+@export var speed_buff_scene: PackedScene
 
 @onready var alchemist_liquid: Sprite2D = $AlchemistLiquid
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -37,7 +40,9 @@ func _on_free_timer_timeout() -> void:
 func _on_shot_timer_timeout() -> void:
 	for body in get_overlapping_bodies():
 		var enemy: Enemy = body.owner
-		var speed_debuff: PropertyBuff = preload("res://Scenes/Buffs/TowerBuffs/alchemist_speed_debuff.tscn").instantiate()
+		var speed_debuff: PropertyBuff = speed_buff_scene.instantiate()
+		speed_debuff.buff_blocks[0] = speed_low_property_block_list[skill_level]
 		enemy.buffs.add_child(speed_debuff)
-		enemy.take_damage(4,DataProcess.DamageType.MagicDamage,0,false,null,false,false,)
+		var damage: int = damage_list[skill_level].saving_int_value
+		enemy.take_damage(damage,DataProcess.DamageType.MagicDamage,0,false,null,false,false,)
 	pass # Replace with function body.
