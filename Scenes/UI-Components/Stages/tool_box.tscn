@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b45c342rsgrth"]
+[gd_scene load_steps=52 format=3 uid="uid://b45c342rsgrth"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c2vqrr0rtde87" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-2.png" id="9_cxygt"]
 [ext_resource type="Texture2D" uid="uid://cmwrttkonwn38" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-3.png" id="10_na72f"]
 [ext_resource type="Texture2D" uid="uid://dqvw07sgrx8hk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV1.png" id="12_80q8a"]
+[ext_resource type="Texture2D" uid="uid://cefkpkmf0uyhl" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-Skeleton.png" id="12_sfefp"]
 [ext_resource type="Texture2D" uid="uid://csq18y1lubwfk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV2.png" id="13_7s7j5"]
+[ext_resource type="Texture2D" uid="uid://bphx3v5hlhysp" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-Redstone.png" id="13_vncld"]
 [ext_resource type="Texture2D" uid="uid://dkhx0btjgntjs" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV3.png" id="14_ymwxl"]
 [ext_resource type="Texture2D" uid="uid://b0f2bqcdkqd3h" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-1.png" id="15_jyrpe"]
 [ext_resource type="Texture2D" uid="uid://dbc8yt7yg5kun" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-2.png" id="16_pfntd"]
@@ -25,8 +27,12 @@
 [ext_resource type="Texture2D" uid="uid://dsars5pjvb1gy" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV1.png" id="18_tchtl"]
 [ext_resource type="Texture2D" uid="uid://b2wk5eh0vfvhy" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV2.png" id="19_tchip"]
 [ext_resource type="Texture2D" uid="uid://cqmb1orddt8qw" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV3.png" id="20_b57ds"]
+[ext_resource type="Texture2D" uid="uid://ctlw707u56y63" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-Zombie.png" id="20_ypift"]
+[ext_resource type="Texture2D" uid="uid://cusbjqxj56tlm" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-ZombieBerserker.png" id="21_8e401"]
 [ext_resource type="Texture2D" uid="uid://dpe8pm55dhat4" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-1.png" id="21_d8cth"]
+[ext_resource type="Texture2D" uid="uid://ek72e8m4tfqt" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-Skeleton.png" id="22_56mcd"]
 [ext_resource type="Texture2D" uid="uid://d2dl76w8qg4pw" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-2.png" id="22_vuxxb"]
+[ext_resource type="Texture2D" uid="uid://ccfj13ifp7tn" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-VillagerKnight.png" id="23_1qoxy"]
 [ext_resource type="Texture2D" uid="uid://dgwcn8f1vwt0r" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-3.png" id="23_xyt3k"]
 [ext_resource type="Texture2D" uid="uid://c3huyh0i8go1w" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV1.png" id="24_02bkc"]
 [ext_resource type="Texture2D" uid="uid://1qi3ukufue70" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV2.png" id="25_mngln"]
@@ -246,6 +252,24 @@ tower_texture = ExtResource("10_na72f")
 tower_skill_limit_list = Array[int]([3, 3])
 tower_skill_name_list = Array[String](["牢笼", "变节者"])
 
+[node name="TowerButton8" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/skeleton_archer_tower.tscn"
+tower_name = "骷髅狙击塔"
+tower_texture = ExtResource("12_sfefp")
+tower_skill_limit_list = Array[int]([3, 1])
+tower_skill_name_list = Array[String](["猩红狙击箭", "穿刺"])
+
+[node name="TowerButton9" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/red_stone_archer_tower.tscn"
+tower_name = "脉冲发射台"
+tower_texture = ExtResource("13_vncld")
+tower_skill_limit_list = Array[int]([2, 3])
+tower_skill_name_list = Array[String](["破甲箭头", "脉冲轰炸"])
+
 [node name="BarrackGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
 layout_mode = 2
@@ -311,6 +335,42 @@ tower_name = "医疗护卫队"
 tower_texture = ExtResource("17_6hp4k")
 tower_skill_limit_list = Array[int]([3, 3, 3])
 tower_skill_name_list = Array[String](["感染", "毒瓶", "急救光环"])
+
+[node name="TowerButton8" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_zombie.tscn"
+tower_name = "尸国正规军兵营"
+tower_texture = ExtResource("20_ypift")
+tower_skill_limit_list = Array[int]([3, 2, 3])
+tower_skill_name_list = Array[String](["嗜血", "冶炼工艺", "玉碎"])
+
+[node name="TowerButton9" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/zombie_berserker_barrack.tscn"
+tower_name = "尸国斗剑士营地"
+tower_texture = ExtResource("21_8e401")
+tower_skill_limit_list = Array[int]([3, 2, 3])
+tower_skill_name_list = Array[String](["震荡剑法", "血月剑法", "寒铁剑法"])
+
+[node name="TowerButton10" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/skeleton_barrack.tscn"
+tower_name = "荆棘殿堂"
+tower_texture = ExtResource("22_56mcd")
+tower_skill_limit_list = Array[int]([3, 3, 3])
+tower_skill_name_list = Array[String](["强化附魔", "猩红狙击", "雨过天晴"])
+
+[node name="TowerButton11" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/villager_knight_barrack.tscn"
+tower_name = "骑士营地"
+tower_texture = ExtResource("23_1qoxy")
+tower_skill_limit_list = Array[int]([2, 3, 3])
+tower_skill_name_list = Array[String](["升级模板", "锋利附魔", "刀刃尖刺"])
 
 [node name="MagicGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
@@ -583,27 +643,27 @@ grow_vertical = 2
 texture = ExtResource("5_y0s8j")
 
 [node name="ConfirmButton" parent="ConfirmLayer" instance=ExtResource("35_u12jq")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -168.0
-offset_right = 363.0
-offset_bottom = -25.0
-grow_vertical = 0
-button_title = "确认部署"
-
-[node name="CancelButton" parent="ConfirmLayer" instance=ExtResource("35_u12jq")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -366.0
-offset_top = -168.0
-offset_right = -35.0
-offset_bottom = -25.0
+offset_left = -374.0
+offset_top = -192.0
+offset_right = -43.0
+offset_bottom = -49.0
 grow_horizontal = 0
+grow_vertical = 0
+button_title = "确认部署"
+
+[node name="CancelButton" parent="ConfirmLayer" instance=ExtResource("35_u12jq")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -170.0
+offset_right = 365.0
+offset_bottom = -27.0
 grow_vertical = 0
 button_title = "取消"
 
