@@ -1,0 +1,298 @@
+[gd_scene load_steps=18 format=3 uid="uid://cwbhngqcdhrhr"]
+
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/digital_fighting_end_ui.gd" id="1_qgvqp"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="2_4cl3n"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_q1cbj"]
+[ext_resource type="Texture2D" uid="uid://dek2nsm8le6t0" path="res://Assets/Images/UI/DataUIs/wave.res" id="4_fcd1m"]
+[ext_resource type="AudioStream" uid="uid://dcqofd60cp0rt" path="res://Assets/Sounds/FXs/UIs/win.wav" id="5_15jfe"]
+[ext_resource type="Texture2D" uid="uid://b3ojqxpqkmik3" path="res://Assets/Images/UI/pause_restart.png" id="6_v74db"]
+[ext_resource type="Texture2D" uid="uid://dsggbw35gcnym" path="res://Assets/Images/UI/pause_restart_hover.png" id="7_1ibky"]
+[ext_resource type="Texture2D" uid="uid://c4se1d1f0j23w" path="res://Assets/Images/UI/pause_continue.png" id="8_8tr7g"]
+[ext_resource type="Texture2D" uid="uid://dmicwrk5uv4w6" path="res://Assets/Images/UI/pause_continue_hover.png" id="9_0umm2"]
+
+[sub_resource type="Animation" id="Animation_nov22"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RestartButton:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(803, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FinishButton:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(803, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button/Panel:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2mkox"]
+resource_name = "entry"
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RestartButton:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1133, -0.25, 0, 0.25, 0, 1133, -0.25, 0, 0.25, 0, 803, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.7)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FinishButton:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1133, -0.25, 0, 0.25, 0, 1133, -0.25, 0, 0.25, 0, 803, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button/Panel:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.7)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lf2dy"]
+_data = {
+"RESET": SubResource("Animation_nov22"),
+"entry": SubResource("Animation_2mkox")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1q68"]
+bg_color = Color(0, 0, 0, 0.529412)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f2qs"]
+atlas = ExtResource("6_v74db")
+region = Rect2(30, 17, 69, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ik0w"]
+atlas = ExtResource("7_1ibky")
+region = Rect2(25, 12, 79, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhfmb"]
+atlas = ExtResource("8_8tr7g")
+region = Rect2(35, 23, 70, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08vh7"]
+atlas = ExtResource("9_0umm2")
+region = Rect2(30, 17, 80, 94)
+
+[node name="DigitalFightingEndUI" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_qgvqp")
+back_path = "res://Scenes/GameBased/extra_contents.tscn"
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.678431)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lf2dy")
+}
+autoplay = "entry"
+
+[node name="Button" type="Sprite2D" parent="."]
+position = Vector2(969, 389.5)
+texture = ExtResource("2_4cl3n")
+region_enabled = true
+region_rect = Rect2(98, 192, 331, 143)
+
+[node name="Label" type="Label" parent="Button"]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.5
+offset_top = -134.5
+offset_right = -6.5
+offset_bottom = -8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_q1cbj")
+theme_override_font_sizes/font_size = 64
+text = "结束"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoseHead" type="Sprite2D" parent="Button"]
+position = Vector2(-9, -149)
+scale = Vector2(3.42264, 3.42264)
+texture = ExtResource("4_fcd1m")
+
+[node name="Panel" type="Panel" parent="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -607.5
+offset_top = 28.5
+offset_right = 276.5
+offset_bottom = 287.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u1q68")
+
+[node name="EndLabel" type="Label" parent="Button/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 16.0
+offset_right = 887.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.481433, 0.481433)
+theme_override_constants/line_spacing = 40
+theme_override_fonts/font = ExtResource("3_q1cbj")
+theme_override_font_sizes/font_size = 64
+text = "敌人总数：100
+杀敌数量：100
+通过数量：100
+总输出伤害：100"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_15jfe")
+autoplay = true
+
+[node name="RestartButton" type="TextureButton" parent="."]
+offset_left = 717.0
+offset_top = 803.0
+offset_right = 786.0
+offset_bottom = 884.0
+scale = Vector2(1.55599, 1.55599)
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_8f2qs")
+texture_pressed = SubResource("AtlasTexture_8f2qs")
+texture_hover = SubResource("AtlasTexture_7ik0w")
+stretch_mode = 3
+
+[node name="FinishButton" type="TextureButton" parent="."]
+offset_left = 1051.0
+offset_top = 803.0
+offset_right = 1121.0
+offset_bottom = 884.0
+scale = Vector2(1.55599, 1.55599)
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_qhfmb")
+texture_pressed = SubResource("AtlasTexture_qhfmb")
+texture_hover = SubResource("AtlasTexture_08vh7")
+stretch_mode = 3
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]

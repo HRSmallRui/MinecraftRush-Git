@@ -115,6 +115,7 @@ func update_enemy_points():
 	for enemy in enemy_list:
 		var t: Transform2D = Transform2D()
 		if !enemy.visible: continue
+		if enemy == null: continue
 		var point_position: Vector2 = enemy.global_position - Stage.instance.stage_based_position
 		if point_position.x < 0 or point_position.y < 0: continue
 		if point_position.x > map_texture.size.x or point_position.y > map_texture.size.y: continue
@@ -129,6 +130,7 @@ func update_ally_points():
 	var idx: int = 0
 	for ally in ally_list:
 		var t: Transform2D = Transform2D()
+		if ally == null: continue
 		var point_position: Vector2 = ally.global_position - Stage.instance.stage_based_position
 		if point_position.x < 0 or point_position.y < 0: continue
 		if point_position.x > map_texture.size.x or point_position.y > map_texture.size.y: continue

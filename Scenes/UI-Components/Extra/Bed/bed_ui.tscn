@@ -1,7 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://66ipi8u04xnk"]
+[gd_scene load_steps=40 format=3 uid="uid://66ipi8u04xnk"]
 
-[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/big_map_ui.gd" id="1_drxm4"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/bed_ui.gd" id="1_ya1wa"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="2_0wcd2"]
+[ext_resource type="Texture2D" uid="uid://cvc5pqffrv7f" path="res://Assets/Images/UI/HeroHall/HeadTexs/Steve.png" id="2_uh2x2"]
+[ext_resource type="Texture2D" uid="uid://b65o81wdbsw7l" path="res://Assets/Images/UI/HeroHall/HeadTexs/Fuchen.png" id="3_exkjp"]
+[ext_resource type="Texture2D" uid="uid://blkv4e7adri14" path="res://Assets/Images/UI/HeroHall/HeadTexs/艾利克斯.png" id="4_sacur"]
+[ext_resource type="Texture2D" uid="uid://lml6a7lv7geb" path="res://Assets/Images/UI/HeroHall/HeadTexs/塔尔辛.png" id="5_a4ilj"]
+[ext_resource type="Texture2D" uid="uid://byxg4yikn8enj" path="res://Assets/Images/UI/HeroHall/HeadTexs/鲁伯特.png" id="6_01urd"]
+[ext_resource type="Texture2D" uid="uid://dyxtitvr2ciw2" path="res://Assets/Images/UI/HeroHall/HeadTexs/空树林.png" id="7_7h8ow"]
+[ext_resource type="Texture2D" uid="uid://nee1x705546" path="res://Assets/Images/UI/HeroHall/HeadTexs/金钻.png" id="8_4unyy"]
+[ext_resource type="Texture2D" uid="uid://cwi5sukxylub0" path="res://Assets/Images/UI/HeroHall/HeadTexs/塞勒姆.png" id="9_5oneg"]
+[ext_resource type="Texture2D" uid="uid://dt5shjj5mtblw" path="res://Assets/Images/UI/HeroHall/HeadTexs/乔尼.png" id="10_hxvwc"]
+[ext_resource type="Texture2D" uid="uid://dacm8l0x22p6q" path="res://Assets/Images/UI/HeroHall/HeadTexs/Mike.png" id="11_m0k18"]
+[ext_resource type="Texture2D" uid="uid://buvpgsqxhku2p" path="res://Assets/Images/UI/HeroHall/HeadTexs/蔷薇.png" id="12_4a8ma"]
+[ext_resource type="Texture2D" uid="uid://c5150r63utidg" path="res://Assets/Images/UI/HeroHall/HeadTexs/史蒂夫SP.png" id="13_cbuk7"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/hero_select_button.gd" id="15_mgeqs"]
+[ext_resource type="Texture2D" uid="uid://bf1biha8us8aj" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage2/DigitalFightingStage2-view.png" id="15_nw7tk"]
+[ext_resource type="AudioStream" uid="uid://i0to3f5pe1rc" path="res://Assets/Sounds/FXs/UIs/MC_Click.mp3" id="16_i1wde"]
+[ext_resource type="Texture2D" uid="uid://dn6osr6o4hg84" path="res://Assets/Images/UI/checkbox_select.png" id="16_sh51b"]
+[ext_resource type="Texture2D" uid="uid://dp1qx85r5tt8a" path="res://Assets/Images/UI/checkbox.png" id="17_te5ir"]
+[ext_resource type="PackedScene" uid="uid://d3dbyviyakdgp" path="res://Scenes/UI-Components/Extra/Bed/upgrade_button.tscn" id="18_4s4gw"]
+[ext_resource type="Texture2D" uid="uid://1gt3uw1ogmkw" path="res://Assets/Images/UI/Upgrade/Barrack.png" id="19_t1fjc"]
+[ext_resource type="Texture2D" uid="uid://lurtbin8e3pm" path="res://Assets/Images/UI/Upgrade/Magic.png" id="20_u0mtr"]
+[ext_resource type="Texture2D" uid="uid://dwv4y4trbacj8" path="res://Assets/Images/UI/Upgrade/bombard.png" id="21_2wo7q"]
+[ext_resource type="Texture2D" uid="uid://cv2y7jv8s2tj" path="res://Assets/Images/UI/Upgrade/Firerain.png" id="22_uxltf"]
+[ext_resource type="Texture2D" uid="uid://dqrq6oovwd4k" path="res://Assets/Images/UI/Upgrade/Reinforce.png" id="23_kehq2"]
+[ext_resource type="Texture2D" uid="uid://cc1jewnmvveus" path="res://Assets/Images/Stages/DigitalFightingStages/DigitalFightingStage1/DigitalFightingStage1-view.png" id="24_p2s62"]
+[ext_resource type="Texture2D" uid="uid://dmicwrk5uv4w6" path="res://Assets/Images/UI/pause_continue_hover.png" id="26_3i8xt"]
+[ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="28_wt5ed"]
+[ext_resource type="PackedScene" uid="uid://dxl7aht8d3o6i" path="res://Scenes/UI-Components/Extra/Bed/enemy_summon_editor.tscn" id="29_056j3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxoh8"]
 bg_color = Color(0, 0, 0, 0.513726)
@@ -52,6 +79,18 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_psxqy"]
+atlas = ExtResource("16_sh51b")
+region = Rect2(16, 18, 65, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydmu7"]
+atlas = ExtResource("17_te5ir")
+region = Rect2(16, 18, 65, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u0n6"]
+atlas = ExtResource("26_3i8xt")
+region = Rect2(30, 17, 80, 94)
+
 [node name="BedUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -59,7 +98,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_drxm4")
+script = ExtResource("1_ya1wa")
+hero_head_texture_list = Array[Texture2D]([ExtResource("2_uh2x2"), ExtResource("3_exkjp"), ExtResource("4_sacur"), ExtResource("5_a4ilj"), ExtResource("6_01urd"), ExtResource("7_7h8ow"), ExtResource("8_4unyy"), ExtResource("9_5oneg"), ExtResource("10_hxvwc"), ExtResource("11_m0k18"), ExtResource("12_4a8ma"), ExtResource("13_cbuk7")])
+stage_view_texture_list = Array[Texture2D]([ExtResource("24_p2s62"), ExtResource("15_nw7tk")])
+stage_path_list = Array[String](["res://Scenes/Stages/DigitalFightingStages/digital_fighting_stage_1.tscn", "res://Scenes/Stages/DigitalFightingStages/digital_fighting_stage_2.tscn"])
+enemy_summon_editor_scene = ExtResource("29_056j3")
+metadata/_edit_vertical_guides_ = [599.0]
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.627451)
@@ -93,27 +137,6 @@ theme_override_font_sizes/font_size = 72
 text = "幻想实验室"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-custom_minimum_size = Vector2(1602, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -801.0
-offset_top = 176.0
-offset_right = 801.0
-offset_bottom = 916.0
-grow_horizontal = 2
-theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("2_0wcd2")
-theme_override_font_sizes/font_size = 48
-text = "夜深人静，你在角落的床边坐下，闭上眼。
- 
-恍惚间，战场浮现，无数不可能相遇的生灵在梦境中对撞——如果那场战斗中如此操纵，会不会结局会有所不同。胜负无关，只为见证荒诞的奇迹，理解最疯狂的猜想。
- 
-实验尚未开启，奇观仍在梦中……"
-autowrap_mode = 3
-
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1710.0
@@ -129,4 +152,332 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
 text = "返回"
 
+[node name="EnemyEditorButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 669.0
+offset_right = 593.0
+offset_bottom = 815.0
+scale = Vector2(0.839596, 0.839596)
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/hover = SubResource("StyleBoxFlat_fcp1e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
+text = "编辑刷怪"
+
+[node name="DifficultyButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 669.0
+offset_right = 1067.0
+offset_bottom = 815.0
+scale = Vector2(0.839596, 0.839596)
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_fcp1e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5uyfa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cfmwp")
+text = "难度：普通"
+
+[node name="UpgradeUI" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1166.0
+offset_top = 303.0
+offset_right = 1166.0
+offset_bottom = 303.0
+scale = Vector2(1.36404, 1.36404)
+
+[node name="GridContainer" type="GridContainer" parent="UpgradeUI"]
+layout_mode = 0
+offset_right = 398.0
+offset_bottom = 247.0
+theme_override_constants/h_separation = 55
+theme_override_constants/v_separation = 55
+columns = 3
+
+[node name="UpgradeButton1" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+bed_ui = NodePath("../../..")
+
+[node name="UpgradeButton2" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 1
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("19_t1fjc")
+
+[node name="UpgradeButton3" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 2
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("20_u0mtr")
+
+[node name="UpgradeButton4" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 3
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("21_2wo7q")
+
+[node name="UpgradeButton5" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 4
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("22_uxltf")
+
+[node name="UpgradeButton6" parent="UpgradeUI/GridContainer" node_paths=PackedStringArray("bed_ui") instance=ExtResource("18_4s4gw")]
+layout_mode = 2
+upgrade_type = 5
+bed_ui = NodePath("../../..")
+upgrade_texture = ExtResource("23_kehq2")
+
+[node name="Label" type="Label" parent="UpgradeUI"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 48
+text = "科技升级"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectHeroUI" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1354.0
+offset_top = 702.0
+offset_right = 1354.0
+offset_bottom = 702.0
+
+[node name="HeroTexture" type="TextureButton" parent="SelectHeroUI"]
+layout_mode = 0
+offset_right = 526.0
+offset_bottom = 526.0
+scale = Vector2(0.388307, 0.388307)
+focus_mode = 0
+texture_normal = ExtResource("2_uh2x2")
+
+[node name="DisableHero" type="CheckBox" parent="SelectHeroUI"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = 220.0
+offset_right = 5.0
+offset_bottom = 293.0
+scale = Vector2(1.35066, 1.35066)
+focus_mode = 0
+theme_override_icons/checked = SubResource("AtlasTexture_psxqy")
+theme_override_icons/unchecked = SubResource("AtlasTexture_ydmu7")
+button_pressed = true
+
+[node name="Label" type="Label" parent="SelectHeroUI"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 230.0
+offset_right = 234.0
+offset_bottom = 314.0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 48
+text = "禁用英雄"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DisableHeroButton" type="Button" parent="SelectHeroUI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -69.0
+offset_top = 218.0
+offset_right = 248.0
+offset_bottom = 323.0
+focus_mode = 0
+
+[node name="HeroScrollContainer" type="ScrollContainer" parent="SelectHeroUI"]
+visible = false
+layout_mode = 0
+offset_left = -209.0
+offset_top = -505.0
+offset_right = 335.0
+offset_bottom = 1679.0
+scale = Vector2(0.387371, 0.387371)
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SelectHeroUI/HeroScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="HeroSelectButton0" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("2_uh2x2")
+script = ExtResource("15_mgeqs")
+
+[node name="HeroSelectButton1" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("3_exkjp")
+script = ExtResource("15_mgeqs")
+hero_id = 1
+
+[node name="HeroSelectButton2" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("4_sacur")
+script = ExtResource("15_mgeqs")
+hero_id = 2
+
+[node name="HeroSelectButton3" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("5_a4ilj")
+script = ExtResource("15_mgeqs")
+hero_id = 3
+
+[node name="HeroSelectButton4" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("6_01urd")
+script = ExtResource("15_mgeqs")
+hero_id = 4
+
+[node name="HeroSelectButton7" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("9_5oneg")
+script = ExtResource("15_mgeqs")
+hero_id = 7
+
+[node name="HeroSelectButton8" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("10_hxvwc")
+script = ExtResource("15_mgeqs")
+hero_id = 8
+
+[node name="HeroSelectButton10" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("12_4a8ma")
+script = ExtResource("15_mgeqs")
+hero_id = 10
+
+[node name="HeroSelectButton5" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("7_7h8ow")
+script = ExtResource("15_mgeqs")
+hero_id = 5
+
+[node name="HeroSelectButton6" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("8_4unyy")
+script = ExtResource("15_mgeqs")
+hero_id = 6
+
+[node name="HeroSelectButton11" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("13_cbuk7")
+script = ExtResource("15_mgeqs")
+hero_id = 11
+
+[node name="HeroSelectButton9" type="TextureButton" parent="SelectHeroUI/HeroScrollContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+texture_normal = ExtResource("11_m0k18")
+script = ExtResource("15_mgeqs")
+hero_id = 9
+
+[node name="StageSelectUI" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 358.0
+offset_top = 329.0
+offset_right = 358.0
+offset_bottom = 329.0
+
+[node name="StageTexture" type="TextureRect" parent="StageSelectUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("24_p2s62")
+
+[node name="Label" type="Label" parent="StageSelectUI"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -100.0
+offset_right = 483.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("2_0wcd2")
+theme_override_font_sizes/font_size = 48
+text = "地图选择"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="StageSelectUI"]
+layout_mode = 0
+offset_left = -41.0
+offset_top = 31.0
+offset_right = 39.0
+offset_bottom = 125.0
+scale = Vector2(-2.2, 2.2)
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_3u0n6")
+
+[node name="RightButton" type="TextureButton" parent="StageSelectUI"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 31.0
+offset_right = 593.0
+offset_bottom = 125.0
+scale = Vector2(2.2, 2.2)
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_3u0n6")
+
+[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_i1wde")
+volume_db = 2.0
+bus = &"Sound"
+
+[node name="NormalButton" parent="." instance=ExtResource("28_wt5ed")]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 855.0
+offset_right = 767.0
+offset_bottom = 998.0
+button_title = "进入地图"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="EnemyEditorButton" to="." method="_on_enemy_editor_button_pressed"]
+[connection signal="pressed" from="DifficultyButton" to="." method="_on_difficulty_button_pressed"]
+[connection signal="pressed" from="SelectHeroUI/HeroTexture" to="." method="_on_hero_texture_pressed"]
+[connection signal="pressed" from="SelectHeroUI/DisableHeroButton" to="." method="_on_disable_hero_button_pressed"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton0" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton1" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton2" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton3" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton4" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton7" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton8" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton10" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton5" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton6" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton11" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="hero_select" from="SelectHeroUI/HeroScrollContainer/VBoxContainer/HeroSelectButton9" to="." method="_on_hero_select_button_hero_select"]
+[connection signal="pressed" from="StageSelectUI/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="StageSelectUI/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="NormalButton" to="." method="_on_normal_button_pressed"]

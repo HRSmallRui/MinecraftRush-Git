@@ -2,6 +2,8 @@ extends Node
 
 signal hero_loading_done
 
+@export_file("*.tscn") var hero_scene_path_list: Array[String]
+
 var hero_scene: PackedScene
 var loading_path: String
 var progress: Array

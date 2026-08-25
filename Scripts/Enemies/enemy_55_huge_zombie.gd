@@ -161,7 +161,8 @@ func die(explosion: bool = false):
 		false_die()
 		return
 	super(explosion)
-	Stage.instance.win()
+	if Stage.instance.stage_mode != Stage.instance.StageMode.DigitalFighting:
+		Stage.instance.win()
 	Achievement.achieve_complete("Boss2Dead")
 	pass
 

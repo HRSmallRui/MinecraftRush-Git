@@ -1,0 +1,166 @@
+[gd_scene load_steps=9 format=3 uid="uid://sm8eojs28d73"]
+
+[ext_resource type="Script" path="res://Scripts/UI-Components/Extra/enemy_summon_block_editor.gd" id="1_bxngf"]
+[ext_resource type="Texture2D" uid="uid://cs0pc8baxwnxu" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国杂兵.png" id="2_pyulj"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_dhc85"]
+[ext_resource type="FontFile" uid="uid://drfv8ak22g1rm" path="res://Assets/Fonts/simhei.ttf" id="4_1kcts"]
+[ext_resource type="Texture2D" uid="uid://cikybo262yisy" path="res://Assets/Images/UI/delete_no.png" id="5_p6tb3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fpuv"]
+bg_color = Color(0, 0, 0, 0.427451)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2vnx"]
+bg_color = Color(0, 0, 0, 0.572549)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rio22"]
+bg_color = Color(0, 0, 0, 0.74902)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="EnemySummonBlockEditor" type="Panel"]
+custom_minimum_size = Vector2(502, 268)
+offset_left = 110.0
+offset_top = 104.0
+offset_right = 612.0
+offset_bottom = 372.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_7fpuv")
+script = ExtResource("1_bxngf")
+
+[node name="PopupButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 30.0
+offset_right = 474.0
+offset_bottom = 170.0
+focus_mode = 0
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2vnx")
+
+[node name="EnemyTextureRect" type="TextureRect" parent="PopupButton"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 143.0
+offset_bottom = 127.0
+texture = ExtResource("2_pyulj")
+
+[node name="EnemyNameLabel" type="Label" parent="PopupButton"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_right = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_dhc85")
+theme_override_font_sizes/font_size = 24
+text = "尸国杂兵"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEditTimeInterval" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 180.0
+offset_right = 467.063
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("4_1kcts")
+theme_override_font_sizes/font_size = 36
+text = "0"
+alignment = 2
+virtual_keyboard_type = 2
+select_all_on_focus = true
+
+[node name="LineEditSummonCount" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 180.0
+offset_right = 254.063
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("4_1kcts")
+theme_override_font_sizes/font_size = 36
+text = "0"
+alignment = 2
+virtual_keyboard_type = 2
+select_all_on_focus = true
+
+[node name="IntervalTimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = -74.0
+offset_right = 164.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.726577, 0.726577)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_dhc85")
+theme_override_font_sizes/font_size = 24
+text = "间隔时间/秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SummonCountLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -71.0
+offset_right = -65.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.726577, 0.726577)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_dhc85")
+theme_override_font_sizes/font_size = 24
+text = "生成数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrashButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 52.0
+offset_right = 105.0
+offset_bottom = 144.0
+scale = Vector2(0.358203, 0.358203)
+focus_mode = 0
+mouse_filter = 1
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rio22")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2vnx")
+icon = ExtResource("5_p6tb3")
+
+[connection signal="pressed" from="PopupButton" to="." method="_on_popup_button_pressed"]
+[connection signal="focus_entered" from="LineEditTimeInterval" to="." method="_on_line_edit_time_interval_focus_entered"]
+[connection signal="focus_exited" from="LineEditTimeInterval" to="." method="_on_line_edit_time_interval_focus_exited"]
+[connection signal="text_submitted" from="LineEditTimeInterval" to="." method="_on_line_edit_time_interval_text_submitted"]
+[connection signal="focus_entered" from="LineEditSummonCount" to="." method="_on_line_edit_summon_count_focus_entered"]
+[connection signal="focus_exited" from="LineEditSummonCount" to="." method="_on_line_edit_summon_count_focus_exited"]
+[connection signal="text_submitted" from="LineEditSummonCount" to="." method="_on_line_edit_summon_count_text_submitted"]
+[connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]

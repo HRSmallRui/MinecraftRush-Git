@@ -36,7 +36,7 @@ var level: int
 
 func _ready() -> void:
 	super()
-	level = Stage.instance.stage_sav.hero_sav[9].skill_levels[4]
+	level = Stage.instance.get_hero_skill_level(9)
 	skill_name = skill_name_list[current_element]
 	skill_intro = skill_intro_list[current_element]
 	texture_normal = normal_texture_list[current_element]
