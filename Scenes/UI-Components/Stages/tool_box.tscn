@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b45c342rsgrth"]
+[gd_scene load_steps=48 format=3 uid="uid://b45c342rsgrth"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c2vqrr0rtde87" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-2.png" id="9_cxygt"]
 [ext_resource type="Texture2D" uid="uid://cmwrttkonwn38" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-3.png" id="10_na72f"]
 [ext_resource type="Texture2D" uid="uid://dqvw07sgrx8hk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV1.png" id="12_80q8a"]
+[ext_resource type="Texture2D" uid="uid://cefkpkmf0uyhl" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-Skeleton.png" id="12_sfefp"]
 [ext_resource type="Texture2D" uid="uid://csq18y1lubwfk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV2.png" id="13_7s7j5"]
+[ext_resource type="Texture2D" uid="uid://bphx3v5hlhysp" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-Redstone.png" id="13_vncld"]
 [ext_resource type="Texture2D" uid="uid://dkhx0btjgntjs" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV3.png" id="14_ymwxl"]
 [ext_resource type="Texture2D" uid="uid://b0f2bqcdkqd3h" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-1.png" id="15_jyrpe"]
 [ext_resource type="Texture2D" uid="uid://dbc8yt7yg5kun" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-2.png" id="16_pfntd"]
@@ -245,6 +247,24 @@ tower_name = "劫掠哨塔"
 tower_texture = ExtResource("10_na72f")
 tower_skill_limit_list = Array[int]([3, 3])
 tower_skill_name_list = Array[String](["牢笼", "变节者"])
+
+[node name="TowerButton8" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/skeleton_archer_tower.tscn"
+tower_name = "骷髅狙击塔"
+tower_texture = ExtResource("12_sfefp")
+tower_skill_limit_list = Array[int]([3, 1])
+tower_skill_name_list = Array[String](["猩红狙击箭", "穿刺"])
+
+[node name="TowerButton9" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/red_stone_archer_tower.tscn"
+tower_name = "脉冲发射台"
+tower_texture = ExtResource("13_vncld")
+tower_skill_limit_list = Array[int]([2, 3])
+tower_skill_name_list = Array[String](["破甲箭头", "脉冲轰炸"])
 
 [node name="BarrackGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
