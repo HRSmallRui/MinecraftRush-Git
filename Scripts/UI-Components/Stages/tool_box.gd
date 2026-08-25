@@ -18,9 +18,17 @@ func _on_crafting_table_button_pressed() -> void:
 		animation_player.play_backwards("enter")
 		button_container.hide()
 		#panel_container.hide()
+		Stage.instance.can_control = true
 	else:
 		animation_player.play("enter")
 		button_container.show()
 		panel_container.show()
+		Stage.instance.can_control = false
 	enter_status = ! enter_status
 	pass # Replace with function body.
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("escape") and enter_status:
+		_on_crafting_table_button_pressed()
+	pass
