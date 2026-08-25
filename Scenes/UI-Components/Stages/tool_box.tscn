@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b45c342rsgrth"]
+[gd_scene load_steps=45 format=3 uid="uid://b45c342rsgrth"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
@@ -34,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://mlin2w0mkn7r" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-1.png" id="27_xll5i"]
 [ext_resource type="Texture2D" uid="uid://cf5kaq3nsv3vh" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-2.png" id="28_wtsok"]
 [ext_resource type="Texture2D" uid="uid://ba5vgsv2msfi1" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-3.png" id="29_nq05e"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/confirm_layer.gd" id="35_fygac"]
+[ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="35_u12jq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3uo"]
 bg_color = Color(0.288518, 0.288518, 0.288518, 0.592157)
@@ -63,6 +65,31 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="Animation" id="Animation_yyaha"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1920, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(540, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_8ydef"]
 resource_name = "enter"
 length = 0.5
@@ -90,36 +117,14 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5)
 }
 
-[sub_resource type="Animation" id="Animation_yyaha"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1920, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(540, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wlgij"]
 _data = {
 "RESET": SubResource("Animation_yyaha"),
 "enter": SubResource("Animation_8ydef")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nme8v"]
+bg_color = Color(0, 0, 0, 0.513726)
 
 [node name="ToolBox" type="Control"]
 layout_mode = 3
@@ -495,9 +500,94 @@ libraries = {
 "": SubResource("AnimationLibrary_wlgij")
 }
 
+[node name="ConfirmLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("tool_box_ui")]
+process_mode = 3
+layer = 11
+visible = false
+script = ExtResource("35_fygac")
+tool_box_ui = NodePath("..")
+
+[node name="Panel" type="Panel" parent="ConfirmLayer"]
+self_modulate = Color(1, 1, 1, 0.627451)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nme8v")
+
+[node name="TitleLabel" type="Label" parent="ConfirmLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 29.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_54yeu")
+theme_override_font_sizes/font_size = 64
+text = "编辑防御塔配置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="ConfirmLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 169.0
+offset_bottom = 233.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_54yeu")
+theme_override_font_sizes/font_size = 48
+text = "箭塔"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ConfirmLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -294.0
+offset_right = 167.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_y0s8j")
+
+[node name="ConfirmButton" parent="ConfirmLayer" instance=ExtResource("35_u12jq")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -168.0
+offset_right = 363.0
+offset_bottom = -25.0
+grow_vertical = 0
+button_title = "确认部署"
+
+[node name="CancelButton" parent="ConfirmLayer" instance=ExtResource("35_u12jq")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -366.0
+offset_top = -168.0
+offset_right = -35.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+button_title = "取消"
+
+[connection signal="tower_build_request" from="." to="ConfirmLayer" method="_on_tool_box_tower_build_request"]
 [connection signal="pressed" from="CraftingTableButton" to="." method="_on_crafting_table_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/ArcherButton" to="." method="_on_archer_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/BarrackButton" to="." method="_on_barrack_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/MagicButton" to="." method="_on_magic_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/BombardButton" to="." method="_on_bombard_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/BuyingButton" to="." method="_on_buying_button_pressed"]
+[connection signal="pressed" from="ConfirmLayer/ConfirmButton" to="ConfirmLayer" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ConfirmLayer/CancelButton" to="ConfirmLayer" method="_on_cancel_button_pressed"]

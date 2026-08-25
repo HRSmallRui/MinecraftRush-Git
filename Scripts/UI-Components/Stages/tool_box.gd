@@ -1,6 +1,9 @@
 extends Control
 class_name ToolBoxUI
 
+signal tower_build_request(tower_scene_path: String, tower_name: String,
+tower_texture: Texture2D, tower_skill_limit_list: Array[int], tower_skill_name_list: Array[String])
+
 enum TowerType{
 	Archers,
 	Barracks,
