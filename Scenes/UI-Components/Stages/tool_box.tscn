@@ -1,0 +1,688 @@
+[gd_scene load_steps=52 format=3 uid="uid://b45c342rsgrth"]
+
+[ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
+[ext_resource type="Texture2D" uid="uid://cqx34wicbeheb" path="res://Assets/Images/UI/InformationBar/arrow-id-1.png" id="2_5thd4"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_54yeu"]
+[ext_resource type="Texture2D" uid="uid://bsrop5coppykb" path="res://Assets/Images/UI/InformationBar/barrack-id-1.png" id="3_fnd1t"]
+[ext_resource type="PackedScene" uid="uid://bh6bhoq6syug1" path="res://Scenes/UI-Components/Stages/tower_button.tscn" id="3_jtflk"]
+[ext_resource type="Texture2D" uid="uid://b2v7pohn1ykq7" path="res://Assets/Images/UI/InformationBar/magic-id-1.png" id="4_ffibk"]
+[ext_resource type="Texture2D" uid="uid://ck0uvgh3wplua" path="res://Assets/Images/UI/ToolBoxImages/Based.png" id="4_hpxtw"]
+[ext_resource type="Texture2D" uid="uid://b7ynfqlyos1pt" path="res://Assets/Images/UI/InformationBar/bombard-id-1.png" id="5_qj2ts"]
+[ext_resource type="Texture2D" uid="uid://c2ksujfcqeqa" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV1.png" id="5_y0s8j"]
+[ext_resource type="Texture2D" uid="uid://b2m8fq8dkv52o" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV2.png" id="6_gktow"]
+[ext_resource type="Texture2D" uid="uid://cy32b5g1skhvi" path="res://Assets/Images/UI/InformationBar/reinforce.png" id="7_2pnuy"]
+[ext_resource type="Texture2D" uid="uid://8trtalkt2hqu" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV3.png" id="7_5t45t"]
+[ext_resource type="Texture2D" uid="uid://bjqchecgp5qrl" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-1.png" id="8_ml3aj"]
+[ext_resource type="Texture2D" uid="uid://c2vqrr0rtde87" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-2.png" id="9_cxygt"]
+[ext_resource type="Texture2D" uid="uid://cmwrttkonwn38" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-3.png" id="10_na72f"]
+[ext_resource type="Texture2D" uid="uid://dqvw07sgrx8hk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV1.png" id="12_80q8a"]
+[ext_resource type="Texture2D" uid="uid://cefkpkmf0uyhl" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-Skeleton.png" id="12_sfefp"]
+[ext_resource type="Texture2D" uid="uid://csq18y1lubwfk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV2.png" id="13_7s7j5"]
+[ext_resource type="Texture2D" uid="uid://bphx3v5hlhysp" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-Redstone.png" id="13_vncld"]
+[ext_resource type="Texture2D" uid="uid://dkhx0btjgntjs" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV3.png" id="14_ymwxl"]
+[ext_resource type="Texture2D" uid="uid://b0f2bqcdkqd3h" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-1.png" id="15_jyrpe"]
+[ext_resource type="Texture2D" uid="uid://dbc8yt7yg5kun" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-2.png" id="16_pfntd"]
+[ext_resource type="Texture2D" uid="uid://ycrghl5pn5oc" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-3.png" id="17_6hp4k"]
+[ext_resource type="Texture2D" uid="uid://dsars5pjvb1gy" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV1.png" id="18_tchtl"]
+[ext_resource type="Texture2D" uid="uid://b2wk5eh0vfvhy" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV2.png" id="19_tchip"]
+[ext_resource type="Texture2D" uid="uid://cqmb1orddt8qw" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV3.png" id="20_b57ds"]
+[ext_resource type="Texture2D" uid="uid://ctlw707u56y63" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-Zombie.png" id="20_ypift"]
+[ext_resource type="Texture2D" uid="uid://cusbjqxj56tlm" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-ZombieBerserker.png" id="21_8e401"]
+[ext_resource type="Texture2D" uid="uid://dpe8pm55dhat4" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-1.png" id="21_d8cth"]
+[ext_resource type="Texture2D" uid="uid://ek72e8m4tfqt" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-Skeleton.png" id="22_56mcd"]
+[ext_resource type="Texture2D" uid="uid://d2dl76w8qg4pw" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-2.png" id="22_vuxxb"]
+[ext_resource type="Texture2D" uid="uid://ccfj13ifp7tn" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-VillagerKnight.png" id="23_1qoxy"]
+[ext_resource type="Texture2D" uid="uid://dgwcn8f1vwt0r" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-3.png" id="23_xyt3k"]
+[ext_resource type="Texture2D" uid="uid://c3huyh0i8go1w" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV1.png" id="24_02bkc"]
+[ext_resource type="Texture2D" uid="uid://1qi3ukufue70" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV2.png" id="25_mngln"]
+[ext_resource type="Texture2D" uid="uid://c7gyqwevnax37" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV3.png" id="26_425sc"]
+[ext_resource type="Texture2D" uid="uid://mlin2w0mkn7r" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-1.png" id="27_xll5i"]
+[ext_resource type="Texture2D" uid="uid://cf5kaq3nsv3vh" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-2.png" id="28_wtsok"]
+[ext_resource type="Texture2D" uid="uid://ba5vgsv2msfi1" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-3.png" id="29_nq05e"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Stages/confirm_layer.gd" id="35_fygac"]
+[ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="35_u12jq"]
+[ext_resource type="PackedScene" uid="uid://oxrl5h5eab0o" path="res://Scenes/UI-Components/Stages/skill_slider.tscn" id="36_766hh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3uo"]
+bg_color = Color(0.288518, 0.288518, 0.288518, 0.592157)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snakp"]
+bg_color = Color(0, 0, 0, 0.792157)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai0hg"]
+bg_color = Color(0, 0, 0, 0.592157)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6t0x"]
+bg_color = Color(0, 0, 0, 0.623529)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="Animation" id="Animation_yyaha"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1920, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(540, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8ydef"]
+resource_name = "enter"
+length = 0.5
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1920, -0.25, 0, 0.25, 0, 1229, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(540, -0.25, 0, 0.25, 0, 540, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wlgij"]
+_data = {
+"RESET": SubResource("Animation_yyaha"),
+"enter": SubResource("Animation_8ydef")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nme8v"]
+bg_color = Color(0, 0, 0, 0.513726)
+
+[node name="ToolBox" type="Control"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_6njv5")
+type_text_list = Array[String](["箭塔", "兵营", "法师塔", "炮塔", "其他"])
+
+[node name="CraftingTableButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -369.0
+offset_right = 265.0
+offset_bottom = 0.999969
+scale = Vector2(0.300064, 0.300064)
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y3uo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_snakp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ai0hg")
+icon = ExtResource("1_6h0is")
+icon_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_top = -430.0
+offset_right = 683.0
+offset_bottom = 470.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n6t0x")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 775
+
+[node name="TypeLabel" type="Label" parent="PanelContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_54yeu")
+theme_override_font_sizes/font_size = 48
+text = "箭塔"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ArcherGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/ArcherGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/archer_tower_lv_1.tscn"
+tower_name = "射手高台"
+tower_texture = ExtResource("5_y0s8j")
+
+[node name="TowerButton3" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/archer_tower_lv_2.tscn"
+tower_name = "大师射手高台"
+tower_texture = ExtResource("6_gktow")
+
+[node name="TowerButton4" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/archer_tower_lv_3.tscn"
+tower_name = "皇家射手高台"
+tower_texture = ExtResource("7_5t45t")
+
+[node name="TowerButton5" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/stone_tower.tscn"
+tower_name = "投石高塔"
+tower_texture = ExtResource("8_ml3aj")
+tower_skill_limit_list = Array[int]([3, 2])
+tower_skill_name_list = Array[String](["黑曜石", "碎石"])
+
+[node name="TowerButton6" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/desert_sentry_tower.tscn"
+tower_name = "沙漠哨塔"
+tower_texture = ExtResource("9_cxygt")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["背后一刺", "沙狼"])
+
+[node name="TowerButton7" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/sentry_tower.tscn"
+tower_name = "劫掠哨塔"
+tower_texture = ExtResource("10_na72f")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["牢笼", "变节者"])
+
+[node name="TowerButton8" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/skeleton_archer_tower.tscn"
+tower_name = "骷髅狙击塔"
+tower_texture = ExtResource("12_sfefp")
+tower_skill_limit_list = Array[int]([3, 1])
+tower_skill_name_list = Array[String](["猩红狙击箭", "穿刺"])
+
+[node name="TowerButton9" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/red_stone_archer_tower.tscn"
+tower_name = "脉冲发射台"
+tower_texture = ExtResource("13_vncld")
+tower_skill_limit_list = Array[int]([2, 3])
+tower_skill_name_list = Array[String](["破甲箭头", "脉冲轰炸"])
+
+[node name="BarrackGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/BarrackGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_lv_1.tscn"
+tower_name = "民兵兵营"
+tower_texture = ExtResource("12_80q8a")
+
+[node name="TowerButton3" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_lv_2.tscn"
+tower_name = "步兵兵营"
+tower_texture = ExtResource("13_7s7j5")
+
+[node name="TowerButton4" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_lv_3.tscn"
+tower_name = "骑士兵营"
+tower_texture = ExtResource("14_ymwxl")
+
+[node name="TowerButton5" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/royal_guard_palace.tscn"
+tower_name = "皇家近卫军"
+tower_texture = ExtResource("15_jyrpe")
+tower_skill_limit_list = Array[int]([3, 1, 3])
+tower_skill_name_list = Array[String](["皇家审判", "神圣盾牌", "皇家庇佑"])
+
+[node name="TowerButton6" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/epee_church.tscn"
+tower_name = "大刀教会"
+tower_texture = ExtResource("16_pfntd")
+tower_skill_limit_list = Array[int]([3, 3, 3])
+tower_skill_name_list = Array[String](["尖刺", "大刀斩", "神赐"])
+
+[node name="TowerButton7" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/medical_guard_camp.tscn"
+tower_name = "医疗护卫队"
+tower_texture = ExtResource("17_6hp4k")
+tower_skill_limit_list = Array[int]([3, 3, 3])
+tower_skill_name_list = Array[String](["感染", "毒瓶", "急救光环"])
+
+[node name="TowerButton8" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_zombie.tscn"
+tower_name = "尸国正规军兵营"
+tower_texture = ExtResource("20_ypift")
+tower_skill_limit_list = Array[int]([3, 2, 3])
+tower_skill_name_list = Array[String](["嗜血", "冶炼工艺", "玉碎"])
+
+[node name="TowerButton9" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/zombie_berserker_barrack.tscn"
+tower_name = "尸国斗剑士营地"
+tower_texture = ExtResource("21_8e401")
+tower_skill_limit_list = Array[int]([3, 2, 3])
+tower_skill_name_list = Array[String](["震荡剑法", "血月剑法", "寒铁剑法"])
+
+[node name="TowerButton10" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/skeleton_barrack.tscn"
+tower_name = "荆棘殿堂"
+tower_texture = ExtResource("22_56mcd")
+tower_skill_limit_list = Array[int]([3, 3, 3])
+tower_skill_name_list = Array[String](["强化附魔", "猩红狙击", "雨过天晴"])
+
+[node name="TowerButton11" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/villager_knight_barrack.tscn"
+tower_name = "骑士营地"
+tower_texture = ExtResource("23_1qoxy")
+tower_skill_limit_list = Array[int]([2, 3, 3])
+tower_skill_name_list = Array[String](["升级模板", "锋利附魔", "刀刃尖刺"])
+
+[node name="MagicGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/MagicGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/magic_tower_lv_1.tscn"
+tower_name = "法师塔"
+tower_texture = ExtResource("18_tchtl")
+
+[node name="TowerButton3" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/magic_tower_lv_2.tscn"
+tower_name = "法师高台"
+tower_texture = ExtResource("19_tchip")
+
+[node name="TowerButton4" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/magic_tower_lv_3.tscn"
+tower_name = "风暴法师塔"
+tower_texture = ExtResource("20_b57ds")
+
+[node name="TowerButton5" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/protector_church.tscn"
+tower_name = "守卫者教堂"
+tower_texture = ExtResource("21_d8cth")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["铁傀儡", "尘解"])
+
+[node name="TowerButton6" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/witch_tower.tscn"
+tower_name = "女巫高塔"
+tower_texture = ExtResource("22_vuxxb")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["毒雾", "死亡诅咒"])
+
+[node name="TowerButton7" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/alchemist_tower.tscn"
+tower_name = "炼金术士"
+tower_texture = ExtResource("23_xyt3k")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["点金术", "兴奋剂"])
+
+[node name="BombardGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/BombardGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/bombard_tower_lv_1.tscn"
+tower_name = "烟花发射台"
+tower_texture = ExtResource("24_02bkc")
+
+[node name="TowerButton3" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/bombard_tower_lv_2.tscn"
+tower_name = "红石火炮"
+tower_texture = ExtResource("25_mngln")
+
+[node name="TowerButton4" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/bombard_tower_lv_3.tscn"
+tower_name = "红石高炮"
+tower_texture = ExtResource("26_425sc")
+
+[node name="TowerButton5" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/operator_turret.tscn"
+tower_name = "演算者炮塔"
+tower_texture = ExtResource("27_xll5i")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["天谴", "演算者机甲"])
+
+[node name="TowerButton6" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/nuclear_turret.tscn"
+tower_name = "湮灭炮塔"
+tower_texture = ExtResource("28_wtsok")
+tower_skill_limit_list = Array[int]([2, 3])
+tower_skill_name_list = Array[String](["活塞虫轰炸机", "高能坍缩"])
+
+[node name="TowerButton7" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/stone_machine.tscn"
+tower_name = "无人机控制平台"
+tower_texture = ExtResource("29_nq05e")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["烟幕掩护", "高能雷管"])
+
+[node name="OtherGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/OtherGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/OtherGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -224.0
+offset_right = 162.0
+offset_bottom = 26.0
+scale = Vector2(0.349244, 0.349244)
+theme_override_constants/separation = 50
+
+[node name="ArcherButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y3uo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_snakp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ai0hg")
+icon = ExtResource("2_5thd4")
+icon_alignment = 1
+
+[node name="BarrackButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y3uo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_snakp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ai0hg")
+icon = ExtResource("3_fnd1t")
+icon_alignment = 1
+
+[node name="MagicButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y3uo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_snakp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ai0hg")
+icon = ExtResource("4_ffibk")
+icon_alignment = 1
+
+[node name="BombardButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y3uo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_snakp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ai0hg")
+icon = ExtResource("5_qj2ts")
+icon_alignment = 1
+
+[node name="BuyingButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3y3uo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_snakp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ai0hg")
+icon = ExtResource("7_2pnuy")
+icon_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wlgij")
+}
+
+[node name="ConfirmLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("tool_box_ui")]
+process_mode = 3
+layer = 11
+visible = false
+script = ExtResource("35_fygac")
+tool_box_ui = NodePath("..")
+skill_slider_scene = ExtResource("36_766hh")
+
+[node name="Panel" type="Panel" parent="ConfirmLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nme8v")
+
+[node name="TitleLabel" type="Label" parent="ConfirmLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 29.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_54yeu")
+theme_override_font_sizes/font_size = 64
+text = "编辑防御塔配置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="ConfirmLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 169.0
+offset_bottom = 233.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_54yeu")
+theme_override_font_sizes/font_size = 48
+text = "箭塔"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ConfirmLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -294.0
+offset_right = 167.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_y0s8j")
+
+[node name="ConfirmButton" parent="ConfirmLayer" instance=ExtResource("35_u12jq")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -374.0
+offset_top = -192.0
+offset_right = -43.0
+offset_bottom = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+button_title = "确认部署"
+
+[node name="CancelButton" parent="ConfirmLayer" instance=ExtResource("35_u12jq")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -170.0
+offset_right = 365.0
+offset_bottom = -27.0
+grow_vertical = 0
+button_title = "取消"
+
+[node name="SkillSliderConatiner" type="VBoxContainer" parent="ConfirmLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 636.0
+offset_top = 582.0
+offset_right = -636.0
+offset_bottom = 898.0
+grow_horizontal = 2
+theme_override_constants/separation = 75
+
+[connection signal="tower_build_request" from="." to="ConfirmLayer" method="_on_tool_box_tower_build_request"]
+[connection signal="pressed" from="CraftingTableButton" to="." method="_on_crafting_table_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/ArcherButton" to="." method="_on_archer_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/BarrackButton" to="." method="_on_barrack_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/MagicButton" to="." method="_on_magic_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/BombardButton" to="." method="_on_bombard_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/BuyingButton" to="." method="_on_buying_button_pressed"]
+[connection signal="pressed" from="ConfirmLayer/ConfirmButton" to="ConfirmLayer" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ConfirmLayer/CancelButton" to="ConfirmLayer" method="_on_cancel_button_pressed"]

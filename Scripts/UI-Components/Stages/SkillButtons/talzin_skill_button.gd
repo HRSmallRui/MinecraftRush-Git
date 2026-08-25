@@ -23,7 +23,7 @@ func _ready() -> void:
 	remove_child(sec_kill_effect)
 	Stage.instance.bullets.add_child(condition_area)
 	Stage.instance.bullets.add_child(sec_kill_effect)
-	skill_level = Global.get_hero_skill_level(3)
+	skill_level = Stage.instance.get_hero_skill_level(3)
 	cooling_time = cold_time_list[skill_level]
 	damage = kill_damage_list[skill_level]
 	pass

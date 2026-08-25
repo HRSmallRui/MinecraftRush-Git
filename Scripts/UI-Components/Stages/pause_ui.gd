@@ -1,6 +1,9 @@
 extends CanvasLayer
 class_name PauseUI
 
+@export_file("*.tscn") var map_path: String
+@export_file("*.tscn") var extra_path: String
+
 @onready var vague: ColorRect = $Vague
 @onready var click_audio: AudioStreamPlayer = $ClickAudio
 @onready var music_slider: HSlider = $VBoxContainer/MusicSlider
@@ -43,7 +46,10 @@ func _on_continue_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	set_button_disable()
 	click_audio.play()
-	Global.change_scene("res://Scenes/GameBased/main_map.tscn")
+	if Stage.instance.stage_mode == Stage.StageMode.DigitalFighting:
+		Global.change_scene(extra_path)
+	else:
+		Global.change_scene("res://Scenes/GameBased/main_map.tscn")
 	Global.time_scale = 1
 	self.process_mode = Node.PROCESS_MODE_DISABLED
 	pass # Replace with function body.

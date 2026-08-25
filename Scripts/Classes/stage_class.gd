@@ -17,7 +17,8 @@ signal on_boss_music_stop
 enum StageMode{
 	Campaign,
 	Diamond,
-	Bedrock
+	Bedrock,
+	DigitalFighting
 }
 
 enum StageUI{
@@ -99,7 +100,8 @@ var pause_ui: PackedScene = preload("res://Scenes/UI-Components/Stages/pause_ui.
 
 func _init() -> void:
 	instance = self
-	stage_sav = Global.get_game_sav().duplicate(true)
+	stage_sav = Global.get_game_sav()
+	Global.time_scale = 1
 	pass
 
 
@@ -600,5 +602,17 @@ func get_current_techno_level(slot_id: int) -> int:
 
 
 func on_check_point_saver_forced(saver: CheckPointSaver):
+	
+	pass
+
+
+func get_hero_skill_level(hero_id: int) -> int:
+	if stage_sav == null: return 0
+	if hero_id >= stage_sav.hero_sav.size(): return 0
+	var hero_sav: HeroSavBlock = stage_sav.hero_sav[hero_id]
+	return hero_sav.skill_levels[4]
+
+
+func enemy_initalize(enemy: Enemy):
 	
 	pass

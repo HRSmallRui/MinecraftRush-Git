@@ -141,6 +141,8 @@ func _process(delta: float) -> void:
 
 
 func get_summon_information(wave_summon_text_list: Array[SummonTextBlock]) -> String:
+	if Stage.instance.stage_mode == Stage.StageMode.DigitalFighting:
+		return "预设敌人组"
 	var return_text: String
 	for i in wave_summon_text_list.size():
 		var text_block = wave_summon_text_list[i] as SummonTextBlock

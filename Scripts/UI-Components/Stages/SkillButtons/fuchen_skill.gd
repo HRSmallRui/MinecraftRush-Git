@@ -12,7 +12,7 @@ func skill_unlease_condition():
 
 func skill_unlease():
 	super()
-	var level: int = Global.get_hero_skill_level(1)
+	var level: int = Stage.instance.get_hero_skill_level(1)
 	var count: int = ray_count_list[level]
 	var mouse_position: Vector2 = Stage.instance.get_local_mouse_position()
 	for i in count:

@@ -283,4 +283,6 @@ func initialize_tower_skill():
 		if iron_golem != null:
 			iron_golem.level = skill_level
 			iron_golem.update_level_data()
+	if tower_skill_levels[1] > 0:
+		tower_skill_level_up(1,tower_skill_levels[1])
 	pass

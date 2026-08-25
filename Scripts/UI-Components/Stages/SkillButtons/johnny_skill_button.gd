@@ -8,7 +8,7 @@ var level: int
 
 func _ready() -> void:
 	super()
-	level = Global.get_hero_skill_level(8)
+	level = Stage.instance.get_hero_skill_level(8)
 	pass
 
 func skill_unlease():
