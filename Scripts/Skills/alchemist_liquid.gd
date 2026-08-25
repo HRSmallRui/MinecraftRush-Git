@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var appear_audio_list: Array[AudioStream]
+@export var damage_list: Array[IntSaver]
+@export var speed_low_property_block_list: Array[PropertyBuffBlock]
 
 @onready var alchemist_liquid: Sprite2D = $AlchemistLiquid
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
