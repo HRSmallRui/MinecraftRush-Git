@@ -1,5 +1,6 @@
 extends Button
 
+@export var tool_box_ui: ToolBoxUI
 @export_file("*.tscn") var tower_scene_path: String
 @export var tower_name: String
 @export var tower_texture: Texture2D
