@@ -24,6 +24,7 @@ func summon_bullet(summon_pos: Vector2, target_pos: Vector2):
 	magic_ball.target_position = target_pos
 	magic_ball.damage = randi_range(tower.current_data.damage_low,tower.current_data.damage_high)
 	magic_ball.source = tower
+	magic_ball.special_skill_level = tower.tower_skill_levels[1]
 	if Stage.instance.stage_sav.upgrade_sav[2] >= 2 and randf_range(0,1) <= 0.12:
 		magic_ball.damage_type = DataProcess.DamageType.TrueDamage
 	magic_ball.bullet_special_tag_levels["fly"] = true
