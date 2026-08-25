@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b45c342rsgrth"]
+[gd_scene load_steps=42 format=3 uid="uid://b45c342rsgrth"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
@@ -16,6 +16,24 @@
 [ext_resource type="Texture2D" uid="uid://bjqchecgp5qrl" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-1.png" id="8_ml3aj"]
 [ext_resource type="Texture2D" uid="uid://c2vqrr0rtde87" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-2.png" id="9_cxygt"]
 [ext_resource type="Texture2D" uid="uid://cmwrttkonwn38" path="res://Assets/Images/UI/ToolBoxImages/Archers/Archer-LV4-3.png" id="10_na72f"]
+[ext_resource type="Texture2D" uid="uid://dqvw07sgrx8hk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV1.png" id="12_80q8a"]
+[ext_resource type="Texture2D" uid="uid://csq18y1lubwfk" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV2.png" id="13_7s7j5"]
+[ext_resource type="Texture2D" uid="uid://dkhx0btjgntjs" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV3.png" id="14_ymwxl"]
+[ext_resource type="Texture2D" uid="uid://b0f2bqcdkqd3h" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-1.png" id="15_jyrpe"]
+[ext_resource type="Texture2D" uid="uid://dbc8yt7yg5kun" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-2.png" id="16_pfntd"]
+[ext_resource type="Texture2D" uid="uid://ycrghl5pn5oc" path="res://Assets/Images/UI/ToolBoxImages/Barracks/Barrack-LV4-3.png" id="17_6hp4k"]
+[ext_resource type="Texture2D" uid="uid://dsars5pjvb1gy" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV1.png" id="18_tchtl"]
+[ext_resource type="Texture2D" uid="uid://b2wk5eh0vfvhy" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV2.png" id="19_tchip"]
+[ext_resource type="Texture2D" uid="uid://cqmb1orddt8qw" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV3.png" id="20_b57ds"]
+[ext_resource type="Texture2D" uid="uid://dpe8pm55dhat4" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-1.png" id="21_d8cth"]
+[ext_resource type="Texture2D" uid="uid://d2dl76w8qg4pw" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-2.png" id="22_vuxxb"]
+[ext_resource type="Texture2D" uid="uid://dgwcn8f1vwt0r" path="res://Assets/Images/UI/ToolBoxImages/Magics/Magic-LV4-3.png" id="23_xyt3k"]
+[ext_resource type="Texture2D" uid="uid://c3huyh0i8go1w" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV1.png" id="24_02bkc"]
+[ext_resource type="Texture2D" uid="uid://1qi3ukufue70" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV2.png" id="25_mngln"]
+[ext_resource type="Texture2D" uid="uid://c7gyqwevnax37" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV3.png" id="26_425sc"]
+[ext_resource type="Texture2D" uid="uid://mlin2w0mkn7r" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-1.png" id="27_xll5i"]
+[ext_resource type="Texture2D" uid="uid://cf5kaq3nsv3vh" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-2.png" id="28_wtsok"]
+[ext_resource type="Texture2D" uid="uid://ba5vgsv2msfi1" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-3.png" id="29_nq05e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3uo"]
 bg_color = Color(0.288518, 0.288518, 0.288518, 0.592157)
@@ -212,6 +230,7 @@ tower_texture = ExtResource("10_na72f")
 [node name="BarrackGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
 layout_mode = 2
+vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/BarrackGroup"]
 layout_mode = 2
@@ -225,9 +244,46 @@ tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
 tower_name = "清空防御塔"
 tower_texture = ExtResource("4_hpxtw")
 
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "民兵兵营"
+tower_texture = ExtResource("12_80q8a")
+
+[node name="TowerButton3" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "步兵兵营"
+tower_texture = ExtResource("13_7s7j5")
+
+[node name="TowerButton4" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "骑士兵营"
+tower_texture = ExtResource("14_ymwxl")
+
+[node name="TowerButton5" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "皇家近卫军"
+tower_texture = ExtResource("15_jyrpe")
+
+[node name="TowerButton6" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "大刀教会"
+tower_texture = ExtResource("16_pfntd")
+
+[node name="TowerButton7" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "医疗护卫队"
+tower_texture = ExtResource("17_6hp4k")
+
 [node name="MagicGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
 layout_mode = 2
+vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/MagicGroup"]
 layout_mode = 2
@@ -241,9 +297,46 @@ tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
 tower_name = "清空防御塔"
 tower_texture = ExtResource("4_hpxtw")
 
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "法师塔"
+tower_texture = ExtResource("18_tchtl")
+
+[node name="TowerButton3" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "法师高台"
+tower_texture = ExtResource("19_tchip")
+
+[node name="TowerButton4" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "风暴法师塔"
+tower_texture = ExtResource("20_b57ds")
+
+[node name="TowerButton5" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "守卫者教堂"
+tower_texture = ExtResource("21_d8cth")
+
+[node name="TowerButton6" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "女巫高塔"
+tower_texture = ExtResource("22_vuxxb")
+
+[node name="TowerButton7" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "炼金术士"
+tower_texture = ExtResource("23_xyt3k")
+
 [node name="BombardGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
 layout_mode = 2
+vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/BombardGroup"]
 layout_mode = 2
@@ -257,9 +350,46 @@ tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
 tower_name = "清空防御塔"
 tower_texture = ExtResource("4_hpxtw")
 
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "烟花发射台"
+tower_texture = ExtResource("24_02bkc")
+
+[node name="TowerButton3" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "红石火炮"
+tower_texture = ExtResource("25_mngln")
+
+[node name="TowerButton4" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "红石高炮"
+tower_texture = ExtResource("26_425sc")
+
+[node name="TowerButton5" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "演算者炮塔"
+tower_texture = ExtResource("27_xll5i")
+
+[node name="TowerButton6" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "湮灭炮塔"
+tower_texture = ExtResource("28_wtsok")
+
+[node name="TowerButton7" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "无人机控制平台"
+tower_texture = ExtResource("29_nq05e")
+
 [node name="OtherGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
 layout_mode = 2
+vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/OtherGroup"]
 layout_mode = 2
