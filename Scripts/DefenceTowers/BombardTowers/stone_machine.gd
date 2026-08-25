@@ -6,6 +6,7 @@ class_name PlaneController
 @export var smoke_scene: PackedScene
 @export var skill2_damage_one_list: Array[IntSaver]
 @export var skill2_damage_aoe_list: Array[DamageBlock]
+@export var skill2_cd_list: Array[float]
 
 @onready var flag_button: TextureButton = $TowerUI/Circle/FlagButton
 @onready var first_move_rays: Node2D = $FirstMoveRays
@@ -177,11 +178,7 @@ func release_smoke():
 func tower_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
 	if skill_id == 1:
-		var cd_time: float
-		match skill_level:
-			1: cd_time = 25
-			2: cd_time = 23
-			3: cd_time = 21
+		var cd_time: float = skill2_cd_list[skill_level-1]
 		skill_2_timer.wait_time = cd_time
 	pass
 
@@ -192,3 +189,10 @@ func get_highest_health_enemy(enemy_list: Array[Enemy]) -> Enemy:
 		if enemy.current_data.health > back_enemy.current_data.health:
 			back_enemy = enemy
 	return back_enemy
+
+
+func initialize_tower_skill():
+	super()
+	if tower_skill_levels[1] > 0:
+		tower_skill_level_up(1,tower_skill_levels[1])
+	pass

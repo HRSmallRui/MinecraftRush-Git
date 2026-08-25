@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2n0fuyf7vsqy"]
+[gd_scene load_steps=12 format=3 uid="uid://b2n0fuyf7vsqy"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_xfgpi"]
 [ext_resource type="Script" path="res://Scripts/Stages/digital_fighting_stage.gd" id="2_cipyw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="4_dpfu1"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="5_lt68b"]
 [ext_resource type="PackedScene" uid="uid://ccnkr0dmpuudl" path="res://Scenes/UI-Components/Stages/time_scale_button.tscn" id="7_sqigk"]
+[ext_resource type="PackedScene" uid="uid://b45c342rsgrth" path="res://Scenes/UI-Components/Stages/tool_box.tscn" id="8_curik"]
 
 [sub_resource type="Resource" id="Resource_fionk"]
 resource_local_to_scene = true
@@ -31,14 +32,17 @@ stage_mode = 3
 total_waves = 1
 
 [node name="EnemyPath" type="Path2D" parent="Enemies" index="0"]
+y_sort_enabled = true
 script = ExtResource("3_ptufm")
 path_summon_config = SubResource("Resource_fionk")
 
 [node name="EnemyPath2" type="Path2D" parent="Enemies" index="1"]
+y_sort_enabled = true
 script = ExtResource("3_ptufm")
 path_summon_config = SubResource("Resource_wdeep")
 
 [node name="EnemyPath3" type="Path2D" parent="Enemies" index="2"]
+y_sort_enabled = true
 script = ExtResource("3_ptufm")
 path_summon_config = SubResource("Resource_5vyfr")
 
@@ -46,5 +50,7 @@ path_summon_config = SubResource("Resource_5vyfr")
 visible = false
 
 [node name="TimeScaleButton" parent="StageUI" index="11" instance=ExtResource("7_sqigk")]
+
+[node name="ToolBox" parent="StageUI" index="12" instance=ExtResource("8_curik")]
 
 [connection signal="pressed" from="StageUI/TimeScaleButton" to="StageUI/TimeScaleButton" method="_on_pressed"]
