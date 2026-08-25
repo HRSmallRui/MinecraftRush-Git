@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://b45c342rsgrth"]
+[gd_scene load_steps=24 format=3 uid="uid://b45c342rsgrth"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
 [ext_resource type="Texture2D" uid="uid://cqx34wicbeheb" path="res://Assets/Images/UI/InformationBar/arrow-id-1.png" id="2_5thd4"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_54yeu"]
 [ext_resource type="Texture2D" uid="uid://bsrop5coppykb" path="res://Assets/Images/UI/InformationBar/barrack-id-1.png" id="3_fnd1t"]
 [ext_resource type="PackedScene" uid="uid://bh6bhoq6syug1" path="res://Scenes/UI-Components/Stages/tower_button.tscn" id="3_jtflk"]
 [ext_resource type="Texture2D" uid="uid://b2v7pohn1ykq7" path="res://Assets/Images/UI/InformationBar/magic-id-1.png" id="4_ffibk"]
@@ -112,6 +113,7 @@ anchor_bottom = 0.5
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_6njv5")
+type_text_list = Array[String](["箭塔", "兵营", "法师塔", "炮塔", "其他"])
 
 [node name="CraftingTableButton" type="Button" parent="."]
 layout_mode = 0
@@ -133,6 +135,20 @@ offset_top = -430.0
 offset_right = 683.0
 offset_bottom = 470.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_n6t0x")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 775
+
+[node name="TypeLabel" type="Label" parent="PanelContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_54yeu")
+theme_override_font_sizes/font_size = 48
+text = "箭塔"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -209,6 +225,54 @@ tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
 tower_name = "清空防御塔"
 tower_texture = ExtResource("4_hpxtw")
 
+[node name="MagicGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/MagicGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
+[node name="BombardGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/BombardGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
+[node name="OtherGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/OtherGroup"]
+layout_mode = 2
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 2
+
+[node name="TowerButton" parent="PanelContainer/MarginContainer/OtherGroup/GridContainer" instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
+tower_name = "清空防御塔"
+tower_texture = ExtResource("4_hpxtw")
+
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -88.0
@@ -274,3 +338,8 @@ libraries = {
 }
 
 [connection signal="pressed" from="CraftingTableButton" to="." method="_on_crafting_table_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/ArcherButton" to="." method="_on_archer_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/BarrackButton" to="." method="_on_barrack_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/MagicButton" to="." method="_on_magic_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/BombardButton" to="." method="_on_bombard_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/BuyingButton" to="." method="_on_buying_button_pressed"]
