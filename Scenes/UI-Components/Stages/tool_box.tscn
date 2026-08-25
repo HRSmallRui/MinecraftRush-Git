@@ -224,6 +224,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/stone_tower.tscn"
 tower_name = "投石高塔"
 tower_texture = ExtResource("8_ml3aj")
+tower_skill_limit_list = Array[int]([3, 2])
+tower_skill_name_list = Array[String](["黑曜石", "碎石"])
 
 [node name="TowerButton6" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
@@ -231,6 +233,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/desert_sentry_tower.tscn"
 tower_name = "沙漠哨塔"
 tower_texture = ExtResource("9_cxygt")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["背后一刺", "沙狼"])
 
 [node name="TowerButton7" parent="PanelContainer/MarginContainer/ArcherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
@@ -238,6 +242,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/ArcherTowers/sentry_tower.tscn"
 tower_name = "劫掠哨塔"
 tower_texture = ExtResource("10_na72f")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["牢笼", "变节者"])
 
 [node name="BarrackGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
@@ -284,6 +290,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/royal_guard_palace.tscn"
 tower_name = "皇家近卫军"
 tower_texture = ExtResource("15_jyrpe")
+tower_skill_limit_list = Array[int]([3, 1, 3])
+tower_skill_name_list = Array[String](["皇家审判", "神圣盾牌", "皇家庇佑"])
 
 [node name="TowerButton6" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
@@ -291,6 +299,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/epee_church.tscn"
 tower_name = "大刀教会"
 tower_texture = ExtResource("16_pfntd")
+tower_skill_limit_list = Array[int]([3, 3, 3])
+tower_skill_name_list = Array[String](["尖刺", "大刀斩", "神赐"])
 
 [node name="TowerButton7" parent="PanelContainer/MarginContainer/BarrackGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
@@ -298,6 +308,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/BarrackTowers/medical_guard_camp.tscn"
 tower_name = "医疗护卫队"
 tower_texture = ExtResource("17_6hp4k")
+tower_skill_limit_list = Array[int]([3, 3, 3])
+tower_skill_name_list = Array[String](["感染", "毒瓶", "急救光环"])
 
 [node name="MagicGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
@@ -344,6 +356,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/protector_church.tscn"
 tower_name = "守卫者教堂"
 tower_texture = ExtResource("21_d8cth")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["铁傀儡", "尘解"])
 
 [node name="TowerButton6" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
@@ -351,6 +365,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/witch_tower.tscn"
 tower_name = "女巫高塔"
 tower_texture = ExtResource("22_vuxxb")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["毒雾", "死亡诅咒"])
 
 [node name="TowerButton7" parent="PanelContainer/MarginContainer/MagicGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
@@ -358,6 +374,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/MagicTower/alchemist_tower.tscn"
 tower_name = "炼金术士"
 tower_texture = ExtResource("23_xyt3k")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["点金术", "兴奋剂"])
 
 [node name="BombardGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false
@@ -404,13 +422,17 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/operator_turret.tscn"
 tower_name = "演算者炮塔"
 tower_texture = ExtResource("27_xll5i")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["天谴", "演算者机甲"])
 
 [node name="TowerButton6" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
 tool_box_ui = NodePath("../../../../..")
-tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/operator_turret.tscn"
+tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/nuclear_turret.tscn"
 tower_name = "湮灭炮塔"
 tower_texture = ExtResource("28_wtsok")
+tower_skill_limit_list = Array[int]([2, 3])
+tower_skill_name_list = Array[String](["活塞虫轰炸机", "高能坍缩"])
 
 [node name="TowerButton7" parent="PanelContainer/MarginContainer/BombardGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
@@ -418,6 +440,8 @@ tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/BombardTowers/stone_machine.tscn"
 tower_name = "无人机控制平台"
 tower_texture = ExtResource("29_nq05e")
+tower_skill_limit_list = Array[int]([3, 3])
+tower_skill_name_list = Array[String](["烟幕掩护", "高能雷管"])
 
 [node name="OtherGroup" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
 visible = false

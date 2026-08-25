@@ -90,6 +90,7 @@ func win(wait_time: float = 3):
 func lives_taken(damage: int):
 	super(damage)
 	enemy_pass_count += 1
+	enemy_kill_count -= 1
 	pass
 
 
