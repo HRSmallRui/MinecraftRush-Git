@@ -59,6 +59,7 @@ func confirm_layer_initialize():
 
 
 func apply_tower_build():
+	tool_box_ui._on_crafting_table_button_pressed()
 	var tower_scene: PackedScene = load(tower_scene_path)
 	if tower_scene == null: return
 	var tower_pos_list: Array[Vector2]
