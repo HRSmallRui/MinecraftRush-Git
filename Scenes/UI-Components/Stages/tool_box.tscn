@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b45c342rsgrth"]
+[gd_scene load_steps=46 format=3 uid="uid://b45c342rsgrth"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5vgsv2msfi1" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-3.png" id="29_nq05e"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/confirm_layer.gd" id="35_fygac"]
 [ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="35_u12jq"]
+[ext_resource type="PackedScene" uid="uid://oxrl5h5eab0o" path="res://Scenes/UI-Components/Stages/skill_slider.tscn" id="36_766hh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3uo"]
 bg_color = Color(0.288518, 0.288518, 0.288518, 0.592157)
@@ -530,9 +531,9 @@ layer = 11
 visible = false
 script = ExtResource("35_fygac")
 tool_box_ui = NodePath("..")
+skill_slider_scene = ExtResource("36_766hh")
 
 [node name="Panel" type="Panel" parent="ConfirmLayer"]
-self_modulate = Color(1, 1, 1, 0.627451)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -605,6 +606,16 @@ offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
 button_title = "取消"
+
+[node name="SkillSliderConatiner" type="VBoxContainer" parent="ConfirmLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 636.0
+offset_top = 582.0
+offset_right = -636.0
+offset_bottom = 898.0
+grow_horizontal = 2
+theme_override_constants/separation = 75
 
 [connection signal="tower_build_request" from="." to="ConfirmLayer" method="_on_tool_box_tower_build_request"]
 [connection signal="pressed" from="CraftingTableButton" to="." method="_on_crafting_table_button_pressed"]

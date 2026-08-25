@@ -56,9 +56,9 @@ func summon_hero(summon_pos:Vector2 = hero_summon_marker.position):
 
 
 func _process(delta: float) -> void:
-	super(delta)
 	current_money = 1000
 	current_health = 20
+	super(delta)
 	pass
 
 
