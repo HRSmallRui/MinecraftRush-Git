@@ -27,6 +27,7 @@ func _ready() -> void:
 	super()
 	passive_heal_timer.wait_time = passive_heal_time_interval
 	ally_sprite.sprite_frames = NORMAL_SOLDIER
+	skill_initialize()
 	await get_tree().create_timer(randf_range(1,2),false).timeout
 	passive_heal_timer.start()
 	pass
@@ -91,22 +92,21 @@ func _on_passive_heal_timer_timeout() -> void:
 
 func soldier_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
-	if skill_id == 0 and skill_level == 1:
+	if skill_id == 0 and ally_sprite.sprite_frames != BLOOD_SOLDIERRES:
 		var current_animation: String = ally_sprite.animation
 		var current_frame: int = ally_sprite.frame
 		ally_sprite.sprite_frames = BLOOD_SOLDIERRES
 		ally_sprite.play(current_animation)
 		ally_sprite.frame == current_frame
 	if skill_id == 1:
-		if skill_level == 1:
-			start_data.far_damage_range = 300
-			current_data.update_far_attack_range()
-			#far_attack_area.scale = Vector2.ONE * float(current_data.far_damage_range) / 100
-			start_data.far_attack_speed = 1.5
-			current_data.update_far_damage_speed()
-			#far_attack_timer.wait_time = current_data.far_attack_speed
-			#var shape: CollisionShape2D = far_attack_area.get_child(0)
-			#shape.disabled = false
+		start_data.far_damage_range = 300
+		current_data.update_far_attack_range()
+		#far_attack_area.scale = Vector2.ONE * float(current_data.far_damage_range) / 100
+		start_data.far_attack_speed = 1.5
+		current_data.update_far_damage_speed()
+		#far_attack_timer.wait_time = current_data.far_attack_speed
+		#var shape: CollisionShape2D = far_attack_area.get_child(0)
+		#shape.disabled = false
 		
 		var damage_block: DamageBlock = skill2_far_damage_list[soldier_skill_levels[1]-1]
 		start_data.far_damage_low = damage_block.damage_low
@@ -143,4 +143,12 @@ func battle():
 			heal_audio.play()
 			return
 	super()
+	pass
+
+
+func skill_initialize():
+	if soldier_skill_levels[0] > 0:
+		soldier_skill_level_up(0,soldier_skill_levels[0])
+	if soldier_skill_levels[1] > 0:
+		soldier_skill_level_up(1,soldier_skill_levels[1])
 	pass
