@@ -74,7 +74,7 @@ func first_move():
 
 func tower_skill_level_up(skill_id: int, skill_level: int):
 	super(skill_id,skill_level)
-	if skill_id == 0 and skill_level == 1:
+	if skill_id == 0:
 		lightning_sprite.show()
 	
 	if skill_id == 1 and skill_level == 1:
@@ -124,6 +124,8 @@ func initialize_tower_skill():
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	first_move()
+	if tower_skill_levels[0] > 0:
+		tower_skill_level_up(0,tower_skill_levels[0])
 	if tower_skill_levels[1] > 0:
 		var skill_level: int = tower_skill_levels[1]
 		tower_skill_level_up(1,1)
