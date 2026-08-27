@@ -28,7 +28,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	Stage.instance.can_control = false
 	get_tree().paused = true
-	Stage.instance.zoom_slider.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	Stage.instance.update_player_status()
 	directional_light.energy = 0
 	intro_label.text = ""
