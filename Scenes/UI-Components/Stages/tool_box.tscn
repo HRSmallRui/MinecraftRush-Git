@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cdijrqwndmk4c"]
+[gd_scene load_steps=53 format=3 uid="uid://cdijrqwndmk4c"]
 
 [ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="1_6h0is"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/tool_box.gd" id="1_6njv5"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5vgsv2msfi1" path="res://Assets/Images/UI/ToolBoxImages/Bombards/Bombard-LV4-3.png" id="29_nq05e"]
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/confirm_layer.gd" id="35_fygac"]
 [ext_resource type="PackedScene" uid="uid://5wpq8h2i2s8m" path="res://Scenes/UI-Components/normal_button.tscn" id="35_u12jq"]
+[ext_resource type="Texture2D" uid="uid://c3uo3dx13rwd3" path="res://Assets/Images/UI/ToolBoxImages/Others/TraderShop.png" id="36_23d25"]
 [ext_resource type="PackedScene" uid="uid://oxrl5h5eab0o" path="res://Scenes/UI-Components/Stages/skill_slider.tscn" id="36_766hh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3uo"]
@@ -515,11 +516,21 @@ theme_override_constants/h_separation = 45
 theme_override_constants/v_separation = 45
 columns = 2
 
-[node name="TowerButton" parent="PanelContainer/MarginContainer/OtherGroup/GridContainer" instance=ExtResource("3_jtflk")]
+[node name="TowerButton" parent="PanelContainer/MarginContainer/OtherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
 layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
 tower_scene_path = "res://Scenes/DefenceTowers/defence_tower_based.tscn"
 tower_name = "清空防御塔"
 tower_texture = ExtResource("4_hpxtw")
+
+[node name="TowerButton2" parent="PanelContainer/MarginContainer/OtherGroup/GridContainer" node_paths=PackedStringArray("tool_box_ui") instance=ExtResource("3_jtflk")]
+layout_mode = 2
+tool_box_ui = NodePath("../../../../..")
+tower_scene_path = "res://Scenes/DefenceTowers/BuyingSoldierTower/trader_shop.tscn"
+tower_name = "流浪商人营地"
+tower_texture = ExtResource("36_23d25")
+tower_skill_limit_list = Array[int]([3, 3, 2])
+tower_skill_name_list = Array[String](["收藏书", "羊驼不好惹", "石油炸弹"])
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
