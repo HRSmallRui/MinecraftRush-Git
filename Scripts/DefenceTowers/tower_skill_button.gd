@@ -95,9 +95,9 @@ func _on_pressed() -> void:
 	var skill_level: int = linked_tower.tower_skill_levels[skill_id]
 	if Stage.instance.current_money < skill_prices[skill_level]: return
 	
-	Stage.instance.current_money -= skill_prices[skill_level]
+	Stage.instance.current_money -= current_prices[skill_level]
 	linked_tower.tower_skill_level_up(skill_id,skill_level+1)
-	linked_tower.tower_value += skill_prices[skill_level]
+	linked_tower.tower_value += current_prices[skill_level]
 	update_skill_level()
 	update_skill_intro()
 	click_audio.play(0.07)

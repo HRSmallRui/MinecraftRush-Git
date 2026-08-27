@@ -1,6 +1,6 @@
 extends DotBuff
 
-@export var plague_buff_scene: PackedScene
+@export_file("*.tscn") var plague_buff_scene_path: String
 
 @onready var explosion_area: Area2D = $ExplosionArea
 @onready var plugin_explosion: AudioStreamPlayer = $PluginExplosion
@@ -27,7 +27,7 @@ func remove_buff():
 				new_enemy.take_damage(30,DataProcess.DamageType.TrueDamage,0,false,null,false,true,)
 			for new_enemy in enemy_list:
 				#if new_enemy.enemy_state == Enemy.EnemyState.DIE: continue
-				var dot_debuff: DotBuff = plague_buff_scene.instantiate()
+				var dot_debuff: DotBuff = load(plague_buff_scene_path).instantiate()
 				dot_debuff.duration = duration
 				dot_debuff.buff_level = buff_level
 				new_enemy.buffs.add_child(dot_debuff)
