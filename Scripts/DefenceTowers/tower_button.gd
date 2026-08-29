@@ -77,7 +77,7 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
-	if Stage.instance.current_money < price: return
+	if Stage.instance.current_money < current_price: return
 	
 	if OS.get_name() == "Android":
 		if MobileMiddleProcess.instance.current_touch_object != self:
@@ -85,7 +85,7 @@ func _on_pressed() -> void:
 			return
 	
 	tower.tower_level_up(tower_type,id)
-	Stage.instance.current_money -= price
+	Stage.instance.current_money -= current_price
 	pass # Replace with function body.
 
 

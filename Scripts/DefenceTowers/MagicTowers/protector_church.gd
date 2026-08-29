@@ -23,6 +23,7 @@ class_name ProtectorChurch
 
 var golem_position: Vector2
 var is_attacking: bool = false
+var is_dust_killing: bool = false
 var attack_count: int
 var damage_level: int = 0
 var current_ray: ProtectorChurchRay
@@ -92,6 +93,7 @@ func move(target_position: Vector2):
 func fighting_process():
 	if !is_attacking and tower_skill_levels[1] > 0 and dust_kill_timer.is_stopped():
 		is_attacking = true
+		is_dust_killing = true
 		magician.play("shoot_front")
 		dust_kill_timer.start()
 		dust_kill()
@@ -101,11 +103,7 @@ func fighting_process():
 		is_attacking = true
 		var is_front: bool
 		if tower_area.has_overlapping_bodies():
-			var samples: Array[Enemy]
-			for body in tower_area.get_overlapping_bodies():
-				var enemy: Enemy = body.owner
-				samples.append(enemy)
-			linked_enemy = get_highest_health_enemy(samples)
+			linked_enemy = get_highest_health_enemy()
 			is_front = linked_enemy.global_position.y > global_position.y
 		elif last_target != null:
 			is_front = last_target.global_position.y > global_position.y
@@ -117,6 +115,10 @@ func fighting_process():
 		var is_front: bool = linked_enemy.global_position.y > global_position.y
 		magician.play("shoot_front") if is_front else magician.play("shoot_back")
 		magician.frame = current_frame
+	
+	if is_attacking and not is_dust_killing:
+		if linked_enemy == null: stop_attack()
+		elif not linked_enemy.unit_body in tower_area.get_overlapping_bodies(): stop_attack()
 	pass
 
 
@@ -160,18 +162,6 @@ func _on_shot_timer_timeout() -> void:
 			if current_ray != null: current_ray.ray_level += 1
 			damage_level_up()
 	pass # Replace with function body.
-
-
-func enemy_body_out(body: UnitBody):
-	if !is_inside_tree(): return
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-	super(body)
-	var enemy: Enemy = body.owner
-	if enemy == linked_enemy and !body in tower_area.get_overlapping_bodies():
-		stop_attack()
-		security_timer.stop()
-	pass
 
 
 func stop_attack():
@@ -250,13 +240,17 @@ func dust_kill():
 	magician.play_backwards()
 	await get_tree().create_timer(0.5,false).timeout
 	is_attacking = false
+	is_dust_killing = false
 	pass
 
 
-func get_highest_health_enemy(enemy_list: Array[Enemy]) -> Enemy:
+func get_highest_health_enemy() -> Enemy:
+	var enemy_list: Array[Enemy]
+	for body in tower_area.get_overlapping_bodies():
+		enemy_list.append(body.owner)
 	var back_enemy: Enemy = enemy_list[0]
 	for enemy in enemy_list:
-		if back_enemy.current_data.health < enemy.current_data.health:
+		if back_enemy.current_data.health <= enemy.current_data.health:
 			back_enemy = enemy
 	
 	return back_enemy
