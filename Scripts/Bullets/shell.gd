@@ -73,6 +73,9 @@ func _physics_process(delta: float) -> void:
 	if hit_box.monitoring:
 		if hit_box.get_overlapping_areas().size() == 0: return
 		else:
+			set_physics_process(false)
+			hit_box.global_rotation = 0
+			await get_tree().physics_frame
 			for hurt_box: HurtBox in hit_box.get_overlapping_areas():
 				var length: float = (hurt_box.global_position - global_position).length()
 				if length > explosion_radius: continue
@@ -114,5 +117,6 @@ func shell_ally_take_damage(ally: Ally, shell_damage: int):
 
 
 func shell_enemy_take_damage(enemy: Enemy, shell_damage: int):
+	#print(damage)
 	enemy.take_damage(shell_damage,damage_type,broken_rate,true,source,explosion)
 	pass
