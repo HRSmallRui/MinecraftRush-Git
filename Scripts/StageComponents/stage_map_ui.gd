@@ -24,6 +24,7 @@ var ally_list: Array[Ally]
 
 
 func _ready() -> void:
+	hide()
 	update_map_image()
 	Stage.instance.ui_update.connect(ui_process)
 	enemy_multi_instance.multimesh.instance_count = 1000
@@ -33,6 +34,9 @@ func _ready() -> void:
 	camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
 	map_camera_control.position = Stage.instance.stage_camera.get_screen_center_position() - Stage.instance.stage_based_position
 	map_camera_control.scale = Vector2.ONE / Stage.instance.stage_camera.zoom
+	await get_tree().create_timer(0.1,false).timeout
+	if Stage.instance.stage_mode != Stage.StageMode.DigitalFighting:
+		show()
 	pass
 
 
