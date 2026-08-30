@@ -65,6 +65,7 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	Stage.instance.ui_update.connect(ui_process)
 	initialize_tower_skill()
+	update_tower_range()
 	
 	if OS.get_name() == "Android":
 		circle.scale = Vector2.ONE
