@@ -1,6 +1,6 @@
 extends Enemy
 
-@export var self_enemy_scene: PackedScene
+@export_file("*.tscn") var self_enemy_scene_path: String
 
 @onready var summon_area_1: Area2D = $SummonArea1
 @onready var summon_area_2: Area2D = $SummonArea2
@@ -90,7 +90,8 @@ func call_partner():
 
 
 func try_to_call_partner(enemy_path: EnemyPath, partner_progress: float):
-	var partner: Enemy = self_enemy_scene.instantiate()
+	var partner_scene: PackedScene = load(self_enemy_scene_path)
+	var partner: Enemy = partner_scene.instantiate()
 	partner.bounty = 0
 	partner.progress = partner_progress
 	enemy_path.add_child(partner)
