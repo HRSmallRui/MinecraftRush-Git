@@ -1,6 +1,8 @@
 extends TextureButton
 class_name TowerButton
 
+signal on_building_pressed
+
 const LOCKED = preload("res://Assets/Images/DefenceTowers/UI/locked.tres")
 
 @export var tower: DefenceTower
@@ -86,6 +88,7 @@ func _on_pressed() -> void:
 	
 	tower.tower_level_up(tower_type,id)
 	Stage.instance.current_money -= current_price
+	on_building_pressed.emit()
 	pass # Replace with function body.
 
 
