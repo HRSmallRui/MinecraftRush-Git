@@ -599,15 +599,6 @@ enemy_count = 10
 script = ExtResource("74_yoge1")
 wave_summon_text_list = Array[ExtResource("76_5lsol")]([SubResource("Resource_ovmy1"), SubResource("Resource_blb56"), SubResource("Resource_6c8ja"), SubResource("Resource_vc2et"), SubResource("Resource_k4a05")])
 
-[sub_resource type="Resource" id="Resource_2gxlc"]
-script = ExtResource("77_3muj5")
-enemy_name = "尸国统帅"
-enemy_count = 1
-
-[sub_resource type="Resource" id="Resource_yrcir"]
-script = ExtResource("74_yoge1")
-wave_summon_text_list = Array[ExtResource("76_5lsol")]([SubResource("Resource_2gxlc")])
-
 [sub_resource type="Resource" id="Resource_rakts"]
 script = ExtResource("77_3muj5")
 enemy_name = "尸国杂兵"
@@ -1289,6 +1280,15 @@ enemy_count = 10
 script = ExtResource("74_yoge1")
 wave_summon_text_list = Array[ExtResource("76_5lsol")]([SubResource("Resource_afwvr"), SubResource("Resource_1rkm2"), SubResource("Resource_iitaq"), SubResource("Resource_xkg0t"), SubResource("Resource_4d70k"), SubResource("Resource_vi84d")])
 
+[sub_resource type="Resource" id="Resource_eyrdk"]
+script = ExtResource("77_3muj5")
+enemy_name = "尸国统帅"
+enemy_count = 1
+
+[sub_resource type="Resource" id="Resource_1kwe4"]
+script = ExtResource("74_yoge1")
+wave_summon_text_list = Array[ExtResource("76_5lsol")]([SubResource("Resource_eyrdk")])
+
 [node name="Stage4Campaign" node_paths=PackedStringArray("hide_left_based", "hide_left_based_2", "hide_right_based_1", "hide_right_based_2", "hide_right_based_3", "left_path_polygon", "right_path_polygon", "left_explosion_markers", "right_explosion_markers") instance=ExtResource("1_4y2mf")]
 script = ExtResource("2_4iw5u")
 stage_view1_path = "res://Assets/Images/Stages/Stage4/stage4-view3.png"
@@ -1666,7 +1666,7 @@ offset_right = 947.0
 offset_bottom = 263.0
 linked_wave_panel = NodePath("../WavePanel")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath")
-summon_text_list = Array[ExtResource("74_yoge1")]([null, SubResource("Resource_fd8yo"), SubResource("Resource_gssg0"), SubResource("Resource_qx8hn"), SubResource("Resource_hi6rg"), null, SubResource("Resource_sd623"), null, SubResource("Resource_wec0x"), SubResource("Resource_uxlpb"), null, null, SubResource("Resource_ycwec"), SubResource("Resource_ifm45"), SubResource("Resource_yrcir")])
+summon_text_list = Array[ExtResource("74_yoge1")]([null, SubResource("Resource_fd8yo"), SubResource("Resource_gssg0"), SubResource("Resource_qx8hn"), SubResource("Resource_hi6rg"), null, SubResource("Resource_sd623"), null, SubResource("Resource_wec0x"), SubResource("Resource_uxlpb"), null, null, SubResource("Resource_ycwec"), SubResource("Resource_ifm45"), null])
 summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="4"]
@@ -1739,35 +1739,51 @@ rotation = -0.14226
 scale = Vector2(0.942457, 0.942457)
 texture = ExtResource("74_c4ci4")
 
-[node name="WavePanel" parent="WaveButtons" index="5" instance=ExtResource("75_g3m0g")]
+[node name="WaveButton6" parent="WaveButtons" index="5" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("73_jd3ca")]
+offset_left = 947.0
+offset_top = 263.0
+offset_right = 947.0
+offset_bottom = 263.0
+linked_wave_panel = NodePath("../WavePanel")
+linked_enemy_path = NodePath("../../Enemies/BossPath")
+summon_text_list = Array[ExtResource("74_yoge1")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, SubResource("Resource_1kwe4")])
+summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2])
+
+[node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton6" index="4"]
+show_behind_parent = true
+rotation = -1.57416
+scale = Vector2(0.942457, 0.942457)
+texture = ExtResource("74_c4ci4")
+
+[node name="WavePanel" parent="WaveButtons" index="6" instance=ExtResource("75_g3m0g")]
 layout_mode = 0
 offset_left = 991.0
 offset_top = 203.0
 offset_right = 1595.0
 offset_bottom = 497.0
 
-[node name="WavePanel2" parent="WaveButtons" index="6" instance=ExtResource("75_g3m0g")]
+[node name="WavePanel2" parent="WaveButtons" index="7" instance=ExtResource("75_g3m0g")]
 layout_mode = 0
 offset_left = 231.0
 offset_top = 207.0
 offset_right = 835.0
 offset_bottom = 501.0
 
-[node name="WavePanel3" parent="WaveButtons" index="7" instance=ExtResource("75_g3m0g")]
+[node name="WavePanel3" parent="WaveButtons" index="8" instance=ExtResource("75_g3m0g")]
 layout_mode = 0
 offset_left = 1582.0
 offset_top = 213.0
 offset_right = 2186.0
 offset_bottom = 507.0
 
-[node name="WavePanel4" parent="WaveButtons" index="8" instance=ExtResource("75_g3m0g")]
+[node name="WavePanel4" parent="WaveButtons" index="9" instance=ExtResource("75_g3m0g")]
 layout_mode = 0
 offset_left = 148.0
 offset_top = 884.0
 offset_right = 752.0
 offset_bottom = 1178.0
 
-[node name="WavePanel5" parent="WaveButtons" index="9" instance=ExtResource("75_g3m0g")]
+[node name="WavePanel5" parent="WaveButtons" index="10" instance=ExtResource("75_g3m0g")]
 layout_mode = 0
 offset_left = 1475.0
 offset_top = 856.0
