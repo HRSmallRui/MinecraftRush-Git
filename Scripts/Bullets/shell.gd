@@ -112,11 +112,11 @@ func on_tail_timer_timeout():
 
 
 func shell_ally_take_damage(ally: Ally, shell_damage: int):
-	ally.take_damage(shell_damage,damage_type,broken_rate,true,source,explosion)
+	ally.take_damage(shell_damage,damage_type,broken_rate,false,source,explosion)
 	pass
 
 
 func shell_enemy_take_damage(enemy: Enemy, shell_damage: int):
 	#print(damage)
-	enemy.take_damage(shell_damage,damage_type,broken_rate,true,source,explosion)
+	enemy.take_damage(shell_damage,damage_type,broken_rate,false,source,explosion)
 	pass
