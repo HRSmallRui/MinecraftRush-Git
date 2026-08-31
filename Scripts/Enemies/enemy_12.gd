@@ -54,9 +54,8 @@ func _process(delta: float) -> void:
 
 func move_logic_process():
 	if enemy_state == EnemyState.MOVE:
-		if far_attack_area.has_overlapping_bodies() and silence_layers <= 0 and sprint_timer.is_stopped():
-			var enemy_path: EnemyPath = get_parent()
-			if enemy_path.curve.get_baked_length() - progress > 900:
+		if can_sprint() and silence_layers <= 0 and sprint_timer.is_stopped():
+			if get_remaining_progress() > 900:
 				sprint()
 				is_skill_releasing = true
 				return
@@ -102,3 +101,13 @@ func die(explosion: bool = false):
 	sprint_sprite.hide()
 	enemy_sprite.show()
 	pass
+
+
+func can_sprint() -> bool:
+	var enemy_path: EnemyPath = get_parent()
+	var curve: Curve2D = enemy_path.curve
+	for body in far_attack_area.get_overlapping_bodies():
+		var ally: Ally = body.owner
+		var ally_progress: float = curve.get_closest_offset(ally.position)
+		if ally_progress > progress: return true
+	return false
