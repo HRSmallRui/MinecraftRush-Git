@@ -77,7 +77,7 @@ firerain_cooling_fast = Array[float]([])
 hero_skill_cooling_fast = Array[float]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6txa"]
-size = Vector2(2160, 1440)
+size = Vector2(2160, 1600)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u07n2"]
 
@@ -275,7 +275,7 @@ _data = {
 point_count = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqk7m"]
-size = Vector2(2180, 1459)
+size = Vector2(2180, 1622)
 
 [sub_resource type="Resource" id="Resource_5kyg0"]
 script = ExtResource("51_35oe0")
@@ -317,9 +317,10 @@ stage_summon_config = SubResource("Resource_al8l6")
 
 [node name="StageCamera" parent="." index="3"]
 position = Vector2(1197, 747)
+min_zoom_length_desktop = 0.9
 
 [node name="CollisionShape2D" parent="StageCamera" index="0"]
-position = Vector2(1080, 720)
+position = Vector2(1080, 800)
 shape = SubResource("RectangleShape2D_g6txa")
 
 [node name="PreparationMusic" parent="Musics" index="0"]
@@ -763,45 +764,61 @@ position = Vector2(1218, 1256)
 based_skin = 1
 
 [node name="DefenceTowerBased19" parent="Towers" index="10" instance=ExtResource("42_dqvkh")]
-position = Vector2(1350, 1128)
+position = Vector2(1443, 1163)
 based_skin = 1
 
-[node name="DefenceTowerBased22" parent="Towers" index="11" instance=ExtResource("42_dqvkh")]
+[node name="DefenceTowerBased20" parent="Towers" index="11" instance=ExtResource("42_dqvkh")]
+position = Vector2(1278, 1050)
+based_skin = 1
+
+[node name="DefenceTowerBased22" parent="Towers" index="12" instance=ExtResource("42_dqvkh")]
 position = Vector2(1216, 891)
 based_skin = 1
 
-[node name="DefenceTowerBased23" parent="Towers" index="12" instance=ExtResource("42_dqvkh")]
+[node name="DefenceTowerBased23" parent="Towers" index="13" instance=ExtResource("42_dqvkh")]
 position = Vector2(1816, 287)
 based_skin = 1
 
-[node name="DefenceTowerBased25" parent="Towers" index="13" instance=ExtResource("42_dqvkh")]
+[node name="DefenceTowerBased25" parent="Towers" index="14" instance=ExtResource("42_dqvkh")]
 position = Vector2(1801, 1176)
 based_skin = 1
 
-[node name="DefenceTowerBased26" parent="Towers" index="14" instance=ExtResource("42_dqvkh")]
+[node name="DefenceTowerBased26" parent="Towers" index="15" instance=ExtResource("42_dqvkh")]
 position = Vector2(1327, 421)
 based_skin = 1
 
-[node name="DefenceTowerBased29" parent="Towers" index="15" instance=ExtResource("42_dqvkh")]
+[node name="DefenceTowerBased29" parent="Towers" index="16" instance=ExtResource("42_dqvkh")]
 position = Vector2(1522, 302)
 based_skin = 1
 
-[node name="DefenceTowerBased27" parent="Towers" index="16" instance=ExtResource("42_dqvkh")]
+[node name="DefenceTowerBased27" parent="Towers" index="17" instance=ExtResource("42_dqvkh")]
 position = Vector2(1275, 223)
 based_skin = 1
 
-[node name="DefenceTowerBased28" parent="Towers" index="17" instance=ExtResource("42_dqvkh")]
+[node name="DefenceTowerBased28" parent="Towers" index="18" instance=ExtResource("42_dqvkh")]
 position = Vector2(770, 163)
 based_skin = 1
 
-[node name="ArcherTowerLV3" parent="Towers" index="18" instance=ExtResource("43_ndnw6")]
+[node name="ArcherTowerLV3" parent="Towers" index="19" instance=ExtResource("43_ndnw6")]
 position = Vector2(1089, 387)
 
-[node name="BombardTowerLV2" parent="Towers" index="19" instance=ExtResource("44_nglws")]
+[node name="BombardTowerLV2" parent="Towers" index="20" instance=ExtResource("44_nglws")]
 position = Vector2(1216, 613)
 
+[node name="DefenceTowerBased14" parent="Towers" index="21" instance=ExtResource("42_dqvkh")]
+position = Vector2(1474, 1336)
+based_skin = 1
+
+[node name="DefenceTowerBased16" parent="Towers" index="22" instance=ExtResource("42_dqvkh")]
+position = Vector2(1757, 1351)
+based_skin = 1
+
+[node name="DefenceTowerBased17" parent="Towers" index="23" instance=ExtResource("42_dqvkh")]
+position = Vector2(1398, 177)
+based_skin = 1
+
 [node name="CollisionShape2D" parent="ClickArea" index="0"]
-position = Vector2(1080, 719.5)
+position = Vector2(1080, 801)
 shape = SubResource("RectangleShape2D_nqk7m")
 
 [node name="WaveButton" parent="WaveButtons" index="0" node_paths=PackedStringArray("linked_wave_panel", "linked_enemy_path") instance=ExtResource("43_fhsgl")]
@@ -854,6 +871,18 @@ offset_bottom = 1426.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PathArea" index="0"]
 polygon = PackedVector2Array(-4, 292, 83, 242, 221, 189, 430, 164, 628, 168, 808, 209, 990, 348, 1068, 463, 1088, 518, 1125, 438, 1201, 335, 1331, 236, 1479, 177, 1660, 156, 1861, 168, 1966, 190, 2058, 219, 2160, 280, 2161, 380, 2101, 348, 2027, 302, 1885, 265, 1614, 250, 1396, 300, 1235, 433, 1155, 598, 1142, 791, 1161, 954, 1239, 1102, 1389, 1190, 1658, 1221, 1933, 1209, 2165, 1177, 2161, 1277, 1975, 1302, 1669, 1314, 1473, 1302, 1252, 1236, 1137, 1121, 1096, 1027, 1063, 1066, 992, 1174, 851, 1269, 682, 1308, 511, 1316, 140, 1295, -2, 1265, -3, 1172, 168, 1206, 324, 1220, 558, 1219, 785, 1189, 930, 1111, 1023, 947, 1040, 675, 990, 499, 936, 430, 782, 303, 601, 259, 380, 255, 207, 284, 67, 357, -2, 399)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="PathArea" index="1"]
+polygon = PackedVector2Array(826, 672, 907, 639, 962, 609, 1024, 570, 1031, 622, 968, 669, 901, 697, 838, 725, 863, 700, 839, 683)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="PathArea" index="2"]
+polygon = PackedVector2Array(852, 831, 897, 851, 968, 875, 1034, 893, 1026, 956, 947, 934, 852, 890, 829, 874, 866, 879, 850, 851)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="PathArea" index="3"]
+polygon = PackedVector2Array(1542, 1081, 1534, 1180, 1533, 1216, 1561, 1225, 1596, 1223, 1589, 1159, 1592, 1103, 1597, 1084)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="PathArea" index="4"]
+polygon = PackedVector2Array(1580, 256, 1588, 306, 1614, 400, 1635, 400, 1701, 400, 1707, 398, 1652, 247)
 
 [node name="SummonCountProcess" type="Node2D" parent="." index="19" node_paths=PackedStringArray("enemy_parnt_node")]
 script = ExtResource("53_w73fx")

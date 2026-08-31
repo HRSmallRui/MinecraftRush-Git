@@ -37,7 +37,7 @@ func attack_process():
 			3,4: damage = randi_range(60,120)
 			5: damage = randi_range(100,140)
 		if hurter is Enemy:
-			hurter.take_damage(damage,DataProcess.DamageType.TrueDamage,0,true,null,false)
+			hurter.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,null,false)
 	
 	AudioManager.instance.play_explosion_audio()
 	EffectManager.instance.play_explosion_effect(position)

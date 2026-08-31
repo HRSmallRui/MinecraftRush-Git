@@ -54,7 +54,7 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 	if far_attack and teleport_timer.is_stopped() and silence_layers <= 0:
 		var enemy_path: EnemyPath = get_parent()
 		var remaining_length: float = enemy_path.curve.get_baked_length() - progress
-		if remaining_length > 400:
+		if remaining_length > 680:
 			teleport_timer.start()
 			teleport()
 			return false
