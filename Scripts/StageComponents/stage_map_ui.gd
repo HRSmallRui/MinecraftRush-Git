@@ -99,8 +99,9 @@ func _on_map_texture_mouse_exited() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_released("escape") and map_ui_layer.visible:
+	if (event.is_action_released("escape") or event.is_action_released("map_visible")) and map_ui_layer.visible:
 		on_ui_layer_hide()
+		return
 	
 	if event.is_action_released("map_visible") and Stage.instance.can_control:
 		if map_ui_layer.visible: on_ui_layer_hide()
