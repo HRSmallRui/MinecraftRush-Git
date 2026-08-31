@@ -56,7 +56,7 @@ func move_logic_process():
 	if enemy_state == EnemyState.MOVE:
 		if far_attack_area.has_overlapping_bodies() and silence_layers <= 0 and sprint_timer.is_stopped():
 			var enemy_path: EnemyPath = get_parent()
-			if enemy_path.curve.get_baked_length() - progress > 700:
+			if enemy_path.curve.get_baked_length() - progress > 900:
 				sprint()
 				is_skill_releasing = true
 				return
