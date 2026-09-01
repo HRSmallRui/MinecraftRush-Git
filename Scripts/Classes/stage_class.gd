@@ -91,6 +91,7 @@ var is_dark_time: bool = false
 var is_win: bool = false
 var is_special_wave: bool = false
 var mouse_relative_velocity: Vector2
+var last_frame_mouse_position: Vector2
 var can_pause: bool = true
 var stage_based_position: Vector2 = Vector2.ZERO
 
@@ -190,6 +191,8 @@ func add_hero_skill_button():
 
 func _process(delta: float) -> void:
 	update_player_status()
+	mouse_relative_velocity = get_local_mouse_position() - last_frame_mouse_position
+	last_frame_mouse_position = get_local_mouse_position()
 	pass
 
 
@@ -219,11 +222,9 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventScreenDrag:
 		is_screen_draging = true
-		mouse_relative_velocity = event.velocity * stage_camera.zoom
 	elif event.is_action_released("click") and is_screen_draging:
 		await get_tree().process_frame
 		is_screen_draging = false
-		mouse_relative_velocity = Vector2.ZERO
 	
 	if event.is_action_pressed("cancel"):
 		ui_process(null)
@@ -265,7 +266,8 @@ func pause():
 
 func _on_click_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !event.is_action_released("click"): return
-	if is_screen_draging and mouse_relative_velocity.length() > 50:
+	print(mouse_relative_velocity.length())
+	if stage_camera.is_moving:
 		return
 	if stage_ui == StageUI.None or stage_ui == StageUI.Check:
 		ui_process(null)

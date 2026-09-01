@@ -21,6 +21,8 @@ var min_zoom: float
 var max_zoom: float
 var draging_list: Dictionary
 
+var is_moving: bool
+
 
 func _ready() -> void:
 	update_move_limit()
@@ -32,6 +34,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	is_moving = false
 	if !Stage.instance.can_control: return
 	#var direction: Vector2 = (Stage.instance.get_local_mouse_position() - position) * 0.1
 	if OS.get_name() == "Windows":
@@ -62,6 +65,7 @@ func _input(event: InputEvent) -> void:
 func windows_control(event: InputEvent):
 	if event is InputEventScreenDrag:
 		position -= event.relative * 0.8
+		is_moving = true
 	elif event.is_action_pressed("scroll_up"):
 		zoom += Vector2(0.05,0.05)
 		#position += direction
@@ -73,6 +77,7 @@ func windows_control(event: InputEvent):
 
 func phone_control(event: InputEvent):
 	if event is InputEventScreenDrag:
+		is_moving = true
 		var i = event.index
 		draging_list[i] = event
 		if draging_list.size() == 1 and i == 0:
