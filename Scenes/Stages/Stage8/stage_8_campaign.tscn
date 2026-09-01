@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bbn8cyt45bue8" path="res://Scenes/Enemies/enemy_19.tscn" id="2_gisrt"]
 [ext_resource type="Texture2D" uid="uid://cgjl6w6ehkvm2" path="res://Assets/Images/Stages/Stage8/stage8-based.png" id="2_ho75g"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_j36ji"]
+[ext_resource type="Script" path="res://Scripts/Stages/stage_8_campaign.gd" id="2_r65bx"]
 [ext_resource type="PackedScene" uid="uid://o3xssgmrkof1" path="res://Scenes/Enemies/enemy_20.tscn" id="3_irbgu"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="3_joqrv"]
 [ext_resource type="AudioStream" uid="uid://c6x3cgnnajyfc" path="res://Assets/Sounds/Music/沙漠-准备1.mp3" id="3_wkb3o"]
 [ext_resource type="PackedScene" uid="uid://bq7p36ak2tune" path="res://Scenes/Enemies/enemy_21.tscn" id="4_2u3fb"]
 [ext_resource type="AudioStream" uid="uid://dibi14vyf80g0" path="res://Assets/Sounds/Music/沙漠-战斗1.mp3" id="4_kwrku"]
 [ext_resource type="PackedScene" uid="uid://duo0sby5qmfjj" path="res://Scenes/Enemies/enemy_23.tscn" id="5_v6sdf"]
-[ext_resource type="Texture2D" uid="uid://c1dmun43nvik7" path="res://Assets/Images/Stages/Stage8/stage8-view.png" id="6_6sr2m"]
 [ext_resource type="Texture2D" uid="uid://ck6saapm4e7ex" path="res://Assets/Images/DefenceTowers/Barracks/Towers/LV2/Barrack_L2_fire.png" id="6_flkqa"]
 [ext_resource type="PackedScene" uid="uid://battap0mupbot" path="res://Scenes/StageComponents/hot_wave_system.tscn" id="7_2fl3r"]
 [ext_resource type="Texture2D" uid="uid://bfhvapkruvlxi" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_00.png" id="7_dxgrk"]
@@ -512,12 +512,12 @@ script = ExtResource("17_v1tbf")
 wave_summon_text_list = Array[ExtResource("18_daybj")]([SubResource("Resource_23dt6")])
 
 [node name="Stage8Campaign" instance=ExtResource("1_tfwnm")]
+script = ExtResource("2_r65bx")
 stage_count = 8
 enemy_scene_list = Array[PackedScene]([ExtResource("2_gisrt"), ExtResource("3_irbgu"), ExtResource("4_2u3fb"), ExtResource("5_v6sdf")])
 current_money = 1000
 total_waves = 14
 stage_environment_tags = Array[String](["desert"])
-stage_map_start_image = ExtResource("6_6sr2m")
 hero_sprite_flip = true
 stage_summon_config = SubResource("Resource_oqsi8")
 
