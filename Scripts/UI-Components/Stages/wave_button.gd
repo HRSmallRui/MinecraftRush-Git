@@ -205,6 +205,9 @@ func on_back_button_mouse_enter():
 
 func on_back_button_mouse_exited():
 	hide_path_effect()
+	if OS.get_name() == "Android":
+		if MobileMiddleProcess.instance.current_touch_object == back_button:
+			MobileMiddleProcess.instance.current_touch_object = null
 	pass
 
 
