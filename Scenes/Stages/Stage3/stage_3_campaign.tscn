@@ -1,4 +1,4 @@
-[gd_scene load_steps=309 format=3 uid="uid://rcg1lfxfefu4"]
+[gd_scene load_steps=311 format=3 uid="uid://rcg1lfxfefu4"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_xvwvm"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_3_campaign.gd" id="2_uvqui"]
@@ -130,6 +130,8 @@
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="115_jk1v3"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="116_8cjv6"]
 [ext_resource type="PackedScene" uid="uid://35ca4tcwg7oh" path="res://Scenes/DefenceTowers/BuyingSoldierTower/village_barrack_tower.tscn" id="118_yyt0x"]
+[ext_resource type="PackedScene" uid="uid://cishbj3djctgr" path="res://Scenes/UI-Components/TipButtons/map_tip_button.tscn" id="122_6l0mj"]
+[ext_resource type="PackedScene" uid="uid://dhbq6edfq84nt" path="res://Scenes/TipUI/map_tip_ui.tscn" id="123_kviai"]
 
 [sub_resource type="Resource" id="Resource_dl525"]
 script = ExtResource("2_wfi6c")
@@ -1584,6 +1586,10 @@ position = Vector2(677, 481)
 
 [node name="DragTipButton" parent="StageUI/TipsContainer" index="0" instance=ExtResource("5_ygspy")]
 layout_mode = 2
+
+[node name="MapTipButton" parent="StageUI/TipsContainer" index="1" instance=ExtResource("122_6l0mj")]
+layout_mode = 2
+open_tip_scene = ExtResource("123_kviai")
 
 [node name="CollisionShape2D" parent="ClickArea" index="0"]
 position = Vector2(1603.5, 542.5)
