@@ -1,6 +1,7 @@
 extends Stage
 
 @export var rain_system: RainSystem
+@export var rain_tip_button_scene: PackedScene
 
 
 func win(wait_time: float = 6):
