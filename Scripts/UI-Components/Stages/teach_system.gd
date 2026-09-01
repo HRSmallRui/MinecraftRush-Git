@@ -198,10 +198,10 @@ func step4():
 	story_layer.subtitle_change("右上角为暂停按钮，可以帮助你争取一些思考战局的时间",30,Color.WHITE)
 	story_layer.subtitle_change("部分情况可能会被破坏",34,Color.WHITE)
 	story_layer.subtitle_change("继续战斗吧！",34.4,Color.WHITE)
-	await get_tree().create_timer(38).timeout
+	await get_tree().create_timer(36).timeout
 	change_intro_text("",0.1)
 	story_layer.subtitle_change("",0.1,Color.WHITE)
-	Stage.instance.zoom_slider.mouse_filter = Control.MOUSE_FILTER_STOP
+	#Stage.instance.zoom_slider.mouse_filter = Control.MOUSE_FILTER_STOP
 	all_stop.hide()
 	create_tween().tween_property(directional_light,"energy",0,0.4)
 	create_tween().tween_property($StopLayer/TowerIntro,"modulate:a",0,0.4)
