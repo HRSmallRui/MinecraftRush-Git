@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://pgltvb47843k"]
+
+[ext_resource type="PackedScene" uid="uid://d11w8wb6ou4nk" path="res://Scenes/UI-Components/TipButtons/ArmorTipButton.tscn" id="1_tylkc"]
+[ext_resource type="Texture2D" uid="uid://w24ivspqftjk" path="res://Assets/Images/UI/TipIcons/Others/rain_tip.png" id="2_uo7im"]
+[ext_resource type="Texture2D" uid="uid://chrhubvp6eoo0" path="res://Assets/Images/UI/TipIcons/Others/rain_tip-hover.png" id="3_dnhna"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xniyq"]
+atlas = ExtResource("2_uo7im")
+region = Rect2(10, 9, 106, 108)
+
+[node name="RainTipButton" instance=ExtResource("1_tylkc")]
+
+[node name="TextureButton" parent="Button" index="0"]
+texture_normal = SubResource("AtlasTexture_xniyq")
+texture_pressed = SubResource("AtlasTexture_xniyq")
+texture_hover = ExtResource("3_dnhna")
