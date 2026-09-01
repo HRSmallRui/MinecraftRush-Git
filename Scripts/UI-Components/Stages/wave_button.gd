@@ -50,6 +50,8 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	back_button.mouse_entered.connect(on_back_button_mouse_enter)
 	back_button.mouse_exited.connect(on_back_button_mouse_exited)
+	if OS.get_name() == "Android":
+		back_button.scale *= 2
 	pass
 
 
@@ -169,15 +171,16 @@ func _on_back_button_pressed() -> void:
 
 func control_back_button_visible():
 	if visible:
+		var offset: Vector2 = back_button.size / 2 * back_button.scale
 		var distance: Vector2 = position - Stage.instance.stage_camera.position
-		back_button.visible = abs(distance.x) > (960+24) / Stage.instance.stage_camera.zoom.x or abs(distance.y) > (540+24) / Stage.instance.stage_camera.zoom.y
+		back_button.visible = abs(distance.x) > (960+ offset.x) / Stage.instance.stage_camera.zoom.x or abs(distance.y) > (540+ offset.y) / Stage.instance.stage_camera.zoom.y
 		var direction: Vector2 = (position - Stage.instance.stage_camera.position).normalized()
 		var x_rate: float = abs(1920 / 2 / direction.x)
 		var y_rate: float = abs(1080 / 2 / direction.y)
 		back_button.position = Vector2(960,540)
 		back_button.position += direction * x_rate if x_rate < y_rate else direction * y_rate
-		back_button.position -= Vector2(24,24)
-		back_button.position = Vector2(clampf(back_button.position.x,0,1872),clampf(back_button.position.y,0,1032))
+		back_button.position -= Vector2(offset.x,offset.y)
+		back_button.position = Vector2(clampf(back_button.position.x,0,1920 - 2 * offset.x),clampf(back_button.position.y,0,1080 - 2 * offset.y))
 	pass
 
 
