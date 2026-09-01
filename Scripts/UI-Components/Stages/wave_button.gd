@@ -157,6 +157,11 @@ func get_summon_information(wave_summon_text_list: Array[SummonTextBlock]) -> St
 
 
 func _on_back_button_pressed() -> void:
+	if OS.get_name() == "Android":
+		if MobileMiddleProcess.instance.current_touch_object != back_button:
+			MobileMiddleProcess.instance.current_touch_object = back_button
+			return
+	
 	Stage.instance.stage_camera.position = position
 	back_button.hide()
 	pass # Replace with function body.
