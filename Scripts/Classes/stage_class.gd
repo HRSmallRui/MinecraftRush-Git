@@ -266,7 +266,7 @@ func pause():
 
 func _on_click_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !event.is_action_released("click"): return
-	print(mouse_relative_velocity.length())
+	#print(mouse_relative_velocity.length())
 	if stage_camera.is_moving:
 		return
 	if stage_ui == StageUI.None or stage_ui == StageUI.Check:
