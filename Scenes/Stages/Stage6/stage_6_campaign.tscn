@@ -1,10 +1,11 @@
-[gd_scene load_steps=239 format=3 uid="uid://b1ocvkd8k1846"]
+[gd_scene load_steps=240 format=3 uid="uid://b1ocvkd8k1846"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_pyoss"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_7nihw"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_6_campaign.gd" id="2_cgxf2"]
 [ext_resource type="PackedScene" uid="uid://dk7q4k0117mlj" path="res://Scenes/Enemies/enemy_10.tscn" id="3_dpae6"]
 [ext_resource type="Texture2D" uid="uid://cv3ut8fbkbh2t" path="res://Assets/Images/Stages/Stage6/Stage6-based.png" id="3_k70ni"]
+[ext_resource type="PackedScene" uid="uid://pgltvb47843k" path="res://Scenes/UI-Components/TipButtons/rain_tip_button.tscn" id="3_kt1n7"]
 [ext_resource type="AudioStream" uid="uid://cudoongsdo5nn" path="res://Assets/Sounds/Music/雨林-准备2.mp3" id="3_ory83"]
 [ext_resource type="AudioStream" uid="uid://ctfffwa4ensw2" path="res://Assets/Sounds/Music/雨林-战斗1.mp3" id="4_3uans"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="4_j1o1f"]
@@ -1051,6 +1052,7 @@ wave_summon_text_list = Array[ExtResource("52_trd7h")]([SubResource("Resource_ei
 [node name="Stage6Campaign" node_paths=PackedStringArray("rain_system") instance=ExtResource("1_pyoss")]
 script = ExtResource("2_cgxf2")
 rain_system = NodePath("Background/RainLayer")
+rain_tip_button_scene = ExtResource("3_kt1n7")
 stage_count = 6
 enemy_scene_list = Array[PackedScene]([ExtResource("3_dpae6"), ExtResource("4_x52m1"), ExtResource("5_ybh4p"), ExtResource("6_0ltaa"), ExtResource("7_wpowy"), ExtResource("8_lquhj"), ExtResource("9_845sg"), ExtResource("10_3wpsd"), ExtResource("11_4x2em")])
 current_money = 1000
@@ -1662,7 +1664,7 @@ offset_bottom = 300.0
 linked_wave_panel = NodePath("../WavePanel")
 linked_enemy_path = NodePath("../../Enemies/EnemyPath")
 summon_text_list = Array[ExtResource("43_7kaar")]([null, SubResource("Resource_u3fkq"), SubResource("Resource_swu0k"), SubResource("Resource_frsjk"), SubResource("Resource_wepm5"), SubResource("Resource_1jcin"), SubResource("Resource_oc3l8"), SubResource("Resource_2cv8w"), SubResource("Resource_35uvq"), SubResource("Resource_b4ufj"), SubResource("Resource_ypvhy"), SubResource("Resource_pq33d"), SubResource("Resource_cgjvd"), SubResource("Resource_bq0uy"), SubResource("Resource_xbrkn")])
-summon_style_list = Array[int]([0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0])
+summon_style_list = Array[int]([0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0])
 
 [node name="Direction" type="Sprite2D" parent="WaveButtons/WaveButton" index="3"]
 show_behind_parent = true

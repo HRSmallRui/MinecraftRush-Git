@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://vpxnxixxefk5"]
+
+[ext_resource type="PackedScene" uid="uid://d11w8wb6ou4nk" path="res://Scenes/UI-Components/TipButtons/ArmorTipButton.tscn" id="1_htoic"]
+[ext_resource type="Texture2D" uid="uid://t7ws2hk0i7bj" path="res://Assets/Images/UI/TipIcons/Others/sun_tip.png" id="2_fhnli"]
+[ext_resource type="PackedScene" uid="uid://dprgfabn6a7mk" path="res://Scenes/TipUI/sun_tip_ui.tscn" id="2_hevmx"]
+[ext_resource type="Texture2D" uid="uid://c1102ucvqb4fl" path="res://Assets/Images/UI/TipIcons/Others/sun_tip-hover.png" id="3_cn88l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jdpv"]
+atlas = ExtResource("2_fhnli")
+region = Rect2(10, 9, 106, 108)
+
+[node name="SunTipButton" instance=ExtResource("1_htoic")]
+open_tip_scene = ExtResource("2_hevmx")
+
+[node name="TextureButton" parent="Button" index="0"]
+texture_normal = SubResource("AtlasTexture_7jdpv")
+texture_pressed = SubResource("AtlasTexture_7jdpv")
+texture_hover = ExtResource("3_cn88l")
