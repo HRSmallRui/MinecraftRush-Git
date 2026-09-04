@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2llntmdjgk2o"]
+[gd_scene load_steps=11 format=3 uid="uid://c2llntmdjgk2o"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_7548v"]
 [ext_resource type="Texture2D" uid="uid://bijpywyj4vdic" path="res://Assets/Images/UI/Wiki/wiki.png" id="2_053ui"]
+[ext_resource type="Texture2D" uid="uid://b7kkdp471t48r" path="res://Assets/Images/UI/Wiki/Index/based.png" id="3_8qfn0"]
+[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="3_u3qtp"]
+[ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="4_1aggx"]
+[ext_resource type="Texture2D" uid="uid://xfdsy6b4d5qo" path="res://Assets/Images/UI/Wiki/Index/hero.png" id="5_7u0ed"]
+[ext_resource type="Texture2D" uid="uid://d1cmb74atnaa7" path="res://Assets/Images/UI/Wiki/Index/enemy.png" id="6_wly5d"]
+[ext_resource type="Texture2D" uid="uid://hgtg66hhp4n" path="res://Assets/Images/UI/Wiki/Index/achievement.png" id="7_wxagi"]
+[ext_resource type="Texture2D" uid="uid://1dgjt52101xv" path="res://Assets/Images/UI/Wiki/Index/stages.png" id="8_v6lys"]
+[ext_resource type="Texture2D" uid="uid://cn1s81gejqiti" path="res://Assets/Images/UI/Wiki/Index/world.png" id="9_rdkir"]
 
 [node name="WikiPageIndex" instance=ExtResource("1_7548v")]
+offset_bottom = 1726.0
 
 [node name="VBoxContainer" parent="." index="0"]
 theme_override_constants/separation = 45
@@ -24,5 +33,129 @@ text = "欢迎来到MinecraftRush WIKI"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer" index="3"]
+[node name="Icons" type="Control" parent="." index="1"]
 layout_mode = 2
+anchors_preset = 0
+offset_top = 612.0
+offset_right = 1108.0
+offset_bottom = 612.0
+
+[node name="Based" type="TextureRect" parent="Icons" index="0"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 144.0
+offset_right = 190.0
+offset_bottom = 220.0
+scale = Vector2(2.4568, 2.4568)
+texture = ExtResource("3_8qfn0")
+
+[node name="Towers" type="TextureRect" parent="Icons" index="1"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 110.0
+offset_right = 548.0
+offset_bottom = 221.0
+scale = Vector2(2.11686, 2.11686)
+texture = ExtResource("4_1aggx")
+
+[node name="Heros" type="TextureRect" parent="Icons" index="2"]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 110.0
+offset_right = 888.0
+offset_bottom = 223.0
+scale = Vector2(2.11686, 2.11686)
+texture = ExtResource("5_7u0ed")
+
+[node name="Enemies" type="TextureRect" parent="Icons" index="3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 430.0
+offset_right = 204.0
+offset_bottom = 550.0
+scale = Vector2(2.08831, 2.08831)
+texture = ExtResource("6_wly5d")
+stretch_mode = 2
+
+[node name="Achievements" type="TextureRect" parent="Icons" index="4"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 430.0
+offset_right = 558.0
+offset_bottom = 550.0
+scale = Vector2(2.08831, 2.08831)
+texture = ExtResource("7_wxagi")
+stretch_mode = 2
+
+[node name="Stages" type="TextureRect" parent="Icons" index="5"]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 430.0
+offset_right = 897.0
+offset_bottom = 550.0
+scale = Vector2(2.08831, 2.08831)
+texture = ExtResource("8_v6lys")
+stretch_mode = 2
+
+[node name="World" type="TextureRect" parent="Icons" index="6"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 754.0
+offset_right = 566.0
+offset_bottom = 874.0
+scale = Vector2(1.74975, 1.74975)
+texture = ExtResource("9_rdkir")
+stretch_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 58.0
+offset_top = 877.0
+offset_right = 23.0
+offset_bottom = 446.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.929006, 0.929006)
+theme_override_constants/separation = 185
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer" index="0" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+button_text = "机制"
+
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer" index="1" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+button_text = "防御塔"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer" index="2" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+button_text = "英雄"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer2" index="0" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+button_text = "敌人"
+
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer2" index="1" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+button_text = "成就"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer2" index="2" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+button_text = "关卡"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2" index="2"]
+layout_mode = 2
+
+[node name="WikiButton" parent="VBoxContainer2/CenterContainer" index="0" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+button_text = "世界观"
