@@ -1,7 +1,49 @@
-[gd_scene format=3 uid="uid://cymii4lwokkbm"]
+[gd_scene load_steps=6 format=3 uid="uid://dtmbjrlhaiunw"]
+
+[ext_resource type="Script" path="res://Scenes/GameBased/wiki_manager.gd" id="1_6vbdg"]
+
+[sub_resource type="Gradient" id="Gradient_0t602"]
+offsets = PackedFloat32Array(0.0423197)
+colors = PackedColorArray(0.82606, 0.82606, 0.82606, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nlrek"]
+gradient = SubResource("Gradient_0t602")
+width = 1920
+height = 1080
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="Gradient" id="Gradient_utta5"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_276uj"]
+gradient = SubResource("Gradient_utta5")
+width = 1920
+height = 1080
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
 
 [node name="WikiManager" type="Control"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6vbdg")
+
+[node name="WhiteBackground" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_nlrek")
+centered = false
+
+[node name="DarkBackground" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("GradientTexture2D_276uj")
+centered = false
+
+[node name="ContentPage" type="Control" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
