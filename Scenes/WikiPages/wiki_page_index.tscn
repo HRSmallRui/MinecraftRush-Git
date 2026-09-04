@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2llntmdjgk2o"]
+
+[ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_7548v"]
+[ext_resource type="Texture2D" uid="uid://bijpywyj4vdic" path="res://Assets/Images/UI/Wiki/wiki.png" id="2_053ui"]
+
+[node name="WikiPageIndex" instance=ExtResource("1_7548v")]
+
+[node name="VBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 45
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("2_053ui")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "欢迎来到MinecraftRush WIKI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2

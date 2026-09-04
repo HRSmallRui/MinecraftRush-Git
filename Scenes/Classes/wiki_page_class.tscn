@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cegfri7a5acrr"]
+[gd_scene load_steps=3 format=3 uid="uid://cegfri7a5acrr"]
 
 [ext_resource type="Script" path="res://Scripts/Classes/wiki_page_class.gd" id="1_qpr6i"]
 [ext_resource type="Theme" uid="uid://bvw2btvppoisx" path="res://Assets/Resources/WikiThemes/wiki_white.tres" id="1_x1jrv"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df53x"]
-bg_color = Color(1, 1, 1, 1)
 
 [node name="WikiPageClass" type="Panel"]
 custom_minimum_size = Vector2(1108, 1080)
@@ -16,5 +13,12 @@ offset_right = 554.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 theme = ExtResource("1_x1jrv")
-theme_override_styles/panel = SubResource("StyleBoxFlat_df53x")
 script = ExtResource("1_qpr6i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
