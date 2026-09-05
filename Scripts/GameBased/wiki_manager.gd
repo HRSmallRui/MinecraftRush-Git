@@ -25,3 +25,9 @@ func into_color_mode(is_dark_mode: bool):
 	dark_background.visible = is_dark_mode
 	theme = dark_mode_theme if is_dark_mode else white_mode_theme
 	pass
+
+
+func into_new_wiki_page(page_path: String):
+	if page_path.length() == 0: return
+	
+	pass

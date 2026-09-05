@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2llntmdjgk2o"]
+[gd_scene load_steps=12 format=3 uid="uid://c2llntmdjgk2o"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_7548v"]
 [ext_resource type="Texture2D" uid="uid://bijpywyj4vdic" path="res://Assets/Images/UI/Wiki/wiki.png" id="2_053ui"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_page_index.gd" id="2_g0usd"]
 [ext_resource type="Texture2D" uid="uid://b7kkdp471t48r" path="res://Assets/Images/UI/Wiki/Index/based.png" id="3_8qfn0"]
 [ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="3_u3qtp"]
 [ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="4_1aggx"]
@@ -13,6 +14,9 @@
 
 [node name="WikiPageIndex" instance=ExtResource("1_7548v")]
 offset_bottom = 1726.0
+script = ExtResource("2_g0usd")
+main_title_pc_path = "res://Scenes/GameBased/main_title.tscn"
+main_title_mobile_path = "res://Scenes/GameBased/main_title_mobile.tscn"
 
 [node name="VBoxContainer" parent="." index="0"]
 theme_override_constants/separation = 45
@@ -159,3 +163,20 @@ layout_mode = 2
 [node name="WikiButton" parent="VBoxContainer2/CenterContainer" index="0" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
 button_text = "世界观"
+
+[node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("3_u3qtp")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -188.0
+offset_right = -41.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+button_text = "返回"
+
+[connection signal="pressed" from="TopMenu/BackButton" to="." method="_on_back_button_pressed"]

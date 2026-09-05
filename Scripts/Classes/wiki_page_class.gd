@@ -16,9 +16,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_up"):
-		position.y += 30
+		position.y += 50
 	elif event.is_action_pressed("scroll_down"):
-		position.y -= 30
+		position.y -= 50
 	elif event is InputEventScreenDrag:
 		position.y += event.screen_relative.y
 	
