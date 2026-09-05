@@ -1,0 +1,1160 @@
+[gd_scene load_steps=32 format=3 uid="uid://byut0ro5rjtac"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_xdp5a"]
+[ext_resource type="Texture2D" uid="uid://byr6h758xi36p" path="res://Assets/Images/UI/Wiki/GameBased/Index/图标说明.png" id="2_xufse"]
+[ext_resource type="Texture2D" uid="uid://cxlgijvx46h50" path="res://Assets/Images/UI/Wiki/PropertyIcons/生命值.png" id="3_2j8s0"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="3_j0s68"]
+[ext_resource type="Texture2D" uid="uid://btlwlecwmchor" path="res://Assets/Images/UI/Wiki/PropertyIcons/重生时间.png" id="4_6td5j"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="5_s2fay"]
+[ext_resource type="Texture2D" uid="uid://cey441i8fdaaa" path="res://Assets/Images/UI/Wiki/PropertyIcons/魔抗.png" id="6_u2omh"]
+[ext_resource type="Texture2D" uid="uid://dtlktbskj522n" path="res://Assets/Images/UI/Wiki/PropertyIcons/炮伤抗性.png" id="7_q1s4x"]
+[ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="8_qmuq2"]
+[ext_resource type="Texture2D" uid="uid://ci7smwcc4ybhj" path="res://Assets/Images/UI/Wiki/PropertyIcons/易伤.png" id="9_n6fyy"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="10_0b8q8"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="11_ppfyw"]
+[ext_resource type="Texture2D" uid="uid://ceyxpifdwjgbk" path="res://Assets/Images/UI/Wiki/PropertyIcons/调集范围.png" id="12_hbu0d"]
+[ext_resource type="Texture2D" uid="uid://bimevl5e61x3l" path="res://Assets/Images/UI/Wiki/PropertyIcons/拦截范围.png" id="13_xo0ry"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="14_ujv6r"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="15_aqlp3"]
+[ext_resource type="Texture2D" uid="uid://ccun8enm5qa0s" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程物伤.png" id="16_ibi52"]
+[ext_resource type="Texture2D" uid="uid://cxe06uf8j4e3f" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战法伤.png" id="17_28t17"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="18_nn86h"]
+[ext_resource type="Texture2D" uid="uid://dusmfjrww8sgn" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战炮伤.png" id="19_poxdu"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="20_pllmt"]
+[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="21_jue22"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="22_gqp2p"]
+[ext_resource type="Texture2D" uid="uid://drp8leo284ll0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战超伤.png" id="23_o5omb"]
+[ext_resource type="Texture2D" uid="uid://032wguw1vpgm" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程超伤.png" id="24_oj7ds"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="25_llrpl"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="26_0hsho"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="27_ti1i2"]
+[ext_resource type="Texture2D" uid="uid://cpjwn3humgv6h" path="res://Assets/Images/UI/Wiki/PropertyIcons/代价.png" id="28_qq3v3"]
+[ext_resource type="Texture2D" uid="uid://cluf52rrkcnre" path="res://Assets/Images/UI/Wiki/PropertyIcons/LV.png" id="29_2x78f"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="31_w0m2u"]
+
+[node name="WikiIconIntro" instance=ExtResource("1_xdp5a")]
+offset_bottom = 6139.0
+
+[node name="Icons" type="Control" parent="." index="0"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Icons" index="0"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 745.0
+offset_right = 243.0
+offset_bottom = 806.0
+texture = ExtResource("3_2j8s0")
+
+[node name="TextureRect2" type="TextureRect" parent="Icons" index="1"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 889.0
+offset_right = 289.0
+offset_bottom = 961.0
+texture = ExtResource("3_j0s68")
+
+[node name="TextureRect3" type="TextureRect" parent="Icons" index="2"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 1059.0
+offset_right = 268.0
+offset_bottom = 1121.0
+texture = ExtResource("4_6td5j")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="Icons" index="3"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 1364.0
+offset_right = 211.0
+offset_bottom = 1430.0
+texture = ExtResource("5_s2fay")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="Icons" index="4"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 1522.0
+offset_right = 281.0
+offset_bottom = 1591.0
+texture = ExtResource("6_u2omh")
+stretch_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Icons" index="5"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 1680.0
+offset_right = 287.0
+offset_bottom = 1754.0
+texture = ExtResource("7_q1s4x")
+stretch_mode = 3
+
+[node name="TextureRect7" type="TextureRect" parent="Icons" index="6"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 1847.0
+offset_right = 289.0
+offset_bottom = 1921.0
+texture = ExtResource("8_qmuq2")
+stretch_mode = 3
+
+[node name="TextureRect8" type="TextureRect" parent="Icons" index="7"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 2009.0
+offset_right = 214.0
+offset_bottom = 2083.0
+texture = ExtResource("9_n6fyy")
+stretch_mode = 3
+
+[node name="TextureRect9" type="TextureRect" parent="Icons" index="8"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 2380.0
+offset_right = 213.0
+offset_bottom = 2454.0
+texture = ExtResource("10_0b8q8")
+stretch_mode = 3
+
+[node name="TextureRect10" type="TextureRect" parent="Icons" index="9"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 2539.0
+offset_right = 207.0
+offset_bottom = 2613.0
+texture = ExtResource("11_ppfyw")
+stretch_mode = 3
+
+[node name="TextureRect11" type="TextureRect" parent="Icons" index="10"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 2698.0
+offset_right = 277.0
+offset_bottom = 2772.0
+texture = ExtResource("12_hbu0d")
+stretch_mode = 3
+
+[node name="TextureRect12" type="TextureRect" parent="Icons" index="11"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 2861.0
+offset_right = 288.0
+offset_bottom = 2935.0
+texture = ExtResource("13_xo0ry")
+stretch_mode = 3
+
+[node name="TextureRect13" type="TextureRect" parent="Icons" index="12"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 3016.0
+offset_right = 289.0
+offset_bottom = 3092.0
+texture = ExtResource("14_ujv6r")
+stretch_mode = 3
+
+[node name="TextureRect14" type="TextureRect" parent="Icons" index="13"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 3389.0
+offset_right = 284.0
+offset_bottom = 3465.0
+texture = ExtResource("15_aqlp3")
+stretch_mode = 3
+
+[node name="TextureRect15" type="TextureRect" parent="Icons" index="14"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 3550.0
+offset_right = 278.0
+offset_bottom = 3626.0
+texture = ExtResource("16_ibi52")
+stretch_mode = 3
+
+[node name="TextureRect16" type="TextureRect" parent="Icons" index="15"]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 3708.0
+offset_right = 290.0
+offset_bottom = 3784.0
+texture = ExtResource("17_28t17")
+stretch_mode = 3
+
+[node name="TextureRect17" type="TextureRect" parent="Icons" index="16"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 3866.0
+offset_right = 293.0
+offset_bottom = 3942.0
+texture = ExtResource("18_nn86h")
+stretch_mode = 3
+
+[node name="TextureRect18" type="TextureRect" parent="Icons" index="17"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 4028.0
+offset_right = 294.0
+offset_bottom = 4104.0
+texture = ExtResource("19_poxdu")
+stretch_mode = 3
+
+[node name="TextureRect19" type="TextureRect" parent="Icons" index="18"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 4191.0
+offset_right = 287.0
+offset_bottom = 4267.0
+texture = ExtResource("20_pllmt")
+stretch_mode = 3
+
+[node name="TextureRect20" type="TextureRect" parent="Icons" index="19"]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 4351.0
+offset_right = 290.0
+offset_bottom = 4427.0
+texture = ExtResource("21_jue22")
+stretch_mode = 3
+
+[node name="TextureRect21" type="TextureRect" parent="Icons" index="20"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 4515.0
+offset_right = 287.0
+offset_bottom = 4591.0
+texture = ExtResource("22_gqp2p")
+stretch_mode = 3
+
+[node name="TextureRect22" type="TextureRect" parent="Icons" index="21"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 4675.0
+offset_right = 288.0
+offset_bottom = 4751.0
+texture = ExtResource("23_o5omb")
+stretch_mode = 3
+
+[node name="TextureRect23" type="TextureRect" parent="Icons" index="22"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 4836.0
+offset_right = 286.0
+offset_bottom = 4912.0
+texture = ExtResource("24_oj7ds")
+stretch_mode = 3
+
+[node name="TextureRect24" type="TextureRect" parent="Icons" index="23"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 5208.0
+offset_right = 293.0
+offset_bottom = 5284.0
+texture = ExtResource("25_llrpl")
+stretch_mode = 3
+
+[node name="TextureRect25" type="TextureRect" parent="Icons" index="24"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 5367.0
+offset_right = 296.0
+offset_bottom = 5443.0
+texture = ExtResource("26_0hsho")
+stretch_mode = 3
+
+[node name="TextureRect26" type="TextureRect" parent="Icons" index="25"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 5525.0
+offset_right = 246.0
+offset_bottom = 5601.0
+texture = ExtResource("27_ti1i2")
+stretch_mode = 3
+
+[node name="TextureRect27" type="TextureRect" parent="Icons" index="26"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 5690.0
+offset_right = 214.0
+offset_bottom = 5766.0
+texture = ExtResource("28_qq3v3")
+stretch_mode = 3
+
+[node name="TextureRect28" type="TextureRect" parent="Icons" index="27"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 5853.0
+offset_right = 208.0
+offset_bottom = 5929.0
+texture = ExtResource("29_2x78f")
+stretch_mode = 3
+
+[node name="VBoxContainer" parent="." index="1"]
+theme_override_constants/separation = 45
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_xufse")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "图标说明"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Wiki 中的属性列表使用了大量图标来压缩信息展示空间。本页面列出了所有可能出现的图标及其含义。部分图标仅在 Wiki 中用于数据展示，并不会出现在游戏主界面中。
+ 
+如果你在查看Wiki过程中有发现不认识的图标，可以把鼠标置于图标之上，会显示该图标所表示的简单含义，图标的具体含义详见此页。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "生存属性"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Property" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer/Property" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Property/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "生命值"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer/Property" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/Property/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "单位的最大生命值，归零时单位死亡"
+autowrap_mode = 3
+
+[node name="Property2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer/Property2" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Property2/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "脱战回血"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer/Property2" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/Property2/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "脱离战斗后每秒恢复的生命值"
+autowrap_mode = 3
+
+[node name="Property3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer/Property3" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Property3/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "重生时间"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer/Property3" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/Property3/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "可重生我方单位被击败后重新登场所需时间"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "防御属性"
+autowrap_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Property" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/Property/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "护甲"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2/Property/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "减少受到的物理伤害或炮击伤害，按百分比减免"
+autowrap_mode = 3
+
+[node name="Property2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property2" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/Property2/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "魔法抗性"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property2" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2/Property2/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "减少受到的魔法伤害，按百分比减免，后面简称魔抗"
+autowrap_mode = 3
+
+[node name="Property3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property3" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/Property3/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "炮伤抗性"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property3" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2/Property3/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "减少受到的炮击伤害，按百分比减免，后面简称炮抗"
+autowrap_mode = 3
+
+[node name="Property4" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property4" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/Property4/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "总伤减免"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property4" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2/Property4/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "减少所有类型伤害，在最后阶段结算，晚于其他抗性的结算，按百分比减免，后面简称减伤"
+autowrap_mode = 3
+
+[node name="Property5" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property5" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/Property5/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "易伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer2/Property5" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2/Property5/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "受到的伤害增加，按百分比增幅"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "移动/范围属性"
+autowrap_mode = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Property" type="VBoxContainer" parent="VBoxContainer/VBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3/Property/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "移速"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer3/Property/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "单位的移动速度"
+autowrap_mode = 3
+
+[node name="Property2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer3" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property2" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3/Property2/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "射程"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property2" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer3/Property2/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "单位的攻击或技能作用距离"
+autowrap_mode = 3
+
+[node name="Property3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer3" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property3" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3/Property3/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "集结范围"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property3" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer3/Property3/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "兵营调集士兵或其他塔调集召唤物的最远范围"
+autowrap_mode = 3
+
+[node name="Property4" type="VBoxContainer" parent="VBoxContainer/VBoxContainer3" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property4" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3/Property4/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "拦截范围"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property4" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer3/Property4/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "单位拦截敌人的判定范围"
+autowrap_mode = 3
+
+[node name="Property5" type="VBoxContainer" parent="VBoxContainer/VBoxContainer3" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property5" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3/Property5/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "伤害范围"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer3/Property5" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer3/Property5/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "攻击或技能的影响半径"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "攻击属性"
+autowrap_mode = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Property" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "近战物伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "近战物理攻击的伤害数值"
+autowrap_mode = 3
+
+[node name="Property2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property2" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property2/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "远程物伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property2" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property2/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "远程物理攻击的伤害数值"
+autowrap_mode = 3
+
+[node name="Property3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property3" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property3/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "近战法伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property3" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property3/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "近战魔法攻击的伤害数值"
+autowrap_mode = 3
+
+[node name="Property4" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property4" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property4/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "远程法伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property4" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property4/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "远程魔法攻击的伤害数值"
+autowrap_mode = 3
+
+[node name="Property5" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property5" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property5/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "近战炮伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property5" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property5/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "近战炮击攻击的伤害数值"
+autowrap_mode = 3
+
+[node name="Property6" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property6" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property6/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "远程炮伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property6" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property6/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "远程炮击攻击的伤害数值"
+autowrap_mode = 3
+
+[node name="Property7" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property7" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property7/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "近战真伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property7" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property7/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "近战真实伤害的伤害数值"
+autowrap_mode = 3
+
+[node name="Property8" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property8" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property8/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "远程真伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property8" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property8/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "远程真实伤害的伤害数值"
+autowrap_mode = 3
+
+[node name="Property9" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property9" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property9/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "近战超伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property9" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property9/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "近战超级伤害的伤害数值"
+autowrap_mode = 3
+
+[node name="Property10" type="VBoxContainer" parent="VBoxContainer/VBoxContainer4" index="9"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property10" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4/Property10/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "远程超伤"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer4/Property10" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4/Property10/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "远程超级伤害的伤害数值"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer8" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "其他属性"
+autowrap_mode = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer" index="16"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Property" type="VBoxContainer" parent="VBoxContainer/VBoxContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer5/Property/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "人数上限"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer5/Property/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "兵营士兵数量上限或召唤物最大数量"
+autowrap_mode = 3
+
+[node name="Property2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer5" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property2" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer5/Property2/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "攻击间隔"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property2" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer5/Property2/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "两次攻击之间的冷却时间，也可用于表示技能冷却时间"
+autowrap_mode = 3
+
+[node name="Property3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer5" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property3" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer5/Property3/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "绿宝石"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property3" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer5/Property3/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "游戏内货币，可表示升级所需花费或敌人赏金（击败敌人可获得赏金）"
+autowrap_mode = 3
+
+[node name="Property4" type="VBoxContainer" parent="VBoxContainer/VBoxContainer5" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property4" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer5/Property4/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "代价"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property4" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer5/Property4/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "敌方单位通过终点后我方损失的生命值，生命值降低至0以下时游戏失败"
+autowrap_mode = 3
+
+[node name="Property5" type="VBoxContainer" parent="VBoxContainer/VBoxContainer5" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property5" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer5/Property5/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "等级"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VBoxContainer5/Property5" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer5/Property5/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "我方单位或者防御塔的等级"
+autowrap_mode = 3
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 50.0
+offset_right = 374.0
+offset_bottom = 587.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_w0m2u")]
+layout_mode = 2
+text = "生存属性"
+wiki_page = NodePath("../../..")
+target_pos = -540.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_w0m2u")]
+layout_mode = 2
+text = "防御属性"
+wiki_page = NodePath("../../..")
+target_pos = -1239.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_w0m2u")]
+layout_mode = 2
+text = "移动/范围属性"
+wiki_page = NodePath("../../..")
+target_pos = -2177.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_w0m2u")]
+layout_mode = 2
+text = "攻击属性"
+wiki_page = NodePath("../../..")
+target_pos = -3193.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_w0m2u")]
+layout_mode = 2
+text = "其他属性"
+wiki_page = NodePath("../../..")
+target_pos = -5006.0
