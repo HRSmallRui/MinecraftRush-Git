@@ -8,6 +8,7 @@ static var instance: WikiManager
 
 @onready var white_background: Sprite2D = $WhiteBackground
 @onready var dark_background: Sprite2D = $DarkBackground
+@onready var content_page: Control = $ContentPage
 
 
 func _init() -> void:
@@ -29,5 +30,9 @@ func into_color_mode(is_dark_mode: bool):
 
 func into_new_wiki_page(page_path: String):
 	if page_path.length() == 0: return
-	
+	if not content_page.get_children().is_empty():
+		content_page.get_child(0).queue_free()
+	var new_wiki_page_scene: PackedScene = load(page_path)
+	var new_wiki_page: WikiPage = new_wiki_page_scene.instantiate()
+	content_page.add_child(new_wiki_page)
 	pass
