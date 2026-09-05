@@ -1,5 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv5hlf0m7c3v"]
+[gd_scene load_steps=3 format=3 uid="uid://dv5hlf0m7c3v"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_p83sj"]
+[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_tk5ty"]
 
 [node name="WikiStage" instance=ExtResource("1_p83sj")]
+
+[node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_tk5ty")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -188.0
+offset_right = -41.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+button_text = "返回"
+linked_path = "res://Scenes/WikiPages/wiki_page_index.tscn"
