@@ -1,0 +1,231 @@
+[gd_scene load_steps=8 format=3 uid="uid://xakiheqgftpp"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_qu5km"]
+[ext_resource type="Texture2D" uid="uid://kvtiahtqqp5q" path="res://Assets/Images/UI/Wiki/GameBased/Index/数值分级.png" id="2_jhsul"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="2_y0fjx"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="3_355ol"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="4_n48bq"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="5_jfdhk"]
+[ext_resource type="Texture2D" uid="uid://cey441i8fdaaa" path="res://Assets/Images/UI/Wiki/PropertyIcons/魔抗.png" id="5_pkc5a"]
+
+[node name="WikiDataLevel" instance=ExtResource("1_qu5km")]
+offset_bottom = 2609.0
+
+[node name="Icons" type="Control" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Icons" index="0"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 582.0
+offset_right = 103.0
+offset_bottom = 634.0
+scale = Vector2(2.15885, 2.15885)
+texture = ExtResource("2_y0fjx")
+
+[node name="TextureRect2" type="TextureRect" parent="Icons" index="1"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 1061.0
+offset_right = 104.0
+offset_bottom = 1127.0
+scale = Vector2(1.8652, 1.8652)
+texture = ExtResource("3_355ol")
+
+[node name="TextureRect3" type="TextureRect" parent="Icons" index="2"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 1543.0
+offset_right = 102.0
+offset_bottom = 1609.0
+scale = Vector2(1.8652, 1.8652)
+texture = ExtResource("4_n48bq")
+
+[node name="TextureRect5" type="TextureRect" parent="Icons" index="3"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 2075.0
+offset_right = 102.0
+offset_bottom = 2141.0
+scale = Vector2(1.8652, 1.8652)
+texture = ExtResource("5_jfdhk")
+
+[node name="TextureRect4" type="TextureRect" parent="Icons" index="4"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 1543.0
+offset_right = 563.0
+offset_bottom = 1612.0
+scale = Vector2(1.8652, 1.8652)
+texture = ExtResource("5_pkc5a")
+
+[node name="VBoxContainer" parent="." index="1"]
+theme_override_constants/separation = 40
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_jhsul")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "数值分级"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "游戏中的部分属性采用模糊描述分级（如“快/中/慢”），便于你在战斗中快速判断以及提供一个概念参考。如果你想了解这些描述背后的具体数值，或者在做更精细的策略规划时，可以参考本页面的说明，明确游戏内部如何进行数值分级。
+ 
+如果你想查看对应防御塔/敌人单位/我方单位的具体数值，请前往对应页面，本页面主要针对游戏内的数值如何分级进行解释。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 64
+text = "射程"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "近： 低于320
+ 
+中： 320 - 360（不包含360）
+ 
+远： 360 - 400（不包含400）
+ 
+超远： 400 - 460（不包含460）
+ 
+极远： 高于460"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 64
+text = "攻速"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "非常慢： 超过2秒
+ 
+慢： 1.5秒 - 2秒（不包含2秒）
+ 
+中： 0.8秒 - 1.5秒（不包含1.5秒）
+ 
+快： 0.5秒 - 0.8秒（不包含0.8秒）
+ 
+非常快： 少于0.5秒"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 64
+text = "护甲/魔抗"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer8" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "免疫： 超过或等于100点
+ 
+极高： 91 - 99点
+ 
+高： 61 - 90点
+ 
+中： 31 - 60点
+ 
+低： 1 - 30点
+ 
+无： 0点"
+autowrap_mode = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer9" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 64
+text = "移速"
+autowrap_mode = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer10" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "快： 超过1.2
+ 
+中： 0.71 - 1.2
+ 
+慢： 低于等于0.71
+ 
+ 
+注意：MinecraftRush采用kingdomrush1代的移速作为底层移速机制，移速表示的是N倍的标准移速，标准移速为每秒移动50像素。"
+autowrap_mode = 3
