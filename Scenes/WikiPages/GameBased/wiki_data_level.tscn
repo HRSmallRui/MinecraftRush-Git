@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xakiheqgftpp"]
+[gd_scene load_steps=9 format=3 uid="uid://xakiheqgftpp"]
 
 [ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_qu5km"]
 [ext_resource type="Texture2D" uid="uid://kvtiahtqqp5q" path="res://Assets/Images/UI/Wiki/GameBased/Index/数值分级.png" id="2_jhsul"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="4_n48bq"]
 [ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="5_jfdhk"]
 [ext_resource type="Texture2D" uid="uid://cey441i8fdaaa" path="res://Assets/Images/UI/Wiki/PropertyIcons/魔抗.png" id="5_pkc5a"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="8_chliv"]
 
 [node name="WikiDataLevel" instance=ExtResource("1_qu5km")]
 offset_bottom = 2609.0
@@ -229,3 +230,27 @@ text = "快： 超过1.2
  
 注意：MinecraftRush采用kingdomrush1代的移速作为底层移速机制，移速表示的是N倍的标准移速，标准移速为每秒移动50像素。"
 autowrap_mode = 3
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_chliv")]
+layout_mode = 2
+text = "射程"
+wiki_page = NodePath("../../..")
+target_pos = -541.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_chliv")]
+layout_mode = 2
+text = "攻速"
+wiki_page = NodePath("../../..")
+target_pos = -1035.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_chliv")]
+layout_mode = 2
+text = "护甲/魔抗"
+wiki_page = NodePath("../../..")
+target_pos = -1496.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_chliv")]
+layout_mode = 2
+text = "移速"
+wiki_page = NodePath("../../..")
+target_pos = -2037.0
