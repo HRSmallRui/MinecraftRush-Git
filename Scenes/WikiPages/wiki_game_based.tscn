@@ -1,10 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwdo4m8md7co"]
+[gd_scene load_steps=18 format=3 uid="uid://dwdo4m8md7co"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_2jjiv"]
 [ext_resource type="Texture2D" uid="uid://b7kkdp471t48r" path="res://Assets/Images/UI/Wiki/Index/based.png" id="2_twk5y"]
 [ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_x6hvy"]
+[ext_resource type="Texture2D" uid="uid://kvtiahtqqp5q" path="res://Assets/Images/UI/Wiki/GameBased/Index/数值分级.png" id="3_ot0wg"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="4_2nsdg"]
+[ext_resource type="Texture2D" uid="uid://byr6h758xi36p" path="res://Assets/Images/UI/Wiki/GameBased/Index/图标说明.png" id="4_jpwr1"]
+[ext_resource type="Texture2D" uid="uid://dtek306ryxrn2" path="res://Assets/Images/UI/Wiki/GameBased/Index/伤害结算机制.png" id="5_vcp3h"]
+[ext_resource type="Texture2D" uid="uid://fxdnskbf13vy" path="res://Assets/Images/UI/Wiki/GameBased/Index/环境机制.png" id="6_y3udv"]
+[ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="7_01jgu"]
+[ext_resource type="Texture2D" uid="uid://xfdsy6b4d5qo" path="res://Assets/Images/UI/Wiki/Index/hero.png" id="8_q2cf3"]
+[ext_resource type="Texture2D" uid="uid://s2g8wml2pdo3" path="res://Assets/Images/UI/Wiki/GameBased/Index/科技升级.png" id="9_4jeml"]
+[ext_resource type="Texture2D" uid="uid://d1cmb74atnaa7" path="res://Assets/Images/UI/Wiki/Index/enemy.png" id="10_skjir"]
+[ext_resource type="Texture2D" uid="uid://1dgjt52101xv" path="res://Assets/Images/UI/Wiki/Index/stages.png" id="11_vq2v4"]
+[ext_resource type="Texture2D" uid="uid://dwfa1a5oucaf3" path="res://Assets/Images/UI/Maps/medium.png" id="12_m2n5e"]
+[ext_resource type="Texture2D" uid="uid://bouos3o6f35l7" path="res://Assets/Images/UI/Wiki/GameBased/Index/标签系统.png" id="13_k8xp4"]
+[ext_resource type="Texture2D" uid="uid://dqvjxoqxwnxrc" path="res://Assets/Images/UI/Wiki/GameBased/Index/我方单位.png" id="14_s1npv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uti3m"]
+atlas = ExtResource("4_2nsdg")
+region = Rect2(98, 192, 331, 143)
 
 [node name="WikiGameBased" instance=ExtResource("1_2jjiv")]
+offset_bottom = 1770.0
 
 [node name="VBoxContainer" parent="." index="0"]
 theme_override_constants/separation = 45
@@ -38,6 +56,237 @@ text = "这里整理了《MinecraftRush》的核心规则，包括伤害计算�
 适合新手快速上手，也适合老手查漏补缺。"
 autowrap_mode = 3
 
+[node name="Icons" type="Control" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Icons" index="0"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 531.0
+offset_right = 226.0
+offset_bottom = 655.0
+scale = Vector2(1.5066, 1.5066)
+texture = ExtResource("3_ot0wg")
+
+[node name="TextureRect2" type="TextureRect" parent="Icons" index="1"]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 531.0
+offset_right = 578.0
+offset_bottom = 655.0
+scale = Vector2(1.5066, 1.5066)
+texture = ExtResource("4_jpwr1")
+
+[node name="TextureRect3" type="TextureRect" parent="Icons" index="2"]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 518.0
+offset_right = 928.0
+offset_bottom = 642.0
+scale = Vector2(1.5066, 1.5066)
+texture = ExtResource("5_vcp3h")
+
+[node name="TextureRect4" type="TextureRect" parent="Icons" index="3"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 792.0
+offset_right = 256.0
+offset_bottom = 939.0
+scale = Vector2(1.29394, 1.29394)
+texture = ExtResource("6_y3udv")
+
+[node name="ColorRect" type="ColorRect" parent="Icons/TextureRect4" index="0"]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 9.0
+offset_right = 149.0
+offset_bottom = 135.0
+color = Color(0, 0, 0, 0.337255)
+
+[node name="TextureRect5" type="TextureRect" parent="Icons" index="4"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 821.0
+offset_right = 582.0
+offset_bottom = 945.0
+scale = Vector2(1.5066, 1.5066)
+texture = ExtResource("7_01jgu")
+
+[node name="TextureRect6" type="TextureRect" parent="Icons" index="5"]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 833.0
+offset_right = 916.0
+offset_bottom = 957.0
+scale = Vector2(1.5066, 1.5066)
+texture = ExtResource("8_q2cf3")
+
+[node name="TextureRect7" type="TextureRect" parent="Icons" index="6"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 1118.0
+offset_right = 207.0
+offset_bottom = 1223.0
+scale = Vector2(1.95324, 1.95324)
+texture = ExtResource("9_4jeml")
+stretch_mode = 2
+
+[node name="TextureRect8" type="TextureRect" parent="Icons" index="7"]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 1120.0
+offset_right = 563.0
+offset_bottom = 1244.0
+scale = Vector2(1.69508, 1.69508)
+texture = ExtResource("10_skjir")
+stretch_mode = 2
+
+[node name="TextureRect9" type="TextureRect" parent="Icons" index="8"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 1121.0
+offset_right = 912.0
+offset_bottom = 1245.0
+scale = Vector2(1.69508, 1.69508)
+texture = ExtResource("11_vq2v4")
+stretch_mode = 2
+
+[node name="TextureRect10" type="TextureRect" parent="Icons" index="9"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 1400.0
+offset_right = 636.0
+offset_bottom = 1926.0
+scale = Vector2(0.357558, 0.357558)
+texture = ExtResource("12_m2n5e")
+stretch_mode = 2
+
+[node name="TextureRect11" type="TextureRect" parent="Icons" index="10"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 1433.0
+offset_right = 575.0
+offset_bottom = 1550.0
+scale = Vector2(1.6091, 1.6091)
+texture = ExtResource("13_k8xp4")
+stretch_mode = 2
+
+[node name="TextureRect12" type="TextureRect" parent="Icons" index="11"]
+layout_mode = 0
+offset_left = 842.0
+offset_top = 1433.0
+offset_right = 909.0
+offset_bottom = 1550.0
+scale = Vector2(1.6091, 1.6091)
+texture = ExtResource("14_s1npv")
+stretch_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -497.0
+offset_top = 658.0
+offset_right = 576.0
+offset_bottom = 1785.0
+grow_horizontal = 2
+scale = Vector2(0.929006, 0.929006)
+theme_override_constants/separation = 185
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer" index="0" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "数值分级"
+linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
+
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer" index="1" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "图标说明"
+linked_path = "res://Scenes/WikiPages/wiki_tower.tscn"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer" index="2" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "伤害结算机制"
+linked_path = "res://Scenes/WikiPages/wiki_hero.tscn"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer2" index="0" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "环境机制"
+linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
+
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer2" index="1" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "防御塔机制"
+linked_path = "res://Scenes/WikiPages/wiki_tower.tscn"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer2" index="2" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "英雄机制"
+linked_path = "res://Scenes/WikiPages/wiki_hero.tscn"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer3" index="0" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "科技升级"
+linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
+
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer3" index="1" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "敌人机制"
+linked_path = "res://Scenes/WikiPages/wiki_tower.tscn"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer3" index="2" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "关卡说明"
+linked_path = "res://Scenes/WikiPages/wiki_hero.tscn"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer2" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer4" index="0" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "难度选择"
+linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
+
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer4" index="1" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "标签系统"
+linked_path = "res://Scenes/WikiPages/wiki_tower.tscn"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer4" index="2" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "我方单位机制"
+linked_path = "res://Scenes/WikiPages/wiki_hero.tscn"
+
 [node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_x6hvy")]
 layout_mode = 1
 anchors_preset = 3
@@ -51,5 +300,6 @@ offset_right = -41.0
 offset_bottom = -45.0
 grow_horizontal = 0
 grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "返回"
 linked_path = "res://Scenes/WikiPages/wiki_page_index.tscn"
