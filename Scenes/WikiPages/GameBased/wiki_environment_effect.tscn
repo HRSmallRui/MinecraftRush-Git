@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://dunxppo4imdme"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_3085a"]
+[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_4is0m"]
+[ext_resource type="Texture2D" uid="uid://fxdnskbf13vy" path="res://Assets/Images/UI/Wiki/GameBased/Index/环境机制.png" id="2_87jtv"]
+[ext_resource type="Texture2D" uid="uid://dcuwa8g3dq1fg" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/rain.png" id="2_ubiju"]
+[ext_resource type="Texture2D" uid="uid://oq3yl7o5pktc" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/sun.png" id="3_81jiu"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="3_x68dk"]
+[ext_resource type="Texture2D" uid="uid://hy5d060rq0i5" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/lily.png" id="4_sdkvw"]
+[ext_resource type="Texture2D" uid="uid://drngsmqp0kjvc" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/tnt.png" id="5_pjxts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujaxa"]
+atlas = ExtResource("3_x68dk")
+region = Rect2(98, 192, 331, 143)
+
+[node name="WikiEnvironmentEffect" instance=ExtResource("1_3085a")]
+offset_bottom = 1356.0
+
+[node name="VBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 45
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_87jtv")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "环境机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "游戏中的部分关卡会触发特定的环境机制，对战场局势产生显著影响。理解并适应这些环境变化，是制定有效战术的关键。"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 597.0
+offset_right = 196.0
+offset_bottom = 701.0
+scale = Vector2(2.23457, 2.23457)
+texture = ExtResource("2_ubiju")
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 597.0
+offset_right = 571.0
+offset_bottom = 743.0
+scale = Vector2(1.76956, 1.76956)
+texture = ExtResource("3_81jiu")
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 604.0
+offset_right = 912.0
+offset_bottom = 750.0
+scale = Vector2(1.76956, 1.76956)
+texture = ExtResource("4_sdkvw")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 82.9999
+offset_top = 897.0
+offset_right = 229.0
+offset_bottom = 1043.0
+scale = Vector2(1.76956, 1.76956)
+texture = ExtResource("5_pjxts")
+stretch_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes" index="4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 40.0
+offset_top = 764.0
+offset_right = 1113.0
+offset_bottom = 1891.0
+grow_horizontal = 2
+scale = Vector2(0.929006, 0.929006)
+theme_override_constants/separation = 185
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="0" instance=ExtResource("2_4is0m")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ujaxa")
+button_text = "下雨机制"
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_data_level.tscn"
+white_theme_texture = SubResource("AtlasTexture_ujaxa")
+
+[node name="WikiButton2" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="1" instance=ExtResource("2_4is0m")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ujaxa")
+button_text = "烈阳机制"
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_icon_intro.tscn"
+white_theme_texture = SubResource("AtlasTexture_ujaxa")
+
+[node name="WikiButton3" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="2" instance=ExtResource("2_4is0m")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ujaxa")
+button_text = "路边花机制"
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_damage_intro.tscn"
+white_theme_texture = SubResource("AtlasTexture_ujaxa")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="FreeNodes/VBoxContainer2" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="FreeNodes/VBoxContainer2/HBoxContainer2" index="0" instance=ExtResource("2_4is0m")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ujaxa")
+button_text = "火炮增援"
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_environment_effect.tscn"
+white_theme_texture = SubResource("AtlasTexture_ujaxa")
