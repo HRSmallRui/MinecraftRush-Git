@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dunxppo4imdme"]
+[gd_scene load_steps=11 format=3 uid="uid://dunxppo4imdme"]
 
 [ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_3085a"]
 [ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_4is0m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="3_x68dk"]
 [ext_resource type="Texture2D" uid="uid://hy5d060rq0i5" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/lily.png" id="4_sdkvw"]
 [ext_resource type="Texture2D" uid="uid://drngsmqp0kjvc" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/tnt.png" id="5_pjxts"]
+[ext_resource type="Texture2D" uid="uid://cf1l02gihcik1" path="res://Assets/Images/Stages/Stage10/sandstorm.png" id="7_auhg4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujaxa"]
 atlas = ExtResource("3_x68dk")
@@ -85,7 +86,28 @@ scale = Vector2(1.76956, 1.76956)
 texture = ExtResource("5_pjxts")
 stretch_mode = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes" index="4"]
+[node name="TextureRect5" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 82.9999
+offset_top = 897.0
+offset_right = 229.0
+offset_bottom = 1043.0
+scale = Vector2(1.76956, 1.76956)
+texture = ExtResource("5_pjxts")
+stretch_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="FreeNodes" index="5"]
+modulate = Color(0.54902, 0.364706, 0.188235, 1)
+layout_mode = 0
+offset_left = 435.0
+offset_top = 960.0
+offset_right = 2355.0
+offset_bottom = 2040.0
+scale = Vector2(0.127871, 0.127871)
+texture = ExtResource("7_auhg4")
+stretch_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes" index="6"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -106,21 +128,21 @@ theme_override_constants/separation = 40
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ujaxa")
 button_text = "下雨机制"
-linked_path = "res://Scenes/WikiPages/GameBased/wiki_data_level.tscn"
+linked_path = "res://Scenes/WikiPages/GameBased/EnvironmentEffects/wiki_rain.tscn"
 white_theme_texture = SubResource("AtlasTexture_ujaxa")
 
 [node name="WikiButton2" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="1" instance=ExtResource("2_4is0m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ujaxa")
 button_text = "烈阳机制"
-linked_path = "res://Scenes/WikiPages/GameBased/wiki_icon_intro.tscn"
+linked_path = "res://Scenes/WikiPages/GameBased/EnvironmentEffects/wiki_sun.tscn"
 white_theme_texture = SubResource("AtlasTexture_ujaxa")
 
 [node name="WikiButton3" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="2" instance=ExtResource("2_4is0m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ujaxa")
 button_text = "路边花机制"
-linked_path = "res://Scenes/WikiPages/GameBased/wiki_damage_intro.tscn"
+linked_path = "res://Scenes/WikiPages/GameBased/EnvironmentEffects/wiki_lilies.tscn"
 white_theme_texture = SubResource("AtlasTexture_ujaxa")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="FreeNodes/VBoxContainer2" index="1"]
@@ -131,5 +153,12 @@ theme_override_constants/separation = 40
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ujaxa")
 button_text = "火炮增援"
-linked_path = "res://Scenes/WikiPages/GameBased/wiki_environment_effect.tscn"
+linked_path = "res://Scenes/WikiPages/GameBased/EnvironmentEffects/wiki_tnt_explosion.tscn"
+white_theme_texture = SubResource("AtlasTexture_ujaxa")
+
+[node name="WikiButton2" parent="FreeNodes/VBoxContainer2/HBoxContainer2" index="1" instance=ExtResource("2_4is0m")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ujaxa")
+button_text = "风沙机制"
+linked_path = "res://Scenes/WikiPages/GameBased/EnvironmentEffects/wiki_storm.tscn"
 white_theme_texture = SubResource("AtlasTexture_ujaxa")
