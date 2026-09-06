@@ -22,7 +22,7 @@ atlas = ExtResource("4_2nsdg")
 region = Rect2(98, 192, 331, 143)
 
 [node name="WikiGameBased" instance=ExtResource("1_2jjiv")]
-offset_bottom = 1770.0
+offset_bottom = 2089.0
 
 [node name="VBoxContainer" parent="." index="0"]
 theme_override_constants/separation = 45
@@ -286,6 +286,15 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "我方单位机制"
 linked_path = "res://Scenes/WikiPages/wiki_hero.tscn"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2" index="4"]
+layout_mode = 2
+
+[node name="WikiButton" parent="VBoxContainer2/CenterContainer" index="0" instance=ExtResource("2_x6hvy")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "状态效果"
+linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
 
 [node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_x6hvy")]
 layout_mode = 1
