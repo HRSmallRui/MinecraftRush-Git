@@ -150,7 +150,7 @@ func _on_shot_timer_timeout() -> void:
 			damage_type = DataProcess.DamageType.TrueDamage
 		linked_enemy.take_damage(damage,damage_type,0,true,self,false,false)
 		var level: int = clampi(Stage.instance.stage_sav.upgrade_sav[2],0,Stage.instance.limit_tech_level)
-		if level >= 3:
+		if level >= 3 and linked_enemy.current_data.armor > 0.1:
 			var broken_buff: PropertyBuff = preload("res://Scenes/Buffs/TowerBuffs/magic_armor_broken_buff.tscn").instantiate()
 			linked_enemy.buffs.add_child(broken_buff)
 		if level >= 4:

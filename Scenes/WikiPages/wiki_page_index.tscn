@@ -23,9 +23,6 @@ script = ExtResource("2_g0usd")
 main_title_pc_path = "res://Scenes/GameBased/main_title.tscn"
 main_title_mobile_path = "res://Scenes/GameBased/main_title_mobile.tscn"
 
-[node name="VBoxContainer" parent="." index="0"]
-theme_override_constants/separation = 45
-
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
 theme_override_constants/margin_top = 65
@@ -109,9 +106,9 @@ stretch_mode = 2
 
 [node name="World" type="TextureRect" parent="Icons" index="6"]
 layout_mode = 0
-offset_left = 446.0
+offset_left = 110.0
 offset_top = 754.0
-offset_right = 566.0
+offset_right = 230.0
 offset_bottom = 874.0
 scale = Vector2(1.74975, 1.74975)
 texture = ExtResource("9_rdkir")
@@ -175,13 +172,26 @@ texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "关卡"
 linked_path = "res://Scenes/WikiPages/wiki_stage.tscn"
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2" index="2"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2" index="2"]
 layout_mode = 2
+theme_override_constants/separation = 40
 
-[node name="WikiButton" parent="VBoxContainer2/CenterContainer" index="0" instance=ExtResource("3_u3qtp")]
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer3" index="0" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "世界观"
+linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
+
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer3" index="1" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "主动技能"
+linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer3" index="2" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "杂项"
 linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
 
 [node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("3_u3qtp")]
