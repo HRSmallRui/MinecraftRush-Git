@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6p7isiiab1cy"]
+[gd_scene load_steps=20 format=3 uid="uid://b6p7isiiab1cy"]
 
 [ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_l1eq6"]
 [ext_resource type="Texture2D" uid="uid://dtek306ryxrn2" path="res://Assets/Images/UI/Wiki/GameBased/Index/伤害结算机制.png" id="2_y7kpp"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://ci7smwcc4ybhj" path="res://Assets/Images/UI/Wiki/PropertyIcons/易伤.png" id="12_8ltbm"]
 [ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="13_v3giu"]
 [ext_resource type="Texture2D" uid="uid://dtlktbskj522n" path="res://Assets/Images/UI/Wiki/PropertyIcons/炮伤抗性.png" id="14_hmins"]
+[ext_resource type="Texture2D" uid="uid://b4jae4f7numwo" path="res://Assets/Images/Effects/DeadBodyExplosion/0.png" id="15_3iudx"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="15_ljub6"]
+[ext_resource type="Texture2D" uid="uid://bv63jepbjh5ej" path="res://Assets/Images/Effects/dust.png" id="16_dd3cr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgj3i"]
 atlas = ExtResource("3_gagvm")
@@ -25,10 +27,7 @@ atlas = ExtResource("4_bbvpu")
 region = Rect2(84, 87, 94, 83)
 
 [node name="WikiDamageIntro" instance=ExtResource("1_l1eq6")]
-offset_bottom = 5309.0
-
-[node name="VBoxContainer" parent="." index="0"]
-theme_override_constants/separation = 45
+offset_bottom = 6319.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -456,6 +455,66 @@ layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 48
 text = "各伤害类型总结"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_top = 490
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "秒杀机制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "秒杀是一类特殊的伤害结算方式，不经过常规的护甲/魔抗计算流程，而是直接判定目标死亡。游戏内分为 sec_kill 和 disappear_kill 两种类型。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "sec_kill（常规秒杀）"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="4"]
+layout_mode = 2
+text = "sec_kill 是游戏内最常见的秒杀方式，带有一个 explosion 的bool类型参数，用于控制是否触发尸体爆炸效果。
+ 
+部分情况下可能会起到禁亡语的效果，比如鸡骑士如果被带explosion参数的伤害致死（包括秒杀攻击），则不会生成尸国小鬼。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "disappear_kill（消失秒杀）"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="7"]
+layout_mode = 2
+text = "disappear_kill 是一种更彻底的秒杀方式，不会走任何 die 相关处理，而是执行一套完全独立的处理流程。该秒杀执行时受击目标会立即消失，通常情况下为了补足视觉效果，会额外放置一团灰尘作为视觉特效残留。
+ 
+该秒杀因为不走 die 相关处理，所以必定能够封禁亡语效果，比如鸡骑士的死亡生成尸国小鬼以及大刀兵的神赐技能，除非受击目标重写了disappear_kill的处理逻辑。"
+autowrap_mode = 3
 
 [node name="Table" type="Control" parent="." index="1"]
 anchors_preset = 0
@@ -976,6 +1035,35 @@ offset_bottom = 2921.0
 texture = ExtResource("14_hmins")
 stretch_mode = 3
 
+[node name="TextureRect12" type="TextureRect" parent="Icons" index="11"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 5497.0
+offset_right = 648.0
+offset_bottom = 5753.0
+scale = Vector2(0.637106, 0.637106)
+texture = ExtResource("15_3iudx")
+stretch_mode = 3
+
+[node name="TextureRect13" type="TextureRect" parent="Icons" index="12"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 5816.0
+offset_right = 889.0
+offset_bottom = 6128.0
+scale = Vector2(0.382962, 0.382962)
+texture = ExtResource("16_dd3cr")
+stretch_mode = 3
+
+[node name="Panel" type="Panel" parent="Icons/TextureRect13" index="0"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="NavigationVBox" parent="TopMenu" index="1"]
 offset_left = 42.0
 offset_top = 94.0
@@ -999,3 +1087,9 @@ layout_mode = 2
 text = "伤害类型总结"
 wiki_page = NodePath("../../..")
 target_pos = -4624.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("15_ljub6")]
+layout_mode = 2
+text = "秒杀机制"
+wiki_page = NodePath("../../..")
+target_pos = -5252.0
