@@ -1,0 +1,506 @@
+[gd_scene load_steps=17 format=3 uid="uid://c4as7aygvkt8u"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_gvwki"]
+[ext_resource type="Texture2D" uid="uid://d1cmb74atnaa7" path="res://Assets/Images/UI/Wiki/Index/enemy.png" id="2_nopcq"]
+[ext_resource type="Texture2D" uid="uid://j68gd7t8w0t3" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy0.png" id="3_kaegy"]
+[ext_resource type="Texture2D" uid="uid://j66an3ynmmr1" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy5.png" id="4_prx26"]
+[ext_resource type="Texture2D" uid="uid://ddfpmjq14iq1g" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy26.png" id="5_hwvlt"]
+[ext_resource type="Texture2D" uid="uid://ureca7nyetwb" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy44.png" id="6_wsawa"]
+[ext_resource type="Texture2D" uid="uid://nsqxt7shtkne" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy54.png" id="7_td4jy"]
+[ext_resource type="Texture2D" uid="uid://ccun8enm5qa0s" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程物伤.png" id="8_3h3gn"]
+[ext_resource type="Texture2D" uid="uid://bimevl5e61x3l" path="res://Assets/Images/UI/Wiki/PropertyIcons/拦截范围.png" id="9_fd2t0"]
+[ext_resource type="Texture2D" uid="uid://cpjwn3humgv6h" path="res://Assets/Images/UI/Wiki/PropertyIcons/代价.png" id="10_4cuqg"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="11_f8apn"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="12_5hff0"]
+
+[sub_resource type="Gradient" id="Gradient_opk2x"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.0705882, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cil55"]
+gradient = SubResource("Gradient_opk2x")
+
+[sub_resource type="Gradient" id="Gradient_qquwx"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0.0941176, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mehti"]
+gradient = SubResource("Gradient_qquwx")
+
+[node name="WikiEnemy" instance=ExtResource("1_gvwki")]
+offset_bottom = 5959.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_nopcq")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "敌人机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "敌方单位是关卡中玩家需要抵御的敌对力量，涵盖从普通小兵到最终Boss的完整体系。本章节介绍敌方单位的分类体系、属性结构和通用行为规则。关于每种敌人的详细数值，请查阅[敌人板块]。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "定义"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "敌人类继承自引擎内置的PathFollow2D类，用于方便地沿着给定路线移动，与我方单位继承的基类完全不同，因此本游戏内不存在所谓的“策反”机制。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "UnitBody"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+text = "继承自CharacterBody2D，是敌人的基本组件，用于表示是否可以被索敌，部分情况也用于炮塔的伤害判定。
+ 
+UnitBody一定在敌人的原点坐标，用于表示敌人的实际位置，通常大体型敌人的UnitBody会更大，更容易被防御塔和我方单位索敌到。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "HurtBox"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="7"]
+layout_mode = 2
+text = "继承自Area2D，是敌人的基本组件，用于表示敌人的通常受击点位，一般在敌人图像的中心位置，会和子弹进行碰撞。
+ 
+HurtBox通常在敌人胸口的位置，体型越大越容易被子弹攻击到。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "图示"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "物理层"
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="13"]
+layout_mode = 2
+text = "敌人存在这些物理层，用于区分不同种类的敌人，方便更好地为索敌逻辑工作。
+ 
+EnemyGround： 地面敌人物理层，是最常见的物理层，用于表示正常的地面敌人。
+ 
+EnemySky： 空中敌人物理层，主要用于空军，通常情况会无视炮塔和地面英雄拦截索敌，用于表示正常的空中敌人。
+ 
+EnemyDead： 死亡敌人物理层，通常敌人死后会转换到这一物理层，用于表示敌人死亡，有时可能会用于复活类敌人使用。
+ 
+EnemyGroundHide： 隐身地面敌人物理层，通常用于表示处于隐身状态的地面敌人，这些敌人通常情况不会被攻击索敌到，但会被攻击波及。
+ 
+EnemySkyHide： 隐身空中敌人物理层，通常用于表示处于隐身状态的空中敌人，这些敌人通常情况不会被攻击索敌到，但会被攻击波及。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "体型分类"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "敌方单位按体型分为六个等级，体型决定了单位的死亡效果、部分机制免疫以及视觉表现。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "小型敌人"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+text = "标识符：Small
+ 
+通常用于表示最基础的敌方单位，数量多、血量低。
+ 
+在被带explosion参数的普通攻击或者秒杀攻击致死时，必定触发尸体爆炸效果，除此之外无特殊效果。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "中型敌人"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+text = "标识符：Medium
+ 
+通常用于表示常规战斗单位，属性均衡，通常是血量较高的中等威胁敌人。
+ 
+在被带explosion参数的普通攻击致死时不会触发尸体爆炸效果，但被带explosion参数的秒杀攻击致死时，必定触发尸体爆炸效果，除此之外无特殊效果。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "大型敌人"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="10"]
+layout_mode = 2
+text = "标识符：Big
+ 
+通常用于表示血量较厚，具有一定威胁的大体型敌人，这些敌人通常需要投入更多资源和精力去应对。
+ 
+无论是被带explosion参数的普通攻击还是秒杀攻击致死，都不会触发尸体爆炸效果，除此之外无特殊效果。"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "精英敌人"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="13"]
+layout_mode = 2
+text = "标识符：Super
+ 
+通常用于表示精英级单位，属性显著高于常规的精英敌人，他们介于大型敌人和小Boss之间，通常比大型敌人更难对付。
+ 
+无论是被带explosion参数的普通攻击还是秒杀攻击致死，都不会触发尸体爆炸效果，除此之外不会成为常规秒杀技能的目标。"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="14"]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "小Boss级敌人"
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="16"]
+layout_mode = 2
+text = "标识符：MiniBoss
+ 
+通常用于表示关卡小Boss级单位，他们通常一个关卡出现的数量不超过10只，是除了Boss级单位外威胁最高的敌人，部分情况可能比Boss更难处理。
+ 
+无论是被带explosion参数的普通攻击还是秒杀攻击致死，都不会触发尸体爆炸效果，除此之外免疫大部分秒杀技能。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="17"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "Boss级敌人"
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="19"]
+layout_mode = 2
+text = "标识符：Boss
+ 
+通常用于表示关卡最终Boss级单位，他们是全游戏威胁最高的敌人，只要击败他们通常意味着游戏关卡的胜利。
+ 
+无论是被带explosion参数的普通攻击还是秒杀攻击致死，都不会触发尸体爆炸效果，除此之外免疫所有秒杀技能。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "独有机制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "以下机制和参数为敌人单位独有。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "远程攻击类别"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="4"]
+layout_mode = 2
+text = "带远程攻击能力的敌人一般分为站桩型和游击型，这点在每个带远程攻击能力的敌人图鉴wiki页面都会标注。
+ 
+站桩型远程攻击：只要射程内还存在目标就会一直攻击，直到射程内不存在目标之后才会放弃远程攻击继续前进。
+ 
+游击型远程攻击：移动过程中射程内存在目标时会"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "可拦截"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="7"]
+layout_mode = 2
+text = "大部分地面敌人只要能被正常索敌到就能够触发我方单位的拦截机制进行战斗，这个机制同时受敌人一个叫 interceptable 的 bool 型变量控制，该变量若为false则不会被我方单位拦截，通常情况下只有极少数敌人和空军敌人不会被拦截。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "代价"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="10"]
+layout_mode = 2
+text = "该敌人进入终点时扣除的玩家生命值，生命值扣除至0后游戏失败。
+ 
+即便使用修改器，将血量修改至Boss代价以上，Boss单位突破防线进入终点后必定失败，无视血量扣除机制。"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "赏金"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="13"]
+layout_mode = 2
+text = "击杀该敌人后获得的赏金，亦是游戏内的重要经济来源。"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 1458.0
+offset_right = 440.0
+offset_bottom = 1578.0
+texture = ExtResource("2_nopcq")
+
+[node name="Body" type="Sprite2D" parent="FreeNodes/TextureRect" index="0"]
+modulate = Color(1, 1, 1, 0.478431)
+position = Vector2(35, 103)
+scale = Vector2(1, 0.559981)
+texture = SubResource("GradientTexture2D_cil55")
+
+[node name="HurtBox" type="Sprite2D" parent="FreeNodes/TextureRect" index="1"]
+modulate = Color(1, 1, 1, 0.478431)
+position = Vector2(36, 62)
+scale = Vector2(1.00013, 1.00013)
+texture = SubResource("GradientTexture2D_mehti")
+
+[node name="Label" type="Label" parent="FreeNodes/TextureRect" index="2"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 100.0
+offset_right = 202.0
+offset_bottom = 124.0
+text = "UnitBody"
+
+[node name="Label2" type="Label" parent="FreeNodes/TextureRect" index="3"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 48.0
+offset_right = 202.0
+offset_bottom = 72.0
+text = "HurtBox"
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 2505.0
+offset_right = 498.0
+offset_bottom = 2761.0
+scale = Vector2(0.52061, 0.52061)
+texture = ExtResource("3_kaegy")
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 2823.0
+offset_right = 505.0
+offset_bottom = 3079.0
+scale = Vector2(0.52061, 0.52061)
+texture = ExtResource("4_prx26")
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 3138.0
+offset_right = 490.0
+offset_bottom = 3394.0
+scale = Vector2(0.52061, 0.52061)
+texture = ExtResource("5_hwvlt")
+
+[node name="TextureRect5" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 3482.0
+offset_right = 515.0
+offset_bottom = 3738.0
+scale = Vector2(0.52061, 0.52061)
+texture = ExtResource("6_wsawa")
+
+[node name="TextureRect6" type="TextureRect" parent="FreeNodes" index="5"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 4157.0
+offset_right = 553.0
+offset_bottom = 4413.0
+scale = Vector2(0.52061, 0.52061)
+texture = ExtResource("7_td4jy")
+
+[node name="TextureRect7" type="TextureRect" parent="FreeNodes" index="6"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 4803.0
+offset_right = 539.0
+offset_bottom = 5059.0
+scale = Vector2(0.292676, 0.292676)
+texture = ExtResource("8_3h3gn")
+
+[node name="TextureRect8" type="TextureRect" parent="FreeNodes" index="7"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 5147.0
+offset_right = 454.0
+offset_bottom = 5403.0
+scale = Vector2(0.292676, 0.292676)
+texture = ExtResource("9_fd2t0")
+stretch_mode = 5
+
+[node name="TextureRect9" type="TextureRect" parent="FreeNodes" index="8"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 5380.0
+offset_right = 402.0
+offset_bottom = 5636.0
+scale = Vector2(0.292676, 0.292676)
+texture = ExtResource("10_4cuqg")
+stretch_mode = 5
+
+[node name="TextureRect10" type="TextureRect" parent="FreeNodes" index="9"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 5645.0
+offset_right = 395.0
+offset_bottom = 5901.0
+scale = Vector2(0.292676, 0.292676)
+texture = ExtResource("11_f8apn")
+stretch_mode = 5
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("12_5hff0")]
+layout_mode = 2
+text = "定义"
+wiki_page = NodePath("../../..")
+target_pos = -539.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("12_5hff0")]
+layout_mode = 2
+text = "体型分类"
+wiki_page = NodePath("../../..")
+target_pos = -2249.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("12_5hff0")]
+layout_mode = 2
+text = "独有机制"
+wiki_page = NodePath("../../..")
+target_pos = -4532.0
