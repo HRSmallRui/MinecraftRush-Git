@@ -1,0 +1,571 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2pspy1c4m3i"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_8t7mm"]
+[ext_resource type="Texture2D" uid="uid://1dgjt52101xv" path="res://Assets/Images/UI/Wiki/Index/stages.png" id="2_ic8fj"]
+[ext_resource type="Texture2D" uid="uid://da82fg5nj0ajt" path="res://Assets/Images/UI/WaveButtons/wave.png" id="3_4wvi1"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="4_8uhoy"]
+
+[node name="WikiStage" instance=ExtResource("1_8t7mm")]
+offset_bottom = 9042.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_ic8fj")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "关卡机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "关卡是游戏的核心玩法单元，每个关卡拥有独立的配置参数，包括波次节奏、初始资源、可用塔、环境标签等。本章节介绍关卡的通用配置结构与波次运作逻辑。关于具体关卡的详细数据，请查阅[关卡板块]。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "关卡构成"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "关卡由以下部件组成
+ 
+ 
+ 
+特效管理器： 负责播放特殊视觉效果的管理器。
+ 
+场景摄像机： 负责渲染对应的游戏画面，同时拥有缩放限制和视野移动限制的功能。
+ 
+音频管理器： 这里负责播放大部分通用音效，以及对音效进行统一管理。
+ 
+音乐组： 这里存放着游戏内会用到的局内战斗音乐，分为准备阶段音乐，战斗阶段音乐，Boss阶段音乐。部分情况可能会额外存放其他音乐。
+ 
+背景组： 关卡的场景视觉的重要组成部分，里面主要负责场景的搭建工作，以及用于存放场景可交互组件。
+ 
+导航组： 用于地面英雄的通常移动导航用，每一关都会有独立的导航组。
+ 
+火雨随机点位导航组： 通常包围游戏内的可移动道路与火雨额外攻击点位，用于火雨5级科技随机火雨落点的取点用途。
+ 
+容器组：分别有Enemies/Allys/Towers三个容器，用于分门别类存放游戏单位，其中Enemies容器内分有多条继承自Path2D节点的EnemyPath节点，用于给敌人提供固定路线移动，敌人则负责挂载到EnemyPath节点下执行移动逻辑。
+ 
+UI组：用于绘制游戏窗口UI，例如绿宝石数量，当前血量，波次信息。其他UI信息包括：提示按钮存放组，暂停按钮，主动技能存放组，信息面板，小地图UI。
+ 
+波次按钮： 显示下一波的敌人信息与敌人来源方向，鼠标移动到波次按钮还会显示敌人行进路线。
+ 
+路径检测区： 检测鼠标是否在路径检测区内，用于部分需要在路径释放的技能判定，以及我方单位的移动也需要移动到路径上。
+ 
+下一波倒计时计时器： 每一个波次即将到来时开始计时，其中波次按钮背后的进度条会随着计时不断增加，直到计时结束时如果玩家依然没有提前开始下一波，则会强制开始下一个波次。如果在此期间玩家提前召唤波次，则会按照剩余时间的比例给予玩家部分绿宝石和减少主动技能冷却时间的奖励。
+ 
+下一波次计时器： 每一个波次开始时开始计时，计时结束后会显示下一波即将到来图标，给玩家提供缓冲区。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "关卡基础配置"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "常见参数
+ 
+ 
+- 关卡编号
+- 关卡允许最高科技等级"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "关卡模式"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+text = "每个关卡都包含三种模式
+ 
+战役模式：类似于剧情模式，拥有8-16波不等的敌人波次，初始血量20点，是最常见最普通的游戏模式。
+ 
+钻石挑战：战役模式三星通关解锁，为高难度或趣味挑战，拥有5波精锐敌人波次，初始血量1点，一般会限制科技等级。
+ 
+基岩挑战：战役模式三星通关解锁，为高难度或趣味挑战，拥有1波总攻波次，只能查看波次敌人种类，无法查看波次敌人具体数量。初始血量1点，一般会限制科技等级。
+ 
+部分关卡可能不存在挑战模式，只有战役模式。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "科技等级限制"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+text = "决定了该关卡中科技加成的最高生效等级。
+ 
+部分关卡挑战模式可能设置较低的科技上限，用于控制难度或强制玩家使用特定策略。具体每关的限制值以关卡详情页为准。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "环境标签"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="10"]
+layout_mode = 2
+text = "环境标签会以字符串的形式存储在一个数组内，代表当前关卡的环境类别，同一个关卡可以同时存在多个环境标签。
+ 
+环境标签可能会影响部分技能的释放，例如沙漠关卡会携带\"desert\"标签，这会使鲁伯特的主动技能的下雨效果无法生效。"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer8" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "关卡初始配置"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "每个关卡开始时的玩家初始状态。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "常见参数"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="4"]
+layout_mode = 2
+text = "- 初始生命值
+- 初始绿宝石： 用于建造防御塔，升级防御塔，以及升级技能
+- 总波次
+- 当前波次"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "可用塔列表"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="7"]
+layout_mode = 2
+text = "该参数是一个长度为 4 的bool数组，索引对应四种基础塔：箭塔，兵营，法师塔，炮塔
+ 
+该参数决定局内哪些玩家防御塔可以被建造，哪些会被禁用。通常情况下，该参数仅影响对应防御塔种类1级防御塔的建造，如果场上初始存在被禁用的防御塔，玩家可以对其进行升级等操作。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "波次与召唤配置"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="10"]
+layout_mode = 2
+text = "该参数是每个关卡独立持有的资源配置文件，定义了波次节奏、经济奖励和技能冷却加速。
+ 
+该配置文件包含：
+ 
+每一波结束后到下一波开始之间的等待时间
+每一个波次提示出现到强制下一波开始之间的等待时间
+每一波提前召唤时可以获得的绿宝石数量
+每一波提前召唤时对援军，火雨和主动技能的冷却减少时间。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "关卡评价机制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "通关关卡后会获得不定数量的下界之星用于局外科技升级，因此了解关卡的评价机制也至关重要。
+ 
+对于战役模式，通常会有1-3星评价：
+ 
+- 1星评价： 战斗结束时留存1-4生命值，获得1颗下界之星
+- 2星评价： 战斗结束时留存5-17生命值，获得2颗下界之星
+- 3星评价： 战斗结束时留存18生命值以上，获得3颗下界之星
+ 
+挑战模式：无论是钻石挑战还是基岩挑战，战斗胜利之后都固定获得1颗下界之星。"
+autowrap_mode = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer9" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer9/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "波次提前召唤"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer9/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = " 每一个波次即将到来时开始计时，其中波次按钮背后的进度条会随着计时不断增加，直到计时结束时如果玩家依然没有提前开始下一波，则会强制开始下一个波次。如果在此期间玩家提前召唤波次，则会按照剩余时间的比例给予玩家部分绿宝石和减少主动技能冷却时间的奖励。
+ 
+提前因数为：提前波次剩余时间 / 提前波次总剩余时间，若该因数小于0.05则不会触发提前波次召唤奖励，如果因数大于0.9则会自动补全到1，即玩家可以获得完整奖励。
+ 
+奖励为
+获得绿宝石： 下一波提前召唤总绿宝石数量 x 提前因数
+主动技能冷却时间减少： 下一波提前召唤各自（火雨，援军，英雄主动技能）总冷却时间减少数 x 提前因数"
+autowrap_mode = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer10" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "关卡分类"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "目前所有关卡可以按照主线和支线来划分。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "主线关卡"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="4"]
+layout_mode = 2
+text = "游戏的核心推进路线，玩家必定先玩主线，按顺序逐一解锁。
+ 
+默认解锁，或通关前置主线关卡后解锁，基准难度，作为支线关卡的参照。
+ 
+目前主线关卡一共20关"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "支线关卡"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="7"]
+layout_mode = 2
+text = "主线之外的额外挑战内容，所有支线至少需要主线通关后才能游玩。主线通关 + 可能存在的其他支线通关前置条件，难度通常更高。"
+autowrap_mode = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer11" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 56
+text = "关卡信息"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "主线关卡"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "第一章 - 《皇城》"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="5"]
+layout_mode = 2
+text = "1. 皇城东门
+ 
+2. 天木市
+ 
+3. 战扎城
+ 
+4. 元帅府"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "第二章 - 《丛林》"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="7"]
+layout_mode = 2
+text = "5. 野区保护符
+ 
+6. 弗拉里斯带
+ 
+7. 南洋海岸"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "第三章 - 《沙漠》"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="9"]
+layout_mode = 2
+text = "8. 卡瓦拉沙漠
+ 
+9. 沙漠神殿
+ 
+10. 绝望沙丘
+ 
+11. 东海岸"
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "第四章 - 《厌国》"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="11"]
+layout_mode = 2
+text = "12. 丛林神殿
+ 
+13. 粘液沼泽
+ 
+14. 林地府邸
+ 
+15. 海底神殿"
+autowrap_mode = 3
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "第五章 - 《白眼》"
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="13"]
+layout_mode = 2
+text = "16. 高山
+ 
+17. 鬼门关"
+autowrap_mode = 3
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "第六章 - 《凯旋》"
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="15"]
+layout_mode = 2
+text = "18. 诺冰要塞
+ 
+19. 诺冰大峡谷
+ 
+20. 皇城"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="16"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "支线关卡"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="18"]
+layout_mode = 2
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="19"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "支线1 - 《雪域》"
+
+[node name="Label17" type="Label" parent="VBoxContainer/MarginContainer11/VBoxContainer" index="20"]
+layout_mode = 2
+text = "18. 诺冰要塞
+ 
+19. 诺冰大峡谷
+ 
+20. 皇城"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 5099.0
+offset_right = 453.0
+offset_bottom = 5227.0
+texture = ExtResource("3_4wvi1")
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 77.0
+offset_top = 204.0
+offset_right = 435.0
+offset_bottom = 994.0
+scale = Vector2(0.769105, 0.769105)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "关卡构成"
+wiki_page = NodePath("../../..")
+target_pos = -515.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "关卡基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -1890.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "关卡初始配置"
+wiki_page = NodePath("../../..")
+target_pos = -3309.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "关卡评价机制"
+wiki_page = NodePath("../../..")
+target_pos = -4510.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "波次提前召唤"
+wiki_page = NodePath("../../..")
+target_pos = -5062.0
+
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "关卡分类"
+wiki_page = NodePath("../../..")
+target_pos = -5615.0
+
+[node name="NavigationButton7" parent="TopMenu/NavigationVBox" index="6" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "主线关卡"
+wiki_page = NodePath("../../..")
+target_pos = -6564.0
+
+[node name="NavigationButton8" parent="TopMenu/NavigationVBox" index="7" node_paths=PackedStringArray("wiki_page") instance=ExtResource("4_8uhoy")]
+layout_mode = 2
+text = "支线关卡"
+wiki_page = NodePath("../../..")
+target_pos = -8342.0
