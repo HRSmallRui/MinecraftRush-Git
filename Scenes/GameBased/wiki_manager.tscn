@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtmbjrlhaiunw"]
+[gd_scene load_steps=12 format=3 uid="uid://dtmbjrlhaiunw"]
 
 [ext_resource type="Script" path="res://Scripts/GameBased/wiki_manager.gd" id="1_6vbdg"]
 [ext_resource type="Theme" uid="uid://bvw2btvppoisx" path="res://Assets/Resources/WikiThemes/wiki_white.tres" id="2_76rol"]
 [ext_resource type="Theme" uid="uid://c3tutu1bcwixb" path="res://Assets/Resources/WikiThemes/wiki_dark.tres" id="3_61cnf"]
 [ext_resource type="PackedScene" uid="uid://dj4taftgw76yn" path="res://Scenes/WikiPages/wiki_page_index.tscn" id="4_k2pci"]
+[ext_resource type="Texture2D" uid="uid://0alwlwock2nw" path="res://Assets/Images/UI/Wiki/Back.png" id="5_a8bkf"]
+[ext_resource type="Texture2D" uid="uid://djhw2j4hq3dtd" path="res://Assets/Images/UI/Wiki/home.png" id="6_8dvtg"]
+[ext_resource type="Texture2D" uid="uid://d1qrf08lm2aoo" path="res://Assets/Images/UI/Wiki/front.png" id="7_jpsjo"]
 
 [sub_resource type="Gradient" id="Gradient_0t602"]
 offsets = PackedFloat32Array(0.0423197)
@@ -38,6 +41,9 @@ theme = ExtResource("3_61cnf")
 script = ExtResource("1_6vbdg")
 white_mode_theme = ExtResource("2_76rol")
 dark_mode_theme = ExtResource("3_61cnf")
+back_page_stack = Array[String](["res://Scenes/WikiPages/wiki_page_index.tscn"])
+back_page_step_stack = Array[float]([0.0])
+metadata/_edit_horizontal_guides_ = [126.0]
 
 [node name="WhiteBackground" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_nlrek")
@@ -65,3 +71,35 @@ anchor_left = 0.0
 anchor_right = 0.0
 offset_left = 0.0
 offset_right = 1108.0
+
+[node name="ButtonGroup" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -357.0
+offset_top = 40.0
+offset_right = -66.9999
+offset_bottom = 130.0
+grow_horizontal = 0
+scale = Vector2(1.13728, 1.13728)
+theme_override_constants/separation = 10
+
+[node name="BackButton" type="TextureButton" parent="ButtonGroup"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("5_a8bkf")
+
+[node name="HomeButton" type="TextureButton" parent="ButtonGroup"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("6_8dvtg")
+
+[node name="FrontButton" type="TextureButton" parent="ButtonGroup"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("7_jpsjo")
+
+[connection signal="pressed" from="ButtonGroup/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ButtonGroup/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="ButtonGroup/FrontButton" to="." method="_on_front_button_pressed"]

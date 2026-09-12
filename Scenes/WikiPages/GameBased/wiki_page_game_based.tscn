@@ -1,32 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bndf31iolnfdv"]
+[gd_scene load_steps=2 format=3 uid="uid://bndf31iolnfdv"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_di4eq"]
-[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_darss"]
-[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="3_gcafy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ge2dk"]
-atlas = ExtResource("3_gcafy")
-region = Rect2(98, 192, 331, 143)
 
 [node name="WikiPageGameBased" instance=ExtResource("1_di4eq")]
 
-[node name="FreeNodes" parent="." index="0"]
+[node name="FreeNodes" parent="." index="1"]
 mouse_filter = 2
-
-[node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_darss")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -188.0
-offset_right = -41.0
-offset_bottom = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = SubResource("AtlasTexture_ge2dk")
-button_text = "返回"
-linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
-white_theme_texture = SubResource("AtlasTexture_ge2dk")
