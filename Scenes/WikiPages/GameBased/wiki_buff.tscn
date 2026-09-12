@@ -1,0 +1,456 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvcoaeygtqotn"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_q457b"]
+[ext_resource type="Texture2D" uid="uid://7v3qt3cs68un" path="res://Assets/Images/UI/Wiki/GameBased/Index/buff.png" id="2_c5s3k"]
+[ext_resource type="Texture2D" uid="uid://dqvjxoqxwnxrc" path="res://Assets/Images/UI/Wiki/GameBased/Index/我方单位.png" id="2_xjtjk"]
+[ext_resource type="Texture2D" uid="uid://d1cmb74atnaa7" path="res://Assets/Images/UI/Wiki/Index/enemy.png" id="4_ucusn"]
+[ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="5_js1e4"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="6_f6uvx"]
+
+[node name="WikiBuff" instance=ExtResource("1_q457b")]
+offset_bottom = 5999.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_c5s3k")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "状态效果"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "状态效果是附着在单位或防御塔上的临时性增益/减益，用于改变目标的战斗表现。本章节介绍状态效果的分类体系、叠加规则和通用运作逻辑。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "作用对象"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+text = "状态效果可以作用于以下两类目标："
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "单位状态效果"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+text = "我方单位和敌方单位均可被施加"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "防御塔状态效果"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="7"]
+layout_mode = 2
+text = "仅防御塔可被施加的部分状态效果"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="9"]
+layout_mode = 2
+text = "单位状态效果和防御塔状态效果的分类体系不同，详见下文。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "单位状态效果"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+text = "可施加给我方单位或敌方单位的状态效果，分为以下五类："
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "持续伤害类"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+text = "在一段时间内持续对目标造成伤害，默认为真伤。
+ 
+常见效果： 流血、灼烧、中毒"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "恢复类"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+text = "在一段时间内持续恢复目标的生命值。
+ 
+常见效果： 再生、回复"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "眩晕类"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="10"]
+layout_mode = 2
+text = "使目标无法移动、无法攻击，一直处于待机动画状态。
+ 
+常见效果： 炮塔5级科技造成的眩晕效果"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "时停类"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="13"]
+layout_mode = 2
+text = "使目标无法移动、无法攻击，动画一直停留在当前帧。
+ 
+常见效果： 迈克史密斯4技能施加的时停效果"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="14"]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数值改变类"
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="16"]
+layout_mode = 2
+text = "改变目标的战斗数值，分为增强和削弱两种方向。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="17"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "可改变的数值列表"
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="19"]
+layout_mode = 2
+text = "近战攻击，远程攻击，近战攻速，远程攻速，护甲，魔抗，炮抗，总伤减免，易伤，移动速度，命中率，远程攻击范围"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="20"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="21"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "运算方式"
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="22"]
+layout_mode = 2
+text = "数值改变类状态效果通过两个参数定义：
+ 
+-影响参数： 指定要改变的具体数值（如护甲、移动速度等）
+ 
+-运算方式： Add（加法）或 Multiply（乘法）
+ 
+ 
+Add： 在基础值上加减固定数值
+ 
+Multiply： 在基础值上乘以倍率"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "防御塔状态效果"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+text = "可施加给防御塔的状态效果，分为以下两类："
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数值改变类"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="4"]
+layout_mode = 2
+text = "改变防御塔的战斗数值，其结构同单位状态效果中的数值改变类。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "可改变的数值列表"
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="7"]
+layout_mode = 2
+text = "攻击力，攻击范围，攻击速度"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "运算方式"
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="10"]
+layout_mode = 2
+text = "数值改变类状态效果通过两个参数定义：
+ 
+-影响参数： 指定要改变的具体数值（如护甲、移动速度等）
+ 
+-运算方式： Add（加法）或 Multiply（乘法）
+ 
+ 
+Add： 在基础值上加减固定数值
+ 
+Multiply： 在基础值上乘以倍率"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "封塔类"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="13"]
+layout_mode = 2
+text = "使防御塔无法行动的状态效果。
+ 
+-常见效果： 尼古拉斯的封塔技能"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer8" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "通用规则"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="1"]
+layout_mode = 2
+text = "可施加给防御塔的状态效果，分为以下两类："
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "buff 等级"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="4"]
+layout_mode = 2
+text = "每个状态效果拥有一个buff 等级，用于决定该效果的数值强度。buff 等级越高，效果数值越强。（该属性目前暂时用处不大）"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "叠加规则"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="7"]
+layout_mode = 2
+text = "大多数状态效果通常不可重复叠加，部分状态效果可叠加有限层数。
+ 
+叠加规则： 每个状态效果存在一个词条名，用于判定是否为同一个效果。当不同数量的可叠加效果叠加时，表现效果为每一个状态效果各自独立生效。
+ 
+ 
+ 
+当两个相同且不可叠加的状态效果先后作用于同一目标时：
+ 
+第一个 buff 挂载
+    ↓
+第二个相同 buff 挂载
+    ↓
+剔除最开始的 buff
+    ↓
+保留最新的 buff（效果类似 buff 重新计时）"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "免疫组"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="10"]
+layout_mode = 2
+text = "每个状态效果包含一个免疫组属性，用于判定效果是否可以作用于目标。
+ 
+当状态效果刚刚挂载到目标上时会进行一轮判定，如果目标持有免疫组内存在的任一标签，则该效果立即失效。"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 730.0
+offset_right = 347.0
+offset_bottom = 847.0
+texture = ExtResource("2_xjtjk")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 730.0
+offset_right = 435.0
+offset_bottom = 847.0
+texture = ExtResource("4_ucusn")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 907.0
+offset_right = 429.0
+offset_bottom = 1027.0
+texture = ExtResource("5_js1e4")
+stretch_mode = 3
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 56.0
+offset_top = 166.0
+offset_right = 480.0
+offset_bottom = 586.0
+scale = Vector2(0.757119, 0.757119)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("6_f6uvx")]
+layout_mode = 2
+text = "作用对象"
+wiki_page = NodePath("../../..")
+target_pos = -506.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("6_f6uvx")]
+layout_mode = 2
+text = "单位状态效果"
+wiki_page = NodePath("../../..")
+target_pos = -1276.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("6_f6uvx")]
+layout_mode = 2
+text = "防御塔状态效果"
+wiki_page = NodePath("../../..")
+target_pos = -3285.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("6_f6uvx")]
+layout_mode = 2
+text = "通用规则"
+wiki_page = NodePath("../../..")
+target_pos = -4587.0

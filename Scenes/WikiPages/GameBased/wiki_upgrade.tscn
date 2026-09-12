@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c2uyrh8n1ypvt"]
+[gd_scene load_steps=43 format=3 uid="uid://c2uyrh8n1ypvt"]
 
 [ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_6w5pe"]
 [ext_resource type="Texture2D" uid="uid://s2g8wml2pdo3" path="res://Assets/Images/UI/Wiki/GameBased/Index/科技升级.png" id="2_2ddxn"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://ct1vgxrsdouqj" path="res://Assets/Images/UI/Upgrade/Reinforce/破灭者.png" id="38_e6msc"]
 [ext_resource type="Texture2D" uid="uid://yjsj8n6yj105" path="res://Assets/Images/UI/nether-star.png" id="39_5utb8"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="40_1l5n8"]
+[ext_resource type="PackedScene" uid="uid://co8urrygr21vk" path="res://Scenes/UI-Components/Wiki/tip_panel.tscn" id="40_e1v15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiimh"]
 bg_color = Color(0, 0, 0, 0.886275)
@@ -202,7 +203,7 @@ text = "文本描述：箭矢被附上了独特的破伤风附魔，每次攻击
  
 [b]如果当前伤害量低于0，则一定不会为敌人施加流血效果。
  
-相关条目： 箭塔流血效果"
+"
 fit_content = true
 scroll_active = false
 
@@ -392,7 +393,7 @@ text = "文本描述：高能法术，强大的能量可以摧毁腐蚀敌人的
  
 效果：法师塔每次攻击永久削除敌人[color=orange] 1 [/color]点护甲，此效果无法在护甲低于[color=orange] 10 [/color]点的敌人身上生效。
  
-相关条目：法师腐蚀护甲效果"
+"
 fit_content = true
 scroll_active = false
 
@@ -412,7 +413,7 @@ text = "文本描述：完善士兵的培养方案，可以更加快速地训练
  
 效果：法师塔每次攻击会给敌人施加减速效果，减速敌人[color=orange] 40% [/color]，持续 1 秒。
  
-相关条目： 法师减速效果"
+"
 fit_content = true
 scroll_active = false
 
@@ -544,7 +545,7 @@ text = "文本描述：炮弹可以让敌人产生共振引发脑震荡，有概
  
 效果：炮塔每次攻击有[color=orange] 15% [/color]概率眩晕敌人，持续1秒。
  
-相关条目： 炮塔眩晕效果"
+"
 fit_content = true
 scroll_active = false
 
@@ -880,9 +881,9 @@ texture = ExtResource("3_87qsq")
 [node name="Barrack" type="PanelContainer" parent="FreeNodes/Control" index="1"]
 layout_mode = 0
 offset_left = 259.0
-offset_top = 2355.0
+offset_top = 2328.0
 offset_right = 327.0
-offset_bottom = 2423.0
+offset_bottom = 2396.0
 scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_oiimh")
 
@@ -900,9 +901,9 @@ texture = ExtResource("4_dwdgs")
 [node name="Magic" type="PanelContainer" parent="FreeNodes/Control" index="2"]
 layout_mode = 0
 offset_left = 304.0
-offset_top = 3832.0
+offset_top = 3807.0
 offset_right = 372.0
-offset_bottom = 3900.0
+offset_bottom = 3875.0
 scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_oiimh")
 
@@ -920,9 +921,9 @@ texture = ExtResource("5_830n3")
 [node name="Bombard" type="PanelContainer" parent="FreeNodes/Control" index="3"]
 layout_mode = 0
 offset_left = 259.0
-offset_top = 5441.0
+offset_top = 5370.0
 offset_right = 327.0
-offset_bottom = 5509.0
+offset_bottom = 5438.0
 scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_oiimh")
 
@@ -940,9 +941,9 @@ texture = ExtResource("6_schsy")
 [node name="Firerain" type="PanelContainer" parent="FreeNodes/Control" index="4"]
 layout_mode = 0
 offset_left = 259.0
-offset_top = 6972.0
+offset_top = 6885.0
 offset_right = 327.0
-offset_bottom = 7040.0
+offset_bottom = 6953.0
 scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_oiimh")
 
@@ -960,9 +961,9 @@ texture = ExtResource("7_2yj0x")
 [node name="Reinforcement" type="PanelContainer" parent="FreeNodes/Control" index="5"]
 layout_mode = 0
 offset_left = 259.0
-offset_top = 8670.0
+offset_top = 8564.0
 offset_right = 327.0
-offset_bottom = 8738.0
+offset_bottom = 8632.0
 scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_oiimh")
 
@@ -1081,155 +1082,195 @@ texture = ExtResource("20_bgpmt")
 [node name="TextureRect13" type="TextureRect" parent="FreeNodes/Control2" index="12"]
 layout_mode = 0
 offset_left = 195.0
-offset_top = 4476.0
+offset_top = 4455.0
 offset_right = 323.0
-offset_bottom = 4604.0
+offset_bottom = 4583.0
 texture = ExtResource("21_su3g4")
 
 [node name="TextureRect14" type="TextureRect" parent="FreeNodes/Control2" index="13"]
 layout_mode = 0
 offset_left = 195.0
-offset_top = 4793.0
+offset_top = 4747.0
 offset_right = 323.0
-offset_bottom = 4921.0
+offset_bottom = 4875.0
 texture = ExtResource("22_cv7pr")
 
 [node name="TextureRect15" type="TextureRect" parent="FreeNodes/Control2" index="14"]
 layout_mode = 0
 offset_left = 267.0
-offset_top = 5089.0
+offset_top = 5020.0
 offset_right = 395.0
-offset_bottom = 5217.0
+offset_bottom = 5148.0
 texture = ExtResource("23_0qf5a")
 
 [node name="TextureRect16" type="TextureRect" parent="FreeNodes/Control2" index="15"]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 5615.0
+offset_top = 5539.0
 offset_right = 357.0
-offset_bottom = 5743.0
+offset_bottom = 5667.0
 texture = ExtResource("24_bmqvt")
 
 [node name="TextureRect17" type="TextureRect" parent="FreeNodes/Control2" index="16"]
 layout_mode = 0
 offset_left = 194.0
-offset_top = 5851.0
+offset_top = 5775.0
 offset_right = 322.0
-offset_bottom = 5979.0
+offset_bottom = 5903.0
 texture = ExtResource("25_gc6qu")
 
 [node name="TextureRect18" type="TextureRect" parent="FreeNodes/Control2" index="17"]
 layout_mode = 0
 offset_left = 230.0
-offset_top = 6089.0
+offset_top = 6013.0
 offset_right = 358.0
-offset_bottom = 6217.0
+offset_bottom = 6141.0
 texture = ExtResource("26_sgt61")
 
 [node name="TextureRect19" type="TextureRect" parent="FreeNodes/Control2" index="18"]
 layout_mode = 0
 offset_left = 192.0
-offset_top = 6330.0
+offset_top = 6254.0
 offset_right = 320.0
-offset_bottom = 6458.0
+offset_bottom = 6382.0
 texture = ExtResource("27_ooiy0")
 
 [node name="TextureRect20" type="TextureRect" parent="FreeNodes/Control2" index="19"]
 layout_mode = 0
 offset_left = 118.0
-offset_top = 6561.0
+offset_top = 6485.0
 offset_right = 246.0
-offset_bottom = 6689.0
+offset_bottom = 6613.0
 texture = ExtResource("28_kmevp")
 
 [node name="TextureRect21" type="TextureRect" parent="FreeNodes/Control2" index="20"]
 layout_mode = 0
 offset_left = 122.0
-offset_top = 7249.0
+offset_top = 7153.0
 offset_right = 250.0
-offset_bottom = 7377.0
+offset_bottom = 7281.0
 texture = ExtResource("29_74hs7")
 
 [node name="TextureRect22" type="TextureRect" parent="FreeNodes/Control2" index="21"]
 layout_mode = 0
 offset_left = 196.0
-offset_top = 7485.0
+offset_top = 7389.0
 offset_right = 324.0
-offset_bottom = 7613.0
+offset_bottom = 7517.0
 texture = ExtResource("30_43m6q")
 
 [node name="TextureRect23" type="TextureRect" parent="FreeNodes/Control2" index="22"]
 layout_mode = 0
 offset_left = 195.0
-offset_top = 7755.0
+offset_top = 7659.0
 offset_right = 323.0
-offset_bottom = 7883.0
+offset_bottom = 7787.0
 texture = ExtResource("31_75afy")
 
 [node name="TextureRect24" type="TextureRect" parent="FreeNodes/Control2" index="23"]
 layout_mode = 0
 offset_left = 194.0
-offset_top = 7994.0
+offset_top = 7898.0
 offset_right = 322.0
-offset_bottom = 8122.0
+offset_bottom = 8026.0
 texture = ExtResource("32_jn0pj")
 
 [node name="TextureRect25" type="TextureRect" parent="FreeNodes/Control2" index="24"]
 layout_mode = 0
 offset_left = 230.0
-offset_top = 8254.0
+offset_top = 8158.0
 offset_right = 358.0
-offset_bottom = 8382.0
+offset_bottom = 8286.0
 texture = ExtResource("33_phop3")
 
 [node name="TextureRect26" type="TextureRect" parent="FreeNodes/Control2" index="25"]
 layout_mode = 0
 offset_left = 262.0
-offset_top = 8948.0
+offset_top = 8852.0
 offset_right = 390.0
-offset_bottom = 9076.0
+offset_bottom = 8980.0
 texture = ExtResource("34_np44x")
 
 [node name="TextureRect27" type="TextureRect" parent="FreeNodes/Control2" index="26"]
 layout_mode = 0
 offset_left = 198.0
-offset_top = 9236.0
+offset_top = 9140.0
 offset_right = 326.0
-offset_bottom = 9364.0
+offset_bottom = 9268.0
 texture = ExtResource("35_cysi4")
 
 [node name="TextureRect28" type="TextureRect" parent="FreeNodes/Control2" index="27"]
 layout_mode = 0
 offset_left = 228.0
-offset_top = 9528.0
+offset_top = 9432.0
 offset_right = 356.0
-offset_bottom = 9656.0
+offset_bottom = 9560.0
 texture = ExtResource("36_qjajl")
 
 [node name="TextureRect29" type="TextureRect" parent="FreeNodes/Control2" index="28"]
 layout_mode = 0
 offset_left = 193.0
-offset_top = 9823.0
+offset_top = 9727.0
 offset_right = 321.0
-offset_bottom = 9951.0
+offset_bottom = 9855.0
 texture = ExtResource("37_pmqj0")
 
 [node name="TextureRect30" type="TextureRect" parent="FreeNodes/Control2" index="29"]
 layout_mode = 0
 offset_left = 154.0
-offset_top = 10112.0
+offset_top = 10016.0
 offset_right = 282.0
-offset_bottom = 10240.0
+offset_bottom = 10144.0
 texture = ExtResource("38_e6msc")
 
 [node name="TextureRect31" type="TextureRect" parent="FreeNodes/Control2" index="30"]
 layout_mode = 0
 offset_left = 343.0
-offset_top = 10855.0
+offset_top = 10759.0
 offset_right = 869.0
-offset_bottom = 11381.0
+offset_bottom = 11285.0
 scale = Vector2(0.201488, 0.201488)
 texture = ExtResource("39_5utb8")
+
+[node name="Buffs" type="Control" parent="FreeNodes" index="2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TipPanel" parent="FreeNodes/Buffs" index="0" instance=ExtResource("40_e1v15")]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 2177.0
+offset_right = 812.0
+offset_bottom = 2243.0
+tip_text = "免疫组：no_live，super_unit，god，boss，skeleton"
+
+[node name="TipPanel2" parent="FreeNodes/Buffs" index="1" instance=ExtResource("40_e1v15")]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 4697.0
+offset_right = 595.0
+offset_bottom = 4763.0
+scale = Vector2(0.711897, 0.711897)
+tip_text = "免疫组：super_unit，god，boss"
+
+[node name="TipPanel3" parent="FreeNodes/Buffs" index="2" instance=ExtResource("40_e1v15")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 4972.0
+offset_right = 590.0
+offset_bottom = 5038.0
+scale = Vector2(0.711897, 0.711897)
+tip_text = "免疫组：super_unit，god，boss"
+
+[node name="TipPanel4" parent="FreeNodes/Buffs" index="3" instance=ExtResource("40_e1v15")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 6729.0
+offset_right = 590.0
+offset_bottom = 6795.0
+scale = Vector2(0.711897, 0.711897)
+tip_text = "免疫组：super_unit，god，boss"
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("40_1l5n8")]
 layout_mode = 2
@@ -1241,34 +1282,34 @@ target_pos = -505.0
 layout_mode = 2
 text = "兵营科技"
 wiki_page = NodePath("../../..")
-target_pos = -2288.0
+target_pos = -2268.0
 
 [node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("40_1l5n8")]
 layout_mode = 2
 text = "法师塔科技"
 wiki_page = NodePath("../../..")
-target_pos = -3767.0
+target_pos = -3730.0
 
 [node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("40_1l5n8")]
 layout_mode = 2
 text = "炮塔科技"
 wiki_page = NodePath("../../..")
-target_pos = -5375.0
+target_pos = -5303.0
 
 [node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("40_1l5n8")]
 layout_mode = 2
 text = "火雨科技"
 wiki_page = NodePath("../../..")
-target_pos = -6907.0
+target_pos = -6813.0
 
 [node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page") instance=ExtResource("40_1l5n8")]
 layout_mode = 2
 text = "援军科技"
 wiki_page = NodePath("../../..")
-target_pos = -8594.0
+target_pos = -8491.0
 
 [node name="NavigationButton7" parent="TopMenu/NavigationVBox" index="6" node_paths=PackedStringArray("wiki_page") instance=ExtResource("40_1l5n8")]
 layout_mode = 2
 text = "升级相关"
 wiki_page = NodePath("../../..")
-target_pos = -10463.0
+target_pos = -10367.0
