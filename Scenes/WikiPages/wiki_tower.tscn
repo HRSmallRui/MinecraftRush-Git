@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://8gtsog3a1gna"]
+[gd_scene load_steps=5 format=3 uid="uid://8gtsog3a1gna"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_okd4b"]
 [ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_u1yyd"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="3_xkc76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uti3m"]
+atlas = ExtResource("3_xkc76")
+region = Rect2(98, 192, 331, 143)
 
 [node name="WikiTower" instance=ExtResource("1_okd4b")]
 
@@ -18,5 +23,6 @@ offset_right = -41.0
 offset_bottom = -45.0
 grow_horizontal = 0
 grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "返回"
 linked_path = "res://Scenes/WikiPages/wiki_page_index.tscn"
