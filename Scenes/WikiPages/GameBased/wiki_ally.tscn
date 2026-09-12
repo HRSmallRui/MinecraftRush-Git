@@ -1,0 +1,510 @@
+[gd_scene load_steps=19 format=3 uid="uid://cdjs4wefqjs3k"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_41m6y"]
+[ext_resource type="Texture2D" uid="uid://dqvjxoqxwnxrc" path="res://Assets/Images/UI/Wiki/GameBased/Index/我方单位.png" id="2_hwutn"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="3_n04cg"]
+[ext_resource type="Texture2D" uid="uid://ccun8enm5qa0s" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程物伤.png" id="4_0l0wh"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="5_i4pvn"]
+[ext_resource type="Texture2D" uid="uid://dm5n18x7pdoay" path="res://Assets/Animations/Soldiers/LV1/SoldierLV1-attack_00.png" id="6_4r8ji"]
+[ext_resource type="Texture2D" uid="uid://dlfpt6kgimp1x" path="res://Assets/Animations/Heroes/Steve/steve-damage_00.png" id="7_sb73a"]
+[ext_resource type="Texture2D" uid="uid://cenh4ear7fhhe" path="res://Assets/Animations/Reinforcer/LV0,1/Reinforcer1/Reinforcer1-damage_00.png" id="8_mcviv"]
+[ext_resource type="Texture2D" uid="uid://cyugo5m3l861k" path="res://Assets/Animations/Soldiers/Desert1/attack_00.png" id="9_0aonf"]
+[ext_resource type="Texture2D" uid="uid://c1lp8t61qtf5y" path="res://Assets/Animations/SummonAllys/IronGolem/attack_00.png" id="10_6wn86"]
+[ext_resource type="Texture2D" uid="uid://bimevl5e61x3l" path="res://Assets/Images/UI/Wiki/PropertyIcons/拦截范围.png" id="11_sml77"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="12_nsyir"]
+[ext_resource type="Texture2D" uid="uid://btlwlecwmchor" path="res://Assets/Images/UI/Wiki/PropertyIcons/重生时间.png" id="13_xrnlf"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="14_vevsx"]
+
+[sub_resource type="Gradient" id="Gradient_opk2x"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.0705882, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6xdrw"]
+gradient = SubResource("Gradient_opk2x")
+
+[sub_resource type="Gradient" id="Gradient_qquwx"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0.0941176, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_imkem"]
+gradient = SubResource("Gradient_qquwx")
+
+[node name="WikiAlly" instance=ExtResource("1_41m6y")]
+offset_bottom = 6101.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_hwutn")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "我方单位机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "我方单位是帮助玩家作战的正面单位，涵盖从普通士兵到英雄的完整体系。本章节介绍我方单位的分类体系、等级结构和通用行为规则。关于每种单位的详细数值，请查阅[我方单位板块]。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "定义"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "友军类继承自引擎内置的Node2D类，与敌方单位继承的基类完全不同，因此本游戏内不存在所谓的“策反”机制。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "UnitBody"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+text = "继承自CharacterBody2D，是我方单位的基本组件，用于表示是否可以被索敌，部分情况也用于炮塔的伤害判定。
+ 
+UnitBody一定在单位的原点坐标，用于表示单位的实际位置，通常大体型敌人的UnitBody会更大，更容易被敌方单位索敌到。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "HurtBox"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="7"]
+layout_mode = 2
+text = "继承自Area2D，是我方单位的基本组件，用于表示单位的通常受击点位，一般在单位图像的中心位置，会和子弹进行碰撞。
+ 
+HurtBox通常在单位胸口的位置，体型越大越容易被子弹攻击到。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "图示"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "物理层"
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="13"]
+layout_mode = 2
+text = "我方单位存在这些物理层，用于区分不同种类的友军，方便更好地为索敌逻辑工作。
+ 
+AllyGround： 地面友军物理层，是最常见的物理层，用于表示正常的地面友军。
+ 
+AllySky： 空中友军物理层，主要用于空中型我方单位，通常情况会无视地形限制可以自由移动，用于表示正常的空中敌人。
+ 
+AllyGroundMove：  移动中地面友军物理层，通常不会被常规攻击索敌到，能够正常受到我方释放的增益性技能影响。
+ 
+AllySkyMove：  移动中空军友军物理层，通常不会被常规攻击索敌到，能够正常受到我方释放的增益性技能影响。
+ 
+AllyDead： 死亡友军物理层，通常友军死后会转换到这一物理层，用于表示友军死亡。
+ 
+AllyGroundHide： 隐身地面友军物理层，通常用于表示处于隐身状态的地面友军，这些友军通常情况不会被攻击索敌到，但会被攻击波及。
+ 
+AllySkyHide： 隐身空中友军物理层，通常用于表示处于隐身状态的空中友军，这些友军通常情况不会被攻击索敌到，但会被攻击波及。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "分类"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+text = "我方单位可以按照以下规则分出三套分类体系。"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "按类分类"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+text = "我方单位按功能与来源分为以下五类：
+ 
+ 
+-士兵： 由兵营产出的战斗单位，通过兵营作为中间媒介进行调遣。
+ 
+ 
+ 
+ 
+-英雄： 玩家可自由调遣的独特单位，拥有等级和技能体系，可自由调遣至场上任意合法位置。
+ 
+ 
+ 
+ 
+-援军：通过援军技能部署的单位，部署后不可移动，也不可复活。
+ 
+ 
+ 
+ 
+-雇佣兵： 需要购买的单位，死亡后无法复活，有人数上限，通过雇佣兵塔作为中间媒介进行调遣。
+ 
+ 
+ 
+ 
+-召唤物：由技能或特殊机制召唤的单位，具体详情视情况而定。
+ 
+ 
+ 
+ "
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "等级分类"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+text = "我方单位按等级分为三档：
+ 
+ 
+-士兵单位： 基础战斗单位，属性较低。在被带explosion参数的普通攻击或者秒杀攻击致死时，必定触发尸体爆炸效果，除此之外无特殊效果。
+ 
+-超级兵单位：精英级战斗单位，属性显著高于普通士兵。在被带explosion参数的普通攻击致死时不会触发尸体爆炸效果，但被带explosion参数的秒杀攻击致死时，必定触发尸体爆炸效果，除此之外无特殊效果。
+ 
+-英雄单位： 最高等级单位，拥有独立等级和技能体系。无论是被带explosion参数的普通攻击还是秒杀攻击致死，都不会触发尸体爆炸效果，除此之外不会成为常规秒杀技能的目标。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "职业分类"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="10"]
+layout_mode = 2
+text = "我方单位拥有一个职业分类（Warrior / Shooter / Magician），该分类仅影响信息面板的显示方式，不直接影响战斗机制。
+ 
+ 
+-Warrior： 信息面板显示近战伤害，图标为
+ 
+-Shooter： 信息面板显示为远程伤害，图标为
+ 
+-Magician： 信息面板显示为远程伤害，图标为"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "独有机制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+text = "以下机制和参数为敌人单位独有。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "拦截"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="4"]
+layout_mode = 2
+text = "每个我方单位都拥有拦截半径，用于判定是否能够拦截敌方单位。
+ 
+空中型我方单位无法拦截敌人。
+ 
+ 
+-拦截半径： 每个单位拥有独立的拦截半径
+ 
+-拦截条件： 敌方单位进入我方单位的拦截半径内，且敌方单位为可拦截单位
+ 
+-拦截效果： 敌方单位被我方单位拦截，停止移动并进入战斗
+ 
+-不受拦截的情况： 敌方单位为不可拦截目标（如部分空军和极少数特殊敌人）"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "脱战回血"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="7"]
+layout_mode = 2
+text = "我方单位在脱离战斗后会自动恢复生命值。
+ 
+-触发条件： 每隔1秒，我方单位都会进行检查，若自身处于空闲状态则会恢复一定血量
+ 
+-特殊情况： 我方单位受到伤害时，脱战回血计时器会重新开始倒计时。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "重生时间"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="10"]
+layout_mode = 2
+text = "部分我方单位在死亡后会在一定时间后重生，重生时间的具体数值以各单位详情页为准。雇佣兵没有重生机制，死亡后无法复活，这是雇佣兵与兵营士兵的核心区别之一。
+ 
+ 
+-士兵单位： 可以重生
+ 
+-英雄单位： 可以重生
+ 
+-援军单位： 不可重生
+ 
+-雇佣兵单位： 不可重生
+ 
+-召唤物单位： 视情况而定"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+offset_left = 371.0
+offset_top = 1458.0
+offset_right = 440.0
+offset_bottom = 1578.0
+texture = ExtResource("2_hwutn")
+
+[node name="Body" type="Sprite2D" parent="FreeNodes/TextureRect" index="0"]
+modulate = Color(1, 1, 1, 0.478431)
+position = Vector2(35, 103)
+scale = Vector2(1, 0.559981)
+texture = SubResource("GradientTexture2D_6xdrw")
+
+[node name="HurtBox" type="Sprite2D" parent="FreeNodes/TextureRect" index="1"]
+modulate = Color(1, 1, 1, 0.478431)
+position = Vector2(36, 62)
+scale = Vector2(1.00013, 1.00013)
+texture = SubResource("GradientTexture2D_imkem")
+
+[node name="Label" type="Label" parent="FreeNodes/TextureRect" index="2"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 100.0
+offset_right = 202.0
+offset_bottom = 124.0
+text = "UnitBody"
+
+[node name="Label2" type="Label" parent="FreeNodes/TextureRect" index="3"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 48.0
+offset_right = 202.0
+offset_bottom = 72.0
+text = "HurtBox"
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 4257.0
+offset_right = 636.0
+offset_bottom = 4324.0
+scale = Vector2(0.678385, 0.678385)
+texture = ExtResource("3_n04cg")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 4315.0
+offset_right = 663.0
+offset_bottom = 4382.0
+scale = Vector2(0.678385, 0.678385)
+texture = ExtResource("4_0l0wh")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 4368.0
+offset_right = 659.0
+offset_bottom = 4435.0
+scale = Vector2(0.678385, 0.678385)
+texture = ExtResource("5_i4pvn")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 2813.0
+offset_right = 172.0
+offset_bottom = 2858.0
+scale = Vector2(2.38377, 2.38377)
+texture = ExtResource("6_4r8ji")
+
+[node name="TextureRect6" type="TextureRect" parent="FreeNodes" index="5"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 2970.0
+offset_right = 168.0
+offset_bottom = 3029.0
+scale = Vector2(1.96413, 1.96413)
+texture = ExtResource("7_sb73a")
+stretch_mode = 3
+
+[node name="TextureRect7" type="TextureRect" parent="FreeNodes" index="6"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 3108.0
+offset_right = 172.0
+offset_bottom = 3167.0
+scale = Vector2(1.96413, 1.96413)
+texture = ExtResource("8_mcviv")
+stretch_mode = 3
+
+[node name="TextureRect8" type="TextureRect" parent="FreeNodes" index="7"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 3246.0
+offset_right = 173.0
+offset_bottom = 3305.0
+scale = Vector2(1.96413, 1.96413)
+texture = ExtResource("9_0aonf")
+stretch_mode = 3
+
+[node name="TextureRect9" type="TextureRect" parent="FreeNodes" index="8"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 3419.0
+offset_right = 181.0
+offset_bottom = 3486.0
+scale = Vector2(1.96413, 1.96413)
+texture = ExtResource("10_6wn86")
+stretch_mode = 3
+
+[node name="TextureRect10" type="TextureRect" parent="FreeNodes" index="9"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 4751.0
+offset_right = 213.0
+offset_bottom = 4823.0
+texture = ExtResource("11_sml77")
+
+[node name="TextureRect11" type="TextureRect" parent="FreeNodes" index="10"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 5224.0
+offset_right = 281.0
+offset_bottom = 5296.0
+texture = ExtResource("12_nsyir")
+stretch_mode = 3
+
+[node name="TextureRect12" type="TextureRect" parent="FreeNodes" index="11"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 5515.0
+offset_right = 286.0
+offset_bottom = 5587.0
+texture = ExtResource("13_xrnlf")
+stretch_mode = 3
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("14_vevsx")]
+layout_mode = 2
+text = "定义"
+wiki_page = NodePath("../../..")
+target_pos = -503.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("14_vevsx")]
+layout_mode = 2
+text = "分类"
+wiki_page = NodePath("../../..")
+target_pos = -2352.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("14_vevsx")]
+layout_mode = 2
+text = "独有机制"
+wiki_page = NodePath("../../..")
+target_pos = -4480.0
