@@ -1,0 +1,950 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctwfo31oy5pbd"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_sx2uj"]
+[ext_resource type="Texture2D" uid="uid://xfdsy6b4d5qo" path="res://Assets/Images/UI/Wiki/Index/hero.png" id="2_2wxx1"]
+[ext_resource type="Texture2D" uid="uid://c6647dv6c7igk" path="res://Assets/Images/UI/Wiki/GameBased/herohall.png" id="3_acvpg"]
+[ext_resource type="Texture2D" uid="uid://ccun8enm5qa0s" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程物伤.png" id="4_p46i7"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="5_70mol"]
+[ext_resource type="Texture2D" uid="uid://ckg83ho45j57x" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/顽强-normal.png" id="6_bb4ab"]
+[ext_resource type="Texture2D" uid="uid://c86em02g37ss5" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/钻石镐-normal.png" id="7_ndmd4"]
+[ext_resource type="Texture2D" uid="uid://i3cup87bakxs" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/金苹果-normal.png" id="8_fc1p1"]
+[ext_resource type="Texture2D" uid="uid://drv0dbf2kutls" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/战神之刃-normal.png" id="9_36c2m"]
+[ext_resource type="Texture2D" uid="uid://cgqvtdtcpu8nd" path="res://Assets/Images/UI/SkillButton/Heroskill/Steve/steve_canuse.png" id="10_q4yqo"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="11_ct1x3"]
+
+[node name="WikiPageHero" instance=ExtResource("1_sx2uj")]
+offset_bottom = 7118.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_2wxx1")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "英雄机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "英雄是我方单位大类中最为强大的独特单位，拥有独立的等级体系、可升级技能和自由调遣能力。本章节介绍英雄的通用规则、分类体系和运作逻辑，帮助你理解整个英雄生态。关于每位英雄的详细数值，请查阅 [我方单位板块]中的[英雄板块]。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "英雄等级体系"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "英雄共有 10 级（1 级 ~ 10 级）。每级所需的累计经验值固定，升级后基础属性（生命、攻击等）会相应提升，同时获得一定的技能点数，技能点数可以用于在主地图页面的英雄殿堂页面升级英雄技能，使英雄获得更加多样强大的能力。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 415
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "不同英雄的初始等级可能不同，具体以解锁时的游戏提示或英雄详情页为准。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "经验获取"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="6"]
+layout_mode = 2
+text = "英雄通过战斗行为积累经验值，提升等级。对于英雄来讲，共有两种方法可以为英雄提供经验值。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="7"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "普通攻击"
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="9"]
+layout_mode = 2
+text = "英雄通过普通攻击对敌人造成伤害时，按以下公式获得经验：获得经验 = 伤害原始数值 x 经验倍率。
+ 
+无论是近战攻击还是远程攻击只要命中敌人都会立即获得经验值，前提是近战攻击和远程攻击都要命中敌人，如果无效化或者被闪避则不会获得经验值。
+ 
+每位英雄拥有固定的经验获取倍率，该倍率不随等级提升而变化。"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="10"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "技能释放"
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="12"]
+layout_mode = 2
+text = "释放技能时获得的经验为固定值，与造成的伤害量无关。
+ 
+通常情况下，技能等级越高，提供的经验值越高。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "英雄技能体系"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "每位英雄拥有 1 个隐藏被动技能 + 5 个可升级技能，形成完整的技能体系。英雄每提升一级可以获得4点技能点，用于提升5个可升级技能。英雄满级（达到10级）时，所有技能都必定可以达到满级。
+ 
+下表为英雄达到对应等级时可以获得的技能点。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 420
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "被动技能"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+text = "所有英雄都自带一个隐藏被动技能，该技能可能会随英雄等级提升而提升，无法被主动升级，也不会在英雄界面单独显示。
+ 
+一个英雄有且仅会有一个被动技能，该技能作为该英雄特色而存在，某些情况下可能是该英雄流派玩法的底层核心机制的存在，每位英雄的具体被动机制详情可以参见英雄板块的每位角色的详细信息介绍。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "自主技能"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+text = "所有英雄都拥有四个自主技能，这些技能都可以自主升级，在战场上只要条件成立英雄就会自动释放技能。
+ 
+有些技能可能是纯数值加成或者机制加成，并非所有技能都是可以由英雄自主释放的动作式技能。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "主动技能"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="10"]
+layout_mode = 2
+text = "每位英雄有且仅有1个主动技能，该技能是唯一可以由玩家自主操纵释放的技能，但通常存在冷却限制。这些技能同样可以自主升级，并且与自主技能不同的是主动技能在0级时就可启用，不会因为没有升级而无法使用。
+ 
+每位英雄都各自拥有独特的主动技能，这些主动技能也是构成英雄设计风格的重要组成部分。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "英雄殿堂UI详解"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 530
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "①英雄列表"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="3"]
+layout_mode = 2
+text = "单击对应的英雄头像可以切换至对应的英雄界面查看详细信息。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "②快速升级按钮"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="6"]
+layout_mode = 2
+text = "通关第四关之后解锁，可以快速提高英雄等级，上限5级，通关第7关之后上限提高至7级，通关第11关之后上限解除，即可以立即提高等级至10级（满级）。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "③英雄等级与经验条"
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="9"]
+layout_mode = 2
+text = "这里显示英雄当前等级与提升至下一等级的升级进度，如果英雄已经满级达到10级，则经验条默认为充满状态。"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "④称号"
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="12"]
+layout_mode = 2
+text = "英雄的称号，方便对英雄的身份进行快速确认。"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "⑤英雄属性"
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="15"]
+layout_mode = 2
+text = "从上到下分别为生命值，攻击力，护甲，攻速。
+ 
+如果英雄为弓箭手或法师，则攻击力图标会替换为      或       ，此时攻速表示远程攻击的攻速。通常情况下，攻速表示近战攻击的攻速。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="16"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "⑥英雄立绘"
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="18"]
+layout_mode = 2
+text = "显示英雄的完整形象。"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="19"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="20"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "⑦技能点"
+
+[node name="Label17" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="21"]
+layout_mode = 2
+text = "这里显示当前该英雄可用于升级的剩余技能点，方便玩家规划升级路线与方案。"
+autowrap_mode = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="22"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label18" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="23"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "⑧背景故事"
+
+[node name="Label19" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="24"]
+layout_mode = 2
+text = "这里为英雄的详细介绍，主要针对英雄的背景故事进行介绍，主要作用为补全剧情与世界观。"
+autowrap_mode = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="25"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label20" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="26"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "⑨技能升级"
+
+[node name="Label21" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="27"]
+layout_mode = 2
+text = "玩家可以在这里对技能进行规划升级。"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer8" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "调遣与移动机制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "英雄在战场上的部署和移动拥有最高自由度，移动调遣上英雄可简单分为地面英雄与飞行英雄。
+ 
+英雄可以自由调遣至场上的任何合法位置。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "地面英雄"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="4"]
+layout_mode = 2
+text = "英雄仅可部署至道路位置，且通常会通过导航系统沿路径移动至目标地点。移动指令发出后，会朝着目标点以当前自身移速移动。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "飞行英雄"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="7"]
+layout_mode = 2
+text = "飞行英雄可自由调集至地图上任意位置，移动指令发出后，必定会无视路径障碍以直线路径移动至目标地点。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "移动与瞬移"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="10"]
+layout_mode = 2
+text = "部分英雄拥有瞬移能力。当移动指令的目标距离过远时，英雄会直接瞬移至目标地点，而非缓慢走过去。
+ 
+瞬移并非所有英雄都具备，仅在少部分英雄的机制中生效。具体哪些英雄拥有瞬移能力，请查阅各英雄详情页。"
+autowrap_mode = 3
+
+[node name="Table" type="Control" parent="FreeNodes" index="0"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 825.0
+offset_right = 387.0
+offset_bottom = 825.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "提升等级"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table/VBoxContainer" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table/VBoxContainer" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 404.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "所需经验"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1300"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2540"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4378"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6965"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10348"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "14367"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "17577"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "22252"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table/VBoxContainer2" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "26622"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 358.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="5"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="6"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="7"]
+layout_mode = 2
+
+[node name="HSeparator9" type="HSeparator" parent="FreeNodes/Table/HSeperators" index="8"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 387.0
+
+[node name="Table2" type="Control" parent="FreeNodes" index="1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 2566.0
+offset_right = 387.0
+offset_bottom = 2566.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table2" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "英雄等级"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table2" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 404.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "总经验点"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "16"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "20"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "24"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "28"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "32"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "36"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table2" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 358.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="5"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="6"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="7"]
+layout_mode = 2
+
+[node name="HSeparator9" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="8"]
+layout_mode = 2
+
+[node name="HSeparator10" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="9"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table2" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 419.0
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_top = 4102.0
+offset_right = 2361.0
+offset_bottom = 5169.0
+scale = Vector2(0.469347, 0.469347)
+texture = ExtResource("3_acvpg")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 5314.0
+offset_right = 638.0
+offset_bottom = 5381.0
+scale = Vector2(0.577671, 0.577671)
+texture = ExtResource("4_p46i7")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 5314.0
+offset_right = 701.0
+offset_bottom = 5381.0
+scale = Vector2(0.577671, 0.577671)
+texture = ExtResource("5_70mol")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="5"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 3274.0
+offset_right = 427.0
+offset_bottom = 3530.0
+scale = Vector2(0.67087, 0.67087)
+texture = ExtResource("6_bb4ab")
+
+[node name="TextureRect5" type="TextureRect" parent="FreeNodes" index="6"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 3274.0
+offset_right = 551.0
+offset_bottom = 3530.0
+scale = Vector2(0.67087, 0.67087)
+texture = ExtResource("7_ndmd4")
+
+[node name="TextureRect6" type="TextureRect" parent="FreeNodes" index="7"]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 3274.0
+offset_right = 677.0
+offset_bottom = 3530.0
+scale = Vector2(0.67087, 0.67087)
+texture = ExtResource("8_fc1p1")
+
+[node name="TextureRect7" type="TextureRect" parent="FreeNodes" index="8"]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 3274.0
+offset_right = 803.0
+offset_bottom = 3530.0
+scale = Vector2(0.67087, 0.67087)
+texture = ExtResource("9_36c2m")
+
+[node name="TextureRect8" type="TextureRect" parent="FreeNodes" index="9"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 3552.0
+offset_right = 441.0
+offset_bottom = 3808.0
+scale = Vector2(0.67087, 0.67087)
+texture = ExtResource("10_q4yqo")
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 53.0
+offset_top = 116.0
+offset_right = 520.0
+offset_bottom = 506.0
+scale = Vector2(0.664518, 0.664518)
+theme_override_constants/separation = 20
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("11_ct1x3")]
+layout_mode = 2
+text = "英雄等级体系"
+wiki_page = NodePath("../../..")
+target_pos = -526.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("11_ct1x3")]
+layout_mode = 2
+text = "英雄技能体系"
+wiki_page = NodePath("../../..")
+target_pos = -2228.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("11_ct1x3")]
+layout_mode = 2
+text = "英雄殿堂UI详解"
+wiki_page = NodePath("../../..")
+target_pos = -3935.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("11_ct1x3")]
+layout_mode = 2
+text = "调遣与移动机制"
+wiki_page = NodePath("../../..")
+target_pos = -5998.0

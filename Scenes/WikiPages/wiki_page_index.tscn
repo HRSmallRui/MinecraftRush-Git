@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2llntmdjgk2o"]
+[gd_scene load_steps=14 format=3 uid="uid://dj4taftgw76yn"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_7548v"]
 [ext_resource type="Texture2D" uid="uid://bijpywyj4vdic" path="res://Assets/Images/UI/Wiki/wiki.png" id="2_053ui"]
@@ -6,20 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://b7kkdp471t48r" path="res://Assets/Images/UI/Wiki/Index/based.png" id="3_8qfn0"]
 [ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="3_u3qtp"]
 [ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="4_1aggx"]
-[ext_resource type="Texture2D" uid="uid://xfdsy6b4d5qo" path="res://Assets/Images/UI/Wiki/Index/hero.png" id="5_7u0ed"]
+[ext_resource type="Texture2D" uid="uid://dqvjxoqxwnxrc" path="res://Assets/Images/UI/Wiki/GameBased/Index/我方单位.png" id="6_8y0et"]
 [ext_resource type="Texture2D" uid="uid://d1cmb74atnaa7" path="res://Assets/Images/UI/Wiki/Index/enemy.png" id="6_wly5d"]
 [ext_resource type="Texture2D" uid="uid://hgtg66hhp4n" path="res://Assets/Images/UI/Wiki/Index/achievement.png" id="7_wxagi"]
 [ext_resource type="Texture2D" uid="uid://1dgjt52101xv" path="res://Assets/Images/UI/Wiki/Index/stages.png" id="8_v6lys"]
 [ext_resource type="Texture2D" uid="uid://cn1s81gejqiti" path="res://Assets/Images/UI/Wiki/Index/world.png" id="9_rdkir"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="12_72pd6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uti3m"]
+atlas = ExtResource("12_72pd6")
+region = Rect2(98, 192, 331, 143)
 
 [node name="WikiPageIndex" instance=ExtResource("1_7548v")]
 offset_bottom = 1726.0
 script = ExtResource("2_g0usd")
 main_title_pc_path = "res://Scenes/GameBased/main_title.tscn"
 main_title_mobile_path = "res://Scenes/GameBased/main_title_mobile.tscn"
-
-[node name="VBoxContainer" parent="." index="0"]
-theme_override_constants/separation = 45
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -62,14 +64,15 @@ offset_bottom = 221.0
 scale = Vector2(2.11686, 2.11686)
 texture = ExtResource("4_1aggx")
 
-[node name="Heros" type="TextureRect" parent="Icons" index="2"]
+[node name="Ally" type="TextureRect" parent="Icons" index="2"]
 layout_mode = 0
-offset_left = 775.0
-offset_top = 110.0
-offset_right = 888.0
-offset_bottom = 223.0
+offset_left = 779.0
+offset_top = 109.0
+offset_right = 892.0
+offset_bottom = 226.0
 scale = Vector2(2.11686, 2.11686)
-texture = ExtResource("5_7u0ed")
+texture = ExtResource("6_8y0et")
+stretch_mode = 3
 
 [node name="Enemies" type="TextureRect" parent="Icons" index="3"]
 layout_mode = 0
@@ -103,15 +106,15 @@ stretch_mode = 2
 
 [node name="World" type="TextureRect" parent="Icons" index="6"]
 layout_mode = 0
-offset_left = 446.0
+offset_left = 110.0
 offset_top = 754.0
-offset_right = 566.0
+offset_right = 230.0
 offset_bottom = 874.0
 scale = Vector2(1.74975, 1.74975)
 texture = ExtResource("9_rdkir")
 stretch_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." index="2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="." index="3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,18 +134,21 @@ theme_override_constants/separation = 40
 
 [node name="WikiButton" parent="VBoxContainer2/HBoxContainer" index="0" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "机制"
 linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
 
 [node name="WikiButton2" parent="VBoxContainer2/HBoxContainer" index="1" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "防御塔"
 linked_path = "res://Scenes/WikiPages/wiki_tower.tscn"
 
 [node name="WikiButton3" parent="VBoxContainer2/HBoxContainer" index="2" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
-button_text = "英雄"
-linked_path = "res://Scenes/WikiPages/wiki_hero.tscn"
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "我方单位"
+linked_path = "res://Scenes/WikiPages/wiki_ally.tscn"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2" index="1"]
 layout_mode = 2
@@ -150,29 +156,43 @@ theme_override_constants/separation = 40
 
 [node name="WikiButton" parent="VBoxContainer2/HBoxContainer2" index="0" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "敌人"
 linked_path = "res://Scenes/WikiPages/wiki_enemy.tscn"
 
 [node name="WikiButton2" parent="VBoxContainer2/HBoxContainer2" index="1" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "成就"
 linked_path = "res://Scenes/WikiPages/wiki_achievement.tscn"
 
 [node name="WikiButton3" parent="VBoxContainer2/HBoxContainer2" index="2" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "关卡"
 linked_path = "res://Scenes/WikiPages/wiki_stage.tscn"
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2" index="2"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2" index="2"]
 layout_mode = 2
+theme_override_constants/separation = 40
 
-[node name="WikiButton" parent="VBoxContainer2/CenterContainer" index="0" instance=ExtResource("3_u3qtp")]
+[node name="WikiButton" parent="VBoxContainer2/HBoxContainer3" index="0" instance=ExtResource("3_u3qtp")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "世界观"
 linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
 
-[node name="TopMenu" parent="." index="3"]
-mouse_filter = 2
+[node name="WikiButton2" parent="VBoxContainer2/HBoxContainer3" index="1" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "主动技能"
+linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
+
+[node name="WikiButton3" parent="VBoxContainer2/HBoxContainer3" index="2" instance=ExtResource("3_u3qtp")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_uti3m")
+button_text = "杂项"
+linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
 
 [node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("3_u3qtp")]
 layout_mode = 1
@@ -187,6 +207,7 @@ offset_right = -41.0
 offset_bottom = -45.0
 grow_horizontal = 0
 grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "返回"
 
 [connection signal="pressed" from="TopMenu/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,695 @@
+[gd_scene load_steps=20 format=3 uid="uid://bov10vaxld45y"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_bhyxp"]
+[ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="2_2mevm"]
+[ext_resource type="Texture2D" uid="uid://bhsthcackiu24" path="res://Assets/Images/DefenceTowers/Archers/LV1-3.png" id="3_a1xcy"]
+[ext_resource type="Texture2D" uid="uid://csevj3nqlbapv" path="res://Assets/Images/DefenceTowers/Barracks/LV1-3.png" id="4_ydiey"]
+[ext_resource type="Texture2D" uid="uid://cdax1csfuitmw" path="res://Assets/Images/DefenceTowers/Magics/LV1-3.png" id="5_6gwen"]
+[ext_resource type="Texture2D" uid="uid://cmuydi6smp844" path="res://Assets/Images/DefenceTowers/Based/royal-tower.png" id="6_8lept"]
+[ext_resource type="Texture2D" uid="uid://doi0r1f0vpyb6" path="res://Assets/Images/DefenceTowers/Specials/BuyingButtons/DesertBarrack/desert2.png" id="7_gavvf"]
+[ext_resource type="Texture2D" uid="uid://g2g72fbh1l4s" path="res://Assets/Images/DefenceTowers/Archers/LV4-1.png" id="8_b14wa"]
+[ext_resource type="Texture2D" uid="uid://cbt8yny034o1p" path="res://Assets/Images/DefenceTowers/Archers/LV4-2.png" id="9_d5xfo"]
+[ext_resource type="Texture2D" uid="uid://bjbf5ayoxsyi8" path="res://Assets/Images/DefenceTowers/Barracks/LV4-1.png" id="10_6ypmf"]
+[ext_resource type="Texture2D" uid="uid://bie2qmv6celuf" path="res://Assets/Images/DefenceTowers/Barracks/LV4-2.png" id="11_83hni"]
+[ext_resource type="Texture2D" uid="uid://bjsps06oirmu4" path="res://Assets/Images/DefenceTowers/Barracks/LV4-3.png" id="12_jjk6f"]
+[ext_resource type="Texture2D" uid="uid://cqqo5c63055l5" path="res://Assets/Images/DefenceTowers/Magics/LV4-1.png" id="13_62k38"]
+[ext_resource type="Texture2D" uid="uid://c7gwp2orp4abb" path="res://Assets/Images/DefenceTowers/Magics/LV4-2.png" id="14_xis3s"]
+[ext_resource type="Texture2D" uid="uid://co6fb5wwhqfss" path="res://Assets/Images/DefenceTowers/Magics/LV4-3.png" id="15_58pah"]
+[ext_resource type="Texture2D" uid="uid://bgeej88ewxa8b" path="res://Assets/Images/DefenceTowers/Bombards/LV4-1.png" id="16_tgtfu"]
+[ext_resource type="Texture2D" uid="uid://l6xqplsdghgn" path="res://Assets/Images/DefenceTowers/Bombards/LV4-2.png" id="17_0xcjb"]
+[ext_resource type="Texture2D" uid="uid://bwgm5k3wceqrb" path="res://Assets/Images/DefenceTowers/Bombards/LV4-3.png" id="18_63oam"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="19_i7wcr"]
+
+[node name="WikiDefenceTowers" instance=ExtResource("1_bhyxp")]
+offset_bottom = 7537.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_2mevm")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "防御塔机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "防御塔是游戏中最核心的防御手段之一。本章节介绍防御塔的通用规则、分类体系和运作逻辑，帮助你理解整个防御塔生态。关于具体每座塔的详细数值，请查阅 [防御塔板块]。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "防御塔分类"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "防御塔可以从两个维度进行分类："
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "维度一：按归属（玩家 / NPC）"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "玩家防御塔"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "玩家可建造、升级、拆除的塔，共 24 种，可自由搭配；箭塔/兵营/法师塔/炮塔各 6 种（前 3 级 + 3 种 4 级分支）。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="7"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "NPC 防御塔"
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "关卡中预设的塔，通常不可拆除，部分拥有可点击的技能；部分属于雇佣兵类型；吃科技加成（如归属基础四塔）。"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "维度二：按类型"
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="12"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "箭塔"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "远程物理输出，主要针对单体敌人。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="15"]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="16"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "兵营"
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "拦截敌人，派出士兵作战；士兵死亡后可复活。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="18"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="19"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "法师塔"
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="20"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "魔法输出，对高护甲敌人效果显著，或用来针对高血量高威胁敌人。"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="21"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="22"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "炮塔"
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="23"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "造成范围炮击伤害，通常价格昂贵且攻速较慢，适合清理密集敌群。"
+autowrap_mode = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="24"]
+layout_mode = 2
+
+[node name="Label17" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="25"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "地基"
+
+[node name="Label18" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="26"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "用于建造一级防御塔的基础平台，是建造流程的第一步。"
+autowrap_mode = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="27"]
+layout_mode = 2
+
+[node name="Label19" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="28"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "雇佣兵"
+
+[node name="Label20" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="29"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "需要购买雇佣兵单位且存在人数上限，死亡后无法复活。"
+autowrap_mode = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="30"]
+layout_mode = 2
+
+[node name="Label21" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="31"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "特殊防御塔"
+
+[node name="Label22" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="32"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "拥有独特机制的稀有塔，或是拥有有趣效果的娱乐防御塔。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "玩家防御塔的成长路径"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "通用流程： 地基 → 1 级基础塔 → 2 级 → 3 级 → 选择 1 种 4 级分支
+ 
+每种基础塔在到达 4 级时，会面临三个不同的方向选择。简单概括三种方向为：极端特化，极端补全，均衡升级。
+ 
+极端特化：强化自身优势区间，但是弱势区间更加弱势。
+极端补全：超强补全自身弱势区间，但是同等大幅降低自身优势区间。
+均衡升级：优势区间小幅增加，同时也适当补全劣势区间。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "箭塔"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "优势区间：攻速快、射程远，对低血量敌人压制力强，价格低廉。
+ 
+弱势区间：单次伤害较低，面对高护甲敌人时输出乏力。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支1：高攻低速（极端补全）"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "伤害大幅提升，攻速大幅降低。补全“伤害低”的短板，但代价是失去“攻速快”的特色。
+ 
+详见投石高塔页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支2：中攻中速（均衡升级）"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "攻击中等幅度提升，攻速小幅降低，无明显短板，但也缺乏突出亮点。
+ 
+详见沙漠哨塔页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支3：低攻高速（极端特化）"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "攻速进一步加快，伤害极小幅度提高。“攻速快”的优势推向极致，但“伤害低”的劣势更明显。
+ 
+详见劫掠哨塔页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "兵营"
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="16"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "优势区间：士兵生命值较高，能稳定拦截敌人，为后排防御塔创造输出空间，同时塔自身价格不高。
+ 
+弱势区间：自身输出能力极弱，士兵战斗效率低，几乎不造成有效伤害。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="17"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支1：抗伤型（极端特化）"
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="19"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "坦度大幅增加，攻击力小幅增加。“肉盾”定位推向极致，是最可靠的屏障。
+ 
+详见皇家近卫军页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="20"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="21"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支2：输出型（极端补全）"
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="22"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "伤害大幅增加，坦度降低。补全“输出弱”的短板，但自身变得脆弱。
+ 
+详见大刀教会页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="23"]
+layout_mode = 2
+
+[node name="Label17" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="24"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支3：辅助型（均衡升级）"
+
+[node name="Label18" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="25"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "坦度介于前两者之间，伤害无提升，新增回血和上debuff能力。牺牲部分坦度和全部输出潜力，换取团队增益。
+ 
+详见医疗护卫队页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="26"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label19" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="27"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "法师塔"
+
+[node name="Label20" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="28"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "优势区间：单体爆发高，能有效处理高护甲敌人。
+ 
+弱势区间：功能性弱（除了伤害之外缺乏控制或辅助能力），且本身造价偏高。"
+autowrap_mode = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="29"]
+layout_mode = 2
+
+[node name="Label21" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="30"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支1：对单型（极端特化）"
+
+[node name="Label22" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="31"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "单体输出能力极端强化，舍弃对群能力。“单体爆发”推向极致，但功能单一且更贵。
+ 
+详见守卫者教堂页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="32"]
+layout_mode = 2
+
+[node name="Label23" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="33"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支2：辅助型（极端补全）"
+
+[node name="Label24" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="34"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "牺牲攻击力换取功能性（如减速、易伤等），补全“功能性弱”的短板，但失去部分输出能力。
+ 
+详见女巫高塔页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="35"]
+layout_mode = 2
+
+[node name="Label25" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="36"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支3：对群型（均衡升级）"
+
+[node name="Label26" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="37"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "攻击力和功能性同步提升，增加一部分对群输出能力，在输出和功能性之间取得平衡。
+ 
+详见炼金术士页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer13" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="38"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label27" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="39"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "炮塔"
+
+[node name="Label28" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="40"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "优势区间：范围伤害能力强，对密集敌群压制力极强。
+ 
+弱势区间：五队控能力，无法攻击飞行单位；机动性差，部署后难以调整，且通常价格昂贵。"
+autowrap_mode = 3
+
+[node name="MarginContainer14" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="41"]
+layout_mode = 2
+
+[node name="Label29" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="42"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支1：对空型（极端补全）"
+
+[node name="Label30" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="43"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "补强对空能力，射程降低，伤害有所下降。补全“对空弱”的短板，但牺牲输出和射程。
+ 
+详见演算者炮塔页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer15" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="44"]
+layout_mode = 2
+
+[node name="Label31" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="45"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支2：全面升级型（极端特化）"
+
+[node name="Label32" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="46"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "各方面全面强化（伤害、射程、范围等），输出能力极大强化，“范围伤害”的优势推向极致，综合能力极强。
+ 
+详见湮灭炮塔页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer16" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="47"]
+layout_mode = 2
+
+[node name="Label33" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="48"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "分支3：自由调遣型（均衡升级）"
+
+[node name="Label34" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="49"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "提升灵活性和调集能力，可更自由地调整攻击目标。通过增强灵活性来弥补炮塔“机动性差”的短板。
+ 
+详见无人机控制平台页面。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 95
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "科技加成规则"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "只要属于基础四塔类别（雇佣兵塔和特殊防御塔除外），就可以享受到科技加成，无论是玩家防御塔还是NPC防御塔。"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 1477.0
+offset_right = 218.0
+offset_bottom = 1573.0
+texture = ExtResource("3_a1xcy")
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 1655.0
+offset_right = 218.0
+offset_bottom = 1751.0
+texture = ExtResource("4_ydiey")
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 1835.0
+offset_right = 243.0
+offset_bottom = 1931.0
+texture = ExtResource("5_6gwen")
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 2123.0
+offset_right = 320.0
+offset_bottom = 2373.0
+texture = ExtResource("6_8lept")
+
+[node name="TextureRect5" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 2378.0
+offset_right = 246.0
+offset_bottom = 2474.0
+texture = ExtResource("7_gavvf")
+
+[node name="TextureRect6" type="TextureRect" parent="FreeNodes" index="5"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 3600.0
+offset_right = 350.0
+offset_bottom = 3696.0
+texture = ExtResource("8_b14wa")
+
+[node name="TextureRect7" type="TextureRect" parent="FreeNodes" index="6"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 3836.0
+offset_right = 346.0
+offset_bottom = 3932.0
+texture = ExtResource("9_d5xfo")
+
+[node name="TextureRect8" type="TextureRect" parent="FreeNodes" index="7"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 4069.0
+offset_right = 346.0
+offset_bottom = 4165.0
+texture = ExtResource("9_d5xfo")
+
+[node name="TextureRect9" type="TextureRect" parent="FreeNodes" index="8"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 4583.0
+offset_right = 370.0
+offset_bottom = 4679.0
+texture = ExtResource("10_6ypmf")
+
+[node name="TextureRect10" type="TextureRect" parent="FreeNodes" index="9"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 4823.0
+offset_right = 352.0
+offset_bottom = 4919.0
+texture = ExtResource("11_83hni")
+
+[node name="TextureRect11" type="TextureRect" parent="FreeNodes" index="10"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 5078.0
+offset_right = 374.0
+offset_bottom = 5174.0
+texture = ExtResource("12_jjk6f")
+
+[node name="TextureRect12" type="TextureRect" parent="FreeNodes" index="11"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 5568.0
+offset_right = 369.0
+offset_bottom = 5664.0
+texture = ExtResource("13_62k38")
+
+[node name="TextureRect13" type="TextureRect" parent="FreeNodes" index="12"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 5805.0
+offset_right = 351.0
+offset_bottom = 5901.0
+texture = ExtResource("14_xis3s")
+
+[node name="TextureRect14" type="TextureRect" parent="FreeNodes" index="13"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 6041.0
+offset_right = 351.0
+offset_bottom = 6137.0
+texture = ExtResource("15_58pah")
+
+[node name="TextureRect15" type="TextureRect" parent="FreeNodes" index="14"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 6526.0
+offset_right = 365.0
+offset_bottom = 6622.0
+texture = ExtResource("16_tgtfu")
+
+[node name="TextureRect16" type="TextureRect" parent="FreeNodes" index="15"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 6789.0
+offset_right = 361.0
+offset_bottom = 6885.0
+texture = ExtResource("17_0xcjb")
+
+[node name="TextureRect17" type="TextureRect" parent="FreeNodes" index="16"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 7050.0
+offset_right = 422.0
+offset_bottom = 7146.0
+texture = ExtResource("18_63oam")
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 48.0
+offset_right = 382.0
+offset_bottom = 387.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("19_i7wcr")]
+layout_mode = 2
+text = "防御塔分类"
+wiki_page = NodePath("../../..")
+target_pos = -511.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("19_i7wcr")]
+layout_mode = 2
+text = "成长路径"
+wiki_page = NodePath("../../..")
+target_pos = -2785.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("19_i7wcr")]
+layout_mode = 2
+text = "科技加成规则"
+wiki_page = NodePath("../../..")
+target_pos = -7187.0

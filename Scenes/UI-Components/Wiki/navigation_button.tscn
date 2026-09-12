@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://bd7akssixn475"]
+
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="1_s7you"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/navigation_button.gd" id="2_snfg7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxgku"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tdlo"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipeoa"]
+bg_color = Color(0.733005, 0.733005, 0.733005, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 12
+
+[sub_resource type="Theme" id="Theme_wypbh"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(1.15514e-06, 0.592867, 0.592867, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_mxgku")
+Button/styles/normal = SubResource("StyleBoxFlat_8tdlo")
+Button/styles/pressed = SubResource("StyleBoxFlat_ipeoa")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xop3x"]
+bg_color = Color(0.470076, 0.470076, 0.470076, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ewms"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g08af"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 12
+
+[sub_resource type="Theme" id="Theme_g41os"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.800491, 0.800491, 0.800491, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_xop3x")
+Button/styles/normal = SubResource("StyleBoxFlat_0ewms")
+Button/styles/pressed = SubResource("StyleBoxFlat_g08af")
+
+[node name="NavigationButton" type="Button"]
+custom_minimum_size = Vector2(0, 90)
+offset_right = 272.0
+offset_bottom = 90.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_wypbh")
+theme_override_fonts/font = ExtResource("1_s7you")
+theme_override_font_sizes/font_size = 48
+text = "导航"
+script = ExtResource("2_snfg7")
+white_theme = SubResource("Theme_wypbh")
+dark_theme = SubResource("Theme_g41os")

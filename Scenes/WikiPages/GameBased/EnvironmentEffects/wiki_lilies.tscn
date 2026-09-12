@@ -1,0 +1,272 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2abtf3sn6e74"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_qph5s"]
+[ext_resource type="Texture2D" uid="uid://hy5d060rq0i5" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/lily.png" id="2_max3w"]
+[ext_resource type="Texture2D" uid="uid://c3moupyebseb5" path="res://Assets/Images/Stages/Stage16/Lily.png" id="3_t42wo"]
+[ext_resource type="Texture2D" uid="uid://btygux8ja2ahr" path="res://Assets/Images/Stages/Stage16/LilyLight.png" id="4_8ukg5"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="5_ciukv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ysd"]
+atlas = ExtResource("3_t42wo")
+region = Rect2(6, 5, 51, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_818b0"]
+atlas = ExtResource("4_8ukg5")
+region = Rect2(4, 0, 62, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gher"]
+atlas = ExtResource("3_t42wo")
+region = Rect2(42, 55, 51, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxjr0"]
+atlas = ExtResource("3_t42wo")
+region = Rect2(42, 55, 51, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sirdi"]
+atlas = ExtResource("4_8ukg5")
+region = Rect2(32, 51, 62, 45)
+
+[node name="WikiLilies" instance=ExtResource("1_qph5s")]
+offset_bottom = 1824.0
+
+[node name="VBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 45
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_max3w")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "路边花机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "场地上会固定出现红花和白花。在特定波次开始时，花朵会进入开花状态并会发出声音提示，玩家可以点击采摘获得即时效果。花朵仅在该波次内可采摘，波次结束后便不可摘取。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "出现关卡：第16关，第17关"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "花朵效果"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "白花"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "立即恢复全场我方单位 50% 生命值。"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "红花"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "立即减少所有主动技能 20% 冷却时间（瞬时减少）。"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "状态鉴赏"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "白花"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 160
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "红花"
+
+[node name="ColorRect" type="ColorRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 1260.0
+offset_right = 1051.0
+offset_bottom = 1456.0
+color = Color(0.597176, 0.597176, 0.597176, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 1522.0
+offset_right = 1053.0
+offset_bottom = 1744.0
+color = Color(0.597176, 0.597176, 0.597176, 1)
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 1314.0
+offset_right = 183.0
+offset_bottom = 1354.0
+scale = Vector2(2.67339, 2.67339)
+texture = SubResource("AtlasTexture_63ysd")
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 1314.0
+offset_right = 829.0
+offset_bottom = 1354.0
+scale = Vector2(2.67339, 2.67339)
+texture = SubResource("AtlasTexture_63ysd")
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes/TextureRect2" index="0"]
+layout_mode = 0
+offset_left = -11.9698
+offset_top = -16.0844
+offset_right = 50.0302
+offset_bottom = 28.9156
+scale = Vector2(1.18621, 1.18621)
+texture = SubResource("AtlasTexture_818b0")
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 1580.0
+offset_right = 183.0
+offset_bottom = 1620.0
+scale = Vector2(2.67339, 2.67339)
+texture = SubResource("AtlasTexture_5gher")
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="5"]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 1580.0
+offset_right = 829.0
+offset_bottom = 1620.0
+scale = Vector2(2.67339, 2.67339)
+texture = SubResource("AtlasTexture_yxjr0")
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes/TextureRect4" index="0"]
+layout_mode = 0
+offset_left = -11.9698
+offset_top = -16.0844
+offset_right = 50.0302
+offset_bottom = 28.9156
+scale = Vector2(1.18621, 1.18621)
+texture = SubResource("AtlasTexture_sirdi")
+
+[node name="Label" type="Label" parent="FreeNodes" index="6"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 1426.0
+offset_right = 291.0
+offset_bottom = 1450.0
+theme_override_font_sizes/font_size = 24
+text = "不可采摘"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes" index="7"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 1426.0
+offset_right = 935.0
+offset_bottom = 1450.0
+theme_override_font_sizes/font_size = 24
+text = "可采摘"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes" index="8"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 1690.0
+offset_right = 291.0
+offset_bottom = 1714.0
+theme_override_font_sizes/font_size = 24
+text = "不可采摘"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes" index="9"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 1690.0
+offset_right = 935.0
+offset_bottom = 1714.0
+theme_override_font_sizes/font_size = 24
+text = "可采摘"
+horizontal_alignment = 1
+
+[node name="BackButton" parent="TopMenu" index="0"]
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_environment_effect.tscn"
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("5_ciukv")]
+layout_mode = 2
+text = "花朵效果"
+wiki_page = NodePath("../../..")
+target_pos = -562.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("5_ciukv")]
+layout_mode = 2
+text = "状态鉴赏"
+wiki_page = NodePath("../../..")
+target_pos = -1058.0

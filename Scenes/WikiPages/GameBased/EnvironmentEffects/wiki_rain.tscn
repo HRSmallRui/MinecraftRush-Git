@@ -1,0 +1,1622 @@
+[gd_scene load_steps=9 format=3 uid="uid://bclcq4ytctxmy"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/GameBased/wiki_page_game_based.tscn" id="1_snhly"]
+[ext_resource type="Texture2D" uid="uid://dcuwa8g3dq1fg" path="res://Assets/Images/UI/Wiki/GameBased/Index/EnvironmentEffects/rain.png" id="2_o35ef"]
+[ext_resource type="Texture2D" uid="uid://bouos3o6f35l7" path="res://Assets/Images/UI/Wiki/GameBased/Index/标签系统.png" id="3_ga70x"]
+[ext_resource type="Texture2D" uid="uid://bl1ddji3janfi" path="res://Assets/Images/Stages/Stage6/Stage6.png" id="4_mej8n"]
+[ext_resource type="Texture2D" uid="uid://bpntkrwa5a0f4" path="res://Assets/Images/Stages/Stage7/stage7.png" id="5_cocyb"]
+[ext_resource type="Texture2D" uid="uid://b7fej465ybq6o" path="res://Assets/Images/Stages/Stage16/stage16.png" id="6_h20sa"]
+[ext_resource type="Texture2D" uid="uid://4u7oeuijvdxj" path="res://Assets/Images/Stages/Stage17/stage17.png" id="7_47el4"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="8_ekjc1"]
+
+[node name="WikiRain" instance=ExtResource("1_snhly")]
+offset_bottom = 8530.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_o35ef")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "下雨机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "下雨机制共有五个阶段，每个波次开始时改变不同阶段。能见度会随雨势增大而降低（画面变暗），同时雨水会对场上特定单位造成持续伤害。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "出现关卡：第6关，第7关，第16关，第17关"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "阶段：晴天/小雨/中雨/大雨/雷暴雨"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "能见度变化"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天： 无影响
+ 
+小雨： 降低15%
+ 
+中雨： 降低30%
+ 
+大雨： 降低40%
+ 
+雷暴雨： 降低60%"
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer8" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "对特定单位持续造成伤害"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雨天会对持有\"enderman\"标签的敌方单位和持有\"redstone\"标签的我方单位每 0.1 秒造成一次真伤，该伤害随着雨天等级提高而逐渐增加"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 235
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer8/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "间隔时间： 0.1秒"
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer10" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "特殊机制： 雷暴雨"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨阶段会定期（每 6 - 12 秒）发生闪电打击："
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer10/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-打闪： 短时间内大幅提高场上亮度
+-判定： 对全场持有 “creeper” 标签的敌人进行一次判定
+-效果： 30% 概率施加 闪电护盾 buff，同时进入 闪电状态，并移除其“creeper”标签"
+autowrap_mode = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer12" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer12/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "标签影响"
+
+[node name="MarginContainer13" type="MarginContainer" parent="VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/margin_top = 365
+
+[node name="MarginContainer14" type="MarginContainer" parent="VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer14" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "关卡详细数据"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 36
+text = "6.弗拉里斯带"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 390
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式    初始晴天"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 620
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战    初始小雨"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_top = 240
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "基岩挑战    初始雷暴雨"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "初始雷暴雨，在波次开始60秒后切换为大雨阶段。"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 36
+text = "7.南洋海岸"
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/margin_top = 360
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式    初始晴天"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/margin_top = 665
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战    初始晴天"
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/margin_top = 270
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="16"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战    初始小雨"
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "初始小雨，在波次开始60秒后切换为晴天阶段。"
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="19"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 36
+text = "16.高山"
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="20"]
+layout_mode = 2
+theme_override_constants/margin_top = 360
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="21"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式    初始小雨"
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="22"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "该关卡13个波次全为小雨阶段。"
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="23"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="24"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战    初始小雨"
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="25"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "该关卡5个波次全为小雨阶段。"
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="26"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label17" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="27"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "基岩挑战    初始小雨"
+
+[node name="Label18" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="28"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "该关卡1个波次全为小雨阶段。"
+
+[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="29"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label19" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="30"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 36
+text = "17.鬼门关"
+
+[node name="MarginContainer13" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="31"]
+layout_mode = 2
+theme_override_constants/margin_top = 360
+
+[node name="Label20" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="32"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式    初始小雨"
+
+[node name="Label21" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="33"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "该关卡15个波次全为小雨阶段。"
+
+[node name="MarginContainer14" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="34"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label22" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="35"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战    初始小雨"
+
+[node name="Label23" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="36"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "该关卡5个波次全为小雨阶段。"
+
+[node name="MarginContainer15" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="37"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label24" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="38"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "基岩挑战    初始小雨"
+
+[node name="Label25" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="39"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "该关卡1个波次全为小雨阶段。"
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 2074.0
+offset_right = 368.0
+offset_bottom = 2191.0
+scale = Vector2(0.726734, 0.726734)
+texture = ExtResource("3_ga70x")
+
+[node name="Table" type="Control" parent="FreeNodes" index="1"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 2202.0
+offset_right = 74.0
+offset_bottom = 2202.0
+scale = Vector2(0.869193, 0.869193)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 45
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/Table/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Label" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "标签"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "受下雨影响"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="FreeNodes/Table/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Label" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer2" index="0"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "enderman（敌人）"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer2" index="1"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "持续受到真伤"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="FreeNodes/Table/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Label" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer3" index="0"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "redstone（我方单位）"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer3" index="1"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "持续受到真伤"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="FreeNodes/Table/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Label" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer4" index="0"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "creeper（敌人）"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table/VBoxContainer/HBoxContainer4" index="1"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "雷暴雨阶段有概率转化为闪电状态"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table" index="1"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 58.9468
+offset_right = 1111.0
+offset_bottom = 62.9468
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table" index="2"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 145.234
+offset_right = 1111.0
+offset_bottom = 149.234
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table" index="3"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 225.496
+offset_right = 1111.0
+offset_bottom = 229.496
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table" index="4"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = -8.0
+offset_right = 506.0
+offset_bottom = 309.0
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 2771.0
+offset_right = 4636.0
+offset_bottom = 4428.0
+scale = Vector2(0.216016, 0.216016)
+texture = ExtResource("4_mej8n")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 4579.0
+offset_right = 4636.0
+offset_bottom = 6236.0
+scale = Vector2(0.216016, 0.216016)
+texture = ExtResource("5_cocyb")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 6416.0
+offset_right = 4636.0
+offset_bottom = 8073.0
+scale = Vector2(0.216016, 0.216016)
+texture = ExtResource("6_h20sa")
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="FreeNodes" index="5"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 7502.0
+offset_right = 4636.0
+offset_bottom = 9159.0
+scale = Vector2(0.216016, 0.216016)
+texture = ExtResource("7_47el4")
+stretch_mode = 5
+
+[node name="Table2" type="Control" parent="FreeNodes" index="6"]
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 3280.0
+offset_right = 359.0
+offset_bottom = 3280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table2" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "11"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "13"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "14"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table2" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 404.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "下雨等级"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "大雨"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "大雨"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table2" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 358.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="5"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="6"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="7"]
+layout_mode = 2
+
+[node name="HSeparator9" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="8"]
+layout_mode = 2
+
+[node name="HSeparator10" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="9"]
+layout_mode = 2
+
+[node name="HSeparator11" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="10"]
+layout_mode = 2
+
+[node name="HSeparator12" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="11"]
+layout_mode = 2
+
+[node name="HSeparator13" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="12"]
+layout_mode = 2
+
+[node name="HSeparator14" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="13"]
+layout_mode = 2
+
+[node name="HSeparator15" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="14"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table2" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 619.0
+
+[node name="Table5" type="Control" parent="FreeNodes" index="7"]
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 5066.0
+offset_right = 359.0
+offset_bottom = 5066.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table5" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "11"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "13"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "14"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="16"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "16"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table5" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 404.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "下雨等级"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "大雨"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="16"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table5" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 358.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="5"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="6"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="7"]
+layout_mode = 2
+
+[node name="HSeparator9" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="8"]
+layout_mode = 2
+
+[node name="HSeparator10" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="9"]
+layout_mode = 2
+
+[node name="HSeparator11" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="10"]
+layout_mode = 2
+
+[node name="HSeparator12" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="11"]
+layout_mode = 2
+
+[node name="HSeparator13" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="12"]
+layout_mode = 2
+
+[node name="HSeparator14" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="13"]
+layout_mode = 2
+
+[node name="HSeparator15" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="14"]
+layout_mode = 2
+
+[node name="HSeparator16" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="15"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table5" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 653.0
+
+[node name="Table3" type="Control" parent="FreeNodes" index="8"]
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 3999.0
+offset_right = 359.0
+offset_bottom = 3999.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table3" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table3" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 404.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "下雨等级"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "大雨"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table3" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 358.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table3" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 226.0
+
+[node name="Table6" type="Control" parent="FreeNodes" index="9"]
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 5858.0
+offset_right = 359.0
+offset_bottom = 5858.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table6" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table6" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 404.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "下雨等级"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table6" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 358.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table6" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 226.0
+
+[node name="Table4" type="Control" parent="FreeNodes" index="10"]
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 1357.0
+offset_right = 359.0
+offset_bottom = 1357.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table4" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "下雨等级"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "晴天"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "小雨"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "中雨"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "大雨"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "雷暴雨"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table4" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 404.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "单次真伤"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "无"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table4" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 358.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table4" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 226.0
+
+[node name="BackButton" parent="TopMenu" index="0"]
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_environment_effect.tscn"
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 49.0
+offset_right = 356.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_ekjc1")]
+layout_mode = 2
+text = "能见度变化"
+wiki_page = NodePath("../../..")
+target_pos = -658.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_ekjc1")]
+layout_mode = 2
+text = "持续伤害"
+wiki_page = NodePath("../../..")
+target_pos = -1105.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_ekjc1")]
+layout_mode = 2
+text = "雷暴雨机制"
+wiki_page = NodePath("../../..")
+target_pos = -1702.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_ekjc1")]
+layout_mode = 2
+text = "标签影响"
+wiki_page = NodePath("../../..")
+target_pos = -2041.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("8_ekjc1")]
+layout_mode = 2
+text = "关卡详细数据"
+wiki_page = NodePath("../../..")
+target_pos = -2568.0

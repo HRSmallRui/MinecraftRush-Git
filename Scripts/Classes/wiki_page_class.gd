@@ -29,3 +29,9 @@ func _input(event: InputEvent) -> void:
 func update_scroll():
 	position.y = clampf(position.y,-max_pos_y,0)
 	pass
+
+
+func into_target_pos(target_pos: float):
+	position.y = target_pos
+	update_scroll()
+	pass
