@@ -33,10 +33,13 @@ func _ready() -> void:
 func update_button_states():
 	back_button.disabled = back_page_stack.size() <= 1
 	back_button.modulate = Color.GRAY if back_button.disabled else Color.WHITE
+	back_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if back_button.disabled else Control.CURSOR_POINTING_HAND
 	front_button.disabled = front_page_stack.size() == 0
 	front_button.modulate = Color.GRAY if front_button.disabled else Color.WHITE
+	front_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if front_button.disabled else Control.CURSOR_POINTING_HAND
 	home_button.disabled = back_page_stack[-1] == "res://Scenes/WikiPages/wiki_page_index.tscn"
 	home_button.modulate = Color.GRAY if home_button.disabled else Color.WHITE
+	home_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if home_button.disabled else Control.CURSOR_POINTING_HAND
 	pass
 
 

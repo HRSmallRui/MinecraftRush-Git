@@ -1,28 +1,384 @@
-[gd_scene load_steps=5 format=3 uid="uid://8gtsog3a1gna"]
+[gd_scene load_steps=37 format=3 uid="uid://8gtsog3a1gna"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_okd4b"]
-[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_u1yyd"]
-[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="3_xkc76"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uti3m"]
-atlas = ExtResource("3_xkc76")
-region = Rect2(98, 192, 331, 143)
+[ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="2_hlpbb"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_ou36b"]
+[ext_resource type="Texture2D" uid="uid://ctmk6tqvscvq0" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer1.png" id="4_mjooc"]
+[ext_resource type="Texture2D" uid="uid://bhnvhhucjfyl3" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer2.png" id="5_3bqjn"]
+[ext_resource type="Texture2D" uid="uid://k6o44g13yhdc" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer3.png" id="6_wr6ka"]
+[ext_resource type="Texture2D" uid="uid://k2r2cemwocai" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer4.png" id="7_rg34g"]
+[ext_resource type="Texture2D" uid="uid://be1eoddk8a1hu" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer5.png" id="8_bq66t"]
+[ext_resource type="Texture2D" uid="uid://dx28fh7btrdms" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer-NPC1.png" id="9_cy56x"]
+[ext_resource type="Texture2D" uid="uid://c7mkrwf2apppx" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack0.png" id="9_kolf7"]
+[ext_resource type="Texture2D" uid="uid://deu2vs07uxr5g" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack1.png" id="10_4nmuf"]
+[ext_resource type="Texture2D" uid="uid://cli2gcojehejo" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer-NPC2.png" id="10_gyp5c"]
+[ext_resource type="Texture2D" uid="uid://cim4obn7cndeb" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack2.png" id="11_eos45"]
+[ext_resource type="Texture2D" uid="uid://e6vcqe768l2s" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack3.png" id="12_eudfy"]
+[ext_resource type="Texture2D" uid="uid://df7h5qgkshc1v" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack4.png" id="13_s3k5i"]
+[ext_resource type="Texture2D" uid="uid://bk8je6oy1r7qy" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack5.png" id="14_u66d3"]
+[ext_resource type="Texture2D" uid="uid://c6dqtgd5d72yl" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic0.png" id="15_tn3ki"]
+[ext_resource type="Texture2D" uid="uid://fitkwot6t5fv" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic1.png" id="16_63rvq"]
+[ext_resource type="Texture2D" uid="uid://b7d3tkau5isy7" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack-NPC1.png" id="17_svury"]
+[ext_resource type="Texture2D" uid="uid://b88akqwt7frhj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic2.png" id="17_uxrjw"]
+[ext_resource type="Texture2D" uid="uid://ctm8i8bnmsst" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack-NPC2.png" id="18_4mb7u"]
+[ext_resource type="Texture2D" uid="uid://cftgopcpsj5g8" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic3.png" id="18_ppf1q"]
+[ext_resource type="Texture2D" uid="uid://gcsfu1kms8tq" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack-NPC3.png" id="19_4kmht"]
+[ext_resource type="Texture2D" uid="uid://df4i5mdi5q3j3" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic4.png" id="19_m7pmh"]
+[ext_resource type="Texture2D" uid="uid://fih3u8ak2r38" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack-NPC4.png" id="20_6hnrx"]
+[ext_resource type="Texture2D" uid="uid://cwjmrc1bhfmap" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic5.png" id="20_u6j30"]
+[ext_resource type="Texture2D" uid="uid://dmmsptj7se440" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard0.png" id="21_qxhik"]
+[ext_resource type="Texture2D" uid="uid://hhevu4p23i15" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard1.png" id="22_py2ey"]
+[ext_resource type="Texture2D" uid="uid://bj4dxiyjsbhod" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard2.png" id="23_qonte"]
+[ext_resource type="Texture2D" uid="uid://bbo1e0g2aoefl" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard3.png" id="24_rq35p"]
+[ext_resource type="Texture2D" uid="uid://bypxfeuq7cfkb" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard4.png" id="25_mtg7f"]
+[ext_resource type="Texture2D" uid="uid://dnu78c2c1meq2" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard5.png" id="26_gexem"]
+[ext_resource type="Texture2D" uid="uid://chvydt4t4hcnd" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Buying1.png" id="33_dckjw"]
+[ext_resource type="Texture2D" uid="uid://b8xclm2muvajv" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Buying2.png" id="34_6gnwp"]
+[ext_resource type="Texture2D" uid="uid://dl3d2thl0aayc" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Special1.png" id="35_vsc6l"]
+[ext_resource type="Texture2D" uid="uid://dudk0rkpl57xj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Based.png" id="36_1p6si"]
 
 [node name="WikiTower" instance=ExtResource("1_okd4b")]
+offset_bottom = 3438.0
 
-[node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_u1yyd")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -188.0
-offset_right = -41.0
-offset_bottom = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = SubResource("AtlasTexture_uti3m")
-button_text = "返回"
-linked_path = "res://Scenes/WikiPages/wiki_page_index.tscn"
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_hlpbb")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "防御塔"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "防御塔是游戏中最核心的防御手段。本板块收录所有防御塔的详细数据与机制说明。关于防御塔的通用规则（分类、成长路径、科技加成等），请查阅[防御塔机制]。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "箭塔"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Archer" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="0" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="1" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("4_mjooc")
+name_text = "大师射手高台"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="2" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("5_3bqjn")
+name_text = "皇家射手高台"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="3" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("6_wr6ka")
+name_text = "投石高塔"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="4" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("7_rg34g")
+name_text = "沙漠哨塔"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="5" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("8_bq66t")
+name_text = "劫掠哨塔"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="6" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("9_cy56x")
+name_text = "骷髅狙击塔"
+
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="7" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("10_gyp5c")
+name_text = "脉冲发射台"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "兵营"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Barrack" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="0" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("9_kolf7")
+name_text = "民兵兵营"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="1" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("10_4nmuf")
+name_text = "步兵兵营"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="2" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("11_eos45")
+name_text = "骑士兵营"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="3" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("12_eudfy")
+name_text = "皇家近卫军"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="4" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("13_s3k5i")
+name_text = "大刀教会"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="5" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("14_u66d3")
+name_text = "医疗护卫队"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="6" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("17_svury")
+name_text = "尸国正规军兵营"
+
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="7" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("18_4mb7u")
+name_text = "尸国斗剑士营地"
+
+[node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="8" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("19_4kmht")
+name_text = "荆棘殿堂"
+
+[node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="9" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("20_6hnrx")
+name_text = "骑士营地"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "法师塔"
+horizontal_alignment = 1
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Magic" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="0" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("15_tn3ki")
+name_text = "法师塔"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="1" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("16_63rvq")
+name_text = "法师高台"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="2" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("17_uxrjw")
+name_text = "风暴法师塔"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="3" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("18_ppf1q")
+name_text = "守卫者教堂"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="4" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("19_m7pmh")
+name_text = "女巫高塔"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="5" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("20_u6j30")
+name_text = "炼金术士"
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "炮塔"
+horizontal_alignment = 1
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Bombard" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Bombard" index="0" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("21_qxhik")
+name_text = "烟花发射台"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Bombard" index="1" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("22_py2ey")
+name_text = "红石火炮"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Bombard" index="2" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("23_qonte")
+name_text = "红石高炮"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Bombard" index="3" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("24_rq35p")
+name_text = "演算者炮塔"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Bombard" index="4" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("25_mtg7f")
+name_text = "湮灭炮塔"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Bombard" index="5" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("26_gexem")
+name_text = "无人机控制平台"
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="16"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "雇佣兵"
+horizontal_alignment = 1
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Buying" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="19"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Buying" index="0" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("33_dckjw")
+name_text = "村民小屋"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Buying" index="1" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("34_6gnwp")
+name_text = "沙漠雇佣兵营地"
+
+[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="20"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="21"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "特殊防御塔"
+horizontal_alignment = 1
+
+[node name="MarginContainer13" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="22"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Special" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="23"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Special" index="0" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("35_vsc6l")
+name_text = "流浪商人营地"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer4/CenterContainer" index="0" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("36_1p6si")
+name_text = "地基"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxfgdmde4dusx"]
+
+[ext_resource type="Texture2D" uid="uid://djbejpufycwwg" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer0.png" id="1_lvvy8"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_head_texture_button.gd" id="2_xwbfo"]
+
+[node name="WikiHeadTextureButton" type="TextureButton"]
+focus_mode = 0
+texture_normal = ExtResource("1_lvvy8")
+script = ExtResource("2_xwbfo")
+name_text = "射手高塔"
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 134.0
+offset_right = 149.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 24
+text = "射手高塔"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
