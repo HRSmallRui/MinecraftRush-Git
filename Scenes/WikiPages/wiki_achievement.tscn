@@ -1,22 +1,435 @@
-[gd_scene load_steps=3 format=3 uid="uid://corhrp4ats2bh"]
+[gd_scene load_steps=68 format=3 uid="uid://corhrp4ats2bh"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_qolec"]
-[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_8cabb"]
+[ext_resource type="Texture2D" uid="uid://hgtg66hhp4n" path="res://Assets/Images/UI/Wiki/Index/achievement.png" id="2_561pv"]
+[ext_resource type="PackedScene" uid="uid://bkwg1h4vtetew" path="res://Scenes/UI-Components/Wiki/wiki_achievement_button.tscn" id="3_5wdfw"]
+[ext_resource type="Texture2D" uid="uid://d34m2cfhlng8u" path="res://Assets/Images/UI/Achievements/FirstBlood.png" id="4_d6xlp"]
+[ext_resource type="Texture2D" uid="uid://blum6tja35q4g" path="res://Assets/Images/UI/Achievements/Level1Finished.png" id="5_8yegb"]
+[ext_resource type="Texture2D" uid="uid://86jvusorguuy" path="res://Assets/Images/UI/Achievements/SearchInformation.png" id="6_ry5fa"]
+[ext_resource type="Texture2D" uid="uid://b1j0oarn3y5o5" path="res://Assets/Images/UI/Achievements/TowerLV3.png" id="7_dvr0t"]
+[ext_resource type="Texture2D" uid="uid://bb07vacchrilp" path="res://Assets/Images/UI/Achievements/SheepDead.png" id="8_6oatr"]
+[ext_resource type="Texture2D" uid="uid://c5x03oougdwb7" path="res://Assets/Images/UI/Achievements/Boss1Dead.png" id="9_d0eor"]
+[ext_resource type="Texture2D" uid="uid://dwsi86opkbsub" path="res://Assets/Images/UI/Achievements/RoyalDefender.png" id="10_8o78t"]
+[ext_resource type="Texture2D" uid="uid://bq8kvkvttile7" path="res://Assets/Images/UI/Achievements/RoyalGuardSkill1.png" id="11_nrfxh"]
+[ext_resource type="Texture2D" uid="uid://d21iob5fu8bol" path="res://Assets/Images/UI/Achievements/RoyalGuardSkill2.png" id="12_s74hr"]
+[ext_resource type="Texture2D" uid="uid://cqdx6ogoemjco" path="res://Assets/Images/UI/Achievements/Stage4.png" id="13_4j1ps"]
+[ext_resource type="Texture2D" uid="uid://cdk6d0l6ga7qo" path="res://Assets/Images/UI/Achievements/Firerain.png" id="13_vut5a"]
+[ext_resource type="Texture2D" uid="uid://c70pnk7f60gcd" path="res://Assets/Images/UI/Achievements/SuperSkeleton.png" id="14_5muqa"]
+[ext_resource type="Texture2D" uid="uid://co1o8o60iskw8" path="res://Assets/Images/UI/Achievements/PrayEvil.png" id="14_35afl"]
+[ext_resource type="Texture2D" uid="uid://ddi01s0e6f2qw" path="res://Assets/Images/UI/Achievements/Freddy.png" id="15_4ivdj"]
+[ext_resource type="Texture2D" uid="uid://b1tg3xo3dfkay" path="res://Assets/Images/UI/Achievements/WildRegionCleaner.png" id="15_uua3v"]
+[ext_resource type="Texture2D" uid="uid://7yhi2f7g5vlf" path="res://Assets/Images/UI/Achievements/DeadWalking.png" id="16_346gs"]
+[ext_resource type="Texture2D" uid="uid://kkcxg7e4pxix" path="res://Assets/Images/UI/Achievements/UndeadKiller.png" id="16_6784d"]
+[ext_resource type="Texture2D" uid="uid://bws7msggsyh0x" path="res://Assets/Images/UI/Achievements/EnderDeath.png" id="17_efuyg"]
+[ext_resource type="Texture2D" uid="uid://bsc3kbmks8pfm" path="res://Assets/Images/UI/Achievements/Bloody.png" id="18_clox1"]
+[ext_resource type="Texture2D" uid="uid://do6qpgiqheims" path="res://Assets/Images/UI/Achievements/Killer.png" id="19_2h2tc"]
+[ext_resource type="Texture2D" uid="uid://b0ssdj3q05cy1" path="res://Assets/Images/UI/Achievements/BlackStone.png" id="20_2iee5"]
+[ext_resource type="Texture2D" uid="uid://dqepn6j703i2k" path="res://Assets/Images/UI/Achievements/ExplosionStone.png" id="21_lftnd"]
+[ext_resource type="Texture2D" uid="uid://cml6w0q6mlumv" path="res://Assets/Images/UI/Achievements/Boss2Dead.png" id="22_obb2m"]
+[ext_resource type="Texture2D" uid="uid://bea6eyrb53a0f" path="res://Assets/Images/UI/Achievements/ChurchDust.png" id="23_lqvo1"]
+[ext_resource type="Texture2D" uid="uid://kchjmj6cmup4" path="res://Assets/Images/UI/Achievements/IronGolem.png" id="24_xl0yw"]
+[ext_resource type="Texture2D" uid="uid://cjahj3pbi585d" path="res://Assets/Images/UI/Achievements/SandHuman.png" id="25_3ao7v"]
+[ext_resource type="Texture2D" uid="uid://bcub40d63jeal" path="res://Assets/Images/UI/Achievements/DancingCat.png" id="26_j4fwn"]
+[ext_resource type="Texture2D" uid="uid://dtfjxjujc2dm2" path="res://Assets/Images/UI/Achievements/Remilia.png" id="27_l4qo3"]
+[ext_resource type="Texture2D" uid="uid://omo84bo8138f" path="res://Assets/Images/UI/Achievements/SunAchieve.png" id="28_wn8oi"]
+[ext_resource type="Texture2D" uid="uid://cfp1myew8e56u" path="res://Assets/Images/UI/Achievements/StopOrder.png" id="29_30m21"]
+[ext_resource type="Texture2D" uid="uid://gox75a20m6d" path="res://Assets/Images/UI/Achievements/OperatorLightning.png" id="30_c20jj"]
+[ext_resource type="Texture2D" uid="uid://vc0es6uu7j70" path="res://Assets/Images/UI/Achievements/OperatorSeckill.png" id="31_j8wvk"]
+[ext_resource type="Texture2D" uid="uid://cwyap4t0e8ekr" path="res://Assets/Images/UI/Achievements/DeSentrySeckill.png" id="32_k8t8x"]
+[ext_resource type="Texture2D" uid="uid://n72qqj86ucox" path="res://Assets/Images/UI/Achievements/DesertWolf.png" id="33_rr0yv"]
+[ext_resource type="Texture2D" uid="uid://6e1ednq3lhoy" path="res://Assets/Images/UI/Achievements/EpeeRebirth.png" id="34_y7m4r"]
+[ext_resource type="Texture2D" uid="uid://ckwvi0cmqyw0o" path="res://Assets/Images/UI/Achievements/NuclearPassive.png" id="35_udkui"]
+[ext_resource type="Texture2D" uid="uid://bpi1j78a5yfjc" path="res://Assets/Images/UI/Achievements/NuclearSkill1.png" id="36_ltryl"]
+[ext_resource type="Texture2D" uid="uid://cumpmfd5o2px2" path="res://Assets/Images/UI/Achievements/Boss3Dead.png" id="37_2nrug"]
+[ext_resource type="Texture2D" uid="uid://dqyb0klf7bm8u" path="res://Assets/Images/UI/Achievements/DeathKill.png" id="38_0g1um"]
+[ext_resource type="Texture2D" uid="uid://dcndgys4kc05w" path="res://Assets/Images/UI/Achievements/TheForest.png" id="39_nwbuw"]
+[ext_resource type="Texture2D" uid="uid://bylt3c7hoplvh" path="res://Assets/Images/UI/Achievements/Primary.png" id="40_nnweh"]
+[ext_resource type="Texture2D" uid="uid://borf44bdcnnrv" path="res://Assets/Images/UI/Achievements/CARRION.png" id="40_phsy7"]
+[ext_resource type="Texture2D" uid="uid://dnh7lrpaoddnc" path="res://Assets/Images/UI/Achievements/INSIDE.png" id="42_vbvnm"]
+[ext_resource type="Texture2D" uid="uid://btp7hcqyic51x" path="res://Assets/Images/UI/Achievements/GAIA1.png" id="43_dhmd8"]
+[ext_resource type="Texture2D" uid="uid://ci2lah5yxjo8i" path="res://Assets/Images/UI/Achievements/Resident.png" id="44_trx1g"]
+[ext_resource type="Texture2D" uid="uid://cvqtxklhlc380" path="res://Assets/Images/UI/Achievements/CreeperLightning.png" id="45_7pctn"]
+[ext_resource type="Texture2D" uid="uid://br5j0tstdx27n" path="res://Assets/Images/UI/Achievements/PluginPeople.png" id="46_5fgvr"]
+[ext_resource type="Texture2D" uid="uid://b8kpp1g8ov1ag" path="res://Assets/Images/UI/Achievements/MagicianGold.png" id="47_rxvx4"]
+[ext_resource type="Texture2D" uid="uid://remgaux6wrd6" path="res://Assets/Images/UI/Achievements/Boss4Dead.png" id="48_888tb"]
+[ext_resource type="Texture2D" uid="uid://dlqltar34ib7d" path="res://Assets/Images/UI/Achievements/Boss4DeadPerfect.png" id="49_glujw"]
+[ext_resource type="Texture2D" uid="uid://b3psrw33j1d0c" path="res://Assets/Images/UI/Achievements/Chapter5Lily.png" id="50_78m1r"]
+[ext_resource type="Texture2D" uid="uid://bhgjwi0mgukmj" path="res://Assets/Images/UI/Achievements/CurseDead.png" id="50_fix81"]
+[ext_resource type="Texture2D" uid="uid://djuvwpsax3bus" path="res://Assets/Images/UI/Achievements/Boss5Dead.png" id="51_1sceq"]
+[ext_resource type="Texture2D" uid="uid://blvwcl8fqx7pp" path="res://Assets/Images/UI/Achievements/PlaneControllerSkill2.png" id="52_4riff"]
+[ext_resource type="Texture2D" uid="uid://fh7gc508eb5l" path="res://Assets/Images/UI/Achievements/DNA_time.png" id="53_x2xae"]
+[ext_resource type="Texture2D" uid="uid://uanrdqd370d1" path="res://Assets/Images/UI/Achievements/GyakutenSaiban.png" id="54_vavk3"]
+[ext_resource type="Texture2D" uid="uid://cyiydmi7tclpy" path="res://Assets/Images/UI/Achievements/PrayGame2.png" id="55_mfinb"]
+[ext_resource type="Texture2D" uid="uid://ijcj8t3d664u" path="res://Assets/Images/UI/Achievements/Boss6Dead.png" id="56_xpqmy"]
+[ext_resource type="Texture2D" uid="uid://c4tjiokeigtkv" path="res://Assets/Images/UI/Achievements/MAIN_END.png" id="57_rlc8g"]
+[ext_resource type="Texture2D" uid="uid://bvo26o4kuxcar" path="res://Assets/Images/UI/Achievements/campaign_end.png" id="58_murwd"]
+[ext_resource type="Texture2D" uid="uid://mw7vpilo30rx" path="res://Assets/Images/UI/Achievements/kinito_pet.png" id="58_vgvo8"]
+[ext_resource type="Texture2D" uid="uid://b6b5vajr3xht6" path="res://Assets/Images/UI/Achievements/diamond!.png" id="59_rows4"]
+[ext_resource type="Texture2D" uid="uid://dknrm5maccqmy" path="res://Assets/Images/UI/Achievements/bedrock.png" id="60_en8px"]
+[ext_resource type="Texture2D" uid="uid://cvl14de4tixh4" path="res://Assets/Images/UI/Achievements/sb_beggar.png" id="61_6vy2r"]
 
 [node name="WikiAchievement" instance=ExtResource("1_qolec")]
+offset_bottom = 7504.0
 
-[node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_8cabb")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -188.0
-offset_right = -41.0
-offset_bottom = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-button_text = "返回"
-linked_path = "res://Scenes/WikiPages/wiki_page_index.tscn"
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_561pv")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "进度"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "游戏内成就系统称为“进度”，用于记录玩家的游戏历程与达成目标。本板块收录所有进度条目及其达成条件。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 100
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 110
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="WikiAchievementButton" parent="VBoxContainer/MarginContainer3/GridContainer" index="0" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+
+[node name="WikiAchievementButton2" parent="VBoxContainer/MarginContainer3/GridContainer" index="1" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "第一滴血"
+achievement_texture = ExtResource("4_d6xlp")
+
+[node name="WikiAchievementButton3" parent="VBoxContainer/MarginContainer3/GridContainer" index="2" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "塔防新手的试炼"
+achievement_texture = ExtResource("5_8yegb")
+
+[node name="WikiAchievementButton4" parent="VBoxContainer/MarginContainer3/GridContainer" index="3" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "收集党"
+achievement_texture = ExtResource("6_ry5fa")
+
+[node name="WikiAchievementButton5" parent="VBoxContainer/MarginContainer3/GridContainer" index="4" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "全家福"
+achievement_texture = ExtResource("7_dvr0t")
+
+[node name="WikiAchievementButton6" parent="VBoxContainer/MarginContainer3/GridContainer" index="5" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "乔 詹金斯的愤怒"
+achievement_texture = ExtResource("8_6oatr")
+
+[node name="WikiAchievementButton7" parent="VBoxContainer/MarginContainer3/GridContainer" index="6" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "战士的陨落"
+achievement_texture = ExtResource("9_d0eor")
+
+[node name="WikiAchievementButton8" parent="VBoxContainer/MarginContainer3/GridContainer" index="7" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "帝国捍卫者"
+achievement_texture = ExtResource("10_8o78t")
+
+[node name="WikiAchievementButton9" parent="VBoxContainer/MarginContainer3/GridContainer" index="8" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "斩立决"
+achievement_texture = ExtResource("11_nrfxh")
+
+[node name="WikiAchievementButton10" parent="VBoxContainer/MarginContainer3/GridContainer" index="9" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "不动壁垒"
+achievement_texture = ExtResource("12_s74hr")
+
+[node name="WikiAchievementButton60" parent="VBoxContainer/MarginContainer3/GridContainer" index="10" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "惩奸除恶"
+achievement_texture = ExtResource("13_4j1ps")
+
+[node name="WikiAchievementButton11" parent="VBoxContainer/MarginContainer3/GridContainer" index="11" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "世界末日"
+achievement_texture = ExtResource("13_vut5a")
+
+[node name="WikiAchievementButton61" parent="VBoxContainer/MarginContainer3/GridContainer" index="12" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "称霸世界之恶性"
+achievement_texture = ExtResource("14_35afl")
+
+[node name="WikiAchievementButton12" parent="VBoxContainer/MarginContainer3/GridContainer" index="13" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "次次爆头，好运连连"
+achievement_texture = ExtResource("14_5muqa")
+
+[node name="WikiAchievementButton62" parent="VBoxContainer/MarginContainer3/GridContainer" index="14" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "高薪工作"
+achievement_texture = ExtResource("15_4ivdj")
+
+[node name="WikiAchievementButton13" parent="VBoxContainer/MarginContainer3/GridContainer" index="15" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "野区清理者"
+achievement_texture = ExtResource("15_uua3v")
+
+[node name="WikiAchievementButton63" parent="VBoxContainer/MarginContainer3/GridContainer" index="16" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "行尸走肉"
+achievement_texture = ExtResource("16_346gs")
+
+[node name="WikiAchievementButton14" parent="VBoxContainer/MarginContainer3/GridContainer" index="17" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "亡灵杀手"
+achievement_texture = ExtResource("16_6784d")
+
+[node name="WikiAchievementButton15" parent="VBoxContainer/MarginContainer3/GridContainer" index="18" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "快人一步"
+achievement_texture = ExtResource("17_efuyg")
+
+[node name="WikiAchievementButton16" parent="VBoxContainer/MarginContainer3/GridContainer" index="19" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "嗜血"
+achievement_texture = ExtResource("18_clox1")
+
+[node name="WikiAchievementButton17" parent="VBoxContainer/MarginContainer3/GridContainer" index="20" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "杀戮者"
+achievement_texture = ExtResource("19_2h2tc")
+
+[node name="WikiAchievementButton18" parent="VBoxContainer/MarginContainer3/GridContainer" index="21" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "这会很痛"
+achievement_texture = ExtResource("20_2iee5")
+
+[node name="WikiAchievementButton19" parent="VBoxContainer/MarginContainer3/GridContainer" index="22" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "同甘共苦"
+achievement_texture = ExtResource("21_lftnd")
+
+[node name="WikiAchievementButton20" parent="VBoxContainer/MarginContainer3/GridContainer" index="23" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "TANK！"
+achievement_texture = ExtResource("22_obb2m")
+
+[node name="WikiAchievementButton21" parent="VBoxContainer/MarginContainer3/GridContainer" index="24" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "尘归尘，土归土"
+achievement_texture = ExtResource("23_lqvo1")
+
+[node name="WikiAchievementButton22" parent="VBoxContainer/MarginContainer3/GridContainer" index="25" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "钢铁是怎样练成的"
+achievement_texture = ExtResource("24_xl0yw")
+
+[node name="WikiAchievementButton23" parent="VBoxContainer/MarginContainer3/GridContainer" index="26" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "我即沙，随风而散"
+achievement_texture = ExtResource("25_3ao7v")
+
+[node name="WikiAchievementButton24" parent="VBoxContainer/MarginContainer3/GridContainer" index="27" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "Ankha Dance!"
+achievement_texture = ExtResource("26_j4fwn")
+
+[node name="WikiAchievementButton25" parent="VBoxContainer/MarginContainer3/GridContainer" index="28" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "胃炎满满"
+achievement_texture = ExtResource("27_l4qo3")
+
+[node name="WikiAchievementButton26" parent="VBoxContainer/MarginContainer3/GridContainer" index="29" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "太阳！"
+achievement_texture = ExtResource("28_wn8oi")
+
+[node name="WikiAchievementButton27" parent="VBoxContainer/MarginContainer3/GridContainer" index="30" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "士兵的名义"
+achievement_texture = ExtResource("29_30m21")
+
+[node name="WikiAchievementButton28" parent="VBoxContainer/MarginContainer3/GridContainer" index="31" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "雷霆，击碎黑暗！"
+achievement_texture = ExtResource("30_c20jj")
+
+[node name="WikiAchievementButton29" parent="VBoxContainer/MarginContainer3/GridContainer" index="32" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "电锯惊魂"
+achievement_texture = ExtResource("31_j8wvk")
+
+[node name="WikiAchievementButton30" parent="VBoxContainer/MarginContainer3/GridContainer" index="33" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "一个好人在什么情况下会杀人？"
+achievement_texture = ExtResource("32_k8t8x")
+
+[node name="WikiAchievementButton31" parent="VBoxContainer/MarginContainer3/GridContainer" index="34" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "大狗嚼嚼嚼"
+achievement_texture = ExtResource("33_rr0yv")
+
+[node name="WikiAchievementButton32" parent="VBoxContainer/MarginContainer3/GridContainer" index="35" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "不生不灭，不垢不净"
+achievement_texture = ExtResource("34_y7m4r")
+
+[node name="WikiAchievementButton33" parent="VBoxContainer/MarginContainer3/GridContainer" index="36" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "身在辐中不知辐"
+achievement_texture = ExtResource("35_udkui")
+
+[node name="WikiAchievementButton34" parent="VBoxContainer/MarginContainer3/GridContainer" index="37" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "饱和打击"
+achievement_texture = ExtResource("36_ltryl")
+
+[node name="WikiAchievementButton35" parent="VBoxContainer/MarginContainer3/GridContainer" index="38" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "殊途同归"
+achievement_texture = ExtResource("37_2nrug")
+
+[node name="WikiAchievementButton36" parent="VBoxContainer/MarginContainer3/GridContainer" index="39" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "死神"
+achievement_texture = ExtResource("38_0g1um")
+
+[node name="WikiAchievementButton37" parent="VBoxContainer/MarginContainer3/GridContainer" index="40" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "野外求生第二步"
+achievement_texture = ExtResource("39_nwbuw")
+
+[node name="WikiAchievementButton38" parent="VBoxContainer/MarginContainer3/GridContainer" index="41" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "罐装生涯"
+achievement_texture = ExtResource("40_phsy7")
+
+[node name="WikiAchievementButton39" parent="VBoxContainer/MarginContainer3/GridContainer" index="42" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "我的图画本在哪里"
+achievement_texture = ExtResource("40_nnweh")
+
+[node name="WikiAchievementButton40" parent="VBoxContainer/MarginContainer3/GridContainer" index="43" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "深入"
+achievement_texture = ExtResource("42_vbvnm")
+
+[node name="WikiAchievementButton41" parent="VBoxContainer/MarginContainer3/GridContainer" index="44" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "悲伤的沼泽"
+achievement_texture = ExtResource("43_dhmd8")
+
+[node name="WikiAchievementButton42" parent="VBoxContainer/MarginContainer3/GridContainer" index="45" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "三光进村，寸草不生"
+achievement_texture = ExtResource("44_trx1g")
+
+[node name="WikiAchievementButton43" parent="VBoxContainer/MarginContainer3/GridContainer" index="46" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "你是否清醒"
+achievement_texture = ExtResource("45_7pctn")
+
+[node name="WikiAchievementButton64" parent="VBoxContainer/MarginContainer3/GridContainer" index="47" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "不死者的诅咒"
+achievement_texture = ExtResource("50_fix81")
+
+[node name="WikiAchievementButton44" parent="VBoxContainer/MarginContainer3/GridContainer" index="48" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "瘟神"
+achievement_texture = ExtResource("46_5fgvr")
+
+[node name="WikiAchievementButton45" parent="VBoxContainer/MarginContainer3/GridContainer" index="49" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "黄金雕像艺术锦标赛"
+achievement_texture = ExtResource("47_rxvx4")
+
+[node name="WikiAchievementButton46" parent="VBoxContainer/MarginContainer3/GridContainer" index="50" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "旧日支配者"
+achievement_texture = ExtResource("48_888tb")
+
+[node name="WikiAchievementButton47" parent="VBoxContainer/MarginContainer3/GridContainer" index="51" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "我们的死忠"
+achievement_texture = ExtResource("49_glujw")
+
+[node name="WikiAchievementButton48" parent="VBoxContainer/MarginContainer3/GridContainer" index="52" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "终焉的百合花"
+achievement_texture = ExtResource("50_78m1r")
+
+[node name="WikiAchievementButton49" parent="VBoxContainer/MarginContainer3/GridContainer" index="53" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "他不是白王，我才是"
+achievement_texture = ExtResource("51_1sceq")
+
+[node name="WikiAchievementButton50" parent="VBoxContainer/MarginContainer3/GridContainer" index="54" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "红怪的末日"
+achievement_texture = ExtResource("52_4riff")
+
+[node name="WikiAchievementButton65" parent="VBoxContainer/MarginContainer3/GridContainer" index="55" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "你会原谅我吗"
+achievement_texture = ExtResource("58_vgvo8")
+
+[node name="WikiAchievementButton51" parent="VBoxContainer/MarginContainer3/GridContainer" index="56" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "刻在DNA里的时间"
+achievement_texture = ExtResource("53_x2xae")
+
+[node name="WikiAchievementButton52" parent="VBoxContainer/MarginContainer3/GridContainer" index="57" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "一斤鸭梨！"
+achievement_texture = ExtResource("54_vavk3")
+
+[node name="WikiAchievementButton53" parent="VBoxContainer/MarginContainer3/GridContainer" index="58" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "永世献身之善性"
+achievement_texture = ExtResource("55_mfinb")
+
+[node name="WikiAchievementButton54" parent="VBoxContainer/MarginContainer3/GridContainer" index="59" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "男人只有在一切都结束后才能流泪"
+achievement_texture = ExtResource("56_xpqmy")
+
+[node name="WikiAchievementButton55" parent="VBoxContainer/MarginContainer3/GridContainer" index="60" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "你好，世界"
+achievement_texture = ExtResource("57_rlc8g")
+
+[node name="WikiAchievementButton56" parent="VBoxContainer/MarginContainer3/GridContainer" index="61" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "旅途的终点？"
+achievement_texture = ExtResource("58_murwd")
+
+[node name="WikiAchievementButton57" parent="VBoxContainer/MarginContainer3/GridContainer" index="62" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "钻石！"
+achievement_texture = ExtResource("59_rows4")
+
+[node name="WikiAchievementButton58" parent="VBoxContainer/MarginContainer3/GridContainer" index="63" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "世界基层"
+achievement_texture = ExtResource("60_en8px")
+
+[node name="WikiAchievementButton59" parent="VBoxContainer/MarginContainer3/GridContainer" index="64" instance=ExtResource("3_5wdfw")]
+layout_mode = 2
+achievement_name = "等破解哥"
+achievement_texture = ExtResource("61_6vy2r")
