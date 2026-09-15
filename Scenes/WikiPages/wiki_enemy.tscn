@@ -1,22 +1,616 @@
-[gd_scene load_steps=3 format=3 uid="uid://x40enje75uwb"]
+[gd_scene load_steps=64 format=3 uid="uid://x40enje75uwb"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_25piy"]
-[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_kludg"]
+[ext_resource type="Texture2D" uid="uid://d1cmb74atnaa7" path="res://Assets/Images/UI/Wiki/Index/enemy.png" id="2_r6j7w"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_xekmw"]
+[ext_resource type="Texture2D" uid="uid://dwxkpvq548j4b" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy0.png" id="4_lfnba"]
+[ext_resource type="Texture2D" uid="uid://bjkid8wmh42sn" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy1.png" id="5_yhl2b"]
+[ext_resource type="Texture2D" uid="uid://b2ny32i5i61v4" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy2.png" id="6_4piye"]
+[ext_resource type="Texture2D" uid="uid://c2pw5iwo8kicl" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy3.png" id="7_pdwn0"]
+[ext_resource type="Texture2D" uid="uid://km7f73x77723" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy8.png" id="8_k4hh2"]
+[ext_resource type="Texture2D" uid="uid://bwdbjmhr6qqf0" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy4.png" id="9_54kig"]
+[ext_resource type="Texture2D" uid="uid://b3mhb2ifqugan" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy6.png" id="10_fcf05"]
+[ext_resource type="Texture2D" uid="uid://ck814uq7oh5lh" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy9.png" id="11_nxhxq"]
+[ext_resource type="Texture2D" uid="uid://ctpnhakovxcae" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy5.png" id="12_qcdyr"]
+[ext_resource type="Texture2D" uid="uid://bg5rptsbbkmfe" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy7.png" id="13_c1yql"]
+[ext_resource type="Texture2D" uid="uid://cdysv5n71unrg" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy54.png" id="14_1p3ek"]
+[ext_resource type="Texture2D" uid="uid://b3laac3c7yhhg" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy10.png" id="15_lhu5n"]
+[ext_resource type="Texture2D" uid="uid://y850rhnrrfeq" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy13.png" id="16_73tdn"]
+[ext_resource type="Texture2D" uid="uid://cuquswiekogdi" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy14.png" id="17_lx4td"]
+[ext_resource type="Texture2D" uid="uid://dd356fjal18bs" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy17.png" id="18_5tvx7"]
+[ext_resource type="Texture2D" uid="uid://dfh7bxiwvfjx5" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy15.png" id="19_fv3fe"]
+[ext_resource type="Texture2D" uid="uid://dt5lxdng0fijn" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy11.png" id="20_ta0iy"]
+[ext_resource type="Texture2D" uid="uid://boupcrkfn7v13" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy12.png" id="21_jdtmb"]
+[ext_resource type="Texture2D" uid="uid://bad813f3ktej2" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy16.png" id="22_spm7w"]
+[ext_resource type="Texture2D" uid="uid://sio0s0jnlxak" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy18.png" id="23_jnsef"]
+[ext_resource type="Texture2D" uid="uid://civcaxcmj63nx" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy55.png" id="24_gsu1b"]
+[ext_resource type="Texture2D" uid="uid://uiakqivmn4dt" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy19.png" id="25_crsv7"]
+[ext_resource type="Texture2D" uid="uid://cx88bga44s4nu" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy20.png" id="26_l4y5g"]
+[ext_resource type="Texture2D" uid="uid://qxgj5rtlly1t" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy21.png" id="27_0724c"]
+[ext_resource type="Texture2D" uid="uid://733ov26mtxlw" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy23.png" id="28_6p3ee"]
+[ext_resource type="Texture2D" uid="uid://plsdjpaijbr8" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy22.png" id="29_fq40n"]
+[ext_resource type="Texture2D" uid="uid://784qwp3tflxy" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy24.png" id="30_xj7b5"]
+[ext_resource type="Texture2D" uid="uid://cnvjoj3l7ourk" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy25.png" id="31_6mjjv"]
+[ext_resource type="Texture2D" uid="uid://pta42wle0pso" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy26.png" id="32_ejd8f"]
+[ext_resource type="Texture2D" uid="uid://ba85mt2ia5hmn" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy27.png" id="33_0w0kd"]
+[ext_resource type="Texture2D" uid="uid://wvlbexhas3p2" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy28.png" id="34_6f320"]
+[ext_resource type="Texture2D" uid="uid://ofxfeks2bk5e" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy56.png" id="35_uybld"]
+[ext_resource type="Texture2D" uid="uid://dp3pom6u0j8ur" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy29.png" id="36_wdhdq"]
+[ext_resource type="Texture2D" uid="uid://yhn7eopssxf1" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy30.png" id="37_xs35c"]
+[ext_resource type="Texture2D" uid="uid://d3g8dm8tcut0o" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy31.png" id="38_arykj"]
+[ext_resource type="Texture2D" uid="uid://dcl3h7o84yyfc" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy41.png" id="39_lvkf0"]
+[ext_resource type="Texture2D" uid="uid://buwdm4kg4o8n2" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy32.png" id="40_fb1tq"]
+[ext_resource type="Texture2D" uid="uid://q5tgpblarfm" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy40.png" id="41_e8kis"]
+[ext_resource type="Texture2D" uid="uid://6s0m0s2lebki" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy33.png" id="42_wkymk"]
+[ext_resource type="Texture2D" uid="uid://4nawaasw2oa2" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy37.png" id="43_d4o3t"]
+[ext_resource type="Texture2D" uid="uid://kg8x2vcxme3x" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy39.png" id="44_wwdfo"]
+[ext_resource type="Texture2D" uid="uid://fcqp7pn2no7j" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy43.png" id="45_wqtjd"]
+[ext_resource type="Texture2D" uid="uid://bcuwdl26qqhqn" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy34.png" id="46_bblh3"]
+[ext_resource type="Texture2D" uid="uid://cxkvlvq7qlyw7" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy36.png" id="47_n05dw"]
+[ext_resource type="Texture2D" uid="uid://dfxqh4atb6kms" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy42.png" id="48_fdx7p"]
+[ext_resource type="Texture2D" uid="uid://rl4jh4471fwh" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy35.png" id="49_7hjcm"]
+[ext_resource type="Texture2D" uid="uid://d2r3re7pswjiu" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy38.png" id="50_wdx72"]
+[ext_resource type="Texture2D" uid="uid://3rpi7r5wuyxe" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy44.png" id="51_5wo53"]
+[ext_resource type="Texture2D" uid="uid://dp22xu4kfbarg" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy57.png" id="52_rsvg6"]
+[ext_resource type="Texture2D" uid="uid://hxl73nvkl3oh" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy59.png" id="53_k5fhs"]
+[ext_resource type="Texture2D" uid="uid://cpw2ku0n6oitq" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy45.png" id="54_6d3hl"]
+[ext_resource type="Texture2D" uid="uid://bsjeuv8cf067n" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy46.png" id="55_dmwsj"]
+[ext_resource type="Texture2D" uid="uid://bj2pirnx5adaq" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy47.png" id="56_770kn"]
+[ext_resource type="Texture2D" uid="uid://sxyxs5jhn66j" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy48.png" id="57_ixsx4"]
+[ext_resource type="Texture2D" uid="uid://tvn76vg6pwjr" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy58.png" id="58_fw08c"]
+[ext_resource type="Texture2D" uid="uid://bjmqsqudb4yn1" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy49.png" id="59_mr3yr"]
+[ext_resource type="Texture2D" uid="uid://bl64rs1yrym3u" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy51.png" id="60_2jtxb"]
+[ext_resource type="Texture2D" uid="uid://cs6daafiw4u4i" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy50.png" id="61_uxhm4"]
+[ext_resource type="Texture2D" uid="uid://b8vchv8macjoh" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy52.png" id="62_ikm0b"]
+[ext_resource type="Texture2D" uid="uid://bq8uvaaks3lwt" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy53.png" id="63_oqne3"]
 
 [node name="WikiEnemy" instance=ExtResource("1_25piy")]
+offset_bottom = 4295.0
 
-[node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_kludg")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -188.0
-offset_right = -41.0
-offset_bottom = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-button_text = "返回"
-linked_path = "res://Scenes/WikiPages/wiki_page_index.tscn"
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_r6j7w")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "敌人"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "敌方单位是关卡中玩家需要抵御的敌对力量。本板块收录所有敌人的详细数据与机制说明。关于敌方单位的通用规则，请查阅[敌人机制]。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Chapter1" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第一章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Enemies" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="0" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("4_lfnba")
+name_text = "尸国杂兵"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="1" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("5_yhl2b")
+name_text = "尸国皮甲兵"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="2" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("6_4piye")
+name_text = "尸国小鬼"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="3" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("7_pdwn0")
+name_text = "鸡骑士"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="4" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("8_k4hh2")
+name_text = "骨国步兵"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="5" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("9_54kig")
+name_text = "尸国正规军"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="6" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("10_fcf05")
+name_text = "尸国刺杀者"
+
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="7" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("11_nxhxq")
+name_text = "骨国正规军"
+
+[node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="8" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("12_qcdyr")
+name_text = "尸国壮汉"
+
+[node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="9" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("13_c1yql")
+name_text = "尸国贵族战士"
+
+[node name="WikiHeadTextureButton11" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Enemies" index="10" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("14_1p3ek")
+name_text = "尸国统帅"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter2" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第二章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Enemies" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="0" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("15_lhu5n")
+name_text = "野区丧尸"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="1" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("16_73tdn")
+name_text = "腐化爬行者"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="2" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("17_lx4td")
+name_text = "腐化蜘蛛"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="3" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("18_5tvx7")
+name_text = "丛林幻翼"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="4" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("19_fv3fe")
+name_text = "终末"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="5" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("20_ta0iy")
+name_text = "溺尸"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="6" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("21_jdtmb")
+name_text = "溺尸斗士"
+
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="7" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("22_spm7w")
+name_text = "丧尸野狼"
+
+[node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="8" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("23_jnsef")
+name_text = "腐朽"
+
+[node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Enemies" index="9" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("24_gsu1b")
+name_text = "泰坦丧尸"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter3" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第三章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Enemies" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="0" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("25_crsv7")
+name_text = "尸壳"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="1" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("26_l4y5g")
+name_text = "尸壳勇士"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="2" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("27_0724c")
+name_text = "沙漠狙击手"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="3" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("28_6p3ee")
+name_text = "噩梦幻翼"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="4" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("29_fq40n")
+name_text = "蠹虫"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="5" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("30_xj7b5")
+name_text = "沙漠守卫"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="6" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("31_6mjjv")
+name_text = "木乃伊"
+
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="7" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("32_ejd8f")
+name_text = "黄金傀儡"
+
+[node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="8" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("33_0w0kd")
+name_text = "沙漠雇佣兵"
+
+[node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="9" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("34_6f320")
+name_text = "军火商"
+
+[node name="WikiHeadTextureButton11" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Enemies" index="10" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("35_uybld")
+name_text = "巨型尸壳"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter4" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第四章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Enemies" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="0" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("36_wdhdq")
+name_text = "厌国战士"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="1" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("37_xs35c")
+name_text = "厌国精英"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="2" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("38_arykj")
+name_text = "苦力怕"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="3" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("39_lvkf0")
+name_text = "蜘蛛"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="4" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("40_fb1tq")
+name_text = "厌国狂战士"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="5" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("41_e8kis")
+name_text = "幻翼"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="6" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("42_wkymk")
+name_text = "劫掠者"
+
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="7" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("43_d4o3t")
+name_text = "女巫"
+
+[node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="8" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("44_wwdfo")
+name_text = "史莱姆"
+
+[node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="9" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("44_wwdfo")
+name_text = "中史莱姆"
+
+[node name="WikiHeadTextureButton11" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="10" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("44_wwdfo")
+name_text = "小史莱姆"
+
+[node name="WikiHeadTextureButton12" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="11" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("45_wqtjd")
+name_text = "泰坦威克斯"
+
+[node name="WikiHeadTextureButton13" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="12" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("46_bblh3")
+name_text = "卫道士"
+
+[node name="WikiHeadTextureButton14" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="13" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("47_n05dw")
+name_text = "唤魔者"
+
+[node name="WikiHeadTextureButton15" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="14" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("48_fdx7p")
+name_text = "恼鬼"
+
+[node name="WikiHeadTextureButton16" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="15" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("49_7hjcm")
+name_text = "劫掠者队长"
+
+[node name="WikiHeadTextureButton17" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="16" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("50_wdx72")
+name_text = "劫掠兽"
+
+[node name="WikiHeadTextureButton18" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="17" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("51_5wo53")
+name_text = "守卫者"
+font_color_override = true
+font_color = Color(1, 0.572549, 0, 1)
+
+[node name="WikiHeadTextureButton19" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="18" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("52_rsvg6")
+name_text = "远古守卫者"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="WikiHeadTextureButton20" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Enemies" index="19" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("53_k5fhs")
+name_text = "剧情-尼古拉斯"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter5" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第五章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Enemies" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5/Enemies" index="0" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("54_6d3hl")
+name_text = "白眼士兵"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5/Enemies" index="1" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("55_dmwsj")
+name_text = "白眼勇士"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5/Enemies" index="2" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("56_770kn")
+name_text = "白眼法师"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5/Enemies" index="3" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("57_ixsx4")
+name_text = "白眼傀儡"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5/Enemies" index="4" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("58_fw08c")
+name_text = "LIVER"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter6" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第六章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Enemies" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Enemies" index="0" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("59_mr3yr")
+name_text = "尸国斗剑士"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Enemies" index="1" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("60_2jtxb")
+name_text = "荆棘射手"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Enemies" index="2" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("61_uxhm4")
+name_text = "剧毒蜘蛛"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Enemies" index="3" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("62_ikm0b")
+name_text = "厌国投弹手"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Enemies" index="4" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("63_oqne3")
+name_text = "戮"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Enemies" index="5" instance=ExtResource("3_xekmw")]
+layout_mode = 2
+texture_normal = ExtResource("53_k5fhs")
+name_text = "厌皇-尼古拉斯"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 127.0
+offset_top = 146.0
+offset_right = 452.0
+offset_bottom = 786.0
+scale = Vector2(0.685622, 0.685622)
