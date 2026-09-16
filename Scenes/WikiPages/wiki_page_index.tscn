@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj4taftgw76yn"]
+[gd_scene load_steps=16 format=3 uid="uid://dj4taftgw76yn"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_7548v"]
 [ext_resource type="Texture2D" uid="uid://bijpywyj4vdic" path="res://Assets/Images/UI/Wiki/wiki.png" id="2_053ui"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://hgtg66hhp4n" path="res://Assets/Images/UI/Wiki/Index/achievement.png" id="7_wxagi"]
 [ext_resource type="Texture2D" uid="uid://1dgjt52101xv" path="res://Assets/Images/UI/Wiki/Index/stages.png" id="8_v6lys"]
 [ext_resource type="Texture2D" uid="uid://cn1s81gejqiti" path="res://Assets/Images/UI/Wiki/Index/world.png" id="9_rdkir"]
+[ext_resource type="Texture2D" uid="uid://rslpceh0hs8d" path="res://Assets/Images/UI/Wiki/Index/skills.png" id="11_aj144"]
+[ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="11_pdq1h"]
 [ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="12_72pd6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uti3m"]
@@ -114,6 +116,26 @@ scale = Vector2(1.74975, 1.74975)
 texture = ExtResource("9_rdkir")
 stretch_mode = 2
 
+[node name="Skills" type="TextureRect" parent="Icons" index="7"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 744.0
+offset_right = 579.0
+offset_bottom = 875.0
+scale = Vector2(1.74975, 1.74975)
+texture = ExtResource("11_aj144")
+stretch_mode = 2
+
+[node name="Others" type="TextureRect" parent="Icons" index="8"]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 754.0
+offset_right = 1105.0
+offset_bottom = 1054.0
+scale = Vector2(0.661459, 0.661459)
+texture = ExtResource("11_pdq1h")
+stretch_mode = 3
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="." index="3"]
 layout_mode = 1
 anchors_preset = 15
@@ -186,7 +208,7 @@ linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_uti3m")
 button_text = "主动技能"
-linked_path = "res://Scenes/WikiPages/wiki_world.tscn"
+linked_path = "res://Scenes/WikiPages/wiki_skills.tscn"
 
 [node name="WikiButton3" parent="VBoxContainer2/HBoxContainer3" index="2" instance=ExtResource("3_u3qtp")]
 layout_mode = 2

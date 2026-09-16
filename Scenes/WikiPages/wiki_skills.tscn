@@ -1,0 +1,227 @@
+[gd_scene load_steps=19 format=3 uid="uid://bxcc6vmn2q5tl"]
+
+[ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_63hup"]
+[ext_resource type="Texture2D" uid="uid://rslpceh0hs8d" path="res://Assets/Images/UI/Wiki/Index/skills.png" id="2_d52kt"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_py6f1"]
+[ext_resource type="Texture2D" uid="uid://bx7canjsuxyg4" path="res://Assets/Images/UI/SkillButton/Reinforce/reinforce_canuse.png" id="4_p4r77"]
+[ext_resource type="Texture2D" uid="uid://bvwfrbysjjdik" path="res://Assets/Images/UI/SkillButton/Firerain/firerain-canuse.png" id="5_84t1t"]
+[ext_resource type="Texture2D" uid="uid://cgqvtdtcpu8nd" path="res://Assets/Images/UI/SkillButton/Heroskill/Steve/steve_canuse.png" id="6_drxd1"]
+[ext_resource type="Texture2D" uid="uid://6i50vij6jgsl" path="res://Assets/Images/UI/SkillButton/Heroskill/Fuchen/fuchen_skill.png" id="7_be6ae"]
+[ext_resource type="Texture2D" uid="uid://kj2hhcrva6rf" path="res://Assets/Images/UI/SkillButton/Heroskill/Alex/alex_skill.png" id="8_l5jgp"]
+[ext_resource type="Texture2D" uid="uid://desjphmwm4hmv" path="res://Assets/Images/UI/SkillButton/Heroskill/Talzin/talzin_skill.png" id="9_463c2"]
+[ext_resource type="Texture2D" uid="uid://brp4ngaouh57t" path="res://Assets/Images/UI/SkillButton/Heroskill/Robort/robort_skill.png" id="10_bi0xs"]
+[ext_resource type="Texture2D" uid="uid://dkt34c521uym3" path="res://Assets/Images/UI/SkillButton/Heroskill/Salem/salem_skill.png" id="11_ciowd"]
+[ext_resource type="Texture2D" uid="uid://cs3l3ig4ft2ea" path="res://Assets/Images/UI/SkillButton/Heroskill/Johnny/johnny_skill.png" id="12_yqmnb"]
+[ext_resource type="Texture2D" uid="uid://bbix2ejk7c5om" path="res://Assets/Images/UI/SkillButton/Heroskill/Rosa/rosa_skill.png" id="13_jdn5y"]
+[ext_resource type="Texture2D" uid="uid://g8ci1vyx2rbp" path="res://Assets/Images/UI/SkillButton/Heroskill/KongShuLin/kongshulin_skill.png" id="14_km1yj"]
+[ext_resource type="Texture2D" uid="uid://bhqn2q1wn86rt" path="res://Assets/Images/UI/SkillButton/Heroskill/GoldenDiamond/golden_diamond_skill.png" id="15_bbgqs"]
+[ext_resource type="Texture2D" uid="uid://dnq7cjvbnjjh3" path="res://Assets/Images/UI/SkillButton/Heroskill/SteveSP/SPSkill.png" id="16_mouuw"]
+[ext_resource type="Texture2D" uid="uid://dkuncar13gyka" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/MikeSkill.png" id="17_nnlah"]
+[ext_resource type="Texture2D" uid="uid://ne5prim7t57y" path="res://Assets/Images/UI/SkillButton/StorySpecialSkill/story_special_normal.png" id="18_31kie"]
+
+[node name="WikiSkills" instance=ExtResource("1_63hup")]
+offset_bottom = 3210.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_d52kt")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "主动技能"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "主动技能是玩家可手动触发的特殊能力，分为通常技能、英雄技能和额外技能三类。本板块收录所有主动技能的详细数值与效果说明。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Normal" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Normal" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Normal" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "通常技能"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Normal" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Skills" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Normal" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 60
+columns = 3
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Normal/Skills" index="0" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("4_p4r77")
+name_text = "召唤援军"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Normal/Skills" index="1" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("5_84t1t")
+name_text = "天降火雨"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Normal" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Hero" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "英雄技能"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Skills" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 60
+columns = 3
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="0" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("6_drxd1")
+name_text = "药水风暴雨"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="1" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("7_be6ae")
+name_text = "奥术冲击"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="2" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("8_l5jgp")
+name_text = "海神的惩戒"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="3" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("9_463c2")
+name_text = "夕阳彼岸红"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="4" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("10_bi0xs")
+name_text = "天雷"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="5" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("11_ciowd")
+name_text = "不死骑士"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="6" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("12_yqmnb")
+name_text = "胜利旌旗"
+
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="7" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("13_jdn5y")
+name_text = "黑暗风暴"
+
+[node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="8" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("14_km1yj")
+name_text = "索命・死亡空间"
+
+[node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="9" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("15_bbgqs")
+name_text = "梭哈"
+
+[node name="WikiHeadTextureButton11" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="10" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("16_mouuw")
+name_text = "旅程的问答"
+
+[node name="WikiHeadTextureButton12" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero/Skills" index="11" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("17_nnlah")
+name_text = "天劫轮回渡"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Others" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Others" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Others" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "额外技能"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Others" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Skills" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Others" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 60
+columns = 3
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Others/Skills" index="0" instance=ExtResource("3_py6f1")]
+layout_mode = 2
+texture_normal = ExtResource("18_31kie")
+name_text = "碎片回响"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Others" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
