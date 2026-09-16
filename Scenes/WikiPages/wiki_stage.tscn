@@ -1,10 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv5hlf0m7c3v"]
+[gd_scene load_steps=24 format=3 uid="uid://dv5hlf0m7c3v"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_p83sj"]
 [ext_resource type="Texture2D" uid="uid://1dgjt52101xv" path="res://Assets/Images/UI/Wiki/Index/stages.png" id="2_r2ali"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_0e8gp"]
+[ext_resource type="Texture2D" uid="uid://wgp0d00nrbk5" path="res://Assets/Images/UI/Wiki/Stages/stage1-view.png" id="4_8alf0"]
+[ext_resource type="Texture2D" uid="uid://d1k26u4ddpsp8" path="res://Assets/Images/UI/Wiki/Stages/stage2-view.png" id="5_u4obs"]
+[ext_resource type="Texture2D" uid="uid://dyj58xpyvr8rb" path="res://Assets/Images/UI/Wiki/Stages/stage3-view.png" id="6_btinn"]
+[ext_resource type="Texture2D" uid="uid://dxky0mawn7gy4" path="res://Assets/Images/UI/Wiki/Stages/stage4-view.png" id="7_r13qx"]
+[ext_resource type="Texture2D" uid="uid://bstpm6ybtxpaw" path="res://Assets/Images/UI/Wiki/Stages/Stage5-view.png" id="8_hre5f"]
+[ext_resource type="Texture2D" uid="uid://csj6sevrcm2qq" path="res://Assets/Images/UI/Wiki/Stages/Stage6-view.png" id="9_xtpsr"]
+[ext_resource type="Texture2D" uid="uid://nwdso3kj15o0" path="res://Assets/Images/UI/Wiki/Stages/stage7-view.png" id="10_1jy5v"]
+[ext_resource type="Texture2D" uid="uid://byylh8u7ka5fn" path="res://Assets/Images/UI/Wiki/Stages/stage8-view.png" id="11_shq14"]
+[ext_resource type="Texture2D" uid="uid://cgajyyolvmfv5" path="res://Assets/Images/UI/Wiki/Stages/stage9-view.png" id="12_r443c"]
+[ext_resource type="Texture2D" uid="uid://dhpvvh3pdri0y" path="res://Assets/Images/UI/Wiki/Stages/stage10-view.png" id="13_wifdb"]
+[ext_resource type="Texture2D" uid="uid://bjhgm1qwcsk31" path="res://Assets/Images/UI/Wiki/Stages/stage11-view.png" id="14_yhlen"]
+[ext_resource type="Texture2D" uid="uid://dp0w4ego0kbvk" path="res://Assets/Images/UI/Wiki/Stages/stage12-view.png" id="15_w6vic"]
+[ext_resource type="Texture2D" uid="uid://cgasygrmnh7l2" path="res://Assets/Images/UI/Wiki/Stages/stage13-view.png" id="16_ig8i8"]
+[ext_resource type="Texture2D" uid="uid://kybg6r0lwh5h" path="res://Assets/Images/UI/Wiki/Stages/stage14-view.png" id="17_uax3h"]
+[ext_resource type="Texture2D" uid="uid://cey1ge61e1tcg" path="res://Assets/Images/UI/Wiki/Stages/stage15-view.png" id="18_6vhtk"]
+[ext_resource type="Texture2D" uid="uid://dvdhhyrucw2nh" path="res://Assets/Images/UI/Wiki/Stages/stage16-view.png" id="19_krkir"]
+[ext_resource type="Texture2D" uid="uid://m7ww1afeumd1" path="res://Assets/Images/UI/Wiki/Stages/stage17-view.png" id="20_02dcq"]
+[ext_resource type="Texture2D" uid="uid://bfv6auudspwyu" path="res://Assets/Images/UI/Wiki/Stages/stage18-view.png" id="21_atkp0"]
+[ext_resource type="Texture2D" uid="uid://dfisnkp18b5cl" path="res://Assets/Images/UI/Wiki/Stages/stage19-view.png" id="22_ywr07"]
+[ext_resource type="Texture2D" uid="uid://fhsqa1hfs4e0" path="res://Assets/Images/UI/Wiki/Stages/stage20-view.png" id="23_1p7n8"]
 
 [node name="WikiStage" instance=ExtResource("1_p83sj")]
-offset_bottom = 3501.0
+offset_bottom = 3141.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -33,3 +54,317 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "关卡是游戏的核心玩法单元。本板块收录所有关卡的详细信息，包括场景元素、可互动部件、出怪列表、初始配置等。关于关卡的通用规则（分类、配置结构、波次逻辑等），请查阅[关卡机制]。"
 autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "主线关卡"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chapter1" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第一章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Stages" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Stages" index="0" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("4_8alf0")
+name_text = "皇城东门"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Stages" index="1" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("5_u4obs")
+name_text = "天木市"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Stages" index="2" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("6_btinn")
+name_text = "战扎城"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1/Stages" index="3" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("7_r13qx")
+name_text = "元帅府"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter1" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter2" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第二章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Stages" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Stages" index="0" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("8_hre5f")
+name_text = "野区保护府"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Stages" index="1" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("9_xtpsr")
+name_text = "弗拉里斯带"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2/Stages" index="2" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("10_1jy5v")
+name_text = "南洋海岸"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter2" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter3" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第三章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Stages" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Stages" index="0" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("11_shq14")
+name_text = "卡瓦拉沙漠"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Stages" index="1" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("12_r443c")
+name_text = "沙漠神殿"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Stages" index="2" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("13_wifdb")
+name_text = "绝望沙丘"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3/Stages" index="3" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("14_yhlen")
+name_text = "东海岸"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter3" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter4" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第四章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Stages" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Stages" index="0" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("15_w6vic")
+name_text = "丛林神殿"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Stages" index="1" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("16_ig8i8")
+name_text = "粘液沼泽"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Stages" index="2" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("17_uax3h")
+name_text = "林地府邸"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4/Stages" index="3" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("18_6vhtk")
+name_text = "海底神殿"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter4" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter5" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第五章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Stages" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5/Stages" index="0" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("19_krkir")
+name_text = "高山"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5/Stages" index="1" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("20_02dcq")
+name_text = "鬼门关"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter5" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Chapter6" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "第五章"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Stages" type="GridContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="3"]
+layout_mode = 2
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Stages" index="0" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("21_atkp0")
+name_text = "诺冰要塞"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Stages" index="1" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("22_ywr07")
+name_text = "诺冰大峡谷"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6/Stages" index="2" instance=ExtResource("3_0e8gp")]
+layout_mode = 2
+texture_normal = ExtResource("23_1p7n8")
+name_text = "皇城"
+font_color_override = true
+font_color = Color(1, 0, 0, 1)
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Chapter6" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "支线关卡"
+horizontal_alignment = 1
+vertical_alignment = 1
