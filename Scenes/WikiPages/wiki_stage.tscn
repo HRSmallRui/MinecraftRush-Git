@@ -1,22 +1,35 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv5hlf0m7c3v"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_p83sj"]
-[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="2_tk5ty"]
+[ext_resource type="Texture2D" uid="uid://1dgjt52101xv" path="res://Assets/Images/UI/Wiki/Index/stages.png" id="2_r2ali"]
 
 [node name="WikiStage" instance=ExtResource("1_p83sj")]
+offset_bottom = 3501.0
 
-[node name="BackButton" parent="TopMenu" index="0" instance=ExtResource("2_tk5ty")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -372.0
-offset_top = -188.0
-offset_right = -41.0
-offset_bottom = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-button_text = "返回"
-linked_path = "res://Scenes/WikiPages/wiki_page_index.tscn"
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_r2ali")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "关卡"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "关卡是游戏的核心玩法单元。本板块收录所有关卡的详细信息，包括场景元素、可互动部件、出怪列表、初始配置等。关于关卡的通用规则（分类、配置结构、波次逻辑等），请查阅[关卡机制]。"
+autowrap_mode = 3

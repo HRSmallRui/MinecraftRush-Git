@@ -28,6 +28,13 @@ func _input(event: InputEvent) -> void:
 		position.y -= 50
 		current_velocity = 0
 	
+	if event.is_action_pressed("click"):
+		current_velocity = 0
+	elif event.is_action_released("click"):
+		current_velocity = Input.get_last_mouse_velocity().y
+	elif event is InputEventScreenDrag:
+		position.y += event.relative.y
+	
 	update_scroll()
 	pass
 
@@ -49,17 +56,12 @@ func update_scroll():
 
 func into_target_pos(target_pos: float):
 	position.y = target_pos
+	current_velocity = 0
 	update_scroll()
 	pass
 
 
 func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
-		current_velocity = 0
-	elif event.is_action_released("click"):
-		current_velocity = Input.get_last_mouse_velocity().y
-	elif event is InputEventScreenDrag:
-		position.y += event.relative.y
 	
 	update_scroll()
 	pass # Replace with function body.
