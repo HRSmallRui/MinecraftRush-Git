@@ -1,5 +1,172 @@
-[gd_scene load_steps=2 format=3 uid="uid://1poix40gxacr"]
+[gd_scene load_steps=12 format=3 uid="uid://1poix40gxacr"]
 
 [ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_7meua"]
+[ext_resource type="Texture2D" uid="uid://cbhpncqm7akka" path="res://Assets/Images/UI/ToolBoxImages/Crafting_Table_JE4_BE3.png" id="2_jd5x3"]
+[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="3_2lvr4"]
+[ext_resource type="Texture2D" uid="uid://b7kkdp471t48r" path="res://Assets/Images/UI/Wiki/Index/based.png" id="3_4hv3x"]
+[ext_resource type="Texture2D" uid="uid://byr6h758xi36p" path="res://Assets/Images/UI/Wiki/GameBased/Index/图标说明.png" id="4_4x02d"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="4_05h07"]
+[ext_resource type="Texture2D" uid="uid://s2g8wml2pdo3" path="res://Assets/Images/UI/Wiki/GameBased/Index/科技升级.png" id="5_l5rqw"]
+[ext_resource type="Texture2D" uid="uid://cn1s81gejqiti" path="res://Assets/Images/UI/Wiki/Index/world.png" id="6_j5hy7"]
+[ext_resource type="Texture2D" uid="uid://cdrokoapr07ky" path="res://Assets/Images/UI/Wiki/Index/book.png" id="7_05tvc"]
+[ext_resource type="Texture2D" uid="uid://7v3qt3cs68un" path="res://Assets/Images/UI/Wiki/GameBased/Index/buff.png" id="8_gh1jr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k50gd"]
+atlas = ExtResource("4_05h07")
+region = Rect2(98, 192, 331, 143)
 
 [node name="WikiOthers" instance=ExtResource("1_7meua")]
+offset_bottom = 1297.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_jd5x3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "杂项"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "本板块收录游戏的辅助信息与开发者记录，包括作弊码、常见问题、版本更新日志、设计思路等内容。这些内容与游戏核心玩法无关，但能帮助玩家更好地了解和使用游戏。"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 539.0
+offset_right = 189.0
+offset_bottom = 615.0
+scale = Vector2(2.43703, 2.43703)
+texture = ExtResource("3_4hv3x")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 539.0
+offset_right = 543.0
+offset_bottom = 615.0
+scale = Vector2(1.71642, 1.71642)
+texture = ExtResource("4_4x02d")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 539.0
+offset_right = 915.0
+offset_bottom = 658.0
+scale = Vector2(1.71642, 1.71642)
+texture = ExtResource("5_l5rqw")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 846.0
+offset_right = 225.0
+offset_bottom = 965.0
+scale = Vector2(1.71642, 1.71642)
+texture = ExtResource("6_j5hy7")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="FreeNodes" index="4"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 834.0
+offset_right = 960.0
+offset_bottom = 1360.0
+scale = Vector2(0.453958, 0.453958)
+texture = ExtResource("7_05tvc")
+stretch_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="FreeNodes" index="5"]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 846.0
+offset_right = 922.0
+offset_bottom = 980.0
+scale = Vector2(1.71642, 1.71642)
+texture = ExtResource("8_gh1jr")
+stretch_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes" index="6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 674.0
+offset_right = 1090.0
+offset_bottom = 1433.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.929006, 0.929006)
+theme_override_constants/separation = 185
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="0" instance=ExtResource("3_2lvr4")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_k50gd")
+button_text = "作弊码"
+linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
+white_theme_texture = SubResource("AtlasTexture_k50gd")
+
+[node name="WikiButton2" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="1" instance=ExtResource("3_2lvr4")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_k50gd")
+button_text = "常见问题"
+linked_path = "res://Scenes/WikiPages/wiki_tower.tscn"
+white_theme_texture = SubResource("AtlasTexture_k50gd")
+
+[node name="WikiButton3" parent="FreeNodes/VBoxContainer2/HBoxContainer" index="2" instance=ExtResource("3_2lvr4")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_k50gd")
+button_text = "版本更新日志"
+linked_path = "res://Scenes/WikiPages/wiki_ally.tscn"
+white_theme_texture = SubResource("AtlasTexture_k50gd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="FreeNodes/VBoxContainer2" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="FreeNodes/VBoxContainer2/HBoxContainer2" index="0" instance=ExtResource("3_2lvr4")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_k50gd")
+button_text = "设计思路"
+linked_path = "res://Scenes/WikiPages/wiki_game_based.tscn"
+white_theme_texture = SubResource("AtlasTexture_k50gd")
+
+[node name="WikiButton2" parent="FreeNodes/VBoxContainer2/HBoxContainer2" index="1" instance=ExtResource("3_2lvr4")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_k50gd")
+button_text = "操作说明"
+linked_path = "res://Scenes/WikiPages/wiki_tower.tscn"
+white_theme_texture = SubResource("AtlasTexture_k50gd")
+
+[node name="WikiButton3" parent="FreeNodes/VBoxContainer2/HBoxContainer2" index="2" instance=ExtResource("3_2lvr4")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_k50gd")
+button_text = "鸣谢"
+linked_path = "res://Scenes/WikiPages/wiki_ally.tscn"
+white_theme_texture = SubResource("AtlasTexture_k50gd")
