@@ -249,3 +249,8 @@ func background_animation(anim_type: int = 0):
 func _on_extra_button_pressed() -> void:
 	Global.change_scene("res://Scenes/GameBased/extra_contents.tscn")
 	pass # Replace with function body.
+
+
+func _on_wiki_button_pressed() -> void:
+	
+	pass # Replace with function body.

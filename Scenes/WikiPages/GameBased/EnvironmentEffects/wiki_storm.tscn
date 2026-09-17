@@ -1,0 +1,1569 @@
+[gd_scene load_steps=7 format=3 uid="uid://daji6xhuvq0hs"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/Templates/wiki_page_game_based.tscn" id="1_ftg0m"]
+[ext_resource type="Texture2D" uid="uid://cf1l02gihcik1" path="res://Assets/Images/Stages/Stage10/sandstorm.png" id="2_j8dij"]
+[ext_resource type="Texture2D" uid="uid://srp7iwuto1ln" path="res://Assets/Images/Stages/Stage9/stage9.png" id="3_p8iqu"]
+[ext_resource type="Texture2D" uid="uid://ct1wl2m73pt6b" path="res://Assets/Images/Stages/Stage10/stage10.png" id="4_qmh4x"]
+[ext_resource type="Texture2D" uid="uid://xibrwnv5r53g" path="res://Assets/Images/Stages/Stage11/stage11.png" id="5_hgiew"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="6_516rt"]
+
+
+[node name="WikiStorm" instance=ExtResource("1_ftg0m")]
+offset_bottom = 5936.0
+
+[node name="VBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 45
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+modulate = Color(0.54902, 0.364706, 0.188235, 1)
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("2_j8dij")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "风沙机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "风沙机制在特定波次开始时触发，场上会刮起一段时间的风沙。"
+autowrap_mode = 3
+
+[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer12" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "出现关卡：第9关，第10关，第11关"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "机制效果"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "特定波次开始后，场上刮起一段时间的风沙。风沙持续期间，战场情况处于完全不可视状态。
+ 
+风沙没有直接的增益减益效果，仅作为视觉干扰机制存在。"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="MarginContainer14" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer14" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "关卡详细数据"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 36
+text = "9.沙漠神殿"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 390
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 620
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战 "
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_top = 310
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 36
+text = "10.绝望沙丘"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 390
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式"
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 620
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战 "
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/margin_top = 310
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 36
+text = "11.东海岸"
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/margin_top = 390
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式"
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="16"]
+layout_mode = 2
+theme_override_constants/margin_top = 665
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战 "
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/MarginContainer14/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_constants/margin_top = 240
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="0"]
+offset_left = 48.0
+offset_top = 1045.0
+offset_right = 4636.0
+offset_bottom = 2702.0
+scale = Vector2(0.216016, 0.216016)
+texture = ExtResource("3_p8iqu")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="1"]
+offset_left = 48.0
+offset_top = 2722.0
+offset_right = 4636.0
+offset_bottom = 4379.0
+scale = Vector2(0.216016, 0.216016)
+texture = ExtResource("4_qmh4x")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="2"]
+offset_left = 48.0
+offset_top = 4380.0
+offset_right = 4636.0
+offset_bottom = 6037.0
+scale = Vector2(0.216016, 0.216016)
+texture = ExtResource("5_hgiew")
+stretch_mode = 5
+
+[node name="Table2" type="Control" parent="FreeNodes" index="3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 1525.0
+offset_right = 359.0
+offset_bottom = 1525.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table2" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "11"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "13"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "14"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table2/VBoxContainer" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table2" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 441.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "风沙持续时间/秒"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table2/VBoxContainer2" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table2" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 406.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="5"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="6"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="7"]
+layout_mode = 2
+
+[node name="HSeparator9" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="8"]
+layout_mode = 2
+
+[node name="HSeparator10" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="9"]
+layout_mode = 2
+
+[node name="HSeparator11" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="10"]
+layout_mode = 2
+
+[node name="HSeparator12" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="11"]
+layout_mode = 2
+
+[node name="HSeparator13" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="12"]
+layout_mode = 2
+
+[node name="HSeparator14" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="13"]
+layout_mode = 2
+
+[node name="HSeparator15" type="HSeparator" parent="FreeNodes/Table2/HSeperators" index="14"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table2" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 619.0
+
+[node name="Table4" type="Control" parent="FreeNodes" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 3199.0
+offset_right = 359.0
+offset_bottom = 3199.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table4" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "11"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "13"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "14"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table4/VBoxContainer" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table4" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 441.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "风沙持续时间/秒"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table4/VBoxContainer2" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table4" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 406.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="5"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="6"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="7"]
+layout_mode = 2
+
+[node name="HSeparator9" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="8"]
+layout_mode = 2
+
+[node name="HSeparator10" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="9"]
+layout_mode = 2
+
+[node name="HSeparator11" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="10"]
+layout_mode = 2
+
+[node name="HSeparator12" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="11"]
+layout_mode = 2
+
+[node name="HSeparator13" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="12"]
+layout_mode = 2
+
+[node name="HSeparator14" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="13"]
+layout_mode = 2
+
+[node name="HSeparator15" type="HSeparator" parent="FreeNodes/Table4/HSeperators" index="14"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table4" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 619.0
+
+[node name="Table6" type="Control" parent="FreeNodes" index="5"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 4898.0
+offset_right = 359.0
+offset_bottom = 4898.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table6" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "11"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "13"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "14"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="FreeNodes/Table6/VBoxContainer" index="16"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "16"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table6" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 441.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "风沙持续时间/秒"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="6"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="7"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="8"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "14"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="9"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="10"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="11"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="12"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="13"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="14"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="15"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="FreeNodes/Table6/VBoxContainer2" index="16"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table6" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 406.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="5"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="6"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="7"]
+layout_mode = 2
+
+[node name="HSeparator9" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="8"]
+layout_mode = 2
+
+[node name="HSeparator10" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="9"]
+layout_mode = 2
+
+[node name="HSeparator11" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="10"]
+layout_mode = 2
+
+[node name="HSeparator12" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="11"]
+layout_mode = 2
+
+[node name="HSeparator13" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="12"]
+layout_mode = 2
+
+[node name="HSeparator14" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="13"]
+layout_mode = 2
+
+[node name="HSeparator15" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="14"]
+layout_mode = 2
+
+[node name="HSeparator16" type="HSeparator" parent="FreeNodes/Table6/HSeperators" index="15"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table6" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 652.0
+
+[node name="Table3" type="Control" parent="FreeNodes" index="6"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 2278.0
+offset_right = 359.0
+offset_bottom = 2278.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table3" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table3/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table3" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 441.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "风沙持续时间/秒"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table3/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table3" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 406.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table3/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table3" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 225.0
+
+[node name="Table5" type="Control" parent="FreeNodes" index="7"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 3955.0
+offset_right = 359.0
+offset_bottom = 3955.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table5" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table5/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table5" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 441.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "风沙持续时间/秒"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table5/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table5" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 406.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table5/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table5" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 225.0
+
+[node name="Table7" type="Control" parent="FreeNodes" index="8"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 5683.0
+offset_right = 359.0
+offset_bottom = 5683.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeNodes/Table7" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table7/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "波次"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table7/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table7/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table7/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table7/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table7/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="FreeNodes/Table7" index="1"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 441.0
+offset_bottom = 609.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FreeNodes/Table7/VBoxContainer2" index="0"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "风沙持续时间/秒"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FreeNodes/Table7/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="FreeNodes/Table7/VBoxContainer2" index="2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="FreeNodes/Table7/VBoxContainer2" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="FreeNodes/Table7/VBoxContainer2" index="4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="FreeNodes/Table7/VBoxContainer2" index="5"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+
+[node name="HSeperators" type="VBoxContainer" parent="FreeNodes/Table7" index="2"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 30.0
+offset_right = 406.0
+offset_bottom = 580.0
+theme_override_constants/separation = 35
+
+[node name="HSeparator" type="HSeparator" parent="FreeNodes/Table7/HSeperators" index="0"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="FreeNodes/Table7/HSeperators" index="1"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="FreeNodes/Table7/HSeperators" index="2"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="FreeNodes/Table7/HSeperators" index="3"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="FreeNodes/Table7/HSeperators" index="4"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="FreeNodes/Table7" index="3"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 225.0
+
+[node name="BackButton" parent="TopMenu" index="0"]
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_environment_effect.tscn"
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 50.0
+offset_right = 376.0
+offset_bottom = 287.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("6_516rt")]
+layout_mode = 2
+text = "机制效果"
+wiki_page = NodePath("../../..")
+target_pos = -526.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("6_516rt")]
+layout_mode = 2
+text = "关卡详细数据"
+wiki_page = NodePath("../../..")
+target_pos = -813.0

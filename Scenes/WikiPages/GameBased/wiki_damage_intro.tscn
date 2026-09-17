@@ -1,0 +1,1096 @@
+[gd_scene load_steps=20 format=3 uid="uid://b6p7isiiab1cy"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/Templates/wiki_page_game_based.tscn" id="1_l1eq6"]
+[ext_resource type="Texture2D" uid="uid://dtek306ryxrn2" path="res://Assets/Images/UI/Wiki/GameBased/Index/伤害结算机制.png" id="2_y7kpp"]
+[ext_resource type="Texture2D" uid="uid://b1efr3jdpf4u0" path="res://Assets/Images/UI/delete_yes.png" id="3_gagvm"]
+[ext_resource type="Texture2D" uid="uid://cikybo262yisy" path="res://Assets/Images/UI/delete_no.png" id="4_bbvpu"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="5_bo2bc"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="6_eemvx"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="7_5564i"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="8_1batm"]
+[ext_resource type="Texture2D" uid="uid://drp8leo284ll0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战超伤.png" id="9_562u8"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="10_50sxj"]
+[ext_resource type="Texture2D" uid="uid://cey441i8fdaaa" path="res://Assets/Images/UI/Wiki/PropertyIcons/魔抗.png" id="11_ts5lk"]
+[ext_resource type="Texture2D" uid="uid://ci7smwcc4ybhj" path="res://Assets/Images/UI/Wiki/PropertyIcons/易伤.png" id="12_8ltbm"]
+[ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="13_v3giu"]
+[ext_resource type="Texture2D" uid="uid://dtlktbskj522n" path="res://Assets/Images/UI/Wiki/PropertyIcons/炮伤抗性.png" id="14_hmins"]
+[ext_resource type="Texture2D" uid="uid://b4jae4f7numwo" path="res://Assets/Images/Effects/DeadBodyExplosion/0.png" id="15_3iudx"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="15_ljub6"]
+[ext_resource type="Texture2D" uid="uid://bv63jepbjh5ej" path="res://Assets/Images/Effects/dust.png" id="16_dd3cr"]
+
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgj3i"]
+atlas = ExtResource("3_gagvm")
+region = Rect2(76, 77, 104, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bxg2"]
+atlas = ExtResource("4_bbvpu")
+region = Rect2(84, 87, 94, 83)
+
+[node name="WikiDamageIntro" instance=ExtResource("1_l1eq6")]
+offset_bottom = 6319.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_y7kpp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "伤害结算机制"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "本页面详细解释了游戏中的伤害计算流程。理解伤害如何产生、如何被减免，以及不同类型的伤害差异，是制定战术和评估战斗结果的基础。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 55
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "伤害类型"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="Damage" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "物理伤害"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "简称物伤，游戏最常见也是最基础的伤害类型，会被护甲减免。"
+autowrap_mode = 3
+
+[node name="Damage2" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage2" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "魔法伤害"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage2" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "简称法伤，可以完全无视护甲，会被魔法抗性减免。"
+autowrap_mode = 3
+
+[node name="Damage3" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "炮击伤害"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage3" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "简称炮伤，基础无视50%护甲，会被护甲和炮伤抗性减免。"
+autowrap_mode = 3
+
+[node name="Damage4" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage4" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "真实伤害"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage4" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "简称真伤，游戏内较为稀有的伤害类型，完全无视任何伤害抗性（护甲，魔法抗性，炮伤抗性），只会被总伤减免所减免。"
+autowrap_mode = 3
+
+[node name="Damage5" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage5" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "超级伤害"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/Damage5" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "简称超伤，游戏内最稀有的伤害类型，是比真伤更为高贵的存在，是完完全全的实际伤害和原始伤害相等的伤害类型，不会被任何抗性（哪怕是总伤减免）减免，但同时也不会被任何增益（如易伤）所加成。"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 55
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "伤害结算流程"
+
+[node name="Damage5" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage5" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "1.前置检查"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage5" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "进行伤害是否生效的判断，有三种情况会导致本次伤害不生效直接跳过后续所有步骤
+ 
+ 
+1.目标已死亡：如果目标生命值 小于等于 0，本次伤害不生效。
+ 
+2.伤害类型免疫：部分单位拥有特定伤害类型的免疫能力（该属性为bool类型的变量，如物理免疫，魔法免疫，炮伤免疫）。例如，某些单位可能免疫物理伤害或魔法伤害。当目标免疫当前伤害类型时，本次伤害不生效。
+ 
+3.伤害被闪避： 传入的额外参数中有3种参数会影响是否闪避
+ 
+    1）伤害来源：是否包含伤害来源，通常用于获取伤害来源命中率与本体闪避率进行比较。如果满足条件，通常有（目标命中率 - 本体闪避率）的概率闪避本次伤害。
+ 
+    2）远程伤害：是否为远程攻击，通常TNT投掷不被视为远程伤害，但会被视为AOE伤害。
+ 
+    3）AOE伤害：是否为范围伤害。
+ 
+对于绝大部分单位来说，AOE伤害、远程伤害或无伤害来源的攻击，闪避通常不起作用。通常情况下，包含伤害来源的非远程近战伤害有概率被闪避（前提是目标命中率 - 本体闪避率不能低于0）。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Damage6" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "2.抗性计算"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "根据不同的伤害类型，计算对应的抗性减免："
+autowrap_mode = 3
+
+[node name="DamageDefence" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "物理伤害"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "二级伤害 = 伤害 x (1 - 护甲 x (1 - 破甲))"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "护甲按百分比减免物理伤害，破甲可降低护甲效果"
+autowrap_mode = 3
+
+[node name="DamageDefence2" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence2" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "魔法伤害"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence2" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "二级伤害 = 伤害 x (1 - 魔抗 x (1 - 破甲))"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence2" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "魔抗按百分比减免魔法伤害，破甲可降低魔抗效果"
+autowrap_mode = 3
+
+[node name="DamageDefence3" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "炮击伤害"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence3" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "二级伤害 = 伤害 x (1 - 护甲/2 x (1 - 破甲)) x (1 - 炮伤抗性 x (1 - 破甲))"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence3" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "护甲减半后生效，破甲可同时降低部分护甲效果和炮伤抗性效果"
+autowrap_mode = 3
+
+[node name="DamageDefence4" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence4" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "真实伤害"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence4" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "二级伤害 = 原始伤害"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence4" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "真伤直接无视护甲和魔抗以及炮伤抗性，但仍受后续步骤影响"
+autowrap_mode = 3
+
+[node name="DamageDefence5" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence5" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 36
+text = "超级伤害"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence5" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "二级伤害 = 原始伤害"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage6/DamageDefence5" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "超伤直接跳转到伤害应用阶段，不经过上述任何减伤步骤"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Damage7" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage7" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "3.易伤增幅"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage7" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "易伤会按百分比增加最终伤害（超伤不受影响）：
+ 
+三级伤害 = 二级伤害 x (1 + 易伤率)"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="Damage8" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage8" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "4.总伤减免"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage8" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "总伤减免是一种通用且结算在最后的伤害减免效果，对所有伤害类型生效（超伤除外）：
+ 
+最终伤害 = 三级伤害 x (1 - 总伤减免率)"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Damage9" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage9" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "5.伤害值取整与生命值扣除"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage9" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "最终伤害会被取整（保留一位小数），然后从目标生命值中扣除。物理伤害和魔法伤害的计算结果需要调用 snappedf （四舍五入）进行取整后再扣除。
+ 
+如果最终伤害低于0，则伤害会自动取0为最终伤害。"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="10"]
+layout_mode = 2
+
+[node name="Damage10" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage10" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "6.非致命伤害"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage10" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "部分攻击或效果被标记为“非致命伤害”（deadly = false）。如果本次伤害会将目标生命值降至 0 或 0 以下，则强制保留 1 点生命值，避免目标死亡。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="12"]
+layout_mode = 2
+
+[node name="Damage11" type="VBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage11" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "7.死亡判定"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/Damage11" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "当目标生命值降至 0 或以下时，触发死亡事件。部分小体型单位（Small 类型敌人，或者Soldier类型我方单位）在受到爆炸伤害死亡时，可能会触发特殊的死亡效果（如尸体爆炸）。"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 110
+theme_override_constants/margin_right = 55
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "各伤害类型总结"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_top = 490
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "秒杀机制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "秒杀是一类特殊的伤害结算方式，不经过常规的护甲/魔抗计算流程，而是直接判定目标死亡。游戏内分为 sec_kill 和 disappear_kill 两种类型。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "sec_kill（常规秒杀）"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="4"]
+layout_mode = 2
+text = "sec_kill 是游戏内最常见的秒杀方式，带有一个 explosion 的bool类型参数，用于控制是否触发尸体爆炸效果。
+ 
+部分情况下可能会起到禁亡语的效果，比如鸡骑士如果被带explosion参数的伤害致死（包括秒杀攻击），则不会生成尸国小鬼。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "disappear_kill（消失秒杀）"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="7"]
+layout_mode = 2
+text = "disappear_kill 是一种更彻底的秒杀方式，不会走任何 die 相关处理，而是执行一套完全独立的处理流程。该秒杀执行时受击目标会立即消失，通常情况下为了补足视觉效果，会额外放置一团灰尘作为视觉特效残留。
+ 
+该秒杀因为不走 die 相关处理，所以必定能够封禁亡语效果，比如鸡骑士的死亡生成尸国小鬼以及大刀兵的神赐技能，除非受击目标重写了disappear_kill的处理逻辑。"
+autowrap_mode = 3
+
+[node name="Table" type="Control" parent="." index="1"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Table" index="0"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 4778.0
+offset_right = 1195.0
+offset_bottom = 4818.0
+scale = Vector2(0.868123, 0.868123)
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Table/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "伤害类型"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Table/HBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "是否受护甲影响"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Table/HBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "是否受魔抗影响"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Table/HBoxContainer" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "是否受炮伤抗性影响"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Table/HBoxContainer" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "是否受总伤减免影响"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Table/HBoxContainer" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "是否受易伤影响"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Table" index="1"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 4824.0
+offset_right = 145.0
+offset_bottom = 4854.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Table/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "物伤"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Table/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "法伤"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Table/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "炮伤"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Table/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "真伤"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Table/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "超伤"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparators" type="Control" parent="Table" index="2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSeparator" type="HSeparator" parent="Table/HSeparators" index="0"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 4871.0
+offset_right = 1046.0
+offset_bottom = 4878.0
+
+[node name="HSeparator6" type="HSeparator" parent="Table/HSeparators" index="1"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 4810.0
+offset_right = 1046.0
+offset_bottom = 4817.0
+
+[node name="HSeparator2" type="HSeparator" parent="Table/HSeparators" index="2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 4941.0
+offset_right = 1046.0
+offset_bottom = 4948.0
+
+[node name="HSeparator3" type="HSeparator" parent="Table/HSeparators" index="3"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5012.0
+offset_right = 1046.0
+offset_bottom = 5019.0
+
+[node name="HSeparator4" type="HSeparator" parent="Table/HSeparators" index="4"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5084.0
+offset_right = 1046.0
+offset_bottom = 5091.0
+
+[node name="HSeparator5" type="HSeparator" parent="Table/HSeparators" index="5"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5160.0
+offset_right = 1046.0
+offset_bottom = 5167.0
+
+[node name="VSeparators" type="Control" parent="Table" index="3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VSeparator" type="VSeparator" parent="Table/VSeparators" index="0"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 4782.0
+offset_right = 159.0
+offset_bottom = 5162.0
+
+[node name="VSeparator2" type="VSeparator" parent="Table/VSeparators" index="1"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 4782.0
+offset_right = 323.0
+offset_bottom = 5162.0
+
+[node name="VSeparator3" type="VSeparator" parent="Table/VSeparators" index="2"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 4782.0
+offset_right = 484.0
+offset_bottom = 5162.0
+
+[node name="VSeparator4" type="VSeparator" parent="Table/VSeparators" index="3"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 4782.0
+offset_right = 684.0
+offset_bottom = 5162.0
+
+[node name="VSeparator5" type="VSeparator" parent="Table/VSeparators" index="4"]
+layout_mode = 0
+offset_left = 887.0
+offset_top = 4782.0
+offset_right = 891.0
+offset_bottom = 5162.0
+
+[node name="EffectIcons" type="Control" parent="Table" index="4"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Yes" type="TextureRect" parent="Table/EffectIcons" index="0"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 4814.0
+offset_right = 466.0
+offset_bottom = 5070.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes2" type="TextureRect" parent="Table/EffectIcons" index="1"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 4951.0
+offset_right = 466.0
+offset_bottom = 5207.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes3" type="TextureRect" parent="Table/EffectIcons" index="2"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 4951.0
+offset_right = 804.0
+offset_bottom = 5207.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes4" type="TextureRect" parent="Table/EffectIcons" index="3"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 4951.0
+offset_right = 1007.0
+offset_bottom = 5207.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes12" type="TextureRect" parent="Table/EffectIcons" index="4"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 4880.0
+offset_right = 632.0
+offset_bottom = 5136.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes5" type="TextureRect" parent="Table/EffectIcons" index="5"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 4878.0
+offset_right = 1007.0
+offset_bottom = 5134.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes6" type="TextureRect" parent="Table/EffectIcons" index="6"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 4813.0
+offset_right = 1007.0
+offset_bottom = 5069.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes7" type="TextureRect" parent="Table/EffectIcons" index="7"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 5023.0
+offset_right = 1007.0
+offset_bottom = 5279.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes8" type="TextureRect" parent="Table/EffectIcons" index="8"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 4951.0
+offset_right = 1199.0
+offset_bottom = 5207.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes9" type="TextureRect" parent="Table/EffectIcons" index="9"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 4878.0
+offset_right = 1199.0
+offset_bottom = 5134.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes10" type="TextureRect" parent="Table/EffectIcons" index="10"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 4813.0
+offset_right = 1199.0
+offset_bottom = 5069.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="Yes11" type="TextureRect" parent="Table/EffectIcons" index="11"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 5023.0
+offset_right = 1199.0
+offset_bottom = 5279.0
+scale = Vector2(0.219442, 0.219442)
+texture = SubResource("AtlasTexture_bgj3i")
+
+[node name="No" type="TextureRect" parent="Table/EffectIcons" index="12"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 4884.0
+offset_right = 470.0
+offset_bottom = 5140.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No2" type="TextureRect" parent="Table/EffectIcons" index="13"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 5027.0
+offset_right = 470.0
+offset_bottom = 5283.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No3" type="TextureRect" parent="Table/EffectIcons" index="14"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 5099.0
+offset_right = 470.0
+offset_bottom = 5355.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No4" type="TextureRect" parent="Table/EffectIcons" index="15"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 5099.0
+offset_right = 634.0
+offset_bottom = 5355.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No5" type="TextureRect" parent="Table/EffectIcons" index="16"]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 5099.0
+offset_right = 813.0
+offset_bottom = 5355.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No6" type="TextureRect" parent="Table/EffectIcons" index="17"]
+layout_mode = 0
+offset_left = 755.0
+offset_top = 5099.0
+offset_right = 1011.0
+offset_bottom = 5355.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No7" type="TextureRect" parent="Table/EffectIcons" index="18"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 5099.0
+offset_right = 1205.0
+offset_bottom = 5355.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No8" type="TextureRect" parent="Table/EffectIcons" index="19"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 5026.0
+offset_right = 633.0
+offset_bottom = 5282.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No9" type="TextureRect" parent="Table/EffectIcons" index="20"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 5026.0
+offset_right = 814.0
+offset_bottom = 5282.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No10" type="TextureRect" parent="Table/EffectIcons" index="21"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 4883.0
+offset_right = 814.0
+offset_bottom = 5139.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No11" type="TextureRect" parent="Table/EffectIcons" index="22"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 4816.0
+offset_right = 814.0
+offset_bottom = 5072.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No12" type="TextureRect" parent="Table/EffectIcons" index="23"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 4816.0
+offset_right = 634.0
+offset_bottom = 5072.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="No13" type="TextureRect" parent="Table/EffectIcons" index="24"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 4954.0
+offset_right = 634.0
+offset_bottom = 5210.0
+scale = Vector2(0.202839, 0.202839)
+texture = SubResource("AtlasTexture_0bxg2")
+
+[node name="Icons" type="Control" parent="." index="2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Icons" index="0"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 663.0
+offset_right = 263.0
+offset_bottom = 730.0
+texture = ExtResource("5_bo2bc")
+
+[node name="TextureRect2" type="TextureRect" parent="Icons" index="1"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 784.0
+offset_right = 266.0
+offset_bottom = 851.0
+texture = ExtResource("6_eemvx")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="Icons" index="2"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 926.0
+offset_right = 275.0
+offset_bottom = 993.0
+texture = ExtResource("7_5564i")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="Icons" index="3"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 1056.0
+offset_right = 275.0
+offset_bottom = 1123.0
+texture = ExtResource("8_1batm")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="Icons" index="4"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 1212.0
+offset_right = 281.0
+offset_bottom = 1279.0
+texture = ExtResource("9_562u8")
+stretch_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Icons" index="5"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 2503.0
+offset_right = 273.0
+offset_bottom = 2570.0
+texture = ExtResource("10_50sxj")
+stretch_mode = 3
+
+[node name="TextureRect7" type="TextureRect" parent="Icons" index="6"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 2673.0
+offset_right = 273.0
+offset_bottom = 2740.0
+texture = ExtResource("11_ts5lk")
+stretch_mode = 3
+
+[node name="TextureRect8" type="TextureRect" parent="Icons" index="7"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 2852.0
+offset_right = 273.0
+offset_bottom = 2921.0
+texture = ExtResource("10_50sxj")
+stretch_mode = 3
+
+[node name="TextureRect10" type="TextureRect" parent="Icons" index="8"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 3422.0
+offset_right = 312.0
+offset_bottom = 3491.0
+texture = ExtResource("12_8ltbm")
+stretch_mode = 3
+
+[node name="TextureRect11" type="TextureRect" parent="Icons" index="9"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 3668.0
+offset_right = 313.0
+offset_bottom = 3740.0
+texture = ExtResource("13_v3giu")
+stretch_mode = 3
+
+[node name="TextureRect9" type="TextureRect" parent="Icons" index="10"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 2852.0
+offset_right = 352.0
+offset_bottom = 2921.0
+texture = ExtResource("14_hmins")
+stretch_mode = 3
+
+[node name="TextureRect12" type="TextureRect" parent="Icons" index="11"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 5497.0
+offset_right = 648.0
+offset_bottom = 5753.0
+scale = Vector2(0.637106, 0.637106)
+texture = ExtResource("15_3iudx")
+stretch_mode = 3
+
+[node name="TextureRect13" type="TextureRect" parent="Icons" index="12"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 5816.0
+offset_right = 889.0
+offset_bottom = 6128.0
+scale = Vector2(0.382962, 0.382962)
+texture = ExtResource("16_dd3cr")
+stretch_mode = 3
+
+[node name="Panel" type="Panel" parent="Icons/TextureRect13" index="0"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 42.0
+offset_top = 94.0
+offset_right = 372.0
+offset_bottom = 384.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("15_ljub6")]
+layout_mode = 2
+text = "伤害类型"
+wiki_page = NodePath("../../..")
+target_pos = -495.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("15_ljub6")]
+layout_mode = 2
+text = "伤害结算流程"
+wiki_page = NodePath("../../..")
+target_pos = -1444.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("15_ljub6")]
+layout_mode = 2
+text = "伤害类型总结"
+wiki_page = NodePath("../../..")
+target_pos = -4624.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("15_ljub6")]
+layout_mode = 2
+text = "秒杀机制"
+wiki_page = NodePath("../../..")
+target_pos = -5252.0

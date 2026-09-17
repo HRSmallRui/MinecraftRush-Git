@@ -1,10 +1,13 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://dvvqd6no6dxjv"]
+[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://b4v6b3rl5up6k"]
 
 [sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_q5ou7"]
 resource_name = "HardLimiter"
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_rxj3x"]
 resource_name = "EQ"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_qchvf"]
+resource_name = "Compressor"
 
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectHardLimiter_q5ou7")
@@ -23,3 +26,5 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectCompressor_qchvf")
+bus/2/effect/0/enabled = true

@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://ysbagmdlk5p4"]
+
+[ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_e3hkq"]
+[ext_resource type="Texture2D" uid="uid://cn1s81gejqiti" path="res://Assets/Images/UI/Wiki/Index/world.png" id="2_84pmd"]
+[ext_resource type="PackedScene" uid="uid://lwt3dj7vkteg" path="res://Scenes/UI-Components/Wiki/wiki_button.tscn" id="3_d15m5"]
+[ext_resource type="Texture2D" uid="uid://bkq3q4lwcyx63" path="res://Assets/Images/UI/button.png" id="4_qpqba"]
+[ext_resource type="Texture2D" uid="uid://byr6h758xi36p" path="res://Assets/Images/UI/Wiki/GameBased/Index/图标说明.png" id="5_egaax"]
+[ext_resource type="Texture2D" uid="uid://s2g8wml2pdo3" path="res://Assets/Images/UI/Wiki/GameBased/Index/科技升级.png" id="6_1hm42"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gkag"]
+atlas = ExtResource("4_qpqba")
+region = Rect2(98, 192, 331, 143)
+
+[node name="WikiWorld" instance=ExtResource("1_e3hkq")]
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_84pmd")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "世界观"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "了解游戏世界的背景故事、剧情术语与角色故事。本章节汇总游戏内的叙事内容，包括主线剧情梗概、专有名词解释，以及支线与角色小故事。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 160
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+z_index = 1
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="WikiButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer" index="0" instance=ExtResource("3_d15m5")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_2gkag")
+button_text = "术语解释"
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_data_level.tscn"
+white_theme_texture = SubResource("AtlasTexture_2gkag")
+
+[node name="WikiButton2" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer" index="1" instance=ExtResource("3_d15m5")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_2gkag")
+button_text = "大体剧情"
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_icon_intro.tscn"
+white_theme_texture = SubResource("AtlasTexture_2gkag")
+
+[node name="WikiButton3" parent="VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer" index="2" instance=ExtResource("3_d15m5")]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_2gkag")
+button_text = "局部故事"
+linked_path = "res://Scenes/WikiPages/GameBased/wiki_damage_intro.tscn"
+white_theme_texture = SubResource("AtlasTexture_2gkag")
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 510.0
+offset_right = 211.0
+offset_bottom = 629.0
+scale = Vector2(1.54367, 1.54367)
+texture = ExtResource("5_egaax")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 516.0
+offset_right = 588.0
+offset_bottom = 635.0
+scale = Vector2(1.54367, 1.54367)
+texture = ExtResource("2_84pmd")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 515.0
+offset_right = 955.0
+offset_bottom = 634.0
+scale = Vector2(1.54367, 1.54367)
+texture = ExtResource("6_1hm42")
+stretch_mode = 3

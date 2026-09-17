@@ -1,11 +1,11 @@
-[gd_scene load_steps=240 format=3 uid="uid://b1ocvkd8k1846"]
+[gd_scene load_steps=245 format=3 uid="uid://b1ocvkd8k1846"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_pyoss"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_7nihw"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_6_campaign.gd" id="2_cgxf2"]
 [ext_resource type="PackedScene" uid="uid://dk7q4k0117mlj" path="res://Scenes/Enemies/enemy_10.tscn" id="3_dpae6"]
 [ext_resource type="Texture2D" uid="uid://cv3ut8fbkbh2t" path="res://Assets/Images/Stages/Stage6/Stage6-based.png" id="3_k70ni"]
-[ext_resource type="PackedScene" uid="uid://pgltvb47843k" path="res://Scenes/UI-Components/TipButtons/rain_tip_button.tscn" id="3_kt1n7"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/TipButtons/rain_tip_button.tscn" id="3_kt1n7"]
 [ext_resource type="AudioStream" uid="uid://cudoongsdo5nn" path="res://Assets/Sounds/Music/雨林-准备2.mp3" id="3_ory83"]
 [ext_resource type="AudioStream" uid="uid://ctfffwa4ensw2" path="res://Assets/Sounds/Music/雨林-战斗1.mp3" id="4_3uans"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="4_j1o1f"]
@@ -290,6 +290,52 @@ size = Vector2(2240, 1522)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4jy50"]
 size = Vector2(2197, 1463)
+
+[sub_resource type="Gradient" id="Gradient_jc6fh"]
+colors = PackedColorArray(0.223529, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4b0ir"]
+gradient = SubResource("Gradient_jc6fh")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Animation" id="Animation_aaawg"]
+resource_name = "loop"
+length = 0.5
+loop_mode = 2
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_3k8ve"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sovn3"]
+_data = {
+"RESET": SubResource("Animation_3k8ve"),
+"loop": SubResource("Animation_aaawg")
+}
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vljsf"]
 vertices = PackedVector2Array(-7.84375, 1441.08, -37.9766, 1101.95, 668.602, 1161.34, 2194.3, 1461.9, 911.672, 932.688, 1477.61, 1114.1, 472.797, 398.758, -1.34375, 471.398, -9.75, 197.578, 222.492, 134.938, 664.617, 118.008, 848.961, 518.352, 912.602, 146.672, 1084.63, 253.93, 1318.84, 521.398, 1981.43, 129.008, 2185.46, 157.609, 2169.66, 418.789, 1606.83, 350.656, 1441.66, 139.969, 1331.11, 949.93, 2205.67, 1097.24)
@@ -1436,6 +1482,18 @@ shape = SubResource("RectangleShape2D_4jy50")
 
 [node name="Flag" parent="Background" index="30"]
 position = Vector2(2110, 234)
+
+[node name="TombLight" type="PointLight2D" parent="Background" index="32"]
+position = Vector2(1769, 40)
+range_z_min = -1
+range_z_max = 2
+texture = SubResource("GradientTexture2D_4b0ir")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/TombLight" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_sovn3")
+}
+autoplay = "loop"
 
 [node name="StageNavigationRegion" parent="." index="8"]
 navigation_polygon = SubResource("NavigationPolygon_vljsf")

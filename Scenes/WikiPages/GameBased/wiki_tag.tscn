@@ -1,0 +1,406 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwxc1v7jb0q11"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/Templates/wiki_page_game_based.tscn" id="1_ndryr"]
+[ext_resource type="Texture2D" uid="uid://bouos3o6f35l7" path="res://Assets/Images/UI/Wiki/GameBased/Index/标签系统.png" id="2_2l43n"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="3_77omc"]
+
+
+[node name="WikiTag" instance=ExtResource("1_ndryr")]
+offset_bottom = 5464.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_2l43n")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "标签系统"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "标签是附着在我方单位、敌方单位和防御塔上的一种标识，用于描述单位的特性与类别。标签本身不直接产生效果，而是作为过滤条件参与游戏内的各类判定。本章节介绍标签的作用范围、过滤逻辑和常见应用场景。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "标签的作用对象"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+text = "标签可以挂载在以下三种单位上：
+ 
+-我方单位
+-敌方单位
+-防御塔
+ 
+标签是单位的属性之一，同一单位可以同时拥有多个标签。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "过滤机制"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+text = "标签在游戏中的核心功能是过滤判定——即判断某个效果是否对目标生效。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "过滤逻辑"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/line_spacing = 6
+text = "某效果尝试对目标生效
+    ↓
+检查该效果携带的过滤条件（如免疫标签组）
+    ↓
+目标是否持有匹配的标签？
+    ├── 是 → 效果不生效（被过滤）
+    └── 否 → 效果正常生效"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "两大应用场景"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+text = "buff/debuff 过滤：buff 携带 immune_group（免疫标签组），目标持有其中任意标签则免疫该 buff。
+ 
+判定过滤：某些技能的释放或命中需要检查目标的标签，通常用于在一个原始组内查询是否有携带对应免疫标签的单位。"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer7" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "常见标签"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "boss"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="3"]
+layout_mode = 2
+text = "常见持有者： Boss级单位，小Boss单位
+ 
+常见效果： 免疫大部分负面效果"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "creeper"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="6"]
+layout_mode = 2
+text = "常见持有者：苦力怕类单位
+ 
+常见效果： 免电，雷击之后附加闪电护盾效果并移除creeper标签"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="7"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "desert"
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="9"]
+layout_mode = 2
+text = "常见持有者：沙漠本地单位
+ 
+常见效果： 免疫烈阳效果"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="10"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "enderman"
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="12"]
+layout_mode = 2
+text = "常见持有者：末影人类单位
+ 
+常见效果： 会被下雨机制伤害"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="13"]
+layout_mode = 2
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "god"
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="15"]
+layout_mode = 2
+text = "常见持有者：神明级单位
+ 
+常见效果： 免疫所有负面效果，几乎所有秒杀类效果都会刻意避开god标签"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="16"]
+layout_mode = 2
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "illager"
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="18"]
+layout_mode = 2
+text = "常见持有者： 刌民类单位
+ 
+常见效果： 受到劫掠哨塔攻击时，伤害转变为双倍面板真伤"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="19"]
+layout_mode = 2
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="20"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "metal"
+
+[node name="Label15" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="21"]
+layout_mode = 2
+text = "常见持有者： 钢铁类单位
+ 
+常见效果： 烈阳效果下会被赋予烈阳反伤效果"
+autowrap_mode = 3
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="22"]
+layout_mode = 2
+
+[node name="Label16" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="23"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "no_live"
+
+[node name="Label17" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="24"]
+layout_mode = 2
+text = "常见持有者： 无生命体单位
+ 
+常见效果： 无法被饥饿，吸血效果影响，免疫大部分环境效果"
+autowrap_mode = 3
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="25"]
+layout_mode = 2
+
+[node name="Label18" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="26"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "red_stone"
+
+[node name="Label19" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="27"]
+layout_mode = 2
+text = "常见持有者： 演算者机甲
+ 
+常见效果： 会被下雨机制伤害"
+autowrap_mode = 3
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="28"]
+layout_mode = 2
+
+[node name="Label20" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="29"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "robot"
+
+[node name="Label21" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="30"]
+layout_mode = 2
+text = "常见持有者： 机器人类单位
+ 
+常见效果： 免疫大部分环境效果，无法被饥饿，吸血效果影响"
+autowrap_mode = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="31"]
+layout_mode = 2
+
+[node name="Label22" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="32"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "skeleton"
+
+[node name="Label23" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="33"]
+layout_mode = 2
+text = "常见持有者： 骷髅类单位
+ 
+常见效果： 免疫常规流血效果"
+autowrap_mode = 3
+
+[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="34"]
+layout_mode = 2
+
+[node name="Label24" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="35"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "special"
+
+[node name="Label25" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="36"]
+layout_mode = 2
+text = "常见持有者： 特殊单位
+ 
+常见效果： 非常规过滤"
+autowrap_mode = 3
+
+[node name="MarginContainer13" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="37"]
+layout_mode = 2
+
+[node name="Label26" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="38"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "super_unit"
+
+[node name="Label27" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="39"]
+layout_mode = 2
+text = "常见持有者： 白眼类单位
+ 
+常见效果： 免疫大部分负面效果"
+autowrap_mode = 3
+
+[node name="MarginContainer14" type="MarginContainer" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="40"]
+layout_mode = 2
+
+[node name="Label28" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="41"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.482353, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.482353, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "undead"
+
+[node name="Label29" type="Label" parent="VBoxContainer/MarginContainer7/VBoxContainer" index="42"]
+layout_mode = 2
+text = "常见持有者： 亡灵类单位
+ 
+常见效果： 免疫常规中毒效果，会被恢复类效果伤害"
+autowrap_mode = 3
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 63.0
+offset_top = 189.0
+offset_right = 497.0
+offset_bottom = 479.0
+scale = Vector2(0.670994, 0.670994)
+theme_override_constants/separation = 20
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("3_77omc")]
+layout_mode = 2
+text = "标签的作用对象"
+wiki_page = NodePath("../../..")
+target_pos = -521.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("3_77omc")]
+layout_mode = 2
+text = "过滤机制"
+wiki_page = NodePath("../../..")
+target_pos = -987.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("3_77omc")]
+layout_mode = 2
+text = "常见标签"
+wiki_page = NodePath("../../..")
+target_pos = -1908.0

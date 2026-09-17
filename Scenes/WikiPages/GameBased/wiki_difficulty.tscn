@@ -1,0 +1,217 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbd77pw42tvb4"]
+
+[ext_resource type="PackedScene" uid="uid://bndf31iolnfdv" path="res://Scenes/WikiPages/Templates/wiki_page_game_based.tscn" id="1_sp0pc"]
+[ext_resource type="Texture2D" uid="uid://dwfa1a5oucaf3" path="res://Assets/Images/UI/Maps/medium.png" id="2_82arf"]
+[ext_resource type="Texture2D" uid="uid://cuav7p4vojc18" path="res://Assets/Images/UI/Wiki/GameBased/Index/difficulty.png" id="2_y50lg"]
+[ext_resource type="Texture2D" uid="uid://buwcdcg8ptp1x" path="res://Assets/Images/UI/Wiki/GameBased/difficulty.png" id="3_6gkwx"]
+[ext_resource type="Texture2D" uid="uid://bivq3u4xnj4px" path="res://Assets/Images/UI/Maps/easy.png" id="4_2opyv"]
+[ext_resource type="Texture2D" uid="uid://d4bdrwa2kowve" path="res://Assets/Images/UI/Maps/hard.png" id="6_f4ixf"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="7_hvw1q"]
+
+
+[node name="WikiDifficulty" instance=ExtResource("1_sp0pc")]
+offset_bottom = 2578.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_y50lg")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "难度选择"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "难度选择是关卡开始前可选的设置项，用于调节敌方单位的战斗强度。本章节介绍三种难度的通用规则与影响范围。关于具体敌人在不同难度下的详细数值，请查阅[敌方单位板块]的对应详情页。"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "难度选择入口"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "新存档开始时"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+text = "创建新存档时，游戏会询问要选择的难度，确认后开始游戏。"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "主地图页面 -> 设置选项"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+text = "点击“简单”/“普通”/“困难”（当前难度）按钮，即可进入难度选择页面，选择对应难度后页面消失，难度即时生效"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_top = 430
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "难度分类"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="1"]
+layout_mode = 2
+text = "游戏内共有三种难度："
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.745098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.745098, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "简单难度"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="4"]
+layout_mode = 2
+text = "描述： 敌人较为脆弱，适合新手。
+ 
+效果： 敌人血量维持在0.8倍血量。"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.386373, 0.235299, 1)
+theme_override_colors/font_outline_color = Color(1, 0.386373, 0.235299, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "普通难度"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="7"]
+layout_mode = 2
+text = "描述： 中规中矩，不错的挑战
+ 
+效果： 敌人血量维持在1.0倍血量。"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.908041, 0, 0.160927, 1)
+theme_override_colors/font_outline_color = Color(0.908041, 0, 0.160927, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "困难难度"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer6/VBoxContainer" index="10"]
+layout_mode = 2
+text = "描述： 敌人更加顽强，风险更高，谨慎选择
+ 
+效果： 敌人血量维持在1.2倍血量，部分敌人的特殊技能会更加强力。"
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_top = 1023.0
+offset_right = 3808.0
+offset_bottom = 2615.0
+scale = Vector2(0.290214, 0.290214)
+texture = ExtResource("3_6gkwx")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 1742.0
+offset_right = 730.0
+offset_bottom = 2268.0
+scale = Vector2(0.2368, 0.2368)
+texture = ExtResource("4_2opyv")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 1982.0
+offset_right = 736.0
+offset_bottom = 2508.0
+scale = Vector2(0.2368, 0.2368)
+texture = ExtResource("2_82arf")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="3"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 2200.0
+offset_right = 733.0
+offset_bottom = 2726.0
+scale = Vector2(0.2368, 0.2368)
+texture = ExtResource("6_f4ixf")
+stretch_mode = 3
+
+[node name="NavigationVBox" parent="TopMenu" index="1"]
+offset_left = 62.0
+offset_top = 144.0
+offset_right = 450.0
+offset_bottom = 334.0
+scale = Vector2(0.763331, 0.763331)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("7_hvw1q")]
+layout_mode = 2
+text = "难度选择入口"
+wiki_page = NodePath("../../..")
+target_pos = -539.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("7_hvw1q")]
+layout_mode = 2
+text = "难度分类"
+wiki_page = NodePath("../../..")
+target_pos = -1549.0
