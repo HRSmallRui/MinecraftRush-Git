@@ -17,6 +17,8 @@ static var instance: WikiManager
 @onready var back_button: TextureButton = $ButtonGroup/BackButton
 @onready var home_button: TextureButton = $ButtonGroup/HomeButton
 @onready var front_button: TextureButton = $ButtonGroup/FrontButton
+@onready var tip_panel: PanelContainer = $TipPanel
+@onready var tip_label: Label = $TipPanel/TipLabel
 
 
 func _init() -> void:
@@ -27,6 +29,7 @@ func _init() -> void:
 func _ready() -> void:
 	into_color_mode(DisplayServer.is_dark_mode())
 	update_button_states()
+	tip_panel.hide()
 	pass
 
 
@@ -50,7 +53,7 @@ func into_color_mode(is_dark_mode: bool):
 	pass
 
 
-func into_new_wiki_page(page_path: String, mode: int = 0):
+func into_new_wiki_page(page_path: String, mode: int = 0, target_pos: float = 0):
 	if page_path.length() == 0: return
 	if mode == 0:
 		back_page_stack.append(page_path)
@@ -64,6 +67,8 @@ func into_new_wiki_page(page_path: String, mode: int = 0):
 	var new_wiki_page_scene: PackedScene = load(page_path)
 	var new_wiki_page: WikiPage = new_wiki_page_scene.instantiate()
 	content_page.add_child(new_wiki_page)
+	new_wiki_page.position.y = target_pos
+	new_wiki_page.update_scroll()
 	
 	update_button_states()
 	pass
@@ -93,3 +98,19 @@ func _on_front_button_pressed() -> void:
 	back_page_step_stack.append(0)
 	update_button_states()
 	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	tip_panel.global_position = get_local_mouse_position()
+	pass
+
+
+func tip_show(tip_text: String):
+	tip_panel.show()
+	tip_label.text = tip_text
+	pass
+
+
+func tip_hide():
+	tip_panel.hide()
+	pass

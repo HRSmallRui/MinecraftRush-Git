@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ksdihne2yldg"]
+
+[ext_resource type="Texture2D" uid="uid://ccun8enm5qa0s" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程物伤.png" id="1_0u7pa"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_property_texture.gd" id="2_mbe6f"]
+
+[node name="WikiPropertyTexture" type="TextureRect"]
+texture = ExtResource("1_0u7pa")
+stretch_mode = 3
+script = ExtResource("2_mbe6f")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
