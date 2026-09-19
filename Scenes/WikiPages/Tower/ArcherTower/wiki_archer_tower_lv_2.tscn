@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://c4284o51mklne"]
+[gd_scene load_steps=63 format=3 uid="uid://c4284o51mklne"]
 
 [ext_resource type="PackedScene" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_pw3il"]
 [ext_resource type="Texture2D" uid="uid://cmtm8p5njn6jv" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer1.png" id="2_5tipm"]
@@ -55,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://b5ybhcxbilra5" path="res://Assets/Animations/Archers/LV2/ArcherLV2-Back_19.png" id="53_6ls1n"]
 [ext_resource type="Texture2D" uid="uid://dnrjwlo4a0s34" path="res://Assets/Animations/Archers/LV2/ArcherLV2-Back_20.png" id="54_fswha"]
 [ext_resource type="Texture2D" uid="uid://bcnmx75i6cm4f" path="res://Assets/Images/UI/Upgrade/Archers/青龙之眼.png" id="56_ake2x"]
+[ext_resource type="Texture2D" uid="uid://c6selkcma2jq4" path="res://Assets/Images/Bullets/箭.png" id="57_v4usd"]
 [ext_resource type="Texture2D" uid="uid://hhfvmdmrypkx" path="res://Assets/Images/UI/Upgrade/Archers/充足木料.png" id="57_y0ycw"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="58_xx5cw"]
 
@@ -284,6 +285,7 @@ layout_mode = 2
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer2" index="0" instance=ExtResource("3_wdvo2")]
 layout_mode = 2
 texture_normal = ExtResource("4_yvaq3")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_3.tscn"
 name_text = "皇家射手高台"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="6"]
@@ -582,6 +584,20 @@ texture_normal = SubResource("AtlasTexture_0qn6n")
 target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
 target_page_pos = -966.0
 name_text = ""
+
+[node name="Arrow" type="Sprite2D" parent="FreeNodes" index="11"]
+position = Vector2(884, 3371)
+scale = Vector2(2.18374, 2.18374)
+texture = ExtResource("57_v4usd")
+
+[node name="Label3" type="Label" parent="FreeNodes" index="12"]
+offset_left = 835.0
+offset_top = 3433.05
+offset_right = 953.0
+offset_bottom = 3457.05
+text = "子弹素材"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("58_xx5cw")]
 layout_mode = 2
