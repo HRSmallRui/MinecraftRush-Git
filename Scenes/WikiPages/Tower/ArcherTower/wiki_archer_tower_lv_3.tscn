@@ -241,7 +241,9 @@ theme_override_constants/margin_right = 50
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "经受过专业训练的皇帝贴身射手护卫，誓死捍卫帝国的领土，坚决不让敌人踏足土地一步。"
+text = "经受过专业训练的皇帝贴身射手护卫，誓死捍卫帝国的领土，坚决不让敌人踏足土地一步。
+ 
+首次解锁于第3关： 战扎城"
 autowrap_mode = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
@@ -298,6 +300,7 @@ name_text = "投石高塔"
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer2" index="1" instance=ExtResource("3_6gnsl")]
 layout_mode = 2
 texture_normal = ExtResource("6_fh0bj")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_4-2.tscn"
 name_text = "沙漠哨塔"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer2" index="2" instance=ExtResource("3_6gnsl")]
@@ -353,9 +356,9 @@ text = "动画素材"
 [node name="WikiTable" parent="FreeNodes" index="0" instance=ExtResource("5_3kif0")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 1402.0
+offset_top = 1458.0
 offset_right = 911.0
-offset_bottom = 1810.0
+offset_bottom = 1866.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable" index="0" instance=ExtResource("6_6ivwa")]
 layout_mode = 2
@@ -449,9 +452,9 @@ vertical_alignment = 1
 [node name="WikiTable2" parent="FreeNodes" index="1" instance=ExtResource("5_3kif0")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 2379.0
+offset_top = 2435.0
 offset_right = 911.0
-offset_bottom = 2459.0
+offset_bottom = 2515.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable2" index="0" instance=ExtResource("6_6ivwa")]
 layout_mode = 2
@@ -474,9 +477,9 @@ vertical_alignment = 1
 [node name="WikiTable3" parent="FreeNodes" index="2" instance=ExtResource("5_3kif0")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 2993.0
+offset_top = 3049.0
 offset_right = 911.0
-offset_bottom = 3155.0
+offset_bottom = 3211.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable3" index="0" instance=ExtResource("6_6ivwa")]
 layout_mode = 2
@@ -515,7 +518,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Tower" type="Sprite2D" parent="FreeNodes" index="3"]
-position = Vector2(558, 1994)
+position = Vector2(558, 2050)
 texture = ExtResource("14_m5rxg")
 
 [node name="TowerRange" type="Node2D" parent="FreeNodes/Tower" index="0"]
@@ -540,7 +543,7 @@ position = Vector2(0, -5)
 texture = ExtResource("17_qqpx3")
 
 [node name="Tower2" type="Sprite2D" parent="FreeNodes" index="4"]
-position = Vector2(558, 2671)
+position = Vector2(558, 2727)
 texture = ExtResource("14_m5rxg")
 
 [node name="TowerRange" type="Node2D" parent="FreeNodes/Tower2" index="0"]
@@ -551,25 +554,33 @@ scale = Vector2(4.14, 4.14)
 scale = Vector2(0.4, 0.28)
 texture = ExtResource("12_a0dav")
 
-[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower2" index="1"]
+[node name="TowerRange2" type="Node2D" parent="FreeNodes/Tower2" index="1"]
+position = Vector2(0, 20)
+scale = Vector2(3.6, 3.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower2/TowerRange2" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("12_a0dav")
+
+[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower2" index="2"]
 position = Vector2(27, -27)
 texture = ExtResource("16_38t1m")
 
-[node name="Archer2" type="Sprite2D" parent="FreeNodes/Tower2" index="2"]
+[node name="Archer2" type="Sprite2D" parent="FreeNodes/Tower2" index="3"]
 position = Vector2(-21, -27)
 scale = Vector2(-1, 1)
 texture = ExtResource("16_38t1m")
 
-[node name="Front" type="Sprite2D" parent="FreeNodes/Tower2" index="3"]
+[node name="Front" type="Sprite2D" parent="FreeNodes/Tower2" index="4"]
 position = Vector2(0, -5)
 texture = ExtResource("17_qqpx3")
 
 [node name="WikiHeadTextureButton" parent="FreeNodes" index="5" instance=ExtResource("3_6gnsl")]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 2269.0
+offset_top = 2325.0
 offset_right = 298.0
-offset_bottom = 2338.0
+offset_bottom = 2394.0
 texture_normal = SubResource("AtlasTexture_7meco")
 target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
 target_page_pos = -742.0
@@ -578,23 +589,23 @@ name_text = ""
 [node name="WikiHeadTextureButton2" parent="FreeNodes" index="6" instance=ExtResource("3_6gnsl")]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 2901.0
+offset_top = 2957.0
 offset_right = 298.0
-offset_bottom = 2970.0
+offset_bottom = 3026.0
 texture_normal = SubResource("AtlasTexture_0qn6n")
 target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
 target_page_pos = -966.0
 name_text = ""
 
 [node name="ShooterFront" type="AnimatedSprite2D" parent="FreeNodes" index="7"]
-position = Vector2(223, 3464.05)
+position = Vector2(223, 3520.05)
 scale = Vector2(2.47844, 2.47844)
 sprite_frames = SubResource("SpriteFrames_jhvyt")
 autoplay = "default"
 frame_progress = 0.121013
 
 [node name="ShooterBack" type="AnimatedSprite2D" parent="FreeNodes" index="8"]
-position = Vector2(627, 3464.05)
+position = Vector2(627, 3520.05)
 scale = Vector2(2.47844, 2.47844)
 sprite_frames = SubResource("SpriteFrames_rjljr")
 autoplay = "default"
@@ -603,9 +614,9 @@ frame_progress = 0.737908
 [node name="Label" type="Label" parent="FreeNodes" index="9"]
 layout_mode = 0
 offset_left = 163.0
-offset_top = 3526.05
+offset_top = 3582.05
 offset_right = 281.0
-offset_bottom = 3550.05
+offset_bottom = 3606.05
 text = "正面射击"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -613,24 +624,24 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="FreeNodes" index="10"]
 layout_mode = 0
 offset_left = 561.0
-offset_top = 3526.05
+offset_top = 3582.05
 offset_right = 679.0
-offset_bottom = 3550.05
+offset_bottom = 3606.05
 text = "背面射击"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Arrow" type="Sprite2D" parent="FreeNodes" index="11"]
-position = Vector2(884, 3464.94)
+position = Vector2(884, 3520.94)
 scale = Vector2(2.18374, 2.18374)
 texture = ExtResource("61_4oq83")
 
 [node name="Label3" type="Label" parent="FreeNodes" index="12"]
 layout_mode = 0
 offset_left = 835.0
-offset_top = 3526.99
+offset_top = 3582.99
 offset_right = 953.0
-offset_bottom = 3550.99
+offset_bottom = 3606.99
 text = "子弹素材"
 horizontal_alignment = 1
 vertical_alignment = 1

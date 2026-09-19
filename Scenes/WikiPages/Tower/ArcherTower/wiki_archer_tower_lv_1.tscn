@@ -1,6 +1,6 @@
 [gd_scene load_steps=64 format=3 uid="uid://dvn00vu4y82ki"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_8d660"]
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_8d660"]
 [ext_resource type="Texture2D" uid="uid://t8t13hhfditg" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer0.png" id="2_qnwir"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_bcuel"]
 [ext_resource type="Texture2D" uid="uid://dudk0rkpl57xj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Based.png" id="4_f4r76"]
@@ -238,7 +238,9 @@ theme_override_constants/margin_right = 50
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "弓箭手站在高台上，打击来犯的敌人。"
+text = "弓箭手站在高台上，打击来犯的敌人。
+ 
+首次解锁于第1关： 皇城东门"
 autowrap_mode = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
@@ -337,9 +339,9 @@ text = "动画素材"
 [node name="WikiTable" parent="FreeNodes" index="0" instance=ExtResource("6_sbtln")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 1402.0
+offset_top = 1455.0
 offset_right = 911.0
-offset_bottom = 1810.0
+offset_bottom = 1863.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable" index="0" instance=ExtResource("7_prk3f")]
 layout_mode = 2
@@ -433,9 +435,9 @@ vertical_alignment = 1
 [node name="WikiTable2" parent="FreeNodes" index="1" instance=ExtResource("6_sbtln")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 2379.0
+offset_top = 2432.0
 offset_right = 911.0
-offset_bottom = 2459.0
+offset_bottom = 2512.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable2" index="0" instance=ExtResource("7_prk3f")]
 layout_mode = 2
@@ -458,9 +460,9 @@ vertical_alignment = 1
 [node name="WikiTable3" parent="FreeNodes" index="2" instance=ExtResource("6_sbtln")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 2895.0
+offset_top = 2948.0
 offset_right = 911.0
-offset_bottom = 3057.0
+offset_bottom = 3110.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable3" index="0" instance=ExtResource("7_prk3f")]
 layout_mode = 2
@@ -499,7 +501,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Tower" type="Sprite2D" parent="FreeNodes" index="3"]
-position = Vector2(558, 1962)
+position = Vector2(558, 2015)
 texture = ExtResource("12_kc3r1")
 
 [node name="TowerRange" type="Node2D" parent="FreeNodes/Tower" index="0"]
@@ -511,7 +513,7 @@ scale = Vector2(0.4, 0.28)
 texture = ExtResource("13_bqdlr")
 
 [node name="Tower2" type="Sprite2D" parent="FreeNodes" index="4"]
-position = Vector2(558, 2612)
+position = Vector2(558, 2665)
 texture = ExtResource("12_kc3r1")
 
 [node name="TowerRange" type="Node2D" parent="FreeNodes/Tower2" index="0"]
@@ -522,15 +524,23 @@ scale = Vector2(3.22, 3.22)
 scale = Vector2(0.4, 0.28)
 texture = ExtResource("13_bqdlr")
 
+[node name="TowerRange2" type="Node2D" parent="FreeNodes/Tower2" index="1"]
+position = Vector2(0, 30)
+scale = Vector2(2.8, 2.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower2/TowerRange2" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("13_bqdlr")
+
 [node name="ShooterFront" type="AnimatedSprite2D" parent="FreeNodes" index="5"]
-position = Vector2(223, 3371.05)
+position = Vector2(223, 3424.05)
 scale = Vector2(2.47844, 2.47844)
 sprite_frames = SubResource("SpriteFrames_piyye")
 autoplay = "default"
 frame_progress = 0.311274
 
 [node name="ShooterBack" type="AnimatedSprite2D" parent="FreeNodes" index="6"]
-position = Vector2(627, 3371.05)
+position = Vector2(627, 3424.05)
 scale = Vector2(2.47844, 2.47844)
 sprite_frames = SubResource("SpriteFrames_husik")
 autoplay = "default"
@@ -539,9 +549,9 @@ frame_progress = 0.407986
 [node name="Label" type="Label" parent="FreeNodes" index="7"]
 layout_mode = 0
 offset_left = 163.0
-offset_top = 3433.05
+offset_top = 3486.05
 offset_right = 281.0
-offset_bottom = 3457.05
+offset_bottom = 3510.05
 text = "正面射击"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -549,9 +559,9 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="FreeNodes" index="8"]
 layout_mode = 0
 offset_left = 561.0
-offset_top = 3433.05
+offset_top = 3486.05
 offset_right = 679.0
-offset_bottom = 3457.05
+offset_bottom = 3510.05
 text = "背面射击"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -559,9 +569,9 @@ vertical_alignment = 1
 [node name="WikiHeadTextureButton" parent="FreeNodes" index="9" instance=ExtResource("3_bcuel")]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 2269.0
+offset_top = 2322.0
 offset_right = 298.0
-offset_bottom = 2338.0
+offset_bottom = 2391.0
 texture_normal = SubResource("AtlasTexture_7meco")
 target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
 target_page_pos = -742.0
@@ -570,25 +580,25 @@ name_text = ""
 [node name="WikiHeadTextureButton2" parent="FreeNodes" index="10" instance=ExtResource("3_bcuel")]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 2810.0
+offset_top = 2863.0
 offset_right = 298.0
-offset_bottom = 2879.0
+offset_bottom = 2932.0
 texture_normal = SubResource("AtlasTexture_0qn6n")
 target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
 target_page_pos = -966.0
 name_text = ""
 
 [node name="Arrow" type="Sprite2D" parent="FreeNodes" index="11"]
-position = Vector2(884, 3371)
+position = Vector2(884, 3424)
 scale = Vector2(2.18374, 2.18374)
 texture = ExtResource("58_lgqex")
 
 [node name="Label3" type="Label" parent="FreeNodes" index="12"]
 layout_mode = 0
 offset_left = 835.0
-offset_top = 3433.05
+offset_top = 3486.05
 offset_right = 953.0
-offset_bottom = 3457.05
+offset_bottom = 3510.05
 text = "子弹素材"
 horizontal_alignment = 1
 vertical_alignment = 1

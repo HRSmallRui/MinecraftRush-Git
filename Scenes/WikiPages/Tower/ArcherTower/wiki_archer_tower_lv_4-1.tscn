@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://by2vda7dqy1nb"]
+[gd_scene load_steps=147 format=3 uid="uid://by2vda7dqy1nb"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_rckhf"]
 [ext_resource type="Texture2D" uid="uid://o36roo1555tf" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer3.png" id="2_nwyut"]
@@ -140,6 +140,7 @@
 [ext_resource type="Texture2D" uid="uid://cofnlv67wb2sc" path="res://Assets/Images/Bullets/stone.png" id="133_bgi63"]
 [ext_resource type="Texture2D" uid="uid://cqod48s6goy1w" path="res://Assets/Images/DefenceTowers/Archers/UI/黑曜石.png" id="134_mocnt"]
 [ext_resource type="Texture2D" uid="uid://i180tjhpnnrt" path="res://Assets/Images/DefenceTowers/Archers/UI/碎石.png" id="135_05lgu"]
+[ext_resource type="Texture2D" uid="uid://cgpo8p4sgi5f6" path="res://Assets/Images/Bullets/黑曜石.png" id="138_albh5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7meco"]
 atlas = ExtResource("18_1heug")
@@ -549,7 +550,9 @@ theme_override_constants/margin_right = 50
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "只要喝饱暗黑重油，这些紫皮投石手便会重拳出击，将敌人压在巨石之下。"
+text = "只要喝饱暗黑重油，这些紫皮投石手便会重拳出击，将敌人压在巨石之下。
+ 
+首次解锁于第7关： 南洋海岸"
 autowrap_mode = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
@@ -708,9 +711,9 @@ text = "音效素材"
 [node name="WikiTable" parent="FreeNodes" index="0" instance=ExtResource("8_wc4ib")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 1097.0
+offset_top = 1151.0
 offset_right = 911.0
-offset_bottom = 1505.0
+offset_bottom = 1559.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable" index="0" instance=ExtResource("9_njt74")]
 layout_mode = 2
@@ -804,9 +807,9 @@ vertical_alignment = 1
 [node name="WikiTable2" parent="FreeNodes" index="1" instance=ExtResource("8_wc4ib")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 2074.0
+offset_top = 2128.0
 offset_right = 911.0
-offset_bottom = 2154.0
+offset_bottom = 2208.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable2" index="0" instance=ExtResource("9_njt74")]
 layout_mode = 2
@@ -829,9 +832,9 @@ vertical_alignment = 1
 [node name="WikiTable4" parent="FreeNodes" index="2" instance=ExtResource("8_wc4ib")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 3586.0
+offset_top = 3640.0
 offset_right = 911.0
-offset_bottom = 3912.0
+offset_bottom = 3966.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable4" index="0" instance=ExtResource("9_njt74")]
 layout_mode = 2
@@ -909,9 +912,9 @@ vertical_alignment = 1
 [node name="WikiTable5" parent="FreeNodes" index="3" instance=ExtResource("8_wc4ib")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 4283.0
+offset_top = 4337.0
 offset_right = 911.0
-offset_bottom = 4609.0
+offset_bottom = 4663.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable5" index="0" instance=ExtResource("9_njt74")]
 layout_mode = 2
@@ -969,9 +972,9 @@ vertical_alignment = 1
 [node name="WikiTable3" parent="FreeNodes" index="4" instance=ExtResource("8_wc4ib")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 2688.0
+offset_top = 2742.0
 offset_right = 911.0
-offset_bottom = 2850.0
+offset_bottom = 2904.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable3" index="0" instance=ExtResource("9_njt74")]
 layout_mode = 2
@@ -1012,9 +1015,9 @@ vertical_alignment = 1
 [node name="WikiTable6" parent="FreeNodes" index="5" instance=ExtResource("8_wc4ib")]
 layout_mode = 0
 offset_left = 209.0
-offset_top = 5349.0
+offset_top = 5403.0
 offset_right = 911.0
-offset_bottom = 5635.0
+offset_bottom = 5689.0
 
 [node name="WikiTableEmelent" parent="FreeNodes/WikiTable6" index="0" instance=ExtResource("9_njt74")]
 layout_mode = 2
@@ -1089,7 +1092,7 @@ layout_mode = 2
 audio_stream = ExtResource("15_01ayp")
 
 [node name="Tower" type="Sprite2D" parent="FreeNodes" index="6"]
-position = Vector2(558, 1689)
+position = Vector2(558, 1743)
 texture = ExtResource("11_b8alc")
 
 [node name="TowerRange" type="Node2D" parent="FreeNodes/Tower" index="0"]
@@ -1114,7 +1117,7 @@ position = Vector2(0, 12)
 texture = ExtResource("14_wy88w")
 
 [node name="Tower2" type="Sprite2D" parent="FreeNodes" index="7"]
-position = Vector2(558, 2353)
+position = Vector2(558, 2407)
 texture = ExtResource("11_b8alc")
 
 [node name="TowerRange" type="Node2D" parent="FreeNodes/Tower2" index="0"]
@@ -1125,25 +1128,33 @@ scale = Vector2(4.14, 4.14)
 scale = Vector2(0.4, 0.28)
 texture = ExtResource("15_rc5a6")
 
-[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower2" index="1"]
+[node name="TowerRange2" type="Node2D" parent="FreeNodes/Tower2" index="1"]
+position = Vector2(9, 41)
+scale = Vector2(3.6, 3.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower2/TowerRange2" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("15_rc5a6")
+
+[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower2" index="2"]
 position = Vector2(19, -51)
 texture = ExtResource("13_r7r0r")
 
-[node name="Archer2" type="Sprite2D" parent="FreeNodes/Tower2" index="2"]
+[node name="Archer2" type="Sprite2D" parent="FreeNodes/Tower2" index="3"]
 position = Vector2(-6, -51)
 scale = Vector2(-1, 1)
 texture = ExtResource("13_r7r0r")
 
-[node name="Front" type="Sprite2D" parent="FreeNodes/Tower2" index="3"]
+[node name="Front" type="Sprite2D" parent="FreeNodes/Tower2" index="4"]
 position = Vector2(0, 12)
 texture = ExtResource("14_wy88w")
 
 [node name="WikiHeadTextureButton" parent="FreeNodes" index="8" instance=ExtResource("3_7nkhm")]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 1964.0
+offset_top = 2018.0
 offset_right = 298.0
-offset_bottom = 2033.0
+offset_bottom = 2087.0
 texture_normal = SubResource("AtlasTexture_7meco")
 target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
 target_page_pos = -742.0
@@ -1152,9 +1163,9 @@ name_text = ""
 [node name="WikiHeadTextureButton2" parent="FreeNodes" index="9" instance=ExtResource("3_7nkhm")]
 layout_mode = 0
 offset_left = 229.0
-offset_top = 2596.0
+offset_top = 2650.0
 offset_right = 298.0
-offset_bottom = 2665.0
+offset_bottom = 2719.0
 texture_normal = SubResource("AtlasTexture_0qn6n")
 target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
 target_page_pos = -966.0
@@ -1163,9 +1174,9 @@ name_text = ""
 [node name="GridContainer" type="GridContainer" parent="FreeNodes" index="10"]
 layout_mode = 0
 offset_left = 176.0
-offset_top = 4785.0
+offset_top = 4839.0
 offset_right = 966.0
-offset_bottom = 5085.0
+offset_bottom = 5139.0
 theme_override_constants/h_separation = 395
 theme_override_constants/v_separation = 300
 columns = 3
@@ -1248,20 +1259,38 @@ text = "子弹素材"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Anim5" type="Control" parent="FreeNodes/GridContainer" index="4"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/GridContainer/Anim5" index="0"]
+position = Vector2(13, -2)
+scale = Vector2(1.46729, 1.46729)
+texture = ExtResource("138_albh5")
+
+[node name="Label" type="Label" parent="FreeNodes/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "黑曜石素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Skill1" type="TextureRect" parent="FreeNodes" index="11"]
 layout_mode = 0
 offset_left = 171.0
-offset_top = 3317.0
+offset_top = 3371.0
 offset_right = 267.0
-offset_bottom = 3413.0
+offset_bottom = 3467.0
 texture = ExtResource("134_mocnt")
 
 [node name="Skill2" type="TextureRect" parent="FreeNodes" index="12"]
 layout_mode = 0
 offset_left = 132.0
-offset_top = 3932.0
+offset_top = 3986.0
 offset_right = 228.0
-offset_bottom = 4028.0
+offset_bottom = 4082.0
 texture = ExtResource("135_05lgu")
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("62_v6rq5")]
