@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtmbjrlhaiunw"]
+[gd_scene load_steps=13 format=3 uid="uid://dtmbjrlhaiunw"]
 
 [ext_resource type="Script" path="res://Scripts/GameBased/wiki_manager.gd" id="1_6vbdg"]
 [ext_resource type="Theme" uid="uid://bvw2btvppoisx" path="res://Assets/Resources/WikiThemes/wiki_white.tres" id="2_76rol"]
@@ -29,6 +29,13 @@ width = 1920
 height = 1080
 fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0kj8"]
+bg_color = Color(0, 0, 0, 0.501961)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="WikiManager" type="Control"]
 layout_mode = 3
@@ -71,6 +78,7 @@ anchor_left = 0.0
 anchor_right = 0.0
 offset_left = 0.0
 offset_right = 1108.0
+metadata/_edit_horizontal_guides_ = [125.0]
 
 [node name="ButtonGroup" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -99,6 +107,32 @@ texture_normal = ExtResource("6_8dvtg")
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("7_jpsjo")
+
+[node name="TipPanel" type="PanelContainer" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(230, 78)
+layout_mode = 0
+offset_left = 1093.0
+offset_top = 1704.0
+offset_right = 1316.0
+offset_bottom = 1782.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m0kj8")
+
+[node name="MarginContainer" type="MarginContainer" parent="TipPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="TipLabel" type="Label" parent="TipPanel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "远程物伤"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="ButtonGroup/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ButtonGroup/HomeButton" to="." method="_on_home_button_pressed"]
