@@ -18,7 +18,8 @@ static var instance: WikiManager
 @onready var home_button: TextureButton = $ButtonGroup/HomeButton
 @onready var front_button: TextureButton = $ButtonGroup/FrontButton
 @onready var tip_panel: PanelContainer = $TipPanel
-@onready var tip_label: Label = $TipPanel/TipLabel
+@onready var tip_label: Label = $TipPanel/MarginContainer/TipLabel
+
 
 
 func _init() -> void:
@@ -108,9 +109,11 @@ func _process(delta: float) -> void:
 func tip_show(tip_text: String):
 	tip_panel.show()
 	tip_label.text = tip_text
+	tip_panel.size.x = 0
 	pass
 
 
 func tip_hide():
 	tip_panel.hide()
+	tip_panel.size.x = 0
 	pass
