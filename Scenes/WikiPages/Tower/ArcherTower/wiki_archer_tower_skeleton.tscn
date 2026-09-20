@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://crysstcqs3s5a"]
+[gd_scene load_steps=141 format=3 uid="uid://crysstcqs3s5a"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_hwv4c"]
 [ext_resource type="Texture2D" uid="uid://bq0c60nadyp8u" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer-NPC1.png" id="2_706al"]
@@ -132,6 +132,8 @@
 [ext_resource type="Texture2D" uid="uid://b6g465hmch6qg" path="res://Assets/Images/Bullets/skeleton_seckill_arrow.png" id="129_18pq6"]
 [ext_resource type="Texture2D" uid="uid://fdl34csjxid" path="res://Assets/Images/Effects/skeleton_seckill_effect.png" id="130_fdwjb"]
 [ext_resource type="Texture2D" uid="uid://d2uveucdddrmn" path="res://Assets/Images/UI/InformationBar/arrow-skeleton.png" id="131_jlqjs"]
+[ext_resource type="Texture2D" uid="uid://bet1ca4qmjjnc" path="res://Assets/Images/DefenceTowers/Archers/UI/猩红狙击箭.png" id="132_jg4sl"]
+[ext_resource type="Texture2D" uid="uid://dm6nfqmuov6u3" path="res://Assets/Images/DefenceTowers/Archers/UI/穿刺.png" id="133_hxr7f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7meco"]
 atlas = ExtResource("15_scjpb")
@@ -489,6 +491,20 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Animation" id="Animation_nku65"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_3kpv8"]
 resource_name = "loop"
 loop_mode = 1
@@ -502,20 +518,6 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(1, 1),
 "points": PackedFloat32Array(0, 0, 0, 0, 0, 6.28319, 0, 0, 0, 0),
 "times": PackedFloat32Array(0, 1)
-}
-
-[sub_resource type="Animation" id="Animation_nku65"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v26wl"]
@@ -1046,6 +1048,22 @@ offset_top = 375.0
 offset_right = 798.0
 offset_bottom = 503.0
 texture = ExtResource("131_jlqjs")
+
+[node name="Skill1" type="TextureRect" parent="FreeNodes" index="9"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 2960.0
+offset_right = 334.0
+offset_bottom = 3056.0
+texture = ExtResource("132_jg4sl")
+
+[node name="Skill2" type="TextureRect" parent="FreeNodes" index="10"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 3429.0
+offset_right = 234.0
+offset_bottom = 3525.0
+texture = ExtResource("133_hxr7f")
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_moxvr")]
 layout_mode = 2
