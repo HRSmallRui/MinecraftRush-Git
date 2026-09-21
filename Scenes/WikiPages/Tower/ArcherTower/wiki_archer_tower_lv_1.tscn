@@ -605,11 +605,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="FreeNodes" index="13"]
+layout_mode = 0
 offset_left = 655.0
 offset_top = 375.0
 offset_right = 783.0
 offset_bottom = 503.0
 texture = ExtResource("59_efq62")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes" index="14"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：箭塔"
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("58_jikfr")]
 layout_mode = 2
