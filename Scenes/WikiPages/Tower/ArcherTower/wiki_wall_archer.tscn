@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b6a6md8ptb75j"]
+[gd_scene load_steps=58 format=3 uid="uid://b6a6md8ptb75j"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_xi5ns"]
 [ext_resource type="Texture2D" uid="uid://cikuv1wkwafq5" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer-NPC3.png" id="2_w7jhl"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://cb4l3jdnk8ia4" path="res://Assets/Animations/Archers/LV3/ArcherLV3-Back_19.png" id="51_v0jsq"]
 [ext_resource type="Texture2D" uid="uid://dme2ocvynm0k3" path="res://Assets/Animations/Archers/LV3/ArcherLV3-Back_20.png" id="52_86a1h"]
 [ext_resource type="Texture2D" uid="uid://c6selkcma2jq4" path="res://Assets/Images/Bullets/箭.png" id="53_waq6r"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="54_7pgwj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx8cd"]
 atlas = ExtResource("11_i8ax3")
@@ -342,6 +343,7 @@ theme_override_font_sizes/font_size = 36
 text = "青龙之眼"
 
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/Label6" index="0" instance=ExtResource("10_07ejt")]
+layout_mode = 0
 offset_left = 154.0
 offset_top = -15.0
 offset_right = 223.0
@@ -475,6 +477,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 25
@@ -485,3 +488,15 @@ layout_mode = 2
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 36
 text = "类别：箭塔"
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("54_7pgwj")]
+layout_mode = 2
+text = "配置数据"
+wiki_page = NodePath("../../..")
+target_pos = -640.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("54_7pgwj")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -2805.0
