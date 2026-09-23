@@ -1,0 +1,795 @@
+[gd_scene load_steps=33 format=3 uid="uid://4hp8lpv2cosc"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_v4dkt"]
+[ext_resource type="Texture2D" uid="uid://dixwgjn6wu53j" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Barrack-NPC1.png" id="2_m4f3q"]
+[ext_resource type="Texture2D" uid="uid://bkwn6b3dxpg0y" path="res://Assets/Images/UI/InformationBar/barrack-zombie.png" id="3_pwhuc"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="4_u8li5"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="6_ttjx7"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="7_ly0lt"]
+[ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="8_jt3ev"]
+[ext_resource type="Texture2D" uid="uid://cxlgijvx46h50" path="res://Assets/Images/UI/Wiki/PropertyIcons/生命值.png" id="9_04gul"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="10_1i6jg"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="11_gdqu5"]
+[ext_resource type="Texture2D" uid="uid://btlwlecwmchor" path="res://Assets/Images/UI/Wiki/PropertyIcons/重生时间.png" id="12_h3626"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="13_lu3vs"]
+[ext_resource type="Texture2D" uid="uid://b8b1lsg2hqdb5" path="res://Assets/Images/DefenceTowers/Barracks/Towers/ZombieBarrack.png" id="13_tnrxl"]
+[ext_resource type="Texture2D" uid="uid://ceyxpifdwjgbk" path="res://Assets/Images/UI/Wiki/PropertyIcons/调集范围.png" id="14_3kbaa"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="15_kahq8"]
+[ext_resource type="Texture2D" uid="uid://fg1y0i3ubnh4" path="res://Assets/Images/DefenceTowers/UI/集结范围.png" id="17_ivsf3"]
+[ext_resource type="Texture2D" uid="uid://dwwxyxfq5tvg6" path="res://Assets/Images/UI/Upgrade/Barracks/远程指挥.png" id="18_1x4mm"]
+[ext_resource type="Texture2D" uid="uid://2k6eya5miu4n" path="res://Assets/Images/UI/Upgrade/Barracks/强健体魄.png" id="19_wgxyd"]
+[ext_resource type="Texture2D" uid="uid://b4i2raq3o1bml" path="res://Assets/Images/UI/Upgrade/Barracks/精良装备.png" id="20_0vlv0"]
+[ext_resource type="Texture2D" uid="uid://dk7l3x3eird31" path="res://Assets/Images/DefenceTowers/Barracks/UI/Zombie1/嗜血.png" id="20_7oox7"]
+[ext_resource type="Texture2D" uid="uid://ba5fm85ssld1o" path="res://Assets/Images/UI/Upgrade/Barracks/高效训练.png" id="21_vgde6"]
+[ext_resource type="Texture2D" uid="uid://dxnb3bebbypn5" path="res://Assets/Images/DefenceTowers/Barracks/UI/Zombie1/冶炼工艺.png" id="23_bfreo"]
+[ext_resource type="Texture2D" uid="uid://dndhjehnkkvy8" path="res://Assets/Images/DefenceTowers/Barracks/UI/Zombie1/玉碎.png" id="24_m0smp"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="25_65nd1"]
+[ext_resource type="Texture2D" uid="uid://b3fbfbkwvxs64" path="res://Assets/Images/UI/Wiki/Allys/Soldeirs/Soldier-Zombie.png" id="27_lyne3"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="28_rb5ox"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="29_mqk88"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="31_anc88"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kj4g"]
+atlas = ExtResource("18_1x4mm")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihamd"]
+atlas = ExtResource("19_wgxyd")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ado50"]
+atlas = ExtResource("20_0vlv0")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbw5k"]
+atlas = ExtResource("21_vgde6")
+region = Rect2(30, 33, 69, 69)
+
+[node name="WikiBarrackTowerZombie" instance=ExtResource("1_v4dkt")]
+offset_bottom = 5569.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_m4f3q")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "尸国正规军兵营"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 721.0
+offset_top = -45.0
+offset_right = 849.0
+offset_bottom = 83.0
+texture = ExtResource("3_pwhuc")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "出现关卡
+ 
+第6关： 弗拉里斯带          第19关： 诺冰大峡谷"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "基础配置"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数据"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Property" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("9_04gul")
+tip_text = "生命值"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="2" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent3" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("10_1i6jg")
+tip_text = "近战物伤"
+
+[node name="WikiTableEmelent4" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="3" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "8 - 16"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent5" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="4" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent5" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("11_gdqu5")
+tip_text = "护甲"
+
+[node name="WikiTableEmelent6" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="5" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent6" index="0"]
+layout_mode = 2
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent7" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="6" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent7" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("12_h3626")
+tip_text = "重生时间"
+
+[node name="WikiTableEmelent8" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="7" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent8" index="0"]
+layout_mode = 2
+text = "10 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent9" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="8" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent9" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("13_lu3vs")
+tip_text = "单位数量"
+
+[node name="WikiTableEmelent10" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="9" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent10" index="0"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent11" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="10" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent11" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("14_3kbaa")
+tip_text = "调集范围"
+
+[node name="WikiTableEmelent12" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="11" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent12" index="0"]
+layout_mode = 2
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_top = 310
+
+[node name="Tower" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3" index="0"]
+position = Vector2(498, 93)
+scale = Vector2(1.173, 1.173)
+texture = ExtResource("13_tnrxl")
+
+[node name="TowerRange" type="Node2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3/Tower" index="0"]
+position = Vector2(-0.852514, 47.7408)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3/Tower/TowerRange" index="0"]
+scale = Vector2(0.341, 0.239)
+texture = ExtResource("17_ivsf3")
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "科技加成"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "远程指挥"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/Label6" index="0" instance=ExtResource("4_u8li5")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_8kj4g")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -2523.0
+name_text = ""
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer2" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer2/WikiTable" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer2/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("14_3kbaa")
+tip_text = "调集范围"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer2/WikiTable" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer2/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "300 -> 360"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_top = 400
+
+[node name="Tower" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer5" index="0"]
+position = Vector2(494, 129)
+scale = Vector2(1.173, 1.173)
+texture = ExtResource("13_tnrxl")
+
+[node name="TowerRange" type="Node2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer5/Tower" index="0"]
+position = Vector2(7, 28)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer5/Tower/TowerRange" index="0"]
+scale = Vector2(0.341, 0.239)
+texture = ExtResource("17_ivsf3")
+
+[node name="TowerRange2" type="Node2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer5/Tower" index="1"]
+position = Vector2(7, 28)
+scale = Vector2(3.6, 3.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer5/Tower/TowerRange2" index="0"]
+scale = Vector2(0.341, 0.239)
+texture = ExtResource("17_ivsf3")
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "强健体魄"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/Label7" index="0" instance=ExtResource("4_u8li5")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_ihamd")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -2752.0
+name_text = ""
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer3" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer3/WikiTable" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer3/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("9_04gul")
+tip_text = "生命值"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer3/WikiTable" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer3/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "150 -> 180"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "精良装备"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/Label8" index="0" instance=ExtResource("4_u8li5")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_ado50")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -2937.0
+name_text = ""
+
+[node name="CenterContainer4" type="CenterContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="13"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer4" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer4/WikiTable" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer4/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("11_gdqu5")
+tip_text = "护甲"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer4/WikiTable" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer4/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "40 -> 50"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "高效训练"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/Label9" index="0" instance=ExtResource("4_u8li5")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_rbw5k")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -3223.0
+name_text = ""
+
+[node name="CenterContainer5" type="CenterContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="15"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer5" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer5/WikiTable" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer5/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("12_h3626")
+tip_text = "重生时间"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer5/WikiTable" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer5/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "10 秒 -> 8秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer5" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "嗜血"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer5/VBoxContainer/Label2" index="0"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -30.0
+offset_right = 178.0
+offset_bottom = 66.0
+texture = ExtResource("20_7oox7")
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="2"]
+layout_mode = 2
+text = "价格：250/200/200
+ 
+尸国正规军每次攻击都会恢复自身 5/10/15 点生命值。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("15_kahq8")
+tip_text = "价格"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "250/200/200"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable" index="2" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("29_mqk88")
+tip_text = "单次恢复生命"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable" index="3" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "5 / 10 / 15"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "冶炼工艺"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer5/VBoxContainer/Label4" index="0"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = -30.0
+offset_right = 248.0
+offset_bottom = 66.0
+texture = ExtResource("23_bfreo")
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="6"]
+layout_mode = 2
+text = "价格：150/150
+ 
+尸国正规军攻击力提高至 9-18 / 10-20，并且每次升级都会提高自身 5 点护甲。"
+autowrap_mode = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="7"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("15_kahq8")
+tip_text = "价格"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "150/150"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable" index="2" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("10_1i6jg")
+tip_text = "近战攻击力"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable" index="3" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "9-18 / 10-20"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable" index="4" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement5" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("11_gdqu5")
+tip_text = "单次提高护甲"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable" index="5" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "玉碎"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer5/VBoxContainer/Label6" index="0"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -30.0
+offset_right = 177.0
+offset_bottom = 66.0
+texture = ExtResource("24_m0smp")
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="10"]
+layout_mode = 2
+text = "价格：250/250/250
+ 
+尸国正规军死亡时若尸体还存在则会剖腹自尽，为自身周围 150 范围内的友军施加“玉碎”效果，持续 4/6/8 秒，持有“玉碎”效果的我方单位攻击力提高 100%，每 0.2 秒恢复自身 5 点生命值。"
+autowrap_mode = 3
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer5/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3" index="0" instance=ExtResource("6_ttjx7")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="0" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("15_kahq8")
+tip_text = "价格"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="1" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "250/250/250"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="2" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement3" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("28_rb5ox")
+tip_text = "作用范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="3" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="4" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement5" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("25_65nd1")
+tip_text = "持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="5" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "4秒 / 6秒 / 8秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="6" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement7" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("10_1i6jg")
+tip_text = "近战攻击力提高幅度"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="7" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="8" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement9" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("29_mqk88")
+tip_text = "效果单次恢复血量"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="9" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="10" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement11" index="0" instance=ExtResource("8_jt3ev")]
+layout_mode = 2
+texture = ExtResource("25_65nd1")
+tip_text = "回血频率"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="11" instance=ExtResource("7_ly0lt")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "0.2 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "士兵详情数据"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer" index="0" instance=ExtResource("4_u8li5")]
+layout_mode = 2
+texture_normal = ExtResource("27_lyne3")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_3.tscn"
+name_text = "尸国正规军"
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：兵营"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 69.0
+offset_top = 194.0
+offset_right = 423.0
+offset_bottom = 394.0
+scale = Vector2(0.830169, 0.830169)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_anc88")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -627.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_anc88")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -3229.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("31_anc88")]
+layout_mode = 2
+text = "士兵详情数据"
+wiki_page = NodePath("../../..")
+target_pos = -5150.0

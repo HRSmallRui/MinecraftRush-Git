@@ -1,13 +1,13 @@
 [gd_scene load_steps=141 format=3 uid="uid://crysstcqs3s5a"]
 
-[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_hwv4c"]
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_hwv4c"]
 [ext_resource type="Texture2D" uid="uid://bq0c60nadyp8u" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer-NPC1.png" id="2_706al"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_ql3f6"]
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="5_45okn"]
-[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_emelent.tscn" id="6_he0xk"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="6_he0xk"]
 [ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="7_001dy"]
 [ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="8_ecr7i"]
-[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="9_6s1vn"]
+[ext_resource type="Texture2D" uid="uid://cdhf72ijhxffi" path="res://Assets/Images/UI/Wiki/PropertyIcons/概率.png" id="9_3jtkj"]
 [ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="9_w3w5e"]
 [ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="10_1nir2"]
 [ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="10_jflxo"]
@@ -132,8 +132,8 @@
 [ext_resource type="Texture2D" uid="uid://b6g465hmch6qg" path="res://Assets/Images/Bullets/skeleton_seckill_arrow.png" id="129_18pq6"]
 [ext_resource type="Texture2D" uid="uid://fdl34csjxid" path="res://Assets/Images/Effects/skeleton_seckill_effect.png" id="130_fdwjb"]
 [ext_resource type="Texture2D" uid="uid://d2uveucdddrmn" path="res://Assets/Images/UI/InformationBar/arrow-skeleton.png" id="131_jlqjs"]
-[ext_resource type="Texture2D" uid="uid://bet1ca4qmjjnc" path="res://Assets/Images/DefenceTowers/Archers/UI/猩红狙击箭.png" id="132_jg4sl"]
-[ext_resource type="Texture2D" uid="uid://dm6nfqmuov6u3" path="res://Assets/Images/DefenceTowers/Archers/UI/穿刺.png" id="133_hxr7f"]
+[ext_resource type="Texture2D" uid="uid://bet1ca4qmjjnc" path="res://Assets/Images/DefenceTowers/Archers/UI/Skeleton/猩红狙击箭.png" id="132_jg4sl"]
+[ext_resource type="Texture2D" uid="uid://dm6nfqmuov6u3" path="res://Assets/Images/DefenceTowers/Archers/UI/Skeleton/穿刺.png" id="133_hxr7f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7meco"]
 atlas = ExtResource("15_scjpb")
@@ -786,7 +786,7 @@ layout_mode = 2
 [node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent3" index="0" instance=ExtResource("7_001dy")]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("9_6s1vn")
+texture = ExtResource("9_3jtkj")
 tip_text = "每次增加的秒杀概率"
 
 [node name="WikiTableEmelent4" parent="FreeNodes/WikiTable4" index="3" instance=ExtResource("6_he0xk")]
@@ -1064,6 +1064,19 @@ offset_top = 3429.0
 offset_right = 234.0
 offset_bottom = 3525.0
 texture = ExtResource("133_hxr7f")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes" index="11"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：箭塔"
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_moxvr")]
 layout_mode = 2

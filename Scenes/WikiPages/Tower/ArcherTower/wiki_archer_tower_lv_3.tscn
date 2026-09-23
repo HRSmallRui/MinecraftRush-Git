@@ -1,12 +1,12 @@
 [gd_scene load_steps=68 format=3 uid="uid://rfs8amor8uck"]
 
-[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_y2vs8"]
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_y2vs8"]
 [ext_resource type="Texture2D" uid="uid://bqpsm8q8ernfv" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer2.png" id="2_wtdng"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_6gnsl"]
 [ext_resource type="Texture2D" uid="uid://ctmk6tqvscvq0" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer1.png" id="4_it3k7"]
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="5_3kif0"]
 [ext_resource type="Texture2D" uid="uid://k6o44g13yhdc" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer3.png" id="5_gp346"]
-[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_emelent.tscn" id="6_6ivwa"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="6_6ivwa"]
 [ext_resource type="Texture2D" uid="uid://k2r2cemwocai" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer4.png" id="6_fh0bj"]
 [ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="7_0pvtu"]
 [ext_resource type="Texture2D" uid="uid://be1eoddk8a1hu" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer5.png" id="7_xr4o2"]
@@ -655,6 +655,19 @@ offset_top = 375.0
 offset_right = 830.0
 offset_bottom = 503.0
 texture = ExtResource("62_tflta")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes" index="14"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：箭塔"
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("57_cg266")]
 layout_mode = 2

@@ -1,9 +1,9 @@
 [gd_scene load_steps=40 format=3 uid="uid://bhgf3pkpr1uwc"]
 
-[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_dwnau"]
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_dwnau"]
 [ext_resource type="Texture2D" uid="uid://b2wbruegis31a" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer-NPC2.png" id="2_q4dqp"]
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_pcon2"]
-[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_emelent.tscn" id="4_ew6h8"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_ew6h8"]
 [ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_cc4h8"]
 [ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="6_rbqpt"]
 [ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="7_1a7yl"]
@@ -29,8 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://dik7dobpdnwox" path="res://Assets/Animations/Archers/RedStone/shoot_back0004.png" id="27_5o7hr"]
 [ext_resource type="Texture2D" uid="uid://cp44xjdv1xsy7" path="res://Assets/Animations/Archers/RedStone/shoot_back0005.png" id="28_j7w45"]
 [ext_resource type="Texture2D" uid="uid://lmai58yk645l" path="res://Assets/Animations/Archers/RedStone/shoot_back0006.png" id="29_v4vr3"]
-[ext_resource type="Texture2D" uid="uid://csmm2b2k30xdo" path="res://Assets/Images/DefenceTowers/Archers/UI/破甲箭头.png" id="32_rwjlb"]
-[ext_resource type="Texture2D" uid="uid://ureir3urr3cq" path="res://Assets/Images/DefenceTowers/Archers/UI/脉冲轰炸.png" id="33_83vaw"]
+[ext_resource type="Texture2D" uid="uid://csmm2b2k30xdo" path="res://Assets/Images/DefenceTowers/Archers/UI/RedStone/破甲箭头.png" id="32_rwjlb"]
+[ext_resource type="Texture2D" uid="uid://ureir3urr3cq" path="res://Assets/Images/DefenceTowers/Archers/UI/RedStone/脉冲轰炸.png" id="33_83vaw"]
 [ext_resource type="Texture2D" uid="uid://c6selkcma2jq4" path="res://Assets/Images/Bullets/箭.png" id="128_6k3q1"]
 [ext_resource type="Texture2D" uid="uid://ctmvdw8ycgx8b" path="res://Assets/Images/UI/InformationBar/Towers/arrow-redstone.png" id="131_lmbj1"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="132_vqv1b"]
@@ -198,7 +198,7 @@ text = "破甲箭头"
 layout_mode = 2
 text = "价格：180/180
  
-每次箭矢命中敌人时，有10%的概率立即削减敌人4 / 8 点护甲，最低削减至0点护甲。qw"
+每次箭矢命中敌人时，有10%的概率立即削减敌人4 / 8 点护甲，最低削减至0点护甲。"
 autowrap_mode = 3
 
 [node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="11"]
@@ -662,6 +662,19 @@ offset_top = 3010.0
 offset_right = 295.0
 offset_bottom = 3106.0
 texture = ExtResource("33_83vaw")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes" index="13"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：箭塔"
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("132_vqv1b")]
 layout_mode = 2

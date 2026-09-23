@@ -76,13 +76,16 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 		#print(defence_possible)
 		if source is Enemy and !far_attack and randf() < defence_possible:
 			#is_defence = true
+			var enemy: Enemy = source as Enemy
 			ally_sprite.play("defence")
 			defence_audio.play()
 			var immue_rate: float = immune_rate_list[soldier_skill_levels[2]-1]
 			var return_damage_rate: float = return_damage_rate_list[soldier_skill_levels[2]-1]
 			var return_damage: int = float(damage) * return_damage_rate
+			if enemy.enemy_type >= Enemy.EnemyType.MiniBoss:
+				immue_rate *= 0.5
+				return_damage *= 0.5
 			damage = float(damage) * (1-immue_rate)
-			var enemy: Enemy = source as Enemy
 			enemy.take_damage(return_damage,DataProcess.DamageType.TrueDamage,0,)
 			#print(return_damage)
 	var result: bool = super(damage,damage_type,broken_rate,far_attack,source,explosion,aoe_attack,deadly)

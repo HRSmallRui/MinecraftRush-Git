@@ -1,11 +1,11 @@
 [gd_scene load_steps=86 format=3 uid="uid://imacogv0wqdy"]
 
-[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_nwrtf"]
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_nwrtf"]
 [ext_resource type="Texture2D" uid="uid://by0waquf1ryog" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer5.png" id="2_jlile"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_i13vs"]
 [ext_resource type="Texture2D" uid="uid://bhnvhhucjfyl3" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer2.png" id="4_72m3q"]
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="5_l2axa"]
-[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_emelent.tscn" id="6_w3jac"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="6_w3jac"]
 [ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="7_lrwl3"]
 [ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="8_yhpqm"]
 [ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="9_f4f71"]
@@ -75,8 +75,8 @@
 [ext_resource type="Texture2D" uid="uid://dd73gfp5pajme" path="res://Assets/Animations/Archers/LV4-3/Archer-back-LV4-3-shoot_27.png" id="71_rwlvy"]
 [ext_resource type="Texture2D" uid="uid://btrb1k58lgvuw" path="res://Assets/Images/Effects/cage.png" id="72_7a07i"]
 [ext_resource type="AudioStream" uid="uid://6wv4m45f6g2j" path="res://Assets/Sounds/FXs/DefenceTowers/SentryTower/cage.mp3" id="77_l0lmw"]
-[ext_resource type="Texture2D" uid="uid://bo521r3mdgmp" path="res://Assets/Images/DefenceTowers/Archers/UI/牢笼.png" id="78_fd3rr"]
-[ext_resource type="Texture2D" uid="uid://nncrtcnd3qy3" path="res://Assets/Images/DefenceTowers/Archers/UI/变节者.png" id="79_f3db7"]
+[ext_resource type="Texture2D" uid="uid://bo521r3mdgmp" path="res://Assets/Images/DefenceTowers/Archers/UI/LV4-3/牢笼.png" id="78_fd3rr"]
+[ext_resource type="Texture2D" uid="uid://nncrtcnd3qy3" path="res://Assets/Images/DefenceTowers/Archers/UI/LV4-3/变节者.png" id="79_f3db7"]
 [ext_resource type="Texture2D" uid="uid://6hu7ds8m0n28" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/Changer.png" id="123_7b47p"]
 [ext_resource type="Texture2D" uid="uid://btqp3wn0ulubt" path="res://Assets/Images/UI/InformationBar/arrow-id-6.png" id="127_qx35d"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="127_vwlea"]
@@ -972,6 +972,18 @@ offset_top = 4465.0
 offset_right = 256.0
 offset_bottom = 4561.0
 texture = ExtResource("79_f3db7")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes" index="15"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：箭塔"
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("127_vwlea")]
 layout_mode = 2

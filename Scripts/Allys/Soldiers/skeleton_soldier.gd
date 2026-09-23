@@ -1,8 +1,10 @@
 extends Soldier
 
+@export var start_return_damage_rate: float
 @export var return_damage_list: Array[float]
 @export var heal_duration_list: Array[float]
 @export var sec_kill_rate_list: Array[float]
+@export var sec_kill_possible: float
 @export var heal_buff_scene: PackedScene
 
 @onready var heal_buff_timer: Timer = $HealBuffTimer
@@ -10,12 +12,13 @@ extends Soldier
 @onready var skill_2_timer: Timer = $Skill2Timer
 @onready var sec_kill_sprite: Sprite2D = $SecKillSprite
 
-var current_return_damage_rate: float = 0.2
+var current_return_damage_rate: float
 var locked_enemy: Enemy
 
 
 func _ready() -> void:
 	super()
+	current_return_damage_rate = start_return_damage_rate
 	sec_kill_sprite.hide()
 	pass
 
@@ -59,7 +62,7 @@ func frame_changed():
 		AudioManager.instance.shoot_audio_2.play()
 		if locked_enemy == null: return
 		if locked_enemy.enemy_state == Enemy.EnemyState.DIE: return
-		if randf() < 0.4:
+		if randf() < sec_kill_possible:
 			locked_enemy.sec_kill(true)
 			TextEffect.text_effect_show("秒杀！",TextEffect.TextEffectType.SecKill,locked_enemy.hurt_box.global_position)
 		else:
