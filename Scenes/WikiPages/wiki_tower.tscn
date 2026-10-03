@@ -1,6 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://8gtsog3a1gna"]
+[gd_scene load_steps=38 format=3 uid="uid://ci5yaudo2jwi8"]
 
-[ext_resource type="PackedScene" uid="uid://cegfri7a5acrr" path="res://Scenes/Classes/wiki_page_class.tscn" id="1_okd4b"]
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_okd4b"]
 [ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="2_hlpbb"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_ou36b"]
 [ext_resource type="Texture2D" uid="uid://ctmk6tqvscvq0" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer1.png" id="4_mjooc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://deu2vs07uxr5g" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack1.png" id="10_4nmuf"]
 [ext_resource type="Texture2D" uid="uid://cli2gcojehejo" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer-NPC2.png" id="10_gyp5c"]
 [ext_resource type="Texture2D" uid="uid://cim4obn7cndeb" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack2.png" id="11_eos45"]
+[ext_resource type="Texture2D" uid="uid://cc4o2138k1ccr" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer-NPC3.png" id="11_gj381"]
 [ext_resource type="Texture2D" uid="uid://e6vcqe768l2s" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack3.png" id="12_eudfy"]
 [ext_resource type="Texture2D" uid="uid://df7h5qgkshc1v" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack4.png" id="13_s3k5i"]
 [ext_resource type="Texture2D" uid="uid://bk8je6oy1r7qy" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack5.png" id="14_u66d3"]
@@ -39,6 +40,7 @@
 
 [node name="WikiTower" instance=ExtResource("1_okd4b")]
 offset_bottom = 3438.0
+metadata/_edit_horizontal_guides_ = [125.0]
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -109,40 +111,54 @@ columns = 6
 
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="0" instance=ExtResource("3_ou36b")]
 layout_mode = 2
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_1.tscn"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="1" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("4_mjooc")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_2.tscn"
 name_text = "大师射手高台"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="2" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("5_3bqjn")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_3.tscn"
 name_text = "皇家射手高台"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="3" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("6_wr6ka")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_4-1.tscn"
 name_text = "投石高塔"
 
 [node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="4" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("7_rg34g")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_4-2.tscn"
 name_text = "沙漠哨塔"
 
 [node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="5" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("8_bq66t")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_4-3.tscn"
 name_text = "劫掠哨塔"
 
-[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="6" instance=ExtResource("3_ou36b")]
+[node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="6" instance=ExtResource("3_ou36b")]
+layout_mode = 2
+texture_normal = ExtResource("11_gj381")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_wall_archer.tscn"
+name_text = "城墙弓箭手"
+
+[node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="7" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("9_cy56x")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_skeleton.tscn"
 name_text = "骷髅狙击塔"
 
-[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="7" instance=ExtResource("3_ou36b")]
+[node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Archer" index="8" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("10_gyp5c")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_redstone.tscn"
 name_text = "脉冲发射台"
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="4"]
@@ -168,51 +184,61 @@ columns = 6
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="0" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("9_kolf7")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_1.tscn"
 name_text = "民兵兵营"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="1" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("10_4nmuf")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_2.tscn"
 name_text = "步兵兵营"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="2" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("11_eos45")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_3.tscn"
 name_text = "骑士兵营"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="3" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("12_eudfy")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_4-1.tscn"
 name_text = "皇家近卫军"
 
 [node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="4" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("13_s3k5i")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_4-2.tscn"
 name_text = "大刀教会"
 
 [node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="5" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("14_u66d3")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_4-3.tscn"
 name_text = "医疗护卫队"
 
 [node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="6" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("17_svury")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_zombie.tscn"
 name_text = "尸国正规军兵营"
 
 [node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="7" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("18_4mb7u")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_zombie_berserker.tscn"
 name_text = "尸国斗剑士营地"
 
 [node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="8" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("19_4kmht")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_skeleton.tscn"
 name_text = "荆棘殿堂"
 
 [node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Barrack" index="9" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("20_6hnrx")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_villager_knight.tscn"
 name_text = "骑士营地"
 
 [node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="8"]
@@ -238,31 +264,37 @@ columns = 6
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="0" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("15_tn3ki")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_1.tscn"
 name_text = "法师塔"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="1" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("16_63rvq")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_2.tscn"
 name_text = "法师高台"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="2" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("17_uxrjw")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_3.tscn"
 name_text = "风暴法师塔"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="3" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("18_ppf1q")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_4-1.tscn"
 name_text = "守卫者教堂"
 
 [node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="4" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("19_m7pmh")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_4-2.tscn"
 name_text = "女巫高塔"
 
 [node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Magic" index="5" instance=ExtResource("3_ou36b")]
 layout_mode = 2
 texture_normal = ExtResource("20_u6j30")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_4-3.tscn"
 name_text = "炼金术士"
 
 [node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="12"]

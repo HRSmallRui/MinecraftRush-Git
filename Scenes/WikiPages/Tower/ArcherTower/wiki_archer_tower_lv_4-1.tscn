@@ -1,0 +1,1347 @@
+[gd_scene load_steps=148 format=3 uid="uid://by2vda7dqy1nb"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_rckhf"]
+[ext_resource type="Texture2D" uid="uid://o36roo1555tf" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer3.png" id="2_nwyut"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_7nkhm"]
+[ext_resource type="Texture2D" uid="uid://bhnvhhucjfyl3" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer2.png" id="4_eqfmo"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="8_wc4ib"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="9_njt74"]
+[ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="10_lwsi7"]
+[ext_resource type="Texture2D" uid="uid://cdgt7j5rilbt1" path="res://Assets/Images/DefenceTowers/Archers/Towers/LV4-1.png" id="11_b8alc"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="11_glnjd"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="11_u0ohf"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="12_6n63c"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="12_r08s8"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="13_0stma"]
+[ext_resource type="AudioStream" uid="uid://nkakh3a2gwmr" path="res://Assets/Sounds/FXs/Bullets/Shoot1.wav" id="13_f3yik"]
+[ext_resource type="Texture2D" uid="uid://c1nqvvhdraxnj" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_00.png" id="13_r7r0r"]
+[ext_resource type="Texture2D" uid="uid://bixifh7qn77rv" path="res://Assets/Images/DefenceTowers/Archers/Towers/LV4-1-Front.png" id="14_wy88w"]
+[ext_resource type="AudioStream" uid="uid://cm0n2ypip5qts" path="res://Assets/Sounds/FXs/DefenceTowers/StoneTower/投石高塔一技能.wav" id="14_xf48p"]
+[ext_resource type="AudioStream" uid="uid://4pyjvpbc2os8" path="res://Assets/Sounds/FXs/DefenceTowers/StoneTower/碎石.wav" id="15_01ayp"]
+[ext_resource type="Texture2D" uid="uid://b7tpmru2mx1hr" path="res://Assets/Images/DefenceTowers/UI/射程范围.png" id="15_rc5a6"]
+[ext_resource type="Texture2D" uid="uid://bcnmx75i6cm4f" path="res://Assets/Images/UI/Upgrade/Archers/青龙之眼.png" id="18_1heug"]
+[ext_resource type="Texture2D" uid="uid://b1y0xjmth6d1w" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_00.png" id="18_hir73"]
+[ext_resource type="Texture2D" uid="uid://hhfvmdmrypkx" path="res://Assets/Images/UI/Upgrade/Archers/充足木料.png" id="19_gy6a7"]
+[ext_resource type="Texture2D" uid="uid://b8m5al7crbdva" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_01.png" id="19_yks2w"]
+[ext_resource type="Texture2D" uid="uid://cbvtntf612w78" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_02.png" id="20_y44un"]
+[ext_resource type="Texture2D" uid="uid://043x6t4yfprh" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_03.png" id="21_55ibr"]
+[ext_resource type="Texture2D" uid="uid://cnf0c4weqs374" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_04.png" id="22_fq2jt"]
+[ext_resource type="Texture2D" uid="uid://ujsojigahtq2" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_05.png" id="23_646tn"]
+[ext_resource type="Texture2D" uid="uid://bmrlcodue1fpk" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_06.png" id="24_8erdt"]
+[ext_resource type="Texture2D" uid="uid://kr1ff8byqb8d" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_07.png" id="25_en7cu"]
+[ext_resource type="Texture2D" uid="uid://brre8avth0qt6" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_08.png" id="26_udhof"]
+[ext_resource type="Texture2D" uid="uid://donrdel2p05iv" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_09.png" id="27_qdopa"]
+[ext_resource type="Texture2D" uid="uid://ce2u1xew1eorw" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_10.png" id="28_3j0b3"]
+[ext_resource type="Texture2D" uid="uid://c5jqngm8im1nb" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_11.png" id="29_7f1ch"]
+[ext_resource type="Texture2D" uid="uid://brigy4m4upq3m" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_12.png" id="30_ktecs"]
+[ext_resource type="Texture2D" uid="uid://dbfcqjhwo6gjh" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_13.png" id="31_lnb5k"]
+[ext_resource type="Texture2D" uid="uid://bxlqqjit0p3re" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_14.png" id="32_3g2al"]
+[ext_resource type="Texture2D" uid="uid://bmjq7mnb3r3lr" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_15.png" id="33_6dw44"]
+[ext_resource type="Texture2D" uid="uid://cpep4s01rl1l" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_16.png" id="34_ds3yl"]
+[ext_resource type="Texture2D" uid="uid://cbwhlac5lhx4p" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_17.png" id="35_2du6u"]
+[ext_resource type="Texture2D" uid="uid://btbmhch0pkcuu" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_18.png" id="36_6gcjq"]
+[ext_resource type="Texture2D" uid="uid://b02sqrkyufrt8" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_19.png" id="37_5gmhm"]
+[ext_resource type="Texture2D" uid="uid://dgpep5uxq25rx" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_20.png" id="38_suo6v"]
+[ext_resource type="Texture2D" uid="uid://7b3siw61i2yw" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_21.png" id="39_sq0c7"]
+[ext_resource type="Texture2D" uid="uid://ccuqrlmh4oh0s" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_22.png" id="40_u2uir"]
+[ext_resource type="Texture2D" uid="uid://ls5m4kkfq6m3" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_23.png" id="41_xdxn8"]
+[ext_resource type="Texture2D" uid="uid://cbndr33iofyme" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_24.png" id="42_qecoj"]
+[ext_resource type="Texture2D" uid="uid://dokux8euv86wj" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_25.png" id="43_1dvne"]
+[ext_resource type="Texture2D" uid="uid://vi1ruabhfnpc" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_26.png" id="44_1frl4"]
+[ext_resource type="Texture2D" uid="uid://1cwov0jxmkgo" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_27.png" id="45_f1ovb"]
+[ext_resource type="Texture2D" uid="uid://2hj62fqm5e51" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_28.png" id="46_t6amm"]
+[ext_resource type="Texture2D" uid="uid://dp7yxp20w0unq" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_29.png" id="47_golt2"]
+[ext_resource type="Texture2D" uid="uid://bqoi2bxe0a16n" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_30.png" id="48_w3882"]
+[ext_resource type="Texture2D" uid="uid://cg1xnl3t1nde2" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_31.png" id="49_8b7xw"]
+[ext_resource type="Texture2D" uid="uid://dcthyii0kmuf3" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_32.png" id="50_bvc0s"]
+[ext_resource type="Texture2D" uid="uid://bpjxj8w4r860o" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_33.png" id="51_a5y2c"]
+[ext_resource type="Texture2D" uid="uid://deggldxrlfihd" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_34.png" id="52_t4e66"]
+[ext_resource type="Texture2D" uid="uid://d2prjf0ntq4n7" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_35.png" id="53_4l8u2"]
+[ext_resource type="Texture2D" uid="uid://bgiw8wu8t73xe" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_36.png" id="54_4rnts"]
+[ext_resource type="Texture2D" uid="uid://djvrs1m84olnt" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_37.png" id="55_4nfx5"]
+[ext_resource type="Texture2D" uid="uid://byobj5cjj3ydt" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_38.png" id="56_nd5uo"]
+[ext_resource type="Texture2D" uid="uid://dijverfc6g7jl" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_39.png" id="57_d1lcq"]
+[ext_resource type="Texture2D" uid="uid://dd8vmabp4nynp" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_40.png" id="58_p63p4"]
+[ext_resource type="Texture2D" uid="uid://pajorm6maq7k" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_41.png" id="59_3fwo7"]
+[ext_resource type="Texture2D" uid="uid://begxgof5w6t07" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_42.png" id="60_txbkp"]
+[ext_resource type="Texture2D" uid="uid://cguvvd5ahyijc" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_43.png" id="61_o0uyg"]
+[ext_resource type="Texture2D" uid="uid://bj3twlufx1ub" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_44.png" id="62_s4l8f"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="62_v6rq5"]
+[ext_resource type="Texture2D" uid="uid://d31swr414c6cr" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_45.png" id="63_w3k50"]
+[ext_resource type="Texture2D" uid="uid://b1cewytd3jany" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_46.png" id="64_ugjya"]
+[ext_resource type="Texture2D" uid="uid://de11yvjeeoxqt" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_47.png" id="65_t2v8j"]
+[ext_resource type="Texture2D" uid="uid://b4h66605ox2yk" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_48.png" id="66_x3isi"]
+[ext_resource type="Texture2D" uid="uid://bc06jwpjtlxbn" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_49.png" id="67_wphc8"]
+[ext_resource type="Texture2D" uid="uid://dmlk1s77c66hg" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_50.png" id="68_vihb5"]
+[ext_resource type="Texture2D" uid="uid://bph78c6i7eslv" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_51.png" id="69_r6apw"]
+[ext_resource type="Texture2D" uid="uid://ff0pl1srsm5o" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_52.png" id="70_xoacd"]
+[ext_resource type="Texture2D" uid="uid://iwlherrsi6m1" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_53.png" id="71_nifn6"]
+[ext_resource type="Texture2D" uid="uid://chovhf5260h5v" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_54.png" id="72_xypdp"]
+[ext_resource type="Texture2D" uid="uid://otnutpymge4q" path="res://Assets/Animations/Archers/LV4-1/LV4-1throwing_stone_55.png" id="73_ujq6f"]
+[ext_resource type="Texture2D" uid="uid://cq2v3v2yjyipe" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_01.png" id="74_j0po6"]
+[ext_resource type="Texture2D" uid="uid://b4hvlf72t11af" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_02.png" id="75_quu7h"]
+[ext_resource type="Texture2D" uid="uid://dkjm0ivavbvy7" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_03.png" id="76_vt0k1"]
+[ext_resource type="Texture2D" uid="uid://dil0cxw4fjfpa" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_04.png" id="77_y8hiu"]
+[ext_resource type="Texture2D" uid="uid://dk68i85xvebx4" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_05.png" id="78_1rw8q"]
+[ext_resource type="Texture2D" uid="uid://c58ah4u5dk7lw" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_06.png" id="79_re3gy"]
+[ext_resource type="Texture2D" uid="uid://150wcrhduf2s" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_07.png" id="80_0i1o3"]
+[ext_resource type="Texture2D" uid="uid://d06i82wy4u3oy" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_08.png" id="81_fqrka"]
+[ext_resource type="Texture2D" uid="uid://cw8gylx3g0n7h" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_09.png" id="82_1nwtr"]
+[ext_resource type="Texture2D" uid="uid://bs1r13522nnd2" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_10.png" id="83_wiv51"]
+[ext_resource type="Texture2D" uid="uid://jkq1e3emne8l" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_11.png" id="84_w502p"]
+[ext_resource type="Texture2D" uid="uid://fs4cpbsywtm6" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_12.png" id="85_8ybij"]
+[ext_resource type="Texture2D" uid="uid://dgwbnu1afctdg" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_13.png" id="86_eu1y6"]
+[ext_resource type="Texture2D" uid="uid://d8auaadej0gs" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_14.png" id="87_2pcds"]
+[ext_resource type="Texture2D" uid="uid://dcs16yvuyp5v8" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_15.png" id="88_olwch"]
+[ext_resource type="Texture2D" uid="uid://dj2peks27j3i0" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_16.png" id="89_qunjj"]
+[ext_resource type="Texture2D" uid="uid://cjakuqs2f6cus" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_17.png" id="90_rf8aj"]
+[ext_resource type="Texture2D" uid="uid://d4gxhqu5o2w1a" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_18.png" id="91_knuik"]
+[ext_resource type="Texture2D" uid="uid://ui1hhgwj2hmw" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_19.png" id="92_nj8li"]
+[ext_resource type="Texture2D" uid="uid://bpw5u60051fs2" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_20.png" id="93_grpoo"]
+[ext_resource type="Texture2D" uid="uid://ccu1hh5kqymts" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_21.png" id="94_7eled"]
+[ext_resource type="Texture2D" uid="uid://5ko6y3aq4ebp" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_22.png" id="95_stxpa"]
+[ext_resource type="Texture2D" uid="uid://ceflmjofj25ky" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_23.png" id="96_ugeff"]
+[ext_resource type="Texture2D" uid="uid://c20wavpfqiyxi" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_24.png" id="97_4le78"]
+[ext_resource type="Texture2D" uid="uid://5ct6e0hjhoyd" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_25.png" id="98_18nee"]
+[ext_resource type="Texture2D" uid="uid://duh55i01ao4ri" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_26.png" id="99_uqq6w"]
+[ext_resource type="Texture2D" uid="uid://cd3wbuqk2ktiu" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_27.png" id="100_iqms3"]
+[ext_resource type="Texture2D" uid="uid://bel8dbabdal4i" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_28.png" id="101_2qqre"]
+[ext_resource type="Texture2D" uid="uid://dxff06qo8wagr" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_29.png" id="102_16gq2"]
+[ext_resource type="Texture2D" uid="uid://cwi7jp5wpoqvy" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_30.png" id="103_dypcw"]
+[ext_resource type="Texture2D" uid="uid://dj3juacb66bsq" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_31.png" id="104_f3gkq"]
+[ext_resource type="Texture2D" uid="uid://byri5c1k2f1o6" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_32.png" id="105_nqtm0"]
+[ext_resource type="Texture2D" uid="uid://b3tx3fqkhu36o" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_33.png" id="106_bfdfb"]
+[ext_resource type="Texture2D" uid="uid://jcx6eunsc4vr" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_34.png" id="107_oa06t"]
+[ext_resource type="Texture2D" uid="uid://ceexv1gi621jw" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_35.png" id="108_h1fwo"]
+[ext_resource type="Texture2D" uid="uid://cvce6owfwpneb" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_36.png" id="109_jqhdi"]
+[ext_resource type="Texture2D" uid="uid://d3xkr1au1yw53" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_37.png" id="110_8gbck"]
+[ext_resource type="Texture2D" uid="uid://bacv42qjdwss5" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_38.png" id="111_d0yd7"]
+[ext_resource type="Texture2D" uid="uid://bhm4opjkvtjne" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_39.png" id="112_2x0ph"]
+[ext_resource type="Texture2D" uid="uid://cqolx2k7c1e38" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_40.png" id="113_ifgnf"]
+[ext_resource type="Texture2D" uid="uid://cafartir0po8c" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_41.png" id="114_jmt14"]
+[ext_resource type="Texture2D" uid="uid://sxt0hwoe745x" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_42.png" id="115_mck0c"]
+[ext_resource type="Texture2D" uid="uid://dgea8hdt4mj5p" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_43.png" id="116_pdin7"]
+[ext_resource type="Texture2D" uid="uid://1aunh432a5vk" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_44.png" id="117_fpw5c"]
+[ext_resource type="Texture2D" uid="uid://8vcawe2nrwjl" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_45.png" id="118_i3j3m"]
+[ext_resource type="Texture2D" uid="uid://bhrgkgpbr1fr2" path="res://Assets/Animations/Archers/LV4-1/LV4-1skill1_46.png" id="119_4cema"]
+[ext_resource type="Texture2D" uid="uid://bghnm1lxh0su7" path="res://Assets/Images/Effects/StoneTowerSkill2/0001.png" id="120_8li0x"]
+[ext_resource type="Texture2D" uid="uid://dp4m4qxw33ovv" path="res://Assets/Images/Effects/StoneTowerSkill2/0002.png" id="121_ecsbu"]
+[ext_resource type="Texture2D" uid="uid://cdhtmas2c5v77" path="res://Assets/Images/Effects/StoneTowerSkill2/0003.png" id="122_d1mts"]
+[ext_resource type="Texture2D" uid="uid://by0ghtgwe5713" path="res://Assets/Images/Effects/StoneTowerSkill2/0004.png" id="123_0qmrk"]
+[ext_resource type="Texture2D" uid="uid://ddoh8qdn7nnmk" path="res://Assets/Images/Effects/StoneTowerSkill2/0005.png" id="124_q6bpf"]
+[ext_resource type="Texture2D" uid="uid://bjuckvnag74mg" path="res://Assets/Images/Effects/StoneTowerSkill2/0006.png" id="125_1542b"]
+[ext_resource type="Texture2D" uid="uid://cxn3sw0ffsj7p" path="res://Assets/Images/Effects/StoneTowerSkill2/0007.png" id="126_8rn5n"]
+[ext_resource type="Texture2D" uid="uid://icvf1ub76u2u" path="res://Assets/Images/Effects/StoneTowerSkill2/0008.png" id="127_mg16j"]
+[ext_resource type="Texture2D" uid="uid://psx2c0r1u3ir" path="res://Assets/Images/Effects/StoneTowerSkill2/0009.png" id="128_gv205"]
+[ext_resource type="Texture2D" uid="uid://c51mfksua1owg" path="res://Assets/Images/Effects/StoneTowerSkill2/0010.png" id="129_tjd33"]
+[ext_resource type="Texture2D" uid="uid://draloxnri3yls" path="res://Assets/Images/Effects/StoneTowerSkill2/0011.png" id="130_dtsoq"]
+[ext_resource type="Texture2D" uid="uid://ipcah6wm83o8" path="res://Assets/Images/Effects/StoneTowerSkill2/0012.png" id="131_y6x4q"]
+[ext_resource type="Texture2D" uid="uid://cgdqpbxpt60hk" path="res://Assets/Images/Effects/StoneTowerSkill2/0013.png" id="132_eos8v"]
+[ext_resource type="Texture2D" uid="uid://cofnlv67wb2sc" path="res://Assets/Images/Bullets/stone.png" id="133_bgi63"]
+[ext_resource type="Texture2D" uid="uid://cqod48s6goy1w" path="res://Assets/Images/DefenceTowers/Archers/UI/LV4-1/黑曜石.png" id="134_mocnt"]
+[ext_resource type="Texture2D" uid="uid://i180tjhpnnrt" path="res://Assets/Images/DefenceTowers/Archers/UI/LV4-1/碎石.png" id="135_05lgu"]
+[ext_resource type="Texture2D" uid="uid://cgpo8p4sgi5f6" path="res://Assets/Images/Bullets/黑曜石.png" id="138_albh5"]
+[ext_resource type="Texture2D" uid="uid://bwmua6m4kbfsh" path="res://Assets/Images/UI/InformationBar/Towers/Archers/arrow-id-4.png" id="141_16tmk"]
+
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7meco"]
+atlas = ExtResource("18_1heug")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qn6n"]
+atlas = ExtResource("19_gy6a7")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwnob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_hir73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yks2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y44un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_55ibr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fq2jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_646tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8erdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_en7cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_udhof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qdopa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3j0b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7f1ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ktecs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lnb5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_3g2al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_6dw44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ds3yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2du6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_6gcjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_5gmhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_suo6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_sq0c7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_u2uir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_xdxn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qecoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_1dvne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_1frl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_f1ovb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_t6amm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_golt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_w3882")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_8b7xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_bvc0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_a5y2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_t4e66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_4l8u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_4rnts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_4nfx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_nd5uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_d1lcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_p63p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_3fwo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_txbkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_o0uyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_s4l8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_w3k50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_ugjya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_t2v8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_x3isi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_wphc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_vihb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_r6apw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_xoacd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_nifn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_xypdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ujq6f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ru8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_r7r0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_j0po6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_quu7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_vt0k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_y8hiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_1rw8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_re3gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_0i1o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_fqrka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_1nwtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_wiv51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_w502p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_8ybij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_eu1y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_2pcds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_olwch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_qunjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_rf8aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_knuik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_nj8li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_grpoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_7eled")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_stxpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_ugeff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_4le78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_18nee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_uqq6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_iqms3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_2qqre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_16gq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_dypcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_f3gkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_nqtm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_bfdfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_oa06t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_h1fwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_jqhdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_8gbck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_d0yd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_2x0ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_ifgnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_jmt14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_mck0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_pdin7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_fpw5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_i3j3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_4cema")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnt0w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("120_8li0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_ecsbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_d1mts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_0qmrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_q6bpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_1542b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_8rn5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_mg16j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_gv205")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_tjd33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_dtsoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_y6x4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_eos8v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiArcherTowerLV4-1" instance=ExtResource("1_rckhf")]
+offset_bottom = 5788.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_nwyut")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "投石高塔"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "只要喝饱暗黑重油，这些紫皮投石手便会重拳出击，将敌人压在巨石之下。
+ 
+首次解锁于第7关： 南洋海岸"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "配置数据"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "前置升级"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer" index="0" instance=ExtResource("3_7nkhm")]
+layout_mode = 2
+texture_normal = ExtResource("4_eqfmo")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_3.tscn"
+name_text = "皇家射手高台"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数据"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 760
+theme_override_constants/margin_right = 60
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "科技加成"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "青龙之眼"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 510
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "充足木料"
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 235
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "被动"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="12"]
+layout_mode = 2
+text = "投石高塔的子弹命中敌人后如果以命中点为中心周围 73 像素内有检测到其他敌人的HurtBox，则会额外生成一个子弹攻击随机敌人（排除原命中敌人），继承自原子弹伤害的0.667倍"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "黑曜石"
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="16"]
+layout_mode = 2
+text = "价格：200/180/180
+ 
+扔出一颗黑曜石，造成100-120/150-180/200-240点炮伤，并眩晕目标1.5秒。
+ 
+冷却时间：12秒"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_constants/margin_top = 315
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "碎石"
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="19"]
+layout_mode = 2
+text = "价格：250/200
+ 
+每次攻击会在最后命中处炸开碎石，对小范围内的所有敌人造成10-15/15-24点物伤。
+ 
+溅射范围为命中中心点为圆心的44像素半径的圆形区域，锁定地面空中敌人的HurtBox。
+ 
+判定条件：第一次攻击时若未触发弹射则触发该技能，落地时如果没有命中目标也会触发该技能；第二次弹射攻击时无论最后有没有击中在第二次弹射攻击结束后都会触发该技能。"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="20"]
+layout_mode = 2
+theme_override_constants/margin_top = 240
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="21"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "美术素材"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 535
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "音效素材"
+
+[node name="WikiTable" parent="FreeNodes" index="0" instance=ExtResource("8_wc4ib")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 1151.0
+offset_right = 911.0
+offset_bottom = 1559.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable" index="0" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+tip_text = "远程物伤"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable" index="1" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "48 - 69"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable" index="2" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent3" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_glnjd")
+tip_text = "攻击间隔"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable" index="3" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "1.5秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable" index="4" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent5" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("12_6n63c")
+tip_text = "射程"
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable" index="5" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent6" index="0"]
+layout_mode = 2
+text = "360"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent7" parent="FreeNodes/WikiTable" index="6" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent7" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_0stma")
+tip_text = "造价"
+
+[node name="WikiTableEmelent8" parent="FreeNodes/WikiTable" index="7" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent8" index="0"]
+layout_mode = 2
+text = "230"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent9" parent="FreeNodes/WikiTable" index="8" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent9" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_0stma")
+tip_text = "总造价"
+
+[node name="WikiTableEmelent10" parent="FreeNodes/WikiTable" index="9" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent10" index="0"]
+layout_mode = 2
+text = "570"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable2" parent="FreeNodes" index="1" instance=ExtResource("8_wc4ib")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 2128.0
+offset_right = 911.0
+offset_bottom = 2208.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable2" index="0" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable2/WikiTableEmelent" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("12_6n63c")
+tip_text = "射程"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable2" index="1" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable2/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "360 -> 414"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable4" parent="FreeNodes" index="2" instance=ExtResource("8_wc4ib")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 3640.0
+offset_right = 911.0
+offset_bottom = 3966.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable4" index="0" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_0stma")
+tip_text = "价格"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable4" index="1" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "200 / 180 / 180"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable4" index="2" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent3" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_u0ohf")
+tip_text = "远程炮伤"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable4" index="3" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "100-120 / 150-180 / 200-240"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable4" index="4" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent5" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_glnjd")
+tip_text = "冷却时间"
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable4" index="5" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent6" index="0"]
+layout_mode = 2
+text = "12 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent7" parent="FreeNodes/WikiTable4" index="6" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent7" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_glnjd")
+tip_text = "眩晕时间"
+
+[node name="WikiTableEmelent8" parent="FreeNodes/WikiTable4" index="7" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent8" index="0"]
+layout_mode = 2
+text = "1.5 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable5" parent="FreeNodes" index="3" instance=ExtResource("8_wc4ib")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 4404.0
+offset_right = 911.0
+offset_bottom = 4648.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable5" index="0" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_0stma")
+tip_text = "价格"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable5" index="1" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "250 / 200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable5" index="2" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent3" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+tip_text = "远程物伤"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable5" index="3" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "10-15 / 15-24"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable5" index="4" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent5" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("12_6n63c")
+tip_text = "溅射范围"
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable5" index="5" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent6" index="0"]
+layout_mode = 2
+text = "44 像素"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable3" parent="FreeNodes" index="4" instance=ExtResource("8_wc4ib")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 2742.0
+offset_right = 911.0
+offset_bottom = 2904.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable3" index="0" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable3/WikiTableEmelent" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_0stma")
+tip_text = "造价"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable3" index="1" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable3/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "230 -> 220"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable3" index="2" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable3/WikiTableEmelent3" index="0" instance=ExtResource("10_lwsi7")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_0stma")
+tip_text = "总造价"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable3" index="3" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable3/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "570 -> 530"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable6" parent="FreeNodes" index="5" instance=ExtResource("8_wc4ib")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 5403.0
+offset_right = 911.0
+offset_bottom = 5689.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable6" index="0" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable6/WikiTableEmelent" index="0"]
+layout_mode = 2
+text = "攻击音效"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable6" index="1" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent2/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="FreeNodes/WikiTable6/WikiTableEmelent2/HBoxContainer" index="1" instance=ExtResource("12_r08s8")]
+layout_mode = 2
+audio_stream = ExtResource("13_f3yik")
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable6" index="2" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable6/WikiTableEmelent3" index="0"]
+layout_mode = 2
+text = "黑曜石命中"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable6" index="3" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent4/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="FreeNodes/WikiTable6/WikiTableEmelent4/HBoxContainer" index="1" instance=ExtResource("12_r08s8")]
+layout_mode = 2
+audio_stream = ExtResource("14_xf48p")
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable6" index="4" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable6/WikiTableEmelent5" index="0"]
+layout_mode = 2
+text = "碎石"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable6" index="5" instance=ExtResource("9_njt74")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent6/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="FreeNodes/WikiTable6/WikiTableEmelent6/HBoxContainer" index="1" instance=ExtResource("12_r08s8")]
+layout_mode = 2
+audio_stream = ExtResource("15_01ayp")
+
+[node name="Tower" type="Sprite2D" parent="FreeNodes" index="6"]
+position = Vector2(558, 1743)
+texture = ExtResource("11_b8alc")
+
+[node name="TowerRange" type="Node2D" parent="FreeNodes/Tower" index="0"]
+position = Vector2(9, 41)
+scale = Vector2(3.6, 3.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("15_rc5a6")
+
+[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower" index="1"]
+position = Vector2(19, -51)
+texture = ExtResource("13_r7r0r")
+
+[node name="Archer2" type="Sprite2D" parent="FreeNodes/Tower" index="2"]
+position = Vector2(-6, -51)
+scale = Vector2(-1, 1)
+texture = ExtResource("13_r7r0r")
+
+[node name="Front" type="Sprite2D" parent="FreeNodes/Tower" index="3"]
+position = Vector2(0, 12)
+texture = ExtResource("14_wy88w")
+
+[node name="Tower2" type="Sprite2D" parent="FreeNodes" index="7"]
+position = Vector2(558, 2407)
+texture = ExtResource("11_b8alc")
+
+[node name="TowerRange" type="Node2D" parent="FreeNodes/Tower2" index="0"]
+position = Vector2(9, 41)
+scale = Vector2(4.14, 4.14)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower2/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("15_rc5a6")
+
+[node name="TowerRange2" type="Node2D" parent="FreeNodes/Tower2" index="1"]
+position = Vector2(9, 41)
+scale = Vector2(3.6, 3.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower2/TowerRange2" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("15_rc5a6")
+
+[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower2" index="2"]
+position = Vector2(19, -51)
+texture = ExtResource("13_r7r0r")
+
+[node name="Archer2" type="Sprite2D" parent="FreeNodes/Tower2" index="3"]
+position = Vector2(-6, -51)
+scale = Vector2(-1, 1)
+texture = ExtResource("13_r7r0r")
+
+[node name="Front" type="Sprite2D" parent="FreeNodes/Tower2" index="4"]
+position = Vector2(0, 12)
+texture = ExtResource("14_wy88w")
+
+[node name="WikiHeadTextureButton" parent="FreeNodes" index="8" instance=ExtResource("3_7nkhm")]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 2018.0
+offset_right = 298.0
+offset_bottom = 2087.0
+texture_normal = SubResource("AtlasTexture_7meco")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -742.0
+name_text = ""
+
+[node name="WikiHeadTextureButton2" parent="FreeNodes" index="9" instance=ExtResource("3_7nkhm")]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 2650.0
+offset_right = 298.0
+offset_bottom = 2719.0
+texture_normal = SubResource("AtlasTexture_0qn6n")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -966.0
+name_text = ""
+
+[node name="GridContainer" type="GridContainer" parent="FreeNodes" index="10"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 4839.0
+offset_right = 966.0
+offset_bottom = 5139.0
+theme_override_constants/h_separation = 395
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="FreeNodes/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/GridContainer/Anim1" index="0"]
+position = Vector2(0, -9)
+scale = Vector2(2.81121, 2.81121)
+sprite_frames = SubResource("SpriteFrames_hwnob")
+autoplay = "default"
+frame_progress = 0.130977
+
+[node name="Label" type="Label" parent="FreeNodes/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim2" type="Control" parent="FreeNodes/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/GridContainer/Anim2" index="0"]
+position = Vector2(0, -9)
+scale = Vector2(2.81121, 2.81121)
+sprite_frames = SubResource("SpriteFrames_1ru8i")
+autoplay = "default"
+frame_progress = 0.974837
+
+[node name="Label" type="Label" parent="FreeNodes/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "一技能动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim3" type="Control" parent="FreeNodes/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/GridContainer/Anim3" index="0"]
+position = Vector2(13, -8)
+scale = Vector2(1.18459, 1.18459)
+sprite_frames = SubResource("SpriteFrames_nnt0w")
+autoplay = "default"
+frame_progress = 0.418094
+
+[node name="Label" type="Label" parent="FreeNodes/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "碎石动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim4" type="Control" parent="FreeNodes/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/GridContainer/Anim4" index="0"]
+position = Vector2(13, -2)
+scale = Vector2(1.46729, 1.46729)
+texture = ExtResource("133_bgi63")
+
+[node name="Label" type="Label" parent="FreeNodes/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "子弹素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim5" type="Control" parent="FreeNodes/GridContainer" index="4"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/GridContainer/Anim5" index="0"]
+position = Vector2(13, -2)
+scale = Vector2(1.46729, 1.46729)
+texture = ExtResource("138_albh5")
+
+[node name="Label" type="Label" parent="FreeNodes/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "黑曜石素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill1" type="TextureRect" parent="FreeNodes" index="11"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 3371.0
+offset_right = 267.0
+offset_bottom = 3467.0
+texture = ExtResource("134_mocnt")
+
+[node name="Skill2" type="TextureRect" parent="FreeNodes" index="12"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 3986.0
+offset_right = 228.0
+offset_bottom = 4082.0
+texture = ExtResource("135_05lgu")
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="13"]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 375.0
+offset_right = 783.0
+offset_bottom = 503.0
+texture = ExtResource("141_16tmk")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes" index="14"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：箭塔"
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("62_v6rq5")]
+layout_mode = 2
+text = "配置数据"
+wiki_page = NodePath("../../..")
+target_pos = -567.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("62_v6rq5")]
+layout_mode = 2
+text = "被动"
+wiki_page = NodePath("../../..")
+target_pos = -2918.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("62_v6rq5")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -3217.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("62_v6rq5")]
+layout_mode = 2
+text = "美术素材"
+wiki_page = NodePath("../../..")
+target_pos = -4552.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("62_v6rq5")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -5175.0

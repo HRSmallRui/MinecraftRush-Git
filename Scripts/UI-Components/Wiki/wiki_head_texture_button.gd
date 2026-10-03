@@ -2,6 +2,7 @@
 extends TextureButton
 
 @export_file("*.tscn") var target_page_path: String
+@export var target_page_pos: float = 0
 @export var name_text: String:
 	set(v):
 		name_text = v
@@ -22,7 +23,7 @@ func update_text():
 
 
 func _on_pressed() -> void:
-	
+	WikiManager.instance.into_new_wiki_page(target_page_path,0,target_page_pos)
 	pass # Replace with function body.
 
 

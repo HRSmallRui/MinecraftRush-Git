@@ -13,6 +13,8 @@ class_name MedicalSoldier
 @export var skill1_buff_duration_list: Array[float]
 @export_group("Skill2","skill2")
 @export var skill2_far_damage_list: Array[DamageBlock]
+@export var skill2_far_attack_range: int
+@export var skill2_far_attack_speed: float
 @export_group("Skill3","skill3")
 @export var skill3_heal_data_list: Array[int]
 
@@ -99,10 +101,10 @@ func soldier_skill_level_up(skill_id: int, skill_level: int):
 		ally_sprite.play(current_animation)
 		ally_sprite.frame == current_frame
 	if skill_id == 1:
-		start_data.far_damage_range = 300
+		start_data.far_damage_range = skill2_far_attack_range
 		current_data.update_far_attack_range()
 		#far_attack_area.scale = Vector2.ONE * float(current_data.far_damage_range) / 100
-		start_data.far_attack_speed = 1.5
+		start_data.far_attack_speed = skill2_far_attack_speed
 		current_data.update_far_damage_speed()
 		#far_attack_timer.wait_time = current_data.far_attack_speed
 		#var shape: CollisionShape2D = far_attack_area.get_child(0)
