@@ -1,0 +1,949 @@
+[gd_scene load_steps=122 format=3 uid="uid://dtl6pob3pel7n"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_o6cte"]
+[ext_resource type="Texture2D" uid="uid://c638plp5qu1kx" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Magic1.png" id="2_edbg2"]
+[ext_resource type="Texture2D" uid="uid://b2v7pohn1ykq7" path="res://Assets/Images/UI/InformationBar/Towers/Magics/magic-id-1.png" id="3_aptp3"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="4_y360a"]
+[ext_resource type="Texture2D" uid="uid://c6dqtgd5d72yl" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic0.png" id="5_4rai2"]
+[ext_resource type="Texture2D" uid="uid://b88akqwt7frhj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic2.png" id="6_sqxth"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="7_84ekb"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="8_lx7ch"]
+[ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="9_a714k"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="10_pu6tu"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="11_nx0fc"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="12_cvydt"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="13_2bl3f"]
+[ext_resource type="Texture2D" uid="uid://c7xivo6novxbl" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV2/MAGIC2-attack_00.png" id="14_414cg"]
+[ext_resource type="Texture2D" uid="uid://b7tpmru2mx1hr" path="res://Assets/Images/DefenceTowers/UI/射程范围.png" id="15_5xa6y"]
+[ext_resource type="Texture2D" uid="uid://cknncj8qxiruf" path="res://Assets/Images/UI/Upgrade/Magics/法力延伸.png" id="16_238og"]
+[ext_resource type="Texture2D" uid="uid://xlrhit6631s7" path="res://Assets/Images/UI/Upgrade/Magics/闪耀魔法水晶.png" id="17_27jal"]
+[ext_resource type="Texture2D" uid="uid://dojb68bbvi2tu" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_00.png" id="18_k7cka"]
+[ext_resource type="Texture2D" uid="uid://cph30ut64uf57" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_01.png" id="19_2cb4e"]
+[ext_resource type="Texture2D" uid="uid://kvk812toiatc" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_02.png" id="20_x2fmu"]
+[ext_resource type="Texture2D" uid="uid://j8188lerp7l1" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_03.png" id="21_xkkj5"]
+[ext_resource type="Texture2D" uid="uid://c1dgewm32r5tg" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_04.png" id="22_7t1d5"]
+[ext_resource type="Texture2D" uid="uid://b2dcv1h41m8m2" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_05.png" id="23_4hk7c"]
+[ext_resource type="Texture2D" uid="uid://syp8b8bqolcv" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_06.png" id="24_0oure"]
+[ext_resource type="Texture2D" uid="uid://b0evaemabj7ih" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_07.png" id="25_cq6as"]
+[ext_resource type="Texture2D" uid="uid://dsjdacj4uq1ve" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_08.png" id="26_f1oyv"]
+[ext_resource type="Texture2D" uid="uid://bf3praj0unaxt" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_09.png" id="27_wekw4"]
+[ext_resource type="Texture2D" uid="uid://bgcs5ybc2hnbm" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_10.png" id="28_daunk"]
+[ext_resource type="Texture2D" uid="uid://jwpxljxgno7x" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_11.png" id="29_yq7bc"]
+[ext_resource type="Texture2D" uid="uid://x0r2kh5emcvx" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_12.png" id="30_sw3yw"]
+[ext_resource type="Texture2D" uid="uid://boes3gvbjw4a2" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_13.png" id="31_l23ur"]
+[ext_resource type="Texture2D" uid="uid://c0p6884fql11e" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_14.png" id="32_uttn1"]
+[ext_resource type="Texture2D" uid="uid://dhnmys4orgfw7" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_15.png" id="33_4j1sf"]
+[ext_resource type="Texture2D" uid="uid://by0rx1vvbo78" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_16.png" id="34_vh4o5"]
+[ext_resource type="Texture2D" uid="uid://d2q72ve7vjen4" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_17.png" id="35_8hhhi"]
+[ext_resource type="Texture2D" uid="uid://oglv0j4w31y0" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_18.png" id="36_h3jnm"]
+[ext_resource type="Texture2D" uid="uid://5di5jf68fu1b" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_19.png" id="37_517dv"]
+[ext_resource type="Texture2D" uid="uid://b3kjnptbh2vch" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_20.png" id="38_naewc"]
+[ext_resource type="Texture2D" uid="uid://c6grtviqsu1mc" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_21.png" id="39_80o36"]
+[ext_resource type="Texture2D" uid="uid://djx5533d2b6l7" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_22.png" id="40_rmphi"]
+[ext_resource type="Texture2D" uid="uid://ckqdr4ulvn3m1" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_23.png" id="41_b7hgi"]
+[ext_resource type="Texture2D" uid="uid://btut87goo7m8j" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_24.png" id="42_dj0q1"]
+[ext_resource type="Texture2D" uid="uid://d0vj03vevniqd" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_25.png" id="43_5dnov"]
+[ext_resource type="Texture2D" uid="uid://7khr8ddm0w2e" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_26.png" id="44_qnw7j"]
+[ext_resource type="Texture2D" uid="uid://bjwtxms0jql0y" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_27.png" id="45_kdp8u"]
+[ext_resource type="Texture2D" uid="uid://dyvikc8wi7ucx" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_28.png" id="46_fqh6x"]
+[ext_resource type="Texture2D" uid="uid://dxy21x140xofi" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_29.png" id="47_fhly4"]
+[ext_resource type="Texture2D" uid="uid://d0m7lj5b4hnal" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_30.png" id="48_ystvh"]
+[ext_resource type="Texture2D" uid="uid://cymuv3pur527f" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_31.png" id="49_hi3hn"]
+[ext_resource type="Texture2D" uid="uid://b287mvh0ol3h5" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_32.png" id="50_ado1e"]
+[ext_resource type="Texture2D" uid="uid://d4e2e57prdeqi" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_33.png" id="51_snj5r"]
+[ext_resource type="Texture2D" uid="uid://cxuulvu7oxu4u" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_34.png" id="52_8y8qi"]
+[ext_resource type="Texture2D" uid="uid://dwarmyg8wv24b" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_35.png" id="53_lkd37"]
+[ext_resource type="Texture2D" uid="uid://b1utsn65js40q" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_36.png" id="54_40hoo"]
+[ext_resource type="Texture2D" uid="uid://cba2espxr3vbh" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_37.png" id="55_86eui"]
+[ext_resource type="Texture2D" uid="uid://dkpj4ywtlt5h0" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_38.png" id="56_1cg2n"]
+[ext_resource type="Texture2D" uid="uid://ck5luabtp3xsb" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_39.png" id="57_ga3st"]
+[ext_resource type="Texture2D" uid="uid://clvuvrosflgss" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_40.png" id="58_il4nl"]
+[ext_resource type="Texture2D" uid="uid://dgpi4qqn7twc1" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_41.png" id="59_5o6x3"]
+[ext_resource type="Texture2D" uid="uid://m75mqsjf3hgf" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_42.png" id="60_rr448"]
+[ext_resource type="Texture2D" uid="uid://dik2x5gllbd3k" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_43.png" id="61_c1gbr"]
+[ext_resource type="Texture2D" uid="uid://bwgsom8nx43rm" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_44.png" id="62_jm8pw"]
+[ext_resource type="Texture2D" uid="uid://da3li3ookqqjj" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-front-Attack_45.png" id="63_ha5xu"]
+[ext_resource type="Texture2D" uid="uid://d3rg7p1fhfijb" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_00.png" id="64_5oowj"]
+[ext_resource type="Texture2D" uid="uid://ds42j8nsrj04j" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_01.png" id="65_6plgu"]
+[ext_resource type="Texture2D" uid="uid://mqibdpts7687" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_02.png" id="66_1pfs0"]
+[ext_resource type="Texture2D" uid="uid://b1j836ggd221b" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_03.png" id="67_02lkb"]
+[ext_resource type="Texture2D" uid="uid://dcawgqe4g87j6" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_04.png" id="68_8f7g1"]
+[ext_resource type="Texture2D" uid="uid://b2685d6xo01op" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_05.png" id="69_v82vt"]
+[ext_resource type="Texture2D" uid="uid://jqnkn52i72km" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_06.png" id="70_ro06w"]
+[ext_resource type="Texture2D" uid="uid://brtbky6ev70f5" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_07.png" id="71_v7cs3"]
+[ext_resource type="Texture2D" uid="uid://dj7fksgao4wjs" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_08.png" id="72_3o3fy"]
+[ext_resource type="Texture2D" uid="uid://bei0u4p082pld" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_09.png" id="73_gp8f0"]
+[ext_resource type="Texture2D" uid="uid://c4i1f1sdr7h2t" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_10.png" id="74_xbhrw"]
+[ext_resource type="Texture2D" uid="uid://dcjejg2ccrahe" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_11.png" id="75_w7t0b"]
+[ext_resource type="Texture2D" uid="uid://dxy60i32ne5t0" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_12.png" id="76_gir7d"]
+[ext_resource type="Texture2D" uid="uid://wfvo034k8n1a" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_13.png" id="77_h3ibm"]
+[ext_resource type="Texture2D" uid="uid://bhc1ymwyp7e18" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_14.png" id="78_3p38b"]
+[ext_resource type="Texture2D" uid="uid://cmk3vy3fru8pf" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_15.png" id="79_x3004"]
+[ext_resource type="Texture2D" uid="uid://tq18w2afifqg" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_16.png" id="80_w5fg5"]
+[ext_resource type="Texture2D" uid="uid://by5qu8m0gauns" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_17.png" id="81_4dmt4"]
+[ext_resource type="Texture2D" uid="uid://cjajyvia0yri1" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_18.png" id="82_4si8m"]
+[ext_resource type="Texture2D" uid="uid://c7v65jska1tjk" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_19.png" id="83_60fck"]
+[ext_resource type="Texture2D" uid="uid://c0ras63v2a1vf" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_20.png" id="84_fb8f2"]
+[ext_resource type="Texture2D" uid="uid://b2bm44fy14p5g" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_21.png" id="85_gg1f4"]
+[ext_resource type="Texture2D" uid="uid://b1skg1isvv7nb" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_22.png" id="86_pt4gw"]
+[ext_resource type="Texture2D" uid="uid://d0nhrii0isxmd" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_23.png" id="87_6mu6b"]
+[ext_resource type="Texture2D" uid="uid://di5kqkg4j5nc2" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_24.png" id="88_fklb5"]
+[ext_resource type="Texture2D" uid="uid://d4l3kubi82ko5" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_25.png" id="89_grgs1"]
+[ext_resource type="Texture2D" uid="uid://ckrghqmlu3jol" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_26.png" id="90_aewbm"]
+[ext_resource type="Texture2D" uid="uid://cstafj7t7spey" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_27.png" id="91_gn7fm"]
+[ext_resource type="Texture2D" uid="uid://botr0u745oemu" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_28.png" id="92_bpn3c"]
+[ext_resource type="Texture2D" uid="uid://bh0ylfycl2kww" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_29.png" id="93_xk6v0"]
+[ext_resource type="Texture2D" uid="uid://bqu1a5t11aj1t" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_30.png" id="94_rpl0o"]
+[ext_resource type="Texture2D" uid="uid://12mo27p8qhmb" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_31.png" id="95_rnngm"]
+[ext_resource type="Texture2D" uid="uid://tgnrei58puco" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_32.png" id="96_k3883"]
+[ext_resource type="Texture2D" uid="uid://bs8c6a1p6a4ad" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_33.png" id="97_yc3s3"]
+[ext_resource type="Texture2D" uid="uid://bs8h5yqmehxbt" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_34.png" id="98_ic37r"]
+[ext_resource type="Texture2D" uid="uid://saj45urrho5n" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_35.png" id="99_aed0p"]
+[ext_resource type="Texture2D" uid="uid://c2r3m3mteiyr2" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_36.png" id="100_3pjf4"]
+[ext_resource type="Texture2D" uid="uid://c7uvs2tdvljlx" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_37.png" id="101_tch4s"]
+[ext_resource type="Texture2D" uid="uid://bb8ltqb4but0x" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_38.png" id="102_k25rq"]
+[ext_resource type="Texture2D" uid="uid://3cprrgynym3w" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_39.png" id="103_3wrfl"]
+[ext_resource type="Texture2D" uid="uid://5tw571p8se6n" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_40.png" id="104_5sdtq"]
+[ext_resource type="Texture2D" uid="uid://bur088lbm8bhf" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_41.png" id="105_jbcmo"]
+[ext_resource type="Texture2D" uid="uid://bkh7jnoifoyig" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_42.png" id="106_0ur2w"]
+[ext_resource type="Texture2D" uid="uid://d2hcm04hs0sjj" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_43.png" id="107_ayu6q"]
+[ext_resource type="Texture2D" uid="uid://d21pc4r4y4xbb" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_44.png" id="108_41unc"]
+[ext_resource type="Texture2D" uid="uid://bfe4nrhio85if" path="res://Assets/Animations/Magicians/LV1-3/MagicianLV1-3-back-Attack_45.png" id="109_5swo8"]
+[ext_resource type="Texture2D" uid="uid://cvj5rlytuqmgm" path="res://Assets/Images/Bullets/magic_bullet1.png" id="110_b2037"]
+[ext_resource type="Texture2D" uid="uid://b5buur4b2cgrw" path="res://Assets/Images/DefenceTowers/Magics/Towers/heart_close.png" id="111_o5imo"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="112_f1qap"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwhpv"]
+atlas = ExtResource("16_238og")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjdku"]
+atlas = ExtResource("17_27jal")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2l34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_k7cka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2cb4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_x2fmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xkkj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7t1d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4hk7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0oure")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cq6as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_f1oyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wekw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_daunk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_yq7bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sw3yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_l23ur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_uttn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4j1sf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vh4o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_8hhhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_h3jnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_517dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_naewc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_80o36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rmphi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_b7hgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dj0q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_5dnov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_qnw7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_kdp8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_fqh6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_fhly4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ystvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_hi3hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ado1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_snj5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_8y8qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_lkd37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_40hoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_86eui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_1cg2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ga3st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_il4nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_5o6x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_rr448")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_c1gbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_jm8pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ha5xu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mow5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_5oowj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_6plgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_1pfs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_02lkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_8f7g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_v82vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_ro06w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_v7cs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_3o3fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_gp8f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_xbhrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_w7t0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_gir7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_h3ibm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3p38b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_x3004")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_w5fg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_4dmt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_4si8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_60fck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_fb8f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_gg1f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_pt4gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_6mu6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_fklb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_grgs1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_aewbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_gn7fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_bpn3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_xk6v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_rpl0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_rnngm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_k3883")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_yc3s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_ic37r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_aed0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_3pjf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_tch4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_k25rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_3wrfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_5sdtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_jbcmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_0ur2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_ayu6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_41unc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_5swo8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33yly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110_b2037")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qd0eb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111_o5imo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qgfts"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_c2q53"]
+resource_name = "loop"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 1),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 6.28319, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pv7cv"]
+_data = {
+"RESET": SubResource("Animation_qgfts"),
+"loop": SubResource("Animation_c2q53")
+}
+
+[node name="WikiMagicTowerLV2" instance=ExtResource("1_o6cte")]
+offset_bottom = 3941.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_edbg2")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "法师高台"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 645.0
+offset_top = -45.0
+offset_right = 773.0
+offset_bottom = 83.0
+texture = ExtResource("3_aptp3")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "更强的魔法能量，法师发射的强化魔法球能够撕裂护甲和血肉。
+ 
+首次解锁于第2关： 天木市"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "基础配置"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "前置升级"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/GridContainer" index="0" instance=ExtResource("4_y360a")]
+layout_mode = 2
+texture_normal = ExtResource("5_4rai2")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_1.tscn"
+name_text = "法师塔"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "后置升级"
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/GridContainer2" index="0" instance=ExtResource("4_y360a")]
+layout_mode = 2
+texture_normal = ExtResource("6_sqxth")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_3.tscn"
+name_text = "风暴法师塔"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="6"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="7"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数据"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="8"]
+layout_mode = 2
+
+[node name="Data" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("7_84ekb")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="0" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement" index="0" instance=ExtResource("9_a714k")]
+layout_mode = 2
+texture = ExtResource("10_pu6tu")
+tip_text = "远程法伤"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="1" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "23 - 43"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="2" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement3" index="0" instance=ExtResource("9_a714k")]
+layout_mode = 2
+texture = ExtResource("11_nx0fc")
+tip_text = "攻击间隔"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="3" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "1.5 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="4" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement5" index="0" instance=ExtResource("9_a714k")]
+layout_mode = 2
+texture = ExtResource("12_cvydt")
+tip_text = "射程"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="5" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "320"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="6" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement7" index="0" instance=ExtResource("9_a714k")]
+layout_mode = 2
+texture = ExtResource("13_2bl3f")
+tip_text = "价格"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="7" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "160"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="8" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement9" index="0" instance=ExtResource("9_a714k")]
+layout_mode = 2
+texture = ExtResource("13_2bl3f")
+tip_text = "总造价"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data" index="9" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/Data/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "260"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="9"]
+layout_mode = 2
+theme_override_constants/margin_top = 320
+
+[node name="Tower" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer3" index="0"]
+position = Vector2(518, 101)
+texture = ExtResource("14_414cg")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer3/Tower" index="0"]
+position = Vector2(-4, -41)
+texture = ExtResource("18_k7cka")
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer3/Tower" index="1"]
+position = Vector2(4.76837e-07, -66)
+scale = Vector2(0.17204, 0.17204)
+texture = ExtResource("111_o5imo")
+
+[node name="TowerRange" type="Node2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer3/Tower" index="2"]
+position = Vector2(-2, 49)
+scale = Vector2(3.2, 3.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer3/Tower/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("15_5xa6y")
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="10"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "科技加成"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="11"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "法力延伸"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/Label6" index="0" instance=ExtResource("4_y360a")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_bwhpv")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -3988.0
+name_text = ""
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="12"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2" index="0" instance=ExtResource("7_84ekb")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="0" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("9_a714k")]
+layout_mode = 2
+texture = ExtResource("12_cvydt")
+tip_text = "射程"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="1" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "320 -> 352"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="13"]
+layout_mode = 2
+theme_override_constants/margin_top = 360
+
+[node name="Tower2" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer4" index="0"]
+position = Vector2(518, 115)
+texture = ExtResource("14_414cg")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer4/Tower2" index="0"]
+position = Vector2(-4, -41)
+texture = ExtResource("18_k7cka")
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer4/Tower2" index="1"]
+position = Vector2(4.76837e-07, -66)
+scale = Vector2(0.17204, 0.17204)
+texture = ExtResource("111_o5imo")
+
+[node name="TowerRange" type="Node2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer4/Tower2" index="2"]
+position = Vector2(-2, 49)
+scale = Vector2(3.2, 3.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer4/Tower2/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("15_5xa6y")
+
+[node name="TowerRange2" type="Node2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer4/Tower2" index="3"]
+position = Vector2(-2, 49)
+scale = Vector2(3.52, 3.52)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/MarginContainer4/Tower2/TowerRange2" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("15_5xa6y")
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="14"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "闪耀魔法水晶"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/Label7" index="0" instance=ExtResource("4_y360a")]
+layout_mode = 0
+offset_left = 232.0
+offset_top = -14.0
+offset_right = 301.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_gjdku")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -5046.0
+name_text = ""
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="15"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3" index="0" instance=ExtResource("7_84ekb")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable" index="0" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable/WikiTableElement" index="0" instance=ExtResource("9_a714k")]
+layout_mode = 2
+texture = ExtResource("10_pu6tu")
+tip_text = "远程法伤"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable" index="1" instance=ExtResource("8_lx7ch")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "23-43 -> 27-50"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 400
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_f2l34")
+autoplay = "default"
+frame_progress = 0.308658
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "正面攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_mow5w")
+autoplay = "default"
+frame_progress = 0.31082
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "背面攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_33yly")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "子弹素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -52)
+scale = Vector2(0.814337, 0.814337)
+sprite_frames = SubResource("SpriteFrames_qd0eb")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim4/AnimatedSprite2D" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_pv7cv")
+}
+autoplay = "loop"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "魔法核心"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：法师塔"
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("112_f1qap")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -626.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("112_f1qap")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -3165.0

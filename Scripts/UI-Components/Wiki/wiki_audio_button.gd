@@ -11,5 +11,8 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	audio_stream_player.play()
+	if audio_stream_player.playing:
+		audio_stream_player.stop()
+	else:
+		audio_stream_player.play()
 	pass # Replace with function body.
