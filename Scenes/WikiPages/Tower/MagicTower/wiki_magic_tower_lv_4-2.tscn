@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://hnpmrpit7vty"]
+[gd_scene load_steps=96 format=3 uid="uid://hnpmrpit7vty"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_bqhws"]
 [ext_resource type="Texture2D" uid="uid://dg04yxftxnigj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Magic4.png" id="2_5tenk"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://xlrhit6631s7" path="res://Assets/Images/UI/Upgrade/Magics/闪耀魔法水晶.png" id="18_d020h"]
 [ext_resource type="Texture2D" uid="uid://ci7smwcc4ybhj" path="res://Assets/Images/UI/Wiki/PropertyIcons/易伤.png" id="19_kn3s4"]
 [ext_resource type="Texture2D" uid="uid://c7net4flivij3" path="res://Assets/Images/DefenceTowers/Magics/UI/LV4-2/毒雾.png" id="20_lgmb1"]
-[ext_resource type="PackedScene" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="20_tkov5"]
+[ext_resource type="PackedScene" uid="uid://co8urrygr21vk" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="20_tkov5"]
 [ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="22_gx2hj"]
 [ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="23_vt41u"]
 [ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="24_araok"]
@@ -82,6 +82,8 @@
 [ext_resource type="Texture2D" uid="uid://bbt0wqkma2bgq" path="res://Assets/Images/Bullets/magic_bullet3.png" id="79_50vlw"]
 [ext_resource type="Texture2D" uid="uid://deetymmwx3mbg" path="res://Assets/Images/Effects/witch_dead_curse_skeleton.png" id="80_si6k0"]
 [ext_resource type="Texture2D" uid="uid://elusia7uimq5" path="res://Assets/Images/Effects/witch_dead_curse.png" id="81_ehfj6"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="82_860e0"]
+[ext_resource type="AudioStream" uid="uid://ctoyd6s36hmkq" path="res://Assets/Sounds/FXs/DefenceTowers/WitchTower/fog.mp3" id="83_5j06u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwhpv"]
 atlas = ExtResource("17_jw3kr")
@@ -309,6 +311,20 @@ _data = {
 "loop": SubResource("Animation_c2q53")
 }
 
+[sub_resource type="Animation" id="Animation_u8oor"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_mqtjr"]
 resource_name = "loop"
 loop_mode = 1
@@ -324,20 +340,6 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1)
 }
 
-[sub_resource type="Animation" id="Animation_u8oor"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kok3n"]
 _data = {
 "RESET": SubResource("Animation_u8oor"),
@@ -345,7 +347,7 @@ _data = {
 }
 
 [node name="WikiMagicTowerLV4-2" instance=ExtResource("1_bqhws")]
-offset_bottom = 6852.0
+offset_bottom = 7164.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -1197,6 +1199,50 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_top = 80
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("6_ycach")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("7_cqeyy")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "毒雾音效"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("7_cqeyy")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("82_860e0")]
+layout_mode = 2
+audio_stream = ExtResource("83_5j06u")
+
 [node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
 layout_mode = 0
 offset_right = 40.0
@@ -1233,3 +1279,9 @@ layout_mode = 2
 text = "动画素材"
 wiki_page = NodePath("../../..")
 target_pos = -5950.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("73_023xn")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -6674.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bijc7683t04df"]
+[gd_scene load_steps=88 format=3 uid="uid://bijc7683t04df"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_fmj66"]
 [ext_resource type="Texture2D" uid="uid://bai5pjlt0814t" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Magic3.png" id="2_jcf4y"]
@@ -72,6 +72,10 @@
 [ext_resource type="Texture2D" uid="uid://rdvdudgygb3r" path="res://Assets/Images/Effects/DustKill/0021.png" id="70_ofw37"]
 [ext_resource type="Texture2D" uid="uid://crf5xn56jkmbb" path="res://Assets/Images/Effects/DustKill/0022.png" id="71_erjyj"]
 [ext_resource type="Texture2D" uid="uid://cq3dpjaj24qc8" path="res://Assets/Images/Effects/DustKill/0023.png" id="72_8chwv"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="73_d4cgh"]
+[ext_resource type="AudioStream" uid="uid://fr2csv8b0ofi" path="res://Assets/Sounds/FXs/DefenceTowers/ProtectorChurch/Ray1.wav" id="74_v3ogi"]
+[ext_resource type="AudioStream" uid="uid://dt6x3iyeqcmqd" path="res://Assets/Sounds/FXs/DefenceTowers/ProtectorChurch/RayElec.wav" id="75_kk0ad"]
+[ext_resource type="AudioStream" uid="uid://bvpy5tyclm5n1" path="res://Assets/Sounds/FXs/DefenceTowers/ProtectorChurch/法阵.wav" id="76_s2njw"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="114_xtfco"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwhpv"]
@@ -305,7 +309,7 @@ animations = [{
 }]
 
 [node name="WikiMagicTowerLV4-1" instance=ExtResource("1_fmj66")]
-offset_bottom = 7180.0
+offset_bottom = 7501.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -1282,6 +1286,78 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_top = 80
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("9_tta85")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("10_loydm")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "攻击音效"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("10_loydm")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("73_d4cgh")]
+layout_mode = 2
+audio_stream = ExtResource("74_v3ogi")
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="2" instance=ExtResource("73_d4cgh")]
+layout_mode = 2
+audio_stream = ExtResource("75_kk0ad")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("10_loydm")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "法阵音效"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("10_loydm")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("73_d4cgh")]
+layout_mode = 2
+audio_stream = ExtResource("76_s2njw")
+
 [node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
 layout_mode = 0
 offset_right = 40.0
@@ -1318,3 +1394,9 @@ layout_mode = 2
 text = "动画素材"
 wiki_page = NodePath("../../..")
 target_pos = -6349.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("114_xtfco")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -7083.0
