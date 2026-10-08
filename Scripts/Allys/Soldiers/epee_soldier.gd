@@ -155,3 +155,12 @@ func take_damage(damage: int, damage_type: DataProcess.DamageType, broken_rate: 
 			if enemy.enemy_type == Enemy.EnemyType.Boss and current_data.health <= 0:
 				rebirth_possible -= 0.05
 	return result
+
+
+func sec_kill(explosion: bool, kill_source: Node2D = null):
+	super(explosion,kill_source)
+	if kill_source is Enemy:
+		var enemy: Enemy = kill_source
+		if enemy.enemy_type == Enemy.EnemyType.Boss and current_data.health <= 0:
+				rebirth_possible -= 0.05
+	pass
