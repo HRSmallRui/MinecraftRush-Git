@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 
 func move_logic_process():
 	if enemy_state == EnemyState.MOVE:
-		if can_sprint() and silence_layers <= 0 and sprint_timer.is_stopped():
+		if can_sprint() and silence_layers <= 0 and sprint_timer.is_stopped() and is_raining():
 			if get_remaining_progress() > 900:
 				sprint()
 				is_skill_releasing = true
@@ -111,3 +111,10 @@ func can_sprint() -> bool:
 		var ally_progress: float = curve.get_closest_offset(ally.position)
 		if ally_progress > progress: return true
 	return false
+
+
+func is_raining() -> bool:
+	if RainSystem.instance == null:
+		return false
+	else:
+		return RainSystem.instance.current_rain_step >= RainSystem.RainStep.Small
