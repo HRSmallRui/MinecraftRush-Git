@@ -1289,7 +1289,7 @@ enemy_count = 1
 script = ExtResource("74_yoge1")
 wave_summon_text_list = Array[ExtResource("76_5lsol")]([SubResource("Resource_eyrdk")])
 
-[node name="Stage4Campaign" node_paths=PackedStringArray("hide_left_based", "hide_left_based_2", "hide_right_based_1", "hide_right_based_2", "hide_right_based_3", "left_path_polygon", "right_path_polygon", "left_explosion_markers", "right_explosion_markers") instance=ExtResource("1_4y2mf")]
+[node name="Stage4Campaign" node_paths=PackedStringArray("hide_left_based", "hide_left_based_2", "hide_right_based_1", "hide_right_based_2", "hide_right_based_3", "hide_right_based_4", "left_path_polygon", "right_path_polygon", "left_explosion_markers", "right_explosion_markers") instance=ExtResource("1_4y2mf")]
 script = ExtResource("2_4iw5u")
 stage_view1_path = "res://Assets/Images/Stages/Stage4/stage4-view3.png"
 stage_view2_path = "res://Assets/Images/Stages/Stage4/stage4-view2.png"
@@ -1298,6 +1298,7 @@ hide_left_based_2 = NodePath("Towers/HideBasedLeft2")
 hide_right_based_1 = NodePath("Towers/HideBasedRight1")
 hide_right_based_2 = NodePath("Towers/HideBasedRight2")
 hide_right_based_3 = NodePath("Towers/HideBasedRight3")
+hide_right_based_4 = NodePath("Towers/DefenceTowerBased25")
 left_path_polygon = NodePath("PathArea/LeftPathPolygon")
 right_path_polygon = NodePath("PathArea/RightPathPolygon")
 left_explosion_markers = [NodePath("Background/ExplosionMarker1"), NodePath("Background/ExplosionMarker2"), NodePath("Background/ExplosionMarker3")]
@@ -1640,6 +1641,19 @@ is_new_tower = true
 [node name="BarrackTowerLV3" parent="Towers" index="24" instance=ExtResource("86_3d10w")]
 position = Vector2(1343, 1314)
 is_new_tower = true
+
+[node name="DefenceTowerBased23" parent="Towers" index="25" instance=ExtResource("55_ijvj8")]
+position = Vector2(537, 908)
+
+[node name="DefenceTowerBased24" parent="Towers" index="26" instance=ExtResource("55_ijvj8")]
+position = Vector2(1144, 895)
+
+[node name="DefenceTowerBased25" parent="Towers" index="27" instance=ExtResource("55_ijvj8")]
+visible = false
+position = Vector2(1589, 1069)
+
+[node name="DefenceTowerBased26" parent="Towers" index="28" instance=ExtResource("55_ijvj8")]
+position = Vector2(1161, 651)
 
 [node name="PauseButton" parent="StageUI" index="3"]
 texture_hover = null
