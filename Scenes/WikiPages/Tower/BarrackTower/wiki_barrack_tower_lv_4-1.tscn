@@ -1,13 +1,13 @@
 [gd_scene load_steps=36 format=3 uid="uid://do2ifnmeiwimm"]
 
-[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_eha6d"]
+[ext_resource type="PackedScene" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_eha6d"]
 [ext_resource type="Texture2D" uid="uid://cwi0yhwg7lybr" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Barrack3.png" id="2_pp4dh"]
 [ext_resource type="Texture2D" uid="uid://djsr2c6km1ra7" path="res://Assets/Images/UI/InformationBar/Towers/Barracks/barrack-id-4.png" id="3_0ns2w"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_75nvf"]
 [ext_resource type="Texture2D" uid="uid://cim4obn7cndeb" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack2.png" id="4_a5bpd"]
-[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="8_rrgar"]
-[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="9_x0a0j"]
-[ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="10_187p0"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="8_rrgar"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="9_x0a0j"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="10_187p0"]
 [ext_resource type="Texture2D" uid="uid://cxlgijvx46h50" path="res://Assets/Images/UI/Wiki/PropertyIcons/生命值.png" id="11_c15e6"]
 [ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="12_ppy1d"]
 [ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="13_gimgc"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="28_333hv"]
 [ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="29_wt33i"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="30_q7knj"]
-
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kj4g"]
 atlas = ExtResource("24_manay")
@@ -673,6 +672,7 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("17_fvlft")
 tip_text = "价格"
 
@@ -691,8 +691,10 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("13_gimgc")
 tip_text = "提高护甲"
+property_state = 1
 
 [node name="WikiTableElement4" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable" index="3" instance=ExtResource("9_x0a0j")]
 layout_mode = 2
@@ -709,6 +711,7 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement5" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("23_eb0tg")
 tip_text = "近战伤害抵挡概率"
 
@@ -727,6 +730,7 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer2/WikiTable/WikiTableElement7" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("23_eb0tg")
 tip_text = "远程伤害抵挡概率"
 
@@ -775,6 +779,7 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("17_fvlft")
 tip_text = "价格"
 
@@ -793,6 +798,7 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement3" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("28_333hv")
 tip_text = "总伤减免"
 
@@ -811,6 +817,7 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement5" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("29_wt33i")
 tip_text = "技能范围"
 
@@ -829,8 +836,10 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement7" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("13_gimgc")
 tip_text = "友军额外提高护甲"
+property_state = 1
 
 [node name="WikiTableElement8" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable" index="7" instance=ExtResource("9_x0a0j")]
 layout_mode = 2
@@ -847,6 +856,7 @@ layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer5/VBoxContainer/CenterContainer3/WikiTable/WikiTableElement9" index="0" instance=ExtResource("10_187p0")]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("25_odp07")
 tip_text = "持续时间"
 

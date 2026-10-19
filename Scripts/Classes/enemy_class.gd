@@ -482,7 +482,7 @@ func die_blood() -> Sprite2D:
 	return blood
 
 
-func sec_kill(explosion: bool):
+func sec_kill(explosion: bool, kill_source: Node2D = null):
 	if enemy_type == EnemyType.Boss: return
 	#print("sec_kill")
 	if enemy_type > EnemyType.Super: return
