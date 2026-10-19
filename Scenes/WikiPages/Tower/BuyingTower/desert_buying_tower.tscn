@@ -1,0 +1,201 @@
+[gd_scene load_steps=15 format=3 uid="uid://bt13ddhplb5uv"]
+
+[ext_resource type="PackedScene" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_5qf5i"]
+[ext_resource type="Texture2D" uid="uid://doajf7ms0w6qx" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Buying2.png" id="2_nlr05"]
+[ext_resource type="Texture2D" uid="uid://b3of2t7ltq33e" path="res://Assets/Images/UI/InformationBar/Towers/Others/desert_soldier.png" id="3_q78pc"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="4_rjuf0"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="5_56uvj"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="6_kvfc5"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="7_j0fuq"]
+[ext_resource type="Texture2D" uid="uid://ceyxpifdwjgbk" path="res://Assets/Images/UI/Wiki/PropertyIcons/调集范围.png" id="8_msjcw"]
+[ext_resource type="Texture2D" uid="uid://bctu4iubsi4na" path="res://Assets/Images/DefenceTowers/Specials/沙漠雇佣兵营地.png" id="9_5u8u5"]
+[ext_resource type="Texture2D" uid="uid://fg1y0i3ubnh4" path="res://Assets/Images/DefenceTowers/UI/集结范围.png" id="10_sfl4p"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="11_akih6"]
+[ext_resource type="Texture2D" uid="uid://c01lsphlsemx0" path="res://Assets/Images/UI/Wiki/Allys/BuyingSoldiers/Desert1.png" id="12_3i4k7"]
+[ext_resource type="Texture2D" uid="uid://ds7x5q2rr2ahl" path="res://Assets/Images/UI/Wiki/Allys/BuyingSoldiers/Desert2.png" id="13_mm2in"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="14_m0x8q"]
+
+[node name="WikiBuyingTower1" instance=ExtResource("1_5qf5i")]
+offset_bottom = 1871.0
+metadata/_edit_horizontal_guides_ = [627.0, 3915.0]
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_nlr05")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "沙漠雇佣兵营地"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 729.0
+offset_top = -45.0
+offset_right = 857.0
+offset_bottom = 83.0
+texture = ExtResource("3_q78pc")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "只要给够赏钱这帮亡命之徒可以为你赴汤蹈火。
+ 
+出现关卡： 第10关 - 绝望沙丘"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "基础配置"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数据"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Property" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer" index="0" instance=ExtResource("4_rjuf0")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="0" instance=ExtResource("5_56uvj")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent" index="0" instance=ExtResource("6_kvfc5")]
+layout_mode = 2
+texture = ExtResource("7_j0fuq")
+tip_text = "人数上限"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="1" instance=ExtResource("5_56uvj")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="2" instance=ExtResource("5_56uvj")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent3" index="0" instance=ExtResource("6_kvfc5")]
+layout_mode = 2
+texture = ExtResource("8_msjcw")
+tip_text = "调集范围"
+
+[node name="WikiTableEmelent4" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="3" instance=ExtResource("5_56uvj")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_top = 310
+
+[node name="Tower" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3" index="0"]
+position = Vector2(504, 102)
+texture = ExtResource("9_5u8u5")
+
+[node name="TowerRange" type="Node2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3/Tower" index="0"]
+position = Vector2(0, 41)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3/Tower/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("10_sfl4p")
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "士兵详情数据"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 105
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/HBoxContainer" index="0" instance=ExtResource("11_akih6")]
+layout_mode = 2
+texture_normal = ExtResource("12_3i4k7")
+name_text = "沙漠佣兵"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/HBoxContainer" index="1" instance=ExtResource("11_akih6")]
+layout_mode = 2
+texture_normal = ExtResource("13_mm2in")
+name_text = "佣兵头领"
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：雇佣兵塔"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 69.0
+offset_top = 194.0
+offset_right = 423.0
+offset_bottom = 394.0
+scale = Vector2(0.830169, 0.830169)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("14_m0x8q")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -627.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("14_m0x8q")]
+layout_mode = 2
+text = "士兵详情数据"
+wiki_page = NodePath("../../..")
+target_pos = -1415.0
