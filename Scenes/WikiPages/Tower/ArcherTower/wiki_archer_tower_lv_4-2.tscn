@@ -1,0 +1,1418 @@
+[gd_scene load_steps=141 format=3 uid="uid://b2cu5lyxxtjav"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_d6a7d"]
+[ext_resource type="Texture2D" uid="uid://didhu1fh2h0wj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer4.png" id="2_q7ohh"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_x4yew"]
+[ext_resource type="Texture2D" uid="uid://bhnvhhucjfyl3" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer2.png" id="4_aqg0x"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="5_3ktr5"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="6_25guh"]
+[ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="7_42l02"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="8_lpqjy"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="9_bg2qi"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="10_pplel"]
+[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="11_hk7l8"]
+[ext_resource type="Texture2D" uid="uid://cdhf72ijhxffi" path="res://Assets/Images/UI/Wiki/PropertyIcons/概率.png" id="12_bqvx0"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="12_h8qbd"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="12_ojk4q"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="13_av4dn"]
+[ext_resource type="AudioStream" uid="uid://nkakh3a2gwmr" path="res://Assets/Sounds/FXs/Bullets/Shoot1.wav" id="13_krqop"]
+[ext_resource type="Texture2D" uid="uid://bfkm37m2ts7vm" path="res://Assets/Images/DefenceTowers/Archers/Towers/LV4-2.png" id="16_5e70q"]
+[ext_resource type="AudioStream" uid="uid://d4ck1unsv2rkb" path="res://Assets/Sounds/FXs/DefenceTowers/DesertSentryTower/刺杀.wav" id="16_axwa7"]
+[ext_resource type="Texture2D" uid="uid://b7tpmru2mx1hr" path="res://Assets/Images/DefenceTowers/UI/射程范围.png" id="17_0pus0"]
+[ext_resource type="AudioStream" uid="uid://ce2uayknwiuym" path="res://Assets/Sounds/FXs/DefenceTowers/DesertSentryTower/狗叫.wav" id="17_71x4j"]
+[ext_resource type="Texture2D" uid="uid://xtdw2n8v54ra" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_00.png" id="18_87svs"]
+[ext_resource type="Texture2D" uid="uid://bcnmx75i6cm4f" path="res://Assets/Images/UI/Upgrade/Archers/青龙之眼.png" id="20_yof4t"]
+[ext_resource type="Texture2D" uid="uid://hhfvmdmrypkx" path="res://Assets/Images/UI/Upgrade/Archers/充足木料.png" id="21_hqgig"]
+[ext_resource type="Texture2D" uid="uid://n6x3mxdp3mwo" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_01.png" id="23_g7jv3"]
+[ext_resource type="Texture2D" uid="uid://d25ndlkrmddon" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_02.png" id="24_qhbni"]
+[ext_resource type="Texture2D" uid="uid://c3m3hwnoo7pa7" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_03.png" id="25_vyirn"]
+[ext_resource type="Texture2D" uid="uid://dhvh00u8y2p4v" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_04.png" id="26_y8bbq"]
+[ext_resource type="Texture2D" uid="uid://ce267hethbbct" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_05.png" id="27_hmp03"]
+[ext_resource type="Texture2D" uid="uid://bsqceiwcvqgmw" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_06.png" id="28_1chrr"]
+[ext_resource type="Texture2D" uid="uid://cfqm5aji6373k" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_07.png" id="29_knck4"]
+[ext_resource type="Texture2D" uid="uid://dmdui4j2lb3p7" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_08.png" id="30_trcmk"]
+[ext_resource type="Texture2D" uid="uid://e5n2cyg022t" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_09.png" id="31_ky2e0"]
+[ext_resource type="Texture2D" uid="uid://bnegefyx4ny33" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_10.png" id="32_bl8mm"]
+[ext_resource type="Texture2D" uid="uid://cymw355vmvojx" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_11.png" id="33_5o44o"]
+[ext_resource type="Texture2D" uid="uid://xrooig1hmtn8" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_12.png" id="34_phumh"]
+[ext_resource type="Texture2D" uid="uid://b6dbulmv0ifyi" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_13.png" id="35_xxiup"]
+[ext_resource type="Texture2D" uid="uid://cimlladkqsthp" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_14.png" id="36_1xv7i"]
+[ext_resource type="Texture2D" uid="uid://boj5vwwwhv1wu" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_15.png" id="37_rdkom"]
+[ext_resource type="Texture2D" uid="uid://c5vvy2na3h5ej" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_16.png" id="38_pkaco"]
+[ext_resource type="Texture2D" uid="uid://brkb8yclroji3" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_17.png" id="39_shcir"]
+[ext_resource type="Texture2D" uid="uid://dusd8b7ox1gnc" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_18.png" id="40_hlwct"]
+[ext_resource type="Texture2D" uid="uid://cjrowswqtc6xn" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_19.png" id="41_bhkmn"]
+[ext_resource type="Texture2D" uid="uid://ycl2nrvcqkg1" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_20.png" id="42_a3gdn"]
+[ext_resource type="Texture2D" uid="uid://nrnxswam73gt" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_21.png" id="43_evmmx"]
+[ext_resource type="Texture2D" uid="uid://ct1bsinceuypd" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_22.png" id="44_xjv8l"]
+[ext_resource type="Texture2D" uid="uid://bppwncvxou8sp" path="res://Assets/Animations/Archers/LV4-2/LV4-2attack_23.png" id="45_aisk6"]
+[ext_resource type="Texture2D" uid="uid://bgwcgo1bk6ps4" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_00.png" id="46_62b13"]
+[ext_resource type="Texture2D" uid="uid://b2xs1x4mrenxv" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_01.png" id="47_rlugl"]
+[ext_resource type="Texture2D" uid="uid://rkp4giluqn8x" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_02.png" id="48_dvfuf"]
+[ext_resource type="Texture2D" uid="uid://bcie2aq8r1g5p" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_03.png" id="49_ukdq1"]
+[ext_resource type="Texture2D" uid="uid://b336wb8eseuib" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_04.png" id="50_ohhb7"]
+[ext_resource type="Texture2D" uid="uid://o27tu0ufxub6" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_05.png" id="51_cdtvv"]
+[ext_resource type="Texture2D" uid="uid://cqp3e1ql0xyqb" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_06.png" id="52_epebb"]
+[ext_resource type="Texture2D" uid="uid://bueel6im6ary4" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_07.png" id="53_5a0e3"]
+[ext_resource type="Texture2D" uid="uid://cjakwnd7piqp2" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_08.png" id="54_l6qav"]
+[ext_resource type="Texture2D" uid="uid://b2s48dogc0qv1" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_09.png" id="55_ampx3"]
+[ext_resource type="Texture2D" uid="uid://dp2ywnhlgkfsn" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_10.png" id="56_xv0hp"]
+[ext_resource type="Texture2D" uid="uid://cvo270x7oemyp" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_11.png" id="57_egfve"]
+[ext_resource type="Texture2D" uid="uid://fbp2qk8d5oy2" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_12.png" id="58_lk3l2"]
+[ext_resource type="Texture2D" uid="uid://c3eld6artv3f1" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_13.png" id="59_uifgo"]
+[ext_resource type="Texture2D" uid="uid://cto3l5mfsbi85" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_14.png" id="60_psdba"]
+[ext_resource type="Texture2D" uid="uid://cbleu64c5smhd" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_15.png" id="61_g8g7m"]
+[ext_resource type="Texture2D" uid="uid://dsodwl7qjnqbj" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_16.png" id="62_0nbdf"]
+[ext_resource type="Texture2D" uid="uid://c228scbsi0lbs" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_17.png" id="63_4iyol"]
+[ext_resource type="Texture2D" uid="uid://rvc2kpihmtb5" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_18.png" id="64_fsemj"]
+[ext_resource type="Texture2D" uid="uid://bf34nrj430kt0" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_19.png" id="65_covey"]
+[ext_resource type="Texture2D" uid="uid://00cl8dq5i6m6" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_20.png" id="66_fxby8"]
+[ext_resource type="Texture2D" uid="uid://cmv1pvrgo2b1g" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_21.png" id="67_0x26j"]
+[ext_resource type="Texture2D" uid="uid://kxestlx2h8ef" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_22.png" id="68_013fu"]
+[ext_resource type="Texture2D" uid="uid://naib8tjxl8lk" path="res://Assets/Animations/Archers/LV4-2/Archer-back-attack_23.png" id="69_h7myl"]
+[ext_resource type="Texture2D" uid="uid://c5h0y0tqo7khf" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_00.png" id="70_nby00"]
+[ext_resource type="Texture2D" uid="uid://sdge6xaebm5m" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_01.png" id="71_la17r"]
+[ext_resource type="Texture2D" uid="uid://cvoh4uy6lnrwl" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_02.png" id="72_r1rtl"]
+[ext_resource type="Texture2D" uid="uid://cpk4fij7daq2n" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_03.png" id="73_wand4"]
+[ext_resource type="Texture2D" uid="uid://cfrn4eiesnr3a" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_04.png" id="74_2cxcd"]
+[ext_resource type="Texture2D" uid="uid://bkc7ke4s53qdx" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_05.png" id="75_q60gh"]
+[ext_resource type="Texture2D" uid="uid://dbt8ido7d0iov" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_06.png" id="76_td3lx"]
+[ext_resource type="Texture2D" uid="uid://bpikiqqwvktuc" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_07.png" id="77_s6sar"]
+[ext_resource type="Texture2D" uid="uid://q6tq3fb6dehm" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_08.png" id="78_yanut"]
+[ext_resource type="Texture2D" uid="uid://c1yfvfbk1rjrt" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_09.png" id="79_i4hjs"]
+[ext_resource type="Texture2D" uid="uid://d4m402t6adjix" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_10.png" id="80_hx4da"]
+[ext_resource type="Texture2D" uid="uid://617hetbbvidp" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_11.png" id="81_5acms"]
+[ext_resource type="Texture2D" uid="uid://n2bey57yj6cv" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_12.png" id="82_f6x6e"]
+[ext_resource type="Texture2D" uid="uid://uowpyen7p7gu" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_13.png" id="83_0ripl"]
+[ext_resource type="Texture2D" uid="uid://dp8b6iimuxu7u" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_14.png" id="84_3c5li"]
+[ext_resource type="Texture2D" uid="uid://b37swaeq7oq2o" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_15.png" id="85_kegaq"]
+[ext_resource type="Texture2D" uid="uid://1poukqvv1cnn" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_16.png" id="86_h6qya"]
+[ext_resource type="Texture2D" uid="uid://nbqnjc6b1qx7" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_17.png" id="87_5soxd"]
+[ext_resource type="Texture2D" uid="uid://cgrip1v6d54p8" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_18.png" id="88_i15wo"]
+[ext_resource type="Texture2D" uid="uid://4vt4lb14no3r" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_19.png" id="89_qg5o4"]
+[ext_resource type="Texture2D" uid="uid://njsqfc8tawub" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_20.png" id="90_gwpwm"]
+[ext_resource type="Texture2D" uid="uid://cou660rifss0j" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_21.png" id="91_x70ap"]
+[ext_resource type="Texture2D" uid="uid://dqs8uxmkcl2ju" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_22.png" id="92_ko8h6"]
+[ext_resource type="Texture2D" uid="uid://c74ln3dlt61kt" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_23.png" id="93_vi7pm"]
+[ext_resource type="Texture2D" uid="uid://ds66ua4jdt6os" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_24.png" id="94_clko8"]
+[ext_resource type="Texture2D" uid="uid://cfppr1ph1ahle" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_25.png" id="95_04h1v"]
+[ext_resource type="Texture2D" uid="uid://b5nl6nb3u3u0d" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_26.png" id="96_cuc32"]
+[ext_resource type="Texture2D" uid="uid://j7clmxuthikx" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_27.png" id="97_18juv"]
+[ext_resource type="Texture2D" uid="uid://bhu351eojsb48" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_28.png" id="98_22b1a"]
+[ext_resource type="Texture2D" uid="uid://qhldmph23a6w" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_29.png" id="99_ws76d"]
+[ext_resource type="Texture2D" uid="uid://c17mbykfr1pk7" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_30.png" id="100_6f0to"]
+[ext_resource type="Texture2D" uid="uid://d0klm0e8trxuq" path="res://Assets/Animations/Archers/LV4-2/LV4-2-kill_31.png" id="101_gmsgd"]
+[ext_resource type="Texture2D" uid="uid://d0gybrx72po1d" path="res://Assets/Animations/Archers/DesertWolf/move_back_00.png" id="102_6uusu"]
+[ext_resource type="Texture2D" uid="uid://cgvr8wyuwmjo2" path="res://Assets/Animations/Archers/DesertWolf/move_back_02.png" id="103_otdif"]
+[ext_resource type="Texture2D" uid="uid://1yf6ti0xhj0h" path="res://Assets/Animations/Archers/DesertWolf/move_back_03.png" id="104_umwm7"]
+[ext_resource type="Texture2D" uid="uid://cuk6ploe60yrj" path="res://Assets/Animations/Archers/DesertWolf/move_back_05.png" id="105_n8y8g"]
+[ext_resource type="Texture2D" uid="uid://dtrvmtqt2p1hm" path="res://Assets/Animations/Archers/DesertWolf/move_back_06.png" id="106_x3bcd"]
+[ext_resource type="Texture2D" uid="uid://3fwtxv04dfxc" path="res://Assets/Animations/Archers/DesertWolf/move_back_08.png" id="107_csc15"]
+[ext_resource type="Texture2D" uid="uid://et8qch5w71yi" path="res://Assets/Animations/Archers/DesertWolf/move_back_09.png" id="108_bbgcy"]
+[ext_resource type="Texture2D" uid="uid://v5r7826ac58q" path="res://Assets/Animations/Archers/DesertWolf/move_back_11.png" id="109_yummh"]
+[ext_resource type="Texture2D" uid="uid://b123tn15elp12" path="res://Assets/Animations/Archers/DesertWolf/move_front_00.png" id="110_33ih8"]
+[ext_resource type="Texture2D" uid="uid://rx2ujev31bcn" path="res://Assets/Animations/Archers/DesertWolf/move_front_02.png" id="111_pnc7y"]
+[ext_resource type="Texture2D" uid="uid://b8u6rrdx4qkct" path="res://Assets/Animations/Archers/DesertWolf/move_front_03.png" id="112_lnylt"]
+[ext_resource type="Texture2D" uid="uid://m4iappx41xxu" path="res://Assets/Animations/Archers/DesertWolf/move_front_05.png" id="113_xwm20"]
+[ext_resource type="Texture2D" uid="uid://dwfaj83lqwu3e" path="res://Assets/Animations/Archers/DesertWolf/move_front_06.png" id="114_agdtf"]
+[ext_resource type="Texture2D" uid="uid://sxtim5hdstmm" path="res://Assets/Animations/Archers/DesertWolf/move_front_08.png" id="115_ori5w"]
+[ext_resource type="Texture2D" uid="uid://bclay0ju1k6j1" path="res://Assets/Animations/Archers/DesertWolf/move_front_09.png" id="116_20uef"]
+[ext_resource type="Texture2D" uid="uid://b8cglqqq8uwil" path="res://Assets/Animations/Archers/DesertWolf/move_front_11.png" id="117_h0po4"]
+[ext_resource type="Texture2D" uid="uid://cvof75axkim4k" path="res://Assets/Animations/Archers/DesertWolf/move_normal_00.png" id="118_6rp88"]
+[ext_resource type="Texture2D" uid="uid://dlo6s5inemycj" path="res://Assets/Animations/Archers/DesertWolf/move_normal_02.png" id="119_x4a84"]
+[ext_resource type="Texture2D" uid="uid://b4fh8ktwym5ks" path="res://Assets/Animations/Archers/DesertWolf/move_normal_03.png" id="120_jf6m8"]
+[ext_resource type="Texture2D" uid="uid://wpqt4kplkwv7" path="res://Assets/Animations/Archers/DesertWolf/move_normal_05.png" id="121_ml0yj"]
+[ext_resource type="Texture2D" uid="uid://djhskq7cpprs4" path="res://Assets/Animations/Archers/DesertWolf/move_normal_06.png" id="122_raeqx"]
+[ext_resource type="Texture2D" uid="uid://bns12oq3bchky" path="res://Assets/Animations/Archers/DesertWolf/move_normal_08.png" id="123_ehdcp"]
+[ext_resource type="Texture2D" uid="uid://drog8ykmvh6wu" path="res://Assets/Animations/Archers/DesertWolf/move_normal_09.png" id="124_bv0xe"]
+[ext_resource type="Texture2D" uid="uid://75byfjtvus86" path="res://Assets/Animations/Archers/DesertWolf/move_normal_11.png" id="125_qtnsr"]
+[ext_resource type="Texture2D" uid="uid://dss8tyxphf4uf" path="res://Assets/Images/Bullets/sword.png" id="126_8etl0"]
+[ext_resource type="Texture2D" uid="uid://dgiv3fp7tqa62" path="res://Assets/Images/UI/InformationBar/Towers/Archers/arrow-id-5.png" id="127_shf60"]
+[ext_resource type="Texture2D" uid="uid://blyy83vpkbsgx" path="res://Assets/Images/DefenceTowers/Archers/UI/LV4-2/背后一刺.png" id="128_lwssk"]
+[ext_resource type="Texture2D" uid="uid://b1u5ifth4hyot" path="res://Assets/Images/DefenceTowers/Archers/UI/LV4-2/沙狼.png" id="129_re7um"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="140_fsdan"]
+
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7meco"]
+atlas = ExtResource("20_yof4t")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qn6n"]
+atlas = ExtResource("21_hqgig")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3n5j4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_87svs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_g7jv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qhbni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vyirn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_y8bbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hmp03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_1chrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_knck4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_trcmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ky2e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bl8mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5o44o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_phumh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xxiup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1xv7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rdkom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_pkaco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_shcir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hlwct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_bhkmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_a3gdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_evmmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_xjv8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_aisk6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qb8np"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_62b13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rlugl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_dvfuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ukdq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ohhb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_cdtvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_epebb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_5a0e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_l6qav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ampx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_xv0hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_egfve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_lk3l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_uifgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_psdba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_g8g7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_0nbdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_4iyol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_fsemj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_covey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_fxby8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_0x26j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_013fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_h7myl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncr8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_nby00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_la17r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_r1rtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_wand4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_2cxcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_q60gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_td3lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_s6sar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_yanut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_i4hjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_hx4da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_5acms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_f6x6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_0ripl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_3c5li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_kegaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_h6qya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_5soxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_i15wo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_qg5o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_gwpwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_x70ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ko8h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_vi7pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_clko8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_04h1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_cuc32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_18juv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_22b1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_ws76d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_6f0to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_gmsgd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4inrm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102_6uusu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_otdif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_umwm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_n8y8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_x3bcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_csc15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_bbgcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_yummh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h5a75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110_33ih8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_pnc7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_lnylt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_xwm20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_agdtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_ori5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_20uef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_h0po4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jwp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("118_6rp88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_x4a84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_jf6m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_ml0yj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_raeqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_ehdcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_bv0xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_qtnsr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1t81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("126_8etl0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WikiArcherTowerLV4-1" instance=ExtResource("1_d6a7d")]
+offset_bottom = 6414.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_q7ohh")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "沙漠哨塔"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "沙漠中的刺客，手中的飞刃时刻瞄准着敌人的头颅，每次都有可能对敌人造成致命的伤害。
+ 
+首次解锁于第9关： 沙漠神殿"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "配置数据"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "前置升级"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer" index="0" instance=ExtResource("3_x4yew")]
+layout_mode = 2
+texture_normal = ExtResource("4_aqg0x")
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_3.tscn"
+name_text = "皇家射手高台"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数据"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 760
+theme_override_constants/margin_right = 60
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "科技加成"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "青龙之眼"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 600
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "充足木料"
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/margin_top = 235
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "被动"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="12"]
+layout_mode = 2
+text = "沙漠哨塔每次攻击时有20%概率造成暴击伤害，暴击伤害为原伤害2倍面板伤害，并附带80%破甲效果。"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="14"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "背后一刺"
+
+[node name="Label12" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="16"]
+layout_mode = 2
+text = "价格：300/200/200
+ 
+对单个敌人造成115-135 / 200-250 / 310-400点真伤，并有30%/45%/60%概率立即秒杀目标。
+ 
+默认索敌射程内剩余生命值最高的敌人。
+ 
+冷却时间：16秒"
+autowrap_mode = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="17"]
+layout_mode = 2
+theme_override_constants/margin_top = 315
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="18"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "沙狼"
+
+[node name="Label13" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="19"]
+layout_mode = 2
+text = "价格：200/150/150
+ 
+召唤一只沙狼朝出怪口移动，对沿途的每个敌人造成28/52/68点物伤，并眩晕敌人1秒。
+ 
+沙狼速度为2，移动1.7秒，默认索敌射程内累计移动路径最长的敌人。
+ 
+冷却时间：13 秒"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="20"]
+layout_mode = 2
+theme_override_constants/margin_top = 525
+
+[node name="Label14" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="21"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "美术素材"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 780
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "音效素材"
+
+[node name="WikiTable" parent="FreeNodes" index="0" instance=ExtResource("5_3ktr5")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 1151.0
+offset_right = 911.0
+offset_bottom = 1559.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable" index="0" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+tip_text = "远程物伤"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable" index="1" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "23 - 45"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable" index="2" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent3" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_lpqjy")
+tip_text = "攻击间隔"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable" index="3" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "0.8 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable" index="4" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent5" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_bg2qi")
+tip_text = "射程"
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable" index="5" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent6" index="0"]
+layout_mode = 2
+text = "400"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent7" parent="FreeNodes/WikiTable" index="6" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent7" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_pplel")
+tip_text = "造价"
+
+[node name="WikiTableEmelent8" parent="FreeNodes/WikiTable" index="7" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent8" index="0"]
+layout_mode = 2
+text = "230"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent9" parent="FreeNodes/WikiTable" index="8" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable/WikiTableEmelent9" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_pplel")
+tip_text = "总造价"
+
+[node name="WikiTableEmelent10" parent="FreeNodes/WikiTable" index="9" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable/WikiTableEmelent10" index="0"]
+layout_mode = 2
+text = "570"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable2" parent="FreeNodes" index="1" instance=ExtResource("5_3ktr5")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 2128.0
+offset_right = 911.0
+offset_bottom = 2208.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable2" index="0" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable2/WikiTableEmelent" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_bg2qi")
+tip_text = "射程"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable2" index="1" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable2/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "400 -> 460"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable3" parent="FreeNodes" index="2" instance=ExtResource("5_3ktr5")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 2868.0
+offset_right = 911.0
+offset_bottom = 3030.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable3" index="0" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable3/WikiTableEmelent" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_pplel")
+tip_text = "造价"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable3" index="1" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable3/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "230 -> 220"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable3" index="2" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable3/WikiTableEmelent3" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_pplel")
+tip_text = "总造价"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable3" index="3" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable3/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "570 -> 530"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable4" parent="FreeNodes" index="3" instance=ExtResource("5_3ktr5")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 3784.0
+offset_right = 911.0
+offset_bottom = 3946.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable4" index="0" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_pplel")
+tip_text = "价格"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable4" index="1" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "300/200/200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable4" index="2" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent3" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_hk7l8")
+tip_text = "近战真伤"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable4" index="3" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "115-135 / 200-250/ 310-400"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable4" index="4" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent5" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("12_bqvx0")
+tip_text = "秒杀概率"
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable4" index="5" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent6" index="0"]
+layout_mode = 2
+text = "30% / 45% / 60%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent7" parent="FreeNodes/WikiTable4" index="6" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable4/WikiTableEmelent7" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_lpqjy")
+tip_text = "冷却时间"
+
+[node name="WikiTableEmelent8" parent="FreeNodes/WikiTable4" index="7" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable4/WikiTableEmelent8" index="0"]
+layout_mode = 2
+text = "16 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable5" parent="FreeNodes" index="4" instance=ExtResource("5_3ktr5")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 4464.0
+offset_right = 911.0
+offset_bottom = 4954.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable5" index="0" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_pplel")
+tip_text = "价格"
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable5" index="1" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "200/150/150"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable5" index="2" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent3" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("12_ojk4q")
+tip_text = "近战物伤"
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable5" index="3" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "28 / 52 / 68"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable5" index="4" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent5" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_av4dn")
+tip_text = "移速"
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable5" index="5" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent6" index="0"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent7" parent="FreeNodes/WikiTable5" index="6" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent7" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_lpqjy")
+tip_text = "眩晕时间"
+
+[node name="WikiTableEmelent8" parent="FreeNodes/WikiTable5" index="7" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent8" index="0"]
+layout_mode = 2
+text = "1.5 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent11" parent="FreeNodes/WikiTable5" index="8" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent11" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_lpqjy")
+tip_text = "移动时间"
+
+[node name="WikiTableEmelent12" parent="FreeNodes/WikiTable5" index="9" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent12" index="0"]
+layout_mode = 2
+text = "1.7 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent9" parent="FreeNodes/WikiTable5" index="10" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="FreeNodes/WikiTable5/WikiTableEmelent9" index="0" instance=ExtResource("7_42l02")]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_lpqjy")
+tip_text = "冷却时间"
+
+[node name="WikiTableEmelent10" parent="FreeNodes/WikiTable5" index="11" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable5/WikiTableEmelent10" index="0"]
+layout_mode = 2
+text = "13 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTable6" parent="FreeNodes" index="5" instance=ExtResource("5_3ktr5")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 6039.0
+offset_right = 911.0
+offset_bottom = 6325.0
+
+[node name="WikiTableEmelent" parent="FreeNodes/WikiTable6" index="0" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable6/WikiTableEmelent" index="0"]
+layout_mode = 2
+text = "攻击音效"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent2" parent="FreeNodes/WikiTable6" index="1" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent2/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="FreeNodes/WikiTable6/WikiTableEmelent2/HBoxContainer" index="1" instance=ExtResource("12_h8qbd")]
+layout_mode = 2
+audio_stream = ExtResource("13_krqop")
+
+[node name="WikiTableEmelent3" parent="FreeNodes/WikiTable6" index="2" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable6/WikiTableEmelent3" index="0"]
+layout_mode = 2
+text = "背后一刺"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent4" parent="FreeNodes/WikiTable6" index="3" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent4/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="FreeNodes/WikiTable6/WikiTableEmelent4/HBoxContainer" index="1" instance=ExtResource("12_h8qbd")]
+layout_mode = 2
+audio_stream = ExtResource("16_axwa7")
+
+[node name="WikiTableEmelent5" parent="FreeNodes/WikiTable6" index="4" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeNodes/WikiTable6/WikiTableEmelent5" index="0"]
+layout_mode = 2
+text = "沙狼"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent6" parent="FreeNodes/WikiTable6" index="5" instance=ExtResource("6_25guh")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes/WikiTable6/WikiTableEmelent6/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="FreeNodes/WikiTable6/WikiTableEmelent6/HBoxContainer" index="1" instance=ExtResource("12_h8qbd")]
+layout_mode = 2
+audio_stream = ExtResource("17_71x4j")
+
+[node name="Tower" type="Sprite2D" parent="FreeNodes" index="6"]
+position = Vector2(558, 1743)
+texture = ExtResource("16_5e70q")
+
+[node name="TowerRange" type="Node2D" parent="FreeNodes/Tower" index="0"]
+position = Vector2(9, 41)
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("17_0pus0")
+
+[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower" index="1"]
+position = Vector2(11, -24)
+texture = ExtResource("18_87svs")
+
+[node name="Tower2" type="Sprite2D" parent="FreeNodes" index="7"]
+position = Vector2(558, 2426)
+texture = ExtResource("16_5e70q")
+
+[node name="TowerRange" type="Node2D" parent="FreeNodes/Tower2" index="0"]
+position = Vector2(9, 41)
+scale = Vector2(4.6, 4.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower2/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("17_0pus0")
+
+[node name="TowerRange2" type="Node2D" parent="FreeNodes/Tower2" index="1"]
+position = Vector2(9, 41)
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="FreeNodes/Tower2/TowerRange2" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("17_0pus0")
+
+[node name="Archer" type="Sprite2D" parent="FreeNodes/Tower2" index="2"]
+position = Vector2(11, -24)
+texture = ExtResource("18_87svs")
+
+[node name="WikiHeadTextureButton" parent="FreeNodes" index="8" instance=ExtResource("3_x4yew")]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 2018.0
+offset_right = 298.0
+offset_bottom = 2087.0
+texture_normal = SubResource("AtlasTexture_7meco")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -742.0
+name_text = ""
+
+[node name="WikiHeadTextureButton2" parent="FreeNodes" index="9" instance=ExtResource("3_x4yew")]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 2731.0
+offset_right = 298.0
+offset_bottom = 2800.0
+texture_normal = SubResource("AtlasTexture_0qn6n")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -966.0
+name_text = ""
+
+[node name="Anims" type="GridContainer" parent="FreeNodes" index="10"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 5193.0
+offset_right = 966.0
+offset_bottom = 5493.0
+theme_override_constants/h_separation = 395
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="FreeNodes/Anims" index="0"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/Anims/Anim1" index="0"]
+position = Vector2(0, -9)
+scale = Vector2(2.81121, 2.81121)
+sprite_frames = SubResource("SpriteFrames_3n5j4")
+autoplay = "default"
+frame_progress = 0.164545
+
+[node name="Label" type="Label" parent="FreeNodes/Anims/Anim1" index="1"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 46.0
+offset_right = 68.0
+offset_bottom = 70.0
+text = "正面攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim2" type="Control" parent="FreeNodes/Anims" index="1"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/Anims/Anim2" index="0"]
+position = Vector2(0, -9)
+scale = Vector2(2.81121, 2.81121)
+sprite_frames = SubResource("SpriteFrames_qb8np")
+autoplay = "default"
+frame_progress = 0.910421
+
+[node name="Label" type="Label" parent="FreeNodes/Anims/Anim2" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "背面攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim3" type="Control" parent="FreeNodes/Anims" index="2"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/Anims/Anim3" index="0"]
+position = Vector2(-9, -8)
+scale = Vector2(2.2055, 2.2055)
+sprite_frames = SubResource("SpriteFrames_ncr8p")
+autoplay = "default"
+frame_progress = 0.500104
+
+[node name="Label" type="Label" parent="FreeNodes/Anims/Anim3" index="1"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 70.0
+text = "背后一刺动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim4" type="Control" parent="FreeNodes/Anims" index="3"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/Anims/Anim4" index="0"]
+position = Vector2(2, -7)
+scale = Vector2(3.4262, 3.4262)
+sprite_frames = SubResource("SpriteFrames_4inrm")
+autoplay = "default"
+frame_progress = 0.941964
+
+[node name="Label" type="Label" parent="FreeNodes/Anims/Anim4" index="1"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 46.0
+offset_right = 67.0
+offset_bottom = 70.0
+text = "沙狼背面动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim5" type="Control" parent="FreeNodes/Anims" index="4"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/Anims/Anim5" index="0"]
+position = Vector2(2, -7)
+scale = Vector2(3.4262, 3.4262)
+sprite_frames = SubResource("SpriteFrames_h5a75")
+autoplay = "default"
+frame_progress = 0.534258
+
+[node name="Label" type="Label" parent="FreeNodes/Anims/Anim5" index="1"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 46.0
+offset_right = 67.0
+offset_bottom = 70.0
+text = "沙狼正面动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim6" type="Control" parent="FreeNodes/Anims" index="5"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/Anims/Anim6" index="0"]
+position = Vector2(2, -7)
+scale = Vector2(3.4262, 3.4262)
+sprite_frames = SubResource("SpriteFrames_5jwp5")
+autoplay = "default"
+frame_progress = 0.0809544
+
+[node name="Label" type="Label" parent="FreeNodes/Anims/Anim6" index="1"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 46.0
+offset_right = 67.0
+offset_bottom = 70.0
+text = "沙狼侧面动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim7" type="Control" parent="FreeNodes/Anims" index="6"]
+layout_mode = 2
+
+[node name="Anim" type="AnimatedSprite2D" parent="FreeNodes/Anims/Anim7" index="0"]
+position = Vector2(2, -26)
+scale = Vector2(1.51891, 1.51891)
+sprite_frames = SubResource("SpriteFrames_e1t81")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="FreeNodes/Anims/Anim7" index="1"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 46.0
+offset_right = 67.0
+offset_bottom = 70.0
+text = "子弹素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="FreeNodes" index="11"]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 375.0
+offset_right = 783.0
+offset_bottom = 503.0
+texture = ExtResource("127_shf60")
+
+[node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="12"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 3434.0
+offset_right = 308.0
+offset_bottom = 3530.0
+texture = ExtResource("128_lwssk")
+
+[node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="13"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 4129.0
+offset_right = 240.0
+offset_bottom = 4225.0
+texture = ExtResource("129_re7um")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeNodes" index="14"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：箭塔"
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("140_fsdan")]
+layout_mode = 2
+text = "配置数据"
+wiki_page = NodePath("../../..")
+target_pos = -629.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("140_fsdan")]
+layout_mode = 2
+text = "被动"
+wiki_page = NodePath("../../..")
+target_pos = -3072.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("140_fsdan")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -3330.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("140_fsdan")]
+layout_mode = 2
+text = "美术素材"
+wiki_page = NodePath("../../..")
+target_pos = -4988.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("140_fsdan")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -5902.0

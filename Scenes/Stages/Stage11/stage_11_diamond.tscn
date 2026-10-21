@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://hdc44bxb7w2i"]
+[gd_scene load_steps=150 format=3 uid="uid://hdc44bxb7w2i"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_lm386"]
 [ext_resource type="Script" path="res://Library/EnemySummon/stage_summon_config.gd" id="2_fb35v"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://2yhux5a81kx8" path="res://Assets/Images/Stages/Stage11/stage11-based.png" id="5_tf8yv"]
 [ext_resource type="PackedScene" uid="uid://r43w2gwj4g1v" path="res://Scenes/Enemies/enemy_22.tscn" id="5_xl76r"]
 [ext_resource type="PackedScene" uid="uid://duo0sby5qmfjj" path="res://Scenes/Enemies/enemy_23.tscn" id="6_b37av"]
-[ext_resource type="Texture2D" uid="uid://dvqpukq76njye" path="res://Assets/Images/Stages/Stage11/stage11-mask.png" id="6_ekyhy"]
 [ext_resource type="PackedScene" uid="uid://cmwosu03bhpc3" path="res://Scenes/Enemies/enemy_24.tscn" id="7_4pckv"]
 [ext_resource type="Texture2D" uid="uid://cb7n0rp6m5v2t" path="res://Assets/Images/Stages/Flag.png" id="7_8fhbc"]
 [ext_resource type="PackedScene" uid="uid://bogv4dflqaoej" path="res://Scenes/Enemies/enemy_25.tscn" id="8_k74yp"]
@@ -581,11 +580,6 @@ texture = ExtResource("5_tf8yv")
 [node name="ProtectionPoint" parent="Background/BasedSprite" index="0"]
 position = Vector2(1830, 1400)
 
-[node name="Mask" type="Sprite2D" parent="Background/BasedSprite" index="1"]
-visible = false
-texture = ExtResource("6_ekyhy")
-centered = false
-
 [node name="Flag2" type="Sprite2D" parent="Background" index="2"]
 position = Vector2(1896, 1415)
 texture = ExtResource("7_8fhbc")
@@ -868,6 +862,42 @@ linked_areas = []
 [node name="DefenceTowerBased11" parent="Towers" index="17" instance=ExtResource("49_3s8ho")]
 position = Vector2(1493, 870)
 based_skin = 3
+
+[node name="DefenceTowerBased17" parent="Towers" index="18" instance=ExtResource("49_3s8ho")]
+position = Vector2(1853, 491)
+based_skin = 3
+
+[node name="DefenceTowerBased23" parent="Towers" index="19" instance=ExtResource("49_3s8ho")]
+position = Vector2(1246, 719)
+based_skin = 3
+
+[node name="DefenceTowerBased24" parent="Towers" index="20" instance=ExtResource("49_3s8ho")]
+position = Vector2(1353, 564)
+based_skin = 3
+
+[node name="DefenceTowerBased18" parent="Towers" index="21" instance=ExtResource("49_3s8ho")]
+position = Vector2(1458, 1163)
+based_skin = 3
+
+[node name="DefenceTowerBased19" parent="Towers" index="22" node_paths=PackedStringArray("linked_areas") instance=ExtResource("49_3s8ho")]
+position = Vector2(974, 532)
+based_skin = 2
+linked_areas = []
+
+[node name="DefenceTowerBased20" parent="Towers" index="23" node_paths=PackedStringArray("linked_areas") instance=ExtResource("49_3s8ho")]
+position = Vector2(1684, 217)
+based_skin = 2
+linked_areas = []
+
+[node name="DefenceTowerBased21" parent="Towers" index="24" node_paths=PackedStringArray("linked_areas") instance=ExtResource("49_3s8ho")]
+position = Vector2(675, 1165)
+based_skin = 2
+linked_areas = []
+
+[node name="DefenceTowerBased22" parent="Towers" index="25" node_paths=PackedStringArray("linked_areas") instance=ExtResource("49_3s8ho")]
+position = Vector2(258, 816)
+based_skin = 2
+linked_areas = []
 
 [node name="CollisionShape2D" parent="ClickArea" index="0"]
 position = Vector2(1153, 727)

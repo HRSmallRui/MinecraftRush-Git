@@ -130,7 +130,7 @@
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="115_jk1v3"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="116_8cjv6"]
 [ext_resource type="PackedScene" uid="uid://35ca4tcwg7oh" path="res://Scenes/DefenceTowers/BuyingSoldierTower/village_barrack_tower.tscn" id="118_yyt0x"]
-[ext_resource type="PackedScene" uid="uid://cishbj3djctgr" path="res://Scenes/UI-Components/TipButtons/map_tip_button.tscn" id="122_6l0mj"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/TipButtons/map_tip_button.tscn" id="122_6l0mj"]
 [ext_resource type="PackedScene" uid="uid://dhbq6edfq84nt" path="res://Scenes/TipUI/map_tip_ui.tscn" id="123_kviai"]
 
 [sub_resource type="Resource" id="Resource_dl525"]
@@ -1581,7 +1581,10 @@ position = Vector2(0, -164)
 [node name="VillageBarrackTower" parent="Towers" index="21" instance=ExtResource("118_yyt0x")]
 position = Vector2(551, 261)
 
-[node name="VillageBarrackTower2" parent="Towers" index="22" instance=ExtResource("118_yyt0x")]
+[node name="DefenceTowerBased21" parent="Towers" index="22" instance=ExtResource("9_prc6s")]
+position = Vector2(362, 355)
+
+[node name="DefenceTowerBased22" parent="Towers" index="23" instance=ExtResource("9_prc6s")]
 position = Vector2(677, 481)
 
 [node name="DragTipButton" parent="StageUI/TipsContainer" index="0" instance=ExtResource("5_ygspy")]
@@ -1705,6 +1708,7 @@ position = Vector2(490, 14)
 position = Vector2(94, 661)
 
 [node name="Level3UnlockTip" parent="." index="24" instance=ExtResource("100_xkhgm")]
+visible = false
 
 [editable path="Towers/WallArhcer2"]
 [editable path="Towers/WallArhcer3"]

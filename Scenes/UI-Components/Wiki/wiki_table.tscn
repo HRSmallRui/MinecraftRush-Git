@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://do21df41fmjtl"]
+
+[ext_resource type="Script" path="res://Scripts/UI-Components/wiki_table.gd" id="1_2kivr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y88vd"]
+bg_color = Color(0.838897, 0.838897, 0.838896, 1)
+
+[sub_resource type="Theme" id="Theme_mba8l"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_y88vd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3tga"]
+bg_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+
+[sub_resource type="Theme" id="Theme_wnjt8"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_e3tga")
+
+[node name="WikiTable" type="GridContainer"]
+offset_left = 202.0
+offset_top = 1394.0
+offset_right = 452.0
+offset_bottom = 1444.0
+theme = SubResource("Theme_mba8l")
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 2
+script = ExtResource("1_2kivr")
+white_theme = SubResource("Theme_mba8l")
+dark_theme = SubResource("Theme_wnjt8")

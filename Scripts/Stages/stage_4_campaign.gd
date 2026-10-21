@@ -8,6 +8,7 @@ extends Stage
 @export var hide_right_based_1: DefenceTower
 @export var hide_right_based_2: DefenceTower
 @export var hide_right_based_3: DefenceTower
+@export var hide_right_based_4: DefenceTower
 @export_group("路径碰撞体")
 @export var left_path_polygon: CollisionPolygon2D
 @export var right_path_polygon: CollisionPolygon2D
@@ -79,6 +80,7 @@ func right_road_appear():
 	hide_right_based_1.show()
 	hide_right_based_2.show()
 	hide_right_based_3.show()
+	hide_right_based_4.show()
 	await get_tree().create_timer(1,false).timeout
 	right_path_polygon.disabled = false
 	enemy_path_13.enabled = true

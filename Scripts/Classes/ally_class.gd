@@ -454,7 +454,7 @@ func die_explosion_process():
 	pass
 
 
-func sec_kill(explosion: bool):
+func sec_kill(explosion: bool, kill_source: Node2D = null):
 	current_data.health = 0
 	if ally_type > AllyType.SuperSoldiers:
 		die(false)
