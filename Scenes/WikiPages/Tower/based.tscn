@@ -1,0 +1,399 @@
+[gd_scene load_steps=20 format=3 uid="uid://7y2w0pp5gsoo"]
+
+[ext_resource type="PackedScene" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_duyn7"]
+[ext_resource type="Texture2D" uid="uid://cctmmekbj7v13" path="res://Assets/Images/UI/InformationBar/Towers/Based.png" id="2_e6l1r"]
+[ext_resource type="Texture2D" uid="uid://c7mkrwf2apppx" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack0.png" id="4_o18a2"]
+[ext_resource type="Texture2D" uid="uid://c6dqtgd5d72yl" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic0.png" id="5_44h0c"]
+[ext_resource type="Texture2D" uid="uid://dmmsptj7se440" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard0.png" id="6_jrnd4"]
+[ext_resource type="Texture2D" uid="uid://cmuydi6smp844" path="res://Assets/Images/DefenceTowers/Based/royal-tower.png" id="7_71tqg"]
+[ext_resource type="Texture2D" uid="uid://bo4q5wo18lqp1" path="res://Assets/Images/DefenceTowers/Based/royal-build.png" id="8_d2jq6"]
+[ext_resource type="Texture2D" uid="uid://beuviuxxp8aqy" path="res://Assets/Images/DefenceTowers/Based/jungle-tower.png" id="9_mufvk"]
+[ext_resource type="Texture2D" uid="uid://301jpa585c4t" path="res://Assets/Images/DefenceTowers/Based/jungle-build.png" id="10_qk3rw"]
+[ext_resource type="Texture2D" uid="uid://c4h1eq6eub8id" path="res://Assets/Images/DefenceTowers/Based/desert-tower.png" id="11_444o1"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="11_eywah"]
+[ext_resource type="Texture2D" uid="uid://qmeadeojdlud" path="res://Assets/Images/DefenceTowers/Based/desert-build.png" id="12_b3gbi"]
+[ext_resource type="Texture2D" uid="uid://b6n4xcgxfi5aj" path="res://Assets/Images/DefenceTowers/Based/rising-tower.png" id="13_g7asi"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="14_ys311"]
+[ext_resource type="Texture2D" uid="uid://brssgruhhowjo" path="res://Assets/Images/DefenceTowers/Based/rising-build.png" id="14_yxh1j"]
+[ext_resource type="Texture2D" uid="uid://bfkq5jfry7chv" path="res://Assets/Images/DefenceTowers/Based/swamp-tower.png" id="15_fi38e"]
+[ext_resource type="Texture2D" uid="uid://dfd772so7exrk" path="res://Assets/Images/DefenceTowers/Based/swamp-build.png" id="16_22m2l"]
+[ext_resource type="Texture2D" uid="uid://b3d7mimwd3cwr" path="res://Assets/Images/DefenceTowers/Based/mountain-tower.png" id="17_y7bas"]
+[ext_resource type="Texture2D" uid="uid://d3kmom7t2g25j" path="res://Assets/Images/DefenceTowers/Based/mountain-build.png" id="18_hyu6y"]
+
+[node name="WikiBuyingTower1" instance=ExtResource("1_duyn7")]
+offset_bottom = 2429.0
+metadata/_edit_horizontal_guides_ = [627.0, 3915.0]
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Label" type="Label" parent="VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "地基"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 661.0
+offset_top = -45.0
+offset_right = 789.0
+offset_bottom = 83.0
+texture = ExtResource("2_e6l1r")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "地基是防御塔最基本最重要的一部分，用于建造基础四塔的一级防御塔。
+ 
+首次出现关卡： 第1关 - 皇城东门"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "基础配置"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "后置升级"
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/h_separation = 60
+columns = 6
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer2" index="0" instance=ExtResource("11_eywah")]
+layout_mode = 2
+target_page_path = "res://Scenes/WikiPages/Tower/ArcherTower/wiki_archer_tower_lv_1.tscn"
+name_text = "射手高台"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer2" index="1" instance=ExtResource("11_eywah")]
+layout_mode = 2
+texture_normal = ExtResource("4_o18a2")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_1.tscn"
+name_text = "民兵兵营"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer2" index="2" instance=ExtResource("11_eywah")]
+layout_mode = 2
+texture_normal = ExtResource("5_44h0c")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_1.tscn"
+name_text = "法师塔"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/VBoxContainer/GridContainer2" index="3" instance=ExtResource("11_eywah")]
+layout_mode = 2
+texture_normal = ExtResource("6_jrnd4")
+target_page_path = "res://Scenes/WikiPages/Tower/BombardTower/wiki_bombard_tower_lv_1.tscn"
+name_text = "烟花发射台"
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "美术素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 400
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("7_71tqg")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "皇城-地基"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("8_d2jq6")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "皇城-建造"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("9_mufvk")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "雨林-地基"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("10_qk3rw")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "雨林-建造"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim5" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="4"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim5" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("11_444o1")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "沙漠-地基"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim6" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="5"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim6" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("12_b3gbi")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim6" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "沙漠-建造"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim7" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="6"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim7" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("13_g7asi")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim7" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "海滩-地基"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim8" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="7"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim8" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("14_yxh1j")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim8" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "海滩-建造"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim9" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="8"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim9" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("15_fi38e")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim9" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "沼泽-地基"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim10" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="9"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim10" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("16_22m2l")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim10" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "沼泽-建造"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim11" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="10"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim11" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("17_y7bas")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim11" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "高山-地基"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim12" type="Control" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer" index="11"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim12" index="0"]
+position = Vector2(-1, 8)
+scale = Vector2(1.04839, 1.04839)
+texture = ExtResource("18_hyu6y")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/GridContainer/Anim12" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 111.0
+text = "高山-建造"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：地基"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 69.0
+offset_top = 194.0
+offset_right = 423.0
+offset_bottom = 394.0
+scale = Vector2(0.830169, 0.830169)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("14_ys311")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -328.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("14_ys311")]
+layout_mode = 2
+text = "美术素材"
+wiki_page = NodePath("../../..")
+target_pos = -757.0
