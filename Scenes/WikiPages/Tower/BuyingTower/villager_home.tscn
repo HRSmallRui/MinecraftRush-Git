@@ -1,0 +1,201 @@
+[gd_scene load_steps=15 format=3 uid="uid://htbpxqgw2l6j"]
+
+[ext_resource type="PackedScene" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_0cymp"]
+[ext_resource type="Texture2D" uid="uid://c2ti006q4ll0y" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Buying1.png" id="2_8x6uo"]
+[ext_resource type="Texture2D" uid="uid://bh53q1tukk4uj" path="res://Assets/Images/UI/InformationBar/Towers/Others/village_barrack.png" id="3_684x4"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="4_dvtel"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="7_mvqvg"]
+[ext_resource type="PackedScene" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="8_ji826"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="9_72a0a"]
+[ext_resource type="Texture2D" uid="uid://dl6wx6jksl660" path="res://Assets/Images/DefenceTowers/Specials/村民小屋.png" id="9_wsdhw"]
+[ext_resource type="Texture2D" uid="uid://kabmmjxtx3vs" path="res://Assets/Images/UI/Wiki/Allys/BuyingSoldiers/Villager1.png" id="12_pt5n7"]
+[ext_resource type="Texture2D" uid="uid://m5jy1m8hffpy" path="res://Assets/Images/UI/Wiki/Allys/BuyingSoldiers/Villager2.png" id="13_qtsi4"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="14_7os1e"]
+[ext_resource type="Texture2D" uid="uid://ceyxpifdwjgbk" path="res://Assets/Images/UI/Wiki/PropertyIcons/调集范围.png" id="15_6rhf0"]
+[ext_resource type="Texture2D" uid="uid://fg1y0i3ubnh4" path="res://Assets/Images/DefenceTowers/UI/集结范围.png" id="18_kf45d"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="24_mjlag"]
+
+[node name="WikiBuyingTower1" instance=ExtResource("1_0cymp")]
+offset_bottom = 1871.0
+metadata/_edit_horizontal_guides_ = [627.0, 3915.0]
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_8x6uo")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "村民小屋"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 661.0
+offset_top = -45.0
+offset_right = 789.0
+offset_bottom = 83.0
+texture = ExtResource("3_684x4")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "战扎城内的民兵，经过简单训练之后即可快速出击。
+ 
+出现关卡： 第3关 - 战扎城"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "基础配置"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "数据"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Property" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer" index="0" instance=ExtResource("7_mvqvg")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="0" instance=ExtResource("8_ji826")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent" index="0" instance=ExtResource("9_72a0a")]
+layout_mode = 2
+texture = ExtResource("14_7os1e")
+tip_text = "人数上限"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="1" instance=ExtResource("8_ji826")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableEmelent3" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="2" instance=ExtResource("8_ji826")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent3" index="0" instance=ExtResource("9_72a0a")]
+layout_mode = 2
+texture = ExtResource("15_6rhf0")
+tip_text = "调集范围"
+
+[node name="WikiTableEmelent4" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property" index="3" instance=ExtResource("8_ji826")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer/CenterContainer/Property/WikiTableEmelent4" index="0"]
+layout_mode = 2
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_top = 310
+
+[node name="Tower" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3" index="0"]
+position = Vector2(504, 102)
+texture = ExtResource("9_wsdhw")
+
+[node name="TowerRange" type="Node2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3/Tower" index="0"]
+position = Vector2(0, 41)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer3/Tower/TowerRange" index="0"]
+scale = Vector2(0.4, 0.28)
+texture = ExtResource("18_kf45d")
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "士兵详情数据"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 105
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/HBoxContainer" index="0" instance=ExtResource("4_dvtel")]
+layout_mode = 2
+texture_normal = ExtResource("12_pt5n7")
+name_text = "村民农夫"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer/HBoxContainer" index="1" instance=ExtResource("4_dvtel")]
+layout_mode = 2
+texture_normal = ExtResource("13_qtsi4")
+name_text = "村民铁匠"
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：雇佣兵塔"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 69.0
+offset_top = 194.0
+offset_right = 423.0
+offset_bottom = 394.0
+scale = Vector2(0.830169, 0.830169)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("24_mjlag")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -627.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("24_mjlag")]
+layout_mode = 2
+text = "士兵详情数据"
+wiki_page = NodePath("../../..")
+target_pos = -1415.0
