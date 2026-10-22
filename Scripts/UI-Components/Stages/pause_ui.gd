@@ -11,10 +11,15 @@ class_name PauseUI
 @onready var quit_button: TextureButton = $HBoxContainer/Quit/QuitButton
 @onready var restart_button: TextureButton = $HBoxContainer/Restart/RestartButton
 @onready var continue_button: TextureButton = $HBoxContainer/Continue/ContinueButton
+@onready var shaking_screen_button: CheckBox = $HBoxContainer2/ShakingScreenButton
+@onready var mini_map_button: CheckBox = $HBoxContainer2/MiniMapButton
+
 
 func _ready() -> void:
 	music_slider.value = Global.get_user_sav().user_music_volume
 	sound_slider.value = Global.get_user_sav().user_sound_volume
+	shaking_screen_button.button_pressed = Stage.instance.stage_sav.shaking_screen
+	mini_map_button.button_pressed = Stage.instance.stage_sav.minimap_show
 	Stage.instance.on_paused.emit(true)
 	pass
 
@@ -33,6 +38,7 @@ func back():
 	await $AnimationPlayer.animation_finished
 	get_tree().paused = false
 	Stage.instance.on_paused.emit(false)
+	Stage.instance.on_pause_finished()
 	queue_free()
 	pass
 
@@ -92,3 +98,13 @@ func set_button_disable():
 	restart_button.disabled = true
 	continue_button.disabled = true
 	pass
+
+
+func _on_shaking_screen_button_pressed() -> void:
+	Stage.instance.stage_sav.shaking_screen = shaking_screen_button.button_pressed
+	pass # Replace with function body.
+
+
+func _on_mini_map_button_pressed() -> void:
+	Stage.instance.stage_sav.minimap_show = mini_map_button.button_pressed
+	pass # Replace with function body.

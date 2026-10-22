@@ -99,6 +99,8 @@ func phone_control(event: InputEvent):
 
 
 func _process(delta: float) -> void:
+	if not Stage.instance.stage_sav.shaking_screen:
+		offset_strength = 0
 	position_clamp()
 	position += Input.get_vector("camera_left","camera_right","camera_up","camera_down") * 10
 	offset = Vector2(randf_range(-offset_strength,offset_strength),randf_range(-offset_strength,offset_strength))

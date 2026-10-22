@@ -47,6 +47,10 @@ enum Difficulty{
 }
 @export var property_bus: Dictionary = {}
 
+@export_group("局内设置")
+@export var shaking_screen: bool = true
+@export var minimap_show: bool = true
+
 
 func _init() -> void:
 	last_sav_time = Time.get_datetime_string_from_system(false,true)

@@ -193,3 +193,15 @@ func _on_map_show_b_utton_pressed() -> void:
 func _on_holding_timer_timeout() -> void:
 	map_button_hide()
 	pass # Replace with function body.
+
+
+func update_visibility():
+	visible = Stage.instance.stage_sav.minimap_show
+	if not visible:
+		map_ui_layer.hide()
+	pass
+
+
+func _on_close_button_pressed() -> void:
+	on_ui_layer_hide()
+	pass # Replace with function body.
