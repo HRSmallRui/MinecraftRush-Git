@@ -396,7 +396,8 @@ func skill2_second_hit():
 	energy_explosion.show()
 	energy_explosion.scale = Vector2.ZERO
 	energy_explosion.modulate.a = 1
-	create_tween().tween_property(energy_explosion,"scale",Vector2.ONE * 45, 0.6)
+	var explosion_tween: Tween = create_tween()
+	explosion_tween.tween_property(energy_explosion,"scale",Vector2.ONE * 45, 0.6)
 	create_tween().tween_property(energy_explosion,"modulate:a",0,0.55)
 	AudioManager.instance.play_explosion_audio()
 	skill_2_audio.play()
@@ -405,6 +406,8 @@ func skill2_second_hit():
 	for body in skill_2_area.get_overlapping_bodies():
 		var enemy: Enemy = body.owner
 		enemy.take_damage(damage,DataProcess.DamageType.SuperDamage,0,false,null,true,true,)
+	explosion_tween.finished.connect(func():
+		energy_explosion.hide())
 	pass
 
 
