@@ -77,6 +77,8 @@ func frame_changed():
 			1: teleport_audio.play()
 			2: teleport_audio_2.play()
 	if ally_sprite.animation == "skill4_start" and ally_sprite.frame == 19:
+		
+		
 		ally_sprite.play("skill4_loop")
 		skill_4_duration_timer.start()
 		skill_4_timer.start()
@@ -216,3 +218,9 @@ func get_skill4_target_enemy() -> Enemy:
 	for enemy in enemy_array:
 		if enemy.get_remaining_progress() < back_enemy.get_remaining_progress(): back_enemy = enemy
 	return back_enemy
+
+
+func _on_fuchen_magic_heart_get_valid_skill_4_enemy_request() -> void:
+	var target_enemy: Enemy = get_skill4_target_enemy()
+	get_skill_4_linked_enemy.emit(target_enemy)
+	pass # Replace with function body.

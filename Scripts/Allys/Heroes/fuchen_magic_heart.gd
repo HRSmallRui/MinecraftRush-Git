@@ -1,5 +1,7 @@
 extends Sprite2D
 
+signal get_valid_skill4_enemy_request
+
 
 @export var fuchen: Hero
 @export var trace_area: Area2D
@@ -119,6 +121,14 @@ func erase_enemy_list(enemy_list: Array[Enemy]) -> Array[Enemy]:
 
 
 func skill_4_release():
+	if skill_4_linked_enemy == null:
+		get_valid_skill4_enemy_request.emit()
+	
+	await get_tree().process_frame
+	if skill_4_linked_enemy == null: 
+		skill_4_stop()
+		return
+	
 	ray_audio.play()
 	elec_audio.play()
 	

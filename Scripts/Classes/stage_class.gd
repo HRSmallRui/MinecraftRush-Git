@@ -264,6 +264,11 @@ func pause():
 	pass
 
 
+func on_pause_finished():
+	stage_map.update_visibility()
+	pass
+
+
 func _on_click_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !event.is_action_released("click"): return
 	#print(mouse_relative_velocity.length())
