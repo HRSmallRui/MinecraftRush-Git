@@ -34,6 +34,7 @@ func library_initialize():
 
 
 func _on_back_button_pressed() -> void:
+	save_digital_fighting_blocks()
 	queue_free()
 	ExtraContent.instance.ui_state = ExtraContent.ExtraUIState.Bed
 	DigitalFightingSaver.save_digital_fighting_saver(digital_fighting_saver)
@@ -193,4 +194,29 @@ func change_editor(change_id: int):
 func on_cancel_click():
 	enemy_select_container.hide()
 	current_request_editor = null
+	pass
+
+
+func save_digital_fighting_blocks():
+	for block in summon_list_1.get_children():
+		save_block(block)
+	for block in summon_list_2.get_children():
+		save_block(block)
+	for block in summon_list_3.get_children():
+		save_block(block)
+	pass
+
+
+func save_block(block_node: Node):
+	if block_node is EnemySummonBlockEditor:
+		var linked_block: EnemySummonBlockDigitalFighting = block_node.linked_block
+		linked_block.enemy_id = block_node.enemy_id
+		block_node.enemy_summon_count = block_node.line_edit_summon_count.text.to_int()
+		linked_block.summon_count = block_node.enemy_summon_count
+		block_node.summon_time_interval = block_node.line_edit_time_interval.text.to_float()
+		linked_block.time_interval = block_node.summon_time_interval
+	elif block_node is TimeIntervalBlockEditor:
+		var linked_block: WaitTimeBlock = block_node.linked_block
+		block_node.time_interval = block_node.line_edit.text.to_float()
+		linked_block.wait_time = block_node.time_interval
 	pass
