@@ -70,37 +70,26 @@ func witch_summon_bullet(summon_pos: Vector2, target_pos: Vector2, move_type: Bu
 
 
 func shoot_process():
-	var normal_enemy_list: Array[Enemy] = tower.target_list.duplicate()
-	var hited_enemy_list: Array[Enemy]
-	if normal_enemy_list.is_empty():
-		lock_enemy(tower.last_target,1)
-		lock_enemy(tower.last_target,2)
+	if tower.tower_area.get_overlapping_bodies().is_empty():
 		return
-	var enemy_list: Array[Enemy] = normal_enemy_list.duplicate()
-	for enemy in enemy_list:
-		if enemy.enemy_buff_tags.has("witch_hurt"):
-			normal_enemy_list.erase(enemy)
-			hited_enemy_list.append(enemy)
-	
-	var enemy_1: Enemy
-	var enemy_2: Enemy
-	
-	if normal_enemy_list.is_empty():
-		enemy_1 = get_lateset_enemy(hited_enemy_list)
-		hited_enemy_list.erase(enemy_1)
-		if hited_enemy_list.is_empty(): enemy_2 = enemy_1
-		else: enemy_2 = get_lateset_enemy(hited_enemy_list)
+	elif tower.tower_area.get_overlapping_bodies().size() == 1:
+		var target_enemy: Enemy = tower.tower_area.get_overlapping_bodies()[0].owner
+		lock_enemy(target_enemy,0)
+		lock_enemy(target_enemy,1)
 	else:
-		enemy_1 = get_lateset_enemy(normal_enemy_list)
-		normal_enemy_list.erase(enemy_1)
-		if normal_enemy_list.is_empty():
-			if hited_enemy_list.is_empty(): enemy_2 = enemy_1
-			else: enemy_2 = get_lateset_enemy(hited_enemy_list)
-		else:
-			enemy_2 = get_lateset_enemy(normal_enemy_list)
-	
-	lock_enemy(enemy_1,1)
-	lock_enemy(enemy_2,2)
+		var enemy_1: Enemy = null
+		var enemy_2: Enemy = null
+		for body in tower.tower_area.get_overlapping_bodies():
+			var enemy:Enemy = body.owner
+			if enemy_1 == null: enemy_1 = enemy
+			elif enemy_2 == null: enemy_2 = enemy
+			else:
+				if get_valid_enemy_number(enemy_1,enemy) == 1:
+					enemy_1 = enemy
+				elif get_valid_enemy_number(enemy_2,enemy) == 1:
+					enemy_2 = enemy
+		lock_enemy(enemy_1,0)
+		lock_enemy(enemy_2,1)
 	pass
 
 
@@ -130,3 +119,13 @@ func release_curse(locked_enemy: Enemy):
 	locked_enemy.buffs.add_child(curse_dot)
 	locked_enemy.buffs.add_child(property_buff)
 	pass
+
+
+func get_valid_enemy_number(enemy_1: Enemy, enemy_2: Enemy) -> int:
+	if enemy_1.enemy_buff_tags.has("witch_hurt") and not enemy_2.enemy_buff_tags.has("witch_hurt"):
+		return 0
+	if enemy_2.enemy_buff_tags.has("witch_hurt") and not enemy_1.enemy_buff_tags.has("witch_hurt"):
+		return 1
+	else:
+		return 0 if enemy_1.get_remaining_progress() < enemy_2.get_remaining_progress() else 1
+	
