@@ -142,6 +142,9 @@ func normal_attack():
 
 
 func _on_shot_timer_timeout() -> void:
+	if not linked_enemy.unit_body in tower_area.get_overlapping_bodies():
+		stop_attack()
+		return
 	if linked_enemy != null:
 		var damage: int = randi_range(current_data.damage_low,current_data.damage_high)
 		var damage_type: DataProcess.DamageType = DataProcess.DamageType.MagicDamage
@@ -156,6 +159,9 @@ func _on_shot_timer_timeout() -> void:
 		if level >= 4:
 			var speed_low_buff: PropertyBuff = preload("res://Scenes/Buffs/TowerBuffs/magic_speed_low_buff.tscn").instantiate()
 			linked_enemy.buffs.add_child(speed_low_buff)
+	else:
+		stop_attack()
+		return
 	attack_count += 1
 	match attack_count:
 		4,8,12,16,20:
