@@ -283,7 +283,7 @@ animations = [{
 }]
 
 [node name="WikiSoldierLV2" instance=ExtResource("1_46kwv")]
-offset_bottom = 3170.0
+offset_bottom = 3346.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -735,7 +735,25 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_constants/margin_top = 90
 
-[node name="Tower" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "随机士兵名字"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer3" index="1"]
+layout_mode = 2
+text = "李刀卫, 赵剑卒, 李刚, 赵勇, 张武, 孙锐, 周劲, 钱冲, 钱斧兵, 黄翎卫, 林卫, 杨坚"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="Tower" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
 layout_mode = 2
 theme_override_constants/separation = 45
 
@@ -770,6 +788,11 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 36
 text = "类别：Soldier"
 
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 375.0
+offset_bottom = 611.0
+
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_1jkhm")]
 layout_mode = 2
 text = "基础配置"
@@ -782,8 +805,14 @@ text = "动画素材"
 wiki_page = NodePath("../../..")
 target_pos = -2362.0
 
-[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_1jkhm")]
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_1jkhm")]
+layout_mode = 2
+text = "随机士兵名字"
+wiki_page = NodePath("../../..")
+target_pos = -2715.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_1jkhm")]
 layout_mode = 2
 text = "相关防御塔"
 wiki_page = NodePath("../../..")
-target_pos = -2712.0
+target_pos = -2906.0
