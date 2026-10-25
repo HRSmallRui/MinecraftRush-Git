@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://codxl1wpadoq6"]
+[gd_scene load_steps=85 format=3 uid="uid://codxl1wpadoq6"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_q4f65"]
 [ext_resource type="Texture2D" uid="uid://bkpi24wo5cbed" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Barrack0.png" id="2_4gsot"]
@@ -77,6 +77,7 @@
 [ext_resource type="Texture2D" uid="uid://d04qiwn4u47ff" path="res://Assets/Animations/Soldiers/LV1/SoldierLV1-move_23.png" id="75_askx3"]
 [ext_resource type="Texture2D" uid="uid://la8h5r7y5t6p" path="res://Assets/Animations/Soldiers/LV1/SoldierLV1-move_24.png" id="76_m5tyi"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="77_8n50u"]
+[ext_resource type="Texture2D" uid="uid://c7mkrwf2apppx" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack0.png" id="77_u1pq4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_38j27"]
 atlas = ExtResource("17_ajseg")
@@ -286,7 +287,7 @@ animations = [{
 }]
 
 [node name="WikiSoldierLV1" instance=ExtResource("1_q4f65")]
-offset_bottom = 2840.0
+offset_bottom = 3142.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -679,7 +680,7 @@ position = Vector2(-9, -10)
 scale = Vector2(2.56961, 2.56961)
 sprite_frames = SubResource("SpriteFrames_ddd5j")
 autoplay = "default"
-frame_progress = 0.155151
+frame_progress = 0.193247
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim1" index="1"]
 layout_mode = 0
@@ -700,7 +701,7 @@ position = Vector2(-9, -10)
 scale = Vector2(2.56961, 2.56961)
 sprite_frames = SubResource("SpriteFrames_oxyu4")
 autoplay = "default"
-frame_progress = 0.0595679
+frame_progress = 0.0976646
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim2" index="1"]
 layout_mode = 0
@@ -721,7 +722,7 @@ position = Vector2(-9, -10)
 scale = Vector2(2.56961, 2.56961)
 sprite_frames = SubResource("SpriteFrames_6qsdo")
 autoplay = "default"
-frame_progress = 0.172253
+frame_progress = 0.210349
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/CenterContainer/GridContainer/Anim3" index="1"]
 layout_mode = 0
@@ -733,6 +734,32 @@ text = "移动动画"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "相关防御塔"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" index="1"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" index="2"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2/CenterContainer" index="0" instance=ExtResource("16_8pl2r")]
+layout_mode = 2
+texture_normal = ExtResource("77_u1pq4")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_lv_1.tscn"
+name_text = "民兵兵营"
 
 [node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
 layout_mode = 0
@@ -758,3 +785,9 @@ layout_mode = 2
 text = "动画素材"
 wiki_page = NodePath("../../..")
 target_pos = -2362.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_8n50u")]
+layout_mode = 2
+text = "相关防御塔"
+wiki_page = NodePath("../../..")
+target_pos = -2712.0
