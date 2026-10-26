@@ -1,0 +1,1389 @@
+[gd_scene load_steps=138 format=3 uid="uid://b0rqihmoxakiw"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_fdeej"]
+[ext_resource type="Texture2D" uid="uid://dixwgjn6wu53j" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Barrack-NPC1.png" id="2_tjq74"]
+[ext_resource type="Texture2D" uid="uid://ccdjennpkjoik" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国正规军.png" id="3_3dbfy"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="4_vod8b"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="5_3k2rk"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="6_2bdvb"]
+[ext_resource type="Texture2D" uid="uid://cxlgijvx46h50" path="res://Assets/Images/UI/Wiki/PropertyIcons/生命值.png" id="7_d25gn"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="8_elv1p"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="9_biwh7"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="10_jtns0"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="11_su2et"]
+[ext_resource type="Texture2D" uid="uid://cey441i8fdaaa" path="res://Assets/Images/UI/Wiki/PropertyIcons/魔抗.png" id="12_p8u63"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="13_usj4d"]
+[ext_resource type="Texture2D" uid="uid://btlwlecwmchor" path="res://Assets/Images/UI/Wiki/PropertyIcons/重生时间.png" id="14_c03p3"]
+[ext_resource type="Texture2D" uid="uid://bimevl5e61x3l" path="res://Assets/Images/UI/Wiki/PropertyIcons/拦截范围.png" id="15_oeixi"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="16_74x2h"]
+[ext_resource type="Texture2D" uid="uid://2k6eya5miu4n" path="res://Assets/Images/UI/Upgrade/Barracks/强健体魄.png" id="17_iie8x"]
+[ext_resource type="Texture2D" uid="uid://b4i2raq3o1bml" path="res://Assets/Images/UI/Upgrade/Barracks/精良装备.png" id="18_4ud2e"]
+[ext_resource type="Texture2D" uid="uid://ba5fm85ssld1o" path="res://Assets/Images/UI/Upgrade/Barracks/高效训练.png" id="19_r0d1d"]
+[ext_resource type="Texture2D" uid="uid://dk7l3x3eird31" path="res://Assets/Images/DefenceTowers/Barracks/UI/Zombie1/嗜血.png" id="20_1fdpr"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="21_6w7pf"]
+[ext_resource type="Texture2D" uid="uid://dxnb3bebbypn5" path="res://Assets/Images/DefenceTowers/Barracks/UI/Zombie1/冶炼工艺.png" id="22_78l5e"]
+[ext_resource type="Texture2D" uid="uid://dndhjehnkkvy8" path="res://Assets/Images/DefenceTowers/Barracks/UI/Zombie1/玉碎.png" id="23_ijbt3"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="24_cgwol"]
+[ext_resource type="Texture2D" uid="uid://dx4fr574rcf3j" path="res://Assets/Animations/Enemies/4尸国正规军/attack_00.png" id="25_kts2g"]
+[ext_resource type="Texture2D" uid="uid://cma55oguvh8iu" path="res://Assets/Animations/Enemies/4尸国正规军/attack_01.png" id="26_0cj1x"]
+[ext_resource type="Texture2D" uid="uid://br6n3wmrm6s3p" path="res://Assets/Animations/Enemies/4尸国正规军/attack_02.png" id="27_nnpcr"]
+[ext_resource type="Texture2D" uid="uid://nslkof6jl6hb" path="res://Assets/Animations/Enemies/4尸国正规军/attack_03.png" id="28_rs5cv"]
+[ext_resource type="Texture2D" uid="uid://c6mhom584hthy" path="res://Assets/Animations/Enemies/4尸国正规军/attack_04.png" id="29_0ng2b"]
+[ext_resource type="Texture2D" uid="uid://c6i4h7uqbmwbi" path="res://Assets/Animations/Enemies/4尸国正规军/attack_05.png" id="30_wq4ay"]
+[ext_resource type="Texture2D" uid="uid://c3eqjeufdptvp" path="res://Assets/Animations/Enemies/4尸国正规军/attack_06.png" id="31_xkkhg"]
+[ext_resource type="Texture2D" uid="uid://b4enhnbypdshe" path="res://Assets/Animations/Enemies/4尸国正规军/attack_07.png" id="32_5bruc"]
+[ext_resource type="Texture2D" uid="uid://b84lnjvije0rl" path="res://Assets/Animations/Enemies/4尸国正规军/attack_08.png" id="33_nrcnq"]
+[ext_resource type="Texture2D" uid="uid://8o5yvr28lsjp" path="res://Assets/Animations/Enemies/4尸国正规军/attack_09.png" id="34_llbhh"]
+[ext_resource type="Texture2D" uid="uid://lhfhkgddqgpf" path="res://Assets/Animations/Enemies/4尸国正规军/attack_10.png" id="35_egwyk"]
+[ext_resource type="Texture2D" uid="uid://slo86hp15xgg" path="res://Assets/Animations/Enemies/4尸国正规军/attack_11.png" id="36_7jfmm"]
+[ext_resource type="Texture2D" uid="uid://dvc4t48aq7kyl" path="res://Assets/Animations/Enemies/4尸国正规军/attack_12.png" id="37_oplkl"]
+[ext_resource type="Texture2D" uid="uid://dswtjn4877vxb" path="res://Assets/Animations/Enemies/4尸国正规军/attack_13.png" id="38_h3xen"]
+[ext_resource type="Texture2D" uid="uid://b2ln11m6mffd1" path="res://Assets/Animations/Enemies/4尸国正规军/attack_14.png" id="39_jbgfd"]
+[ext_resource type="Texture2D" uid="uid://cy46d7vr2s48x" path="res://Assets/Animations/Enemies/4尸国正规军/attack_15.png" id="40_obfkb"]
+[ext_resource type="Texture2D" uid="uid://cvnf180yr4s7b" path="res://Assets/Animations/Enemies/4尸国正规军/attack_16.png" id="41_pv4i5"]
+[ext_resource type="Texture2D" uid="uid://j4epaf8e41ch" path="res://Assets/Animations/Enemies/4尸国正规军/attack_17.png" id="42_4rr48"]
+[ext_resource type="Texture2D" uid="uid://da2xp81vpf8ne" path="res://Assets/Animations/Enemies/4尸国正规军/attack_18.png" id="43_gl84b"]
+[ext_resource type="Texture2D" uid="uid://bhc1tp753x1w8" path="res://Assets/Animations/Enemies/4尸国正规军/attack_19.png" id="44_p00ex"]
+[ext_resource type="Texture2D" uid="uid://774irs7bq3c0" path="res://Assets/Animations/Enemies/4尸国正规军/attack_20.png" id="45_sxevn"]
+[ext_resource type="Texture2D" uid="uid://dixqn68kof6p3" path="res://Assets/Animations/Enemies/4尸国正规军/attack_21.png" id="46_3px0w"]
+[ext_resource type="Texture2D" uid="uid://uykgio5aynhf" path="res://Assets/Animations/Enemies/4尸国正规军/attack_22.png" id="47_uhbif"]
+[ext_resource type="Texture2D" uid="uid://c6whex0ume3am" path="res://Assets/Animations/Enemies/4尸国正规军/attack_23.png" id="48_m60ls"]
+[ext_resource type="Texture2D" uid="uid://djfe603ippx0d" path="res://Assets/Animations/Enemies/4尸国正规军/attack_24.png" id="49_yirxx"]
+[ext_resource type="Texture2D" uid="uid://h7lk17a12lfh" path="res://Assets/Animations/Enemies/4尸国正规军/die_00.png" id="50_lunyu"]
+[ext_resource type="Texture2D" uid="uid://bxdtv40sishmw" path="res://Assets/Animations/Enemies/4尸国正规军/die_01.png" id="51_hofdi"]
+[ext_resource type="Texture2D" uid="uid://d3augmuftxx3r" path="res://Assets/Animations/Enemies/4尸国正规军/die_02.png" id="52_kek4q"]
+[ext_resource type="Texture2D" uid="uid://bqk2ts8ysus8x" path="res://Assets/Animations/Enemies/4尸国正规军/die_03.png" id="53_in4qv"]
+[ext_resource type="Texture2D" uid="uid://dl5u7766mc48c" path="res://Assets/Animations/Enemies/4尸国正规军/die_04.png" id="54_ch66x"]
+[ext_resource type="Texture2D" uid="uid://cph83lmvudeuf" path="res://Assets/Animations/Enemies/4尸国正规军/die_05.png" id="55_32f1h"]
+[ext_resource type="Texture2D" uid="uid://1vga7gsaq24h" path="res://Assets/Animations/Enemies/4尸国正规军/die_06.png" id="56_ubcrc"]
+[ext_resource type="Texture2D" uid="uid://183o2fg4kr5s" path="res://Assets/Animations/Enemies/4尸国正规军/die_07.png" id="57_qf1qr"]
+[ext_resource type="Texture2D" uid="uid://bx3m8m68eubh1" path="res://Assets/Animations/Enemies/4尸国正规军/die_08.png" id="58_wg3xm"]
+[ext_resource type="Texture2D" uid="uid://cqbhdlrjx7tlk" path="res://Assets/Animations/Enemies/4尸国正规军/die_09.png" id="59_tiuqm"]
+[ext_resource type="Texture2D" uid="uid://c17xsa253n13u" path="res://Assets/Animations/Enemies/4尸国正规军/die_10.png" id="60_2wav7"]
+[ext_resource type="Texture2D" uid="uid://2b142doq5157" path="res://Assets/Animations/Enemies/4尸国正规军/die_11.png" id="61_6drb5"]
+[ext_resource type="Texture2D" uid="uid://cpk8mdhgdfx6f" path="res://Assets/Animations/Enemies/4尸国正规军/die_12.png" id="62_03a2w"]
+[ext_resource type="Texture2D" uid="uid://dbnrqnsfetq6a" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_00.png" id="63_c7yve"]
+[ext_resource type="Texture2D" uid="uid://craps0abwchay" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_01.png" id="64_yao0w"]
+[ext_resource type="Texture2D" uid="uid://c58d0dp6skv4y" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_02.png" id="65_ub2gl"]
+[ext_resource type="Texture2D" uid="uid://d1uy60kvxdkjq" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_03.png" id="66_p8wbq"]
+[ext_resource type="Texture2D" uid="uid://lw3ire87gkq5" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_04.png" id="67_tadgv"]
+[ext_resource type="Texture2D" uid="uid://7g4oncvcxkp2" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_05.png" id="68_uvvwe"]
+[ext_resource type="Texture2D" uid="uid://bfq8a3j5nkdk2" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_06.png" id="69_p0r2b"]
+[ext_resource type="Texture2D" uid="uid://h2a7t0qt3m1u" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_07.png" id="70_us2tl"]
+[ext_resource type="Texture2D" uid="uid://d2mufn85rbnyb" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_08.png" id="71_xi40s"]
+[ext_resource type="Texture2D" uid="uid://bv61fqaa10bce" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_09.png" id="72_31quw"]
+[ext_resource type="Texture2D" uid="uid://3pddir7bjx4j" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_10.png" id="73_731m6"]
+[ext_resource type="Texture2D" uid="uid://beoabdpnbnbc2" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_11.png" id="74_mql6s"]
+[ext_resource type="Texture2D" uid="uid://bpo7jytvidryj" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_12.png" id="75_5ugh4"]
+[ext_resource type="Texture2D" uid="uid://joll3ad8lr0o" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_13.png" id="76_38gt6"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="77_lur0x"]
+[ext_resource type="Texture2D" uid="uid://bhl0wy8to7tin" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_14.png" id="77_sbnng"]
+[ext_resource type="Texture2D" uid="uid://c0nk5wbnfq1vr" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_15.png" id="78_he7g5"]
+[ext_resource type="Texture2D" uid="uid://cw6bqf44q7xp2" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_16.png" id="79_ly2lo"]
+[ext_resource type="Texture2D" uid="uid://t5ombdor66xb" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_17.png" id="80_p6onx"]
+[ext_resource type="Texture2D" uid="uid://lorl4bjbilgn" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_18.png" id="81_ofdlw"]
+[ext_resource type="Texture2D" uid="uid://b4lh074mvwlsy" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_19.png" id="82_cjy0q"]
+[ext_resource type="Texture2D" uid="uid://cpojrb1rteq0t" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_20.png" id="83_8xc27"]
+[ext_resource type="Texture2D" uid="uid://cba7c47ajgbt7" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_21.png" id="84_rxrrt"]
+[ext_resource type="Texture2D" uid="uid://dy21yi2q4l6hf" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_22.png" id="85_tkeic"]
+[ext_resource type="Texture2D" uid="uid://drlcjsp63g1qu" path="res://Assets/Animations/Enemies/4尸国正规军/move-normal_23.png" id="86_bhlff"]
+[ext_resource type="Texture2D" uid="uid://gy4yg4d38dwg" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_00.png" id="87_ek40s"]
+[ext_resource type="Texture2D" uid="uid://dnasmw53exrnr" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_01.png" id="88_xaubl"]
+[ext_resource type="Texture2D" uid="uid://7m2y0toyvhsx" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_02.png" id="89_tveo3"]
+[ext_resource type="Texture2D" uid="uid://dewcqin0xhsfn" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_03.png" id="90_v2hn3"]
+[ext_resource type="Texture2D" uid="uid://doixogorfdivd" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_04.png" id="91_cbdjt"]
+[ext_resource type="Texture2D" uid="uid://b3q5bwwvuvcyf" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_05.png" id="92_wbtw0"]
+[ext_resource type="Texture2D" uid="uid://tggkolf8fj71" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_06.png" id="93_rqfyb"]
+[ext_resource type="Texture2D" uid="uid://dwq7q83jaw1jh" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_07.png" id="94_suxx3"]
+[ext_resource type="Texture2D" uid="uid://bbeoam8mhtffr" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_08.png" id="95_cexcy"]
+[ext_resource type="Texture2D" uid="uid://cthebkysbhmml" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_09.png" id="96_ugutm"]
+[ext_resource type="Texture2D" uid="uid://bney78xa3fdmv" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_10.png" id="97_fmi4q"]
+[ext_resource type="Texture2D" uid="uid://bd0ph3c777jt8" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_11.png" id="98_421u1"]
+[ext_resource type="Texture2D" uid="uid://b7lbavm58kvqw" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_12.png" id="99_ibijl"]
+[ext_resource type="Texture2D" uid="uid://djjc7qnwlgrwk" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_13.png" id="100_8whyh"]
+[ext_resource type="Texture2D" uid="uid://c3oiqpvklk1gu" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_14.png" id="101_flkwq"]
+[ext_resource type="Texture2D" uid="uid://cckfkwucsoxjk" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_15.png" id="102_kjrt4"]
+[ext_resource type="Texture2D" uid="uid://1bb81havrsh3" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_16.png" id="103_fpyn5"]
+[ext_resource type="Texture2D" uid="uid://bqtx62gen2117" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_17.png" id="104_xjf4i"]
+[ext_resource type="Texture2D" uid="uid://xy1jsogogk2t" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_18.png" id="105_67wwc"]
+[ext_resource type="Texture2D" uid="uid://doqdpmyaugdwt" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_19.png" id="106_n6m5t"]
+[ext_resource type="Texture2D" uid="uid://bavyt0h86b2p4" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_20.png" id="107_s10ou"]
+[ext_resource type="Texture2D" uid="uid://bkwgl2nrl2uhk" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_21.png" id="108_naf5f"]
+[ext_resource type="Texture2D" uid="uid://dhleixm7bfcbw" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_22.png" id="109_vb3ak"]
+[ext_resource type="Texture2D" uid="uid://drh67w38sxrcx" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_23.png" id="110_1mcfy"]
+[ext_resource type="Texture2D" uid="uid://no1t31cvmb7d" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_24.png" id="111_qtxhh"]
+[ext_resource type="Texture2D" uid="uid://dk1vuuunmspao" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_25.png" id="112_63k0a"]
+[ext_resource type="Texture2D" uid="uid://d1thprekq2jer" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_26.png" id="113_it15i"]
+[ext_resource type="Texture2D" uid="uid://bujuywxcgaocs" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_27.png" id="114_5lh7k"]
+[ext_resource type="Texture2D" uid="uid://cg3ojkilgqu5t" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_28.png" id="115_ap2qw"]
+[ext_resource type="Texture2D" uid="uid://bkdbjmn6bqpnl" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_29.png" id="116_261bx"]
+[ext_resource type="Texture2D" uid="uid://dyorvs4jlx2jv" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_30.png" id="117_bnrpt"]
+[ext_resource type="Texture2D" uid="uid://cp61gnjoyb28e" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_31.png" id="118_xj1bo"]
+[ext_resource type="Texture2D" uid="uid://y05xhv2apj1n" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_32.png" id="119_nhiu1"]
+[ext_resource type="Texture2D" uid="uid://cgb7qt4fgnfcs" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_33.png" id="120_sqo57"]
+[ext_resource type="Texture2D" uid="uid://t4an6j3ss8d6" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_34.png" id="121_5kfhg"]
+[ext_resource type="Texture2D" uid="uid://bk34o4hw2g53w" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_35.png" id="122_4fxw1"]
+[ext_resource type="Texture2D" uid="uid://nek60cm2dwy2" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_36.png" id="123_gwa5j"]
+[ext_resource type="Texture2D" uid="uid://eluyhieiwfun" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_37.png" id="124_2svtu"]
+[ext_resource type="Texture2D" uid="uid://ofd8i6w6qd0m" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_38.png" id="125_eg2ul"]
+[ext_resource type="Texture2D" uid="uid://com5858owpa45" path="res://Assets/Animations/Enemies/4尸国正规军/jade_die_39.png" id="126_7n8is"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="127_nvypd"]
+[ext_resource type="AudioStream" uid="uid://dbtgg1fvplh1g" path="res://Assets/Sounds/FXs/Enemies/尸国统帅/尸国统帅死亡.wav" id="128_bgquc"]
+[ext_resource type="Texture2D" uid="uid://b7d3tkau5isy7" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack-NPC1.png" id="129_qqoxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38j27"]
+atlas = ExtResource("17_iie8x")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpn4d"]
+atlas = ExtResource("18_4ud2e")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8avqn"]
+atlas = ExtResource("19_r0d1d")
+region = Rect2(30, 33, 69, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtopi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_kts2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0cj1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nnpcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rs5cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_0ng2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_wq4ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xkkhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_5bruc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_nrcnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_llbhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_egwyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_7jfmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_oplkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_h3xen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jbgfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_obfkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pv4i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_4rr48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_gl84b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_p00ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sxevn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_3px0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_uhbif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_m60ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_yirxx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_il87a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_lunyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_hofdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_kek4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_in4qv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ch66x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_32f1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ubcrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_qf1qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_wg3xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_tiuqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2wav7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_6drb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_03a2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvsp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_c7yve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_yao0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_ub2gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_p8wbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_tadgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_uvvwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_p0r2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_us2tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_xi40s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_31quw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_731m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_mql6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_5ugh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_38gt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_sbnng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_he7g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_ly2lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_p6onx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_ofdlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_cjy0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_8xc27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_rxrrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_tkeic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_bhlff")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vy3g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_ek40s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_xaubl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_tveo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_v2hn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_cbdjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_wbtw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_rqfyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_suxx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_cexcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_ugutm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_fmi4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_421u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_ibijl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_8whyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_flkwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_kjrt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_fpyn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_xjf4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_67wwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_n6m5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_s10ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_naf5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_vb3ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_1mcfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_qtxhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_63k0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_it15i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_5lh7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_ap2qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_261bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_bnrpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_xj1bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_nhiu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_sqo57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_5kfhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_4fxw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_gwa5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_2svtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_eg2ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_7n8is")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiSoldierLV3" instance=ExtResource("1_fdeej")]
+offset_bottom = 5800.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_tjq74")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "尸国正规军"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 677.0
+offset_top = -45.0
+offset_right = 805.0
+offset_bottom = 83.0
+texture = ExtResource("3_3dbfy")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("7_d25gn")
+tip_text = "生命值"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="2" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("8_elv1p")
+tip_text = "脱战回血"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="3" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "15 / 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="4" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("9_biwh7")
+tip_text = "近战伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="5" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "8 - 16"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="6" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("10_jtns0")
+tip_text = "攻击间隔"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="7" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "1 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="8" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("11_su2et")
+tip_text = "护甲"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="9" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="10" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement11" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("12_p8u63")
+tip_text = "魔抗"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="11" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement13" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="12" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement13" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("13_usj4d")
+tip_text = "移速"
+
+[node name="WikiTableElement14" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="13" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement14" index="0"]
+layout_mode = 2
+text = "2.2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement15" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="14" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement15" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("14_c03p3")
+tip_text = "重生时间"
+
+[node name="WikiTableElement16" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="15" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement16" index="0"]
+layout_mode = 2
+text = "10 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement17" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="16" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement17" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("15_oeixi")
+tip_text = "拦截范围"
+
+[node name="WikiTableElement18" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable" index="17" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer/WikiTable/WikiTableElement18" index="0"]
+layout_mode = 2
+text = "120"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "科技加成"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "强健体魄"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/Label7" index="0" instance=ExtResource("16_74x2h")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_38j27")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -2752.0
+name_text = ""
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="6"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("7_d25gn")
+tip_text = "生命值"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer3/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "150 -> 180"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "精良装备"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/Label8" index="0" instance=ExtResource("16_74x2h")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_jpn4d")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -2937.0
+name_text = ""
+
+[node name="CenterContainer4" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="8"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer4" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer4/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer4/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("11_su2et")
+tip_text = "护甲"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer4/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer4/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "40 -> 50"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="9"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "高效训练"
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/Label9" index="0" instance=ExtResource("16_74x2h")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -14.0
+offset_right = 233.0
+offset_bottom = 55.0
+texture_normal = SubResource("AtlasTexture_8avqn")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -3223.0
+name_text = ""
+
+[node name="CenterContainer5" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="10"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer5" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableEmelent" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer5/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer5/WikiTable/WikiTableEmelent" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("14_c03p3")
+tip_text = "重生时间"
+
+[node name="WikiTableEmelent2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer5/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer5/WikiTable/WikiTableEmelent2" index="0"]
+layout_mode = 2
+text = "10秒 -> 8秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Skills" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "嗜血"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/Label2" index="0"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -30.0
+offset_right = 178.0
+offset_bottom = 66.0
+texture = ExtResource("20_1fdpr")
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="2"]
+layout_mode = 2
+text = "价格：250/200/200
+ 
+尸国正规军每次攻击都会恢复自身 5/10/15 点生命值。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("21_6w7pf")
+tip_text = "价格"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "250/200/200"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="2" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("8_elv1p")
+tip_text = "单次恢复生命"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="3" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "5 / 10 / 15"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="4"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "冶炼工艺"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/Label4" index="0"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = -30.0
+offset_right = 248.0
+offset_bottom = 66.0
+texture = ExtResource("22_78l5e")
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="6"]
+layout_mode = 2
+text = "价格：150/150
+ 
+尸国正规军攻击力提高至 9-18 / 10-20，并且每次升级都会提高自身 5 点护甲。"
+autowrap_mode = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="7"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("21_6w7pf")
+tip_text = "价格"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "150/150"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="2" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("9_biwh7")
+tip_text = "近战攻击力"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="3" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "9-18 / 10-20"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="4" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("11_su2et")
+tip_text = "单次提高护甲"
+property_state = 1
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="5" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="8"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "玉碎"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/Label6" index="0"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -30.0
+offset_right = 177.0
+offset_bottom = 66.0
+texture = ExtResource("23_ijbt3")
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="10"]
+layout_mode = 2
+text = "价格：250/250/250
+ 
+尸国正规军死亡时若尸体还存在则会剖腹自尽，为自身周围 150 范围内的友军施加“玉碎”效果，持续 4/6/8 秒，持有“玉碎”效果的我方单位攻击力提高 100%，每 0.2 秒恢复自身 5 点生命值。"
+autowrap_mode = 3
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="11"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("21_6w7pf")
+tip_text = "价格"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "250/250/250"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="2" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("24_cgwol")
+tip_text = "作用范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="3" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="4" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("10_jtns0")
+tip_text = "持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="5" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "4秒 / 6秒 / 8秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="6" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("9_biwh7")
+tip_text = "近战攻击力提高幅度"
+property_state = 1
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="7" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="8" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("8_elv1p")
+tip_text = "效果单次恢复血量"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="9" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="10" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement11" index="0" instance=ExtResource("6_2bdvb")]
+layout_mode = 2
+texture = ExtResource("10_jtns0")
+tip_text = "回血频率"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable" index="11" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "0.2 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Anims" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_jtopi")
+autoplay = "default"
+frame_progress = 0.630088
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_il87a")
+autoplay = "default"
+frame_progress = 0.0320368
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "死亡动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_qvsp5")
+autoplay = "default"
+frame_progress = 0.729342
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_7vy3g")
+autoplay = "default"
+frame_progress = 0.619012
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "玉碎动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("4_vod8b")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "玉碎音效"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("5_3k2rk")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("127_nvypd")]
+layout_mode = 2
+audio_stream = ExtResource("128_bgquc")
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "随机士兵名字"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer3" index="1"]
+layout_mode = 2
+text = "燧岩燎, 峪烬炘, 烽赭烨, 炻燃昆, 岩妁煊, 烬垣朗, 燧野焜, 峪烽阳, 赭岩明, 燃炻光, 光禾柠"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="11"]
+layout_mode = 2
+
+[node name="Tower" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="12"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Tower" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "相关防御塔"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Tower" index="1"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Tower" index="2"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Tower/CenterContainer" index="0" instance=ExtResource("16_74x2h")]
+layout_mode = 2
+texture_normal = ExtResource("129_qqoxq")
+target_page_path = "res://Scenes/WikiPages/Tower/BarrackTower/wiki_barrack_tower_zombie.tscn"
+name_text = "尸国正规军兵营"
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：Soldier"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 375.0
+offset_bottom = 611.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_lur0x")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -534.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_lur0x")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -2299.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_lur0x")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -4226.0
+
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_lur0x")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -4880.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_lur0x")]
+layout_mode = 2
+text = "随机士兵名字"
+wiki_page = NodePath("../../..")
+target_pos = -4880.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_lur0x")]
+layout_mode = 2
+text = "相关防御塔"
+wiki_page = NodePath("../../..")
+target_pos = -4880.0
