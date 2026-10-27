@@ -113,7 +113,7 @@ func erase_enemy_list(enemy_list: Array[Enemy]) -> Array[Enemy]:
 	var new_list: Array[Enemy] = enemy_list.duplicate()
 	var base_enemy: Enemy = enemy_list[0]
 	for enemy in enemy_list:
-		if (enemy.global_position - base_enemy.global_position).length() < 40:
+		if (enemy.global_position - base_enemy.global_position).length() < 60:
 			new_list.erase(enemy)
 	
 	return new_list

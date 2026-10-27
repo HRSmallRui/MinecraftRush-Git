@@ -57,6 +57,7 @@ extends VBoxContainer
 @onready var rebirth_label: Label = $WikiTable/WikiTableElement16/RebirthLabel
 @onready var intercepting_label: Label = $WikiTable/WikiTableElement18/InterceptingLabel
 @onready var xp_rate_label: Label = $WikiTable/WikiTableElement26/XPRateLabel
+@onready var far_damage_label: Label = $WikiTable/WikiTableElement20/FarDamageLabel
 
 
 func _ready() -> void:
@@ -86,6 +87,8 @@ func update_property(level: int):
 	var damage_near_block: DamageBlock = hero_data.damage_nears[level-1]
 	damage_near_label.text = str(damage_near_block.damage_low) + " - " + str(damage_near_block.damage_high)
 	damage_near_speed_label.text = str(hero_data.damage_near_speed) + " 秒"
+	var damage_far_block: DamageBlock = hero_data.damage_fars[level-1]
+	far_damage_label.text = str(damage_far_block.damage_low) + " - " + str(damage_far_block.damage_high)
 	far_attack_range_label.text = str(hero_data.damage_far_range)
 	far_attack_speed_label.text = str(hero_data.damage_far_speed) + " 秒"
 	armor_label.text = str(int(hero_data.armors[level-1]*100))
