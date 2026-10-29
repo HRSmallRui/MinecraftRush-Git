@@ -26,6 +26,8 @@ func _ready() -> void:
 	var sav: CheckPointSaver
 	if OS.get_name() == "Windows" and OS.is_debug_build():
 		sav = debug_load_sav()
+	else:
+		sav = release_load_sav()
 	if sav == null: return
 	
 	get_tree().paused = true
