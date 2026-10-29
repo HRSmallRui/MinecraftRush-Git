@@ -93,7 +93,7 @@ func update_property(level: int):
 	far_attack_speed_label.text = str(hero_data.damage_far_speed) + " 秒"
 	armor_label.text = str(int(hero_data.armors[level-1]*100))
 	magic_defence_label.text = str(int(hero_data.magic_defences[level-1]*100))
-	move_speed_label.text = str(hero_data.move_speed)
+	move_speed_label.text = str(snappedf(hero_data.move_speed,0.1))
 	xp_rate_label.text = str(hero_data.xp_speed_rate)
 	pass
 
