@@ -266,6 +266,8 @@ func pause():
 
 func on_pause_finished():
 	stage_map.update_visibility()
+	if stage_mode == StageMode.DigitalFighting:
+		stage_map.hide()
 	pass
 
 

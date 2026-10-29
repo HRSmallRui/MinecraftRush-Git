@@ -20,6 +20,7 @@ static var instance: WikiManager
 @onready var tip_panel: PanelContainer = $TipPanel
 @onready var tip_label: Label = $TipPanel/MarginContainer/TipLabel
 
+var scroll_locked: bool = false
 
 
 func _init() -> void:

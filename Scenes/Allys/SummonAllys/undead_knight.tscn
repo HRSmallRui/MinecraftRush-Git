@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://xj5kikjy1d8l"]
+[gd_scene load_steps=88 format=3 uid="uid://xj5kikjy1d8l"]
 
 [ext_resource type="PackedScene" uid="uid://bdp6vlymmmpu3" path="res://Scenes/Allys/SummonAllys/summon_ally_class.tscn" id="1_2l7ri"]
 [ext_resource type="Script" path="res://Scripts/Allys/SummonAllys/undead_knight.gd" id="2_3ft8p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b76b7g5n6efop" path="res://Scenes/Buffs/dizness_buff.tscn" id="3_mptdw"]
 [ext_resource type="Texture2D" uid="uid://cu2f602ookavg" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_00.png" id="4_b50eo"]
 [ext_resource type="Texture2D" uid="uid://btv6r5mk8pj0f" path="res://Assets/Images/UI/InformationBar/Allys/SummonAllys/UndeadKnight.png" id="4_mkiul"]
+[ext_resource type="PackedScene" uid="uid://bl4bgknb3ffkd" path="res://Scenes/Buffs/Salem/salem_plague_buff.tscn" id="4_x8lqe"]
 [ext_resource type="Texture2D" uid="uid://chrbst852pwaq" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_01.png" id="5_gief1"]
 [ext_resource type="Texture2D" uid="uid://c8yp3xwy8flmp" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_02.png" id="6_wam3e"]
 [ext_resource type="Texture2D" uid="uid://d1ww3hq0pg7c0" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_03.png" id="7_cd15f"]
@@ -79,7 +80,6 @@
 [ext_resource type="Texture2D" uid="uid://ccglhhifm554s" path="res://Assets/Images/Effects/鼓舞光环.png" id="76_0eg3j"]
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="76_y175v"]
 [ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="79_bulud"]
-
 
 [sub_resource type="Resource" id="Resource_ekc3c"]
 script = ExtResource("2_3goqf")
@@ -415,6 +415,8 @@ shader_parameter/hue_shift = 0.368
 script = ExtResource("2_3ft8p")
 dizness_buff_scene = ExtResource("3_mptdw")
 exist_time_list = Array[float]([10.0, 12.0, 14.0, 16.0])
+undead_damage_list = Array[int]([4, 6, 8, 10])
+salem_plague_buff_scene = ExtResource("4_x8lqe")
 unit_list = Array[ExtResource("2_3goqf")]([SubResource("Resource_ekc3c"), SubResource("Resource_no04b"), SubResource("Resource_ia38y"), SubResource("Resource_oajsu")])
 heal_speed_list = Array[int]([4, 5, 6, 7])
 ally_name = "不死骑士"
@@ -466,5 +468,10 @@ color = Color(0.25098, 1, 0.27451, 1)
 [node name="ExistingTimer" type="Timer" parent="." index="6"]
 one_shot = true
 
+[node name="AOEAttackTimer" type="Timer" parent="." index="8"]
+wait_time = 0.8
+autostart = true
+
 [connection signal="body_exited" from="UnitBody/RebirthArea" to="." method="_on_rebirth_area_body_exited"]
 [connection signal="timeout" from="ExistingTimer" to="." method="_on_existing_timer_timeout"]
+[connection signal="timeout" from="AOEAttackTimer" to="." method="_on_aoe_attack_timer_timeout"]

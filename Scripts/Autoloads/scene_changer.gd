@@ -15,12 +15,12 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	ResourceLoader.load_threaded_get_status(scene_path,progress)
+	var status = ResourceLoader.load_threaded_get_status(scene_path, progress)
 	if progress[0] > update:
 		update = progress[0]
 	if progress_bar.value < update:
-		progress_bar.value = lerp(progress_bar.value,update,delta)
-	if progress_bar.value > 0.99:
+		progress_bar.value = lerp(progress_bar.value,update,minf(delta * 2, 1))
+	if status == ResourceLoader.THREAD_LOAD_LOADED and progress_bar.value > 0.99:
 		done.emit()
 		set_process(false)
 	pass
