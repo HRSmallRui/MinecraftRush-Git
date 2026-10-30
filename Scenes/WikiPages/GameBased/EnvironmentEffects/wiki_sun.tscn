@@ -7,12 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ct1wl2m73pt6b" path="res://Assets/Images/Stages/Stage10/stage10.png" id="5_ewmsm"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="6_4elev"]
 
-
 [node name="WikiSun" instance=ExtResource("1_2x0vg")]
 offset_bottom = 7309.0
-
-[node name="VBoxContainer" parent="." index="0"]
-theme_override_constants/separation = 45
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -146,7 +142,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "在1级的基础上太阳光芒变得更加强烈，同时热浪视觉效果更加强烈。
  
-我方单位每 0.2s 受到 1 真伤，平A攻击力（近战+远程）下降 50%。"
+我方单位每 0.2s 受到 1 真伤（非致命伤害），平A攻击力（近战+远程）下降 50%。"
 autowrap_mode = 3
 
 [node name="MarginContainer14" type="MarginContainer" parent="VBoxContainer" index="15"]
@@ -302,6 +298,7 @@ theme_override_font_sizes/font_size = 36
 text = "基岩挑战"
 
 [node name="TextureRect2" type="TextureRect" parent="FreeNodes" index="0"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 1918.0
 offset_right = 4636.0
@@ -311,6 +308,7 @@ texture = ExtResource("3_mav8t")
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="FreeNodes" index="1"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 3693.0
 offset_right = 4636.0
@@ -320,6 +318,7 @@ texture = ExtResource("4_25qsh")
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="FreeNodes" index="2"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 5513.0
 offset_right = 4636.0
@@ -1832,10 +1831,7 @@ offset_top = -8.0
 offset_right = 152.0
 offset_bottom = 78.0
 
-[node name="BackButton" parent="TopMenu" index="0"]
-linked_path = "res://Scenes/WikiPages/GameBased/wiki_environment_effect.tscn"
-
-[node name="NavigationVBox" parent="TopMenu" index="1"]
+[node name="NavigationVBox" parent="TopMenu" index="0"]
 offset_left = 36.0
 
 [node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("6_4elev")]
