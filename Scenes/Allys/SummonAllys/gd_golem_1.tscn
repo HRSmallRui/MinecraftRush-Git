@@ -13,34 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://cqml6idiuqh86" path="res://Assets/Images/Effects/扑克花色.png" id="7_0ke43"]
 [ext_resource type="Resource" uid="uid://cwpowg0xprdcx" path="res://Library/Heroes/HeroConfigs/GoldenDiamond/Skill1/golem_existing_time.tres" id="7_co3fn"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="7_nb1cd"]
+[ext_resource type="Resource" uid="uid://criw6qr211u05" path="res://Library/SummonAllys/GDGolem/golem_blue.tres" id="9_cehd1"]
 [ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="13_7fvll"]
-
 
 [sub_resource type="Resource" id="Resource_tnlst"]
 script = ExtResource("6_8egxn")
 damage_low = 40
 damage_high = 60
-
-[sub_resource type="Resource" id="Resource_u1lsi"]
-script = ExtResource("7_nb1cd")
-health = 100
-dodge_rate = 0.0
-near_damage_low = 14
-near_damage_high = 18
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_307yl"]
 radius = 73.9444
@@ -129,11 +108,11 @@ explosion_effect_scene = ExtResource("4_mpc3o")
 smoke_effect_scene = ExtResource("5_av10d")
 die_explosion_damage = SubResource("Resource_tnlst")
 existing_time = ExtResource("7_co3fn")
-unit_list = Array[ExtResource("7_nb1cd")]([SubResource("Resource_u1lsi")])
+unit_list = Array[ExtResource("7_nb1cd")]([ExtResource("9_cehd1")])
 heal_speed_list = Array[int]([8])
 ally_name = "黑桃傀儡"
 ally_texture = ExtResource("3_xxwmr")
-intercepting_range = 150
+intercepting_range = 120
 rebirth_time = 0
 
 [node name="AllySprite" parent="UnitBody" index="0"]

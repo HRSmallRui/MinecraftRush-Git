@@ -134,7 +134,7 @@ func summon_bullet(bullet_scene: PackedScene,summon_pos: Vector2, target_pos: Ve
 func idle_process():
 	super()
 	if ally_sprite.animation != "idle": return
-	if skill_2_timer.is_stopped() and skill_levels[2] > 0 and skill_2_area.get_overlapping_bodies().size() >= 4:
+	if skill_2_timer.is_stopped() and skill_levels[2] > 0 and skill_2_area.get_overlapping_bodies().size() >= 2:
 		var enemy: Enemy = get_skill2_enemy()
 		if enemy != null:
 			translate_to_new_state(AllyState.SPECIAL)
@@ -143,7 +143,7 @@ func idle_process():
 			skill_2_timer.start()
 			ally_sprite.flip_h = enemy.position.x < position.x
 			return
-	if skill_4_area.get_overlapping_bodies().size() >= 2 and skill_levels[4] > 0 and skill_4_timer.is_stopped():
+	if skill_4_area.get_overlapping_bodies().size() >= 1 and skill_levels[4] > 0 and skill_4_timer.is_stopped():
 		var enemy: Enemy = skill_4_area.get_overlapping_bodies()[0].owner
 		skill4_locked_enemy = enemy
 		translate_to_new_state(AllyState.SPECIAL)

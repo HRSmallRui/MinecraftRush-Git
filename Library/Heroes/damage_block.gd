@@ -7,3 +7,7 @@ class_name DamageBlock
 
 func get_damage() -> int:
 	return randi_range(damage_low,damage_high)
+
+
+func get_damage_text() -> String:
+	return str(damage_low) + " - " + str(damage_high)

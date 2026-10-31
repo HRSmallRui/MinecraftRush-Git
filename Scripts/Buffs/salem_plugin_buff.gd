@@ -35,3 +35,8 @@ func buff_start() -> void:
 		dead_body_buff.set("dead_explosion_level",dead_explosion_level)
 		enemy.buffs.add_child(dead_body_buff)
 	pass
+
+
+func dead_explosion():
+	
+	pass

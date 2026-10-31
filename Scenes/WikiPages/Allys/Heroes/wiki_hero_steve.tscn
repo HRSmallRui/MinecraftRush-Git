@@ -1,0 +1,1951 @@
+[gd_scene load_steps=247 format=3 uid="uid://dxlhu8f4c7di7"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_d2msf"]
+[ext_resource type="Texture2D" uid="uid://cvc5pqffrv7f" path="res://Assets/Images/UI/HeroHall/HeadTexs/Steve.png" id="2_53ww7"]
+[ext_resource type="Texture2D" uid="uid://dd567i3p6y7e" path="res://Assets/Images/UI/HeroHall/HeroTextures/史蒂夫.png" id="3_0cqqr"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="4_seafm"]
+[ext_resource type="Texture2D" uid="uid://nu1mu4m4slwo" path="res://Assets/Images/UI/InformationBar/Allys/Heroes/steve.png" id="4_vm65j"]
+[ext_resource type="PackedScene" uid="uid://og44pdpy8d10" path="res://Scenes/UI-Components/Wiki/wiki_unit_data_table.tscn" id="5_2lfdj"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="5_8svx5"]
+[ext_resource type="Resource" uid="uid://cpun6wwbdjxf3" path="res://Library/Heroes/HeroPropertyBlocks/Steve.tres" id="6_0njh3"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="6_sth8c"]
+[ext_resource type="Texture2D" uid="uid://cxlgijvx46h50" path="res://Assets/Images/UI/Wiki/PropertyIcons/生命值.png" id="7_yxo4w"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="8_4kaky"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="9_lk2x2"]
+[ext_resource type="Texture2D" uid="uid://cluf52rrkcnre" path="res://Assets/Images/UI/Wiki/PropertyIcons/LV.png" id="10_4jr4k"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="10_c17t1"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="11_hwf1c"]
+[ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="11_m5kpr"]
+[ext_resource type="Texture2D" uid="uid://ckg83ho45j57x" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/顽强-normal.png" id="12_ltvdt"]
+[ext_resource type="Texture2D" uid="uid://c72xl1fnqpveo" path="res://Assets/Images/UI/Wiki/PropertyIcons/技能点.png" id="13_fapsv"]
+[ext_resource type="Texture2D" uid="uid://c86em02g37ss5" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/钻石镐-normal.png" id="15_fk2c4"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="16_ajebr"]
+[ext_resource type="Texture2D" uid="uid://i3cup87bakxs" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/金苹果-normal.png" id="18_00lcp"]
+[ext_resource type="Texture2D" uid="uid://drv0dbf2kutls" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/战神之刃-normal.png" id="21_83pw0"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="22_3qjjn"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="22_sb137"]
+[ext_resource type="Texture2D" uid="uid://dusmfjrww8sgn" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战炮伤.png" id="23_taoo5"]
+[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="24_57r1e"]
+[ext_resource type="Texture2D" uid="uid://xumllens74b3" path="res://Assets/Images/UI/HeroHall/SkillTextures/Steve/药水风暴雨-normal.png" id="26_rkewj"]
+[ext_resource type="Texture2D" uid="uid://cgqvtdtcpu8nd" path="res://Assets/Images/UI/SkillButton/Heroskill/Steve/steve_canuse.png" id="29_xhka0"]
+[ext_resource type="Texture2D" uid="uid://dlfpt6kgimp1x" path="res://Assets/Animations/Heroes/Steve/steve-damage_00.png" id="30_d3rtk"]
+[ext_resource type="Texture2D" uid="uid://u4p7b64miqfl" path="res://Assets/Animations/Heroes/Steve/steve-damage_01.png" id="31_6362b"]
+[ext_resource type="Texture2D" uid="uid://c57x0p281rqhq" path="res://Assets/Animations/Heroes/Steve/steve-damage_02.png" id="32_1bnu3"]
+[ext_resource type="Texture2D" uid="uid://cb8jgdi1m4igb" path="res://Assets/Animations/Heroes/Steve/steve-damage_03.png" id="33_kllb3"]
+[ext_resource type="Texture2D" uid="uid://d506tutrya56" path="res://Assets/Animations/Heroes/Steve/steve-damage_04.png" id="34_5tgib"]
+[ext_resource type="Texture2D" uid="uid://bnaubbnqpejf2" path="res://Assets/Animations/Heroes/Steve/steve-damage_05.png" id="35_s1klc"]
+[ext_resource type="Texture2D" uid="uid://dvu40vmebtvuc" path="res://Assets/Animations/Heroes/Steve/steve-damage_06.png" id="36_cbcxj"]
+[ext_resource type="Texture2D" uid="uid://b4cappa2qfdu6" path="res://Assets/Animations/Heroes/Steve/steve-damage_07.png" id="37_6pjf2"]
+[ext_resource type="Texture2D" uid="uid://bw5davlbrgpa7" path="res://Assets/Animations/Heroes/Steve/steve-damage_08.png" id="38_odtm7"]
+[ext_resource type="Texture2D" uid="uid://7r5ba25k74kp" path="res://Assets/Animations/Heroes/Steve/steve-damage_09.png" id="39_ouirk"]
+[ext_resource type="Texture2D" uid="uid://bfqler573sdq2" path="res://Assets/Animations/Heroes/Steve/steve-damage_10.png" id="40_2rfov"]
+[ext_resource type="Texture2D" uid="uid://bc3ajqeqgam7b" path="res://Assets/Animations/Heroes/Steve/steve-damage_11.png" id="41_61jhc"]
+[ext_resource type="Texture2D" uid="uid://bn5p3qnacv4xq" path="res://Assets/Animations/Heroes/Steve/steve-damage_12.png" id="42_he1rg"]
+[ext_resource type="Texture2D" uid="uid://cuapwt8ueb8x4" path="res://Assets/Animations/Heroes/Steve/steve-damage_13.png" id="43_8xve3"]
+[ext_resource type="Texture2D" uid="uid://curnfosnvkdc0" path="res://Assets/Animations/Heroes/Steve/steve-damage_14.png" id="44_rtrbd"]
+[ext_resource type="Texture2D" uid="uid://d0d0ah0qf65sk" path="res://Assets/Animations/Heroes/Steve/steve-damage_15.png" id="45_umhdm"]
+[ext_resource type="Texture2D" uid="uid://d0c6uyoupnu6n" path="res://Assets/Animations/Heroes/Steve/steve-damage_16.png" id="46_av1bn"]
+[ext_resource type="Texture2D" uid="uid://30134tt6hi8x" path="res://Assets/Animations/Heroes/Steve/steve-damage_17.png" id="47_8r4ij"]
+[ext_resource type="Texture2D" uid="uid://b6qs37mqpumqo" path="res://Assets/Animations/Heroes/Steve/steve-damage_18.png" id="48_jtykw"]
+[ext_resource type="Texture2D" uid="uid://gsueqeqts3of" path="res://Assets/Animations/Heroes/Steve/steve-damage_19.png" id="49_x6bou"]
+[ext_resource type="Texture2D" uid="uid://b6hnfitcjktky" path="res://Assets/Animations/Heroes/Steve/steve-damage_20.png" id="50_a57kg"]
+[ext_resource type="Texture2D" uid="uid://5b0ayt3yn0o0" path="res://Assets/Animations/Heroes/Steve/steve-damage_21.png" id="51_n6yut"]
+[ext_resource type="Texture2D" uid="uid://cdmydosficfx2" path="res://Assets/Animations/Heroes/Steve/steve-damage_22.png" id="52_35o6f"]
+[ext_resource type="Texture2D" uid="uid://dm7aaak3f0ea7" path="res://Assets/Animations/Heroes/Steve/steve-damage_23.png" id="53_g4a3t"]
+[ext_resource type="Texture2D" uid="uid://b2c2trja4atke" path="res://Assets/Animations/Heroes/Steve/steve-damage_24.png" id="54_wedyf"]
+[ext_resource type="Texture2D" uid="uid://ddsn8gbo2426n" path="res://Assets/Animations/Heroes/Steve/steve-damage_25.png" id="55_m67gd"]
+[ext_resource type="Texture2D" uid="uid://dhk3n6jfirmu6" path="res://Assets/Animations/Heroes/Steve/steve-damage_26.png" id="56_vnt5m"]
+[ext_resource type="Texture2D" uid="uid://bhlvf56yyeuhg" path="res://Assets/Animations/Heroes/Steve/steve-damage_27.png" id="57_13315"]
+[ext_resource type="Texture2D" uid="uid://240l6dlk0p34" path="res://Assets/Animations/Heroes/Steve/steve-damage_28.png" id="58_fbc0i"]
+[ext_resource type="Texture2D" uid="uid://cia1pq8saw85h" path="res://Assets/Animations/Heroes/Steve/steve-damage_29.png" id="59_klkjn"]
+[ext_resource type="Texture2D" uid="uid://cv2sgk6a5a7gr" path="res://Assets/Animations/Heroes/Steve/steve-damage_30.png" id="60_161de"]
+[ext_resource type="Texture2D" uid="uid://cbjyh64w8vr4a" path="res://Assets/Animations/Heroes/Steve/steve-die_00.png" id="61_lcdyt"]
+[ext_resource type="Texture2D" uid="uid://su41ga5r12c4" path="res://Assets/Animations/Heroes/Steve/steve-die_01.png" id="62_xufik"]
+[ext_resource type="Texture2D" uid="uid://ct7ibfxp2ppkb" path="res://Assets/Animations/Heroes/Steve/steve-die_02.png" id="63_eat1w"]
+[ext_resource type="Texture2D" uid="uid://ddmooxv3d5tvm" path="res://Assets/Animations/Heroes/Steve/steve-die_03.png" id="64_mls5g"]
+[ext_resource type="Texture2D" uid="uid://do1ie382wnc6p" path="res://Assets/Animations/Heroes/Steve/steve-die_04.png" id="65_whjoa"]
+[ext_resource type="Texture2D" uid="uid://d341llsm4ttbl" path="res://Assets/Animations/Heroes/Steve/steve-die_05.png" id="66_6agl7"]
+[ext_resource type="Texture2D" uid="uid://45bbli3leygi" path="res://Assets/Animations/Heroes/Steve/steve-die_06.png" id="67_ksar4"]
+[ext_resource type="Texture2D" uid="uid://4a6mv1ql46vb" path="res://Assets/Animations/Heroes/Steve/steve-die_07.png" id="68_4b7sn"]
+[ext_resource type="Texture2D" uid="uid://d4ml7ow8hkc5n" path="res://Assets/Animations/Heroes/Steve/steve-die_08.png" id="69_geqc2"]
+[ext_resource type="Texture2D" uid="uid://cmoesg30frwna" path="res://Assets/Animations/Heroes/Steve/steve-die_09.png" id="70_6pnwm"]
+[ext_resource type="Texture2D" uid="uid://dl4xidqretdo2" path="res://Assets/Animations/Heroes/Steve/steve-die_10.png" id="71_0p6wd"]
+[ext_resource type="Texture2D" uid="uid://5g85npqisbxr" path="res://Assets/Animations/Heroes/Steve/steve-die_11.png" id="72_ho3yp"]
+[ext_resource type="Texture2D" uid="uid://dkiesxmkn7vyh" path="res://Assets/Animations/Heroes/Steve/steve-die_12.png" id="73_hik1x"]
+[ext_resource type="Texture2D" uid="uid://1pd3iq4hwirp" path="res://Assets/Animations/Heroes/Steve/steve-run_00.png" id="74_q4iri"]
+[ext_resource type="Texture2D" uid="uid://b2rq20rrb8h50" path="res://Assets/Animations/Heroes/Steve/steve-run_01.png" id="75_cw60p"]
+[ext_resource type="Texture2D" uid="uid://blw46uhrnvvhu" path="res://Assets/Animations/Heroes/Steve/steve-run_02.png" id="76_fhq2n"]
+[ext_resource type="Texture2D" uid="uid://27ur6nsc7uyo" path="res://Assets/Animations/Heroes/Steve/steve-run_03.png" id="77_n5gpd"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="78_ecinr"]
+[ext_resource type="Texture2D" uid="uid://whravn0ce45o" path="res://Assets/Animations/Heroes/Steve/steve-run_04.png" id="78_ubn1w"]
+[ext_resource type="Texture2D" uid="uid://cum1nf3sahauq" path="res://Assets/Animations/Heroes/Steve/steve-run_05.png" id="79_6r32g"]
+[ext_resource type="Texture2D" uid="uid://bokii3h68mrxm" path="res://Assets/Animations/Heroes/Steve/steve-run_06.png" id="80_1tcli"]
+[ext_resource type="Texture2D" uid="uid://dklxxh5tq2bbe" path="res://Assets/Animations/Heroes/Steve/steve-run_07.png" id="81_8gcsd"]
+[ext_resource type="Texture2D" uid="uid://dggmnwu2mgn4r" path="res://Assets/Animations/Heroes/Steve/steve-run_08.png" id="82_62tm3"]
+[ext_resource type="Texture2D" uid="uid://ffupidxe2kh3" path="res://Assets/Animations/Heroes/Steve/steve-run_09.png" id="83_sa8l0"]
+[ext_resource type="Texture2D" uid="uid://7kiyqaggagho" path="res://Assets/Animations/Heroes/Steve/steve-run_10.png" id="84_2nobi"]
+[ext_resource type="Texture2D" uid="uid://kptaitjiweei" path="res://Assets/Animations/Heroes/Steve/steve-run_11.png" id="85_jr6bh"]
+[ext_resource type="Texture2D" uid="uid://dsgc06conk0uy" path="res://Assets/Animations/Heroes/Steve/steve-run_12.png" id="86_ymmhi"]
+[ext_resource type="Texture2D" uid="uid://bsbh7t4rtndrd" path="res://Assets/Animations/Heroes/Steve/steve-run_13.png" id="87_li70q"]
+[ext_resource type="Texture2D" uid="uid://sh8da4g07y62" path="res://Assets/Animations/Heroes/Steve/steve-run_14.png" id="88_vvlvq"]
+[ext_resource type="Texture2D" uid="uid://bhjmuoq1i5fs" path="res://Assets/Animations/Heroes/Steve/steve-run_15.png" id="89_p5y7d"]
+[ext_resource type="Texture2D" uid="uid://cwefjtnth01r3" path="res://Assets/Animations/Heroes/Steve/steve-run_16.png" id="90_1g7f3"]
+[ext_resource type="Texture2D" uid="uid://bnpcqwqing5m" path="res://Assets/Animations/Heroes/Steve/steve-run_17.png" id="91_plb8q"]
+[ext_resource type="Texture2D" uid="uid://61xo3s85occ0" path="res://Assets/Animations/Heroes/Steve/steve-run_18.png" id="92_by7xh"]
+[ext_resource type="Texture2D" uid="uid://cyvevo7jh7rr1" path="res://Assets/Animations/Heroes/Steve/steve-run_19.png" id="93_4e7gp"]
+[ext_resource type="Texture2D" uid="uid://ctled4qfhxeyk" path="res://Assets/Animations/Heroes/Steve/steve-run_20.png" id="94_xf7t1"]
+[ext_resource type="Texture2D" uid="uid://bfuwoikuuet5n" path="res://Assets/Animations/Heroes/Steve/steve-run_21.png" id="95_22wwo"]
+[ext_resource type="Texture2D" uid="uid://of3tuuf6f5de" path="res://Assets/Animations/Heroes/Steve/steve-run_22.png" id="96_xmpa3"]
+[ext_resource type="Texture2D" uid="uid://c7lhs4baat7e5" path="res://Assets/Animations/Heroes/Steve/steve-run_23.png" id="97_hmjl3"]
+[ext_resource type="Texture2D" uid="uid://b0c3i68hbx0ok" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_00.png" id="98_klrve"]
+[ext_resource type="Texture2D" uid="uid://bsin1c11bni02" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_01.png" id="99_3cske"]
+[ext_resource type="Texture2D" uid="uid://crbp0q6wxfpar" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_02.png" id="100_mxq6v"]
+[ext_resource type="Texture2D" uid="uid://ex38jblxn188" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_03.png" id="101_n3kel"]
+[ext_resource type="Texture2D" uid="uid://chxqur43vmh5s" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_04.png" id="102_idn3i"]
+[ext_resource type="Texture2D" uid="uid://c1md4c1mywgih" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_05.png" id="103_eucpn"]
+[ext_resource type="Texture2D" uid="uid://ofyuqe1w2oy7" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_06.png" id="104_es3da"]
+[ext_resource type="Texture2D" uid="uid://bqjwbuvwy41ey" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_07.png" id="105_ta7h1"]
+[ext_resource type="Texture2D" uid="uid://b674uaa8jlxs1" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_08.png" id="106_wuevw"]
+[ext_resource type="Texture2D" uid="uid://c3npe7grhyao2" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_09.png" id="107_3ge77"]
+[ext_resource type="Texture2D" uid="uid://d1gmatowodtkb" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_10.png" id="108_nacij"]
+[ext_resource type="Texture2D" uid="uid://ci1na3cda04wm" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_11.png" id="109_jwspb"]
+[ext_resource type="Texture2D" uid="uid://csvspghd3pler" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_12.png" id="110_x3idv"]
+[ext_resource type="Texture2D" uid="uid://bfgv4fkwr81ok" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_13.png" id="111_mc7gd"]
+[ext_resource type="Texture2D" uid="uid://bfkxixf3kvnty" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_14.png" id="112_7qxcr"]
+[ext_resource type="Texture2D" uid="uid://c0xx5s11upss2" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_15.png" id="113_7vvqi"]
+[ext_resource type="Texture2D" uid="uid://djhl7e3j74yb6" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_16.png" id="114_vwk0n"]
+[ext_resource type="Texture2D" uid="uid://bygc8iayt57rn" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_17.png" id="115_7mhn2"]
+[ext_resource type="Texture2D" uid="uid://dxmun11xuvofp" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_18.png" id="116_e7q1c"]
+[ext_resource type="Texture2D" uid="uid://b45wwdvme7xfu" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_19.png" id="117_eyn8u"]
+[ext_resource type="Texture2D" uid="uid://c1880cuuxdik1" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_20.png" id="118_0iwei"]
+[ext_resource type="Texture2D" uid="uid://c3eifvwnrcoxl" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_21.png" id="119_jprk1"]
+[ext_resource type="Texture2D" uid="uid://djh252ucmju6b" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_22.png" id="120_hgscy"]
+[ext_resource type="Texture2D" uid="uid://b0kychplm3ntm" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_23.png" id="121_8osyp"]
+[ext_resource type="Texture2D" uid="uid://df7ut0l4pjyo2" path="res://Assets/Animations/Heroes/Steve/steve-rebirth_24.png" id="122_jbluj"]
+[ext_resource type="Texture2D" uid="uid://pt5idpmvtlan" path="res://Assets/Animations/Heroes/Steve/steve-skill2_00.png" id="123_pcedm"]
+[ext_resource type="Texture2D" uid="uid://eua83glklr4t" path="res://Assets/Animations/Heroes/Steve/steve-skill2_01.png" id="124_i2iqg"]
+[ext_resource type="Texture2D" uid="uid://v5gt7e7lq3wo" path="res://Assets/Animations/Heroes/Steve/steve-skill2_02.png" id="125_kks7y"]
+[ext_resource type="Texture2D" uid="uid://2jqdbytw27v2" path="res://Assets/Animations/Heroes/Steve/steve-skill2_03.png" id="126_0qqhk"]
+[ext_resource type="Texture2D" uid="uid://drys71otxjsp2" path="res://Assets/Animations/Heroes/Steve/steve-skill2_04.png" id="127_iucmj"]
+[ext_resource type="Texture2D" uid="uid://wjk5un0o6k1c" path="res://Assets/Animations/Heroes/Steve/steve-skill2_05.png" id="128_o3bbl"]
+[ext_resource type="Texture2D" uid="uid://c7y21abfjablj" path="res://Assets/Animations/Heroes/Steve/steve-skill2_06.png" id="129_lkeof"]
+[ext_resource type="Texture2D" uid="uid://cq5xt1awog0sw" path="res://Assets/Animations/Heroes/Steve/steve-skill2_07.png" id="130_ds2yv"]
+[ext_resource type="Texture2D" uid="uid://dqhmgjfacayf" path="res://Assets/Animations/Heroes/Steve/steve-skill2_08.png" id="131_1rde7"]
+[ext_resource type="Texture2D" uid="uid://uohjengria36" path="res://Assets/Animations/Heroes/Steve/steve-skill2_09.png" id="132_lmhu6"]
+[ext_resource type="Texture2D" uid="uid://7utq8jx10xh1" path="res://Assets/Animations/Heroes/Steve/steve-skill2_10.png" id="133_dyor6"]
+[ext_resource type="Texture2D" uid="uid://dlk3tkkqfvj06" path="res://Assets/Animations/Heroes/Steve/steve-skill2_11.png" id="134_516p4"]
+[ext_resource type="Texture2D" uid="uid://4fa6o3io7td4" path="res://Assets/Animations/Heroes/Steve/steve-skill2_12.png" id="135_wg3e6"]
+[ext_resource type="Texture2D" uid="uid://o4bruxyb65ni" path="res://Assets/Animations/Heroes/Steve/steve-skill2_13.png" id="136_5ijkx"]
+[ext_resource type="Texture2D" uid="uid://c5hmishjmxmx0" path="res://Assets/Animations/Heroes/Steve/steve-skill2_14.png" id="137_3677d"]
+[ext_resource type="Texture2D" uid="uid://bbw1egvwcdp7s" path="res://Assets/Animations/Heroes/Steve/steve-skill2_15.png" id="138_e8irp"]
+[ext_resource type="Texture2D" uid="uid://c0cpex3kia7x0" path="res://Assets/Animations/Heroes/Steve/steve-skill2_16.png" id="139_s1aks"]
+[ext_resource type="Texture2D" uid="uid://dcbu0apjnryiw" path="res://Assets/Animations/Heroes/Steve/steve-skill2_17.png" id="140_uxvfy"]
+[ext_resource type="Texture2D" uid="uid://d362uw4vwopdv" path="res://Assets/Animations/Heroes/Steve/steve-skill2_18.png" id="141_l75ma"]
+[ext_resource type="Texture2D" uid="uid://djqmamy5xlysd" path="res://Assets/Animations/Heroes/Steve/steve-skill2_19.png" id="142_s8riy"]
+[ext_resource type="Texture2D" uid="uid://chu3neoybyfja" path="res://Assets/Animations/Heroes/Steve/steve-skill2_20.png" id="143_3qkth"]
+[ext_resource type="Texture2D" uid="uid://lxf20x811nmi" path="res://Assets/Animations/Heroes/Steve/steve-skill2_21.png" id="144_6f7bq"]
+[ext_resource type="Texture2D" uid="uid://qcxmo0c4scvp" path="res://Assets/Animations/Heroes/Steve/steve-skill2_22.png" id="145_3coh5"]
+[ext_resource type="Texture2D" uid="uid://c80vq2kv6pk1n" path="res://Assets/Animations/Heroes/Steve/steve-skill2_23.png" id="146_b0a1q"]
+[ext_resource type="Texture2D" uid="uid://cvya76l3bhq8f" path="res://Assets/Animations/Heroes/Steve/steve-skill2_24.png" id="147_crlki"]
+[ext_resource type="Texture2D" uid="uid://dqxgs2aej6iag" path="res://Assets/Animations/Heroes/Steve/steve-skill2_25.png" id="148_ou4ye"]
+[ext_resource type="Texture2D" uid="uid://d5rjeneewy5h" path="res://Assets/Animations/Heroes/Steve/steve-skill2_26.png" id="149_bq2hk"]
+[ext_resource type="Texture2D" uid="uid://bt4l35m08x3d1" path="res://Assets/Animations/Heroes/Steve/steve-skill3_00.png" id="150_kjwvv"]
+[ext_resource type="Texture2D" uid="uid://b7rn8pliht344" path="res://Assets/Animations/Heroes/Steve/steve-skill3_01.png" id="151_m4nh2"]
+[ext_resource type="Texture2D" uid="uid://dh6h7ypx4knbh" path="res://Assets/Animations/Heroes/Steve/steve-skill3_02.png" id="152_sku55"]
+[ext_resource type="Texture2D" uid="uid://kyqdybdocqap" path="res://Assets/Animations/Heroes/Steve/steve-skill3_03.png" id="153_th2mh"]
+[ext_resource type="Texture2D" uid="uid://djjiacjsovnjk" path="res://Assets/Animations/Heroes/Steve/steve-skill3_04.png" id="154_f5og5"]
+[ext_resource type="Texture2D" uid="uid://cqu0utq2gypcy" path="res://Assets/Animations/Heroes/Steve/steve-skill3_05.png" id="155_u73us"]
+[ext_resource type="Texture2D" uid="uid://ljyfqu04uu5y" path="res://Assets/Animations/Heroes/Steve/steve-skill3_06.png" id="156_i65fe"]
+[ext_resource type="Texture2D" uid="uid://dtrasgg5mcrtt" path="res://Assets/Animations/Heroes/Steve/steve-skill3_07.png" id="157_8b2mb"]
+[ext_resource type="Texture2D" uid="uid://b6i785lk45y6" path="res://Assets/Animations/Heroes/Steve/steve-skill3_08.png" id="158_ri4un"]
+[ext_resource type="Texture2D" uid="uid://s0dl2f076t35" path="res://Assets/Animations/Heroes/Steve/steve-skill3_09.png" id="159_ucyx4"]
+[ext_resource type="Texture2D" uid="uid://dqcgg6ohs1k87" path="res://Assets/Animations/Heroes/Steve/steve-skill3_10.png" id="160_jjmtm"]
+[ext_resource type="Texture2D" uid="uid://dvsxsqcf541bs" path="res://Assets/Animations/Heroes/Steve/steve-skill3_11.png" id="161_1norj"]
+[ext_resource type="Texture2D" uid="uid://i4j6o0iwu0gc" path="res://Assets/Animations/Heroes/Steve/steve-skill3_12.png" id="162_48shb"]
+[ext_resource type="Texture2D" uid="uid://byxhg07yq5whk" path="res://Assets/Animations/Heroes/Steve/steve-skill3_13.png" id="163_8hxwl"]
+[ext_resource type="Texture2D" uid="uid://cph86sewrxu8u" path="res://Assets/Animations/Heroes/Steve/steve-skill3_14.png" id="164_8u0es"]
+[ext_resource type="Texture2D" uid="uid://d2x1jjqggevxq" path="res://Assets/Animations/Heroes/Steve/steve-skill3_15.png" id="165_up6x3"]
+[ext_resource type="Texture2D" uid="uid://bslgkek8mmv5r" path="res://Assets/Animations/Heroes/Steve/steve-skill3_16.png" id="166_vcfug"]
+[ext_resource type="Texture2D" uid="uid://bddnn021lgt5u" path="res://Assets/Animations/Heroes/Steve/steve-skill3_17.png" id="167_4b83l"]
+[ext_resource type="Texture2D" uid="uid://fu1ywq2txt0d" path="res://Assets/Animations/Heroes/Steve/steve-skill3_18.png" id="168_e6b1c"]
+[ext_resource type="Texture2D" uid="uid://dd78t04rgp838" path="res://Assets/Animations/Heroes/Steve/steve-skill3_19.png" id="169_b14cm"]
+[ext_resource type="Texture2D" uid="uid://ci0hcdrjs7re4" path="res://Assets/Animations/Heroes/Steve/steve-skill3_20.png" id="170_t3wyl"]
+[ext_resource type="Texture2D" uid="uid://dm66s1qu0mnx8" path="res://Assets/Animations/Heroes/Steve/steve-skill3_21.png" id="171_nqac1"]
+[ext_resource type="Texture2D" uid="uid://bj3r1l2eimdnm" path="res://Assets/Animations/Heroes/Steve/steve-skill3_22.png" id="172_ybmf8"]
+[ext_resource type="Texture2D" uid="uid://n6t1mslap5iy" path="res://Assets/Animations/Heroes/Steve/steve-skill3_23.png" id="173_ldbs2"]
+[ext_resource type="Texture2D" uid="uid://bcrxmyrtp5h2c" path="res://Assets/Animations/Heroes/Steve/steve-skill3_24.png" id="174_tdfsy"]
+[ext_resource type="Texture2D" uid="uid://c47uve58uj6cu" path="res://Assets/Animations/Heroes/Steve/steve-skill3_25.png" id="175_japro"]
+[ext_resource type="Texture2D" uid="uid://ds7ua0t0ro6q8" path="res://Assets/Animations/Heroes/Steve/steve-skill3_26.png" id="176_g51sy"]
+[ext_resource type="Texture2D" uid="uid://1ftv7c0w4j2n" path="res://Assets/Animations/Heroes/Steve/steve-skill3_27.png" id="177_4fhef"]
+[ext_resource type="Texture2D" uid="uid://ioxiufgrl0gv" path="res://Assets/Animations/Heroes/Steve/steve-skill3_28.png" id="178_cpofi"]
+[ext_resource type="Texture2D" uid="uid://dleoqi8sef1lg" path="res://Assets/Animations/Heroes/Steve/steve-skill3_29.png" id="179_vq560"]
+[ext_resource type="Texture2D" uid="uid://t6fy40ci8yk1" path="res://Assets/Animations/Heroes/Steve/steve-skill3_30.png" id="180_73kiq"]
+[ext_resource type="Texture2D" uid="uid://de1u3judr3ca5" path="res://Assets/Animations/Heroes/Steve/steve-skill3_31.png" id="181_55ks4"]
+[ext_resource type="Texture2D" uid="uid://bjx5olwd0kt7a" path="res://Assets/Animations/Heroes/Steve/steve-skill3_32.png" id="182_khtix"]
+[ext_resource type="Texture2D" uid="uid://cjmoihlsy7nf8" path="res://Assets/Animations/Heroes/Steve/steve-skill3_33.png" id="183_camps"]
+[ext_resource type="Texture2D" uid="uid://cbjls8c0mu17u" path="res://Assets/Animations/Heroes/Steve/steve-skill3_34.png" id="184_jbk1n"]
+[ext_resource type="Texture2D" uid="uid://ba6ve3d4kb7am" path="res://Assets/Animations/Heroes/Steve/steve-skill3_35.png" id="185_ioek5"]
+[ext_resource type="Texture2D" uid="uid://d0ao07257cy05" path="res://Assets/Animations/Heroes/Steve/steve-skill3_36.png" id="186_jdya2"]
+[ext_resource type="Texture2D" uid="uid://bfjk0vqm6le15" path="res://Assets/Animations/Heroes/Steve/steve-skill3_37.png" id="187_rmpq8"]
+[ext_resource type="Texture2D" uid="uid://bcv77iheue6ai" path="res://Assets/Animations/Heroes/Steve/steve-skill3_38.png" id="188_12smk"]
+[ext_resource type="Texture2D" uid="uid://ccgknpbfh3w7n" path="res://Assets/Animations/Heroes/Steve/steve-skill3_39.png" id="189_a8han"]
+[ext_resource type="Texture2D" uid="uid://0ucaebha4es" path="res://Assets/Animations/Heroes/Steve/steve-skill3_40.png" id="190_ofvjj"]
+[ext_resource type="Texture2D" uid="uid://drak7aurqaslq" path="res://Assets/Animations/Heroes/Steve/steve-skill4_00.png" id="191_00gs6"]
+[ext_resource type="Texture2D" uid="uid://bgnreck8wkpxt" path="res://Assets/Animations/Heroes/Steve/steve-skill4_01.png" id="192_hidbi"]
+[ext_resource type="Texture2D" uid="uid://xr0il5sphgum" path="res://Assets/Animations/Heroes/Steve/steve-skill4_02.png" id="193_yqxes"]
+[ext_resource type="Texture2D" uid="uid://bmf80hrnvd6ek" path="res://Assets/Animations/Heroes/Steve/steve-skill4_03.png" id="194_s5e6b"]
+[ext_resource type="Texture2D" uid="uid://pvl74vs4bumu" path="res://Assets/Animations/Heroes/Steve/steve-skill4_04.png" id="195_frhwt"]
+[ext_resource type="Texture2D" uid="uid://uqvbv7k661qc" path="res://Assets/Animations/Heroes/Steve/steve-skill4_05.png" id="196_4l50k"]
+[ext_resource type="Texture2D" uid="uid://nrs3bhfuml47" path="res://Assets/Animations/Heroes/Steve/steve-skill4_06.png" id="197_qhuhx"]
+[ext_resource type="Texture2D" uid="uid://b1rara0e4dc1t" path="res://Assets/Animations/Heroes/Steve/steve-skill4_07.png" id="198_ix33r"]
+[ext_resource type="Texture2D" uid="uid://bgx1684uri7eq" path="res://Assets/Animations/Heroes/Steve/steve-skill4_08.png" id="199_twt7u"]
+[ext_resource type="Texture2D" uid="uid://b3xpnmbs8mi2m" path="res://Assets/Animations/Heroes/Steve/steve-skill4_09.png" id="200_43506"]
+[ext_resource type="Texture2D" uid="uid://cm4kslvt651cy" path="res://Assets/Animations/Heroes/Steve/steve-skill4_10.png" id="201_ohkgg"]
+[ext_resource type="Texture2D" uid="uid://c8jnsfp72gn14" path="res://Assets/Animations/Heroes/Steve/steve-skill4_11.png" id="202_gfayn"]
+[ext_resource type="Texture2D" uid="uid://eba8kucbn3xv" path="res://Assets/Animations/Heroes/Steve/steve-skill4_12.png" id="203_7o4m5"]
+[ext_resource type="Texture2D" uid="uid://br2clx8xwsci6" path="res://Assets/Animations/Heroes/Steve/steve-skill4_13.png" id="204_wb7ac"]
+[ext_resource type="Texture2D" uid="uid://dyntdt8qjetcx" path="res://Assets/Animations/Heroes/Steve/steve-skill4_14.png" id="205_n00wx"]
+[ext_resource type="Texture2D" uid="uid://2t06gepjp3lu" path="res://Assets/Animations/Heroes/Steve/steve-skill4_15.png" id="206_qie6c"]
+[ext_resource type="Texture2D" uid="uid://djwmx1hh4fkvp" path="res://Assets/Animations/Heroes/Steve/steve-skill4_16.png" id="207_5ilnj"]
+[ext_resource type="Texture2D" uid="uid://dp1o2s7l86cyx" path="res://Assets/Animations/Heroes/Steve/steve-skill4_17.png" id="208_sqpr0"]
+[ext_resource type="Texture2D" uid="uid://h7w4ox26mye8" path="res://Assets/Animations/Heroes/Steve/steve-skill4_18.png" id="209_wfif4"]
+[ext_resource type="Texture2D" uid="uid://d3108jldk8svs" path="res://Assets/Animations/Heroes/Steve/steve-skill4_19.png" id="210_ppq82"]
+[ext_resource type="Texture2D" uid="uid://baost2alraumj" path="res://Assets/Animations/Heroes/Steve/steve-skill4_20.png" id="211_20d0q"]
+[ext_resource type="Texture2D" uid="uid://cgfmostqu6j5f" path="res://Assets/Animations/Heroes/Steve/steve-skill4_21.png" id="212_cbd2e"]
+[ext_resource type="Texture2D" uid="uid://blp33abtu55k1" path="res://Assets/Animations/Heroes/Steve/steve-skill4_22.png" id="213_dolar"]
+[ext_resource type="Texture2D" uid="uid://diuak64xyrgc1" path="res://Assets/Animations/Heroes/Steve/steve-skill4_23.png" id="214_vpsf0"]
+[ext_resource type="Texture2D" uid="uid://8f2urd04tetu" path="res://Assets/Animations/Heroes/Steve/steve-skill4_24.png" id="215_k3ltq"]
+[ext_resource type="Texture2D" uid="uid://0ynljo7h0720" path="res://Assets/Animations/Heroes/Steve/steve-skill4_25.png" id="216_8wmb3"]
+[ext_resource type="Texture2D" uid="uid://debt43m3b6chn" path="res://Assets/Animations/Heroes/Steve/steve-skill4_26.png" id="217_6osfs"]
+[ext_resource type="Texture2D" uid="uid://b51qkhp66qgrl" path="res://Assets/Animations/Heroes/Steve/steve-skill4_27.png" id="218_qrahe"]
+[ext_resource type="Texture2D" uid="uid://blketqjxgqqjv" path="res://Assets/Animations/Heroes/Steve/steve-skill4_28.png" id="219_gttpq"]
+[ext_resource type="Texture2D" uid="uid://d3iqw770gi2jd" path="res://Assets/Animations/Heroes/Steve/steve-skill4_29.png" id="220_8jpl8"]
+[ext_resource type="Texture2D" uid="uid://d2wqtg1xtrsxg" path="res://Assets/Animations/Heroes/Steve/steve-skill4_30.png" id="221_ctmbc"]
+[ext_resource type="Texture2D" uid="uid://sqdxbjmml84y" path="res://Assets/Animations/Heroes/Steve/steve-skill4_31.png" id="222_q1pay"]
+[ext_resource type="Texture2D" uid="uid://5myanhrjeorv" path="res://Assets/Animations/Heroes/Steve/steve-skill4_32.png" id="223_k8aqt"]
+[ext_resource type="Texture2D" uid="uid://cp2x4r71k2vgj" path="res://Assets/Animations/Heroes/Steve/steve-skill4_33.png" id="224_8gvx8"]
+[ext_resource type="Texture2D" uid="uid://bdb3agievfc6e" path="res://Assets/Animations/Heroes/Steve/steve-skill4_34.png" id="225_22ih1"]
+[ext_resource type="Texture2D" uid="uid://da1jcf6c73q1q" path="res://Assets/Animations/Heroes/Steve/steve-skill4_35.png" id="226_qs8hm"]
+[ext_resource type="Texture2D" uid="uid://c3f3ipxc3agbn" path="res://Assets/Animations/Heroes/Steve/steve-skill4_36.png" id="227_qrtu0"]
+[ext_resource type="Texture2D" uid="uid://dbq5otsrkayfy" path="res://Assets/Animations/Heroes/Steve/steve-skill4_37.png" id="228_irbs6"]
+[ext_resource type="Texture2D" uid="uid://du6v70veljspn" path="res://Assets/Animations/Heroes/Steve/steve-skill4_38.png" id="229_xpk1c"]
+[ext_resource type="Texture2D" uid="uid://d0asy5xbqqr6v" path="res://Assets/Animations/Heroes/Steve/steve-skill4_39.png" id="230_tp6rw"]
+[ext_resource type="Texture2D" uid="uid://d1jjtuuodfnyh" path="res://Assets/Animations/Heroes/Steve/steve-skill4_40.png" id="231_rniy8"]
+[ext_resource type="Texture2D" uid="uid://bilhmk5prr0tp" path="res://Assets/Animations/Heroes/Steve/steve-skill4_41.png" id="232_03u37"]
+[ext_resource type="Texture2D" uid="uid://dg15y60v84eyj" path="res://Assets/Animations/Heroes/Steve/steve-skill4_42.png" id="233_dhxlr"]
+[ext_resource type="Texture2D" uid="uid://cn35gpl8wyhw7" path="res://Assets/Animations/Heroes/Steve/steve-skill4_43.png" id="234_g1v2i"]
+[ext_resource type="Texture2D" uid="uid://b3dcsgta3pfc6" path="res://Assets/Animations/Heroes/Steve/steve-skill4_44.png" id="235_hx6cc"]
+[ext_resource type="Texture2D" uid="uid://yt4i5818rucx" path="res://Assets/Animations/Heroes/Steve/steve-skill4_45.png" id="236_vapey"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="237_aq13q"]
+[ext_resource type="AudioStream" uid="uid://ca04jebrw5o7e" path="res://Assets/Sounds/FXs/Heroes/Steve/史蒂夫金苹果.mp3" id="238_gp4ff"]
+[ext_resource type="AudioStream" uid="uid://3ciyyqe3hv5j" path="res://Assets/Sounds/FXs/Heroes/Steve/史蒂夫战神之刃.mp3" id="239_m2bx4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwopi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_d3rtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6362b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1bnu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kllb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5tgib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_s1klc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_cbcxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6pjf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_odtm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ouirk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_2rfov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_61jhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_he1rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8xve3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_rtrbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_umhdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_av1bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_8r4ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jtykw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_x6bou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_a57kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_n6yut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_35o6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_g4a3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_wedyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_m67gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_vnt5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_13315")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_fbc0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_klkjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_161de")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fqqh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_lcdyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_xufik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_eat1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_mls5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_whjoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_6agl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ksar4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_4b7sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_geqc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_6pnwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_0p6wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ho3yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_hik1x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gvpb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_q4iri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_cw60p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_fhq2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_n5gpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_ubn1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_6r32g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_1tcli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_8gcsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_62tm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_sa8l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_2nobi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_jr6bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_ymmhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_li70q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_vvlvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_p5y7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_1g7f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_plb8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_by7xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_4e7gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_xf7t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_22wwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_xmpa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_hmjl3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wev3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("98_klrve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_3cske")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_mxq6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_n3kel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_idn3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_eucpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_es3da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ta7h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_wuevw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_3ge77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_nacij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_jwspb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_x3idv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_mc7gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_7qxcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_7vvqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_vwk0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_7mhn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_e7q1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_eyn8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_0iwei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_jprk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_hgscy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_8osyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_jbluj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybnud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("123_pcedm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_i2iqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_kks7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_0qqhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_iucmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_o3bbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_lkeof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_ds2yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_1rde7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_lmhu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_dyor6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_516p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_wg3e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_5ijkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_3677d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_e8irp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_s1aks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_uxvfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_l75ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_s8riy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_3qkth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_6f7bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_3coh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_b0a1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_crlki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_ou4ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_bq2hk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qm14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("150_kjwvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_m4nh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_sku55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_th2mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_f5og5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_u73us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_i65fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_8b2mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_ri4un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_ucyx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_jjmtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_1norj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_48shb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_8hxwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_8u0es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_up6x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_vcfug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_4b83l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_e6b1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_b14cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_t3wyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_nqac1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_ybmf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_ldbs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_tdfsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_japro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_g51sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_4fhef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_cpofi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_vq560")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_73kiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_55ks4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_khtix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_camps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_jbk1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_ioek5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_jdya2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_rmpq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_12smk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_a8han")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_ofvjj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nifh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("191_00gs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_hidbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_yqxes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_s5e6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_frhwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_4l50k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_qhuhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_ix33r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_twt7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_43506")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_ohkgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gfayn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_7o4m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_wb7ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_n00wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_qie6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_5ilnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_sqpr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_wfif4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_ppq82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_20d0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_cbd2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_dolar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_vpsf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_k3ltq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_8wmb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_6osfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_qrahe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_gttpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_8jpl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_ctmbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_q1pay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_k8aqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_8gvx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_22ih1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_qs8hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_qrtu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_irbs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_xpk1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_tp6rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_rniy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_03u37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_dhxlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_g1v2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_hx6cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_vapey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiHeroSteve" instance=ExtResource("1_d2msf")]
+offset_bottom = 8757.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+texture = ExtResource("2_53ww7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Icon2" type="TextureRect" parent="VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 512)
+layout_mode = 2
+texture = ExtResource("3_0cqqr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "将军 - 史蒂夫"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 716.0
+offset_top = -45.0
+offset_right = 844.0
+offset_bottom = 83.0
+texture = ExtResource("4_vm65j")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+text = "史蒂夫曾是人族帝国九大守卫者中最为刚烈炽热的“将军”，掌握名为守护的力量，于数年前的伟大战争中功成身退，但随着恶势力的再次崛起，正在酒馆畅怀痛饮的他也意识到是时候再次以身入局，在月色下重新身披甲胄，狞笑道：“当年能锤烂你们的祖宗，如今照样碾碎龟孙的骨头！”
+ 
+解锁条件： 初始英雄"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiUnitDataTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("5_2lfdj")]
+layout_mode = 2
+hero_data = ExtResource("6_0njh3")
+health_recover_list = Array[int]([20, 23, 26, 29, 32, 35, 38, 42, 45, 50])
+rebirth_time = 20.0
+intercepting_range = 200
+damage_far_show = false
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "被动 - 守护的意志"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+text = "史蒂夫在达到 1级/4级/8级时获得 20%/30%/40% 总伤减免"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2" index="0" instance=ExtResource("4_seafm")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="0" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("10_4jr4k")
+tip_text = "等级条件"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="1" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "1 / 4 / 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="2" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("11_m5kpr")
+tip_text = "总伤减免"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="3" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "20% / 30% / 40%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Skill" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "技能"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "顽强"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/Label" index="0"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -53.0
+offset_right = 306.0
+offset_bottom = 203.0
+scale = Vector2(0.568855, 0.568855)
+texture = ExtResource("12_ltvdt")
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="2"]
+layout_mode = 2
+text = "技能点： 1 / 1 / 1
+ 
+额外提高史蒂夫 20/40/60 点生命值。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer" index="0" instance=ExtResource("4_seafm")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable" index="0" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "技能点"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable" index="1" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "1 / 1 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable" index="2" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("7_yxo4w")
+tip_text = "提高生命值"
+property_state = 1
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable" index="3" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "20 / 40 / 60"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="4"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石镐"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/Label4" index="0"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = -53.0
+offset_right = 339.0
+offset_bottom = 203.0
+scale = Vector2(0.568855, 0.568855)
+texture = ExtResource("15_fk2c4")
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="6"]
+layout_mode = 2
+text = "技能点： 2 / 2 / 2
+ 
+挥动钻石镐，对面前敌人造成 70-82/84-96/100-122 点无视护甲的物伤，并削除敌人 10/20/30 点护甲。
+ 
+经验获取： 80 / 100 / 120
+ 
+冷却时间： 12 秒"
+autowrap_mode = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="7"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2" index="0" instance=ExtResource("4_seafm")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="0" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "技能点"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="1" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "2 / 2 / 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="2" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("9_lk2x2")
+tip_text = "近战物伤"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="3" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "70-82 / 84-96 / 100-122（100%破甲）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="4" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("11_hwf1c")
+tip_text = "破甲"
+property_state = 2
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="5" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "10 / 20 / 30"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="6" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "经验获取"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="7" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "80 / 100 / 120"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="8" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("10_c17t1")
+tip_text = "冷却时间"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable" index="9" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer2/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "12 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="8"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="9"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "金苹果"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/Label6" index="0"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = -53.0
+offset_right = 339.0
+offset_bottom = 203.0
+scale = Vector2(0.568855, 0.568855)
+texture = ExtResource("18_00lcp")
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="10"]
+layout_mode = 2
+text = "技能点： 1 / 2 / 3
+ 
+史蒂夫生命值少于 30% 时立即吃下一个金苹果，恢复自身 200/250/300 点生命，并获得持续 8/10/12 秒的生命恢复效果。效果持续期间，史蒂夫每 0.5 秒恢复自身 10 点生命。
+ 
+经验获取： 40 / 60 / 80
+ 
+冷却时间： 20 秒"
+autowrap_mode = 3
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="11"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3" index="0" instance=ExtResource("4_seafm")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="0" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "技能点"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="1" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "1 / 2 / 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="2" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("8_4kaky")
+tip_text = "立即回血"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="3" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "200 / 250 / 300"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="4" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("10_c17t1")
+tip_text = "回血持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="5" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "8 / 10 / 12 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="6" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("8_4kaky")
+tip_text = "回血速度"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="7" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "10 / 0.5秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="8" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement11" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "经验获取"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="9" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "40 / 60 / 80"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="10" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("10_c17t1")
+tip_text = "冷却时间"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable" index="11" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer3/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "20 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="12"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="13"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "战神之刃"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/Label8" index="0"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = -53.0
+offset_right = 374.0
+offset_bottom = 203.0
+scale = Vector2(0.568855, 0.568855)
+texture = ExtResource("21_83pw0")
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="14"]
+layout_mode = 2
+text = "技能点： 4 / 4 / 4
+ 
+史蒂夫面前 90 范围内存在至少 4 名敌人或范围内有任意一名敌人血量高于该技能单次伤害的 75%时，史蒂夫挥动战神之刃，对面前 90 范围内所有地面敌人造成 216/374/524 点炮伤，对所有命中敌人施加流血效果，持续 8/12/16 秒。如果命中敌人单次伤害过后血量低于 4%/8%/12%，则立即秒杀该敌人。
+ 
+流血持续期间，被施加流血效果的单位每 0.1 秒受到 2 点真伤。
+ 
+经验获取： 150 / 200 / 280
+ 
+冷却时间： 24 秒"
+autowrap_mode = 3
+
+[node name="CenterContainer5" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="15"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer5" index="0" instance=ExtResource("22_3qjjn")]
+layout_mode = 2
+tip_text = "免疫组： god, super_unit, no_live"
+
+[node name="CenterContainer4" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="16"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4" index="0" instance=ExtResource("4_seafm")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="0" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "技能点"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="1" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "4 / 4 / 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="2" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("22_sb137")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="3" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "90"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="4" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("23_taoo5")
+tip_text = "近战炮伤"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="5" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "216 / 374 / 524"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="6" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("7_yxo4w")
+tip_text = "斩杀生命值比例"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="7" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "4% / 8% / 12%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="8" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("10_c17t1")
+tip_text = "流血持续时间"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="9" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "8 / 12 / 16 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="10" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement11" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("24_57r1e")
+tip_text = "流血伤害"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="11" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "2 / 0.1秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement15" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="12" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement15" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "经验获取"
+
+[node name="WikiTableElement16" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="13" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement16" index="0"]
+layout_mode = 2
+text = "150 / 200 / 280"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement13" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="14" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement13" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("10_c17t1")
+tip_text = "冷却时间"
+
+[node name="WikiTableElement14" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable" index="15" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer4/WikiTable/WikiTableElement14" index="0"]
+layout_mode = 2
+text = "24 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="17"]
+layout_mode = 2
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="18"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "药水风暴雨"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/Label10" index="0"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = -53.0
+offset_right = 407.0
+offset_bottom = 203.0
+scale = Vector2(0.568855, 0.568855)
+texture = ExtResource("26_rkewj")
+
+[node name="Label11" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="19"]
+layout_mode = 2
+text = "技能点： 3 / 3 / 3
+ 
+在指定位置降下正面药水和负面药水各 2/4/6/8 个，正面药水会恢复小范围内友军30生命，负面药水会对小范围内敌人造成24-64点魔法伤害。
+ 
+冷却时间： 30 秒"
+autowrap_mode = 3
+
+[node name="CenterContainer6" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="20"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6" index="0" instance=ExtResource("4_seafm")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable" index="0" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("13_fapsv")
+tip_text = "技能点"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable" index="1" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "3 / 3 / 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable" index="2" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_sth8c")]
+layout_mode = 2
+texture = ExtResource("10_c17t1")
+tip_text = "回血持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable" index="3" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer6/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "30 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CenterContainer7" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill" index="21"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skill/CenterContainer7" index="0" instance=ExtResource("16_ajebr")]
+layout_mode = 2
+texture_normal = ExtResource("29_xhka0")
+name_text = "药水风暴雨"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Anims" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_jwopi")
+autoplay = "default"
+frame_progress = 0.135543
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_fqqh4")
+autoplay = "default"
+frame_progress = 0.0697513
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "死亡动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_6gvpb")
+autoplay = "default"
+frame_progress = 0.158141
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -17)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_7wev3")
+autoplay = "default"
+frame_progress = 0.862245
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "重生/升级动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim5" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="4"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="0"]
+position = Vector2(-9, -17)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_ybnud")
+autoplay = "default"
+frame_progress = 0.401792
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "钻石镐动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim6" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="5"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim6" index="0"]
+position = Vector2(-9, -17)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_8qm14")
+autoplay = "default"
+frame_progress = 0.467169
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim6" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "金苹果动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim7" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="6"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim7" index="0"]
+position = Vector2(11, -45)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_nifh7")
+autoplay = "default"
+frame_progress = 0.903551
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim7" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 135.0
+offset_right = 111.0
+offset_bottom = 159.0
+text = "战神之刃动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 140
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("4_seafm")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "金苹果"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("237_aq13q")]
+layout_mode = 2
+audio_stream = ExtResource("238_gp4ff")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "战神之刃"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("5_8svx5")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("237_aq13q")]
+layout_mode = 2
+audio_stream = ExtResource("239_m2bx4")
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：Hero"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 408.0
+offset_bottom = 611.0
+scale = Vector2(0.916276, 0.879625)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_ecinr")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -1310.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_ecinr")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -2853.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_ecinr")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -7306.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_ecinr")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -8317.0

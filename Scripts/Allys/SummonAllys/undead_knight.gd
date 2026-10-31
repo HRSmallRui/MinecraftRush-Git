@@ -2,12 +2,17 @@ extends SummonAlly
 
 @export var dizness_buff_scene: PackedScene
 @export var exist_time_list: Array[float]
+@export var undead_damage_list: Array[int]
+@export var salem_plague_buff_scene: PackedScene
 
 @onready var existing_timer: Timer = $ExistingTimer
 @onready var dizness_area: Area2D = $UnitBody/DiznessArea
 
+var salem: Hero
+
 
 func _ready() -> void:
+	salem = Stage.instance.hero_list[0]
 	super()
 	await get_tree().physics_frame
 	await get_tree().physics_frame
@@ -41,7 +46,7 @@ func frame_changed():
 	if ally_sprite.animation == "attack" and ally_sprite.frame == 20:
 		if current_intercepting_enemy != null:
 			var damage: int = randi_range(current_data.near_damage_low,current_data.near_damage_high)
-			current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,self,false,false,)
+			var result: bool = current_intercepting_enemy.take_damage(damage,DataProcess.DamageType.TrueDamage,0,false,self,false,false,)
 			AudioManager.instance.battle_audio_play()
 	pass
 
@@ -74,4 +79,14 @@ func _on_rebirth_area_body_exited(body: Node2D) -> void:
 	if ally.ally_state != AllyState.DIE: return
 	if ally is Hero and ally.ally_id == 7:
 		ally.call_deferred("delay_rebirth")
+	pass # Replace with function body.
+
+
+func _on_aoe_attack_timer_timeout() -> void:
+	for body in dizness_area.get_overlapping_bodies():
+		var enemy: Enemy = body.owner
+		var plague_buff: DotBuff = salem_plague_buff_scene.instantiate()
+		plague_buff.set("passive_level",salem.skill_levels[0])
+		plague_buff.set("dead_explosion_level",salem.skill_levels[1])
+		enemy.buffs.add_child(plague_buff)
 	pass # Replace with function body.

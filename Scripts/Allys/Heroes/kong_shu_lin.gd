@@ -127,7 +127,7 @@ func frame_changed():
 		kill_possible += skill4_layer_adding_possible * (lives_layer - 1)
 		#prints("kill_possible:",kill_possible)
 		var show_text: String
-		if randf() < kill_possible and enemy.enemy_type < Enemy.EnemyType.Super and lives_layer > 1:
+		if randf() < kill_possible and enemy.enemy_type <= Enemy.EnemyType.Super and lives_layer > 1:
 			enemy.sec_kill(true)
 			show_text = "秒杀！"
 			lives_layer -= 2
@@ -176,7 +176,7 @@ func die(explosion: bool):
 func idle_process():
 	super()
 	if ally_sprite.animation == "idle":
-		if skill_2_timer.is_stopped() and skill_2_attack_area.get_overlapping_bodies().size() >= 5 and skill_levels[2] > 0:
+		if skill_2_timer.is_stopped() and far_attack_area.get_overlapping_bodies().size() >= 4 and skill_levels[2] > 0:
 			ally_sprite.play("skill2")
 			skill_2_preparation_effect.position = skill2_prepare_effect_pos
 			if ally_sprite.flip_h: skill_2_preparation_effect.position.x *= -1
@@ -222,12 +222,13 @@ func translate_to_new_state(new_state: AllyState):
 
 func battle():
 	if ally_sprite.animation == "idle":
-		if skill_2_timer.is_stopped() and far_attack_area.get_overlapping_bodies().size() >= 5 and skill_levels[2] > 0:
-			ally_sprite.play("skill2")
-			skill_2_preparation_effect.position = skill2_prepare_effect_pos
-			if ally_sprite.flip_h: skill_2_preparation_effect.position.x *= -1
-			skill_2_preparation_effect.show()
-			return
+		if current_intercepting_enemy != null and skill_levels[2] > 0 and skill_2_timer.is_stopped():
+			if current_intercepting_enemy.current_data.health >= 100:
+				ally_sprite.play("skill2")
+				skill_2_preparation_effect.position = skill2_prepare_effect_pos
+				if ally_sprite.flip_h: skill_2_preparation_effect.position.x *= -1
+				skill_2_preparation_effect.show()
+				return
 	super()
 	pass
 

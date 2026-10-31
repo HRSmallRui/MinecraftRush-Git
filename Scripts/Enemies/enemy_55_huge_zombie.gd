@@ -135,6 +135,7 @@ func battle():
 		if skill_2_timer.is_stopped():
 			skill_2_timer.start()
 			enemy_sprite.play("skill2")
+			clear_buff()
 			return
 		
 	pass

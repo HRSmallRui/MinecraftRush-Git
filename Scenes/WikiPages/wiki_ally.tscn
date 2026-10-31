@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dmm24u12vr681"]
+[gd_scene load_steps=46 format=3 uid="uid://dqsd6ivvxbq18"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_hx0vi"]
 [ext_resource type="Texture2D" uid="uid://dqvjxoqxwnxrc" path="res://Assets/Images/UI/Wiki/GameBased/Index/我方单位.png" id="2_3bh1g"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://ditbwltgkrx3k" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/GDGolemRed.png" id="42_1ejly"]
 [ext_resource type="Texture2D" uid="uid://5f1je6dqha2h" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/GDGolemGreen.png" id="43_13hw5"]
 [ext_resource type="Texture2D" uid="uid://be4ovn15kobek" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/GDGolemYellow.png" id="44_jk11e"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="45_73jl1"]
 
 [node name="WikiAlly" instance=ExtResource("1_hx0vi")]
 offset_bottom = 3320.0
@@ -118,51 +119,61 @@ columns = 6
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="0" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("4_7guie")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_lv_1.tscn"
 name_text = "民兵"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="1" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("5_dmh62")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_lv_2.tscn"
 name_text = "步兵"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="2" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("6_gm1t0")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_lv_3.tscn"
 name_text = "骑士"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="3" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("7_v746o")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_lv_4-1.tscn"
 name_text = "皇家近卫军"
 
 [node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="4" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("8_aemd5")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_lv_4-2.tscn"
 name_text = "大刀兵"
 
 [node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="5" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("9_fgsgt")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_lv_4-3.tscn"
 name_text = "医疗兵"
 
 [node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="6" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("10_5x5w2")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_zombie.tscn"
 name_text = "尸国正规军"
 
 [node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="7" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("11_t6jib")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_zombie_berserker.tscn"
 name_text = "尸国斗剑士"
 
 [node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="8" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("12_on7q2")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_skeleton_super.tscn"
 name_text = "荆棘射手"
 
 [node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Soldiers" index="9" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("13_15i5h")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_villager_knight.tscn"
 name_text = "村民骑士"
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="4"]
@@ -188,71 +199,85 @@ columns = 6
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="0" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("14_iu8u2")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_steve.tscn"
 name_text = "史蒂夫"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="1" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("15_gocd0")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_fuchen.tscn"
 name_text = "法辰"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="2" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("16_htys6")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_alex.tscn"
 name_text = "艾利克斯"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="3" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("17_c6ylm")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_talzin.tscn"
 name_text = "塔尔辛"
 
 [node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="4" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("18_r7rl0")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_robort.tscn"
 name_text = "鲁伯特"
 
 [node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="5" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("19_i7oqi")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_salem.tscn"
 name_text = "塞勒姆"
 
 [node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="6" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("20_d1emh")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_johnny.tscn"
 name_text = "乔尼"
 
 [node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="7" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("21_a7pj7")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_rosa.tscn"
 name_text = "蔷薇"
 
 [node name="WikiHeadTextureButton9" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="8" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("22_klj8g")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_kongshulin.tscn"
 name_text = "空树林"
 
 [node name="WikiHeadTextureButton10" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="9" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("23_ulnwc")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_golden_diamond.tscn"
 name_text = "金钻"
 
 [node name="WikiHeadTextureButton11" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="10" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("24_qkd5w")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_steve_sp.tscn"
 name_text = "史蒂夫SP"
 
 [node name="WikiHeadTextureButton14" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="11" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("25_fkq3y")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_mike_smith.tscn"
 name_text = "迈克・史密斯"
 
 [node name="WikiHeadTextureButton12" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="12" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("26_4lk1n")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_zombie_gene.tscn"
 name_text = "炎阳赫斯菲"
 
 [node name="WikiHeadTextureButton13" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Hero" index="13" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("27_ceyt1")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_skeleton_gene.tscn"
 name_text = "萨图恩・骨斯奇"
 
 [node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="8"]
@@ -278,21 +303,25 @@ columns = 6
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/BuyingSoldier" index="0" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("28_bkuft")
+target_page_path = "res://Scenes/WikiPages/Allys/BuyingSoldiers/wiki_buying_soldier_villager1.tscn"
 name_text = "村民农夫"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/BuyingSoldier" index="1" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("29_g88sq")
+target_page_path = "res://Scenes/WikiPages/Allys/BuyingSoldiers/wiki_buying_soldier_villager2.tscn"
 name_text = "村民铁匠"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/BuyingSoldier" index="2" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("30_osgj3")
+target_page_path = "res://Scenes/WikiPages/Allys/BuyingSoldiers/wiki_buying_soldier_desert1.tscn"
 name_text = "沙漠佣兵"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/BuyingSoldier" index="3" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("31_qryh8")
+target_page_path = "res://Scenes/WikiPages/Allys/BuyingSoldiers/wiki_buying_soldier_desert2.tscn"
 name_text = "佣兵头领"
 
 [node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="12"]
@@ -318,31 +347,37 @@ columns = 6
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Reinforcer" index="0" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("32_l104x")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv0.tscn"
 name_text = "0级援军"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Reinforcer" index="1" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("32_l104x")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv1.tscn"
 name_text = "1级援军"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Reinforcer" index="2" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("33_b8tnt")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv2.tscn"
 name_text = "2级援军"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Reinforcer" index="3" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("34_6l6hq")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv3.tscn"
 name_text = "3级援军"
 
 [node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Reinforcer" index="4" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("35_qtbhr")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv4.tscn"
 name_text = "4级援军"
 
 [node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/Reinforcer" index="5" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("36_1v4cf")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_destroyer.tscn"
 name_text = "破灭者"
 
 [node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="16"]
@@ -368,43 +403,85 @@ columns = 6
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="0" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("37_r2tdg")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_iron_golem.tscn"
 name_text = "铁傀儡"
 
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="1" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("38_0wpfu")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_operator_robot.tscn"
 name_text = "演算者机甲"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="2" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("39_c3uk5")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_changer.tscn"
 name_text = "变节者"
 
 [node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="3" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("40_3vihj")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_undead_knight.tscn"
 name_text = "不死骑士"
 
 [node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="4" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("41_edpn3")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_gd_golem_blue.tscn"
 name_text = "黑桃傀儡"
 
 [node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="5" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("42_1ejly")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_gd_golem_red.tscn"
 name_text = "红心傀儡"
 
 [node name="WikiHeadTextureButton7" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="6" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("43_13hw5")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_gd_golem_green.tscn"
 name_text = "梅花傀儡"
 
 [node name="WikiHeadTextureButton8" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="7" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("44_jk11e")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_gd_golem_yellow.tscn"
 name_text = "方块傀儡"
 
 [node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="20"]
 layout_mode = 2
 theme_override_constants/margin_top = 100
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_top = 183.0
+offset_bottom = 713.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "士兵"
+wiki_page = NodePath("../../..")
+target_pos = -554.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "英雄"
+wiki_page = NodePath("../../..")
+target_pos = -1093.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "雇佣兵"
+wiki_page = NodePath("../../..")
+target_pos = -1833.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "援军"
+wiki_page = NodePath("../../..")
+target_pos = -2205.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "召唤物"
+wiki_page = NodePath("../../..")
+target_pos = -2575.0
