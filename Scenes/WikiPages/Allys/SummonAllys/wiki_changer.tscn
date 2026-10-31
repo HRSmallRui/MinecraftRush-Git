@@ -4,9 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cut55o8a5g60h" path="res://Assets/Images/UI/InformationBar/Allys/SummonAllys/变节者.png" id="2_eiwan"]
 [ext_resource type="PackedScene" uid="uid://cavcfrnbrocks" path="res://Scenes/UI-Components/Wiki/wiki_summon_ally_table.tscn" id="3_1s2ks"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_581me"]
+[ext_resource type="Resource" uid="uid://cmb0d4lhoa8gn" path="res://Library/SummonAllys/Changer/changer_lv1.tres" id="5_2v1rc"]
 [ext_resource type="Texture2D" uid="uid://xy7v0hp524j2" path="res://Assets/Animations/Soldiers/Changer/attack_00.png" id="5_6sbh0"]
 [ext_resource type="Texture2D" uid="uid://538wokm6p4vl" path="res://Assets/Animations/Soldiers/Changer/attack_01.png" id="6_0n5s0"]
+[ext_resource type="Resource" uid="uid://b8a8c24yx2j76" path="res://Library/SummonAllys/Changer/changer_lv2.tres" id="6_mmv6p"]
 [ext_resource type="Texture2D" uid="uid://btpiciq61wwgr" path="res://Assets/Animations/Soldiers/Changer/attack_02.png" id="7_6a447"]
+[ext_resource type="Resource" uid="uid://bvmuknftmx7sp" path="res://Library/SummonAllys/Changer/changer_lv3.tres" id="7_xr0y2"]
 [ext_resource type="Texture2D" uid="uid://bjjdu05ubp6u" path="res://Assets/Animations/Soldiers/Changer/attack_03.png" id="8_3vfre"]
 [ext_resource type="Texture2D" uid="uid://b4l2cxuhe0qqn" path="res://Assets/Animations/Soldiers/Changer/attack_04.png" id="9_r38t7"]
 [ext_resource type="Texture2D" uid="uid://6klpuiw8odxv" path="res://Assets/Animations/Soldiers/Changer/attack_05.png" id="10_gc67s"]
@@ -100,69 +103,6 @@
 [ext_resource type="Texture2D" uid="uid://be1eoddk8a1hu" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Archer5.png" id="99_m3rxv"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="121_qby2p"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="123_8gw7t"]
-
-[sub_resource type="Resource" id="Resource_o4lds"]
-script = ExtResource("4_581me")
-health = 150
-dodge_rate = 0.0
-near_damage_low = 6
-near_damage_high = 8
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 30
-far_damage_high = 40
-far_attack_speed = 2.0
-far_damage_range = 340
-armor = 0.3
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.2
-
-[sub_resource type="Resource" id="Resource_eeh4a"]
-script = ExtResource("4_581me")
-health = 200
-dodge_rate = 0.0
-near_damage_low = 7
-near_damage_high = 10
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 35
-far_damage_high = 50
-far_attack_speed = 2.0
-far_damage_range = 340
-armor = 0.3
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.2
-
-[sub_resource type="Resource" id="Resource_fm4l7"]
-script = ExtResource("4_581me")
-health = 250
-dodge_rate = 0.0
-near_damage_low = 8
-near_damage_high = 12
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 40
-far_damage_high = 60
-far_attack_speed = 2.0
-far_damage_range = 340
-armor = 0.3
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_poxay"]
 animations = [{
@@ -532,7 +472,7 @@ layout_mode = 2
 [node name="WikiSummonAllyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("3_1s2ks")]
 layout_mode = 2
 level_max = 3
-unit_list = Array[ExtResource("4_581me")]([SubResource("Resource_o4lds"), SubResource("Resource_eeh4a"), SubResource("Resource_fm4l7")])
+unit_list = Array[ExtResource("4_581me")]([ExtResource("5_2v1rc"), ExtResource("6_mmv6p"), ExtResource("7_xr0y2")])
 heal_speed_list = Array[int]([15, 20, 25])
 rebirth_time = 10.0
 intercepting_range = 80

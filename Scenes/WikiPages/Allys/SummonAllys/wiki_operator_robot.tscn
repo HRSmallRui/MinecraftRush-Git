@@ -5,8 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cavcfrnbrocks" path="res://Scenes/UI-Components/Wiki/wiki_summon_ally_table.tscn" id="3_v00cx"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_bfsqx"]
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="5_1srda"]
+[ext_resource type="Resource" uid="uid://sdkildg3opb5" path="res://Library/SummonAllys/OperatorRobot/operator_robot_lv1.tres" id="5_n2uu4"]
 [ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="6_amqsr"]
+[ext_resource type="Resource" uid="uid://c4pg1gopxm6j2" path="res://Library/SummonAllys/OperatorRobot/operator_robot_lv2.tres" id="6_mk2xi"]
 [ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="7_3e74o"]
+[ext_resource type="Resource" uid="uid://b086i31psetyh" path="res://Library/SummonAllys/OperatorRobot/operator_robot_lv3.tres" id="7_qtsb5"]
 [ext_resource type="Texture2D" uid="uid://cdhf72ijhxffi" path="res://Assets/Images/UI/Wiki/PropertyIcons/概率.png" id="8_i4o7u"]
 [ext_resource type="Texture2D" uid="uid://d1c6r8qrd3g4f" path="res://Assets/Animations/SummonAllys/OperatorRobot/attack_00.png" id="9_n5qbs"]
 [ext_resource type="Texture2D" uid="uid://dmif2u5ag8mqi" path="res://Assets/Animations/SummonAllys/OperatorRobot/attack_01.png" id="10_t3fsm"]
@@ -133,69 +136,6 @@
 [ext_resource type="AudioStream" uid="uid://hrxb2mdllfmg" path="res://Assets/Sounds/FXs/DefenceTowers/OperatorTurret/电锯.wav" id="129_hqnia"]
 [ext_resource type="AudioStream" uid="uid://bxvf7eegrioir" path="res://Assets/Sounds/FXs/DefenceTowers/OperatorTurret/机器人复活.wav" id="130_b4mnk"]
 [ext_resource type="Texture2D" uid="uid://bbo1e0g2aoefl" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Bombard3.png" id="131_uge3f"]
-
-[sub_resource type="Resource" id="Resource_2cqab"]
-script = ExtResource("4_bfsqx")
-health = 300
-dodge_rate = 0.0
-near_damage_low = 20
-near_damage_high = 30
-near_attack_speed = 1.5
-near_hit_rate = 1.5
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.3
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.2
-
-[sub_resource type="Resource" id="Resource_41sp0"]
-script = ExtResource("4_bfsqx")
-health = 350
-dodge_rate = 0.0
-near_damage_low = 25
-near_damage_high = 40
-near_attack_speed = 1.5
-near_hit_rate = 1.5
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.35
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.2
-
-[sub_resource type="Resource" id="Resource_nq7ow"]
-script = ExtResource("4_bfsqx")
-health = 400
-dodge_rate = 0.0
-near_damage_low = 30
-near_damage_high = 50
-near_attack_speed = 1.5
-near_hit_rate = 1.5
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.4
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dojyn"]
 animations = [{
@@ -639,7 +579,7 @@ layout_mode = 2
 [node name="WikiSummonAllyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("3_v00cx")]
 layout_mode = 2
 level_max = 3
-unit_list = Array[ExtResource("4_bfsqx")]([SubResource("Resource_2cqab"), SubResource("Resource_41sp0"), SubResource("Resource_nq7ow")])
+unit_list = Array[ExtResource("4_bfsqx")]([ExtResource("5_n2uu4"), ExtResource("6_mk2xi"), ExtResource("7_qtsb5")])
 heal_speed_list = Array[int]([15, 18, 20])
 far_attack_show = false
 rebirth_time = 14.0

@@ -8,9 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://btv6r5mk8pj0f" path="res://Assets/Images/UI/InformationBar/Allys/SummonAllys/UndeadKnight.png" id="4_mkiul"]
 [ext_resource type="PackedScene" uid="uid://bl4bgknb3ffkd" path="res://Scenes/Buffs/Salem/salem_plague_buff.tscn" id="4_x8lqe"]
 [ext_resource type="Texture2D" uid="uid://chrbst852pwaq" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_01.png" id="5_gief1"]
+[ext_resource type="Resource" uid="uid://cx2srscrtcqbd" path="res://Library/SummonAllys/UndeadKnight/undead_knight_lv0.tres" id="6_j4wab"]
 [ext_resource type="Texture2D" uid="uid://c8yp3xwy8flmp" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_02.png" id="6_wam3e"]
 [ext_resource type="Texture2D" uid="uid://d1ww3hq0pg7c0" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_03.png" id="7_cd15f"]
+[ext_resource type="Resource" uid="uid://cjvyfxyiegare" path="res://Library/SummonAllys/UndeadKnight/undead_knight_lv1.tres" id="7_q60yy"]
 [ext_resource type="Texture2D" uid="uid://tk10bu5ahgpe" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_04.png" id="8_2iyde"]
+[ext_resource type="Resource" uid="uid://qrg7f06u1387" path="res://Library/SummonAllys/UndeadKnight/undead_knight_lv2.tres" id="8_o7jp5"]
+[ext_resource type="Resource" uid="uid://bvqa27oflyuyq" path="res://Library/SummonAllys/UndeadKnight/undead_knight_lv3.tres" id="9_jkx4j"]
 [ext_resource type="Texture2D" uid="uid://blhn1byj5rvtb" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_05.png" id="9_y1n71"]
 [ext_resource type="Texture2D" uid="uid://bymamjxp2q45m" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_06.png" id="10_rdur5"]
 [ext_resource type="Texture2D" uid="uid://bwjstwgqy60cw" path="res://Assets/Animations/SummonAllys/UndeadKnight/attack_07.png" id="11_jdg7f"]
@@ -80,90 +84,6 @@
 [ext_resource type="Texture2D" uid="uid://ccglhhifm554s" path="res://Assets/Images/Effects/鼓舞光环.png" id="76_0eg3j"]
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="76_y175v"]
 [ext_resource type="PackedScene" uid="uid://bncdwxly6r5v1" path="res://Scenes/StageComponents/dark_time_light.tscn" id="79_bulud"]
-
-[sub_resource type="Resource" id="Resource_ekc3c"]
-script = ExtResource("2_3goqf")
-health = 80
-dodge_rate = 0.0
-near_damage_low = 8
-near_damage_high = 10
-near_attack_speed = 1.5
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.9
-unit_move_speed = 1.0
-
-[sub_resource type="Resource" id="Resource_no04b"]
-script = ExtResource("2_3goqf")
-health = 100
-dodge_rate = 0.0
-near_damage_low = 12
-near_damage_high = 16
-near_attack_speed = 1.5
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.9
-unit_move_speed = 1.0
-
-[sub_resource type="Resource" id="Resource_ia38y"]
-script = ExtResource("2_3goqf")
-health = 120
-dodge_rate = 0.0
-near_damage_low = 16
-near_damage_high = 22
-near_attack_speed = 1.5
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.9
-unit_move_speed = 1.0
-
-[sub_resource type="Resource" id="Resource_oajsu"]
-script = ExtResource("2_3goqf")
-health = 140
-dodge_rate = 0.0
-near_damage_low = 20
-near_damage_high = 28
-near_attack_speed = 1.5
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.9
-unit_move_speed = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cxsrb"]
 animations = [{
@@ -417,7 +337,7 @@ dizness_buff_scene = ExtResource("3_mptdw")
 exist_time_list = Array[float]([10.0, 12.0, 14.0, 16.0])
 undead_damage_list = Array[int]([4, 6, 8, 10])
 salem_plague_buff_scene = ExtResource("4_x8lqe")
-unit_list = Array[ExtResource("2_3goqf")]([SubResource("Resource_ekc3c"), SubResource("Resource_no04b"), SubResource("Resource_ia38y"), SubResource("Resource_oajsu")])
+unit_list = Array[ExtResource("2_3goqf")]([ExtResource("6_j4wab"), ExtResource("7_q60yy"), ExtResource("8_o7jp5"), ExtResource("9_jkx4j")])
 heal_speed_list = Array[int]([4, 5, 6, 7])
 ally_name = "不死骑士"
 ally_texture = ExtResource("4_mkiul")

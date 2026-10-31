@@ -8,6 +8,7 @@ extends VBoxContainer
 	set(v):
 		level_max = v
 		call_deferred("on_level_max_set")
+@export var level_offset: int = 0
 
 @export var unit_list: Array[UnitData]
 @export var heal_speed_list: Array[int]
@@ -56,7 +57,7 @@ extends VBoxContainer
 
 
 func _ready() -> void:
-	update_property()
+	update_property(1)
 	pass
 
 
@@ -79,8 +80,8 @@ func _on_level_slider_drag_ended(value_changed: bool) -> void:
 
 
 func _on_level_slider_value_changed(value: float) -> void:
-	level_label.text = "LV." + str(value)
-	update_property()
+	
+	update_property(level_slider.value)
 	pass # Replace with function body.
 
 
@@ -96,8 +97,8 @@ func on_damage_type_changed():
 	pass
 
 
-func update_property():
-	var level: int = level_slider.value
+func update_property(level: int):
+	level_label.text = "LV." + str(level + level_offset)
 	var unit: UnitData = unit_list[level-1]
 	health_label.text = str(unit.health)
 	heal_speed_label.text = str(heal_speed_list[level-1])
