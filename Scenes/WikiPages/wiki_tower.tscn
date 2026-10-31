@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ci5yaudo2jwi8"]
+[gd_scene load_steps=39 format=3 uid="uid://ci5yaudo2jwi8"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_okd4b"]
 [ext_resource type="Texture2D" uid="uid://dqckb6du5bl1q" path="res://Assets/Images/UI/Wiki/Index/tower.png" id="2_hlpbb"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b8xclm2muvajv" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Buying2.png" id="34_6gnwp"]
 [ext_resource type="Texture2D" uid="uid://dl3d2thl0aayc" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Special1.png" id="35_vsc6l"]
 [ext_resource type="Texture2D" uid="uid://dudk0rkpl57xj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Based.png" id="36_1p6si"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="38_5ho6l"]
 
 [node name="WikiTower" instance=ExtResource("1_okd4b")]
 offset_bottom = 3438.0
@@ -424,3 +425,52 @@ layout_mode = 2
 texture_normal = ExtResource("36_1p6si")
 target_page_path = "res://Scenes/WikiPages/Tower/based.tscn"
 name_text = "地基"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 83.0
+offset_top = 135.0
+offset_right = 432.0
+offset_bottom = 885.0
+scale = Vector2(0.846977, 0.846977)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("38_5ho6l")]
+layout_mode = 2
+text = "箭塔"
+wiki_page = NodePath("../../..")
+target_pos = -527.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("38_5ho6l")]
+layout_mode = 2
+text = "兵营"
+wiki_page = NodePath("../../..")
+target_pos = -1080.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("38_5ho6l")]
+layout_mode = 2
+text = "法师塔"
+wiki_page = NodePath("../../..")
+target_pos = -1610.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("38_5ho6l")]
+layout_mode = 2
+text = "炮塔"
+wiki_page = NodePath("../../..")
+target_pos = -1991.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("38_5ho6l")]
+layout_mode = 2
+text = "雇佣兵"
+wiki_page = NodePath("../../..")
+target_pos = -2362.0
+
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page") instance=ExtResource("38_5ho6l")]
+layout_mode = 2
+text = "特殊防御塔"
+wiki_page = NodePath("../../..")
+target_pos = -2729.0
+
+[node name="NavigationButton7" parent="TopMenu/NavigationVBox" index="6" node_paths=PackedStringArray("wiki_page") instance=ExtResource("38_5ho6l")]
+layout_mode = 2
+text = "地基"
+wiki_page = NodePath("../../..")
+target_pos = -3070.0
