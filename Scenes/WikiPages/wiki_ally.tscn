@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dqsd6ivvxbq18"]
+[gd_scene load_steps=46 format=3 uid="uid://dqsd6ivvxbq18"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_hx0vi"]
 [ext_resource type="Texture2D" uid="uid://dqvjxoqxwnxrc" path="res://Assets/Images/UI/Wiki/GameBased/Index/我方单位.png" id="2_3bh1g"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://ditbwltgkrx3k" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/GDGolemRed.png" id="42_1ejly"]
 [ext_resource type="Texture2D" uid="uid://5f1je6dqha2h" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/GDGolemGreen.png" id="43_13hw5"]
 [ext_resource type="Texture2D" uid="uid://be4ovn15kobek" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/GDGolemYellow.png" id="44_jk11e"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="45_73jl1"]
 
 [node name="WikiAlly" instance=ExtResource("1_hx0vi")]
 offset_bottom = 3320.0
@@ -408,6 +409,7 @@ name_text = "铁傀儡"
 [node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="1" instance=ExtResource("3_c4ot5")]
 layout_mode = 2
 texture_normal = ExtResource("38_0wpfu")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_operator_robot.tscn"
 name_text = "演算者机甲"
 
 [node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer/SummonAllys" index="2" instance=ExtResource("3_c4ot5")]
@@ -443,3 +445,37 @@ name_text = "方块傀儡"
 [node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/VBoxContainer" index="20"]
 layout_mode = 2
 theme_override_constants/margin_top = 100
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_top = 183.0
+offset_bottom = 713.0
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "士兵"
+wiki_page = NodePath("../../..")
+target_pos = -554.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "英雄"
+wiki_page = NodePath("../../..")
+target_pos = -1093.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "雇佣兵"
+wiki_page = NodePath("../../..")
+target_pos = -1833.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "援军"
+wiki_page = NodePath("../../..")
+target_pos = -2205.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("45_73jl1")]
+layout_mode = 2
+text = "召唤物"
+wiki_page = NodePath("../../..")
+target_pos = -2575.0
