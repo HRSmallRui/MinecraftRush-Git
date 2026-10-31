@@ -35,7 +35,7 @@ func frame_changed():
 		if ally_sprite.frame == 6: sec_kill_audio.play()
 		if ally_sprite.frame == 30: sec_kill_audio.stop()
 		if ally_sprite.frame == 17 and current_intercepting_enemy != null:
-			if current_intercepting_enemy.enemy_type < Enemy.EnemyType.Super:
+			if current_intercepting_enemy.enemy_type <= Enemy.EnemyType.Super:
 				TextEffect.text_effect_show("秒杀",TextEffect.TextEffectType.SecKill,current_intercepting_enemy.hurt_box.global_position + Vector2(0,-30))
 				current_intercepting_enemy.sec_kill(true)
 				Achievement.achieve_int_add("OperatorSeckill",1,66)
@@ -66,7 +66,7 @@ func rebirth():
 
 func battle():
 	if ally_sprite.animation == "idle" and normal_attack_timer.is_stopped():
-		if current_intercepting_enemy.enemy_type < Enemy.EnemyType.Super:
+		if current_intercepting_enemy.enemy_type <= Enemy.EnemyType.Super:
 			if randf_range(0,1) < sec_kill_possible:
 				ally_sprite.play("sec_kill")
 				normal_attack_timer.start()

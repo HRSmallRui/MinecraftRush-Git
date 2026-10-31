@@ -1,0 +1,847 @@
+[gd_scene load_steps=131 format=3 uid="uid://bhj8k7283rrto"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_4rygk"]
+[ext_resource type="Texture2D" uid="uid://vmbp0txvvwh7" path="res://Assets/Images/UI/InformationBar/Allys/SummonAllys/铁傀儡.png" id="2_4i5as"]
+[ext_resource type="PackedScene" uid="uid://cavcfrnbrocks" path="res://Scenes/UI-Components/Wiki/wiki_summon_ally_table.tscn" id="3_t5kkg"]
+[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_f8meb"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="4_vm1cy"]
+[ext_resource type="Resource" uid="uid://lts3aykoxpxt" path="res://Library/SummonAllys/IronGolem/iron_golem_lv1.tres" id="5_i8lo2"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="5_ncy1p"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="6_7vnpv"]
+[ext_resource type="Resource" uid="uid://b6fdf3qxa80y0" path="res://Library/SummonAllys/IronGolem/iron_golem_lv2.tres" id="6_akfpr"]
+[ext_resource type="Resource" uid="uid://qaqwjncq5ng8" path="res://Library/SummonAllys/IronGolem/iron_golem_lv3.tres" id="7_b78ja"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="8_47x07"]
+[ext_resource type="Texture2D" uid="uid://c1lp8t61qtf5y" path="res://Assets/Animations/SummonAllys/IronGolem/attack_00.png" id="9_tjdss"]
+[ext_resource type="Texture2D" uid="uid://clyyghlds08ec" path="res://Assets/Animations/SummonAllys/IronGolem/attack_01.png" id="10_li16p"]
+[ext_resource type="Texture2D" uid="uid://cbmib3txhb3n7" path="res://Assets/Animations/SummonAllys/IronGolem/attack_02.png" id="11_mb7bm"]
+[ext_resource type="Texture2D" uid="uid://60veo7w5gepn" path="res://Assets/Animations/SummonAllys/IronGolem/attack_03.png" id="12_n2hyk"]
+[ext_resource type="Texture2D" uid="uid://c804dtysqa2bt" path="res://Assets/Animations/SummonAllys/IronGolem/attack_04.png" id="13_i6k3g"]
+[ext_resource type="Texture2D" uid="uid://d2prspkftmnr0" path="res://Assets/Animations/SummonAllys/IronGolem/attack_05.png" id="14_2wdd5"]
+[ext_resource type="Texture2D" uid="uid://louf0voya7ln" path="res://Assets/Animations/SummonAllys/IronGolem/attack_06.png" id="15_5klh4"]
+[ext_resource type="Texture2D" uid="uid://pqn6wxb18p0y" path="res://Assets/Animations/SummonAllys/IronGolem/attack_07.png" id="16_4h1tl"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="16_p1agm"]
+[ext_resource type="Texture2D" uid="uid://bc3a7c00cohj1" path="res://Assets/Animations/SummonAllys/IronGolem/attack_08.png" id="17_ykpso"]
+[ext_resource type="Texture2D" uid="uid://dk462fev6gnj7" path="res://Assets/Animations/SummonAllys/IronGolem/attack_09.png" id="18_1ml55"]
+[ext_resource type="Texture2D" uid="uid://bp4br2mjueb50" path="res://Assets/Animations/SummonAllys/IronGolem/attack_10.png" id="19_e4y88"]
+[ext_resource type="Texture2D" uid="uid://gpgpkevpkeg" path="res://Assets/Animations/SummonAllys/IronGolem/attack_11.png" id="20_5kiim"]
+[ext_resource type="Texture2D" uid="uid://bcdeych4hpqsx" path="res://Assets/Animations/SummonAllys/IronGolem/attack_12.png" id="21_qt7o0"]
+[ext_resource type="Texture2D" uid="uid://4a3u1ilrnf35" path="res://Assets/Animations/SummonAllys/IronGolem/attack_13.png" id="22_q8c0o"]
+[ext_resource type="Texture2D" uid="uid://ckt54pqhdwkcl" path="res://Assets/Animations/SummonAllys/IronGolem/attack_14.png" id="23_hqw1r"]
+[ext_resource type="Texture2D" uid="uid://bi7kfpxck12xt" path="res://Assets/Animations/SummonAllys/IronGolem/attack_15.png" id="24_b24q3"]
+[ext_resource type="Texture2D" uid="uid://bpglr0xef355i" path="res://Assets/Animations/SummonAllys/IronGolem/attack_16.png" id="25_0aiye"]
+[ext_resource type="Texture2D" uid="uid://cy6svx0y4m4r6" path="res://Assets/Animations/SummonAllys/IronGolem/attack_17.png" id="26_80jtx"]
+[ext_resource type="Texture2D" uid="uid://c6ybrf8o4cs1f" path="res://Assets/Animations/SummonAllys/IronGolem/attack_18.png" id="27_lbr6e"]
+[ext_resource type="Texture2D" uid="uid://cxokrq1hsgwgb" path="res://Assets/Animations/SummonAllys/IronGolem/attack_19.png" id="28_h2pep"]
+[ext_resource type="Texture2D" uid="uid://hs15ofe4fb5i" path="res://Assets/Animations/SummonAllys/IronGolem/attack_20.png" id="29_j4xrd"]
+[ext_resource type="Texture2D" uid="uid://by4gw147l0668" path="res://Assets/Animations/SummonAllys/IronGolem/attack_21.png" id="30_sm668"]
+[ext_resource type="Texture2D" uid="uid://c2s565eorco73" path="res://Assets/Animations/SummonAllys/IronGolem/attack_22.png" id="31_ygstl"]
+[ext_resource type="Texture2D" uid="uid://db376v2yyf3mi" path="res://Assets/Animations/SummonAllys/IronGolem/attack_23.png" id="32_nq61s"]
+[ext_resource type="Texture2D" uid="uid://dhhdcds13bp27" path="res://Assets/Animations/SummonAllys/IronGolem/attack_24.png" id="33_h30c7"]
+[ext_resource type="Texture2D" uid="uid://5nme7cevde28" path="res://Assets/Animations/SummonAllys/IronGolem/attack_25.png" id="34_wuyf4"]
+[ext_resource type="Texture2D" uid="uid://b1j70h0dl7llb" path="res://Assets/Animations/SummonAllys/IronGolem/attack_26.png" id="35_8xj7n"]
+[ext_resource type="Texture2D" uid="uid://b3imwpalbck2n" path="res://Assets/Animations/SummonAllys/IronGolem/attack_27.png" id="36_j51yg"]
+[ext_resource type="Texture2D" uid="uid://dbbg5uy5xcbf6" path="res://Assets/Animations/SummonAllys/IronGolem/attack_28.png" id="37_6mx82"]
+[ext_resource type="Texture2D" uid="uid://djpidisoymqwc" path="res://Assets/Animations/SummonAllys/IronGolem/attack_29.png" id="38_8k7re"]
+[ext_resource type="Texture2D" uid="uid://ykf8354g4tst" path="res://Assets/Animations/SummonAllys/IronGolem/attack_30.png" id="39_upm7q"]
+[ext_resource type="Texture2D" uid="uid://cghu1bax14b0g" path="res://Assets/Animations/SummonAllys/IronGolem/attack_31.png" id="40_7fvju"]
+[ext_resource type="Texture2D" uid="uid://bbdy7paa12u5g" path="res://Assets/Animations/SummonAllys/IronGolem/attack_32.png" id="41_xhnrr"]
+[ext_resource type="Texture2D" uid="uid://c4wu1a7jxxiij" path="res://Assets/Animations/SummonAllys/IronGolem/attack_33.png" id="42_lf0du"]
+[ext_resource type="Texture2D" uid="uid://bblbqjmrm12fc" path="res://Assets/Animations/SummonAllys/IronGolem/attack_34.png" id="43_ek8y3"]
+[ext_resource type="Texture2D" uid="uid://d0gc758lsicla" path="res://Assets/Animations/SummonAllys/IronGolem/attack_35.png" id="44_65foh"]
+[ext_resource type="Texture2D" uid="uid://qwlqndpo1u1u" path="res://Assets/Animations/SummonAllys/IronGolem/die_00.png" id="45_6ksbw"]
+[ext_resource type="Texture2D" uid="uid://bvxgb5q55kkxk" path="res://Assets/Animations/SummonAllys/IronGolem/die_01.png" id="46_ykxu2"]
+[ext_resource type="Texture2D" uid="uid://dd0yt68r0w1gf" path="res://Assets/Animations/SummonAllys/IronGolem/die_02.png" id="47_8cqx1"]
+[ext_resource type="Texture2D" uid="uid://dnpjppop751lf" path="res://Assets/Animations/SummonAllys/IronGolem/die_03.png" id="48_86v4r"]
+[ext_resource type="Texture2D" uid="uid://cif6ovp04jk27" path="res://Assets/Animations/SummonAllys/IronGolem/die_04.png" id="49_pi25e"]
+[ext_resource type="Texture2D" uid="uid://bwmyftu0x76sq" path="res://Assets/Animations/SummonAllys/IronGolem/die_05.png" id="50_yrsww"]
+[ext_resource type="Texture2D" uid="uid://d4n1e825apiw3" path="res://Assets/Animations/SummonAllys/IronGolem/die_06.png" id="51_c1m7m"]
+[ext_resource type="Texture2D" uid="uid://cpepvi545mcu7" path="res://Assets/Animations/SummonAllys/IronGolem/die_07.png" id="52_60uyh"]
+[ext_resource type="Texture2D" uid="uid://c3pd7ru7duicl" path="res://Assets/Animations/SummonAllys/IronGolem/die_08.png" id="53_8pid3"]
+[ext_resource type="Texture2D" uid="uid://dx6m4gd7vlcob" path="res://Assets/Animations/SummonAllys/IronGolem/die_09.png" id="54_l3bgs"]
+[ext_resource type="Texture2D" uid="uid://wq8k21ll8atm" path="res://Assets/Animations/SummonAllys/IronGolem/die_10.png" id="55_kb3qj"]
+[ext_resource type="Texture2D" uid="uid://dra3tei2o6v45" path="res://Assets/Animations/SummonAllys/IronGolem/move_00.png" id="56_213i1"]
+[ext_resource type="Texture2D" uid="uid://c24nj23arvrd2" path="res://Assets/Animations/SummonAllys/IronGolem/move_01.png" id="57_fj2j4"]
+[ext_resource type="Texture2D" uid="uid://dhy35pr3fon2e" path="res://Assets/Animations/SummonAllys/IronGolem/move_02.png" id="58_mssy8"]
+[ext_resource type="Texture2D" uid="uid://c4wnxdgj3k7e7" path="res://Assets/Animations/SummonAllys/IronGolem/move_03.png" id="59_7fxb0"]
+[ext_resource type="Texture2D" uid="uid://cndxtxpo7et3j" path="res://Assets/Animations/SummonAllys/IronGolem/move_04.png" id="60_2gbru"]
+[ext_resource type="Texture2D" uid="uid://dkpflra5jyib4" path="res://Assets/Animations/SummonAllys/IronGolem/move_05.png" id="61_27der"]
+[ext_resource type="Texture2D" uid="uid://dh24uwh2cmup" path="res://Assets/Animations/SummonAllys/IronGolem/move_06.png" id="62_5suaw"]
+[ext_resource type="Texture2D" uid="uid://spnwea17pc4o" path="res://Assets/Animations/SummonAllys/IronGolem/move_07.png" id="63_vdou2"]
+[ext_resource type="Texture2D" uid="uid://4ytctuyonjma" path="res://Assets/Animations/SummonAllys/IronGolem/move_08.png" id="64_h367i"]
+[ext_resource type="Texture2D" uid="uid://bf2o4tju7smnr" path="res://Assets/Animations/SummonAllys/IronGolem/move_09.png" id="65_bae2e"]
+[ext_resource type="Texture2D" uid="uid://houtddks1wo" path="res://Assets/Animations/SummonAllys/IronGolem/move_10.png" id="66_o6a7b"]
+[ext_resource type="Texture2D" uid="uid://cbopa0364rtyg" path="res://Assets/Animations/SummonAllys/IronGolem/move_11.png" id="67_4svg1"]
+[ext_resource type="Texture2D" uid="uid://d1p5wophaacw7" path="res://Assets/Animations/SummonAllys/IronGolem/move_12.png" id="68_or626"]
+[ext_resource type="Texture2D" uid="uid://uyj61vnvgagc" path="res://Assets/Animations/SummonAllys/IronGolem/move_13.png" id="69_36sim"]
+[ext_resource type="Texture2D" uid="uid://juiagbcbke5g" path="res://Assets/Animations/SummonAllys/IronGolem/move_14.png" id="70_s77x4"]
+[ext_resource type="Texture2D" uid="uid://bx1pcav86os1b" path="res://Assets/Animations/SummonAllys/IronGolem/move_15.png" id="71_t71nn"]
+[ext_resource type="Texture2D" uid="uid://cqvbvnxqvsywj" path="res://Assets/Animations/SummonAllys/IronGolem/move_16.png" id="72_wqs0f"]
+[ext_resource type="Texture2D" uid="uid://dascegy1rqso4" path="res://Assets/Animations/SummonAllys/IronGolem/move_17.png" id="73_f24l0"]
+[ext_resource type="Texture2D" uid="uid://73mlepstk4xq" path="res://Assets/Animations/SummonAllys/IronGolem/move_18.png" id="74_qbovi"]
+[ext_resource type="Texture2D" uid="uid://5v46wvht0ye" path="res://Assets/Animations/SummonAllys/IronGolem/move_19.png" id="75_qorl4"]
+[ext_resource type="Texture2D" uid="uid://6w22v4hjg80i" path="res://Assets/Animations/SummonAllys/IronGolem/move_20.png" id="76_i2w8j"]
+[ext_resource type="Texture2D" uid="uid://bp84fpg358r73" path="res://Assets/Animations/SummonAllys/IronGolem/move_21.png" id="77_d5lg5"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="78_dbsyw"]
+[ext_resource type="Texture2D" uid="uid://dovmy12ea4w3v" path="res://Assets/Animations/SummonAllys/IronGolem/move_22.png" id="78_luc3p"]
+[ext_resource type="Texture2D" uid="uid://bj3frbhlhbdwo" path="res://Assets/Animations/SummonAllys/IronGolem/move_23.png" id="79_qoyeb"]
+[ext_resource type="Texture2D" uid="uid://cokx3w7gaprvq" path="res://Assets/Animations/SummonAllys/IronGolem/move_24.png" id="80_uj5dy"]
+[ext_resource type="Texture2D" uid="uid://dmgs0msyds7ys" path="res://Assets/Animations/SummonAllys/IronGolem/move_25.png" id="81_yysfa"]
+[ext_resource type="Texture2D" uid="uid://bh5l5yxlc30p6" path="res://Assets/Animations/SummonAllys/IronGolem/move_26.png" id="82_ssikn"]
+[ext_resource type="Texture2D" uid="uid://degjqin8fanne" path="res://Assets/Animations/SummonAllys/IronGolem/move_27.png" id="83_8mrhe"]
+[ext_resource type="Texture2D" uid="uid://c0p7t0tmmue0t" path="res://Assets/Animations/SummonAllys/IronGolem/move_28.png" id="84_n2fd8"]
+[ext_resource type="Texture2D" uid="uid://bkxa6slc3qbte" path="res://Assets/Animations/SummonAllys/IronGolem/move_29.png" id="85_isuwp"]
+[ext_resource type="Texture2D" uid="uid://ma755ap6umye" path="res://Assets/Animations/SummonAllys/IronGolem/move_30.png" id="86_llb5n"]
+[ext_resource type="Texture2D" uid="uid://cvx61b5xmf0qq" path="res://Assets/Animations/SummonAllys/IronGolem/move_31.png" id="87_n7k5k"]
+[ext_resource type="Texture2D" uid="uid://cr2ix8cu460f2" path="res://Assets/Animations/SummonAllys/IronGolem/move_32.png" id="88_jy1w6"]
+[ext_resource type="Texture2D" uid="uid://bpulthmu1l20x" path="res://Assets/Animations/SummonAllys/IronGolem/move_33.png" id="89_k11eu"]
+[ext_resource type="Texture2D" uid="uid://bylj80jdakvuy" path="res://Assets/Animations/SummonAllys/IronGolem/move_34.png" id="90_xbqsj"]
+[ext_resource type="Texture2D" uid="uid://bltaij7a8ggll" path="res://Assets/Animations/SummonAllys/IronGolem/move_35.png" id="91_ss0nq"]
+[ext_resource type="Texture2D" uid="uid://bgq1l4nugo0bl" path="res://Assets/Animations/SummonAllys/IronGolem/move_36.png" id="92_hck6y"]
+[ext_resource type="Texture2D" uid="uid://br0j45wa53tww" path="res://Assets/Animations/SummonAllys/IronGolem/move_37.png" id="93_0xxmn"]
+[ext_resource type="Texture2D" uid="uid://bvtuw60sshj58" path="res://Assets/Animations/SummonAllys/IronGolem/move_38.png" id="94_vkbok"]
+[ext_resource type="Texture2D" uid="uid://4q6x4p37wsoc" path="res://Assets/Animations/SummonAllys/IronGolem/move_39.png" id="95_wobay"]
+[ext_resource type="Texture2D" uid="uid://ies1xl6c751s" path="res://Assets/Animations/SummonAllys/IronGolem/move_40.png" id="96_f222t"]
+[ext_resource type="Texture2D" uid="uid://dilrw3q5mt8m8" path="res://Assets/Animations/SummonAllys/IronGolem/move_41.png" id="97_sruua"]
+[ext_resource type="Texture2D" uid="uid://b5ig2ruaglu3e" path="res://Assets/Animations/SummonAllys/IronGolem/move_42.png" id="98_pl7tr"]
+[ext_resource type="Texture2D" uid="uid://c0os0wkmm1cpb" path="res://Assets/Animations/SummonAllys/IronGolem/move_43.png" id="99_r28bn"]
+[ext_resource type="Texture2D" uid="uid://bb3vnqw7t1a5v" path="res://Assets/Animations/SummonAllys/IronGolem/move_44.png" id="100_x5ws0"]
+[ext_resource type="Texture2D" uid="uid://c1jt4lpvddm1w" path="res://Assets/Animations/SummonAllys/IronGolem/move_45.png" id="101_03y8y"]
+[ext_resource type="Texture2D" uid="uid://dadu0h3cl6yke" path="res://Assets/Animations/SummonAllys/IronGolem/move_46.png" id="102_4pxsa"]
+[ext_resource type="Texture2D" uid="uid://djyw4pw2mr4u8" path="res://Assets/Animations/SummonAllys/IronGolem/move_47.png" id="103_f5tly"]
+[ext_resource type="Texture2D" uid="uid://b5quhxi1mgp8t" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_00.png" id="104_rm2sk"]
+[ext_resource type="Texture2D" uid="uid://dlpdoyfb1g2w2" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_01.png" id="105_ag5bv"]
+[ext_resource type="Texture2D" uid="uid://dlg064sm1jqdj" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_02.png" id="106_01stu"]
+[ext_resource type="Texture2D" uid="uid://c3svwx0kkf608" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_03.png" id="107_ppbbu"]
+[ext_resource type="Texture2D" uid="uid://cmkdrd64n2e7p" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_04.png" id="108_y46rc"]
+[ext_resource type="Texture2D" uid="uid://cm08gt2eskt6s" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_05.png" id="109_xmw0i"]
+[ext_resource type="Texture2D" uid="uid://b4vs23e8os1lq" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_06.png" id="110_oqwdc"]
+[ext_resource type="Texture2D" uid="uid://cn85beaijpnn0" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_07.png" id="111_iep6c"]
+[ext_resource type="Texture2D" uid="uid://d1uip6xsqxsyo" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_08.png" id="112_ckvyu"]
+[ext_resource type="Texture2D" uid="uid://cmrwhhi740j7b" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_09.png" id="113_pausv"]
+[ext_resource type="Texture2D" uid="uid://buokmnccg7o5x" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_10.png" id="114_6ivxi"]
+[ext_resource type="Texture2D" uid="uid://cpqnmsa41v08q" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_11.png" id="115_mfb62"]
+[ext_resource type="Texture2D" uid="uid://dy0ab66law45v" path="res://Assets/Animations/SummonAllys/IronGolem/rebirth_12.png" id="116_cay0p"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="117_6gib5"]
+[ext_resource type="AudioStream" uid="uid://drundiaqu0rk2" path="res://Assets/Sounds/FXs/Allys/铁傀儡/生成.wav" id="118_r7d5r"]
+[ext_resource type="AudioStream" uid="uid://b1qce1o4ia1m1" path="res://Assets/Sounds/FXs/Battles/aoe_hit.wav" id="119_kqt6n"]
+[ext_resource type="AudioStream" uid="uid://dm824q146kchv" path="res://Assets/Sounds/FXs/Allys/铁傀儡/死亡.wav" id="120_r5ydl"]
+[ext_resource type="Texture2D" uid="uid://cftgopcpsj5g8" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Magic3.png" id="122_8hmkn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gceuc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_tjdss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_li16p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mb7bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n2hyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i6k3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2wdd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5klh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4h1tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ykpso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1ml55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e4y88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5kiim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qt7o0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q8c0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hqw1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b24q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0aiye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_80jtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbr6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_h2pep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_j4xrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sm668")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ygstl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_nq61s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_h30c7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wuyf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_8xj7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_j51yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6mx82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8k7re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_upm7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_7fvju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_xhnrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_lf0du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ek8y3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_65foh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qv7w7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_6ksbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ykxu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_8cqx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_86v4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_pi25e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_yrsww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_c1m7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_60uyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_8pid3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_l3bgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_kb3qj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ercv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_213i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_fj2j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_mssy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_7fxb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2gbru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_27der")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_5suaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_vdou2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_h367i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_bae2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_o6a7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_4svg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_or626")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_36sim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_s77x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_t71nn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_wqs0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_f24l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_qbovi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_qorl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_i2w8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_d5lg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_luc3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_qoyeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_uj5dy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_yysfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ssikn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_8mrhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_n2fd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_isuwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_llb5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_n7k5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_jy1w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_k11eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_xbqsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_ss0nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_hck6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_0xxmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_vkbok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_wobay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_f222t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_sruua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_pl7tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_r28bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_x5ws0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_03y8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_4pxsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_f5tly")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxnl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("104_rm2sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ag5bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_01stu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_ppbbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_y46rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_xmw0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_oqwdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_iep6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_ckvyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_pausv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_6ivxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_mfb62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_cay0p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiIronGolem" instance=ExtResource("1_4rygk")]
+offset_bottom = 3333.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_4i5as")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "铁傀儡"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiSummonAllyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("3_t5kkg")]
+layout_mode = 2
+level_max = 3
+unit_list = Array[ExtResource("4_f8meb")]([ExtResource("5_i8lo2"), ExtResource("6_akfpr"), ExtResource("7_b78ja")])
+heal_speed_list = Array[int]([28, 32, 36])
+far_attack_show = false
+rebirth_time = 14.0
+intercepting_range = 140
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+text = "每次攻击对 70 范围内的所有地面敌人造成伤害。"
+autowrap_mode = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2" index="0" instance=ExtResource("4_vm1cy")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="0" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_7vnpv")]
+layout_mode = 2
+texture = ExtResource("8_47x07")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable" index="1" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "70"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Anim" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 400
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_gceuc")
+autoplay = "default"
+frame_progress = 0.721136
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_qv7w7")
+autoplay = "default"
+frame_progress = 0.408685
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "死亡动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_7ercv")
+autoplay = "default"
+frame_progress = 0.967365
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_nxnl8")
+autoplay = "default"
+frame_progress = 0.707392
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anim/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "重生动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("4_vm1cy")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "生成"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("117_6gib5")]
+layout_mode = 2
+audio_stream = ExtResource("118_r7d5r")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "攻击"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("117_6gib5")]
+layout_mode = 2
+audio_stream = ExtResource("119_kqt6n")
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="4" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement5" index="0"]
+layout_mode = 2
+text = "死亡"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="5" instance=ExtResource("5_ncy1p")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement6/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement6/HBoxContainer" index="1" instance=ExtResource("117_6gib5")]
+layout_mode = 2
+audio_stream = ExtResource("120_r5ydl")
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "相关防御塔"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" index="1"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" index="2"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2/CenterContainer" index="0" instance=ExtResource("16_p1agm")]
+layout_mode = 2
+texture_normal = ExtResource("122_8hmkn")
+target_page_path = "res://Scenes/WikiPages/Tower/MagicTower/wiki_magic_tower_lv_4-1.tscn"
+target_page_pos = -5050.0
+name_text = "守卫者教堂"
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "类别：SuperSoldier"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 408.0
+offset_bottom = 611.0
+scale = Vector2(0.916276, 0.879625)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_dbsyw")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -408.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_dbsyw")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -1705.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_dbsyw")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -2453.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("78_dbsyw")]
+layout_mode = 2
+text = "相关防御塔"
+wiki_page = NodePath("../../..")
+target_pos = -2917.0
