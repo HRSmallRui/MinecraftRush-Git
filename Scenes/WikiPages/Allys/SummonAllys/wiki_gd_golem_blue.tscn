@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b55lid2nsfs3g" path="res://Assets/Images/UI/InformationBar/Allys/SummonAllys/GDGolem1.png" id="2_ysncj"]
 [ext_resource type="PackedScene" uid="uid://cavcfrnbrocks" path="res://Scenes/UI-Components/Wiki/wiki_summon_ally_table.tscn" id="3_m2cqv"]
 [ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_1ggg0"]
+[ext_resource type="Resource" uid="uid://criw6qr211u05" path="res://Library/SummonAllys/GDGolem/golem_blue.tres" id="5_mlo5p"]
 [ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="5_xehok"]
 [ext_resource type="Texture2D" uid="uid://cdhf72ijhxffi" path="res://Assets/Images/UI/Wiki/PropertyIcons/概率.png" id="8_5o3a0"]
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="8_lsr5a"]
@@ -56,27 +57,6 @@
 [ext_resource type="Texture2D" uid="uid://b05l6u2qp1okn" path="res://Assets/Images/UI/Wiki/Allys/Heroes/GoldenDiamond.png" id="55_cy3uj"]
 [ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="124_hmnpw"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="126_agkix"]
-
-[sub_resource type="Resource" id="Resource_u1lsi"]
-script = ExtResource("4_1ggg0")
-health = 100
-dodge_rate = 0.0
-near_damage_low = 14
-near_damage_high = 18
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fw54g"]
 animations = [{
@@ -223,7 +203,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="WikiIronGolem" instance=ExtResource("1_mfdte")]
+[node name="WikiGolemBlue" instance=ExtResource("1_mfdte")]
 offset_bottom = 2818.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
@@ -280,7 +260,7 @@ layout_mode = 2
 [node name="WikiSummonAllyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("3_m2cqv")]
 layout_mode = 2
 level_max = 1
-unit_list = Array[ExtResource("4_1ggg0")]([SubResource("Resource_u1lsi")])
+unit_list = Array[ExtResource("4_1ggg0")]([ExtResource("5_mlo5p")])
 heal_speed_list = Array[int]([8])
 far_attack_show = false
 intercepting_range = 120
