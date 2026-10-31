@@ -97,7 +97,7 @@ func on_damage_type_changed():
 	pass
 
 
-func update_property(level: int):
+func update_property(level: int = level_slider.value):
 	level_label.text = "LV." + str(level + level_offset)
 	var unit: UnitData = unit_list[level-1]
 	health_label.text = str(unit.health)
