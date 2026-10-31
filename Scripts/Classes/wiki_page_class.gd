@@ -32,6 +32,10 @@ func _input(event: InputEvent) -> void:
 		current_velocity = 0
 	elif event.is_action_released("click"):
 		current_velocity = Input.get_last_mouse_velocity().y
+	
+	if WikiManager.instance.scroll_locked:
+		current_velocity = 0
+	
 	elif event is InputEventScreenDrag:
 		position.y += event.relative.y
 	

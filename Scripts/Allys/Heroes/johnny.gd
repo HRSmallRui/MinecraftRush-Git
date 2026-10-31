@@ -29,6 +29,7 @@ extends Hero
 @onready var skill_3_audio: AudioStreamPlayer = $Skill3Audio
 @onready var skill_4_audio: AudioStreamPlayer = $Skill4Audio
 @onready var skill_2_hit_area: Area2D = $UnitBody/Skill2HitArea
+@onready var skill_2_condition_area: Area2D = $UnitBody/Skill2ConditionArea
 
 
 func _ready() -> void:
@@ -173,13 +174,16 @@ func die(explsion: bool = false):
 	skill_3_duration_timer.stop()
 	skill_2_hit_timer.stop()
 	skill_3_hit_timer.stop()
+	skill_2_hit_audio.stop()
+	skill_3_audio.stop()
+	skill_2_audio.stop()
 	super(explsion)
 	pass
 
 
 func battle():
 	if ally_sprite.animation == "idle":
-		if skill_levels[2] > 0 and skill_2_timer.is_stopped() and skill_2_hit_area.get_overlapping_bodies().size() >= 3:
+		if skill_levels[2] > 0 and skill_2_timer.is_stopped() and skill_2_condition_area.get_overlapping_bodies().size() >= 2:
 			ally_sprite.play("skill2")
 			return
 		if skill_levels[3] > 0 and skill_3_timer.is_stopped() and current_intercepting_enemy != null:

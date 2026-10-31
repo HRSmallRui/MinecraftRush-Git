@@ -19,6 +19,8 @@ signal chip_changed(chip_count: int)
 @export var skill2_back_chip_rate: float
 @export var skill2_tower_buff_scene: PackedScene
 @export var skill2_extra_tower_buff_scene: PackedScene
+@export var skill2_extra_tower_damage_upgrade_data: float
+@export var skill2_extra_tower_range_upgrade_data: float
 @export_group("Skill3","skill3")
 @export var skill3_bounty_rising_rate: float
 @export var skill3_debuff_duration: float
@@ -114,24 +116,43 @@ func frame_changed():
 	if ally_sprite.animation == "skill2" and ally_sprite.frame == 13:
 		chip -= 1
 		skill_2_timer.start()
-		if skill2_linked_tower == null:
+		if skill_2_area.get_overlapping_areas().is_empty():
 			skill_2_timer.stop()
 			chip += 1
-			return
-		skill_2_audio.play()
-		get_skill_exp(2)
-		var during_time: float = skill2_during_time_list[skill_levels[2]-1]
-		var tower_buff: TowerBuff = skill2_tower_buff_scene.instantiate()
-		tower_buff.duration = during_time
-		skill2_linked_tower.tower_buffs.add_child(tower_buff)
-		skill_2_wait_timer.wait_time = during_time
-		skill_2_wait_timer.start()
-		skill2_cost_chip = 1
-		if chip >= 10:
-			var loop_count: int = mini(randi_range(0,5),chip)
-			for i in loop_count:
+		for tower_area in skill_2_area.get_overlapping_areas():
+			skill2_linked_tower = tower_area.owner as DefenceTower
+			if skill2_linked_tower == null:
+				skill_2_timer.stop()
+				chip += 1
+				continue
+			skill_2_audio.play()
+			get_skill_exp(2)
+			var during_time: float = skill2_during_time_list[skill_levels[2]-1]
+			var tower_buff: TowerBuff = skill2_tower_buff_scene.instantiate()
+			tower_buff.duration = during_time
+			skill2_linked_tower.tower_buffs.add_child(tower_buff)
+			skill_2_wait_timer.wait_time = during_time
+			skill_2_wait_timer.start()
+			skill2_cost_chip = 1
+			if chip >= 10:
+				var loop_count: int = mini(randi_range(0,5),chip)
+				var damage_upgrade_rate: float = 1
+				var range_upgrade_rate: float = 1
+				for i in loop_count:
+					damage_upgrade_rate += skill2_extra_tower_damage_upgrade_data
+					range_upgrade_rate += skill2_extra_tower_range_upgrade_data
+				var damage_block: TowerPropertyBuffBlock = TowerPropertyBuffBlock.new()
+				var range_block: TowerPropertyBuffBlock = TowerPropertyBuffBlock.new()
+				damage_block.operation_data = damage_upgrade_rate
+				damage_block.tower_property_type = TowerBuff.TowerPropertyType.Damage
+				damage_block.operation_type = TowerBuff.OperationType.Multiply
+				range_block.operation_data = range_upgrade_rate
+				range_block.tower_property_type = TowerBuff.TowerPropertyType.AttackRange
+				range_block.operation_type = TowerBuff.OperationType.Multiply
 				var extra_buff: TowerBuff = skill2_extra_tower_buff_scene.instantiate()
 				extra_buff.duration = during_time
+				extra_buff.buff_blocks[0] = damage_block
+				extra_buff.buff_blocks[1 ] = range_block
 				skill2_linked_tower.tower_buffs.add_child(extra_buff)
 				skill2_cost_chip += 1
 		
@@ -232,9 +253,9 @@ func battle():
 
 
 func _on_skill_2_wait_timer_timeout() -> void:
-	if ally_state == AllyState.DIE or skill2_linked_tower == null: return
-	var back_chip: int = snappedf(float(skill2_cost_chip) * skill2_back_chip_rate, 1)
-	chip += back_chip
+	#if ally_state == AllyState.DIE or skill2_linked_tower == null: return
+	#var back_chip: int = snappedf(float(skill2_cost_chip) * skill2_back_chip_rate, 1)
+	#chip += back_chip
 	pass # Replace with function body.
 
 

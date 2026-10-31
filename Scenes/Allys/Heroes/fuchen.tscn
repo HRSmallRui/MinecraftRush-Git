@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://58cc8ohjp6pd" path="res://Scenes/Allys/Heroes/hero_class.tscn" id="1_6ohj6"]
 [ext_resource type="Texture2D" uid="uid://b65o81wdbsw7l" path="res://Assets/Images/UI/HeroHall/HeadTexs/Fuchen.png" id="2_7r13c"]
 [ext_resource type="Script" path="res://Scripts/Allys/Heroes/fuchen.gd" id="2_lpagh"]
-[ext_resource type="Resource" uid="uid://c2ltxu5vo3jy3" path="res://Library/Heroes/HeroPropertyBlocks/Fuchen.tres" id="2_vmfd8"]
+[ext_resource type="Resource" uid="uid://cnt5sncy2fnf2" path="res://Library/Heroes/HeroPropertyBlocks/Fuchen.tres" id="2_vmfd8"]
 [ext_resource type="Script" path="res://Scripts/Datas/int_saver.gd" id="3_srntc"]
 [ext_resource type="Texture2D" uid="uid://bogj23c18updw" path="res://Assets/Images/UI/InformationBar/Allys/Heroes/Fuchen.png" id="4_45pkp"]
 [ext_resource type="Resource" uid="uid://d2oqlftytv4sp" path="res://Library/Heroes/HeroConfigs/Fuchen/upgrade_damage_lv1.tres" id="4_vxwe6"]
@@ -1271,7 +1271,7 @@ fuchen = NodePath("../..")
 trace_area = NodePath("../Skill3TraceArea")
 magic_ball_scene = ExtResource("8_1a1ff")
 magic_ball_damage = 160
-magic_ball_count_list = Array[int]([4, 6, 8])
+magic_ball_count_list = Array[int]([6, 9, 12])
 skill3_timer = NodePath("../../Skill3Timer")
 ray_scene = ExtResource("9_40qgb")
 move_point_scene = ExtResource("10_fnkty")
@@ -1313,7 +1313,7 @@ bus = &"Sound"
 [node name="AllySprite" parent="UnitBody" index="1"]
 position = Vector2(15, -120)
 sprite_frames = SubResource("SpriteFrames_gcqhy")
-animation = &"skill4_loop"
+animation = &"rebirth"
 
 [node name="AllyButton" parent="UnitBody" index="5"]
 offset_left = -53.0
@@ -1350,7 +1350,7 @@ shape = SubResource("CircleShape2D_1g1io")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="Skill3TraceArea" type="Area2D" parent="UnitBody" index="12"]
-scale = Vector2(15, 15)
+scale = Vector2(10, 10)
 collision_layer = 0
 collision_mask = 96
 

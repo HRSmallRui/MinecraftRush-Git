@@ -124,7 +124,7 @@ func skill_4_process():
 		get_skill_exp(4)
 		
 	for enemy in in_area_enemy_list:
-		if enemy.enemy_state != Enemy.EnemyState.DIE and enemy.enemy_type < Enemy.EnemyType.Super:
+		if enemy.enemy_state != Enemy.EnemyState.DIE and enemy.enemy_type <= Enemy.EnemyType.Super:
 			var kill_rate: float = skill4_sec_kill_rate_list[skill_levels[4]-1]
 			var health_rate: float = float(enemy.current_data.health) / enemy.start_data.health
 			if health_rate <= kill_rate: enemy.sec_kill(true)

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cim4obn7cndeb" path="res://Assets/Images/UI/SeenBook/DefenceTowers/HeadTex/Barrack2.png" id="5_dukiu"]
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="6_gjqlu"]
 [ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="7_cj4d8"]
-[ext_resource type="PackedScene" uid="uid://ksdihne2yldg" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="8_2omm8"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="8_2omm8"]
 [ext_resource type="Texture2D" uid="uid://cxlgijvx46h50" path="res://Assets/Images/UI/Wiki/PropertyIcons/生命值.png" id="9_qk631"]
 [ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="10_u3rtg"]
 [ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="11_15eou"]
@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://bfhvapkruvlxi" path="res://Assets/Images/DefenceTowers/Barracks/Towers/OnlyFire/only_fire_00.png" id="21_hk86k"]
 [ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="23_3ivrc"]
 [ext_resource type="Texture2D" uid="uid://bjkig2th67ulx" path="res://Assets/Images/UI/Wiki/Allys/Soldeirs/SoldierLV2.png" id="26_vpvww"]
-
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kj4g"]
 atlas = ExtResource("18_eh38p")
@@ -68,6 +67,7 @@ text = "步兵兵营"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
 offset_left = 653.0
 offset_top = -45.0
 offset_right = 781.0
@@ -552,6 +552,7 @@ layout_mode = 2
 [node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer4/VBoxContainer/CenterContainer" index="0" instance=ExtResource("3_slmy1")]
 layout_mode = 2
 texture_normal = ExtResource("26_vpvww")
+target_page_path = "res://Scenes/WikiPages/Allys/Soldiers/wiki_soldier_lv_2.tscn"
 name_text = "步兵"
 
 [node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]

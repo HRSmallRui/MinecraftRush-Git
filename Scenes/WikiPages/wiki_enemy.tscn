@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://x40enje75uwb"]
+[gd_scene load_steps=65 format=3 uid="uid://x40enje75uwb"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_25piy"]
 [ext_resource type="Texture2D" uid="uid://d1cmb74atnaa7" path="res://Assets/Images/UI/Wiki/Index/enemy.png" id="2_r6j7w"]
@@ -63,7 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6daafiw4u4i" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy50.png" id="61_uxhm4"]
 [ext_resource type="Texture2D" uid="uid://b8vchv8macjoh" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy52.png" id="62_ikm0b"]
 [ext_resource type="Texture2D" uid="uid://bq8uvaaks3lwt" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy53.png" id="63_oqne3"]
-
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="64_2ptxp"]
 
 [node name="WikiEnemy" instance=ExtResource("1_25piy")]
 offset_bottom = 4295.0
@@ -615,3 +615,39 @@ offset_top = 146.0
 offset_right = 452.0
 offset_bottom = 786.0
 scale = Vector2(0.685622, 0.685622)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("64_2ptxp")]
+layout_mode = 2
+text = "第1章"
+wiki_page = NodePath("../../..")
+target_pos = -525.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("64_2ptxp")]
+layout_mode = 2
+text = "第2章"
+wiki_page = NodePath("../../..")
+target_pos = -1086.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("64_2ptxp")]
+layout_mode = 2
+text = "第3章"
+wiki_page = NodePath("../../..")
+target_pos = -1650.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("64_2ptxp")]
+layout_mode = 2
+text = "第4章"
+wiki_page = NodePath("../../..")
+target_pos = -2233.0
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("64_2ptxp")]
+layout_mode = 2
+text = "第5章"
+wiki_page = NodePath("../../..")
+target_pos = -3174.0
+
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page") instance=ExtResource("64_2ptxp")]
+layout_mode = 2
+text = "第6章"
+wiki_page = NodePath("../../..")
+target_pos = -3573.0
