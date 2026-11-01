@@ -1,7 +1,7 @@
 extends TextureButton
 
 @export var audio_stream: AudioStream
-@export var pitch_scale: float
+@export var pitch_scale: float = 1
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 

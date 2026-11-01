@@ -1,0 +1,721 @@
+[gd_scene load_steps=100 format=3 uid="uid://cnbvlify3cp44"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_gqw6h"]
+[ext_resource type="Texture2D" uid="uid://bhg0g44blqpiu" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy2.png" id="2_d7mn0"]
+[ext_resource type="Texture2D" uid="uid://b4p5shu1hxykb" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国小鬼.png" id="3_g1os8"]
+[ext_resource type="PackedScene" uid="uid://dpokgu1x5q6xf" path="res://Scenes/UI-Components/Wiki/wiki_enemy_table.tscn" id="4_y7s5u"]
+[ext_resource type="Resource" uid="uid://5dd3nbeqy40s" path="res://Library/Enemies/EnemyDatas/enemy_2.tres" id="5_77xwj"]
+[ext_resource type="Texture2D" uid="uid://lxikl03dnfhc" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_00.png" id="6_8ej8m"]
+[ext_resource type="Texture2D" uid="uid://du72kigp6w0er" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_01.png" id="7_vmj0m"]
+[ext_resource type="Texture2D" uid="uid://citngkmfkt788" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_02.png" id="8_d1vaw"]
+[ext_resource type="Texture2D" uid="uid://c167rgtp4bxyf" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_03.png" id="9_mqdpg"]
+[ext_resource type="Texture2D" uid="uid://cco3wlkjr0ale" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_04.png" id="10_evr0g"]
+[ext_resource type="Texture2D" uid="uid://b6ih2bg80gla6" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_05.png" id="11_qa3w8"]
+[ext_resource type="Texture2D" uid="uid://bhp3hkylplbss" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_06.png" id="12_jko5k"]
+[ext_resource type="Texture2D" uid="uid://d015vlo1jb15p" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_07.png" id="13_8wdei"]
+[ext_resource type="Texture2D" uid="uid://co2aevsuwqncw" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_08.png" id="14_6sphl"]
+[ext_resource type="Texture2D" uid="uid://ckh342tuj0ywj" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_09.png" id="15_vf7cn"]
+[ext_resource type="Texture2D" uid="uid://dclm2lwnwca5g" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_10.png" id="16_t8tvv"]
+[ext_resource type="Texture2D" uid="uid://ccxcpwehbjs7f" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_11.png" id="17_4j4ue"]
+[ext_resource type="Texture2D" uid="uid://d3yg3lqb5w0ex" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_12.png" id="18_ofol4"]
+[ext_resource type="Texture2D" uid="uid://cjdq6t0euftfu" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_13.png" id="19_1ibac"]
+[ext_resource type="Texture2D" uid="uid://caaj5d41y2pp3" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_14.png" id="20_y7vse"]
+[ext_resource type="Texture2D" uid="uid://dhkd51jy8inw8" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_15.png" id="21_kdc7c"]
+[ext_resource type="Texture2D" uid="uid://d4lgb4k5nl33o" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_16.png" id="22_tqxp1"]
+[ext_resource type="Texture2D" uid="uid://w30a77xoii1o" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_17.png" id="23_qwsqn"]
+[ext_resource type="Texture2D" uid="uid://ginwww53gq2d" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_18.png" id="24_j5f08"]
+[ext_resource type="Texture2D" uid="uid://blypyx6xvv6sv" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_19.png" id="25_rjqoe"]
+[ext_resource type="Texture2D" uid="uid://cb8fqv32lyiu2" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_20.png" id="26_s66s4"]
+[ext_resource type="Texture2D" uid="uid://bhouydtjwflg6" path="res://Assets/Animations/Enemies/2尸国小鬼/die_00.png" id="27_2t4uw"]
+[ext_resource type="Texture2D" uid="uid://cmb01mo8n4xpq" path="res://Assets/Animations/Enemies/2尸国小鬼/die_01.png" id="28_y1c47"]
+[ext_resource type="Texture2D" uid="uid://bft17uwilxja8" path="res://Assets/Animations/Enemies/2尸国小鬼/die_02.png" id="29_geype"]
+[ext_resource type="Texture2D" uid="uid://vqm8vvo7rhr4" path="res://Assets/Animations/Enemies/2尸国小鬼/die_03.png" id="30_hjjiw"]
+[ext_resource type="Texture2D" uid="uid://fq0riko1i18g" path="res://Assets/Animations/Enemies/2尸国小鬼/die_04.png" id="31_4p18b"]
+[ext_resource type="Texture2D" uid="uid://bekctp3xhc80i" path="res://Assets/Animations/Enemies/2尸国小鬼/die_05.png" id="32_yqr56"]
+[ext_resource type="Texture2D" uid="uid://c5seilwceiubr" path="res://Assets/Animations/Enemies/2尸国小鬼/die_06.png" id="33_wxi1l"]
+[ext_resource type="Texture2D" uid="uid://dpnudxdtplqbf" path="res://Assets/Animations/Enemies/2尸国小鬼/die_07.png" id="34_lee6i"]
+[ext_resource type="Texture2D" uid="uid://dkjq18ov3djy1" path="res://Assets/Animations/Enemies/2尸国小鬼/die_08.png" id="35_rfyrj"]
+[ext_resource type="Texture2D" uid="uid://cnbborh8aqox1" path="res://Assets/Animations/Enemies/2尸国小鬼/die_09.png" id="36_v84go"]
+[ext_resource type="Texture2D" uid="uid://1j85cg880mdc" path="res://Assets/Animations/Enemies/2尸国小鬼/die_10.png" id="37_p10ps"]
+[ext_resource type="Texture2D" uid="uid://c1kui7nbtbvhr" path="res://Assets/Animations/Enemies/2尸国小鬼/die_11.png" id="38_onwah"]
+[ext_resource type="Texture2D" uid="uid://bj8i283tg8auk" path="res://Assets/Animations/Enemies/2尸国小鬼/die_12.png" id="39_bivlh"]
+[ext_resource type="Texture2D" uid="uid://dteknh65v8rw8" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_00.png" id="40_pg8xk"]
+[ext_resource type="Texture2D" uid="uid://di8eegy2fjnuv" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_01.png" id="41_tladb"]
+[ext_resource type="Texture2D" uid="uid://b4pdd6mdscdt" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_02.png" id="42_etgrl"]
+[ext_resource type="Texture2D" uid="uid://dhv6wjat2vj7r" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_03.png" id="43_yligk"]
+[ext_resource type="Texture2D" uid="uid://cjexxdetw0k5s" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_04.png" id="44_xg6v6"]
+[ext_resource type="Texture2D" uid="uid://7xgtvfqbfmpr" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_05.png" id="45_lkhdd"]
+[ext_resource type="Texture2D" uid="uid://b8d461njad0de" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_06.png" id="46_qf4w6"]
+[ext_resource type="Texture2D" uid="uid://bu4xdyjtt1oe1" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_07.png" id="47_t64db"]
+[ext_resource type="Texture2D" uid="uid://e4thftmb6men" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_08.png" id="48_7nhvn"]
+[ext_resource type="Texture2D" uid="uid://l31jqm33ny2l" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_09.png" id="49_txkpd"]
+[ext_resource type="Texture2D" uid="uid://dsy643xihqbmy" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_10.png" id="50_1h2ig"]
+[ext_resource type="Texture2D" uid="uid://d0w88j6a5qeoj" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_11.png" id="51_ku7ab"]
+[ext_resource type="Texture2D" uid="uid://b5d4mnw38g7ab" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_12.png" id="52_dffl7"]
+[ext_resource type="Texture2D" uid="uid://c45saqauskcen" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_13.png" id="53_2cjyd"]
+[ext_resource type="Texture2D" uid="uid://bcornagha8wmb" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_14.png" id="54_u3xu7"]
+[ext_resource type="Texture2D" uid="uid://gcjrtak51o8h" path="res://Assets/Animations/Enemies/2尸国小鬼/move-back_15.png" id="55_0adi5"]
+[ext_resource type="Texture2D" uid="uid://bstmo1xw3mfvw" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_01.png" id="56_028yc"]
+[ext_resource type="Texture2D" uid="uid://io60j5vk6vhy" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_02.png" id="57_0e118"]
+[ext_resource type="Texture2D" uid="uid://diyylw7hkodcg" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_03.png" id="58_ojqal"]
+[ext_resource type="Texture2D" uid="uid://cdi4hmphbeawb" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_04.png" id="59_cu4q8"]
+[ext_resource type="Texture2D" uid="uid://dxqmlpe05gxi1" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_05.png" id="60_m4yf7"]
+[ext_resource type="Texture2D" uid="uid://wkjw1mx33jk6" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_06.png" id="61_k64vt"]
+[ext_resource type="Texture2D" uid="uid://b81sgh372qwmy" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_07.png" id="62_0ace4"]
+[ext_resource type="Texture2D" uid="uid://betsmjqs88se3" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_08.png" id="63_vtkv3"]
+[ext_resource type="Texture2D" uid="uid://dq4oxeowc2gjs" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_09.png" id="64_u72yn"]
+[ext_resource type="Texture2D" uid="uid://0ew7bofp7lgp" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_10.png" id="65_44oer"]
+[ext_resource type="Texture2D" uid="uid://dhv72g6pyy072" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_11.png" id="66_ycoq5"]
+[ext_resource type="Texture2D" uid="uid://c78sessmb6ko6" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_12.png" id="67_fil3s"]
+[ext_resource type="Texture2D" uid="uid://b7olhv8m3a8mv" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_13.png" id="68_j4dr7"]
+[ext_resource type="Texture2D" uid="uid://b6q4pr7c1iofh" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_14.png" id="69_icloq"]
+[ext_resource type="Texture2D" uid="uid://bouokkxduwkix" path="res://Assets/Animations/Enemies/2尸国小鬼/move-front_15.png" id="70_ok10u"]
+[ext_resource type="Texture2D" uid="uid://fln343nboof4" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_00.png" id="71_wh5kh"]
+[ext_resource type="Texture2D" uid="uid://lu3l3di0fp7y" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_01.png" id="72_fh15o"]
+[ext_resource type="Texture2D" uid="uid://brpyi4fklu3x0" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_02.png" id="73_fhdb0"]
+[ext_resource type="Texture2D" uid="uid://dynwaksdd6oeo" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_03.png" id="74_tw5ti"]
+[ext_resource type="Texture2D" uid="uid://cpjmuhrt5aerg" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_04.png" id="75_vhif7"]
+[ext_resource type="Texture2D" uid="uid://b832s4mye3nfl" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_05.png" id="76_ulrtl"]
+[ext_resource type="Texture2D" uid="uid://dd0j1eafcgwgm" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_06.png" id="77_4t3a1"]
+[ext_resource type="Texture2D" uid="uid://csaveantwu2vh" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_07.png" id="78_3bidl"]
+[ext_resource type="Texture2D" uid="uid://cjwkkqoyp54xs" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_08.png" id="79_8isvg"]
+[ext_resource type="Texture2D" uid="uid://c4tfwujxlkgvg" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_09.png" id="80_0odad"]
+[ext_resource type="Texture2D" uid="uid://bfypk6rtajugi" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_10.png" id="81_4nwck"]
+[ext_resource type="Texture2D" uid="uid://dip8w40uaqby5" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_11.png" id="82_51ccs"]
+[ext_resource type="Texture2D" uid="uid://blwll503w3m2l" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_12.png" id="83_foswo"]
+[ext_resource type="Texture2D" uid="uid://dkdm6gachkfn5" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_13.png" id="84_b3dtu"]
+[ext_resource type="Texture2D" uid="uid://dv52baqbdrf4s" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_14.png" id="85_8fxjk"]
+[ext_resource type="Texture2D" uid="uid://cxlt51jhbbx8o" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_15.png" id="86_6nkgm"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="110_bqk0o"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="111_lta0e"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="112_q43s5"]
+[ext_resource type="AudioStream" uid="uid://bsweeej3wxikm" path="res://Assets/Sounds/FXs/Enemies/Sound_HumanDead1.wav" id="113_u6ifx"]
+[ext_resource type="AudioStream" uid="uid://dr0f10rntenjx" path="res://Assets/Sounds/FXs/Enemies/Sound_HumanDead2.wav" id="114_pls7a"]
+[ext_resource type="AudioStream" uid="uid://bbjx2rh2rc525" path="res://Assets/Sounds/FXs/Enemies/Sound_HumanDead3.wav" id="115_4xau6"]
+[ext_resource type="AudioStream" uid="uid://0h275ggnhryt" path="res://Assets/Sounds/FXs/Enemies/Sound_HumanDead4.wav" id="116_ygw6m"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="117_glpl4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjqin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8ej8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vmj0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d1vaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mqdpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_evr0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qa3w8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jko5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8wdei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6sphl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vf7cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t8tvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4j4ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ofol4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1ibac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y7vse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kdc7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tqxp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qwsqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_j5f08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rjqoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_s66s4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcs06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_2t4uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_y1c47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_geype")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hjjiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4p18b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yqr56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wxi1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lee6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_rfyrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_v84go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_p10ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_onwah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_bivlh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tv5if"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_pg8xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tladb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_etgrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_yligk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_xg6v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_lkhdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qf4w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_t64db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7nhvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_txkpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1h2ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ku7ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_dffl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_2cjyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_u3xu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_0adi5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_053u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_028yc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_0e118")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ojqal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_cu4q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_m4yf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_k64vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_0ace4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_vtkv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_u72yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_44oer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ycoq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_fil3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_j4dr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_icloq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_ok10u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i12dk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_wh5kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_fh15o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_fhdb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_tw5ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_vhif7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_ulrtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_4t3a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3bidl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_8isvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_0odad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_4nwck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_51ccs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_foswo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_b3dtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_8fxjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_6nkgm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiEnemy0" instance=ExtResource("1_gqw6h")]
+offset_bottom = 3183.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_d7mn0")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "尸国小鬼"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 644.0
+offset_top = -45.0
+offset_right = 772.0
+offset_bottom = 83.0
+texture = ExtResource("3_g1os8")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+text = "狡猾的尸国童子军，能够快速突破防线。"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiEnemyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("4_y7s5u")]
+layout_mode = 2
+linked_data = ExtResource("5_77xwj")
+enemy_bounty = 3
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "持有标签"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+text = "无"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "出现关卡"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="6"]
+layout_mode = 2
+text = "天木市， 战扎城， 元帅府"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Skills" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "技能"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="1"]
+layout_mode = 2
+text = "无"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="Anims" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_mjqin")
+autoplay = "default"
+frame_progress = 0.142204
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_kcs06")
+autoplay = "default"
+frame_progress = 0.930838
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "死亡动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_tv5if")
+autoplay = "default"
+frame_progress = 0.495087
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（背面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_053u8")
+autoplay = "default"
+frame_progress = 0.61083
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（正面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim5" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="4"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_i12dk")
+autoplay = "default"
+frame_progress = 0.325021
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（侧面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("110_bqk0o")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("111_lta0e")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "死亡"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("111_lta0e")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("112_q43s5")]
+layout_mode = 2
+audio_stream = ExtResource("113_u6ifx")
+pitch_scale = 1.5
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="2" instance=ExtResource("112_q43s5")]
+layout_mode = 2
+audio_stream = ExtResource("114_pls7a")
+pitch_scale = 1.5
+
+[node name="WikiAudioButton3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="3" instance=ExtResource("112_q43s5")]
+layout_mode = 2
+audio_stream = ExtResource("115_4xau6")
+pitch_scale = 1.5
+
+[node name="WikiAudioButton4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="4" instance=ExtResource("112_q43s5")]
+layout_mode = 2
+audio_stream = ExtResource("116_ygw6m")
+pitch_scale = 1.5
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "等级： Small"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 408.0
+offset_bottom = 611.0
+scale = Vector2(0.916276, 0.879625)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_glpl4")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -616.0
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_glpl4")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -2000.0
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_glpl4")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -2186.0
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_glpl4")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -2845.0
