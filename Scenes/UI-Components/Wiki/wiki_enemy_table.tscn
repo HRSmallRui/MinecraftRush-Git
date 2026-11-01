@@ -67,7 +67,6 @@ expand_margin_bottom = 10.0
 theme_override_constants/separation = 25
 script = ExtResource("1_dhi72")
 linked_data = ExtResource("2_i4q6m")
-damage_near_range = 1
 near_damage_type_icons = Array[Texture2D]([ExtResource("5_u7lik"), ExtResource("3_2hmyu"), ExtResource("4_dlt12"), ExtResource("5_ea68o"), ExtResource("6_1hd6y")])
 far_damage_type_icons = Array[Texture2D]([ExtResource("7_v5kcm"), ExtResource("8_ayahb"), ExtResource("9_7so1r"), ExtResource("10_bt1ys"), ExtResource("11_b0kie")])
 near_damage_range_part = [NodePath("WikiTable/WikiTableElement19"), NodePath("WikiTable/WikiTableElement20")]
@@ -107,6 +106,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_c5y8f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_c5y8f")
 max_value = 2.0
 value = 1.0
+scrollable = false
 
 [node name="WikiTable" parent="." instance=ExtResource("1_3eo7u")]
 layout_mode = 2
@@ -166,6 +166,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="WikiTableElement19" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
 layout_mode = 2
 
 [node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement19" instance=ExtResource("3_ywogj")]
@@ -174,11 +175,12 @@ texture = ExtResource("9_g5on0")
 tip_text = "伤害范围"
 
 [node name="WikiTableElement20" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
 layout_mode = 2
 
 [node name="DamageNearRangeLabel" type="Label" parent="WikiTable/WikiTableElement20"]
 layout_mode = 2
-text = "1"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

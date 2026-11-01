@@ -79,6 +79,9 @@ func on_update():
 	update_health()
 	damage_near_label.text = str(linked_data.near_damage_low) + " - " + str(linked_data.near_damage_high)
 	damage_near_speed_label.text = str(linked_data.near_attack_speed) + " 秒"
+	if linked_data.near_damage_low == 0 and linked_data.near_damage_high == 0:
+		damage_near_label.text = "无"
+		damage_near_speed_label.text = "无"
 	damage_near_range_label.text = str(damage_near_range)
 	far_damage_label.text = str(linked_data.far_damage_low) + " - " + str(linked_data.far_damage_high)
 	far_damage_speed_label.text = str(linked_data.far_attack_speed) + " 秒"

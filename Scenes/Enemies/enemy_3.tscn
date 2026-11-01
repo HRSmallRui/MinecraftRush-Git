@@ -1,11 +1,11 @@
-[gd_scene load_steps=63 format=3 uid="uid://ctqg01hruyfxe"]
+[gd_scene load_steps=62 format=3 uid="uid://ctqg01hruyfxe"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_g1wju"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_3.gd" id="2_lvuyr"]
 [ext_resource type="Texture2D" uid="uid://comwl0ri8gw60" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/鸡骑士.png" id="2_w0q86"]
 [ext_resource type="PackedScene" uid="uid://bjaqbbyu6ihm7" path="res://Scenes/Enemies/enemy_2.tscn" id="3_du766"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_rn0uq"]
 [ext_resource type="AudioStream" uid="uid://iq0pyheftlvh" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡死亡2.wav" id="5_56vhu"]
+[ext_resource type="Resource" uid="uid://bt3f8qsmkfq6t" path="res://Library/Enemies/EnemyDatas/enemy_3.tres" id="5_68me3"]
 [ext_resource type="Texture2D" uid="uid://ddv0fe3ql1v4r" path="res://Assets/Animations/Enemies/3鸡骑士/idle_0.png" id="5_fiw8j"]
 [ext_resource type="AudioStream" uid="uid://b0dugsbdyyox" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡死亡.wav" id="6_1w8ol"]
 [ext_resource type="Texture2D" uid="uid://bfacwxrkrb1fj" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_00.png" id="6_3fg8x"]
@@ -60,28 +60,6 @@
 [ext_resource type="AudioStream" uid="uid://cjqgganeritcc" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫1.wav" id="57_sholn"]
 [ext_resource type="AudioStream" uid="uid://cde18v2nr7yvq" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫2.wav" id="58_paqrx"]
 [ext_resource type="AudioStream" uid="uid://b8dl2vb71lspt" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫3.wav" id="59_ybemx"]
-
-
-[sub_resource type="Resource" id="Resource_105n5"]
-script = ExtResource("3_rn0uq")
-health = 10
-dodge_rate = 0.0
-near_damage_low = 0
-near_damage_high = 0
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.4
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_etnp4"]
 animations = [{
@@ -259,7 +237,7 @@ later_enemy_scene = ExtResource("3_du766")
 enemy_name = "鸡骑士"
 enemy_id = 3
 enemy_texture = ExtResource("2_w0q86")
-start_data = SubResource("Resource_105n5")
+start_data = ExtResource("5_68me3")
 interceptable = false
 bounty = 2
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_56vhu"), ExtResource("6_1w8ol")])
