@@ -109,7 +109,7 @@ func update_damage_type():
 
 func update_health():
 	var difficulty: int = difficulty_slider.value
-	difficulty_label.add_theme_color_override("font_color",difficulty_color[difficulty])
+	difficulty_label.modulate = difficulty_color[difficulty]
 	difficulty_label.text = "难度： "
 	var difficulty_text: String
 	match difficulty:
