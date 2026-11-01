@@ -72,7 +72,7 @@ func sprint():
 	sprint_hit_area.monitoring = true
 	sprint_continue_timer.start()
 	var original_speed = start_data.unit_move_speed
-	start_data.unit_move_speed *= 5
+	start_data.unit_move_speed = 5
 	current_data.update_move_speed()
 	stop_far_attack_translation = true
 	

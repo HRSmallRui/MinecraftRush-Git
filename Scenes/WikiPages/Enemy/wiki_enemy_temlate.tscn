@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://c2de2sxteyq1h"]
+[gd_scene load_steps=123 format=3 uid="uid://cmngvxqjcvv4c"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_o6pjt"]
 [ext_resource type="Texture2D" uid="uid://j68gd7t8w0t3" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy0.png" id="2_b00jx"]
@@ -788,26 +788,30 @@ offset_right = 408.0
 offset_bottom = 611.0
 scale = Vector2(0.916276, 0.879625)
 
-[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_s48wk")]
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_s48wk")]
 layout_mode = 2
 text = "基础配置"
 wiki_page = NodePath("../../..")
 target_pos = -616.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Based")
 
-[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_s48wk")]
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_s48wk")]
 layout_mode = 2
 text = "技能"
 wiki_page = NodePath("../../..")
 target_pos = -1920.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Skills")
 
-[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_s48wk")]
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_s48wk")]
 layout_mode = 2
 text = "动画素材"
 wiki_page = NodePath("../../..")
 target_pos = -2115.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Anims")
 
-[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("117_s48wk")]
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_s48wk")]
 layout_mode = 2
 text = "音效素材"
 wiki_page = NodePath("../../..")
 target_pos = -2766.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Audio")
