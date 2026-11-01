@@ -1,11 +1,12 @@
-[gd_scene load_steps=208 format=3 uid="uid://dk7q4k0117mlj"]
+[gd_scene load_steps=209 format=3 uid="uid://dk7q4k0117mlj"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_x6gj8"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_10.gd" id="2_32x7r"]
 [ext_resource type="Texture2D" uid="uid://c8ane3nhvpqmx" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter2/野区丧尸.png" id="3_abkah"]
 [ext_resource type="PackedScene" uid="uid://dkeksgvtmfa18" path="res://Scenes/Effects/blood_effect.tscn" id="3_dn5kh"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_ffing"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="4_52u5a"]
 [ext_resource type="AudioStream" uid="uid://dh2w7q6x836ya" path="res://Assets/Sounds/FXs/Enemies/野区丧尸/死亡1.wav" id="5_4haw7"]
+[ext_resource type="Resource" uid="uid://b7svilweyrl4q" path="res://Library/Enemies/EnemyDatas/enemy_10.tres" id="5_pqm3c"]
 [ext_resource type="Texture2D" uid="uid://dvuc1w6xl241c" path="res://Assets/Animations/Enemies/10野区丧尸/attack_00.png" id="5_ylwma"]
 [ext_resource type="AudioStream" uid="uid://dn4mo54smywmf" path="res://Assets/Sounds/FXs/Enemies/野区丧尸/死亡2.wav" id="6_0jnuv"]
 [ext_resource type="Texture2D" uid="uid://rfqfsucmhwnh" path="res://Assets/Animations/Enemies/10野区丧尸/attack_01.png" id="6_w1dx7"]
@@ -206,27 +207,10 @@
 [ext_resource type="AudioStream" uid="uid://dualeb4jn8x2f" path="res://Assets/Sounds/FXs/Enemies/野区丧尸/啃咬.ogg" id="203_1ggnj"]
 [ext_resource type="PackedScene" uid="uid://bcs0sdt2sngqr" path="res://Scenes/Enemies/EnemyComponents/zombie_achieve_dead_component.tscn" id="205_jvq5b"]
 
-
-[sub_resource type="Resource" id="Resource_rdb23"]
-script = ExtResource("4_ffing")
-health = 80
-dodge_rate = 0.0
-near_damage_low = 4
-near_damage_high = 8
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
+[sub_resource type="Resource" id="Resource_mwxl0"]
+script = ExtResource("4_52u5a")
+damage_low = 20
+damage_high = 40
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4uec5"]
 animations = [{
@@ -845,10 +829,12 @@ animations = [{
 [node name="Enemy10" groups=["undead"] instance=ExtResource("1_x6gj8")]
 script = ExtResource("2_32x7r")
 blood_effect_scene = ExtResource("3_dn5kh")
+bite_damage = SubResource("Resource_mwxl0")
+bite_heal = 30
 enemy_name = "野区丧尸"
 enemy_id = 10
 enemy_texture = ExtResource("3_abkah")
-start_data = SubResource("Resource_rdb23")
+start_data = ExtResource("5_pqm3c")
 bounty = 4
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_4haw7"), ExtResource("6_0jnuv"), ExtResource("7_ff6rc")])
 
