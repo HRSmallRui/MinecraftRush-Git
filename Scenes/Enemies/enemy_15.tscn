@@ -1,9 +1,9 @@
-[gd_scene load_steps=201 format=3 uid="uid://c6e3ejy2ssbh2"]
+[gd_scene load_steps=200 format=3 uid="uid://c6e3ejy2ssbh2"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_11xlh"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_15.gd" id="2_urd75"]
 [ext_resource type="Texture2D" uid="uid://dsyafspbjp58j" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter2/终末.png" id="3_stl3k"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_6ahx5"]
+[ext_resource type="Resource" uid="uid://cssr1r45pt801" path="res://Library/Enemies/EnemyDatas/enemy_15.tres" id="4_jt6os"]
 [ext_resource type="AudioStream" uid="uid://d2k6q4yv5upde" path="res://Assets/Sounds/FXs/Enemies/扭曲末影人/死亡.wav" id="5_ktvfs"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="6_30rdo"]
 [ext_resource type="Texture2D" uid="uid://bxiphlan26o3f" path="res://Assets/Animations/Enemies/15终末/attack_00.png" id="6_n5jpo"]
@@ -197,27 +197,6 @@
 [ext_resource type="Texture2D" uid="uid://dy1o02pj6i6hj" path="res://Assets/Animations/Enemies/15终末/move_normal_47.png" id="191_3jwch"]
 [ext_resource type="AudioStream" uid="uid://cvr85147a6civ" path="res://Assets/Sounds/FXs/Enemies/瞬移1.wav" id="196_ybko8"]
 [ext_resource type="AudioStream" uid="uid://c7r7ydgqlmmlf" path="res://Assets/Sounds/FXs/Enemies/瞬移2.wav" id="197_hnwer"]
-
-[sub_resource type="Resource" id="Resource_d6vke"]
-script = ExtResource("4_6ahx5")
-health = 780
-dodge_rate = 0.4
-near_damage_low = 26
-near_damage_high = 48
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.7
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hpg0k"]
 animations = [{
@@ -822,7 +801,7 @@ enemy_name = "终末"
 enemy_id = 15
 enemy_texture = ExtResource("3_stl3k")
 enemy_type = 1
-start_data = SubResource("Resource_d6vke")
+start_data = ExtResource("4_jt6os")
 lives_taken = 2
 bounty = 60
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_ktvfs")])

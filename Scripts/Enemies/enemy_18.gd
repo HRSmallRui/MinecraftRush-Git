@@ -1,5 +1,7 @@
 extends Enemy
 
+@export var pounce_damage_data: int
+
 @onready var attack_audio: AudioStreamPlayer = $AttackAudio
 @onready var pounce_timer: Timer = $PounceTimer
 @onready var pounce_hit_area: Area2D = $UnitBody/PounceHitArea
@@ -45,7 +47,7 @@ func frame_changed():
 func pounce_damage():
 	for ally_body in pounce_hit_area.get_overlapping_bodies():
 		var ally: Ally = ally_body.owner
-		ally.take_damage(40,DataProcess.DamageType.PhysicsDamage,0,false,self)
+		ally.take_damage(pounce_damage_data,DataProcess.DamageType.PhysicsDamage,0,false,self)
 	pass
 
 

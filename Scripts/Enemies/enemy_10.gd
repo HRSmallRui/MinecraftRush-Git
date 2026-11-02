@@ -1,6 +1,8 @@
 extends Enemy
 
 @export var blood_effect_scene: PackedScene
+@export var bite_damage: DamageBlock
+@export var bite_heal: int
 
 @onready var bite_timer: Timer = $BiteTimer
 @onready var bite_audio: AudioStreamPlayer = $BiteAudio
@@ -40,11 +42,11 @@ func battle():
 
 
 func bite():
-	var damage: int = randi_range(20,40)
+	var damage: int = bite_damage.get_damage()
 	if current_intercepting_units.size() > 0:
 		var ally: Ally = current_intercepting_units[0]
 		if ally.take_damage(damage,DataProcess.DamageType.PhysicsDamage,0,false,self,false,false):
-			current_data.heal(30)
+			current_data.heal(bite_heal)
 			var blood_effect: AnimatedSprite2D = blood_effect_scene.instantiate()
 			blood_effect.global_position = ally.hurt_box.global_position
 			Stage.instance.bullets.add_child(blood_effect)
