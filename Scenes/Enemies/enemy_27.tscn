@@ -1,9 +1,9 @@
-[gd_scene load_steps=143 format=3 uid="uid://bcq26o20y1cum"]
+[gd_scene load_steps=142 format=3 uid="uid://bcq26o20y1cum"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_sx2p5"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_27.gd" id="2_u2ln8"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_0bv77"]
 [ext_resource type="Texture2D" uid="uid://dym6gfyk2fxsa" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/沙漠雇佣兵.png" id="3_gnsw1"]
+[ext_resource type="Resource" uid="uid://4nfbjveduq74" path="res://Library/Enemies/EnemyDatas/enemy_27.tres" id="4_fonj1"]
 [ext_resource type="Texture2D" uid="uid://de7c3qnm3iygs" path="res://Assets/Animations/Enemies/27沙漠雇佣兵/appear_00.png" id="5_k7qot"]
 [ext_resource type="Texture2D" uid="uid://1i4lu5bcjyrx" path="res://Assets/Animations/Enemies/27沙漠雇佣兵/appear_01.png" id="6_vp7c1"]
 [ext_resource type="Texture2D" uid="uid://cp3k3pcx7l41j" path="res://Assets/Animations/Enemies/27沙漠雇佣兵/appear_02.png" id="7_xnhqu"]
@@ -140,28 +140,6 @@
 [ext_resource type="Texture2D" uid="uid://dorlg6w6ppmmf" path="res://Assets/Animations/Enemies/27沙漠雇佣兵/move_normal_21.png" id="138_tqycu"]
 [ext_resource type="Texture2D" uid="uid://b4hgibo305vl5" path="res://Assets/Animations/Enemies/27沙漠雇佣兵/move_normal_22.png" id="139_cs7vm"]
 [ext_resource type="Texture2D" uid="uid://b8ws7adawbfy6" path="res://Assets/Animations/Enemies/27沙漠雇佣兵/move_normal_23.png" id="140_qxrqg"]
-
-
-[sub_resource type="Resource" id="Resource_154yk"]
-script = ExtResource("3_0bv77")
-health = 200
-dodge_rate = 0.0
-near_damage_low = 24
-near_damage_high = 48
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.15
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ccsra"]
 animations = [{
@@ -633,7 +611,7 @@ enemy_name = "沙漠雇佣兵"
 enemy_id = 27
 enemy_texture = ExtResource("3_gnsw1")
 enemy_type = 1
-start_data = SubResource("Resource_154yk")
+start_data = ExtResource("4_fonj1")
 bounty = 12
 
 [node name="EnemySprite" parent="UnitBody" index="0"]
