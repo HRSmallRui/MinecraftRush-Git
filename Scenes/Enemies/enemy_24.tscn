@@ -1,9 +1,9 @@
-[gd_scene load_steps=121 format=3 uid="uid://cmwosu03bhpc3"]
+[gd_scene load_steps=120 format=3 uid="uid://cmwosu03bhpc3"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_acn15"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_24.gd" id="2_q2y7q"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_1q88t"]
 [ext_resource type="Texture2D" uid="uid://jkm6ac457ngq" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/沙漠守卫.png" id="3_f0o8v"]
+[ext_resource type="Resource" uid="uid://c3t4xk5dnj3f4" path="res://Library/Enemies/EnemyDatas/enemy_24.tres" id="4_nfe2c"]
 [ext_resource type="Texture2D" uid="uid://c10cx6856ihpq" path="res://Assets/Animations/Enemies/24沙漠守卫/attack_00.png" id="5_aed35"]
 [ext_resource type="Texture2D" uid="uid://bk0xp3r1l6pxk" path="res://Assets/Animations/Enemies/24沙漠守卫/attack_01.png" id="6_unaje"]
 [ext_resource type="Texture2D" uid="uid://4efloo860ip" path="res://Assets/Animations/Enemies/24沙漠守卫/attack_02.png" id="7_pnqqp"]
@@ -118,28 +118,6 @@
 [ext_resource type="Texture2D" uid="uid://cjig8hb4d3wym" path="res://Assets/Animations/Enemies/24沙漠守卫/move_normal_22.png" id="116_h4fro"]
 [ext_resource type="Texture2D" uid="uid://7rcpmkqwlmla" path="res://Assets/Animations/Enemies/24沙漠守卫/move_normal_23.png" id="117_aam3g"]
 [ext_resource type="AudioStream" uid="uid://csuw2h1ql0whd" path="res://Assets/Sounds/FXs/Heroes/Alex/破土.wav" id="118_gso5r"]
-
-
-[sub_resource type="Resource" id="Resource_grsgt"]
-script = ExtResource("3_1q88t")
-health = 230
-dodge_rate = 0.0
-near_damage_low = 10
-near_damage_high = 15
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.5
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k142g"]
 animations = [{
@@ -521,7 +499,7 @@ script = ExtResource("2_q2y7q")
 enemy_name = "沙漠守卫"
 enemy_id = 24
 enemy_texture = ExtResource("3_f0o8v")
-start_data = SubResource("Resource_grsgt")
+start_data = ExtResource("4_nfe2c")
 bounty = 12
 die_audio_stream_list = Array[AudioStream]([])
 die_blood_scene = null
