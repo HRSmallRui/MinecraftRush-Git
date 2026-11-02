@@ -1,9 +1,9 @@
-[gd_scene load_steps=115 format=3 uid="uid://dcjvqgkc5u8ik"]
+[gd_scene load_steps=114 format=3 uid="uid://dcjvqgkc5u8ik"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_np6ke"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_18.gd" id="2_4ddhu"]
 [ext_resource type="Texture2D" uid="uid://d0ynougpqcoe" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter2/腐朽.png" id="3_rnffh"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_422dl"]
+[ext_resource type="Resource" uid="uid://cj2rtgfhwqqun" path="res://Library/Enemies/EnemyDatas/enemy_18.tres" id="4_75gil"]
 [ext_resource type="AudioStream" uid="uid://d2k6q4yv5upde" path="res://Assets/Sounds/FXs/Enemies/扭曲末影人/死亡.wav" id="5_xkku0"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="6_403me"]
 [ext_resource type="Texture2D" uid="uid://b4chuxvgyqmwq" path="res://Assets/Animations/Enemies/18腐朽/attack_00.png" id="6_y8uj3"]
@@ -110,28 +110,6 @@
 [ext_resource type="Texture2D" uid="uid://bmwr0m80g73oa" path="res://Assets/Animations/Enemies/18腐朽/pounce_latter_12.png" id="103_aibir"]
 [ext_resource type="Texture2D" uid="uid://ck7x4ynlr5rm4" path="res://Assets/Animations/Enemies/18腐朽/pounce_latter_13.png" id="104_wjllr"]
 [ext_resource type="PackedScene" uid="uid://bcs0sdt2sngqr" path="res://Scenes/Enemies/EnemyComponents/zombie_achieve_dead_component.tscn" id="110_suw77"]
-
-
-[sub_resource type="Resource" id="Resource_s2yay"]
-script = ExtResource("4_422dl")
-health = 140
-dodge_rate = 0.0
-near_damage_low = 10
-near_damage_high = 20
-near_attack_speed = 1.2
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.3
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2rwxt"]
 animations = [{
@@ -612,11 +590,12 @@ radius = 73.9444
 
 [node name="Enemy18" groups=["undead"] instance=ExtResource("1_np6ke")]
 script = ExtResource("2_4ddhu")
+pounce_damage_data = 40
 enemy_name = "腐朽"
 enemy_id = 18
 enemy_texture = ExtResource("3_rnffh")
 enemy_type = 1
-start_data = SubResource("Resource_s2yay")
+start_data = ExtResource("4_75gil")
 bounty = 1
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_xkku0")])
 
@@ -648,7 +627,7 @@ visible = false
 [node name="PounceHitArea" type="Area2D" parent="UnitBody" index="8"]
 scale = Vector2(0.8, 0.8)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 4104
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/PounceHitArea" index="0"]
 scale = Vector2(5, 3.5)
