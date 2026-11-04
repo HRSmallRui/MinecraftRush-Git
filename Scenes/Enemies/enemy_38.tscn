@@ -1,11 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://g8kevs3lebju"]
+[gd_scene load_steps=30 format=3 uid="uid://g8kevs3lebju"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_vakjy"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_38.gd" id="2_482d8"]
 [ext_resource type="AudioStream" uid="uid://ddeuqoefk5tj8" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽咆哮1.wav" id="3_c5m2d"]
 [ext_resource type="Texture2D" uid="uid://d0vg4u1nic3da" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/劫掠兽.png" id="3_rhm51"]
 [ext_resource type="AudioStream" uid="uid://c8o34uvt6l850" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽咆哮2.wav" id="4_1up2j"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_qg6yc"]
 [ext_resource type="AudioStream" uid="uid://c2kiriyogw7ue" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽死亡1.wav" id="5_6eb1a"]
 [ext_resource type="AudioStream" uid="uid://db5klmt0h81gm" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽咆哮3.wav" id="5_extpe"]
 [ext_resource type="SpriteFrames" uid="uid://g7hx4kquiwy5" path="res://Assets/Animations/Enemies/38劫掠兽/SpriteFrames/walk_state_animation.res" id="5_qjdhu"]
@@ -21,33 +20,13 @@
 [ext_resource type="AudioStream" uid="uid://l2ydkq0xjujc" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽出现2.wav" id="11_kt6ex"]
 [ext_resource type="AudioStream" uid="uid://clifbf3raixqm" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽出现3.wav" id="12_qpm5v"]
 [ext_resource type="AudioStream" uid="uid://d3xkn1bcam2wp" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽出现4.wav" id="13_5ak63"]
+[ext_resource type="Resource" uid="uid://crckymnboq1n7" path="res://Library/Enemies/EnemyDatas/enemy_38.tres" id="13_jljp3"]
 [ext_resource type="AudioStream" uid="uid://52rr1sy2qa2v" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽出现5.wav" id="14_kqnxa"]
 [ext_resource type="AudioStream" uid="uid://j8bl3mudlswm" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽行走1.wav" id="15_3pwiu"]
 [ext_resource type="AudioStream" uid="uid://mbbpl4ftphgd" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽行走2.wav" id="16_saudn"]
 [ext_resource type="AudioStream" uid="uid://54kjtb4b8via" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽行走3.wav" id="17_vyx5b"]
 [ext_resource type="AudioStream" uid="uid://ckoejvukfwuc4" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽行走4.wav" id="18_psv2g"]
 [ext_resource type="AudioStream" uid="uid://butrxqk6uve06" path="res://Assets/Sounds/FXs/Enemies/劫掠兽/劫掠兽行走5.wav" id="19_bxo3p"]
-
-[sub_resource type="Resource" id="Resource_7onlf"]
-script = ExtResource("4_qg6yc")
-health = 2200
-dodge_rate = 0.0
-near_damage_low = 60
-near_damage_high = 120
-near_attack_speed = 2.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yw5"]
 size = Vector2(310, 110)
@@ -66,7 +45,7 @@ enemy_name = "劫掠兽"
 enemy_id = 38
 enemy_texture = ExtResource("3_rhm51")
 enemy_type = 2
-start_data = SubResource("Resource_7onlf")
+start_data = ExtResource("13_jljp3")
 lives_taken = 4
 bounty = 180
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_6eb1a"), ExtResource("6_c3udr"), ExtResource("7_mnl8n")])
