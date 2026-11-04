@@ -1,9 +1,9 @@
-[gd_scene load_steps=157 format=3 uid="uid://c0i5mwbqr4fdj"]
+[gd_scene load_steps=156 format=3 uid="uid://c0i5mwbqr4fdj"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_pdifr"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_33.gd" id="2_rdrqd"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_lsnj1"]
 [ext_resource type="Texture2D" uid="uid://brno8j03ca1un" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/劫掠者.png" id="3_mm78w"]
+[ext_resource type="Resource" uid="uid://b1msfsm6vlnls" path="res://Library/Enemies/EnemyDatas/enemy_33.tres" id="4_7gtef"]
 [ext_resource type="PackedScene" uid="uid://dgreu184bd5ej" path="res://Scenes/Bullets/enemy_straight_arrow.tscn" id="4_qr8ka"]
 [ext_resource type="AudioStream" uid="uid://bq1em7lmtufui" path="res://Assets/Sounds/FXs/Enemies/劫掠者/劫掠者死亡1.wav" id="5_f7ixw"]
 [ext_resource type="AudioStream" uid="uid://cmn5ipgam6pgr" path="res://Assets/Sounds/FXs/Enemies/劫掠者/劫掠者死亡2.wav" id="6_y2a7v"]
@@ -154,28 +154,6 @@
 [ext_resource type="AudioStream" uid="uid://bo56e3rx53ouq" path="res://Assets/Sounds/FXs/Enemies/劫掠者/劫掠者appear2.wav" id="151_kauyo"]
 [ext_resource type="AudioStream" uid="uid://cnvinu2hv6itl" path="res://Assets/Sounds/FXs/Enemies/劫掠者/劫掠者appear3.wav" id="152_kn7mw"]
 [ext_resource type="AudioStream" uid="uid://djab33j5ea07n" path="res://Assets/Sounds/FXs/Enemies/劫掠者/劫掠者appear4.wav" id="153_2jrnq"]
-
-
-[sub_resource type="Resource" id="Resource_kkjmq"]
-script = ExtResource("3_lsnj1")
-health = 350
-dodge_rate = 0.0
-near_damage_low = 6
-near_damage_high = 14
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 50
-far_damage_high = 60
-far_attack_speed = 2.5
-far_damage_range = 360
-armor = 0.2
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_txox2"]
 animations = [{
@@ -646,7 +624,7 @@ script = ExtResource("2_rdrqd")
 enemy_name = "劫掠者"
 enemy_id = 33
 enemy_texture = ExtResource("3_mm78w")
-start_data = SubResource("Resource_kkjmq")
+start_data = ExtResource("4_7gtef")
 far_attack_bullet_scene = ExtResource("4_qr8ka")
 bounty = 18
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_f7ixw"), ExtResource("6_y2a7v"), ExtResource("7_yjwlt")])
