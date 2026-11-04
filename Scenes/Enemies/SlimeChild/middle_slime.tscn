@@ -1,13 +1,13 @@
-[gd_scene load_steps=120 format=3 uid="uid://chg3j4ln6qt2v"]
+[gd_scene load_steps=119 format=3 uid="uid://chg3j4ln6qt2v"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_eulk5"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_-2.gd" id="2_yf0e8"]
 [ext_resource type="Texture2D" uid="uid://c2j7jvx437d0y" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/史莱姆.png" id="3_aajfp"]
 [ext_resource type="PackedScene" uid="uid://b15iceej3khq1" path="res://Scenes/Enemies/SlimeChild/small_slime.tscn" id="3_ap3jm"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_1juw4"]
 [ext_resource type="AudioStream" uid="uid://cbl0di0wcb05x" path="res://Assets/Sounds/FXs/Enemies/史莱姆/史莱姆攻击2.wav" id="4_wkps6"]
 [ext_resource type="AudioStream" uid="uid://sehnxvlavjwu" path="res://Assets/Sounds/FXs/Enemies/史莱姆/大型史莱姆1.wav" id="5_emcr3"]
 [ext_resource type="AudioStream" uid="uid://c3s8nm807180s" path="res://Assets/Sounds/FXs/Enemies/史莱姆/大型史莱姆2.wav" id="6_nh45n"]
+[ext_resource type="Resource" uid="uid://cy263cfe2b4by" path="res://Library/Enemies/EnemyDatas/middle_slime.tres" id="7_51m5p"]
 [ext_resource type="AudioStream" uid="uid://dcgfmrbt30wrb" path="res://Assets/Sounds/FXs/Enemies/史莱姆/大型史莱姆3.wav" id="7_c1o8w"]
 [ext_resource type="AudioStream" uid="uid://d8sn0pw5ay13" path="res://Assets/Sounds/FXs/Enemies/史莱姆/大型史莱姆4.wav" id="8_tghch"]
 [ext_resource type="Texture2D" uid="uid://bj7em8clhidfh" path="res://Assets/Animations/Enemies/39史莱姆/die_00.png" id="9_3mk5h"]
@@ -116,28 +116,6 @@
 [ext_resource type="Texture2D" uid="uid://bmyhau0fj8oqu" path="res://Assets/Animations/Enemies/39史莱姆/move_normal_29.png" id="113_7lj5c"]
 [ext_resource type="Texture2D" uid="uid://y3itr74eo7gk" path="res://Assets/Animations/Enemies/39史莱姆/move_normal_30.png" id="114_bqj3s"]
 [ext_resource type="AudioStream" uid="uid://bsn52x18c1tkf" path="res://Assets/Sounds/FXs/Enemies/史莱姆/史莱姆攻击1.wav" id="115_lum63"]
-
-
-[sub_resource type="Resource" id="Resource_dkhgq"]
-script = ExtResource("4_1juw4")
-health = 400
-dodge_rate = 0.0
-near_damage_low = 2
-near_damage_high = 4
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75fie"]
 animations = [{
@@ -511,7 +489,7 @@ enemy_name = "中型史莱姆"
 enemy_id = -2
 enemy_texture = ExtResource("3_aajfp")
 enemy_type = 2
-start_data = SubResource("Resource_dkhgq")
+start_data = ExtResource("7_51m5p")
 lives_taken = 2
 bounty = 4
 show_tip = false
