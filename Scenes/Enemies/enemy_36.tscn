@@ -1,8 +1,7 @@
-[gd_scene load_steps=210 format=3 uid="uid://dldv6lkqb3cu0"]
+[gd_scene load_steps=209 format=3 uid="uid://dldv6lkqb3cu0"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_0geiv"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_36.gd" id="2_orgnf"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_apuxc"]
 [ext_resource type="AudioStream" uid="uid://daa3g38pe00rv" path="res://Assets/Sounds/FXs/Enemies/唤魔者/召唤恼鬼.wav" id="3_pl2nn"]
 [ext_resource type="Texture2D" uid="uid://tyhto6a1on2q" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/唤魔者.png" id="3_w84ev"]
 [ext_resource type="Texture2D" uid="uid://c8o0l4ueeplfe" path="res://Assets/Animations/Enemies/36唤魔者/attack_00.png" id="4_nikck"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cgae4eobtp5tj" path="res://Assets/Animations/Enemies/36唤魔者/attack_06.png" id="10_1eh8j"]
 [ext_resource type="Texture2D" uid="uid://b1wmwbg7r1l1v" path="res://Assets/Animations/Enemies/36唤魔者/attack_07.png" id="11_vsele"]
 [ext_resource type="Texture2D" uid="uid://crre3eh5218rm" path="res://Assets/Animations/Enemies/36唤魔者/attack_08.png" id="12_l30f2"]
+[ext_resource type="Resource" uid="uid://cyhwy7l4f730r" path="res://Library/Enemies/EnemyDatas/enemy_36.tres" id="12_tb4ry"]
 [ext_resource type="Texture2D" uid="uid://dlto6ijqcxpr2" path="res://Assets/Animations/Enemies/36唤魔者/attack_09.png" id="13_p5ytf"]
 [ext_resource type="Texture2D" uid="uid://c00pu4pdjmdl7" path="res://Assets/Animations/Enemies/36唤魔者/attack_10.png" id="14_ywlc5"]
 [ext_resource type="Texture2D" uid="uid://bvw8si2b2318q" path="res://Assets/Animations/Enemies/36唤魔者/attack_11.png" id="15_r6jrn"]
@@ -206,27 +206,6 @@
 [ext_resource type="AudioStream" uid="uid://3usvg26t3bis" path="res://Assets/Sounds/FXs/Enemies/唤魔者/唤魔者出现2.wav" id="196_1cpej"]
 [ext_resource type="AudioStream" uid="uid://cwqjf6cl0bu8l" path="res://Assets/Sounds/FXs/Enemies/唤魔者/唤魔者出现3.wav" id="197_ka61r"]
 [ext_resource type="AudioStream" uid="uid://r1rk6blovfyd" path="res://Assets/Sounds/FXs/Enemies/唤魔者/唤魔者出现4.wav" id="198_uxuxg"]
-
-[sub_resource type="Resource" id="Resource_4paie"]
-script = ExtResource("3_apuxc")
-health = 560
-dodge_rate = 0.0
-near_damage_low = 50
-near_damage_high = 60
-near_attack_speed = 4.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.95
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oerd5"]
 animations = [{
@@ -1126,7 +1105,7 @@ vex_scene = ExtResource("8_pyylq")
 enemy_name = "唤魔者"
 enemy_id = 36
 enemy_texture = ExtResource("3_w84ev")
-start_data = SubResource("Resource_4paie")
+start_data = ExtResource("12_tb4ry")
 bounty = 36
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_1iboa"), ExtResource("6_fcxpc")])
 

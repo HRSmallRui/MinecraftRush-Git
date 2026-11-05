@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://b7h2sovy54j3d"]
+[gd_scene load_steps=123 format=3 uid="uid://b7h2sovy54j3d"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_vf35s"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_42.gd" id="2_o6tl5"]
@@ -6,13 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://dld0t15ulktti" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼attack1.wav" id="3_35v62"]
 [ext_resource type="Texture2D" uid="uid://dkge4lylvfpi3" path="res://Assets/Animations/Enemies/42恼鬼/attack_00.png" id="4_8gk7f"]
 [ext_resource type="AudioStream" uid="uid://b3bp6i60v5rit" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼attack2.wav" id="4_hwndc"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_r5fmk"]
 [ext_resource type="AudioStream" uid="uid://dl2b3jy2x7x36" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼attack3.wav" id="5_01ju1"]
 [ext_resource type="AudioStream" uid="uid://dafjjdtfhpobl" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼die1.wav" id="5_2qqqw"]
 [ext_resource type="Texture2D" uid="uid://clbbqmvbwqcrb" path="res://Assets/Animations/Enemies/42恼鬼/attack_01.png" id="5_7rt2j"]
 [ext_resource type="Texture2D" uid="uid://d2xugym4b6635" path="res://Assets/Animations/Enemies/42恼鬼/attack_02.png" id="6_ixnkp"]
 [ext_resource type="AudioStream" uid="uid://debk0vkxpfccc" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼die2.wav" id="6_kv1jn"]
+[ext_resource type="Script" path="res://Library/Heroes/damage_block.gd" id="6_p70r6"]
 [ext_resource type="Texture2D" uid="uid://dsi3ingmkh6xp" path="res://Assets/Animations/Enemies/42恼鬼/attack_03.png" id="7_8pc2n"]
+[ext_resource type="Resource" uid="uid://n5jo6x17dj78" path="res://Library/Enemies/EnemyDatas/enemy_42.tres" id="7_dbu70"]
 [ext_resource type="Texture2D" uid="uid://nb563bjk6rf6" path="res://Assets/Animations/Enemies/42恼鬼/attack_04.png" id="8_j75r4"]
 [ext_resource type="Texture2D" uid="uid://c0ikrst0jk24o" path="res://Assets/Animations/Enemies/42恼鬼/attack_05.png" id="9_noe12"]
 [ext_resource type="Texture2D" uid="uid://cgbnavw74wb2s" path="res://Assets/Animations/Enemies/42恼鬼/attack_06.png" id="10_55fi1"]
@@ -118,26 +119,10 @@
 [ext_resource type="AudioStream" uid="uid://ola80h162jgu" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼appear3.wav" id="112_qt56y"]
 [ext_resource type="AudioStream" uid="uid://cwg7yw6h3elsl" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼appear4.wav" id="113_snj77"]
 
-[sub_resource type="Resource" id="Resource_7lh1i"]
-script = ExtResource("4_r5fmk")
-health = 80
-dodge_rate = 0.0
-near_damage_low = 0
-near_damage_high = 0
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.4
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.0
+[sub_resource type="Resource" id="Resource_n18fp"]
+script = ExtResource("6_p70r6")
+damage_low = 16
+damage_high = 30
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_635vi"]
 animations = [{
@@ -547,11 +532,12 @@ radius = 73.9444
 [node name="Enemy42" groups=["illager"] instance=ExtResource("1_vf35s")]
 script = ExtResource("2_o6tl5")
 attack_audio_list = Array[AudioStream]([ExtResource("3_35v62"), ExtResource("4_hwndc"), ExtResource("5_01ju1")])
+attack_damage = SubResource("Resource_n18fp")
 enemy_name = "恼鬼"
 enemy_id = 42
 enemy_texture = ExtResource("2_wbafy")
 enemy_type = 2
-start_data = SubResource("Resource_7lh1i")
+start_data = ExtResource("7_dbu70")
 interceptable = false
 bounty = 5
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_2qqqw"), ExtResource("6_kv1jn")])

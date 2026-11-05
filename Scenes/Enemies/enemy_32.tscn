@@ -1,9 +1,9 @@
-[gd_scene load_steps=238 format=3 uid="uid://dkm4khot84thm"]
+[gd_scene load_steps=237 format=3 uid="uid://dkm4khot84thm"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_bfru3"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_32.gd" id="2_uhq47"]
 [ext_resource type="Texture2D" uid="uid://dqgdqvgc3onet" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/厌国狂战士.png" id="3_8ih4t"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_beb5e"]
+[ext_resource type="Resource" uid="uid://1ge1dib5gklh" path="res://Library/Enemies/EnemyDatas/enemy_32.tres" id="4_bnvy4"]
 [ext_resource type="Texture2D" uid="uid://ckylegv4xwdne" path="res://Assets/Animations/Enemies/32厌国狂战士/attack1_00.png" id="4_vihko"]
 [ext_resource type="Texture2D" uid="uid://dasawwguk82r5" path="res://Assets/Animations/Enemies/32厌国狂战士/attack1_01.png" id="5_ikygl"]
 [ext_resource type="Texture2D" uid="uid://0f2fwplyfk5t" path="res://Assets/Animations/Enemies/32厌国狂战士/attack1_02.png" id="6_ne4ww"]
@@ -232,28 +232,6 @@
 [ext_resource type="Texture2D" uid="uid://b0xehs403hjim" path="res://Assets/Animations/Enemies/32厌国狂战士/move_normal_39.png" id="195_tddpk"]
 [ext_resource type="AudioStream" uid="uid://b1qce1o4ia1m1" path="res://Assets/Sounds/FXs/Battles/aoe_hit.wav" id="231_ombfv"]
 [ext_resource type="AudioStream" uid="uid://7v4dnuq1biyi" path="res://Assets/Sounds/FXs/Enemies/狂战士必杀.wav" id="232_vuogu"]
-
-
-[sub_resource type="Resource" id="Resource_70hri"]
-script = ExtResource("3_beb5e")
-health = 3650
-dodge_rate = 0.0
-near_damage_low = 120
-near_damage_high = 170
-near_attack_speed = 2.5
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.4
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.4
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ebom"]
 animations = [{
@@ -1000,7 +978,7 @@ enemy_name = "厌国狂战士"
 enemy_id = 32
 enemy_texture = ExtResource("3_8ih4t")
 enemy_type = 2
-start_data = SubResource("Resource_70hri")
+start_data = ExtResource("4_bnvy4")
 lives_taken = 5
 bounty = 300
 die_audio_stream_list = Array[AudioStream]([])
@@ -1049,7 +1027,7 @@ debug_color = Color(1, 1, 1, 0)
 [node name="SuperAttackArea" type="Area2D" parent="UnitBody" index="9"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/SuperAttackArea" index="0"]
 scale = Vector2(5, 3.5)
@@ -1059,7 +1037,7 @@ debug_color = Color(1, 1, 1, 0)
 [node name="ExplosionArea" type="Area2D" parent="UnitBody" index="10"]
 scale = Vector2(2, 2)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/ExplosionArea" index="0"]
 scale = Vector2(5, 3.5)

@@ -5,6 +5,8 @@ extends VBoxContainer
 	set(v):
 		call_deferred("on_update")
 @export var linked_data: UnitData
+@export var eternal_health: bool
+@export var unknown_damage: bool
 @export var damage_near_range: int = 0:
 	set(v):
 		damage_near_range = v
@@ -95,6 +97,9 @@ func on_update():
 	move_speed_label.text = str(linked_data.unit_move_speed)
 	lives_taken_label.text = str(lives_taken)
 	money_label.text = str(enemy_bounty)
+	
+	if eternal_health: health_label.text = "??"
+	if unknown_damage: damage_near_label.text = "?? - ??"
 	pass
 
 
@@ -124,4 +129,6 @@ func update_health():
 	var health: int = linked_data.health
 	health *= difficulty_rate_list[difficulty]
 	health_label.text = str(health)
+	
+	if eternal_health: health_label.text = "??"
 	pass
