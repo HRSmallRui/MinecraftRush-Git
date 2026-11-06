@@ -1,12 +1,12 @@
-[gd_scene load_steps=258 format=3 uid="uid://dp25g8s5is0j"]
+[gd_scene load_steps=257 format=3 uid="uid://dp25g8s5is0j"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_cv5kg"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_47.gd" id="2_x2k1e"]
 [ext_resource type="Texture2D" uid="uid://dkekou4fb0yiu" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter5/白眼法师.png" id="3_ahkfd"]
 [ext_resource type="PackedScene" uid="uid://bjj80hcm672tg" path="res://Scenes/Buffs/Enemies/white_witch_heal_buff.tscn" id="3_de0aj"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_r5yqo"]
 [ext_resource type="Texture2D" uid="uid://7kga7y4yv63r" path="res://Assets/Animations/Enemies/47白眼法师/attack_00.png" id="4_go1yv"]
 [ext_resource type="AudioStream" uid="uid://mdc5281gfyfh" path="res://Assets/Sounds/FXs/Enemies/人偶/脉冲.wav" id="5_6vngg"]
+[ext_resource type="Resource" uid="uid://d32w5kpd7ouq1" path="res://Library/Enemies/EnemyDatas/enemy_47.tres" id="5_ckx5k"]
 [ext_resource type="Texture2D" uid="uid://dm75s16cbakxk" path="res://Assets/Animations/Enemies/47白眼法师/attack_01.png" id="5_lreu4"]
 [ext_resource type="PackedScene" uid="uid://dfmugu6n3q1tt" path="res://Scenes/Bullets/whie_witch_magic_ball.tscn" id="5_ynof4"]
 [ext_resource type="Texture2D" uid="uid://dg87xkogr24t7" path="res://Assets/Animations/Enemies/47白眼法师/attack_02.png" id="6_8ee48"]
@@ -253,27 +253,6 @@
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="248_lt686"]
 [ext_resource type="Texture2D" uid="uid://ccglhhifm554s" path="res://Assets/Images/Effects/鼓舞光环.png" id="248_uvyvl"]
 [ext_resource type="AudioStream" uid="uid://cq0hmmp6grfpw" path="res://Assets/Sounds/FXs/Battles/魔法拳.wav" id="250_255bw"]
-
-[sub_resource type="Resource" id="Resource_j73c3"]
-script = ExtResource("3_r5yqo")
-health = 760
-dodge_rate = 0.0
-near_damage_low = 10
-near_damage_high = 12
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 70
-far_damage_high = 80
-far_attack_speed = 1.5
-far_damage_range = 280
-armor = 0.0
-physic_immune = false
-magic_defence = 0.7
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vha5u"]
 animations = [{
@@ -1058,7 +1037,7 @@ enemy_name = "白眼法师"
 enemy_id = 47
 enemy_texture = ExtResource("3_ahkfd")
 enemy_type = 2
-start_data = SubResource("Resource_j73c3")
+start_data = ExtResource("5_ckx5k")
 far_attack_bullet_scene = ExtResource("5_ynof4")
 bounty = 32
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_6vngg")])
