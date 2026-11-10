@@ -1,12 +1,12 @@
-[gd_scene load_steps=234 format=3 uid="uid://ds6gk401s8krk"]
+[gd_scene load_steps=233 format=3 uid="uid://ds6gk401s8krk"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_wbobx"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_58.gd" id="2_jsht0"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_7bfur"]
 [ext_resource type="Texture2D" uid="uid://blvximn1e4idw" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter5/LIVER.png" id="3_lidj5"]
 [ext_resource type="PackedScene" uid="uid://b114ai8fd5tc6" path="res://Scenes/Effects/blood_spit_effect.tscn" id="3_tsq1c"]
 [ext_resource type="Texture2D" uid="uid://cdkht33wfyjxd" path="res://Assets/Animations/Enemies/58LIVER/attack_00.png" id="4_wrp8r"]
 [ext_resource type="AudioStream" uid="uid://dbtgg1fvplh1g" path="res://Assets/Sounds/FXs/Enemies/尸国统帅/尸国统帅死亡.wav" id="5_5hqo8"]
+[ext_resource type="Resource" uid="uid://cogxa881wq34t" path="res://Library/Enemies/EnemyDatas/enemy_58.tres" id="5_jgn56"]
 [ext_resource type="Texture2D" uid="uid://b56myjniarrkr" path="res://Assets/Animations/Enemies/58LIVER/attack_01.png" id="5_pahvq"]
 [ext_resource type="Texture2D" uid="uid://dxdrrpct2nwg0" path="res://Assets/Animations/Enemies/58LIVER/attack_02.png" id="6_4f81a"]
 [ext_resource type="Texture2D" uid="uid://nbbfouuhl1de" path="res://Assets/Animations/Enemies/58LIVER/attack_03.png" id="7_w5uk4"]
@@ -229,28 +229,6 @@
 [ext_resource type="AudioStream" uid="uid://b1qce1o4ia1m1" path="res://Assets/Sounds/FXs/Battles/aoe_hit.wav" id="225_abulq"]
 [ext_resource type="PackedScene" uid="uid://dcqlwpqyykpkq" path="res://Scenes/Enemies/EnemyComponents/boss_ui.tscn" id="227_fckmo"]
 [ext_resource type="AudioStream" uid="uid://deoylb3dk2ljx" path="res://Assets/Sounds/FXs/Enemies/尸国统帅/血雨.wav" id="228_ruewj"]
-
-
-[sub_resource type="Resource" id="Resource_yhspl"]
-script = ExtResource("3_7bfur")
-health = 9000
-dodge_rate = 0.0
-near_damage_low = 70
-near_damage_high = 90
-near_attack_speed = 1.5
-near_hit_rate = 1.5
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ss2j"]
 animations = [{
@@ -964,7 +942,7 @@ enemy_id = 58
 enemy_texture = ExtResource("3_lidj5")
 enemy_type = 5
 is_final_boss = true
-start_data = SubResource("Resource_yhspl")
+start_data = ExtResource("5_jgn56")
 lives_taken = 20
 show_tip = false
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_5hqo8")])
@@ -1006,7 +984,7 @@ position = Vector2(160, 0)
 [node name="AttackArea" type="Area2D" parent="UnitBody" index="8"]
 scale = Vector2(1.8, 1.8)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/AttackArea" index="0"]
 scale = Vector2(5, 3.5)
