@@ -1,12 +1,12 @@
-[gd_scene load_steps=244 format=3 uid="uid://ceg4ixysmvsx"]
+[gd_scene load_steps=243 format=3 uid="uid://ceg4ixysmvsx"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_l0ags"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_48.gd" id="2_clr87"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_0jdx4"]
 [ext_resource type="Texture2D" uid="uid://chwc6xmvkks8t" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter5/白眼傀儡.png" id="3_cfb34"]
 [ext_resource type="Texture2D" uid="uid://1ubo4ur4yl2h" path="res://Assets/Animations/Enemies/48白眼傀儡/attack_00.png" id="3_tsacq"]
 [ext_resource type="AudioStream" uid="uid://b1qce1o4ia1m1" path="res://Assets/Sounds/FXs/Battles/aoe_hit.wav" id="4_4inhr"]
 [ext_resource type="Texture2D" uid="uid://ch1f50v0vbv4h" path="res://Assets/Animations/Enemies/48白眼傀儡/attack_01.png" id="4_7h2cf"]
+[ext_resource type="Resource" uid="uid://bp4ldjp00o7ti" path="res://Library/Enemies/EnemyDatas/enemy_48.tres" id="4_xd02n"]
 [ext_resource type="Texture2D" uid="uid://bfl0gj6xo5esy" path="res://Assets/Animations/Enemies/48白眼傀儡/attack_02.png" id="5_r3lw2"]
 [ext_resource type="Texture2D" uid="uid://cq4gto6okimvk" path="res://Assets/Animations/Enemies/48白眼傀儡/attack_03.png" id="6_r32kj"]
 [ext_resource type="Texture2D" uid="uid://cj2fd75mg0h76" path="res://Assets/Animations/Enemies/48白眼傀儡/attack_04.png" id="7_wbn5f"]
@@ -239,28 +239,6 @@
 [ext_resource type="AudioStream" uid="uid://ddwrkohhv4ma2" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳出现2.wav" id="234_bepsc"]
 [ext_resource type="AudioStream" uid="uid://cdlnobqdkucyt" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳出现3.wav" id="235_tk88h"]
 [ext_resource type="AudioStream" uid="uid://tj2qdr0snm0b" path="res://Assets/Sounds/FXs/Enemies/人偶/人偶.wav" id="239_vkovr"]
-
-
-[sub_resource type="Resource" id="Resource_8t2x1"]
-script = ExtResource("3_0jdx4")
-health = 1000
-dodge_rate = 0.0
-near_damage_low = 50
-near_damage_high = 100
-near_attack_speed = 2.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mmp18"]
 animations = [{
@@ -994,7 +972,7 @@ enemy_name = "白眼傀儡"
 enemy_id = 48
 enemy_texture = ExtResource("3_cfb34")
 enemy_type = 2
-start_data = SubResource("Resource_8t2x1")
+start_data = ExtResource("4_xd02n")
 lives_taken = 2
 bounty = 50
 die_audio_stream_list = Array[AudioStream]([ExtResource("232_ksmh7")])

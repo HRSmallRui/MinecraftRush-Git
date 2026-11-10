@@ -1,0 +1,1365 @@
+[gd_scene load_steps=235 format=3 uid="uid://pyq2xqnioaqb"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_73oob"]
+[ext_resource type="Texture2D" uid="uid://dm1jow2fblvtc" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy47.png" id="2_4cpx8"]
+[ext_resource type="Texture2D" uid="uid://dkekou4fb0yiu" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter5/白眼法师.png" id="3_7j7o4"]
+[ext_resource type="PackedScene" uid="uid://dpokgu1x5q6xf" path="res://Scenes/UI-Components/Wiki/wiki_enemy_table.tscn" id="4_4e2ve"]
+[ext_resource type="Resource" uid="uid://d32w5kpd7ouq1" path="res://Library/Enemies/EnemyDatas/enemy_47.tres" id="5_x4t7q"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="8_qtv7v"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="9_pxmaf"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="10_u4krk"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="11_o2e6c"]
+[ext_resource type="Texture2D" uid="uid://7kga7y4yv63r" path="res://Assets/Animations/Enemies/47白眼法师/attack_00.png" id="12_fkhee"]
+[ext_resource type="Texture2D" uid="uid://dm75s16cbakxk" path="res://Assets/Animations/Enemies/47白眼法师/attack_01.png" id="13_phsjk"]
+[ext_resource type="Texture2D" uid="uid://dg87xkogr24t7" path="res://Assets/Animations/Enemies/47白眼法师/attack_02.png" id="14_d2fvq"]
+[ext_resource type="Texture2D" uid="uid://ct40cyna4k0c0" path="res://Assets/Animations/Enemies/47白眼法师/attack_03.png" id="15_vmwwj"]
+[ext_resource type="Texture2D" uid="uid://fhiqnln6id41" path="res://Assets/Animations/Enemies/47白眼法师/attack_04.png" id="16_fdbqi"]
+[ext_resource type="Texture2D" uid="uid://b78lqv27yf33b" path="res://Assets/Animations/Enemies/47白眼法师/attack_05.png" id="17_auyuu"]
+[ext_resource type="Texture2D" uid="uid://cdqeb1k3dtqrq" path="res://Assets/Animations/Enemies/47白眼法师/attack_06.png" id="18_nadjh"]
+[ext_resource type="Texture2D" uid="uid://bi5pitjlgqynl" path="res://Assets/Animations/Enemies/47白眼法师/attack_07.png" id="19_q51h5"]
+[ext_resource type="Texture2D" uid="uid://ber18tkpxjlbp" path="res://Assets/Animations/Enemies/47白眼法师/attack_08.png" id="20_j17v3"]
+[ext_resource type="Texture2D" uid="uid://cvwofqywaumbm" path="res://Assets/Animations/Enemies/47白眼法师/attack_09.png" id="21_kuauh"]
+[ext_resource type="Texture2D" uid="uid://edatuuxtqxh1" path="res://Assets/Animations/Enemies/47白眼法师/attack_10.png" id="22_126ki"]
+[ext_resource type="Texture2D" uid="uid://57glqkeio52k" path="res://Assets/Animations/Enemies/47白眼法师/attack_11.png" id="23_rve43"]
+[ext_resource type="Texture2D" uid="uid://h27dgrsxt6ip" path="res://Assets/Animations/Enemies/47白眼法师/attack_12.png" id="24_q0lxr"]
+[ext_resource type="Texture2D" uid="uid://33p2jdxc3wry" path="res://Assets/Animations/Enemies/47白眼法师/attack_13.png" id="25_ojnt7"]
+[ext_resource type="Texture2D" uid="uid://b4em6aiwfi4hr" path="res://Assets/Animations/Enemies/47白眼法师/attack_14.png" id="26_12vc7"]
+[ext_resource type="Texture2D" uid="uid://dq6d7pc8gdfts" path="res://Assets/Animations/Enemies/47白眼法师/attack_15.png" id="27_e3xp1"]
+[ext_resource type="Texture2D" uid="uid://2d755x0hh5hy" path="res://Assets/Animations/Enemies/47白眼法师/attack_16.png" id="28_7hdhh"]
+[ext_resource type="Texture2D" uid="uid://brku00w8xfc8b" path="res://Assets/Animations/Enemies/47白眼法师/attack_17.png" id="29_42cum"]
+[ext_resource type="Texture2D" uid="uid://cl3xltrtunqnb" path="res://Assets/Animations/Enemies/47白眼法师/attack_18.png" id="30_r12eq"]
+[ext_resource type="Texture2D" uid="uid://clwdgrjdb1ae7" path="res://Assets/Animations/Enemies/47白眼法师/attack_19.png" id="31_00cf3"]
+[ext_resource type="Texture2D" uid="uid://blvpgdxfuwuxm" path="res://Assets/Animations/Enemies/47白眼法师/attack_20.png" id="32_jcx0h"]
+[ext_resource type="Texture2D" uid="uid://oujerq0mvkm3" path="res://Assets/Animations/Enemies/47白眼法师/die_00.png" id="33_xi0x4"]
+[ext_resource type="Texture2D" uid="uid://dgbr2bbcgqvif" path="res://Assets/Animations/Enemies/47白眼法师/die_01.png" id="34_3iwx6"]
+[ext_resource type="Texture2D" uid="uid://b0i6hdwh6eu2k" path="res://Assets/Animations/Enemies/47白眼法师/die_02.png" id="35_12ut5"]
+[ext_resource type="Texture2D" uid="uid://b3ko0tfxsnjeh" path="res://Assets/Animations/Enemies/47白眼法师/die_03.png" id="36_frf3u"]
+[ext_resource type="Texture2D" uid="uid://bm8gicdn3qv25" path="res://Assets/Animations/Enemies/47白眼法师/die_04.png" id="37_37roi"]
+[ext_resource type="Texture2D" uid="uid://caibjdhcyavsb" path="res://Assets/Animations/Enemies/47白眼法师/die_05.png" id="38_gm7ax"]
+[ext_resource type="Texture2D" uid="uid://dg84b8xmvmlt1" path="res://Assets/Animations/Enemies/47白眼法师/die_06.png" id="39_b56qh"]
+[ext_resource type="Texture2D" uid="uid://b2w6mk8bydg05" path="res://Assets/Animations/Enemies/47白眼法师/die_07.png" id="40_y0bj5"]
+[ext_resource type="Texture2D" uid="uid://dxhm47d27grb7" path="res://Assets/Animations/Enemies/47白眼法师/die_08.png" id="41_k6m3t"]
+[ext_resource type="Texture2D" uid="uid://gydtk8ifc1ry" path="res://Assets/Animations/Enemies/47白眼法师/die_09.png" id="42_jjp3u"]
+[ext_resource type="Texture2D" uid="uid://cckpy3s2qjdd" path="res://Assets/Animations/Enemies/47白眼法师/die_10.png" id="43_eqyph"]
+[ext_resource type="Texture2D" uid="uid://drwm14s1520sw" path="res://Assets/Animations/Enemies/47白眼法师/die_11.png" id="44_v0ppd"]
+[ext_resource type="Texture2D" uid="uid://csmbi2xay82m" path="res://Assets/Animations/Enemies/47白眼法师/die_12.png" id="45_oaj4v"]
+[ext_resource type="Texture2D" uid="uid://d3u64u1fydowr" path="res://Assets/Animations/Enemies/47白眼法师/die_13.png" id="46_64w7v"]
+[ext_resource type="Texture2D" uid="uid://babn33g6nqjg1" path="res://Assets/Animations/Enemies/47白眼法师/die_14.png" id="47_rq8ew"]
+[ext_resource type="Texture2D" uid="uid://b884unel73gcb" path="res://Assets/Animations/Enemies/47白眼法师/die_15.png" id="48_wwlfs"]
+[ext_resource type="Texture2D" uid="uid://cmpilqmet526p" path="res://Assets/Animations/Enemies/47白眼法师/die_16.png" id="49_1yj2y"]
+[ext_resource type="Texture2D" uid="uid://cnw0gd6mc8od6" path="res://Assets/Animations/Enemies/47白眼法师/die_17.png" id="50_36j7t"]
+[ext_resource type="Texture2D" uid="uid://bjtmoar5f8a20" path="res://Assets/Animations/Enemies/47白眼法师/die_18.png" id="51_3jjjx"]
+[ext_resource type="Texture2D" uid="uid://8qcgu6ucra73" path="res://Assets/Animations/Enemies/47白眼法师/die_19.png" id="52_spqhr"]
+[ext_resource type="Texture2D" uid="uid://bico3voc1w14h" path="res://Assets/Animations/Enemies/47白眼法师/die_20.png" id="53_3wu3k"]
+[ext_resource type="Texture2D" uid="uid://c3kfmos2h46ow" path="res://Assets/Animations/Enemies/47白眼法师/move_back_00.png" id="54_sskyo"]
+[ext_resource type="Texture2D" uid="uid://gv3hutfck88u" path="res://Assets/Animations/Enemies/47白眼法师/move_back_01.png" id="55_ekavx"]
+[ext_resource type="Texture2D" uid="uid://b4vpn681h7w4b" path="res://Assets/Animations/Enemies/47白眼法师/move_back_02.png" id="56_1eb1l"]
+[ext_resource type="Texture2D" uid="uid://ccfxqy5725pm3" path="res://Assets/Animations/Enemies/47白眼法师/move_back_03.png" id="57_ell02"]
+[ext_resource type="Texture2D" uid="uid://b2r21f0aibvwk" path="res://Assets/Animations/Enemies/47白眼法师/move_back_04.png" id="58_0lij3"]
+[ext_resource type="Texture2D" uid="uid://bjocokdxg4rp0" path="res://Assets/Animations/Enemies/47白眼法师/move_back_05.png" id="59_j232f"]
+[ext_resource type="Texture2D" uid="uid://ds8rln8omo8dm" path="res://Assets/Animations/Enemies/47白眼法师/move_back_06.png" id="60_omdfq"]
+[ext_resource type="Texture2D" uid="uid://dtwmxvpaialdy" path="res://Assets/Animations/Enemies/47白眼法师/move_back_07.png" id="61_23yd1"]
+[ext_resource type="Texture2D" uid="uid://juxjlsawnf11" path="res://Assets/Animations/Enemies/47白眼法师/move_back_08.png" id="62_uwy5r"]
+[ext_resource type="Texture2D" uid="uid://n7tla1p4npop" path="res://Assets/Animations/Enemies/47白眼法师/move_back_09.png" id="63_ucfgk"]
+[ext_resource type="Texture2D" uid="uid://phef55fiy1g7" path="res://Assets/Animations/Enemies/47白眼法师/move_back_10.png" id="64_u8qs3"]
+[ext_resource type="Texture2D" uid="uid://bn0i6hrkex03" path="res://Assets/Animations/Enemies/47白眼法师/move_back_11.png" id="65_6rgch"]
+[ext_resource type="Texture2D" uid="uid://cbgwkgc5k0wij" path="res://Assets/Animations/Enemies/47白眼法师/move_back_12.png" id="66_gn612"]
+[ext_resource type="Texture2D" uid="uid://bom8kkk3x60d8" path="res://Assets/Animations/Enemies/47白眼法师/move_back_13.png" id="67_ymn6u"]
+[ext_resource type="Texture2D" uid="uid://cavw1haioyanx" path="res://Assets/Animations/Enemies/47白眼法师/move_back_14.png" id="68_hcra7"]
+[ext_resource type="Texture2D" uid="uid://ceaubbq028vno" path="res://Assets/Animations/Enemies/47白眼法师/move_back_15.png" id="69_6of13"]
+[ext_resource type="Texture2D" uid="uid://ctoiok0dm0ysp" path="res://Assets/Animations/Enemies/47白眼法师/move_back_16.png" id="70_8a8mw"]
+[ext_resource type="Texture2D" uid="uid://cpihhxj1lrayg" path="res://Assets/Animations/Enemies/47白眼法师/move_back_17.png" id="71_y3vd5"]
+[ext_resource type="Texture2D" uid="uid://b0kulrqfopm73" path="res://Assets/Animations/Enemies/47白眼法师/move_back_18.png" id="72_q04qs"]
+[ext_resource type="Texture2D" uid="uid://dcpdf5kff8bvn" path="res://Assets/Animations/Enemies/47白眼法师/move_back_19.png" id="73_vph5q"]
+[ext_resource type="Texture2D" uid="uid://c6uy3ymadf0j0" path="res://Assets/Animations/Enemies/47白眼法师/move_back_20.png" id="74_jlso5"]
+[ext_resource type="Texture2D" uid="uid://b2dnir68tsv0j" path="res://Assets/Animations/Enemies/47白眼法师/move_back_21.png" id="75_nno6l"]
+[ext_resource type="Texture2D" uid="uid://duf2i7hibhavi" path="res://Assets/Animations/Enemies/47白眼法师/move_back_22.png" id="76_g1qui"]
+[ext_resource type="Texture2D" uid="uid://ucfe18ioee7e" path="res://Assets/Animations/Enemies/47白眼法师/move_back_23.png" id="77_wvou6"]
+[ext_resource type="Texture2D" uid="uid://d0eyuug7yde7s" path="res://Assets/Animations/Enemies/47白眼法师/move_back_24.png" id="78_3mldm"]
+[ext_resource type="Texture2D" uid="uid://k3cs2bwgaphb" path="res://Assets/Animations/Enemies/47白眼法师/move_back_25.png" id="79_uq0q6"]
+[ext_resource type="Texture2D" uid="uid://dw433usjot04v" path="res://Assets/Animations/Enemies/47白眼法师/move_back_26.png" id="80_1n14r"]
+[ext_resource type="Texture2D" uid="uid://xqs2dufc3olf" path="res://Assets/Animations/Enemies/47白眼法师/move_back_27.png" id="81_vvux8"]
+[ext_resource type="Texture2D" uid="uid://duj2euoslymax" path="res://Assets/Animations/Enemies/47白眼法师/move_back_28.png" id="82_utpvw"]
+[ext_resource type="Texture2D" uid="uid://bv3crray5b4u8" path="res://Assets/Animations/Enemies/47白眼法师/move_back_29.png" id="83_8n14k"]
+[ext_resource type="Texture2D" uid="uid://pawed2vnovjr" path="res://Assets/Animations/Enemies/47白眼法师/move_back_30.png" id="84_clsil"]
+[ext_resource type="Texture2D" uid="uid://dl67ylywpwk4q" path="res://Assets/Animations/Enemies/47白眼法师/move_back_31.png" id="85_vqkfw"]
+[ext_resource type="Texture2D" uid="uid://dfp8syxq5bwrr" path="res://Assets/Animations/Enemies/47白眼法师/move_back_32.png" id="86_sufw0"]
+[ext_resource type="Texture2D" uid="uid://bysyqplsaso53" path="res://Assets/Animations/Enemies/47白眼法师/move_back_33.png" id="87_wd1qm"]
+[ext_resource type="Texture2D" uid="uid://buqiuru4m5st8" path="res://Assets/Animations/Enemies/47白眼法师/move_back_34.png" id="88_pg1kl"]
+[ext_resource type="Texture2D" uid="uid://ddc5er8vap5kg" path="res://Assets/Animations/Enemies/47白眼法师/move_back_35.png" id="89_p3y3t"]
+[ext_resource type="Texture2D" uid="uid://bpamnjqyjqvfd" path="res://Assets/Animations/Enemies/47白眼法师/move_back_36.png" id="90_2jok1"]
+[ext_resource type="Texture2D" uid="uid://b6167mpf2can7" path="res://Assets/Animations/Enemies/47白眼法师/move_back_37.png" id="91_yb7mr"]
+[ext_resource type="Texture2D" uid="uid://dpaasd4p7gm6s" path="res://Assets/Animations/Enemies/47白眼法师/move_back_38.png" id="92_fhmwh"]
+[ext_resource type="Texture2D" uid="uid://3s3spli6qkyk" path="res://Assets/Animations/Enemies/47白眼法师/move_back_39.png" id="93_pl7pb"]
+[ext_resource type="Texture2D" uid="uid://ct8v40jagu5sm" path="res://Assets/Animations/Enemies/47白眼法师/move_back_40.png" id="94_xwpny"]
+[ext_resource type="Texture2D" uid="uid://dbegnjgcpgwd6" path="res://Assets/Animations/Enemies/47白眼法师/move_back_41.png" id="95_gssn8"]
+[ext_resource type="Texture2D" uid="uid://dd4503d3xie4m" path="res://Assets/Animations/Enemies/47白眼法师/move_back_42.png" id="96_8nc0q"]
+[ext_resource type="Texture2D" uid="uid://by4dsscso0i5t" path="res://Assets/Animations/Enemies/47白眼法师/move_back_43.png" id="97_6nsku"]
+[ext_resource type="Texture2D" uid="uid://bfo5anybt5ekh" path="res://Assets/Animations/Enemies/47白眼法师/move_back_44.png" id="98_ayt2a"]
+[ext_resource type="Texture2D" uid="uid://b33lnd5ouilj5" path="res://Assets/Animations/Enemies/47白眼法师/move_back_45.png" id="99_3p8ww"]
+[ext_resource type="Texture2D" uid="uid://cyocesejiospa" path="res://Assets/Animations/Enemies/47白眼法师/move_back_46.png" id="100_wxkk7"]
+[ext_resource type="Texture2D" uid="uid://cjpjsxqdtmeo5" path="res://Assets/Animations/Enemies/47白眼法师/move_back_47.png" id="101_jyvtu"]
+[ext_resource type="Texture2D" uid="uid://j8pm3lh4yesf" path="res://Assets/Animations/Enemies/47白眼法师/move_front_00.png" id="102_tyecp"]
+[ext_resource type="Texture2D" uid="uid://cmv3jjom0mytc" path="res://Assets/Animations/Enemies/47白眼法师/move_front_01.png" id="103_wni4t"]
+[ext_resource type="Texture2D" uid="uid://bpwrd8phx2lta" path="res://Assets/Animations/Enemies/47白眼法师/move_front_02.png" id="104_2bdsw"]
+[ext_resource type="Texture2D" uid="uid://bs00wlpm644n8" path="res://Assets/Animations/Enemies/47白眼法师/move_front_03.png" id="105_ttcyv"]
+[ext_resource type="Texture2D" uid="uid://bcg8lij1821bp" path="res://Assets/Animations/Enemies/47白眼法师/move_front_04.png" id="106_p0vgs"]
+[ext_resource type="Texture2D" uid="uid://baty5qibljmno" path="res://Assets/Animations/Enemies/47白眼法师/move_front_05.png" id="107_ghjog"]
+[ext_resource type="Texture2D" uid="uid://c361ijgx8gmtr" path="res://Assets/Animations/Enemies/47白眼法师/move_front_06.png" id="108_s1nmr"]
+[ext_resource type="Texture2D" uid="uid://dhhs1npg1esf2" path="res://Assets/Animations/Enemies/47白眼法师/move_front_07.png" id="109_s7dkf"]
+[ext_resource type="Texture2D" uid="uid://d0sgg4jrvmch5" path="res://Assets/Animations/Enemies/47白眼法师/move_front_08.png" id="110_hb0qh"]
+[ext_resource type="Texture2D" uid="uid://d3lw7vs8kydt5" path="res://Assets/Animations/Enemies/47白眼法师/move_front_09.png" id="111_2dkx8"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="111_k6d1n"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="112_ne2ys"]
+[ext_resource type="Texture2D" uid="uid://o8talu0e75n4" path="res://Assets/Animations/Enemies/47白眼法师/move_front_10.png" id="112_xtt8y"]
+[ext_resource type="Texture2D" uid="uid://dva2wfucecoqd" path="res://Assets/Animations/Enemies/47白眼法师/move_front_11.png" id="113_6retd"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="113_qoi0x"]
+[ext_resource type="AudioStream" uid="uid://mdc5281gfyfh" path="res://Assets/Sounds/FXs/Enemies/人偶/脉冲.wav" id="114_04tnp"]
+[ext_resource type="Texture2D" uid="uid://b4xt4bns1jcow" path="res://Assets/Animations/Enemies/47白眼法师/move_front_12.png" id="114_ikaex"]
+[ext_resource type="AudioStream" uid="uid://tj2qdr0snm0b" path="res://Assets/Sounds/FXs/Enemies/人偶/人偶.wav" id="115_3nx2g"]
+[ext_resource type="Texture2D" uid="uid://dofc1jkc0rxp3" path="res://Assets/Animations/Enemies/47白眼法师/move_front_13.png" id="115_aasjg"]
+[ext_resource type="Texture2D" uid="uid://dmnqhd7batjaj" path="res://Assets/Animations/Enemies/47白眼法师/move_front_14.png" id="116_7ox7q"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="116_tft3e"]
+[ext_resource type="Texture2D" uid="uid://cyfad8pliai26" path="res://Assets/Animations/Enemies/47白眼法师/move_front_15.png" id="117_ohekr"]
+[ext_resource type="Texture2D" uid="uid://cyure0kf3bj4b" path="res://Assets/Animations/Enemies/47白眼法师/move_front_16.png" id="118_blspu"]
+[ext_resource type="Texture2D" uid="uid://krivryvadwt7" path="res://Assets/Animations/Enemies/47白眼法师/move_front_17.png" id="119_kvgc7"]
+[ext_resource type="Texture2D" uid="uid://bxem6pf28qgk8" path="res://Assets/Animations/Enemies/47白眼法师/move_front_18.png" id="120_50kpc"]
+[ext_resource type="Texture2D" uid="uid://c83gjn81u6bnk" path="res://Assets/Animations/Enemies/47白眼法师/move_front_19.png" id="121_4mqcp"]
+[ext_resource type="Texture2D" uid="uid://b0st0ab12e0bm" path="res://Assets/Animations/Enemies/47白眼法师/move_front_20.png" id="122_nmv2u"]
+[ext_resource type="Texture2D" uid="uid://bplu7lwelvj1d" path="res://Assets/Animations/Enemies/47白眼法师/move_front_21.png" id="123_056b4"]
+[ext_resource type="Texture2D" uid="uid://dj4ye3a7eqpqr" path="res://Assets/Animations/Enemies/47白眼法师/move_front_22.png" id="124_dlsgy"]
+[ext_resource type="Texture2D" uid="uid://s56lhqg6o1om" path="res://Assets/Animations/Enemies/47白眼法师/move_front_23.png" id="125_vc1q3"]
+[ext_resource type="Texture2D" uid="uid://b6ywe0ymnibme" path="res://Assets/Animations/Enemies/47白眼法师/move_front_24.png" id="126_dbrp6"]
+[ext_resource type="Texture2D" uid="uid://ek4x2fsmfbu3" path="res://Assets/Animations/Enemies/47白眼法师/move_front_25.png" id="127_de254"]
+[ext_resource type="Texture2D" uid="uid://ci78t4hcdonds" path="res://Assets/Animations/Enemies/47白眼法师/move_front_26.png" id="128_bhykv"]
+[ext_resource type="Texture2D" uid="uid://ce7p0anbfemr4" path="res://Assets/Animations/Enemies/47白眼法师/move_front_27.png" id="129_5cvy7"]
+[ext_resource type="Texture2D" uid="uid://cduujsfb70i8u" path="res://Assets/Animations/Enemies/47白眼法师/move_front_28.png" id="130_vpv23"]
+[ext_resource type="Texture2D" uid="uid://d0nao2v4rbmdj" path="res://Assets/Animations/Enemies/47白眼法师/move_front_29.png" id="131_3lm47"]
+[ext_resource type="Texture2D" uid="uid://bxjwupn5w5bo4" path="res://Assets/Animations/Enemies/47白眼法师/move_front_30.png" id="132_kcsqe"]
+[ext_resource type="Texture2D" uid="uid://b7mj70ofg5m6m" path="res://Assets/Animations/Enemies/47白眼法师/move_front_31.png" id="133_2hshc"]
+[ext_resource type="Texture2D" uid="uid://b2gl3hjox8e30" path="res://Assets/Animations/Enemies/47白眼法师/move_front_32.png" id="134_wqdyv"]
+[ext_resource type="Texture2D" uid="uid://domrf30cncmbq" path="res://Assets/Animations/Enemies/47白眼法师/move_front_33.png" id="135_v4445"]
+[ext_resource type="Texture2D" uid="uid://ddla6xx4f346" path="res://Assets/Animations/Enemies/47白眼法师/move_front_34.png" id="136_qwnpg"]
+[ext_resource type="Texture2D" uid="uid://2hpfodvs2qyh" path="res://Assets/Animations/Enemies/47白眼法师/move_front_35.png" id="137_3sund"]
+[ext_resource type="Texture2D" uid="uid://o5fmfyyun2oo" path="res://Assets/Animations/Enemies/47白眼法师/move_front_36.png" id="138_feot7"]
+[ext_resource type="Texture2D" uid="uid://dpx1fv2fan1sh" path="res://Assets/Animations/Enemies/47白眼法师/move_front_37.png" id="139_1sv21"]
+[ext_resource type="Texture2D" uid="uid://dmbo63wepseh6" path="res://Assets/Animations/Enemies/47白眼法师/move_front_38.png" id="140_68jsr"]
+[ext_resource type="Texture2D" uid="uid://c52r8yv83n2se" path="res://Assets/Animations/Enemies/47白眼法师/move_front_39.png" id="141_ll2vv"]
+[ext_resource type="Texture2D" uid="uid://d0omim1r74j07" path="res://Assets/Animations/Enemies/47白眼法师/move_front_40.png" id="142_mgfaj"]
+[ext_resource type="Texture2D" uid="uid://c64dkgtsoxi5g" path="res://Assets/Animations/Enemies/47白眼法师/move_front_41.png" id="143_d00xs"]
+[ext_resource type="Texture2D" uid="uid://wvgqtllxh6pc" path="res://Assets/Animations/Enemies/47白眼法师/move_front_42.png" id="144_wkoel"]
+[ext_resource type="Texture2D" uid="uid://bram7flj5qa3" path="res://Assets/Animations/Enemies/47白眼法师/move_front_43.png" id="145_yak4l"]
+[ext_resource type="Texture2D" uid="uid://b6q8c4vgsnx3t" path="res://Assets/Animations/Enemies/47白眼法师/move_front_44.png" id="146_sqgnf"]
+[ext_resource type="Texture2D" uid="uid://y27gav25vter" path="res://Assets/Animations/Enemies/47白眼法师/move_front_45.png" id="147_8fwg3"]
+[ext_resource type="Texture2D" uid="uid://b2bgyv7fa2qvj" path="res://Assets/Animations/Enemies/47白眼法师/move_front_46.png" id="148_j60go"]
+[ext_resource type="Texture2D" uid="uid://brj5vgpdgphlm" path="res://Assets/Animations/Enemies/47白眼法师/move_front_47.png" id="149_7v0wv"]
+[ext_resource type="Texture2D" uid="uid://dxakoi0xlckxl" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_00.png" id="150_aqcin"]
+[ext_resource type="Texture2D" uid="uid://cue7fjjjq852n" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_01.png" id="151_8yk4t"]
+[ext_resource type="Texture2D" uid="uid://dfhovyhdefv6i" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_02.png" id="152_j35em"]
+[ext_resource type="Texture2D" uid="uid://bqdu44i7tm2e4" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_03.png" id="153_3pc73"]
+[ext_resource type="Texture2D" uid="uid://du73jyxtqhnqa" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_04.png" id="154_t4f6y"]
+[ext_resource type="Texture2D" uid="uid://l23pbjhjsrnw" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_05.png" id="155_gomdi"]
+[ext_resource type="Texture2D" uid="uid://c76oxdw5mkk8o" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_06.png" id="156_lt46b"]
+[ext_resource type="Texture2D" uid="uid://csnssvt8jhkpd" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_07.png" id="157_simgm"]
+[ext_resource type="Texture2D" uid="uid://caw40rnl1sxsx" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_08.png" id="158_ro22p"]
+[ext_resource type="Texture2D" uid="uid://8ryb7bywsi20" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_09.png" id="159_4ci7y"]
+[ext_resource type="Texture2D" uid="uid://dpg3dy5e1dnj5" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_10.png" id="160_24i08"]
+[ext_resource type="Texture2D" uid="uid://cgsi62shtq286" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_11.png" id="161_15786"]
+[ext_resource type="Texture2D" uid="uid://b1jx10tcp57xp" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_12.png" id="162_rmjjb"]
+[ext_resource type="Texture2D" uid="uid://crwfwpnsmd35x" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_13.png" id="163_ut5qu"]
+[ext_resource type="Texture2D" uid="uid://cjmpuq0armyqf" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_14.png" id="164_kooou"]
+[ext_resource type="Texture2D" uid="uid://chde76g6q34i" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_15.png" id="165_nqydu"]
+[ext_resource type="Texture2D" uid="uid://cb8ok23ruvov0" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_16.png" id="166_q1wpu"]
+[ext_resource type="Texture2D" uid="uid://dsgjlwgl8pkp6" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_17.png" id="167_yee5n"]
+[ext_resource type="Texture2D" uid="uid://d33wt44ppypur" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_18.png" id="168_3skug"]
+[ext_resource type="Texture2D" uid="uid://b386n0e82lp87" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_19.png" id="169_rpcpe"]
+[ext_resource type="Texture2D" uid="uid://dtl2hhvd73d1u" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_20.png" id="170_gqsaf"]
+[ext_resource type="Texture2D" uid="uid://ds6p58x68um8t" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_21.png" id="171_qgobb"]
+[ext_resource type="Texture2D" uid="uid://ct0s2m15dt0hq" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_22.png" id="172_l3kpp"]
+[ext_resource type="Texture2D" uid="uid://dpakprx8ie7nf" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_23.png" id="173_xfij6"]
+[ext_resource type="Texture2D" uid="uid://mo2mjlw7y4i" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_24.png" id="174_v13fh"]
+[ext_resource type="Texture2D" uid="uid://cpifi3jaq4475" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_25.png" id="175_y2b45"]
+[ext_resource type="Texture2D" uid="uid://diamq1l7u32hy" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_26.png" id="176_hlhqp"]
+[ext_resource type="Texture2D" uid="uid://boa631fis7l18" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_27.png" id="177_h2xct"]
+[ext_resource type="Texture2D" uid="uid://cyow5dhfjhoom" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_28.png" id="178_u5yow"]
+[ext_resource type="Texture2D" uid="uid://cp35t75yr48hx" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_29.png" id="179_ds4ls"]
+[ext_resource type="Texture2D" uid="uid://bwuvbieijgkm0" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_30.png" id="180_5y2i4"]
+[ext_resource type="Texture2D" uid="uid://6ml2ly1y1ktc" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_31.png" id="181_bakvk"]
+[ext_resource type="Texture2D" uid="uid://dbumkncm4m4i4" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_32.png" id="182_d03nn"]
+[ext_resource type="Texture2D" uid="uid://dw6346j63exgp" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_33.png" id="183_kd1uq"]
+[ext_resource type="Texture2D" uid="uid://c7iy8uee30v5u" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_34.png" id="184_s5qx2"]
+[ext_resource type="Texture2D" uid="uid://f7016j8bvmg4" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_35.png" id="185_ffmpl"]
+[ext_resource type="Texture2D" uid="uid://dgx5bw54qdbo6" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_36.png" id="186_v0hef"]
+[ext_resource type="Texture2D" uid="uid://cyexkx1ib87re" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_37.png" id="187_y573w"]
+[ext_resource type="Texture2D" uid="uid://d1yaipitd1ot6" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_38.png" id="188_q0pur"]
+[ext_resource type="Texture2D" uid="uid://berp3jj8uc615" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_39.png" id="189_7hu0u"]
+[ext_resource type="Texture2D" uid="uid://dr1kf1ggaorhg" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_40.png" id="190_32vub"]
+[ext_resource type="Texture2D" uid="uid://deeuhapvsn7l5" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_41.png" id="191_wfch6"]
+[ext_resource type="Texture2D" uid="uid://nrs1uovo5b7e" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_42.png" id="192_xcqge"]
+[ext_resource type="Texture2D" uid="uid://b7rfuabktjgae" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_43.png" id="193_p03qw"]
+[ext_resource type="Texture2D" uid="uid://rmikw3iurmgu" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_44.png" id="194_6px2p"]
+[ext_resource type="Texture2D" uid="uid://bu2tdl3nd750p" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_45.png" id="195_c5qqf"]
+[ext_resource type="Texture2D" uid="uid://dpge3oqjikbnr" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_46.png" id="196_sqsn6"]
+[ext_resource type="Texture2D" uid="uid://bjq4jmmfey0le" path="res://Assets/Animations/Enemies/47白眼法师/move_normal_47.png" id="197_b3imx"]
+[ext_resource type="Texture2D" uid="uid://cloldx34mkegx" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_00.png" id="198_8ohnn"]
+[ext_resource type="Texture2D" uid="uid://qa7p4ba33q5t" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_01.png" id="199_xmbrb"]
+[ext_resource type="Texture2D" uid="uid://c7urfk47l2jsm" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_02.png" id="200_tman5"]
+[ext_resource type="Texture2D" uid="uid://dtduxpy63s15h" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_03.png" id="201_08k5e"]
+[ext_resource type="Texture2D" uid="uid://d2dechjmsnvkg" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_04.png" id="202_uk6f4"]
+[ext_resource type="Texture2D" uid="uid://dx55s81qaf11x" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_05.png" id="203_u8x4y"]
+[ext_resource type="Texture2D" uid="uid://bj4c5b6oeeiqu" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_06.png" id="204_urhfm"]
+[ext_resource type="Texture2D" uid="uid://1rkfl6h66tbv" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_07.png" id="205_s4jtq"]
+[ext_resource type="Texture2D" uid="uid://dbu7nmw1iq58" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_08.png" id="206_26jja"]
+[ext_resource type="Texture2D" uid="uid://cnu00y805d7qc" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_09.png" id="207_x16nl"]
+[ext_resource type="Texture2D" uid="uid://c8gnd42sge25y" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_10.png" id="208_td0de"]
+[ext_resource type="Texture2D" uid="uid://ba8sj1k6ryjfr" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_11.png" id="209_66yf1"]
+[ext_resource type="Texture2D" uid="uid://bolav4uxqfs24" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_12.png" id="210_cr2dc"]
+[ext_resource type="Texture2D" uid="uid://omuywqahg23i" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_13.png" id="211_nnk2n"]
+[ext_resource type="Texture2D" uid="uid://dkeo1ik7cd143" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_14.png" id="212_4tvpy"]
+[ext_resource type="Texture2D" uid="uid://cjsb7s1xg083p" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_15.png" id="213_3eni5"]
+[ext_resource type="Texture2D" uid="uid://daa2jkhklajbd" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_16.png" id="214_lixva"]
+[ext_resource type="Texture2D" uid="uid://bxg1pra13uaw8" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_17.png" id="215_xsqfk"]
+[ext_resource type="Texture2D" uid="uid://ck7ycnikcbpui" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_18.png" id="216_qok83"]
+[ext_resource type="Texture2D" uid="uid://b5ax6s8dchqrk" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_19.png" id="217_e3bdn"]
+[ext_resource type="Texture2D" uid="uid://bjfqyraav6wcq" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_20.png" id="218_0miiw"]
+[ext_resource type="Texture2D" uid="uid://dmb0ms4i6hgx0" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_21.png" id="219_mrrue"]
+[ext_resource type="Texture2D" uid="uid://b3sth4rlefjme" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_22.png" id="220_en8wk"]
+[ext_resource type="Texture2D" uid="uid://dw6huf4yo4s3s" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_23.png" id="221_ca6ka"]
+[ext_resource type="Texture2D" uid="uid://cpky3sko400ox" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_24.png" id="222_0v6tv"]
+[ext_resource type="Texture2D" uid="uid://5j50i04mll34" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_25.png" id="223_fl8c1"]
+[ext_resource type="Texture2D" uid="uid://c2heny3rwdylu" path="res://Assets/Animations/Enemies/47白眼法师/far_attack_26.png" id="224_3s6y4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jn8wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_fkhee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_phsjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d2fvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vmwwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fdbqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_auyuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nadjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q51h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j17v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kuauh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_126ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_rve43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_q0lxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ojnt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_12vc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_e3xp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7hdhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_42cum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_r12eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_00cf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jcx0h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgld0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_xi0x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3iwx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_12ut5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_frf3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_37roi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_gm7ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_b56qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_y0bj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_k6m3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_jjp3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_eqyph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v0ppd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_oaj4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_64w7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rq8ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_wwlfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_1yj2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_36j7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_3jjjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_spqhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3wu3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3sxmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_sskyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ekavx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_1eb1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ell02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_0lij3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_j232f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_omdfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_23yd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_uwy5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ucfgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_u8qs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_6rgch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_gn612")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ymn6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_hcra7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_6of13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_8a8mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_y3vd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_q04qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_vph5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_jlso5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_nno6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_g1qui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_wvou6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3mldm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_uq0q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_1n14r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_vvux8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_utpvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_8n14k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_clsil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_vqkfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_sufw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_wd1qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_pg1kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_p3y3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_2jok1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_yb7mr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_fhmwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_pl7pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_xwpny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_gssn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_8nc0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_6nsku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_ayt2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_3p8ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wxkk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_jyvtu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgllj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102_tyecp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_wni4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_2bdsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ttcyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_p0vgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_ghjog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_s1nmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_s7dkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_hb0qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_2dkx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_xtt8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_6retd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ikaex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_aasjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_7ox7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_ohekr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_blspu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_kvgc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_50kpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_4mqcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_nmv2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_056b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_dlsgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_vc1q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_dbrp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_de254")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_bhykv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_5cvy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_vpv23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_3lm47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_kcsqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_2hshc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_wqdyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_v4445")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_qwnpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_3sund")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_feot7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_1sv21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_68jsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_ll2vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_mgfaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_d00xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_wkoel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_yak4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_sqgnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_8fwg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_j60go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_7v0wv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rqad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("150_aqcin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_8yk4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_j35em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_3pc73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_t4f6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_gomdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_lt46b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_simgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_ro22p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_4ci7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_24i08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_15786")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_rmjjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_ut5qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_kooou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_nqydu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_q1wpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_yee5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_3skug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_rpcpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_gqsaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_qgobb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_l3kpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_xfij6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_v13fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_y2b45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_hlhqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_h2xct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_u5yow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_ds4ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_5y2i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_bakvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_d03nn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_kd1uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_s5qx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_ffmpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_v0hef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_y573w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_q0pur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_7hu0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_32vub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_wfch6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_xcqge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_p03qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_6px2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_c5qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_sqsn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_b3imx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y63e7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("198_8ohnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_xmbrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_tman5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_08k5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_uk6f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_u8x4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_urhfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_s4jtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_26jja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_x16nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_td0de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_66yf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_cr2dc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_nnk2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_4tvpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_3eni5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_lixva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_xsqfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_qok83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_e3bdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_0miiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_mrrue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_en8wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_ca6ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_0v6tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_fl8c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_3s6y4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiEnemy47" instance=ExtResource("1_73oob")]
+offset_bottom = 3897.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_4cpx8")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "白眼法师"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 644.0
+offset_top = -45.0
+offset_right = 772.0
+offset_bottom = 83.0
+texture = ExtResource("3_7j7o4")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+text = "强大、令人生畏的施法者，释放的神秘法术可以快速治愈友军的伤口。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiEnemyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("4_4e2ve")]
+layout_mode = 2
+linked_data = ExtResource("5_x4t7q")
+eternal_health = false
+unknown_damage = false
+enemy_bounty = 32
+near_damage_type = 1
+far_damage_type = 1
+far_damage_show = true
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "持有标签"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+text = "super_unit"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "出现关卡"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="6"]
+layout_mode = 2
+text = "高山， 鬼门关"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Skills" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "技能"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "恢复光环"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="2"]
+layout_mode = 2
+text = "每隔 8 秒，恢复自身 200 范围内所有敌人 120 点生命。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer" index="0" instance=ExtResource("111_k6d1n")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="0" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("8_qtv7v")]
+layout_mode = 2
+texture = ExtResource("9_pxmaf")
+tip_text = "技能范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="1" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="2" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("8_qtv7v")]
+layout_mode = 2
+texture = ExtResource("10_u4krk")
+tip_text = "回血量"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="3" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "120"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="4" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("8_qtv7v")]
+layout_mode = 2
+texture = ExtResource("11_o2e6c")
+tip_text = "间隔时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="5" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "8 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="Anims" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_jn8wq")
+autoplay = "default"
+frame_progress = 0.562441
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_hgld0")
+autoplay = "default"
+frame_progress = 0.745396
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "死亡动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_3sxmt")
+autoplay = "default"
+frame_progress = 0.708438
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（背面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_fgllj")
+autoplay = "default"
+frame_progress = 0.76089
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（正面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim5" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="4"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_0rqad")
+autoplay = "default"
+frame_progress = 0.900522
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（侧面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim6" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="5"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim6" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_y63e7")
+autoplay = "default"
+frame_progress = 0.318449
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim6" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "远程攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("111_k6d1n")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "死亡"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("113_qoi0x")]
+layout_mode = 2
+audio_stream = ExtResource("114_04tnp")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "出场"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("112_ne2ys")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("113_qoi0x")]
+layout_mode = 2
+audio_stream = ExtResource("115_3nx2g")
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "等级： Big"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 408.0
+offset_bottom = 611.0
+scale = Vector2(0.916276, 0.879625)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("116_tft3e")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -616.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Based")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("116_tft3e")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -1920.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Skills")
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("116_tft3e")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -2115.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Anims")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("116_tft3e")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -2766.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Audio")
