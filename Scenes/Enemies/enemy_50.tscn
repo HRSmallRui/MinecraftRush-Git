@@ -1,10 +1,10 @@
-[gd_scene load_steps=74 format=3 uid="uid://dy8rqmkt0rg2t"]
+[gd_scene load_steps=73 format=3 uid="uid://dy8rqmkt0rg2t"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_h8y26"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_50.gd" id="2_ndxby"]
 [ext_resource type="Texture2D" uid="uid://vxoc2itvdf0f" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter6/洞穴蜘蛛.png" id="3_4ga31"]
 [ext_resource type="PackedScene" uid="uid://b1qgghva22eut" path="res://Scenes/Buffs/Enemies/spider_poison_dot_buff.tscn" id="3_mnmv0"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_u3vek"]
+[ext_resource type="Resource" uid="uid://dsfmg5jv4jxi4" path="res://Library/Enemies/EnemyDatas/enemy_50.tres" id="5_w8x3f"]
 [ext_resource type="AudioStream" uid="uid://ct4vofbci7tfx" path="res://Assets/Sounds/FXs/Enemies/腐化蜘蛛/死亡.wav" id="5_x2ocy"]
 [ext_resource type="Texture2D" uid="uid://dgvw1fqjxktmd" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_00.png" id="6_872jo"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="6_ltfqj"]
@@ -70,28 +70,6 @@
 [ext_resource type="Texture2D" uid="uid://dpjc6oph71vy0" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_5.png" id="61_52vgb"]
 [ext_resource type="Texture2D" uid="uid://bovlo8fd8xptl" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_6.png" id="62_540iw"]
 [ext_resource type="Texture2D" uid="uid://0rbir65k54hg" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_7.png" id="63_q8f3d"]
-
-
-[sub_resource type="Resource" id="Resource_vfybo"]
-script = ExtResource("4_u3vek")
-health = 150
-dodge_rate = 0.0
-near_damage_low = 60
-near_damage_high = 80
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.9
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.4
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qau0"]
 animations = [{
@@ -312,7 +290,7 @@ poison_buff_scene = ExtResource("3_mnmv0")
 enemy_name = "剧毒蜘蛛"
 enemy_id = 50
 enemy_texture = ExtResource("3_4ga31")
-start_data = SubResource("Resource_vfybo")
+start_data = ExtResource("5_w8x3f")
 bounty = 12
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_x2ocy")])
 die_blood_scene = ExtResource("7_7ctbd")

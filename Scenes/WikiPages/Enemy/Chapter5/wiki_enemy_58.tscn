@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://cfssssfpl4u3u"]
+[gd_scene load_steps=244 format=3 uid="uid://cfssssfpl4u3u"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_btmxg"]
 [ext_resource type="Texture2D" uid="uid://cho1pbqa7ss8k" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy58.png" id="2_cj2rs"]
@@ -8,8 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cdkht33wfyjxd" path="res://Assets/Animations/Enemies/58LIVER/attack_00.png" id="6_j3ij2"]
 [ext_resource type="Texture2D" uid="uid://b56myjniarrkr" path="res://Assets/Animations/Enemies/58LIVER/attack_01.png" id="7_g5hv5"]
 [ext_resource type="Texture2D" uid="uid://dxdrrpct2nwg0" path="res://Assets/Animations/Enemies/58LIVER/attack_02.png" id="8_4h3wu"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="8_jmc2s"]
 [ext_resource type="Texture2D" uid="uid://nbbfouuhl1de" path="res://Assets/Animations/Enemies/58LIVER/attack_03.png" id="9_782q4"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="9_dpwfe"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="10_b02a2"]
 [ext_resource type="Texture2D" uid="uid://crdlkueye4t6f" path="res://Assets/Animations/Enemies/58LIVER/attack_04.png" id="10_t40qa"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="11_mbvhm"]
 [ext_resource type="Texture2D" uid="uid://c6eggvfbd00k5" path="res://Assets/Animations/Enemies/58LIVER/attack_05.png" id="11_p76sv"]
 [ext_resource type="Texture2D" uid="uid://bhybtqux3s2gn" path="res://Assets/Animations/Enemies/58LIVER/attack_06.png" id="12_ad5go"]
 [ext_resource type="Texture2D" uid="uid://exm6hro8fqlf" path="res://Assets/Animations/Enemies/58LIVER/attack_07.png" id="13_0lyf7"]
@@ -943,7 +947,7 @@ animations = [{
 }]
 
 [node name="WikiEnemy58" instance=ExtResource("1_btmxg")]
-offset_bottom = 3613.0
+offset_bottom = 3835.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -1060,6 +1064,66 @@ layout_mode = 2
 text = "释放巨剑斩击，对 180 范围内的所有地面单位造成 500 点物伤。
  
 冷却时间： 6 秒"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer" index="0" instance=ExtResource("111_jg6x2")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="0" instance=ExtResource("112_0a1s8")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("8_jmc2s")]
+layout_mode = 2
+texture = ExtResource("9_dpwfe")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="1" instance=ExtResource("112_0a1s8")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "180"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="2" instance=ExtResource("112_0a1s8")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("8_jmc2s")]
+layout_mode = 2
+texture = ExtResource("10_b02a2")
+tip_text = "技能伤害"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="3" instance=ExtResource("112_0a1s8")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "500"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="4" instance=ExtResource("112_0a1s8")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("8_jmc2s")]
+layout_mode = 2
+texture = ExtResource("11_mbvhm")
+tip_text = "冷却时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="5" instance=ExtResource("112_0a1s8")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "6 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
