@@ -1,9 +1,9 @@
-[gd_scene load_steps=234 format=3 uid="uid://nymsao7yy471"]
+[gd_scene load_steps=233 format=3 uid="uid://nymsao7yy471"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_iuwbf"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="2_iuxtt"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_5.gd" id="2_ypfx3"]
 [ext_resource type="Texture2D" uid="uid://dd4riy3p6twdn" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国壮汉.png" id="3_dn35p"]
+[ext_resource type="Resource" uid="uid://dupq2e1a3wjqn" path="res://Library/Enemies/EnemyDatas/enemy_5.tres" id="4_ms7fg"]
 [ext_resource type="AudioStream" uid="uid://bbhsuop1io62f" path="res://Assets/Sounds/FXs/Enemies/Sound_EnemyBigDead.wav" id="5_aga8j"]
 [ext_resource type="Texture2D" uid="uid://cedvw0003w6wq" path="res://Assets/Animations/Enemies/5尸国壮汉/attack_00.png" id="6_jtwhb"]
 [ext_resource type="Texture2D" uid="uid://crc3a8qb023tm" path="res://Assets/Animations/Enemies/5尸国壮汉/move_normal_00.png" id="7_0jjux"]
@@ -230,27 +230,6 @@
 [ext_resource type="Texture2D" uid="uid://ik58ey707rw8" path="res://Assets/Animations/Enemies/5尸国壮汉/move_front_57.png" id="176_56nkp"]
 [ext_resource type="Texture2D" uid="uid://ukn5s5qt1v3h" path="res://Assets/Animations/Enemies/5尸国壮汉/move_front_58.png" id="177_pnsyo"]
 [ext_resource type="Texture2D" uid="uid://6clii2ifqhge" path="res://Assets/Animations/Enemies/5尸国壮汉/move_front_59.png" id="178_fgidd"]
-
-[sub_resource type="Resource" id="Resource_ty8dx"]
-script = ExtResource("2_iuxtt")
-health = 860
-dodge_rate = 0.0
-near_damage_low = 30
-near_damage_high = 50
-near_attack_speed = 1.2
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hltxv"]
 animations = [{
@@ -972,7 +951,7 @@ enemy_name = "尸国壮汉"
 enemy_id = 5
 enemy_texture = ExtResource("3_dn35p")
 enemy_type = 1
-start_data = SubResource("Resource_ty8dx")
+start_data = ExtResource("4_ms7fg")
 lives_taken = 3
 bounty = 35
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_aga8j")])

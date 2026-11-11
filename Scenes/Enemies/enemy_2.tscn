@@ -1,9 +1,9 @@
-[gd_scene load_steps=91 format=3 uid="uid://bjaqbbyu6ihm7"]
+[gd_scene load_steps=90 format=3 uid="uid://bjaqbbyu6ihm7"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_htuft"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_2.gd" id="2_8760k"]
 [ext_resource type="Texture2D" uid="uid://b4p5shu1hxykb" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国小鬼.png" id="3_wi6l8"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_vk401"]
+[ext_resource type="Resource" uid="uid://5dd3nbeqy40s" path="res://Library/Enemies/EnemyDatas/enemy_2.tres" id="4_76y84"]
 [ext_resource type="Texture2D" uid="uid://lxikl03dnfhc" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_00.png" id="5_fpovd"]
 [ext_resource type="Texture2D" uid="uid://du72kigp6w0er" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_01.png" id="6_fm1jk"]
 [ext_resource type="Texture2D" uid="uid://citngkmfkt788" path="res://Assets/Animations/Enemies/2尸国小鬼/attack_02.png" id="7_ujg37"]
@@ -88,27 +88,6 @@
 [ext_resource type="Texture2D" uid="uid://dv52baqbdrf4s" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_14.png" id="73_xurgo"]
 [ext_resource type="Texture2D" uid="uid://cxlt51jhbbx8o" path="res://Assets/Animations/Enemies/2尸国小鬼/move-normal_15.png" id="74_8sekt"]
 [ext_resource type="AudioStream" uid="uid://0h275ggnhryt" path="res://Assets/Sounds/FXs/Enemies/Sound_HumanDead4.wav" id="75_gv2cd"]
-
-[sub_resource type="Resource" id="Resource_xl1y5"]
-script = ExtResource("4_vk401")
-health = 20
-dodge_rate = 0.0
-near_damage_low = 1
-near_damage_high = 2
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.8
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1of3u"]
 animations = [{
@@ -400,7 +379,7 @@ script = ExtResource("2_8760k")
 enemy_name = "尸国小鬼"
 enemy_id = 2
 enemy_texture = ExtResource("3_wi6l8")
-start_data = SubResource("Resource_xl1y5")
+start_data = ExtResource("4_76y84")
 bounty = 3
 
 [node name="EnemySprite" parent="UnitBody" index="0"]

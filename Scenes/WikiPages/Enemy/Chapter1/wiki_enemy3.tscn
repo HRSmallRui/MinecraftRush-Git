@@ -1,0 +1,604 @@
+[gd_scene load_steps=70 format=3 uid="uid://cfx4xnqswnn2i"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_ieip3"]
+[ext_resource type="Texture2D" uid="uid://bt07igs5snps4" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy3.png" id="2_po7vp"]
+[ext_resource type="Texture2D" uid="uid://comwl0ri8gw60" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/鸡骑士.png" id="3_pktog"]
+[ext_resource type="PackedScene" uid="uid://dpokgu1x5q6xf" path="res://Scenes/UI-Components/Wiki/wiki_enemy_table.tscn" id="4_lahvn"]
+[ext_resource type="Resource" uid="uid://bt3f8qsmkfq6t" path="res://Library/Enemies/EnemyDatas/enemy_3.tres" id="5_i081d"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="6_ny1yy"]
+[ext_resource type="Texture2D" uid="uid://b2ny32i5i61v4" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy2.png" id="7_y375v"]
+[ext_resource type="Texture2D" uid="uid://ddv0fe3ql1v4r" path="res://Assets/Animations/Enemies/3鸡骑士/idle_0.png" id="8_0e0d2"]
+[ext_resource type="Texture2D" uid="uid://bfacwxrkrb1fj" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_00.png" id="9_1hakd"]
+[ext_resource type="Texture2D" uid="uid://cs3obblvqecgg" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_01.png" id="10_uy02x"]
+[ext_resource type="Texture2D" uid="uid://cst406h8mgi1x" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_02.png" id="11_itbtt"]
+[ext_resource type="Texture2D" uid="uid://b5qp0kh5hbico" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_03.png" id="12_lkaua"]
+[ext_resource type="Texture2D" uid="uid://dsw53jqxqmrb2" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_04.png" id="13_qwk7s"]
+[ext_resource type="Texture2D" uid="uid://bpfgt5yfeb4eo" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_05.png" id="14_xrikk"]
+[ext_resource type="Texture2D" uid="uid://pgcx2n2rog6p" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_06.png" id="15_xn3rk"]
+[ext_resource type="Texture2D" uid="uid://bldb4rm4q1stj" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_07.png" id="16_rof16"]
+[ext_resource type="Texture2D" uid="uid://b7cqmebpq12wk" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_08.png" id="17_l00j4"]
+[ext_resource type="Texture2D" uid="uid://cshdhnldpn8hl" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_09.png" id="18_atxrg"]
+[ext_resource type="Texture2D" uid="uid://cr1qfmr56bm0h" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_10.png" id="19_82l1b"]
+[ext_resource type="Texture2D" uid="uid://dkijlq80tx4b7" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_11.png" id="20_p14d2"]
+[ext_resource type="Texture2D" uid="uid://cl0ekhin3k876" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_12.png" id="21_67221"]
+[ext_resource type="Texture2D" uid="uid://o66fj4uapg1v" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_13.png" id="22_t01ri"]
+[ext_resource type="Texture2D" uid="uid://bcgf7gyxa5xug" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_14.png" id="23_54w7o"]
+[ext_resource type="Texture2D" uid="uid://dsyshrn5yn4pe" path="res://Assets/Animations/Enemies/3鸡骑士/move-back_15.png" id="24_so2p6"]
+[ext_resource type="Texture2D" uid="uid://7omsguonb1ym" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_00.png" id="25_nnb7d"]
+[ext_resource type="Texture2D" uid="uid://csjwxyu6i4jmq" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_01.png" id="26_xyb1e"]
+[ext_resource type="Texture2D" uid="uid://7e227tfmnmg4" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_02.png" id="27_7g86w"]
+[ext_resource type="Texture2D" uid="uid://biwbwhb08vyaw" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_03.png" id="28_dsr6q"]
+[ext_resource type="Texture2D" uid="uid://d0lc1aqvilb8o" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_04.png" id="29_hbo0c"]
+[ext_resource type="Texture2D" uid="uid://ng35xhbcwu2s" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_05.png" id="30_78b4m"]
+[ext_resource type="Texture2D" uid="uid://ohj6wt3da45a" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_06.png" id="31_c7ksc"]
+[ext_resource type="Texture2D" uid="uid://cbwaf2psolynr" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_07.png" id="32_ysc5m"]
+[ext_resource type="Texture2D" uid="uid://bvkxtvlyw1uhg" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_08.png" id="33_20i2c"]
+[ext_resource type="Texture2D" uid="uid://3sg2km5jaaud" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_09.png" id="34_j445h"]
+[ext_resource type="Texture2D" uid="uid://c4nrqpce7cmj0" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_10.png" id="35_c0e0t"]
+[ext_resource type="Texture2D" uid="uid://oc1m3sf0unp2" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_11.png" id="36_iuq4b"]
+[ext_resource type="Texture2D" uid="uid://dsfe0brnwxlpb" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_12.png" id="37_38kc1"]
+[ext_resource type="Texture2D" uid="uid://bsnmt4rg7hpox" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_13.png" id="38_wtswl"]
+[ext_resource type="Texture2D" uid="uid://dpd4s25rwr1j0" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_14.png" id="39_grhcy"]
+[ext_resource type="Texture2D" uid="uid://d0y6lda83e21l" path="res://Assets/Animations/Enemies/3鸡骑士/move-front_15.png" id="40_8ijo1"]
+[ext_resource type="Texture2D" uid="uid://djfcelu2sxgpy" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_00.png" id="41_fjl6s"]
+[ext_resource type="Texture2D" uid="uid://dcd4isevnj45s" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_01.png" id="42_cpbbl"]
+[ext_resource type="Texture2D" uid="uid://v28sk8ae2ndy" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_02.png" id="43_yid63"]
+[ext_resource type="Texture2D" uid="uid://b1etogrq0o4ff" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_03.png" id="44_k5etl"]
+[ext_resource type="Texture2D" uid="uid://bsrr2ssyo4xjk" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_04.png" id="45_h5lm6"]
+[ext_resource type="Texture2D" uid="uid://bth62u3bof10s" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_05.png" id="46_s61um"]
+[ext_resource type="Texture2D" uid="uid://bdrrubfmyp2bl" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_06.png" id="47_p3tkf"]
+[ext_resource type="Texture2D" uid="uid://cflmf7okp5ndb" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_07.png" id="48_nfetl"]
+[ext_resource type="Texture2D" uid="uid://dpag5uxmyxb02" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_08.png" id="49_f516w"]
+[ext_resource type="Texture2D" uid="uid://divk102qpscap" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_09.png" id="50_1pdhb"]
+[ext_resource type="Texture2D" uid="uid://b6qdrsqhg38dk" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_10.png" id="51_8pi2q"]
+[ext_resource type="Texture2D" uid="uid://cwetbacigkud3" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_11.png" id="52_jjun1"]
+[ext_resource type="Texture2D" uid="uid://bacdsyi2up7yq" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_12.png" id="53_1nekr"]
+[ext_resource type="Texture2D" uid="uid://bgfwlg2kb4yq7" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_13.png" id="54_m5rpp"]
+[ext_resource type="Texture2D" uid="uid://cl35i4fva4q5w" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_14.png" id="55_0hg7f"]
+[ext_resource type="Texture2D" uid="uid://c5rk6vqwlvbrg" path="res://Assets/Animations/Enemies/3鸡骑士/move-normal_15.png" id="56_o5y31"]
+[ext_resource type="AudioStream" uid="uid://iq0pyheftlvh" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡死亡2.wav" id="60_voyme"]
+[ext_resource type="AudioStream" uid="uid://b0dugsbdyyox" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡死亡.wav" id="61_8eb3o"]
+[ext_resource type="AudioStream" uid="uid://cjqgganeritcc" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫1.wav" id="62_vgxxy"]
+[ext_resource type="AudioStream" uid="uid://cde18v2nr7yvq" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫2.wav" id="63_t6vfn"]
+[ext_resource type="AudioStream" uid="uid://b8dl2vb71lspt" path="res://Assets/Sounds/FXs/Enemies/鸡骑士/鸡叫3.wav" id="64_1tpbg"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="110_3eixk"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="111_mi5yw"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="112_i4sey"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="117_n88vp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fu1lq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0e0d2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jud1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1hakd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uy02x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_itbtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lkaua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qwk7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xrikk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xn3rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rof16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_l00j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_atxrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_82l1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p14d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_67221")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_t01ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_54w7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_so2p6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygeyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_nnb7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xyb1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7g86w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_dsr6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hbo0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_78b4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_c7ksc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ysc5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_20i2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_j445h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_c0e0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_iuq4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_38kc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_wtswl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_grhcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8ijo1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smwjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_fjl6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cpbbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_yid63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_k5etl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_h5lm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_s61um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_p3tkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_nfetl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_f516w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1pdhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_8pi2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_jjun1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_1nekr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_m5rpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_0hg7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_o5y31")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiEnemy3" instance=ExtResource("1_ieip3")]
+offset_bottom = 3431.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_po7vp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "鸡骑士"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 620.0
+offset_top = -45.0
+offset_right = 748.0
+offset_bottom = 83.0
+texture = ExtResource("3_pktog")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+text = "这些狡猾的小鬼骑乘着小鸡快速越过防线，死后依旧可以继续前进。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiEnemyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("4_lahvn")]
+layout_mode = 2
+linked_data = ExtResource("5_i081d")
+enemy_bounty = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "持有标签"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+text = "无"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "出现关卡"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="6"]
+layout_mode = 2
+text = "天木市， 战扎城， 元帅府（战役模式，钻石挑战）， 诺冰要塞（战役模式）"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Skills" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "技能"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="1"]
+layout_mode = 2
+text = "无法拦截
+ 
+被非 explosion 或 disappear_kill 秒杀伤害致死时，在原地生成一个尸国小鬼。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="2"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer" index="0" instance=ExtResource("6_ny1yy")]
+layout_mode = 2
+texture_normal = ExtResource("7_y375v")
+target_page_path = "res://Scenes/WikiPages/Enemy/Chapter1/wiki_enemy2.tscn"
+name_text = "尸国小鬼"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="Anims" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_fu1lq")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "待机动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_jud1h")
+autoplay = "default"
+frame_progress = 0.582295
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（背面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_ygeyn")
+autoplay = "default"
+frame_progress = 0.883801
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（正面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim5" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_smwjv")
+autoplay = "default"
+frame_progress = 0.84498
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（侧面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("110_3eixk")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("111_mi5yw")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "死亡"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("111_mi5yw")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("112_i4sey")]
+layout_mode = 2
+audio_stream = ExtResource("60_voyme")
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="2" instance=ExtResource("112_i4sey")]
+layout_mode = 2
+audio_stream = ExtResource("61_8eb3o")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("111_mi5yw")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "出现"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("111_mi5yw")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("112_i4sey")]
+layout_mode = 2
+audio_stream = ExtResource("62_vgxxy")
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="2" instance=ExtResource("112_i4sey")]
+layout_mode = 2
+audio_stream = ExtResource("63_t6vfn")
+
+[node name="WikiAudioButton3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="3" instance=ExtResource("112_i4sey")]
+layout_mode = 2
+audio_stream = ExtResource("64_1tpbg")
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "等级： Small"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 408.0
+offset_bottom = 611.0
+scale = Vector2(0.916276, 0.879625)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_n88vp")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -616.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Based")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_n88vp")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -1921.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Skills")
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_n88vp")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -2357.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Anims")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_n88vp")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -2999.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Audio")

@@ -1,14 +1,14 @@
-[gd_scene load_steps=324 format=3 uid="uid://5ukpvpcb74dj"]
+[gd_scene load_steps=323 format=3 uid="uid://5ukpvpcb74dj"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_q4osr"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_28.gd" id="2_jb0u8"]
 [ext_resource type="PackedScene" uid="uid://bcq26o20y1cum" path="res://Scenes/Enemies/enemy_27.tscn" id="3_6s438"]
 [ext_resource type="Texture2D" uid="uid://chk1g3h8op8q1" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/军火商.png" id="3_25270"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_7lhgr"]
 [ext_resource type="AudioStream" uid="uid://chrerlm5in3oy" path="res://Assets/Sounds/FXs/Enemies/军火商/流浪商人技能3.wav" id="4_w53yj"]
 [ext_resource type="AudioStream" uid="uid://00ykofb88jvx" path="res://Assets/Sounds/FXs/Enemies/军火商/流浪商人死亡1.wav" id="5_n0idp"]
 [ext_resource type="AudioStream" uid="uid://thbu8pftp6pr" path="res://Assets/Sounds/FXs/Enemies/军火商/流浪商人死亡2.wav" id="6_m12kd"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="7_appeb"]
+[ext_resource type="Resource" uid="uid://cprsq3kkv6mm2" path="res://Library/Enemies/EnemyDatas/enemy_28.tres" id="7_n7pjc"]
 [ext_resource type="Texture2D" uid="uid://bnqx1k1ggbomq" path="res://Assets/Animations/Enemies/28军火商/attack_00.png" id="7_q4trw"]
 [ext_resource type="Texture2D" uid="uid://b3g8ylkvra0ub" path="res://Assets/Animations/Enemies/28军火商/attack_01.png" id="8_3fxvu"]
 [ext_resource type="AudioStream" uid="uid://cf7gct6hmnbsm" path="res://Assets/Sounds/FXs/Enemies/军火商/流浪商人出现1.wav" id="8_ip505"]
@@ -320,27 +320,6 @@
 [ext_resource type="Texture2D" uid="uid://ciclrf3t72xfk" path="res://Assets/Animations/Enemies/28军火商/move_normal_46.png" id="312_lkicm"]
 [ext_resource type="Texture2D" uid="uid://da4nevqq6qx5k" path="res://Assets/Animations/Enemies/28军火商/move_normal_47.png" id="313_a8rf6"]
 [ext_resource type="AudioStream" uid="uid://cq8syj0jgau6u" path="res://Assets/Sounds/FXs/Enemies/军火商/流浪商人技能2.wav" id="318_ysy7n"]
-
-[sub_resource type="Resource" id="Resource_ckl18"]
-script = ExtResource("4_7lhgr")
-health = 400
-dodge_rate = 0.0
-near_damage_low = 2
-near_damage_high = 4
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.7
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fx5ra"]
 animations = [{
@@ -1319,7 +1298,7 @@ skill_audio_list = Array[AudioStream]([ExtResource("318_ysy7n"), ExtResource("4_
 enemy_name = "军火商"
 enemy_id = 28
 enemy_texture = ExtResource("3_25270")
-start_data = SubResource("Resource_ckl18")
+start_data = ExtResource("7_n7pjc")
 lives_taken = 3
 bounty = 40
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_n0idp"), ExtResource("6_m12kd")])

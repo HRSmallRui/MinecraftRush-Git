@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://chwj011y6s28h"]
+[gd_scene load_steps=112 format=3 uid="uid://chwj011y6s28h"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_6325b"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_1.gd" id="2_jctoq"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dbgsu0dqpaci" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵move_back_00.png" id="3_r8eah"]
 [ext_resource type="Texture2D" uid="uid://cgmkr87dv1jws" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵attack_01.png" id="3_yoqdg"]
 [ext_resource type="Texture2D" uid="uid://co08oo3exfqp1" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵move_back_01.png" id="4_7hgpt"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_fq5as"]
 [ext_resource type="Texture2D" uid="uid://b54gb2wi2fi4y" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵attack_02.png" id="4_s0xk5"]
+[ext_resource type="Resource" uid="uid://b6hwfexshmfl7" path="res://Library/Enemies/EnemyDatas/enemy_1.tres" id="4_tw5td"]
 [ext_resource type="Texture2D" uid="uid://dfp01jb56w63d" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵move_back_02.png" id="5_06yfa"]
 [ext_resource type="Texture2D" uid="uid://btjbmj1v6t48i" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵attack_03.png" id="5_l288f"]
 [ext_resource type="Texture2D" uid="uid://c4s3eos83otvn" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵attack_04.png" id="6_6ylwr"]
@@ -110,27 +110,6 @@
 [ext_resource type="Texture2D" uid="uid://h8yrg0buohm8" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵move_normal_21.png" id="72_k8msx"]
 [ext_resource type="Texture2D" uid="uid://blvtlwk6jtqan" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵move_normal_22.png" id="73_8sc35"]
 [ext_resource type="Texture2D" uid="uid://dlejkgaidarjr" path="res://Assets/Animations/Enemies/1尸国皮甲兵/尸国皮甲兵move_normal_23.png" id="74_rd7ve"]
-
-[sub_resource type="Resource" id="Resource_xgw4m"]
-script = ExtResource("4_fq5as")
-health = 80
-dodge_rate = 0.0
-near_damage_low = 5
-near_damage_high = 10
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.2
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8trp4"]
 animations = [{
@@ -491,7 +470,7 @@ script = ExtResource("2_jctoq")
 enemy_name = "尸国皮甲兵"
 enemy_id = 1
 enemy_texture = ExtResource("3_jw517")
-start_data = SubResource("Resource_xgw4m")
+start_data = ExtResource("4_tw5td")
 bounty = 6
 
 [node name="EnemySprite" parent="UnitBody" index="0"]

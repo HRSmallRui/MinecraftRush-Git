@@ -1,9 +1,9 @@
-[gd_scene load_steps=188 format=3 uid="uid://y81bpwffuh4c"]
+[gd_scene load_steps=187 format=3 uid="uid://y81bpwffuh4c"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_scnkh"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_11.gd" id="2_67sbu"]
 [ext_resource type="Texture2D" uid="uid://cd2rlmy04yfgg" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter2/溺尸.png" id="3_ovtdw"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_dt7i5"]
+[ext_resource type="Resource" uid="uid://bxi8lkb7bxxl3" path="res://Library/Enemies/EnemyDatas/enemy_11.tres" id="4_ku5ub"]
 [ext_resource type="AudioStream" uid="uid://bm1pxd00helgs" path="res://Assets/Sounds/FXs/Enemies/溺尸/溺尸死亡1.wav" id="5_hddnt"]
 [ext_resource type="Texture2D" uid="uid://ctb7boowtlr4x" path="res://Assets/Animations/Enemies/11溺尸/attack_00.png" id="5_qmq3d"]
 [ext_resource type="AudioStream" uid="uid://c63k3rjc2ip51" path="res://Assets/Sounds/FXs/Enemies/溺尸/溺尸死亡2.wav" id="6_aolhq"]
@@ -185,28 +185,6 @@
 [ext_resource type="AudioStream" uid="uid://c4hrg7gy7qx03" path="res://Assets/Sounds/FXs/Enemies/溺尸/溺尸4.wav" id="183_hwoxo"]
 [ext_resource type="AudioStream" uid="uid://cpstxxy6oxqqg" path="res://Assets/Sounds/FXs/Enemies/溺尸/溺尸5.wav" id="184_cga0s"]
 [ext_resource type="PackedScene" uid="uid://bcs0sdt2sngqr" path="res://Scenes/Enemies/EnemyComponents/zombie_achieve_dead_component.tscn" id="185_462m3"]
-
-
-[sub_resource type="Resource" id="Resource_02hwp"]
-script = ExtResource("4_dt7i5")
-health = 160
-dodge_rate = 0.0
-near_damage_low = 8
-near_damage_high = 16
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.6
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hdpb8"]
 animations = [{
@@ -765,7 +743,7 @@ script = ExtResource("2_67sbu")
 enemy_name = "溺尸"
 enemy_id = 11
 enemy_texture = ExtResource("3_ovtdw")
-start_data = SubResource("Resource_02hwp")
+start_data = ExtResource("4_ku5ub")
 bounty = 6
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_hddnt"), ExtResource("6_aolhq")])
 

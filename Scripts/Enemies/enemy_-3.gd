@@ -1,5 +1,7 @@
 extends Enemy
 
+@onready var move_audio: AudioStreamPlayer = $MoveAudio
+
 
 func anim_offset():
 	match enemy_sprite.animation:
@@ -12,5 +14,5 @@ func anim_offset():
 
 func frame_changed():
 	if "move" in enemy_sprite.animation and enemy_sprite.frame == 27:
-		die_audio_play()
+		move_audio.play()
 	pass

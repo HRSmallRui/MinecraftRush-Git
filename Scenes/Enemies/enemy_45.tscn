@@ -1,9 +1,9 @@
-[gd_scene load_steps=116 format=3 uid="uid://dmru61x2gae2m"]
+[gd_scene load_steps=114 format=3 uid="uid://dmru61x2gae2m"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_cdkjh"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_45.gd" id="2_gqgvv"]
 [ext_resource type="Texture2D" uid="uid://bpbxwvejosjx7" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter5/白眼士兵.png" id="3_hgtnx"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_lj1d0"]
+[ext_resource type="Resource" uid="uid://025ayti3lire" path="res://Library/Enemies/EnemyDatas/enemy_45.tres" id="4_uprcn"]
 [ext_resource type="Texture2D" uid="uid://dfh3x5k157yh8" path="res://Assets/Animations/Enemies/45白眼士兵/attack_00.png" id="5_mwi5r"]
 [ext_resource type="AudioStream" uid="uid://mdc5281gfyfh" path="res://Assets/Sounds/FXs/Enemies/人偶/脉冲.wav" id="5_vt52t"]
 [ext_resource type="Texture2D" uid="uid://3aibothergyt" path="res://Assets/Animations/Enemies/45白眼士兵/attack_01.png" id="6_2agnj"]
@@ -110,31 +110,8 @@
 [ext_resource type="Texture2D" uid="uid://dpuesd7m1rqrh" path="res://Assets/Animations/Enemies/45白眼士兵/move_normal_21.png" id="108_svo4b"]
 [ext_resource type="Texture2D" uid="uid://167hgsb0fv81" path="res://Assets/Animations/Enemies/45白眼士兵/move_normal_22.png" id="109_fu4hw"]
 [ext_resource type="Texture2D" uid="uid://dsgh2fv4sgas8" path="res://Assets/Animations/Enemies/45白眼士兵/move_normal_23.png" id="110_5o8hl"]
-[ext_resource type="Texture2D" uid="uid://bveccsb2pyhc5" path="res://Assets/Animations/Enemies/45白眼士兵/move_normal_24.png" id="111_ayqoh"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="112_yqovg"]
 [ext_resource type="AudioStream" uid="uid://tj2qdr0snm0b" path="res://Assets/Sounds/FXs/Enemies/人偶/人偶.wav" id="113_jcaas"]
-
-
-[sub_resource type="Resource" id="Resource_2aepe"]
-script = ExtResource("3_lj1d0")
-health = 300
-dodge_rate = 0.0
-near_damage_low = 6
-near_damage_high = 12
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ihyuw"]
 animations = [{
@@ -481,9 +458,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("110_5o8hl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("111_ayqoh")
 }],
 "loop": true,
 "name": &"move_normal",
@@ -496,7 +470,7 @@ enemy_name = "白眼士兵"
 enemy_id = 45
 enemy_texture = ExtResource("3_hgtnx")
 enemy_type = 2
-start_data = SubResource("Resource_2aepe")
+start_data = ExtResource("4_uprcn")
 bounty = 5
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_vt52t")])
 die_blood_scene = null
@@ -504,8 +478,9 @@ die_blood_scene = null
 [node name="EnemySprite" parent="UnitBody" index="0"]
 position = Vector2(0, -95)
 sprite_frames = SubResource("SpriteFrames_ihyuw")
-animation = &"attack"
+animation = &"move_normal"
 autoplay = "idle"
+frame_progress = 0.89935
 
 [node name="DieAudio" parent="." index="3"]
 stream = ExtResource("5_vt52t")

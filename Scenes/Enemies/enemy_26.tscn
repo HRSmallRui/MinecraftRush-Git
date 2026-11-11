@@ -1,9 +1,9 @@
-[gd_scene load_steps=202 format=3 uid="uid://esqxnl1cqlby"]
+[gd_scene load_steps=201 format=3 uid="uid://esqxnl1cqlby"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_oww28"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_26.gd" id="2_efx3v"]
 [ext_resource type="Texture2D" uid="uid://wcs871wbxl4u" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/黄金傀儡.png" id="3_xiook"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_lquy0"]
+[ext_resource type="Resource" uid="uid://crlq25kxx2d34" path="res://Library/Enemies/EnemyDatas/enemy_26.tres" id="4_xdfca"]
 [ext_resource type="AudioStream" uid="uid://b1qce1o4ia1m1" path="res://Assets/Sounds/FXs/Battles/aoe_hit.wav" id="5_om60h"]
 [ext_resource type="AudioStream" uid="uid://dm824q146kchv" path="res://Assets/Sounds/FXs/Allys/铁傀儡/死亡.wav" id="5_uhgjl"]
 [ext_resource type="Texture2D" uid="uid://dqd4f2mncgov4" path="res://Assets/Animations/Enemies/26黄金傀儡/attack_00.png" id="6_58brm"]
@@ -197,28 +197,6 @@
 [ext_resource type="Texture2D" uid="uid://ca5yd7ocyrtfo" path="res://Assets/Animations/Enemies/26黄金傀儡/move_normal_45.png" id="194_elsg1"]
 [ext_resource type="Texture2D" uid="uid://c6kkqe6kyqp6h" path="res://Assets/Animations/Enemies/26黄金傀儡/move_normal_46.png" id="195_xulle"]
 [ext_resource type="Texture2D" uid="uid://6ku1mjdjj7w6" path="res://Assets/Animations/Enemies/26黄金傀儡/move_normal_47.png" id="196_goa8t"]
-
-
-[sub_resource type="Resource" id="Resource_u4fwf"]
-script = ExtResource("4_lquy0")
-health = 1800
-dodge_rate = 0.0
-near_damage_low = 50
-near_damage_high = 100
-near_attack_speed = 2.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.4
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3lptp"]
 animations = [{
@@ -841,7 +819,7 @@ enemy_name = "黄金傀儡"
 enemy_id = 26
 enemy_texture = ExtResource("3_xiook")
 enemy_type = 2
-start_data = SubResource("Resource_u4fwf")
+start_data = ExtResource("4_xdfca")
 lives_taken = 5
 bounty = 120
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_uhgjl")])
@@ -881,7 +859,7 @@ scale = Vector2(0.682899, 1.88085)
 [node name="HitArea" type="Area2D" parent="UnitBody" index="8"]
 scale = Vector2(0.6, 0.6)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/HitArea" index="0"]
 scale = Vector2(5, 3.5)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=201 format=3 uid="uid://bq7p36ak2tune"]
+[gd_scene load_steps=200 format=3 uid="uid://bq7p36ak2tune"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_clghq"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_21.gd" id="2_sw6sb"]
 [ext_resource type="Texture2D" uid="uid://exq6s0y8wkp3" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/沙漠狙击手.png" id="3_1pigm"]
 [ext_resource type="PackedScene" uid="uid://b8jjkpa7fqai6" path="res://Scenes/Effects/skeleton_dead_body_explosion.tscn" id="3_7tac3"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_jo2t1"]
+[ext_resource type="Resource" uid="uid://cxfsupsknxk55" path="res://Library/Enemies/EnemyDatas/enemy_21.tres" id="4_f1l2q"]
 [ext_resource type="PackedScene" uid="uid://dgreu184bd5ej" path="res://Scenes/Bullets/enemy_straight_arrow.tscn" id="5_04s24"]
 [ext_resource type="AudioStream" uid="uid://d33lf2vjj8qu1" path="res://Assets/Sounds/FXs/Enemies/骷髅/骷髅死亡1.wav" id="5_wwlov"]
 [ext_resource type="AudioStream" uid="uid://cgjtted5wnywq" path="res://Assets/Sounds/FXs/Enemies/骷髅/骷髅死亡2.wav" id="6_hia6u"]
@@ -198,27 +198,6 @@
 [ext_resource type="Texture2D" uid="uid://d2242kyrxlf0f" path="res://Assets/Animations/Enemies/21沙漠狙击手/move_normal_38.png" id="190_r22rs"]
 [ext_resource type="Texture2D" uid="uid://br7powj7tg3si" path="res://Assets/Animations/Enemies/21沙漠狙击手/move_normal_39.png" id="191_cea5e"]
 [ext_resource type="AudioStream" uid="uid://cy21paby5onde" path="res://Assets/Sounds/FXs/Enemies/骷髅死亡.wav" id="197_4da77"]
-
-[sub_resource type="Resource" id="Resource_gpt5d"]
-script = ExtResource("4_jo2t1")
-health = 150
-dodge_rate = 0.0
-near_damage_low = 8
-near_damage_high = 12
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 80
-far_damage_high = 120
-far_attack_speed = 2.0
-far_damage_range = 450
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqrvj"]
 animations = [{
@@ -819,7 +798,7 @@ die_effect_modulate = Color(1, 1, 0.494118, 1)
 enemy_name = "沙漠狙击手"
 enemy_id = 21
 enemy_texture = ExtResource("3_1pigm")
-start_data = SubResource("Resource_gpt5d")
+start_data = ExtResource("4_f1l2q")
 far_attack_bullet_scene = ExtResource("5_04s24")
 bounty = 8
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_wwlov"), ExtResource("6_hia6u"), ExtResource("7_bd6n0")])

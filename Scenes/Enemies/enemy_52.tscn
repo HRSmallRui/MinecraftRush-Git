@@ -1,13 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://bhr0uppyoi7w4"]
+[gd_scene load_steps=42 format=3 uid="uid://bhr0uppyoi7w4"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_2vaxw"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_52.gd" id="2_8d2rt"]
 [ext_resource type="SpriteFrames" uid="uid://bwbs21mlfvq7p" path="res://Assets/Animations/Enemies/40幻翼/enemy_40_animation.res" id="3_4mb1h"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_5cgrl"]
 [ext_resource type="PackedScene" uid="uid://d20lg48d4560c" path="res://Scenes/Enemies/enemy_40.tscn" id="3_ldxss"]
 [ext_resource type="Texture2D" uid="uid://dw5cn6xdtdhey" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter6/厌国投弹手.png" id="3_qqi2n"]
 [ext_resource type="PackedScene" uid="uid://cohusgeeaau8f" path="res://Scenes/Bullets/enemy_tnt.tscn" id="4_2sx8p"]
 [ext_resource type="Texture2D" uid="uid://djqnwtl1embrg" path="res://Assets/Animations/Enemies/Shadow.png" id="4_g7xff"]
+[ext_resource type="Resource" uid="uid://1q7dfprid4au" path="res://Library/Enemies/EnemyDatas/enemy_52.tres" id="5_dplc7"]
 [ext_resource type="Texture2D" uid="uid://b8rgmv6k8d2ao" path="res://Assets/Animations/Enemies/52厌国投弹手/move_back_00.png" id="6_fiij2"]
 [ext_resource type="Texture2D" uid="uid://dc48sb7vm8eux" path="res://Assets/Animations/Enemies/52厌国投弹手/far_attack_00.png" id="7_hprp2"]
 [ext_resource type="Texture2D" uid="uid://bfp7jr4lplgvv" path="res://Assets/Animations/Enemies/52厌国投弹手/far_attack_01.png" id="8_vq73g"]
@@ -40,27 +40,6 @@
 [ext_resource type="AudioStream" uid="uid://yy17mq8r5f1u" path="res://Assets/Sounds/FXs/Enemies/幻翼/入场2.wav" id="37_jtljx"]
 [ext_resource type="AudioStream" uid="uid://cgscidknfw3qn" path="res://Assets/Sounds/FXs/Enemies/幻翼/入场3.wav" id="38_w7bvf"]
 [ext_resource type="AudioStream" uid="uid://cxwiq6op2qy88" path="res://Assets/Sounds/FXs/Enemies/幻翼/入场4.wav" id="39_ktbhb"]
-
-[sub_resource type="Resource" id="Resource_ai7vo"]
-script = ExtResource("3_5cgrl")
-health = 250
-dodge_rate = 0.0
-near_damage_low = 30
-near_damage_high = 50
-near_attack_speed = 2.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 2.0
-far_damage_range = 300
-armor = 0.5
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lxrbk"]
 animations = [{
@@ -177,7 +156,7 @@ enemy_id = 52
 enemy_texture = ExtResource("3_qqi2n")
 enemy_type = 2
 is_flying = true
-start_data = SubResource("Resource_ai7vo")
+start_data = ExtResource("5_dplc7")
 far_attack_bullet_scene = ExtResource("4_2sx8p")
 interceptable = false
 lives_taken = 2

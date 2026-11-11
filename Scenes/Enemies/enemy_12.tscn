@@ -1,9 +1,9 @@
-[gd_scene load_steps=181 format=3 uid="uid://dflclh8ifqjuo"]
+[gd_scene load_steps=180 format=3 uid="uid://dflclh8ifqjuo"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_5aqcp"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_12.gd" id="2_5hldt"]
 [ext_resource type="Texture2D" uid="uid://46noteflay35" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter2/溺尸斗士.png" id="3_dju2h"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_fp01c"]
+[ext_resource type="Resource" uid="uid://ceumknyfr18y7" path="res://Library/Enemies/EnemyDatas/enemy_12.tres" id="4_pod4t"]
 [ext_resource type="PackedScene" uid="uid://b77un4rims3nj" path="res://Scenes/Bullets/enemy_fork_bullet.tscn" id="5_ha4bl"]
 [ext_resource type="AudioStream" uid="uid://bm1pxd00helgs" path="res://Assets/Sounds/FXs/Enemies/溺尸/溺尸死亡1.wav" id="5_qldo4"]
 [ext_resource type="AudioStream" uid="uid://c63k3rjc2ip51" path="res://Assets/Sounds/FXs/Enemies/溺尸/溺尸死亡2.wav" id="6_l58qw"]
@@ -176,27 +176,6 @@
 [ext_resource type="Texture2D" uid="uid://dkeiqft3n2f3r" path="res://Assets/Animations/Enemies/12溺尸斗士/rain_1.png" id="168_rx0bs"]
 [ext_resource type="AudioStream" uid="uid://3oq3y5va8jp1" path="res://Assets/Sounds/FXs/Enemies/溺尸/激流.wav" id="175_k0k8t"]
 [ext_resource type="PackedScene" uid="uid://bcs0sdt2sngqr" path="res://Scenes/Enemies/EnemyComponents/zombie_achieve_dead_component.tscn" id="176_oheyu"]
-
-[sub_resource type="Resource" id="Resource_dnt4c"]
-script = ExtResource("4_fp01c")
-health = 225
-dodge_rate = 0.0
-near_damage_low = 15
-near_damage_high = 30
-near_attack_speed = 1.2
-near_hit_rate = 1.0
-far_damage_low = 30
-far_damage_high = 60
-far_attack_speed = 1.8
-far_damage_range = 280
-armor = 0.3
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2aej2"]
 animations = [{
@@ -739,7 +718,7 @@ sprint_damage = 60
 enemy_name = "溺尸斗士"
 enemy_id = 12
 enemy_texture = ExtResource("3_dju2h")
-start_data = SubResource("Resource_dnt4c")
+start_data = ExtResource("4_pod4t")
 far_attack_bullet_scene = ExtResource("5_ha4bl")
 bounty = 18
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_qldo4"), ExtResource("6_l58qw")])
@@ -767,7 +746,7 @@ frame_progress = 0.0949552
 
 [node name="SprintHitArea" type="Area2D" parent="UnitBody" index="12"]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 monitoring = false
 monitorable = false
 
