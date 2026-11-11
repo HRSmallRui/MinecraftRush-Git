@@ -1,0 +1,365 @@
+[gd_scene load_steps=20 format=3 uid="uid://mfur4umairqj"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_y6b22"]
+[ext_resource type="Texture2D" uid="uid://bgxgafwfh8pxy" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy52.png" id="2_srwfd"]
+[ext_resource type="Texture2D" uid="uid://dw5cn6xdtdhey" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter6/厌国投弹手.png" id="3_ufdxv"]
+[ext_resource type="PackedScene" uid="uid://dpokgu1x5q6xf" path="res://Scenes/UI-Components/Wiki/wiki_enemy_table.tscn" id="4_c7kk4"]
+[ext_resource type="Resource" uid="uid://1q7dfprid4au" path="res://Library/Enemies/EnemyDatas/enemy_52.tres" id="5_482cu"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="8_diykd"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="9_6157e"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="10_ubtkh"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="11_nae2i"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="12_u6alw"]
+[ext_resource type="Texture2D" uid="uid://q5tgpblarfm" path="res://Assets/Images/UI/SeenBook/Enemies/HeadTex/enemy40.png" id="13_3igey"]
+[ext_resource type="AudioStream" uid="uid://q6oaa4vsaqek" path="res://Assets/Sounds/FXs/Enemies/幻翼/入场1.wav" id="13_7ptcr"]
+[ext_resource type="AudioStream" uid="uid://yy17mq8r5f1u" path="res://Assets/Sounds/FXs/Enemies/幻翼/入场2.wav" id="14_e6yb4"]
+[ext_resource type="AudioStream" uid="uid://cgscidknfw3qn" path="res://Assets/Sounds/FXs/Enemies/幻翼/入场3.wav" id="15_w23yb"]
+[ext_resource type="AudioStream" uid="uid://cxwiq6op2qy88" path="res://Assets/Sounds/FXs/Enemies/幻翼/入场4.wav" id="16_kqtn8"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="110_k2iqx"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="111_t2s86"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="112_miefx"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="117_lmcg5"]
+
+[node name="WikiEnemy52" instance=ExtResource("1_y6b22")]
+offset_bottom = 3635.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_srwfd")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "厌国投弹手"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = -45.0
+offset_right = 798.0
+offset_bottom = 83.0
+texture = ExtResource("3_ufdxv")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+text = "翱翔于天际的霸主，对地面上的所有有生力量进行地毯式轰炸。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiEnemyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("4_c7kk4")]
+layout_mode = 2
+linked_data = ExtResource("5_482cu")
+eternal_health = false
+unknown_damage = false
+lives_taken = 2
+enemy_bounty = 20
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+text = "飞行单位； 站桩型远程单位"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "持有标签"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+text = "creeper"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="6"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "出现关卡"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="7"]
+layout_mode = 2
+text = "诺冰大峡谷， 皇城"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Skills" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "技能"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "轰炸"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="2"]
+layout_mode = 2
+text = "自身 300 范围内存在地面单位时投掷炸弹，对 50 像素范围内的所有地面单位造成 1 倍面板炮伤。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer" index="0" instance=ExtResource("110_k2iqx")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="0" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("8_diykd")]
+layout_mode = 2
+texture = ExtResource("9_6157e")
+tip_text = "射程"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="1" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="2" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("8_diykd")]
+layout_mode = 2
+texture = ExtResource("10_ubtkh")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="3" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "50 像素"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="4" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("8_diykd")]
+layout_mode = 2
+texture = ExtResource("11_nae2i")
+tip_text = "炸弹伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable" index="5" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "30 - 50"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "死亡生成幻翼"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="5"]
+layout_mode = 2
+text = "死亡时生成幻翼， 新生成的幻翼默认受到 100 点炮伤，如果处于 ”闪电护盾“ 状态，新生成的幻翼则会受到 150 点炮伤。"
+autowrap_mode = 3
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="6"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer3" index="0" instance=ExtResource("12_u6alw")]
+layout_mode = 2
+texture_normal = ExtResource("13_3igey")
+target_page_path = "res://Scenes/WikiPages/Enemy/Chapter4/wiki_enemy_40.tscn"
+name_text = "幻翼"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="7"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2" index="0" instance=ExtResource("110_k2iqx")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="0" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("8_diykd")]
+layout_mode = 2
+texture = ExtResource("11_nae2i")
+tip_text = "伤害"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="1" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="2" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("8_diykd")]
+layout_mode = 2
+texture = ExtResource("11_nae2i")
+tip_text = "强化状态伤害"
+property_state = 1
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="3" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("110_k2iqx")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "出场"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("111_t2s86")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("112_miefx")]
+layout_mode = 2
+audio_stream = ExtResource("13_7ptcr")
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="2" instance=ExtResource("112_miefx")]
+layout_mode = 2
+audio_stream = ExtResource("14_e6yb4")
+
+[node name="WikiAudioButton3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="3" instance=ExtResource("112_miefx")]
+layout_mode = 2
+audio_stream = ExtResource("15_w23yb")
+
+[node name="WikiAudioButton4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="4" instance=ExtResource("112_miefx")]
+layout_mode = 2
+audio_stream = ExtResource("16_kqtn8")
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "等级： Big"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 408.0
+offset_bottom = 611.0
+scale = Vector2(0.916276, 0.879625)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_lmcg5")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -616.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Based")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_lmcg5")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -1920.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Skills")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_lmcg5")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -2766.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Audio")

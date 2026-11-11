@@ -1,9 +1,9 @@
-[gd_scene load_steps=247 format=3 uid="uid://d07pbdmj8g6nf"]
+[gd_scene load_steps=246 format=3 uid="uid://d07pbdmj8g6nf"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_l5hfx"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_49.gd" id="2_qkpmf"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_ov3yr"]
 [ext_resource type="Texture2D" uid="uid://d25f66qwik0uy" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter6/尸国斗剑士.png" id="3_wlxkb"]
+[ext_resource type="Resource" uid="uid://co072d00a73oh" path="res://Library/Enemies/EnemyDatas/enemy_49.tres" id="4_7yle4"]
 [ext_resource type="AudioStream" uid="uid://bbhsuop1io62f" path="res://Assets/Sounds/FXs/Enemies/Sound_EnemyBigDead.wav" id="4_y018x"]
 [ext_resource type="Texture2D" uid="uid://c2hrpasmf3sue" path="res://Assets/Animations/Enemies/49尸国斗剑士/attack_00.png" id="5_kcmc7"]
 [ext_resource type="Texture2D" uid="uid://ctnqcknpr7qaw" path="res://Assets/Animations/Enemies/49尸国斗剑士/attack_01.png" id="6_pocox"]
@@ -242,27 +242,6 @@
 [ext_resource type="Texture2D" uid="uid://bn620shens206" path="res://Assets/Animations/Enemies/49尸国斗剑士/move_normal_58.png" id="239_1shhd"]
 [ext_resource type="Texture2D" uid="uid://cu3wghu68ko7k" path="res://Assets/Animations/Enemies/49尸国斗剑士/move_normal_59.png" id="240_d272a"]
 [ext_resource type="AudioStream" uid="uid://b1qce1o4ia1m1" path="res://Assets/Sounds/FXs/Battles/aoe_hit.wav" id="241_tmevo"]
-
-[sub_resource type="Resource" id="Resource_dp0mr"]
-script = ExtResource("3_ov3yr")
-health = 2500
-dodge_rate = 0.0
-near_damage_low = 80
-near_damage_high = 120
-near_attack_speed = 2.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.3
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ep1rb"]
 animations = [{
@@ -1020,7 +999,7 @@ enemy_name = "尸国斗剑士"
 enemy_id = 49
 enemy_texture = ExtResource("3_wlxkb")
 enemy_type = 2
-start_data = SubResource("Resource_dp0mr")
+start_data = ExtResource("4_7yle4")
 lives_taken = 5
 bounty = 60
 die_audio_stream_list = Array[AudioStream]([ExtResource("4_y018x")])
@@ -1056,7 +1035,7 @@ scale = Vector2(1.08289, 1.88085)
 [node name="AttackArea" type="Area2D" parent="UnitBody" index="8"]
 scale = Vector2(0.8, 0.8)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/AttackArea" index="0"]
 scale = Vector2(5, 3.5)
