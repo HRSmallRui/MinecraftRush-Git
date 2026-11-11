@@ -1,11 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://dsgleht3vmtjw"]
+[gd_scene load_steps=58 format=3 uid="uid://dsgleht3vmtjw"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_djjg4"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_53.gd" id="2_qhkqo"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_1hfoq"]
 [ext_resource type="Texture2D" uid="uid://rjau6jutldek" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter6/戮.png" id="3_3p3xw"]
 [ext_resource type="Texture2D" uid="uid://d1y8c461rwcqn" path="res://Assets/Animations/Enemies/53戮/attack_00.png" id="3_dkomo"]
 [ext_resource type="Texture2D" uid="uid://bgvksnabwhsud" path="res://Assets/Animations/Enemies/53戮/attack_01.png" id="4_jmvw3"]
+[ext_resource type="Resource" uid="uid://c4qcqln2xuevr" path="res://Library/Enemies/EnemyDatas/enemy_53.tres" id="4_loxhn"]
 [ext_resource type="Texture2D" uid="uid://i4dq46gfnvjo" path="res://Assets/Animations/Enemies/53戮/attack_02.png" id="5_7prmq"]
 [ext_resource type="Texture2D" uid="uid://dyy4haq25k7ru" path="res://Assets/Animations/Enemies/53戮/attack_03.png" id="6_of17a"]
 [ext_resource type="Texture2D" uid="uid://dhr2fplp613f5" path="res://Assets/Animations/Enemies/53戮/attack_04.png" id="7_17nt1"]
@@ -54,27 +54,6 @@
 [ext_resource type="AudioStream" uid="uid://bdsuhfx54y4fv" path="res://Assets/Sounds/FXs/Enemies/扭曲末影人/入场2.wav" id="52_imlge"]
 [ext_resource type="AudioStream" uid="uid://c6x6hmlpm2qrv" path="res://Assets/Sounds/FXs/Enemies/扭曲末影人/入场3.wav" id="53_y7xni"]
 [ext_resource type="AudioStream" uid="uid://dualeb4jn8x2f" path="res://Assets/Sounds/FXs/Enemies/野区丧尸/啃咬.ogg" id="54_bv2c4"]
-
-[sub_resource type="Resource" id="Resource_o1utf"]
-script = ExtResource("3_1hfoq")
-health = 500
-dodge_rate = 0.0
-near_damage_low = 35
-near_damage_high = 60
-near_attack_speed = 1.5
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1x4o8"]
 animations = [{
@@ -259,7 +238,7 @@ enemy_name = "戮"
 enemy_id = 53
 enemy_texture = ExtResource("3_3p3xw")
 enemy_type = 1
-start_data = SubResource("Resource_o1utf")
+start_data = ExtResource("4_loxhn")
 bounty = 5
 die_audio_stream_list = Array[AudioStream]([])
 
