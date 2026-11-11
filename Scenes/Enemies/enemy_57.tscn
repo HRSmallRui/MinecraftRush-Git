@@ -1,10 +1,9 @@
-[gd_scene load_steps=407 format=3 uid="uid://c2daws4j24i7p"]
+[gd_scene load_steps=406 format=3 uid="uid://c2daws4j24i7p"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_7fhm2"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_57.gd" id="2_3tuyw"]
 [ext_resource type="Texture2D" uid="uid://727co4i1vhod" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/远古守卫者.png" id="3_1bv30"]
 [ext_resource type="AudioStream" uid="uid://baho0q2f20me0" path="res://Assets/Sounds/FXs/Enemies/远古守卫者/roar1.wav" id="3_2bk8e"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_c3tji"]
 [ext_resource type="PackedScene" uid="uid://dcqlwpqyykpkq" path="res://Scenes/Enemies/EnemyComponents/boss_ui.tscn" id="4_rwbpj"]
 [ext_resource type="AudioStream" uid="uid://dv5nqf67yt7fd" path="res://Assets/Sounds/FXs/Enemies/远古守卫者/roar2.wav" id="4_v5j6t"]
 [ext_resource type="Texture2D" uid="uid://ukxfhtu1ykf5" path="res://Assets/Animations/Enemies/57远古守卫者/idle_00.png" id="5_8xn7w"]
@@ -26,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bfhkc54fp080v" path="res://Assets/Animations/Enemies/57远古守卫者/appear_05.png" id="10_vaokk"]
 [ext_resource type="Texture2D" uid="uid://b3d0ojiqs7ytb" path="res://Assets/Animations/Enemies/57远古守卫者/appear_06.png" id="11_bpvf2"]
 [ext_resource type="Texture2D" uid="uid://ih5h2bkjv3k3" path="res://Assets/Animations/Enemies/57远古守卫者/idle_06.png" id="11_e5o8a"]
+[ext_resource type="Resource" uid="uid://dpet8rm7guv10" path="res://Library/Enemies/EnemyDatas/enemy_57.tres" id="11_wf5sr"]
 [ext_resource type="Texture2D" uid="uid://bi0t84uthul4s" path="res://Assets/Animations/Enemies/57远古守卫者/idle_07.png" id="12_ha438"]
 [ext_resource type="Texture2D" uid="uid://bj7spsrcclne7" path="res://Assets/Animations/Enemies/57远古守卫者/appear_07.png" id="12_pfxoe"]
 [ext_resource type="Texture2D" uid="uid://4qo0adxy2frr" path="res://Assets/Animations/Enemies/57远古守卫者/appear_08.png" id="13_jx6dp"]
@@ -373,28 +373,6 @@
 [ext_resource type="Script" path="res://Scripts/UI-Components/Stages/dialog_block.gd" id="368_6bpks"]
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="368_tfwrk"]
 [ext_resource type="Shader" path="res://Assets/Shaders/guardian_roar_shader.gdshader" id="370_lxp7h"]
-
-
-[sub_resource type="Resource" id="Resource_n45ke"]
-script = ExtResource("3_c3tji")
-health = 8000
-dodge_rate = 0.0
-near_damage_low = 500
-near_damage_high = 800
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.8
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i5w5n"]
 shader = ExtResource("370_lxp7h")
@@ -1671,6 +1649,7 @@ region = Rect2(0, 0, 500, 50)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1c56t"]
 shader = ExtResource("359_vsfom")
 shader_parameter/speed = 1.0
+shader_parameter/alpha_strength = 1.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3cqpb"]
 particle_flag_disable_z = true
@@ -1917,7 +1896,7 @@ enemy_id = 57
 enemy_texture = ExtResource("3_1bv30")
 enemy_type = 5
 is_final_boss = true
-start_data = SubResource("Resource_n45ke")
+start_data = ExtResource("11_wf5sr")
 interceptable = false
 lives_taken = 20
 show_tip = false

@@ -5,6 +5,7 @@ static var instance: WikiManager
 
 @export var white_mode_theme: Theme
 @export var dark_mode_theme: Theme
+@export var current_wiki_page: WikiPage
 
 @export_file("*.tscn") var back_page_stack: Array[String]
 @export var back_page_step_stack: Array[float]
@@ -68,6 +69,7 @@ func into_new_wiki_page(page_path: String, mode: int = 0, target_pos: float = 0)
 		content_page.get_child(0).queue_free()
 	var new_wiki_page_scene: PackedScene = load(page_path)
 	var new_wiki_page: WikiPage = new_wiki_page_scene.instantiate()
+	current_wiki_page = new_wiki_page
 	content_page.add_child(new_wiki_page)
 	new_wiki_page.position.y = target_pos
 	new_wiki_page.update_scroll()

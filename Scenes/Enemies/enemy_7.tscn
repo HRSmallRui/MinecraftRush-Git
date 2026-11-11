@@ -1,9 +1,9 @@
-[gd_scene load_steps=130 format=3 uid="uid://cwbpaqknpx70u"]
+[gd_scene load_steps=129 format=3 uid="uid://cwbpaqknpx70u"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_ujhr3"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="2_888x6"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_7.gd" id="2_auoov"]
 [ext_resource type="Texture2D" uid="uid://cbyb6q08j02s" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter1/尸国贵族战士.png" id="3_kb72m"]
+[ext_resource type="Resource" uid="uid://c10ebio83aaxk" path="res://Library/Enemies/EnemyDatas/enemy_7.tres" id="4_lmira"]
 [ext_resource type="Texture2D" uid="uid://bvfnxi4pg1toj" path="res://Assets/Animations/Enemies/7尸国贵族战士/attack_00.png" id="5_4h5wj"]
 [ext_resource type="Texture2D" uid="uid://dmlffqpl7niqe" path="res://Assets/Animations/Enemies/7尸国贵族战士/attack_01.png" id="6_rojs6"]
 [ext_resource type="Texture2D" uid="uid://chxxvrrj8onb4" path="res://Assets/Animations/Enemies/7尸国贵族战士/attack_02.png" id="7_2dh2f"]
@@ -127,27 +127,6 @@
 [ext_resource type="Texture2D" uid="uid://cfm5qokj3ndx3" path="res://Assets/Animations/Enemies/7尸国贵族战士/move_normal_21.png" id="101_6r8lc"]
 [ext_resource type="Texture2D" uid="uid://dy0o08lixgox5" path="res://Assets/Animations/Enemies/7尸国贵族战士/move_normal_22.png" id="102_mbmyg"]
 [ext_resource type="Texture2D" uid="uid://cowxcvagqddsr" path="res://Assets/Animations/Enemies/7尸国贵族战士/move_normal_23.png" id="103_jpcx8"]
-
-[sub_resource type="Resource" id="Resource_70rnm"]
-script = ExtResource("2_888x6")
-health = 500
-dodge_rate = 0.0
-near_damage_low = 12
-near_damage_high = 24
-near_attack_speed = 1.3
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.4
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.8
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3gyeq"]
 animations = [{
@@ -559,7 +538,7 @@ script = ExtResource("2_auoov")
 enemy_name = "尸国贵族战士"
 enemy_id = 7
 enemy_texture = ExtResource("3_kb72m")
-start_data = SubResource("Resource_70rnm")
+start_data = ExtResource("4_lmira")
 lives_taken = 2
 bounty = 60
 

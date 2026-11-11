@@ -1,11 +1,11 @@
-[gd_scene load_steps=186 format=3 uid="uid://bbn8cyt45bue8"]
+[gd_scene load_steps=185 format=3 uid="uid://bbn8cyt45bue8"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_t4tx2"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_19.gd" id="2_2n76r"]
 [ext_resource type="PackedScene" uid="uid://r7rld0urohcu" path="res://Scenes/Buffs/Enemies/hunger_buff.tscn" id="3_2cg8v"]
 [ext_resource type="Texture2D" uid="uid://d4lakq52b4xkc" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/尸壳.png" id="3_iavwd"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_i1i0s"]
 [ext_resource type="AudioStream" uid="uid://dw1xc50um8dws" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳死亡1.wav" id="5_oa8pg"]
+[ext_resource type="Resource" uid="uid://c07htilysqgcg" path="res://Library/Enemies/EnemyDatas/enemy_19.tres" id="5_sb6vd"]
 [ext_resource type="AudioStream" uid="uid://dpppdrj6vx40o" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳死亡2.wav" id="6_y3j0t"]
 [ext_resource type="AudioStream" uid="uid://d0pnofrboijy" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳死亡3.wav" id="7_k8wk8"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="8_ma5ev"]
@@ -183,28 +183,6 @@
 [ext_resource type="Texture2D" uid="uid://dfomqnbcerb33" path="res://Assets/Animations/Enemies/19尸壳/move_normal_38.png" id="176_yd5wv"]
 [ext_resource type="Texture2D" uid="uid://dguta5lfpeaua" path="res://Assets/Animations/Enemies/19尸壳/move_normal_39.png" id="177_12ulr"]
 [ext_resource type="PackedScene" uid="uid://bcs0sdt2sngqr" path="res://Scenes/Enemies/EnemyComponents/zombie_achieve_dead_component.tscn" id="183_meaan"]
-
-
-[sub_resource type="Resource" id="Resource_4twn0"]
-script = ExtResource("4_i1i0s")
-health = 160
-dodge_rate = 0.0
-near_damage_low = 10
-near_damage_high = 15
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2nvdf"]
 animations = [{
@@ -758,7 +736,7 @@ hunger_buff_scene = ExtResource("3_2cg8v")
 enemy_name = "尸壳"
 enemy_id = 19
 enemy_texture = ExtResource("3_iavwd")
-start_data = SubResource("Resource_4twn0")
+start_data = ExtResource("5_sb6vd")
 bounty = 4
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_oa8pg"), ExtResource("6_y3j0t"), ExtResource("7_k8wk8")])
 

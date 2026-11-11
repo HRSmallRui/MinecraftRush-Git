@@ -1,0 +1,381 @@
+[gd_scene load_steps=33 format=3 uid="uid://dpokgu1x5q6xf"]
+
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="1_3eo7u"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_enemy_table.gd" id="1_dhi72"]
+[ext_resource type="Texture2D" uid="uid://dkcf7gw74qave" path="res://Assets/Images/UI/slide.png" id="1_svkhr"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="2_hfhcs"]
+[ext_resource type="Resource" uid="uid://b8r8h7i12m8wb" path="res://Library/Enemies/EnemyDatas/enemy_0.tres" id="2_i4q6m"]
+[ext_resource type="Texture2D" uid="uid://cxe06uf8j4e3f" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战法伤.png" id="3_2hmyu"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="3_ywogj"]
+[ext_resource type="Texture2D" uid="uid://cxlgijvx46h50" path="res://Assets/Images/UI/Wiki/PropertyIcons/生命值.png" id="4_0ai6n"]
+[ext_resource type="Texture2D" uid="uid://dusmfjrww8sgn" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战炮伤.png" id="4_dlt12"]
+[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="5_ea68o"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="5_u7lik"]
+[ext_resource type="Texture2D" uid="uid://drp8leo284ll0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战超伤.png" id="6_1hd6y"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="6_4fovi"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="7_5yhdu"]
+[ext_resource type="Texture2D" uid="uid://ccun8enm5qa0s" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程物伤.png" id="7_v5kcm"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="8_ayahb"]
+[ext_resource type="Texture2D" uid="uid://cey441i8fdaaa" path="res://Assets/Images/UI/Wiki/PropertyIcons/魔抗.png" id="8_wvxp3"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="9_7so1r"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="9_g5on0"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="9_jhuqb"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="10_bt1ys"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="10_v20w3"]
+[ext_resource type="Texture2D" uid="uid://032wguw1vpgm" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程超伤.png" id="11_b0kie"]
+[ext_resource type="Texture2D" uid="uid://dtlktbskj522n" path="res://Assets/Images/UI/Wiki/PropertyIcons/炮伤抗性.png" id="13_3jgnw"]
+[ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="13_g0bh4"]
+[ext_resource type="Texture2D" uid="uid://cpjwn3humgv6h" path="res://Assets/Images/UI/Wiki/PropertyIcons/代价.png" id="14_ttrqd"]
+[ext_resource type="Texture2D" uid="uid://vxfr3154j3nx" path="res://Assets/Images/UI/Wiki/PropertyIcons/货币.png" id="15_5i1ie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qdws"]
+atlas = ExtResource("1_svkhr")
+region = Rect2(189, 42, 31, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qly3j"]
+atlas = ExtResource("1_svkhr")
+region = Rect2(189, 42, 31, 51)
+
+[sub_resource type="Theme" id="Theme_kpara"]
+HSlider/icons/grabber = SubResource("AtlasTexture_3qdws")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_qly3j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpoho"]
+bg_color = Color(0.0383972, 0.0383972, 0.0383971, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5y8f"]
+bg_color = Color(0.804743, 0.804743, 0.804743, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[node name="WikiEnemyTable" type="VBoxContainer" node_paths=PackedStringArray("near_damage_range_part", "far_damage_part", "explosion_defence_part", "total_defence_part")]
+theme_override_constants/separation = 25
+script = ExtResource("1_dhi72")
+linked_data = ExtResource("2_i4q6m")
+eternal_health = null
+unknown_damage = null
+near_damage_type_icons = Array[Texture2D]([ExtResource("5_u7lik"), ExtResource("3_2hmyu"), ExtResource("4_dlt12"), ExtResource("5_ea68o"), ExtResource("6_1hd6y")])
+far_damage_type_icons = Array[Texture2D]([ExtResource("7_v5kcm"), ExtResource("8_ayahb"), ExtResource("9_7so1r"), ExtResource("10_bt1ys"), ExtResource("11_b0kie")])
+near_damage_range_part = [NodePath("WikiTable/WikiTableElement19"), NodePath("WikiTable/WikiTableElement20")]
+far_damage_part = [NodePath("WikiTable/WikiTableElement21"), NodePath("WikiTable/WikiTableElement22"), NodePath("WikiTable/WikiTableElement23"), NodePath("WikiTable/WikiTableElement24"), NodePath("WikiTable/WikiTableElement25"), NodePath("WikiTable/WikiTableElement26")]
+explosion_defence_part = [NodePath("WikiTable/WikiTableElement29"), NodePath("WikiTable/WikiTableElement30")]
+total_defence_part = [NodePath("WikiTable/WikiTableElement27"), NodePath("WikiTable/WikiTableElement28")]
+difficulty_color = Array[Color]([Color(0.32549, 1, 0, 1), Color(1, 0.654902, 0, 1), Color(1, 0.105882, 0.0862745, 1)])
+difficulty_rate_list = Array[float]([0.8, 1.0, 1.2])
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="DifficultyLabel" type="Label" parent="CenterContainer/HBoxContainer"]
+modulate = Color(1, 0.654902, 0, 1)
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "难度： 普通"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DifficultySlider" type="HSlider" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_kpara")
+theme_override_styles/slider = SubResource("StyleBoxFlat_bpoho")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_c5y8f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_c5y8f")
+max_value = 2.0
+value = 1.0
+scrollable = false
+
+[node name="WikiTable" parent="." instance=ExtResource("1_3eo7u")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("4_0ai6n")
+tip_text = "生命值"
+
+[node name="WikiTableElement2" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="WikiTable/WikiTableElement2"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="DamageNearIcon" parent="WikiTable/WikiTableElement5" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("5_u7lik")
+tip_text = "近战伤害"
+
+[node name="WikiTableElement6" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="DamageNearLabel" type="Label" parent="WikiTable/WikiTableElement6"]
+layout_mode = 2
+text = "2 - 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement7" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement7" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("6_4fovi")
+tip_text = "攻击间隔"
+
+[node name="WikiTableElement8" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="DamageNearSpeedLabel" type="Label" parent="WikiTable/WikiTableElement8"]
+layout_mode = 2
+text = "1 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement19" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement19" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("9_g5on0")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement20" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="DamageNearRangeLabel" type="Label" parent="WikiTable/WikiTableElement20"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement21" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="FarDamageIcon" parent="WikiTable/WikiTableElement21" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+tip_text = "远程攻击伤害"
+
+[node name="WikiTableElement22" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="FarDamageLabel" type="Label" parent="WikiTable/WikiTableElement22"]
+layout_mode = 2
+text = "0 - 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement23" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement23" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("6_4fovi")
+tip_text = "远程攻击间隔"
+
+[node name="WikiTableElement24" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="FarDamageSpeedLabel" type="Label" parent="WikiTable/WikiTableElement24"]
+layout_mode = 2
+text = "0 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement25" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement25" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("10_v20w3")
+tip_text = "射程"
+
+[node name="WikiTableElement26" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="FarDamageRangeLabel" type="Label" parent="WikiTable/WikiTableElement26"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement9" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("7_5yhdu")
+tip_text = "护甲"
+
+[node name="WikiTableElement10" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="ArmorLabel" type="Label" parent="WikiTable/WikiTableElement10"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement11" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement11" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("8_wvxp3")
+tip_text = "魔抗"
+
+[node name="WikiTableElement12" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="MagicDefenceLabel" type="Label" parent="WikiTable/WikiTableElement12"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement29" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement29" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("13_3jgnw")
+tip_text = "炮伤抗性"
+
+[node name="WikiTableElement30" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="ExplosionDefenceLabel" type="Label" parent="WikiTable/WikiTableElement30"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement27" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement27" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("13_g0bh4")
+tip_text = "总伤减免"
+
+[node name="WikiTableElement28" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+visible = false
+layout_mode = 2
+
+[node name="TotalDefenceLabel" type="Label" parent="WikiTable/WikiTableElement28"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement13" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement13" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("9_jhuqb")
+tip_text = "移速"
+
+[node name="WikiTableElement14" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="MoveSpeedLabel" type="Label" parent="WikiTable/WikiTableElement14"]
+layout_mode = 2
+text = "1.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement15" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement15" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("14_ttrqd")
+tip_text = "代价"
+
+[node name="WikiTableElement16" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="LivesTakenLabel" type="Label" parent="WikiTable/WikiTableElement16"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement17" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="WikiTable/WikiTableElement17" instance=ExtResource("3_ywogj")]
+layout_mode = 2
+texture = ExtResource("15_5i1ie")
+tip_text = "赏金"
+
+[node name="WikiTableElement18" parent="WikiTable" instance=ExtResource("2_hfhcs")]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="WikiTable/WikiTableElement18"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="drag_ended" from="CenterContainer/HBoxContainer/DifficultySlider" to="." method="_on_difficulty_slider_drag_ended"]
+[connection signal="drag_started" from="CenterContainer/HBoxContainer/DifficultySlider" to="." method="_on_difficulty_slider_drag_started"]
+[connection signal="value_changed" from="CenterContainer/HBoxContainer/DifficultySlider" to="." method="_on_difficulty_slider_value_changed"]

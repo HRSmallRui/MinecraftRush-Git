@@ -1,0 +1,729 @@
+[gd_scene load_steps=85 format=3 uid="uid://byrhxdq2y334x"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_vjnjo"]
+[ext_resource type="Texture2D" uid="uid://crathd4n62lg6" path="res://Assets/Images/UI/SeenBook/Enemies/Textures/enemy50.png" id="2_65gg3"]
+[ext_resource type="Texture2D" uid="uid://vxoc2itvdf0f" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter6/洞穴蜘蛛.png" id="3_s1w1q"]
+[ext_resource type="PackedScene" uid="uid://dpokgu1x5q6xf" path="res://Scenes/UI-Components/Wiki/wiki_enemy_table.tscn" id="4_ogqr7"]
+[ext_resource type="Resource" uid="uid://dsfmg5jv4jxi4" path="res://Library/Enemies/EnemyDatas/enemy_50.tres" id="5_5jlb4"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="6_fuu0v"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="9_lw76f"]
+[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="10_lcx6o"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="11_wkrd3"]
+[ext_resource type="Texture2D" uid="uid://dgvw1fqjxktmd" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_00.png" id="12_aelf2"]
+[ext_resource type="Texture2D" uid="uid://cgonjeecm8c0e" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_01.png" id="13_uoxsv"]
+[ext_resource type="Texture2D" uid="uid://c8equsdyj6sk1" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_02.png" id="14_i063g"]
+[ext_resource type="Texture2D" uid="uid://da1oyipk8ve0b" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_03.png" id="15_e1pea"]
+[ext_resource type="Texture2D" uid="uid://cxmrpffyqnb4x" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_04.png" id="16_cbmso"]
+[ext_resource type="Texture2D" uid="uid://dnqinjj0ldpjh" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_05.png" id="17_ilb6u"]
+[ext_resource type="Texture2D" uid="uid://x60jfgyus7bq" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_06.png" id="18_83dad"]
+[ext_resource type="Texture2D" uid="uid://6rg8wf0bkau" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_07.png" id="19_2ghlg"]
+[ext_resource type="Texture2D" uid="uid://u7b0g0cr7y4t" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_08.png" id="20_3kurf"]
+[ext_resource type="Texture2D" uid="uid://dmtlkcdw1rexl" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_09.png" id="21_7qtfs"]
+[ext_resource type="Texture2D" uid="uid://dxho11sryfqj" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_10.png" id="22_f2l5l"]
+[ext_resource type="Texture2D" uid="uid://dmim6ndx4ya25" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_11.png" id="23_h345j"]
+[ext_resource type="Texture2D" uid="uid://ds6mqpf2gt0fn" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_12.png" id="24_45dwt"]
+[ext_resource type="Texture2D" uid="uid://drp2een6e76bk" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_13.png" id="25_xf8w6"]
+[ext_resource type="Texture2D" uid="uid://sseninfa2r1m" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_14.png" id="26_1e231"]
+[ext_resource type="Texture2D" uid="uid://cfit6q2ech05c" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_15.png" id="27_35r1s"]
+[ext_resource type="Texture2D" uid="uid://br128bhupg8ov" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_16.png" id="28_nk7w3"]
+[ext_resource type="Texture2D" uid="uid://b4k4ymoi4jd7x" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_17.png" id="29_3mx67"]
+[ext_resource type="Texture2D" uid="uid://vf45k2g7pqyj" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_18.png" id="30_pgiow"]
+[ext_resource type="Texture2D" uid="uid://cn12e43xi3seb" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/attack_19.png" id="31_5u6gx"]
+[ext_resource type="Texture2D" uid="uid://uxo7amgltugg" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_00.png" id="32_7x3xr"]
+[ext_resource type="Texture2D" uid="uid://dwttf3wyeo2sm" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_01.png" id="33_wei0s"]
+[ext_resource type="Texture2D" uid="uid://0ggkxuekfpoj" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_02.png" id="34_je177"]
+[ext_resource type="Texture2D" uid="uid://2cqqrp7i62ov" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_03.png" id="35_wjpkn"]
+[ext_resource type="Texture2D" uid="uid://ocrxw6qtumme" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_04.png" id="36_68kgy"]
+[ext_resource type="Texture2D" uid="uid://d3nlsx1legq7" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_05.png" id="37_oknau"]
+[ext_resource type="Texture2D" uid="uid://dwj4oad4emhui" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_06.png" id="38_ts2hh"]
+[ext_resource type="Texture2D" uid="uid://b7yd8abdmxb3w" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_07.png" id="39_75tdv"]
+[ext_resource type="Texture2D" uid="uid://b2d7fweiqjqg2" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_08.png" id="40_knj75"]
+[ext_resource type="Texture2D" uid="uid://mcmwqdig5d58" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_09.png" id="41_cy048"]
+[ext_resource type="Texture2D" uid="uid://1nakg6kyhq7j" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_10.png" id="42_qffnv"]
+[ext_resource type="Texture2D" uid="uid://cwnfgox0ko3kf" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_11.png" id="43_6q020"]
+[ext_resource type="Texture2D" uid="uid://xbgwtw4dbxrn" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_12.png" id="44_jlg2c"]
+[ext_resource type="Texture2D" uid="uid://bed4od8krqtrs" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/die_13.png" id="45_8sbos"]
+[ext_resource type="Texture2D" uid="uid://nglxura44kr3" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_0.png" id="46_q1ukr"]
+[ext_resource type="Texture2D" uid="uid://cmba1rjmycrg3" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_1.png" id="47_fbfv6"]
+[ext_resource type="Texture2D" uid="uid://djtptyra1b3mg" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_2.png" id="48_wjvqy"]
+[ext_resource type="Texture2D" uid="uid://iaypfpqxmtg5" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_3.png" id="49_jmnob"]
+[ext_resource type="Texture2D" uid="uid://lauv67pgbl5d" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_4.png" id="50_f8756"]
+[ext_resource type="Texture2D" uid="uid://ne3psw3er2oq" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_5.png" id="51_udqdu"]
+[ext_resource type="Texture2D" uid="uid://blw2vsfk4e8m3" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_6.png" id="52_0jfp7"]
+[ext_resource type="Texture2D" uid="uid://1u0p50t7masb" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_7.png" id="53_qko3p"]
+[ext_resource type="Texture2D" uid="uid://cpjw48221ib3m" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_back_8.png" id="54_ho4xm"]
+[ext_resource type="Texture2D" uid="uid://cm3na8sy7q2lm" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_0.png" id="55_4k2on"]
+[ext_resource type="Texture2D" uid="uid://6equgej20cv" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_1.png" id="56_6barh"]
+[ext_resource type="Texture2D" uid="uid://dodn1o60kh5w0" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_2.png" id="57_y747y"]
+[ext_resource type="Texture2D" uid="uid://dem48bm6btdid" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_3.png" id="58_f8fs2"]
+[ext_resource type="Texture2D" uid="uid://cc4whq3wexskl" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_4.png" id="59_b40d8"]
+[ext_resource type="Texture2D" uid="uid://cdqnjnqpht6jt" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_5.png" id="60_x0okv"]
+[ext_resource type="Texture2D" uid="uid://dcff6blkafd3u" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_6.png" id="61_fmy87"]
+[ext_resource type="Texture2D" uid="uid://cyxjedcfca5a1" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_7.png" id="62_bsdhi"]
+[ext_resource type="Texture2D" uid="uid://jrqhh5l57nb5" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_front_8.png" id="63_bnl7t"]
+[ext_resource type="Texture2D" uid="uid://dxao2wr5w2xn5" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_0.png" id="64_vwtl3"]
+[ext_resource type="Texture2D" uid="uid://0jpgs43b6iys" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_1.png" id="65_07hvc"]
+[ext_resource type="Texture2D" uid="uid://csk2ooppfm7uy" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_2.png" id="66_mwner"]
+[ext_resource type="Texture2D" uid="uid://df62ju8pxbkk6" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_3.png" id="67_qish0"]
+[ext_resource type="Texture2D" uid="uid://bldor358c3y3m" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_4.png" id="68_oqruj"]
+[ext_resource type="Texture2D" uid="uid://dpjc6oph71vy0" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_5.png" id="69_y6iwt"]
+[ext_resource type="Texture2D" uid="uid://bovlo8fd8xptl" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_6.png" id="70_3eysj"]
+[ext_resource type="Texture2D" uid="uid://0rbir65k54hg" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_7.png" id="71_dnjvp"]
+[ext_resource type="Texture2D" uid="uid://dsjcyw507be15" path="res://Assets/Animations/Enemies/50剧毒蜘蛛/move_normal_8.png" id="72_y1xbg"]
+[ext_resource type="AudioStream" uid="uid://ct4vofbci7tfx" path="res://Assets/Sounds/FXs/Enemies/腐化蜘蛛/死亡.wav" id="74_fxl7l"]
+[ext_resource type="AudioStream" uid="uid://8ivl61hg27vq" path="res://Assets/Sounds/FXs/Enemies/腐化蜘蛛/入场1.wav" id="75_nmkeb"]
+[ext_resource type="AudioStream" uid="uid://dsw6shykts4by" path="res://Assets/Sounds/FXs/Enemies/腐化蜘蛛/入场2.wav" id="76_rpcbw"]
+[ext_resource type="AudioStream" uid="uid://by77xekplivbi" path="res://Assets/Sounds/FXs/Enemies/腐化蜘蛛/入场3.wav" id="77_lbgra"]
+[ext_resource type="AudioStream" uid="uid://cdfb830xpbdyn" path="res://Assets/Sounds/FXs/Enemies/腐化蜘蛛/入场4.wav" id="78_jp4nq"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="110_m0pv3"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="111_83nvc"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="112_kuqhd"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="117_dpxee"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5lya"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_aelf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uoxsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i063g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_e1pea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cbmso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ilb6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_83dad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2ghlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3kurf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7qtfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f2l5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_h345j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_45dwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xf8w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1e231")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_35r1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_nk7w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3mx67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_pgiow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5u6gx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yujmn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_7x3xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wei0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_je177")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_wjpkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_68kgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_oknau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ts2hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_75tdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_knj75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cy048")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qffnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_6q020")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_jlg2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_8sbos")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_af1fw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_q1ukr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_fbfv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_wjvqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_jmnob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_f8756")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_udqdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_0jfp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_qko3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ho4xm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ucbq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_4k2on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6barh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_y747y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_f8fs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_b40d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_x0okv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_fmy87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_bsdhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_bnl7t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a631q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_vwtl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_07hvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_mwner")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_qish0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_oqruj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_y6iwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_3eysj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_dnjvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_y1xbg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiEnemy50" instance=ExtResource("1_vjnjo")]
+offset_bottom = 3576.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("2_65gg3")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "剧毒蜘蛛"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Label" index="0"]
+layout_mode = 0
+offset_left = 659.0
+offset_top = -45.0
+offset_right = 787.0
+offset_bottom = 83.0
+texture = ExtResource("3_s1w1q")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+text = "蜘蛛中的精锐部队，这些看似弱小的蜘蛛凶狠无比，藏有能腐蚀万物的剧烈毒素。"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Based" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "基础配置"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基础面板"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="2"]
+layout_mode = 2
+
+[node name="WikiEnemyTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based/CenterContainer" index="0" instance=ExtResource("4_ogqr7")]
+layout_mode = 2
+linked_data = ExtResource("5_5jlb4")
+eternal_health = false
+unknown_damage = false
+enemy_bounty = 12
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "持有标签"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="4"]
+layout_mode = 2
+text = "无"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="5"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "出现关卡"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Based" index="6"]
+layout_mode = 2
+text = "诺冰大峡谷， 皇城"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Skills" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "技能"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "剧毒"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="2"]
+layout_mode = 2
+text = "剧毒蜘蛛每次攻击会给目标施加持续 5 秒的中毒效果，每 0.25 秒受到 6 点真伤（不致死）。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="3"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer" index="0" instance=ExtResource("6_fuu0v")]
+layout_mode = 2
+tip_text = "免疫组： god, no_live"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills" index="4"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2" index="0" instance=ExtResource("110_m0pv3")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="0" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("9_lw76f")]
+layout_mode = 2
+texture = ExtResource("10_lcx6o")
+tip_text = "中毒伤害"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="1" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "6 / 0.25秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="2" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("9_lw76f")]
+layout_mode = 2
+texture = ExtResource("11_wkrd3")
+tip_text = "持续时间"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable" index="3" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Skills/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "5 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="Anims" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "动画素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 300
+columns = 3
+
+[node name="Anim1" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_b5lya")
+autoplay = "default"
+frame_progress = 0.421902
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim1" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "攻击动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim2" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_yujmn")
+autoplay = "default"
+frame_progress = 0.545595
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim2" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "死亡动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim3" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_af1fw")
+autoplay = "default"
+frame_progress = 0.935886
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim3" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（背面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim4" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="3"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_ucbq4")
+autoplay = "default"
+frame_progress = 0.200049
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim4" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（正面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Anim5" type="Control" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer" index="4"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="0"]
+position = Vector2(-9, -10)
+scale = Vector2(2.56961, 2.56961)
+sprite_frames = SubResource("SpriteFrames_a631q")
+autoplay = "default"
+frame_progress = 0.388256
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Anims/CenterContainer/GridContainer/Anim5" index="1"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 73.0
+offset_right = 111.0
+offset_bottom = 97.0
+text = "移动动画（侧面）"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "音效素材"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("110_m0pv3")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "死亡"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("112_kuqhd")]
+layout_mode = 2
+audio_stream = ExtResource("74_fxl7l")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "出场"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("111_83nvc")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("112_kuqhd")]
+layout_mode = 2
+audio_stream = ExtResource("75_nmkeb")
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="2" instance=ExtResource("112_kuqhd")]
+layout_mode = 2
+audio_stream = ExtResource("76_rpcbw")
+
+[node name="WikiAudioButton3" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="3" instance=ExtResource("112_kuqhd")]
+layout_mode = 2
+audio_stream = ExtResource("77_lbgra")
+
+[node name="WikiAudioButton4" parent="VBoxContainer/MarginContainer2/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="4" instance=ExtResource("112_kuqhd")]
+layout_mode = 2
+audio_stream = ExtResource("78_jp4nq")
+
+[node name="TowerType" type="MarginContainer" parent="FreeNodes" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Label" type="Label" parent="FreeNodes/TowerType" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "等级： Small"
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 408.0
+offset_bottom = 611.0
+scale = Vector2(0.916276, 0.879625)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_dpxee")]
+layout_mode = 2
+text = "基础配置"
+wiki_page = NodePath("../../..")
+target_pos = -616.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Based")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_dpxee")]
+layout_mode = 2
+text = "技能"
+wiki_page = NodePath("../../..")
+target_pos = -1920.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Skills")
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_dpxee")]
+layout_mode = 2
+text = "动画素材"
+wiki_page = NodePath("../../..")
+target_pos = -2115.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Anims")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("117_dpxee")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+target_pos = -2766.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Audio")

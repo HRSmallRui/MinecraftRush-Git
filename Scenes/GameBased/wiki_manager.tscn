@@ -37,7 +37,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[node name="WikiManager" type="Control"]
+[node name="WikiManager" type="Control" node_paths=PackedStringArray("current_wiki_page")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,6 +48,7 @@ theme = ExtResource("3_61cnf")
 script = ExtResource("1_6vbdg")
 white_mode_theme = ExtResource("2_76rol")
 dark_mode_theme = ExtResource("3_61cnf")
+current_wiki_page = NodePath("ContentPage/WikiPageIndex")
 back_page_stack = Array[String](["res://Scenes/WikiPages/wiki_page_index.tscn"])
 back_page_step_stack = Array[float]([0.0])
 metadata/_edit_horizontal_guides_ = [126.0]

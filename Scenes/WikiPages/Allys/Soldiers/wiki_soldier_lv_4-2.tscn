@@ -747,7 +747,7 @@ animations = [{
 }]
 
 [node name="WikiSoldierLV4-2" instance=ExtResource("1_vdws2")]
-offset_bottom = 7075.0
+offset_bottom = 7132.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
 layout_mode = 2
@@ -1122,7 +1122,9 @@ text = "被动"
 
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Passive" index="1"]
 layout_mode = 2
-text = "大刀兵每次攻击时额外对自身 80 范围内的其他地面敌人（不包含当前拦截敌人）造成单次伤害的 0.5 倍伤害。"
+text = "持有标签： desert
+ 
+大刀兵每次攻击时额外对自身 80 范围内的其他地面敌人（不包含当前拦截敌人）造成单次伤害的 0.5 倍伤害。"
 autowrap_mode = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/Passive" index="2"]
@@ -1792,44 +1794,51 @@ offset_left = 87.0
 offset_right = 375.0
 offset_bottom = 611.0
 
-[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_06o14")]
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("77_06o14")]
 layout_mode = 2
 text = "基础配置"
 wiki_page = NodePath("../../..")
 target_pos = -623.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Based")
 
-[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_06o14")]
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("77_06o14")]
 layout_mode = 2
 text = "被动"
 wiki_page = NodePath("../../..")
 target_pos = -2398.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Passive")
 
-[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_06o14")]
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("77_06o14")]
 layout_mode = 2
 text = "技能"
 wiki_page = NodePath("../../..")
 target_pos = -2941.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Skill")
 
-[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_06o14")]
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("77_06o14")]
 layout_mode = 2
 text = "动画素材"
 wiki_page = NodePath("../../..")
 target_pos = -5277.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Anims")
 
-[node name="NavigationButton7" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_06o14")]
+[node name="NavigationButton7" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("77_06o14")]
 layout_mode = 2
 text = "音效素材"
 wiki_page = NodePath("../../..")
 target_pos = -6030.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Audio")
 
-[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_06o14")]
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("77_06o14")]
 layout_mode = 2
 text = "随机士兵名字"
 wiki_page = NodePath("../../..")
 target_pos = -6395.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer3")
 
-[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="6" node_paths=PackedStringArray("wiki_page") instance=ExtResource("77_06o14")]
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="6" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("77_06o14")]
 layout_mode = 2
 text = "相关防御塔"
 wiki_page = NodePath("../../..")
 target_pos = -6617.0
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Tower")

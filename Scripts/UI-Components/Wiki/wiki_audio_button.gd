@@ -1,12 +1,14 @@
 extends TextureButton
 
 @export var audio_stream: AudioStream
+@export var pitch_scale: float = 1
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
 	audio_stream_player.stream = audio_stream
+	audio_stream_player.pitch_scale = pitch_scale
 	button_down.connect(on_button_down)
 	button_up.connect(on_button_up)
 	pass

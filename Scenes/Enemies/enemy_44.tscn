@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://xi5fkhf0l7je"]
+[gd_scene load_steps=37 format=3 uid="uid://xi5fkhf0l7je"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_vhgxp"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_44.gd" id="2_fqqol"]
 [ext_resource type="AudioStream" uid="uid://l3f2wp7juib8" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者die1.wav" id="3_m23pd"]
 [ext_resource type="Texture2D" uid="uid://ddpaailx4w8gd" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/守卫者.png" id="3_twgnn"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_xid2r"]
 [ext_resource type="AudioStream" uid="uid://vs7p3ngpo24u" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者die2.wav" id="4_2ntrs"]
 [ext_resource type="SpriteFrames" uid="uid://c63ftuf12o1xt" path="res://Assets/Animations/Enemies/44守卫者/SpriteFrames/water.res" id="4_vxpr1"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="5_umgue"]
@@ -18,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://clcg0o8pih8t7" path="res://Assets/Sounds/FXs/Enemies/守卫者/守卫者appear4.wav" id="9_owbut"]
 [ext_resource type="PackedScene" uid="uid://c1v6c158wodx2" path="res://Scenes/Effects/water_move_effect.tscn" id="11_b0grf"]
 [ext_resource type="SpriteFrames" uid="uid://sar00g7112py" path="res://Assets/Animations/Enemies/44守卫者/SpriteFrames/land.res" id="11_gcraj"]
+[ext_resource type="Resource" uid="uid://bi7ri6m81kcwt" path="res://Library/Enemies/EnemyDatas/enemy_44.tres" id="13_gq0uw"]
 [ext_resource type="AudioStream" uid="uid://bpemphv5uttol" path="res://Assets/Sounds/FXs/Enemies/守卫者/尖刺.wav" id="17_eg433"]
 [ext_resource type="Shader" path="res://Assets/Shaders/guardian_ray.gdshader" id="18_5xcx3"]
 [ext_resource type="Texture2D" uid="uid://bfypq5d241fn8" path="res://Assets/Images/DefenceTowers/Magics/Towers/LV4-1/LV4-1-RAY.png" id="18_se55v"]
@@ -30,27 +30,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0.533333, 0, 1, 0)
 [sub_resource type="Gradient" id="Gradient_bosfn"]
 offsets = PackedFloat32Array(0, 0.303636)
 colors = PackedColorArray(1, 1, 1, 1, 0.533333, 0, 1, 0)
-
-[sub_resource type="Resource" id="Resource_2whcu"]
-script = ExtResource("3_xid2r")
-health = 1800
-dodge_rate = 0.0
-near_damage_low = 35
-near_damage_high = 60
-near_attack_speed = 2.0
-near_hit_rate = 1.0
-far_damage_low = 120
-far_damage_high = 170
-far_attack_speed = 8.0
-far_damage_range = 360
-armor = 0.0
-physic_immune = false
-magic_defence = 0.5
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6u7l"]
 size = Vector2(380, 115)
@@ -222,11 +201,11 @@ enemy_name = "守卫者"
 enemy_id = 44
 enemy_texture = ExtResource("3_twgnn")
 enemy_type = 3
-start_data = SubResource("Resource_2whcu")
+start_data = ExtResource("13_gq0uw")
 far_attack_waiting_timer = true
 lives_taken = 5
 bounty = 60
-die_audio_stream_list = Array[AudioStream]([null])
+die_audio_stream_list = Array[AudioStream]([ExtResource("4_2ntrs")])
 
 [node name="EnemySprite" parent="UnitBody" index="0"]
 position = Vector2(-15, -125)

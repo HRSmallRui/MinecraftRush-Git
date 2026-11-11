@@ -1,6 +1,7 @@
 extends Enemy
 
 @export var attack_audio_list: Array[AudioStream]
+@export var attack_damage: DamageBlock
 
 @onready var attack_timer: Timer = $AttackTimer
 @onready var shadow: Sprite2D = $UnitBody/Shadow
@@ -76,7 +77,7 @@ func attack(target_ally: Ally, target_pos: Vector2):
 	sprite_tween.tween_property(enemy_sprite,"offset",Vector2(0,35),move_time)
 	move_tween.tween_property(self,"position",target_pos,move_time)
 	await move_tween.finished
-	if target_ally != null: target_ally.take_damage(randi_range(16,30),DataProcess.DamageType.PhysicsDamage,0,false,self,false,false,)
+	if target_ally != null: target_ally.take_damage(attack_damage.get_damage(),DataProcess.DamageType.PhysicsDamage,0,false,self,false,false,)
 	var curve: Curve2D = get_parent().curve
 	progress = curve.get_closest_offset(target_pos)
 	var ret_tween: Tween = create_tween()

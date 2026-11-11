@@ -1,9 +1,9 @@
-[gd_scene load_steps=109 format=3 uid="uid://dny4v8gl6x6b"]
+[gd_scene load_steps=108 format=3 uid="uid://dny4v8gl6x6b"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_0b1yj"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_31.gd" id="2_y1nhi"]
 [ext_resource type="Texture2D" uid="uid://k8134r2xnqnk" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/苦力怕.png" id="3_y4njl"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_hkdis"]
+[ext_resource type="Resource" uid="uid://cqo3dm5yxnfaa" path="res://Library/Enemies/EnemyDatas/enemy_31.tres" id="4_du4ch"]
 [ext_resource type="PackedScene" uid="uid://cjodwjy7u7dta" path="res://Scenes/Bullets/enemy_energy_ball.tscn" id="5_bnhho"]
 [ext_resource type="Texture2D" uid="uid://bx74yb6pn1u0j" path="res://Assets/Animations/Enemies/31苦力怕/attack_00.png" id="5_h6b58"]
 [ext_resource type="Texture2D" uid="uid://datdn4unobypa" path="res://Assets/Animations/Enemies/31苦力怕/attack_01.png" id="6_vf4gi"]
@@ -105,28 +105,6 @@
 [ext_resource type="AudioStream" uid="uid://cbaamf5bgxukn" path="res://Assets/Sounds/FXs/Enemies/腐化苦力怕/入场3.wav" id="102_wm52o"]
 [ext_resource type="AudioStream" uid="uid://dma3eieeqmoxf" path="res://Assets/Sounds/FXs/Enemies/腐化苦力怕/入场4.wav" id="103_jd3rh"]
 [ext_resource type="AudioStream" uid="uid://cdwi7aoe3lqdb" path="res://Assets/Sounds/FXs/DefenceTowers/OperatorTurret/演算者发射.mp3" id="105_y8nlp"]
-
-
-[sub_resource type="Resource" id="Resource_kum83"]
-script = ExtResource("4_hkdis")
-health = 420
-dodge_rate = 0.0
-near_damage_low = 10
-near_damage_high = 18
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 80
-far_damage_high = 100
-far_attack_speed = 2.0
-far_damage_range = 320
-armor = 0.0
-physic_immune = false
-magic_defence = 0.8
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8hkwe"]
 animations = [{
@@ -464,7 +442,7 @@ upper_explosion_damage = 180
 enemy_name = "苦力怕"
 enemy_id = 31
 enemy_texture = ExtResource("3_y4njl")
-start_data = SubResource("Resource_kum83")
+start_data = ExtResource("4_du4ch")
 far_attack_bullet_scene = ExtResource("5_bnhho")
 bounty = 25
 die_audio_stream_list = Array[AudioStream]([])
@@ -485,7 +463,7 @@ position = Vector2(-70, -90)
 
 [node name="ExplosionArea" type="Area2D" parent="UnitBody" index="11"]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/ExplosionArea" index="0"]
 scale = Vector2(5, 3.5)

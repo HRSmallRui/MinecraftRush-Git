@@ -1,8 +1,8 @@
-[gd_scene load_steps=112 format=3 uid="uid://44npbgu1xrd5"]
+[gd_scene load_steps=111 format=3 uid="uid://44npbgu1xrd5"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_7yrb0"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="2_06cbw"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_0.gd" id="2_qbco0"]
+[ext_resource type="Resource" uid="uid://b8r8h7i12m8wb" path="res://Library/Enemies/EnemyDatas/enemy_0.tres" id="3_0jd2d"]
 [ext_resource type="Texture2D" uid="uid://bvgmbhga1m1me" path="res://Assets/Animations/Enemies/0尸国杂兵/尸国杂兵attack_00.png" id="3_lhbh5"]
 [ext_resource type="Texture2D" uid="uid://cih6minnj53g8" path="res://Assets/Animations/Enemies/0尸国杂兵/尸国杂兵attack_01.png" id="4_n65m3"]
 [ext_resource type="Texture2D" uid="uid://b3hs3eq8q8oci" path="res://Assets/Animations/Enemies/0尸国杂兵/尸国杂兵move_front_00.png" id="4_thw2y"]
@@ -109,27 +109,6 @@
 [ext_resource type="Texture2D" uid="uid://dyrvmv5vfm7ol" path="res://Assets/Animations/Enemies/0尸国杂兵/尸国杂兵move_back_21.png" id="58_k01me"]
 [ext_resource type="Texture2D" uid="uid://bvb8jdrvkibj0" path="res://Assets/Animations/Enemies/0尸国杂兵/尸国杂兵move_back_22.png" id="59_4318w"]
 [ext_resource type="Texture2D" uid="uid://cnl4qir2hqfu3" path="res://Assets/Animations/Enemies/0尸国杂兵/尸国杂兵move_back_23.png" id="60_3hs3v"]
-
-[sub_resource type="Resource" id="Resource_eop1a"]
-script = ExtResource("2_06cbw")
-health = 20
-dodge_rate = 0.0
-near_damage_low = 2
-near_damage_high = 4
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 1.1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0cye"]
 animations = [{
@@ -488,7 +467,7 @@ animations = [{
 [node name="Enemy0" instance=ExtResource("1_7yrb0")]
 script = ExtResource("2_qbco0")
 enemy_name = "尸国杂兵"
-start_data = SubResource("Resource_eop1a")
+start_data = ExtResource("3_0jd2d")
 bounty = 3
 
 [node name="EnemySprite" parent="UnitBody" index="0"]

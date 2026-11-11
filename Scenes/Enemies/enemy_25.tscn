@@ -1,10 +1,10 @@
-[gd_scene load_steps=186 format=3 uid="uid://bogv4dflqaoej"]
+[gd_scene load_steps=185 format=3 uid="uid://bogv4dflqaoej"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_vm7jm"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_25.gd" id="2_eooqg"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_8fxy8"]
 [ext_resource type="Texture2D" uid="uid://dqe11qgojee6a" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter3/木乃伊.png" id="3_xop8w"]
 [ext_resource type="AudioStream" uid="uid://dw1xc50um8dws" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳死亡1.wav" id="4_frdox"]
+[ext_resource type="Resource" uid="uid://cxdts2r2j7xuo" path="res://Library/Enemies/EnemyDatas/enemy_25.tres" id="4_wsy8i"]
 [ext_resource type="AudioStream" uid="uid://dpppdrj6vx40o" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳死亡2.wav" id="5_mt6n1"]
 [ext_resource type="AudioStream" uid="uid://d0pnofrboijy" path="res://Assets/Sounds/FXs/Enemies/尸壳/尸壳死亡3.wav" id="6_3hpc8"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="7_ddcyd"]
@@ -183,28 +183,6 @@
 [ext_resource type="Texture2D" uid="uid://bkm4qhymbn1e1" path="res://Assets/Animations/Enemies/25木乃伊/move_normal_37.png" id="177_jcfae"]
 [ext_resource type="Texture2D" uid="uid://bcw217mto6uda" path="res://Assets/Animations/Enemies/25木乃伊/move_normal_38.png" id="178_sct54"]
 [ext_resource type="Texture2D" uid="uid://bogsvr747eijp" path="res://Assets/Animations/Enemies/25木乃伊/move_normal_39.png" id="179_w1rsj"]
-
-
-[sub_resource type="Resource" id="Resource_5ldkb"]
-script = ExtResource("3_8fxy8")
-health = 400
-dodge_rate = 0.0
-near_damage_low = 12
-near_damage_high = 18
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.7
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ih4bc"]
 animations = [{
@@ -763,7 +741,7 @@ script = ExtResource("2_eooqg")
 enemy_name = "木乃伊"
 enemy_id = 25
 enemy_texture = ExtResource("3_xop8w")
-start_data = SubResource("Resource_5ldkb")
+start_data = ExtResource("4_wsy8i")
 bounty = 10
 die_audio_stream_list = Array[AudioStream]([ExtResource("4_frdox"), ExtResource("5_mt6n1"), ExtResource("6_3hpc8")])
 

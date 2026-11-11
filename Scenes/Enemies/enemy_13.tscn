@@ -1,9 +1,9 @@
-[gd_scene load_steps=62 format=3 uid="uid://j30jxo8yq22y"]
+[gd_scene load_steps=61 format=3 uid="uid://j30jxo8yq22y"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_hkymv"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_13.gd" id="2_k8fpu"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_4xerg"]
 [ext_resource type="Texture2D" uid="uid://dnfggx7sessku" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter2/腐化苦力怕.png" id="3_hi7gq"]
+[ext_resource type="Resource" uid="uid://djidfv6n8ty38" path="res://Library/Enemies/EnemyDatas/enemy_13.tres" id="4_235rn"]
 [ext_resource type="Texture2D" uid="uid://du25m0rog668q" path="res://Assets/Animations/Enemies/13野区苦力怕/idle_0.png" id="5_47xwk"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="5_d0vj3"]
 [ext_resource type="Texture2D" uid="uid://blpdx4ka0ba3c" path="res://Assets/Animations/Enemies/13野区苦力怕/move_back_00.png" id="6_w3rwj"]
@@ -58,28 +58,6 @@
 [ext_resource type="Texture2D" uid="uid://qkn38ufiqaiw" path="res://Assets/Animations/Enemies/13野区苦力怕/move_normal_13.png" id="51_3hlyu"]
 [ext_resource type="Texture2D" uid="uid://iha73rh7sb4f" path="res://Assets/Animations/Enemies/13野区苦力怕/move_normal_14.png" id="52_qjgjm"]
 [ext_resource type="Texture2D" uid="uid://c736agh060vs7" path="res://Assets/Animations/Enemies/13野区苦力怕/move_normal_15.png" id="53_2gtn3"]
-
-
-[sub_resource type="Resource" id="Resource_uk3rk"]
-script = ExtResource("3_4xerg")
-health = 70
-dodge_rate = 0.0
-near_damage_low = 0
-near_damage_high = 0
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.4
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 2.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdmmd"]
 animations = [{
@@ -265,7 +243,7 @@ explosion_damage = 60
 enemy_name = "腐化爬行者"
 enemy_id = 13
 enemy_texture = ExtResource("3_hi7gq")
-start_data = SubResource("Resource_uk3rk")
+start_data = ExtResource("4_235rn")
 bounty = 8
 die_audio_stream_list = Array[AudioStream]([])
 die_blood_scene = null
@@ -281,7 +259,7 @@ offset_right = 45.0
 
 [node name="ExplosionArea" type="Area2D" parent="UnitBody" index="8"]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/ExplosionArea" index="0"]
 scale = Vector2(5, 3.5)

@@ -1,9 +1,9 @@
-[gd_scene load_steps=105 format=3 uid="uid://dk81pa88qj7rh"]
+[gd_scene load_steps=104 format=3 uid="uid://dk81pa88qj7rh"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_68ule"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_30.gd" id="2_es50b"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="3_gewbh"]
 [ext_resource type="Texture2D" uid="uid://bh46akq8ho5ky" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/厌国精英.png" id="3_j7ugu"]
+[ext_resource type="Resource" uid="uid://b1c05e6vpewii" path="res://Library/Enemies/EnemyDatas/enemy_30.tres" id="4_d4c16"]
 [ext_resource type="Texture2D" uid="uid://d2dfbnpn74sp0" path="res://Assets/Animations/Enemies/30厌国精英/attack_00.png" id="5_41gg7"]
 [ext_resource type="Texture2D" uid="uid://cgvoscn6l1yd4" path="res://Assets/Animations/Enemies/30厌国精英/attack_01.png" id="6_hknxw"]
 [ext_resource type="Texture2D" uid="uid://c08pnyhiyccj6" path="res://Assets/Animations/Enemies/30厌国精英/attack_02.png" id="7_f5n7e"]
@@ -101,28 +101,6 @@
 [ext_resource type="Texture2D" uid="uid://csi7ggkde5hfe" path="res://Assets/Animations/Enemies/30厌国精英/move_normal_21.png" id="99_02ukh"]
 [ext_resource type="Texture2D" uid="uid://dygixtph4xh78" path="res://Assets/Animations/Enemies/30厌国精英/move_normal_22.png" id="100_xt5iy"]
 [ext_resource type="Texture2D" uid="uid://chyrjdwhqyi4c" path="res://Assets/Animations/Enemies/30厌国精英/move_normal_23.png" id="101_hk1lm"]
-
-
-[sub_resource type="Resource" id="Resource_pjdg7"]
-script = ExtResource("3_gewbh")
-health = 640
-dodge_rate = 0.0
-near_damage_low = 21
-near_damage_high = 36
-near_attack_speed = 1.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.7
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.9
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xkvso"]
 animations = [{
@@ -465,7 +443,7 @@ enemy_name = "厌国精英"
 enemy_id = 30
 enemy_texture = ExtResource("3_j7ugu")
 enemy_type = 1
-start_data = SubResource("Resource_pjdg7")
+start_data = ExtResource("4_d4c16")
 bounty = 40
 die_audio_stream_list = Array[AudioStream]([])
 die_blood_scene = null
@@ -478,7 +456,7 @@ autoplay = "idle"
 
 [node name="ExplosionArea" type="Area2D" parent="UnitBody" index="11"]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 16392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnitBody/ExplosionArea" index="0"]
 scale = Vector2(5, 3.5)

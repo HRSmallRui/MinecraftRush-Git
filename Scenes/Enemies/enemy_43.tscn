@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwe0lexv3xqbi"]
+[gd_scene load_steps=15 format=3 uid="uid://cwe0lexv3xqbi"]
 
 [ext_resource type="PackedScene" uid="uid://c3a06iwf4hcp1" path="res://Scenes/Classes/enemy_class.tscn" id="1_earkp"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_43.gd" id="2_htsm8"]
 [ext_resource type="SpriteFrames" uid="uid://ga7vsqk2fbik" path="res://Assets/Animations/Enemies/43泰坦威克斯/SpriteFrames/flying_animation.res" id="3_648n8"]
 [ext_resource type="Texture2D" uid="uid://hkgd1hvbg3i4" path="res://Assets/Images/UI/InformationBar/Enemies/EnemyChapter4/泰坦威克斯.png" id="3_mwn4h"]
-[ext_resource type="Script" path="res://Scripts/Datas/UnitData.gd" id="4_4al5v"]
 [ext_resource type="AudioStream" uid="uid://dafjjdtfhpobl" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼die1.wav" id="5_hnh0g"]
+[ext_resource type="Resource" uid="uid://bq52ieqkp661n" path="res://Library/Enemies/EnemyDatas/enemy_43.tres" id="6_0nw36"]
 [ext_resource type="AudioStream" uid="uid://debk0vkxpfccc" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼die2.wav" id="6_tn5en"]
 [ext_resource type="PackedScene" uid="uid://dcjuved17hj6j" path="res://Scenes/Enemies/EnemyComponents/appear_audio_component.tscn" id="7_efmrq"]
 [ext_resource type="SpriteFrames" uid="uid://cmpqwg4lthjos" path="res://Assets/Animations/Enemies/43泰坦威克斯/SpriteFrames/landing_animation.res" id="7_xlm58"]
@@ -13,27 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://woufbpcy1h8q" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼appear2.wav" id="9_5yqkj"]
 [ext_resource type="AudioStream" uid="uid://ola80h162jgu" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼appear3.wav" id="10_46rvm"]
 [ext_resource type="AudioStream" uid="uid://cwg7yw6h3elsl" path="res://Assets/Sounds/FXs/Enemies/恼鬼/恼鬼appear4.wav" id="11_tms5y"]
-
-[sub_resource type="Resource" id="Resource_bm40n"]
-script = ExtResource("4_4al5v")
-health = 1600
-dodge_rate = 0.0
-near_damage_low = 35
-near_damage_high = 60
-near_attack_speed = 2.0
-near_hit_rate = 1.0
-far_damage_low = 0
-far_damage_high = 0
-far_attack_speed = 0.0
-far_damage_range = 0
-armor = 0.0
-physic_immune = false
-magic_defence = 0.0
-magic_immune = false
-explode_defence = 0.0
-explode_immune = false
-total_defence_rate = 0.0
-unit_move_speed = 0.6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfvu0"]
 size = Vector2(110, 100)
@@ -46,7 +25,7 @@ enemy_name = "泰坦威克斯"
 enemy_id = 43
 enemy_texture = ExtResource("3_mwn4h")
 enemy_type = 2
-start_data = SubResource("Resource_bm40n")
+start_data = ExtResource("6_0nw36")
 lives_taken = 3
 bounty = 80
 die_audio_stream_list = Array[AudioStream]([ExtResource("5_hnh0g"), ExtResource("6_tn5en")])
