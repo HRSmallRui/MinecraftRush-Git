@@ -23,7 +23,10 @@ func update_text():
 
 
 func _on_pressed() -> void:
-	WikiManager.instance.into_new_wiki_page(target_page_path,0,target_page_pos)
+	if target_page_path != "":
+		WikiManager.instance.into_new_wiki_page(target_page_path,0,target_page_pos)
+	else:
+		WikiManager.instance.current_wiki_page.into_target_pos(target_page_pos)
 	pass # Replace with function body.
 
 
