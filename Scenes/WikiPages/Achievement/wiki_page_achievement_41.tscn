@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcfnbyi1kkl6m"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_1ufsd"]
+[ext_resource type="Texture2D" uid="uid://dcndgys4kc05w" path="res://Assets/Images/UI/Achievements/TheForest.png" id="2_ynnls"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_oyuwc"]
+[ext_resource type="Texture2D" uid="uid://bup8u6tkwk5en" path="res://Assets/Images/Stages/Stage12/stage12.png" id="4_dm8xf"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="5_h4ip3"]
+
+[node name="WikiPageAchievement41" instance=ExtResource("1_1ufsd")]
+offset_bottom = 1332.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_ynnls")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "野外求生第二步"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "生火，可用于保暖、照亮黑夜或吓走敌人。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "点击第 12 关丛林神殿左侧海滩处的熄灭篝火即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_oyuwc")]
+layout_mode = 2
+texture = ExtResource("4_dm8xf")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0" instance=ExtResource("5_h4ip3")]
+position = Vector2(233, 302)
+scale = Vector2(0.364636, 0.364636)

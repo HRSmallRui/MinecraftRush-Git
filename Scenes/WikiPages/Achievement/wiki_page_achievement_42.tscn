@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://brx24gilsy3im"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_xkiuv"]
+[ext_resource type="Texture2D" uid="uid://borf44bdcnnrv" path="res://Assets/Images/UI/Achievements/CARRION.png" id="2_ljqbc"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_o8p6u"]
+[ext_resource type="Texture2D" uid="uid://bup8u6tkwk5en" path="res://Assets/Images/Stages/Stage12/stage12.png" id="4_sp0g1"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="5_o3opt"]
+
+[node name="WikiPageAchievement42" instance=ExtResource("1_xkiuv")]
+offset_bottom = 1476.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_ljqbc")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "罐装生涯"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "激怒培养罐中的生物。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "连续点击 12 关丛林神殿右侧培养罐 10 次直到发出吼叫声为止即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_o8p6u")]
+layout_mode = 2
+texture = ExtResource("4_sp0g1")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0" instance=ExtResource("5_o3opt")]
+position = Vector2(651, 165)
