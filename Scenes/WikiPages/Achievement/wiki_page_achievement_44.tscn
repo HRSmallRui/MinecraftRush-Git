@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7e621mim8mn2"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_sl77v"]
+[ext_resource type="Texture2D" uid="uid://dnh7lrpaoddnc" path="res://Assets/Images/UI/Achievements/INSIDE.png" id="2_chosv"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_o1ofy"]
+[ext_resource type="Texture2D" uid="uid://bus5x34qfdr3b" path="res://Assets/Images/Stages/Stage13/stage13.png" id="4_0vely"]
+[ext_resource type="Texture2D" uid="uid://dt2k0i385aouc" path="res://Assets/Images/Stages/Stage13/Machine/Machine_00.png" id="5_6xc5f"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="6_2hs8u"]
+
+[node name="WikiPageAchievement44" instance=ExtResource("1_sl77v")]
+offset_bottom = 1435.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_chosv")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "深入"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "找到潜水艇。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "点击第 13 关粘液沼泽上方沼泽露出半个脑袋的潜水艇，即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_o1ofy")]
+layout_mode = 2
+texture = ExtResource("4_0vely")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(452, 43)
+scale = Vector2(0.30037, 0.30037)
+texture = ExtResource("5_6xc5f")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1" instance=ExtResource("6_2hs8u")]
+position = Vector2(452, 45)

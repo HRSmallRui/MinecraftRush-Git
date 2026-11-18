@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://6v243ounkye1"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_luxij"]
+[ext_resource type="Texture2D" uid="uid://ddi01s0e6f2qw" path="res://Assets/Images/UI/Achievements/Freddy.png" id="2_3gl80"]
+[ext_resource type="Texture2D" uid="uid://bl1ddji3janfi" path="res://Assets/Images/Stages/Stage6/Stage6.png" id="3_s4moj"]
+[ext_resource type="Texture2D" uid="uid://ejy5ojutujcj" path="res://Assets/Images/UI/Wiki/red_circle.png" id="4_yiw06"]
+
+[node name="WikiPageAchievement15" instance=ExtResource("1_luxij")]
+offset_bottom = 1391.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_3gl80")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "高薪工作"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "熊爷是你能调戏的？"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "第 6 关弗拉里斯带地图左上角的弗雷迪披萨店，累计点击弗雷迪头像鼻子位置 10 次解锁该成就。"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+texture = ExtResource("3_s4moj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/TextureRect" index="0"]
+position = Vector2(281, 19)
+scale = Vector2(0.174014, 0.174014)
+texture = ExtResource("4_yiw06")

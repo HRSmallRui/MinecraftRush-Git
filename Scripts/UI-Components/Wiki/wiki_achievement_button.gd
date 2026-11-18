@@ -25,3 +25,11 @@ func update_texture():
 func update_label():
 	achieve_name_label.text = achievement_name
 	pass
+
+
+func _pressed() -> void:
+	if target_page_path != "":
+		WikiManager.instance.into_new_wiki_page(target_page_path,0,0)
+	else:
+		WikiManager.instance.current_wiki_page.into_target_pos(0)
+	pass

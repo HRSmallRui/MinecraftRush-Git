@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn6c773744k4h"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_y71f8"]
+[ext_resource type="Texture2D" uid="uid://omo84bo8138f" path="res://Assets/Images/UI/Achievements/SunAchieve.png" id="2_0k0vw"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_kg3df"]
+[ext_resource type="Texture2D" uid="uid://dv1iufau2hc6q" path="res://Assets/Images/Stages/Stage10/radio_small.png" id="4_ougsi"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="5_nxktg"]
+
+[node name="WikiPageAchievement30" instance=ExtResource("1_y71f8")]
+offset_bottom = 1450.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_0k0vw")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "太阳！"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "沙漠关卡都是夜晚关卡。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "第 10 关绝望沙丘左侧点击收音机即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_kg3df")]
+layout_mode = 2
+
+[node name="RadioSmall" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(156, 317)
+scale = Vector2(0.61949, 0.61949)
+texture = ExtResource("4_ougsi")
+region_enabled = true
+region_rect = Rect2(3, 1, 28, 27)
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1" instance=ExtResource("5_nxktg")]

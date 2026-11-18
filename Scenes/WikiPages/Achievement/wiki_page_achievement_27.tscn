@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqfjapwxscm64"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_kmdl7"]
+[ext_resource type="Texture2D" uid="uid://cjahj3pbi585d" path="res://Assets/Images/UI/Achievements/SandHuman.png" id="2_xulcl"]
+[ext_resource type="Texture2D" uid="uid://srp7iwuto1ln" path="res://Assets/Images/Stages/Stage9/stage9.png" id="3_wyqgp"]
+[ext_resource type="Texture2D" uid="uid://c82gi4wabcqt8" path="res://Assets/Images/Stages/Stage9/SandHuman/idle_0.png" id="4_avwpu"]
+[ext_resource type="Texture2D" uid="uid://ejy5ojutujcj" path="res://Assets/Images/UI/Wiki/red_circle.png" id="5_ekvme"]
+
+[node name="WikiPageAchievement27" instance=ExtResource("1_kmdl7")]
+offset_bottom = 1367.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_xulcl")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "我即沙，随风而散"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "让沙人融入沙漠。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "第 9 关沙漠神殿点击沙人彩蛋让沙人融入沙漠。"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+texture = ExtResource("3_wyqgp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Idle0" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/TextureRect" index="0"]
+position = Vector2(804, 75)
+scale = Vector2(0.401658, 0.401658)
+texture = ExtResource("4_avwpu")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/TextureRect" index="1"]
+position = Vector2(804, 75)
+texture = ExtResource("5_ekvme")

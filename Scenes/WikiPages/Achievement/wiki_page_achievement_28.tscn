@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp6n53vngm7hc"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_2q2tu"]
+[ext_resource type="Texture2D" uid="uid://bcub40d63jeal" path="res://Assets/Images/UI/Achievements/DancingCat.png" id="2_hi2lr"]
+[ext_resource type="Texture2D" uid="uid://srp7iwuto1ln" path="res://Assets/Images/Stages/Stage9/stage9.png" id="3_cvxhu"]
+[ext_resource type="Texture2D" uid="uid://bh6b23py5k7jo" path="res://Assets/Images/Stages/Stage9/Cat/dance_00.png" id="4_1ubdg"]
+[ext_resource type="Texture2D" uid="uid://ejy5ojutujcj" path="res://Assets/Images/UI/Wiki/red_circle.png" id="5_yugqw"]
+
+[node name="WikiPageAchievement28" instance=ExtResource("1_2q2tu")]
+offset_bottom = 1325.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_hi2lr")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "Ankha Dance!"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "让埃及猫猫跳摇摆舞。（你游戏还要不要了？！）"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "第 9 关沙漠神殿点击埃及猫让埃及猫猫跳舞。"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+texture = ExtResource("3_cvxhu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Idle0" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/TextureRect" index="0"]
+position = Vector2(717, 417)
+scale = Vector2(0.401658, 0.401658)
+texture = ExtResource("4_1ubdg")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/TextureRect" index="1"]
+position = Vector2(718, 417)
+texture = ExtResource("5_yugqw")
