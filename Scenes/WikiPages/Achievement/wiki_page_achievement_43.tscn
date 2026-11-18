@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdkhe54jif2yc"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_lshlk"]
+[ext_resource type="Texture2D" uid="uid://bylt3c7hoplvh" path="res://Assets/Images/UI/Achievements/Primary.png" id="2_ier80"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_ycxea"]
+[ext_resource type="Texture2D" uid="uid://bup8u6tkwk5en" path="res://Assets/Images/Stages/Stage12/stage12.png" id="4_q4hhs"]
+[ext_resource type="Texture2D" uid="uid://ok70cbjiilrf" path="res://Assets/Images/Stages/Stage12/cat_and_crayon.png" id="5_0hq4s"]
+[ext_resource type="Texture2D" uid="uid://bus5x34qfdr3b" path="res://Assets/Images/Stages/Stage13/stage13.png" id="5_0wnhe"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="6_1smqy"]
+[ext_resource type="Texture2D" uid="uid://dujv512r2q3tk" path="res://Assets/Images/Stages/Stage14/stage14.png" id="6_jur3q"]
+[ext_resource type="Texture2D" uid="uid://bxshn0yuldw15" path="res://Assets/Images/Stages/Stage13/crayon.png" id="8_oyjf0"]
+
+[node name="WikiPageAchievement43" instance=ExtResource("1_lshlk")]
+offset_bottom = 2529.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_ier80")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "我的图画本在哪里"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "收集三支不同颜色的蜡笔。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "第 12 关丛林神殿右侧位置收集黄色蜡笔。
+ 
+第 13 关粘液沼泽上方位置收集蓝色蜡笔。
+ 
+第 14 关林地府邸左侧位置收集红色蜡笔。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_ycxea")]
+layout_mode = 2
+texture = ExtResource("4_q4hhs")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(721, 67)
+scale = Vector2(0.177259, 0.177259)
+texture = ExtResource("5_0hq4s")
+region_enabled = true
+region_rect = Rect2(220, 10, 56, 89)
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1" instance=ExtResource("6_1smqy")]
+position = Vector2(721, 64)
+
+[node name="WikiStageViewTexture2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="3" instance=ExtResource("3_ycxea")]
+layout_mode = 2
+texture = ExtResource("5_0wnhe")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture2" index="0"]
+position = Vector2(486, 235)
+scale = Vector2(0.0887676, 0.0887676)
+texture = ExtResource("8_oyjf0")
+region_enabled = true
+region_rect = Rect2(22, 4, 54, 92)
+
+[node name="WikiRedCircle2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture2" index="1" instance=ExtResource("6_1smqy")]
+position = Vector2(487, 235)
+scale = Vector2(0.49693, 0.49693)
+
+[node name="WikiStageViewTexture3" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="4" instance=ExtResource("3_ycxea")]
+layout_mode = 2
+texture = ExtResource("6_jur3q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture3" index="0"]
+position = Vector2(505, 290)
+scale = Vector2(0.0941205, 0.0941205)
+texture = ExtResource("8_oyjf0")
+region_enabled = true
+region_rect = Rect2(121, 3, 54, 92)
+
+[node name="WikiRedCircle3" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture3" index="1" instance=ExtResource("6_1smqy")]
+position = Vector2(505, 290)
+scale = Vector2(0.49693, 0.49693)

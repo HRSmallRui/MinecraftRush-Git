@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfyind16ug0jn"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_vthte"]
+[ext_resource type="Texture2D" uid="uid://uanrdqd370d1" path="res://Assets/Images/UI/Achievements/GyakutenSaiban.png" id="2_bbhjq"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_j8bc8"]
+[ext_resource type="Texture2D" uid="uid://faoxrs5dir34" path="res://Assets/Images/Stages/Stage19/stage19.png" id="4_bdoje"]
+[ext_resource type="Texture2D" uid="uid://day0pa7vap8u1" path="res://Assets/Images/Stages/Stage19/lawyer.png" id="5_den6r"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="6_iyuyl"]
+
+[node name="WikiPageAchievement58" instance=ExtResource("1_vthte")]
+offset_bottom = 1422.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_bbhjq")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "一斤鸭梨！"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "找到律师徽章。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "点击 19 关诺冰大峡谷地图右侧律师徽章即可结果成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_j8bc8")]
+layout_mode = 2
+texture = ExtResource("4_bdoje")
+
+[node name="Lawyer" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(821, 170)
+scale = Vector2(0.0265144, 0.0265144)
+texture = ExtResource("5_den6r")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1" instance=ExtResource("6_iyuyl")]
+position = Vector2(822, 168)

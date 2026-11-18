@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b06cm8t7seg38"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_enon1"]
+[ext_resource type="Texture2D" uid="uid://cyiydmi7tclpy" path="res://Assets/Images/UI/Achievements/PrayGame2.png" id="2_e4ojw"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_b53ws"]
+[ext_resource type="Texture2D" uid="uid://b8bwxdoq8rlgb" path="res://Assets/Images/Stages/Stage20/stage20_2.png" id="4_puffu"]
+[ext_resource type="Texture2D" uid="uid://bg4x77ria0pn" path="res://Assets/Images/Stages/Stage20/magicheart_green.png" id="5_jqihj"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="6_dgjit"]
+
+[node name="WikiPageAchievement59" instance=ExtResource("1_enon1")]
+offset_bottom = 1390.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_e4ojw")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "永世献身之善性"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "配对两个POWER II的魔核。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "找到并依次点击 20 关皇城地图中的POWER II的魔核即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_b53ws")]
+layout_mode = 2
+texture = ExtResource("4_puffu")
+
+[node name="MagicheartGreen" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(561, 188)
+scale = Vector2(0.156388, 0.156388)
+texture = ExtResource("5_jqihj")
+
+[node name="MagicheartGreen2" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1"]
+position = Vector2(454, 176)
+scale = Vector2(0.156388, 0.156388)
+texture = ExtResource("5_jqihj")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="2" instance=ExtResource("6_dgjit")]
+position = Vector2(455, 177)
+
+[node name="WikiRedCircle2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="3" instance=ExtResource("6_dgjit")]
+position = Vector2(562, 187)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bljs6pt1cq2ww"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_vnl74"]
+[ext_resource type="Texture2D" uid="uid://djuvwpsax3bus" path="res://Assets/Images/UI/Achievements/Boss5Dead.png" id="2_kwyfg"]
+
+[node name="WikiPageAchievement54" instance=ExtResource("1_vnl74")]
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_kwyfg")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Icon" index="0"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "他不是白王，我才是"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "击败LIVER。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "击败LIVER。"

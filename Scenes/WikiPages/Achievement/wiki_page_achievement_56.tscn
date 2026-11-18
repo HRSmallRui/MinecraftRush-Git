@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bidfigh20wrg7"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_skj8l"]
+[ext_resource type="Texture2D" uid="uid://mw7vpilo30rx" path="res://Assets/Images/UI/Achievements/kinito_pet.png" id="2_yntsj"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_fqx8n"]
+[ext_resource type="Texture2D" uid="uid://bfv0l8wvlhfx1" path="res://Assets/Images/Stages/Stage18/stage18.png" id="4_uso8g"]
+[ext_resource type="Texture2D" uid="uid://052qsmmbf0ja" path="res://Assets/Images/Stages/Stage18/kinito_pet.png" id="5_yecpd"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="6_3e20q"]
+
+[node name="WikiPageAchievement56" instance=ExtResource("1_skj8l")]
+offset_bottom = 1340.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_yntsj")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "你会原谅我吗"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "成功删除KinitoPet。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "点击 18 关诺冰要塞右侧地图的kinito pet即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_fqx8n")]
+layout_mode = 2
+texture = ExtResource("4_uso8g")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(925, 86)
+scale = Vector2(0.112266, 0.112266)
+texture = ExtResource("5_yecpd")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1" instance=ExtResource("6_3e20q")]
+position = Vector2(923, 88)
+scale = Vector2(1.21502, 1.21502)

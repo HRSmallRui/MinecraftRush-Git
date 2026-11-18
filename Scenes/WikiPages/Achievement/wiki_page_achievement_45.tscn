@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://vq3xlr7kktrm"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_vv8si"]
+[ext_resource type="Texture2D" uid="uid://btp7hcqyic51x" path="res://Assets/Images/UI/Achievements/GAIA1.png" id="2_bulaf"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_fumhy"]
+[ext_resource type="Texture2D" uid="uid://bus5x34qfdr3b" path="res://Assets/Images/Stages/Stage13/stage13.png" id="4_vc10k"]
+[ext_resource type="Texture2D" uid="uid://cus6rtdkhn3us" path="res://Assets/Images/Stages/Stage13/musicbox-2.png" id="5_dg5oj"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="6_k0ila"]
+
+[node name="WikiPageAchievement45" instance=ExtResource("1_vv8si")]
+offset_bottom = 1452.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_bulaf")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "悲伤的沼泽"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "找到沼泽的八音盒并播放音乐。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "点击第 13 关粘液沼泽靠上位置的八音盒即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_fumhy")]
+layout_mode = 2
+texture = ExtResource("4_vc10k")
+
+[node name="Musicbox-2" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(614, 83)
+scale = Vector2(0.122872, 0.122872)
+texture = ExtResource("5_dg5oj")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1" instance=ExtResource("6_k0ila")]
+position = Vector2(615, 82)
+scale = Vector2(0.723098, 0.723098)

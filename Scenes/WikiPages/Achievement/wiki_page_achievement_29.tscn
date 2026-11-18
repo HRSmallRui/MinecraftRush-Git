@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy7vbgqvpdww"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_coox8"]
+[ext_resource type="Texture2D" uid="uid://dtfjxjujc2dm2" path="res://Assets/Images/UI/Achievements/Remilia.png" id="2_6gokc"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_3jnwh"]
+[ext_resource type="PackedScene" uid="uid://ceinxjwiqdhxg" path="res://Scenes/StageComponents/remilia.tscn" id="4_kyegd"]
+[ext_resource type="Texture2D" uid="uid://ejy5ojutujcj" path="res://Assets/Images/UI/Wiki/red_circle.png" id="5_4uvsy"]
+
+[node name="WikiPageAchievement29" instance=ExtResource("1_coox8")]
+offset_bottom = 1416.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_6gokc")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "胃炎满满"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "找到威严扫地机器人。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "第 10 关绝望沙丘点击右下角的扫地机器人解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_3jnwh")]
+layout_mode = 2
+
+[node name="Remilia" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0" instance=ExtResource("4_kyegd")]
+scale = Vector2(0.475333, 0.475333)
+script = null
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1"]
+position = Vector2(822, 368)
+texture = ExtResource("5_4uvsy")
