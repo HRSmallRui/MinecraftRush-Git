@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj3pp4xufw6rt"]
+
+[ext_resource type="PackedScene" uid="uid://c8wgi652k0h1j" path="res://Scenes/WikiPages/Templates/wiki_page_achievement.tscn" id="1_xs06v"]
+[ext_resource type="Texture2D" uid="uid://ci2lah5yxjo8i" path="res://Assets/Images/UI/Achievements/Resident.png" id="2_f888p"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_d5lxm"]
+[ext_resource type="Texture2D" uid="uid://cjofbojx1dr7q" path="res://Assets/Images/Stages/Stage14/stage14-map1.png" id="4_gioi5"]
+[ext_resource type="Texture2D" uid="uid://cj6d55iukwq5p" path="res://Assets/Images/Stages/Stage14/Chest/0001.png" id="5_6cfus"]
+[ext_resource type="PackedScene" uid="uid://cl2udtcgo12pp" path="res://Scenes/UI-Components/Wiki/wiki_red_circle.tscn" id="5_u7m2n"]
+
+[node name="WikiPageAchievement46" instance=ExtResource("1_xs06v")]
+offset_bottom = 1336.0
+
+[node name="Icon" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_f888p")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "三光进村，寸草不生"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Text" index="1"]
+text = "搜刮林地府邸全部战利品。"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="1"]
+text = "第 14 关林地府邸内部有总共 9 个箱子，全部搜集点击即可解锁该成就。"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked" index="2" instance=ExtResource("3_d5lxm")]
+layout_mode = 2
+texture = ExtResource("4_gioi5")
+
+[node name="Chest1" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="0"]
+position = Vector2(131, 34)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest1" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest2" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="1"]
+position = Vector2(209, 95)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest2" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest3" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="2"]
+position = Vector2(129, 153)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest3" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest4" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="3"]
+position = Vector2(196, 163)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest4" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest5" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="4"]
+position = Vector2(348, 191)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest5" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest6" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="5"]
+position = Vector2(504, 164)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest6" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest7" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="6"]
+position = Vector2(366, 95)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest7" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest8" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="7"]
+position = Vector2(444, 33)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest8" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
+
+[node name="Chest9" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture" index="8"]
+position = Vector2(499, 21)
+scale = Vector2(0.141781, 0.141781)
+texture = ExtResource("5_6cfus")
+
+[node name="WikiRedCircle" parent="VBoxContainer/MarginContainer/VBoxContainer/Unlocked/WikiStageViewTexture/Chest9" index="0" instance=ExtResource("5_u7m2n")]
+position = Vector2(0, 7.05322)
+scale = Vector2(1.97156, 1.97156)
