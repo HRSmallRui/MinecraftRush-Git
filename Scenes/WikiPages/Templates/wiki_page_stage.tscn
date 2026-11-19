@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2jeksw48nf"]
+[gd_scene load_steps=17 format=3 uid="uid://b2jeksw48nf"]
 
 [ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_xscfc"]
 [ext_resource type="Texture2D" uid="uid://dsviwmsk3ct40" path="res://Assets/Images/Stages/Stage1/stage1-view.png" id="2_pdsmd"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="11_b4jfh"]
 [ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="12_24yhp"]
 [ext_resource type="AudioStream" uid="uid://fy8ydmnyba0s" path="res://Assets/Sounds/Music/BossFight.mp3" id="13_yyg56"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="14_eenb4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vtrpj"]
 resource_local_to_scene = true
@@ -405,3 +406,58 @@ text = "如果没有选择跳过新手教程，则会在以下波次解锁能力
  
 第 6 波： 天降火雨"
 autowrap_mode = 3
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 48.0
+offset_top = 157.0
+offset_right = 396.0
+offset_bottom = 1017.0
+scale = Vector2(0.904333, 0.904333)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "关卡信息"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Info")
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "剧情文本"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Story")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "关卡配置"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Config")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "出怪路线"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/EnemyPath")
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "出怪列表"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig")
+
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "挑战模式限制"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/TechLevel")
+
+[node name="NavigationButton7" parent="TopMenu/NavigationVBox" index="6" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "关卡音乐"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Music")
+
+[node name="NavigationButton8" parent="TopMenu/NavigationVBox" index="7" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "特殊机制"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Special")
