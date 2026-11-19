@@ -5,7 +5,7 @@ extends Line2D
 @export var update: bool:
 	set(v):
 		call_deferred("on_update")
-@export_range(0,1) var hsv_strength: float
+@export_range(0,1) var hue_strength: float
 
 
 func on_update():

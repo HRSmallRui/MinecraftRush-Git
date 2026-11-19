@@ -9,6 +9,11 @@ extends ScrollContainer
 @export var total_wave_count: int
 @export var summon_block_list: Array[PathSummonList]
 
+@export var loading_configs: bool:
+	set(v):
+		on_loading_configs()
+@export_dir var loading_path: String
+
 @export_group("Refs")
 @export var wiki_table_element_scene: PackedScene
 
@@ -17,6 +22,17 @@ extends ScrollContainer
 
 func _ready() -> void:
 	on_update()
+	pass
+
+
+func on_loading_configs():
+	var new_list: Array[PathSummonList]
+	for i in wave_font_color_list.size() * 3:
+		var file_name: String = "path" + str(i+1) + ".res"
+		file_name = loading_path + "/" + file_name
+		new_list.append(load(file_name))
+	if not new_list.is_empty():
+		summon_block_list = new_list
 	pass
 
 
