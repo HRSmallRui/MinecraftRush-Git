@@ -38,15 +38,23 @@ func create_table_head():
 
 
 func add_table_element(element_text: String, lable_color: Color = Color.BLACK):
-	var element = wiki_table_element_scene.instantiate()
+	var element: PanelContainer = wiki_table_element_scene.instantiate()
+	element.custom_minimum_size.x = 250
 	var label: Label = Label.new()
 	label.text = element_text
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_constant_override("line_spacing",5)
 	if lable_color != Color.BLACK:
 		label.add_theme_color_override("font_color",lable_color)
-	element.add_child(label)
+	var margin: MarginContainer = MarginContainer.new()
+	margin.add_theme_constant_override("margin_top",15)
+	margin.add_theme_constant_override("margin_bottom",15)
+	margin.add_theme_constant_override("margin_left",10)
+	margin.add_theme_constant_override("margin_right",10)
+	margin.add_child(label)
+	element.add_child(margin)
 	wiki_table.add_child(element)
 	pass
 
@@ -72,7 +80,7 @@ func get_enemy_text_block(enemy_block_group: Array[PathSummonList],wave_count: i
 				else:
 					text_dic[SummonCountProcess.enemy_id_to_string(summon.enemy_id)] = summon.summon_count
 	var back_string: String = ""
-	print(text_dic)
+	#print(text_dic)
 	for id in text_dic:
 		back_string += id + " x " + str(text_dic[id]) + "\n"
 	return back_string
@@ -90,8 +98,18 @@ func get_wave_money_text(wave_count: int) -> String:
 					list[id] += summon.summon_count
 				else:
 					list[id] = summon.summon_count
-	print(list)
+	#print(list)
 	var total_money: int = 0
 	for id in list:
 		total_money += SummonCountProcess.get_enemy_bounty(id) * list[id]
 	return str(total_money)
+
+
+func _on_scroll_started() -> void:
+	WikiManager.instance.scroll_locked = true
+	pass # Replace with function body.
+
+
+func _on_scroll_ended() -> void:
+	WikiManager.instance.scroll_locked = false
+	pass # Replace with function body.

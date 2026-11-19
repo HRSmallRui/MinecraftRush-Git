@@ -1,10 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://rg3s7r2efs8p"]
+[gd_scene load_steps=27 format=3 uid="uid://rg3s7r2efs8p"]
 
 [ext_resource type="PackedScene" uid="uid://b2jeksw48nf" path="res://Scenes/WikiPages/Templates/wiki_page_stage.tscn" id="1_8q4qd"]
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="2_8bmi8"]
 [ext_resource type="Texture2D" uid="uid://dw27br0mbf2yy" path="res://Assets/Images/Stages/Stage2/stage2-view.png" id="2_63grg"]
 [ext_resource type="Curve2D" uid="uid://riv5gxatr8te" path="res://Library/Enemies/EnemyPaths/Stage2/path1.tres" id="4_rb83v"]
 [ext_resource type="Curve2D" uid="uid://b6s2vrsyxmcep" path="res://Library/Enemies/EnemyPaths/Stage2/path2.tres" id="5_d2ptg"]
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="6_jgby0"]
+[ext_resource type="Resource" uid="uid://dqvbv4nonrja2" path="res://Library/SummonConfigs/Stage2/Campaign/path1.res" id="7_acjit"]
+[ext_resource type="Resource" uid="uid://3wid3lherjlu" path="res://Library/SummonConfigs/Stage2/Campaign/path2.res" id="8_fcoit"]
+[ext_resource type="Resource" uid="uid://cv4b0b0mq0yon" path="res://Library/SummonConfigs/Stage2/Campaign/path3.res" id="9_t4jy5"]
+[ext_resource type="Resource" uid="uid://ccwcuyhw5mp1i" path="res://Library/SummonConfigs/Stage2/Campaign/path4.res" id="10_vrr4j"]
+[ext_resource type="Resource" uid="uid://btk5kyoqogtei" path="res://Library/SummonConfigs/Stage2/Campaign/path5.res" id="11_e8gx8"]
+[ext_resource type="Resource" uid="uid://blsk7o7k3mweq" path="res://Library/SummonConfigs/Stage2/Campaign/path6.res" id="12_tsdtw"]
+[ext_resource type="Resource" uid="uid://cxnnfsxj7gl3j" path="res://Library/SummonConfigs/Stage2/Diamond/path1.res" id="13_451bu"]
+[ext_resource type="Resource" uid="uid://0rbq6iailtp2" path="res://Library/SummonConfigs/Stage2/Diamond/path2.res" id="14_8avos"]
+[ext_resource type="Resource" uid="uid://dsjqotrpt76id" path="res://Library/SummonConfigs/Stage2/Diamond/path3.res" id="15_aagld"]
+[ext_resource type="Resource" uid="uid://ddux14oyuhdoa" path="res://Library/SummonConfigs/Stage2/Diamond/path4.res" id="16_0bwmj"]
+[ext_resource type="Resource" uid="uid://b5ug0onuylsl7" path="res://Library/SummonConfigs/Stage2/Diamond/path5.res" id="17_leiqd"]
+[ext_resource type="Resource" uid="uid://cusckxn7kppow" path="res://Library/SummonConfigs/Stage2/Diamond/path6.res" id="18_obwnq"]
+[ext_resource type="Resource" uid="uid://df3paf61tnhie" path="res://Library/SummonConfigs/Stage2/Bedrock/path1.res" id="19_gmp5m"]
+[ext_resource type="Resource" uid="uid://bck52fuo476a8" path="res://Library/SummonConfigs/Stage2/Bedrock/path2.res" id="20_vksuj"]
+[ext_resource type="Resource" uid="uid://bihl82r4p3dfr" path="res://Library/SummonConfigs/Stage2/Bedrock/path3.res" id="21_2rctt"]
+[ext_resource type="Resource" uid="uid://r1ieen8432ig" path="res://Library/SummonConfigs/Stage2/Bedrock/path4.res" id="22_nj4mi"]
+[ext_resource type="Resource" uid="uid://7g4jvqmmatry" path="res://Library/SummonConfigs/Stage2/Bedrock/path5.res" id="23_asspy"]
+[ext_resource type="Resource" uid="uid://d0kcgtkqe5sa5" path="res://Library/SummonConfigs/Stage2/Bedrock/path6.res" id="24_hqdt0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vtrpj"]
 resource_local_to_scene = true
@@ -17,6 +36,7 @@ shader = ExtResource("2_8bmi8")
 shader_parameter/hue_shift = 0.5
 
 [node name="WikiPageStage2" instance=ExtResource("1_8q4qd")]
+offset_bottom = 7421.0
 
 [node name="Label" parent="VBoxContainer" index="1"]
 text = "天木市"
@@ -80,11 +100,26 @@ points = PackedVector2Array(896, -33, 895.973, -31.2635, 895.939, -29.133, 895.8
 sampled_path = ExtResource("5_d2ptg")
 
 [node name="WikiStageConfigTable" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer" index="0"]
-total_money_list = Array[int]([78, 129, 213, 139, 284, 260, 396, 482, 433, 590])
-summon_block_list = null
+total_wave_count = 10
+summon_block_list = Array[ExtResource("6_jgby0")]([ExtResource("7_acjit"), ExtResource("8_fcoit"), ExtResource("9_t4jy5"), ExtResource("10_vrr4j"), ExtResource("11_e8gx8"), ExtResource("12_tsdtw")])
 
-[node name="WikiStageConfigTable" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer2" index="0"]
-summon_block_list = null
+[node name="WikiStageConfigTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer2" index="0"]
+summon_block_list = Array[ExtResource("6_jgby0")]([ExtResource("13_451bu"), ExtResource("14_8avos"), ExtResource("15_aagld"), ExtResource("16_0bwmj"), ExtResource("17_leiqd"), ExtResource("18_obwnq")])
 
-[node name="WikiStageConfigTable" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer3" index="0"]
-summon_block_list = null
+[node name="WikiStageConfigTable3" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer3" index="0"]
+summon_block_list = Array[ExtResource("6_jgby0")]([ExtResource("19_gmp5m"), ExtResource("20_vksuj"), ExtResource("21_2rctt"), ExtResource("22_nj4mi"), ExtResource("23_asspy"), ExtResource("24_hqdt0")])
+
+[node name="Label3" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="2"]
+text = "科技等级限制： 2级
+"
+
+[node name="Label5" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="4"]
+text = "科技等级限制： 2级
+ 
+禁止： 兵营， 法师塔"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/Special" index="1"]
+visible = false
+
+[node name="Label3" parent="VBoxContainer/MarginContainer/VBoxContainer/Special" index="2"]
+text = "无"

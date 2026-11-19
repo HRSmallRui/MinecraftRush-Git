@@ -57,6 +57,7 @@ wave_summon_list = Array[ExtResource("3_sj27g")]([SubResource("Resource_bo7uj"),
 custom_minimum_size = Vector2(900, 0)
 offset_right = 1419.0
 offset_bottom = 744.0
+horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 script = ExtResource("1_rwuch")
 wave_font_color_list = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 1, 1)])
@@ -66,4 +67,11 @@ wiki_table_element_scene = ExtResource("2_l31h1")
 
 [node name="WikiTable" parent="." instance=ExtResource("1_8v14r")]
 layout_mode = 2
+mouse_filter = 2
 columns = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[connection signal="scroll_ended" from="." to="." method="_on_scroll_ended"]
+[connection signal="scroll_started" from="." to="." method="_on_scroll_started"]
