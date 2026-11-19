@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8efntysdqscy"]
+
+[ext_resource type="PackedScene" uid="uid://b2jeksw48nf" path="res://Scenes/WikiPages/Templates/wiki_page_stage.tscn" id="1_uqog4"]
+[ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="2_abowi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtrpj"]
+resource_local_to_scene = true
+shader = ExtResource("2_abowi")
+shader_parameter/hue_shift = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysljs"]
+resource_local_to_scene = true
+shader = ExtResource("2_abowi")
+shader_parameter/hue_shift = 0.5
+
+[node name="WikiPageStage1" instance=ExtResource("1_uqog4")]
+
+[node name="WikiEnemyPathView" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyPath/WikiStageViewTexture" index="0"]
+material = SubResource("ShaderMaterial_vtrpj")
+
+[node name="WikiEnemyPathView2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyPath/WikiStageViewTexture" index="1"]
+material = SubResource("ShaderMaterial_ysljs")
