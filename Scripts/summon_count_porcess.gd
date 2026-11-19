@@ -86,6 +86,7 @@ static func enemy_id_to_string(enemy_id: int) -> String:
 		53: return "戮"
 		
 		54: return "尸国统帅"
+		55: return "泰坦丧尸"
 		
 		_: return ""
 	pass
