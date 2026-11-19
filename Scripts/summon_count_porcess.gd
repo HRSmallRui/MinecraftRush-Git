@@ -23,7 +23,7 @@ func _ready() -> void:
 	pass
 
 
-func enemy_id_to_string(enemy_id: int) -> String:
+static func enemy_id_to_string(enemy_id: int) -> String:
 	match enemy_id:
 		0: return "尸国杂兵"
 		1: return "尸国皮甲兵"
@@ -31,7 +31,7 @@ func enemy_id_to_string(enemy_id: int) -> String:
 		3: return "鸡骑士"
 		4: return "尸国正规军"
 		5: return "尸国壮汉"
-		6: return "杀人狂魔"
+		6: return "尸国刺杀者"
 		7: return "尸国贵族战士"
 		8: return "骨国步兵"
 		9: return "骨国正规军"
@@ -148,7 +148,7 @@ func load_configs():
 	pass
 
 
-func get_enemy_bounty(enemy_id: int) -> int:
+static func get_enemy_bounty(enemy_id: int) -> int:
 	match enemy_id:
 		0: return 3
 		1: return 6

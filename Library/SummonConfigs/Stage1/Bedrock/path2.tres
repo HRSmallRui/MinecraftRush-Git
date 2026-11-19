@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="PathSummonList" load_steps=14 format=3 uid="uid://c0dy5kn3rnqma"]
+
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="1_t4ka4"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="2_yg65y"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="3_04mxw"]
+[ext_resource type="Script" path="res://Library/EnemySummon/enemy_summon_block.gd" id="4_ktk5e"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wait_time.gd" id="5_6ug28"]
+
+[sub_resource type="Resource" id="Resource_cfrd6"]
+script = ExtResource("4_ktk5e")
+enemy_id = 1
+summon_count = 8
+time_interval = 6.0
+
+[sub_resource type="Resource" id="Resource_pa8ko"]
+script = ExtResource("5_6ug28")
+get_random_wait_time = false
+wait_time = 4.0
+
+[sub_resource type="Resource" id="Resource_bgjou"]
+script = ExtResource("4_ktk5e")
+enemy_id = 0
+summon_count = 15
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_6qtwf"]
+script = ExtResource("5_6ug28")
+get_random_wait_time = false
+wait_time = 6.0
+
+[sub_resource type="Resource" id="Resource_5jebx"]
+script = ExtResource("4_ktk5e")
+enemy_id = 0
+summon_count = 14
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_2nfuk"]
+script = ExtResource("5_6ug28")
+get_random_wait_time = false
+wait_time = 6.0
+
+[sub_resource type="Resource" id="Resource_y00l5"]
+script = ExtResource("4_ktk5e")
+enemy_id = 0
+summon_count = 16
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_ugbve"]
+script = ExtResource("2_yg65y")
+calculate_time = false
+summon_list = Array[ExtResource("3_04mxw")]([SubResource("Resource_cfrd6"), SubResource("Resource_pa8ko"), SubResource("Resource_bgjou"), SubResource("Resource_6qtwf"), SubResource("Resource_5jebx"), SubResource("Resource_2nfuk"), SubResource("Resource_y00l5")])
+
+[resource]
+script = ExtResource("1_t4ka4")
+wave_summon_list = Array[ExtResource("2_yg65y")]([SubResource("Resource_ugbve")])

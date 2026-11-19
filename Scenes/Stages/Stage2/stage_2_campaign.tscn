@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://de6r78ksmfvev"]
+[gd_scene load_steps=180 format=3 uid="uid://de6r78ksmfvev"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_o6bbr"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_2_campaign.gd" id="2_6ve6i"]
@@ -75,7 +75,11 @@
 [ext_resource type="Resource" uid="uid://btk5kyoqogtei" path="res://Library/SummonConfigs/Stage2/Campaign/path5.res" id="54_ml8as"]
 [ext_resource type="PackedScene" uid="uid://cpxbcc7iotru2" path="res://Scenes/TipUI/level_2_unlock_tip.tscn" id="57_7dybd"]
 [ext_resource type="Texture2D" uid="uid://dwc1i6vx37vkc" path="res://Assets/Images/Stages/Stage2/tree_mask.png" id="61_lthk5"]
+[ext_resource type="Curve2D" uid="uid://riv5gxatr8te" path="res://Library/Enemies/EnemyPaths/Stage2/path1.tres" id="62_fpe1j"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="64_uo0c6"]
+[ext_resource type="Curve2D" uid="uid://b6s2vrsyxmcep" path="res://Library/Enemies/EnemyPaths/Stage2/path2.tres" id="67_wh6k3"]
+[ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="79_cbgol"]
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="80_73xqd"]
 
 [sub_resource type="Resource" id="Resource_gp0sq"]
 script = ExtResource("2_bm1vf")
@@ -394,12 +398,6 @@ vertices = PackedVector2Array(925.922, 807.008, 605.273, 803, 605.281, 803, 3, 5
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(3, 5, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(9, 8, 10), PackedInt32Array(2, 9, 10, 11), PackedInt32Array(2, 11, 12, 0), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 16, 15, 18, 12), PackedInt32Array(12, 18, 19, 0), PackedInt32Array(20, 0, 19, 21), PackedInt32Array(22, 20, 21, 23, 24), PackedInt32Array(25, 22, 24, 26, 27)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(850, -23, 837, 278, 842, 589, 861, 722, 498, 721, 338, 712, 220, 653, 105, 549, 27, 394, -7, 311, -7, 574, 173, 740, 320, 805, 605, 813, 925, 817, 1173, 860, 1500, 901, 1500, 1083, 1608, 1084, 1611, 917, 1579, 840, 1507, 801, 1094, 748, 965, 709, 932, 599, 934, 240, 947, -20)])
 
-[sub_resource type="Curve2D" id="Curve2D_3s21f"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -34, 434, -43.0763, -21.3509, 43.0763, 21.3509, 151, 673, -36.334, -2.24746, 36.334, 2.24746, 371, 772, -35.9594, -4.49492, 35.9594, 4.49492, 936, 778, -29.9661, -14.0466, 29.9661, 14.0466, 1515, 859, -8.38482, -16.8105, 8.38482, 16.8105, 1551, 892, 0, 0, 0, 0, 1553, 1144)
-}
-point_count = 7
-
 [sub_resource type="Curve2D" id="Curve2D_pyhjt"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -12, 372, -43.0763, -21.3509, 43.0763, 21.3509, 178, 655, -36.334, -2.24746, 36.334, 2.24746, 383, 744, -35.9594, -4.49492, 35.9594, 4.49492, 944, 745, -29.9661, -14.0466, 29.9661, 14.0466, 1525, 830, -8.38482, -16.8105, 8.38482, 16.8105, 1585, 888, 0, 0, 0, 0, 1590, 1142)
@@ -409,12 +407,6 @@ point_count = 7
 [sub_resource type="Curve2D" id="Curve2D_7sg2a"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -44, 492, -43.0763, -21.3509, 43.0763, 21.3509, 140, 696, -36.334, -2.24746, 36.334, 2.24746, 365, 796, -35.9594, -4.49492, 35.9594, 4.49492, 936, 803, -29.9661, -14.0466, 29.9661, 14.0466, 1501, 883, -8.38482, -16.8105, 8.38482, 16.8105, 1523, 918, 0, 0, 0, 0, 1519, 1140)
-}
-point_count = 7
-
-[sub_resource type="Curve2D" id="Curve2D_u1up2"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 896, -33, -3.56762, -38.0546, 3.56762, 38.0546, 890, 610, 0.0607443, -33.225, -0.0607443, 33.225, 899, 716, -24.9371, -2.7242, 24.9371, 2.7242, 924, 780, -28.6991, -17.0192, 28.6991, 17.0192, 1510, 857, -0.33371, -23.3597, 0.33371, 23.3597, 1553, 902, 0, 0, 0, 0, 1553, 1144)
 }
 point_count = 7
 
@@ -976,7 +968,7 @@ navigation_polygon = SubResource("NavigationPolygon_nnvqk")
 
 [node name="EnemyPath" type="Path2D" parent="Enemies" index="0"]
 y_sort_enabled = true
-curve = SubResource("Curve2D_3s21f")
+curve = ExtResource("62_fpe1j")
 script = ExtResource("49_p4dre")
 path_summon_config = ExtResource("50_fsacd")
 
@@ -994,7 +986,7 @@ path_summon_config = ExtResource("52_0rg8m")
 
 [node name="EnemyPath4" type="Path2D" parent="Enemies" index="3"]
 y_sort_enabled = true
-curve = SubResource("Curve2D_u1up2")
+curve = ExtResource("67_wh6k3")
 script = ExtResource("49_p4dre")
 path_summon_config = ExtResource("53_m7vq5")
 
@@ -1114,3 +1106,9 @@ polygon = PackedVector2Array(849, -19, 833, 201, 837, 282, 842, 572, 848, 674, 8
 
 [node name="HeroSummonMarker" parent="." index="22"]
 position = Vector2(1559, 1002)
+
+[node name="SummonCountProcess" type="Node2D" parent="." index="23" node_paths=PackedStringArray("enemy_parnt_node")]
+script = ExtResource("79_cbgol")
+enemy_parnt_node = NodePath("../Enemies")
+max_wave_count = 10
+process_summon_blocks = Array[ExtResource("80_73xqd")]([ExtResource("50_fsacd"), ExtResource("51_5hudm"), ExtResource("52_0rg8m"), ExtResource("53_m7vq5"), ExtResource("54_ml8as"), ExtResource("50_8u17s")])

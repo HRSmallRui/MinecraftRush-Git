@@ -1,80 +1,69 @@
-[gd_scene load_steps=4 format=3 uid="uid://biw3tksctaci4"]
+[gd_scene load_steps=18 format=3 uid="uid://biw3tksctaci4"]
 
 [ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="1_8v14r"]
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="1_rd7a1"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_stage_config_table.gd" id="1_rwuch"]
+[ext_resource type="Resource" uid="uid://br613b077osqh" path="res://Library/SummonConfigs/Stage1/Campaign/path0.res" id="2_3lyup"]
 [ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="2_l31h1"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="3_sj27g"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="4_46ryp"]
+[ext_resource type="Resource" uid="uid://c5ebxwhgnjlym" path="res://Library/SummonConfigs/Stage1/Campaign/path1.res" id="5_3mskx"]
 
-[sub_resource type="GDScript" id="GDScript_3w248"]
-script/source = "@tool
-extends ScrollContainer
+[sub_resource type="Resource" id="Resource_bo7uj"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
-@export var update: bool:
-	set(v):
-		if Engine.is_editor_hint():
-			call_deferred(\"on_update\")
-@export var wave_font_color_list: Array[Color]
-@export var total_money_list: Array[int]
-@export var config_block_list: Array[PackedStringArray]
+[sub_resource type="Resource" id="Resource_vks8b"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
-@export_group(\"Refs\")
-@export var wiki_table_element_scene: PackedScene
+[sub_resource type="Resource" id="Resource_vhm0u"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
-@onready var wiki_table: GridContainer = $WikiTable
+[sub_resource type="Resource" id="Resource_7qybu"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
+[sub_resource type="Resource" id="Resource_g3sp5"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
-func _ready() -> void:
-	on_update()
-	pass
+[sub_resource type="Resource" id="Resource_f1vlg"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
+[sub_resource type="Resource" id="Resource_kpxyp"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
-func on_update():
-	for element in wiki_table.get_children():
-		wiki_table.remove_child(element)
-	wiki_table.columns = 2 + wave_font_color_list.size()
-	create_table_head()
-	add_table_body()
-	pass
+[sub_resource type="Resource" id="Resource_f713r"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
 
-func create_table_head():
-	add_table_element(\"波次\")
-	for i in wave_font_color_list.size():
-		var label_text: String = \"第\" + str(i+1) + \"路\"
-		add_table_element(label_text, wave_font_color_list[i])
-	add_table_element(\"总经济\")
-	pass
-
-
-func add_table_element(element_text: String, lable_color: Color = Color.BLACK):
-	var element = wiki_table_element_scene.instantiate()
-	var label: Label = Label.new()
-	label.text = element_text
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	if lable_color != Color.BLACK:
-		label.add_theme_color_override(\"font_color\",lable_color)
-	element.add_child(label)
-	wiki_table.add_child(element)
-	pass
-
-
-func add_table_body():
-	for i in total_money_list.size():
-		add_table_element(str(i+1))
-		for text_list in config_block_list:
-			add_table_element(text_list[i])
-		add_table_element(str(total_money_list[i]))
-	pass
-"
+[sub_resource type="Resource" id="Resource_l8ege"]
+script = ExtResource("1_rd7a1")
+wave_summon_list = Array[ExtResource("3_sj27g")]([SubResource("Resource_bo7uj"), SubResource("Resource_vks8b"), SubResource("Resource_vhm0u"), SubResource("Resource_7qybu"), SubResource("Resource_g3sp5"), SubResource("Resource_f1vlg"), SubResource("Resource_kpxyp"), SubResource("Resource_f713r")])
 
 [node name="WikiStageConfigTable" type="ScrollContainer"]
 custom_minimum_size = Vector2(900, 0)
+offset_right = 1419.0
+offset_bottom = 744.0
 vertical_scroll_mode = 0
-script = SubResource("GDScript_3w248")
-wave_font_color_list = Array[Color]([Color(1, 0, 0, 1)])
-total_money_list = Array[int]([100])
-config_block_list = Array[PackedStringArray]([PackedStringArray("")])
+script = ExtResource("1_rwuch")
+wave_font_color_list = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 1, 1)])
+total_wave_count = 8
+summon_block_list = Array[ExtResource("1_rd7a1")]([ExtResource("2_3lyup"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege"), ExtResource("5_3mskx"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege")])
 wiki_table_element_scene = ExtResource("2_l31h1")
 
 [node name="WikiTable" parent="." instance=ExtResource("1_8v14r")]
 layout_mode = 2
-columns = 3
+columns = 4

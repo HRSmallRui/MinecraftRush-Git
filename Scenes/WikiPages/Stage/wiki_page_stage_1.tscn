@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8efntysdqscy"]
+[gd_scene load_steps=21 format=3 uid="uid://c8efntysdqscy"]
 
 [ext_resource type="PackedScene" uid="uid://b2jeksw48nf" path="res://Scenes/WikiPages/Templates/wiki_page_stage.tscn" id="1_uqog4"]
 [ext_resource type="Shader" path="res://Assets/Shaders/hue_color.gdshader" id="2_abowi"]
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="3_xvxd2"]
+[ext_resource type="Resource" uid="uid://c1fmh23ptguhx" path="res://Library/SummonConfigs/Stage1/Diamond/path1.tres" id="4_wic1s"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="5_cesrt"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="6_cet5o"]
+[ext_resource type="Resource" uid="uid://i1fuylvhh8wu" path="res://Library/SummonConfigs/Stage1/Diamond/path2.tres" id="7_013jv"]
+[ext_resource type="Resource" uid="uid://cb4kf03tsf13p" path="res://Library/SummonConfigs/Stage1/Bedrock/path1.tres" id="8_r36n8"]
+[ext_resource type="Resource" uid="uid://c0dy5kn3rnqma" path="res://Library/SummonConfigs/Stage1/Bedrock/path2.tres" id="9_vg2t0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vtrpj"]
 resource_local_to_scene = true
@@ -13,6 +20,50 @@ resource_local_to_scene = true
 shader = ExtResource("2_abowi")
 shader_parameter/hue_shift = 0.5
 
+[sub_resource type="Resource" id="Resource_bo7uj"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_vks8b"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_vhm0u"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_7qybu"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_g3sp5"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_f1vlg"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_kpxyp"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_f713r"]
+script = ExtResource("5_cesrt")
+calculate_time = false
+summon_list = Array[ExtResource("6_cet5o")]([])
+
+[sub_resource type="Resource" id="Resource_l8ege"]
+script = ExtResource("3_xvxd2")
+wave_summon_list = Array[ExtResource("5_cesrt")]([SubResource("Resource_bo7uj"), SubResource("Resource_vks8b"), SubResource("Resource_vhm0u"), SubResource("Resource_7qybu"), SubResource("Resource_g3sp5"), SubResource("Resource_f1vlg"), SubResource("Resource_kpxyp"), SubResource("Resource_f713r")])
+
 [node name="WikiPageStage1" instance=ExtResource("1_uqog4")]
 
 [node name="WikiEnemyPathView" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyPath/WikiStageViewTexture" index="0"]
@@ -20,3 +71,10 @@ material = SubResource("ShaderMaterial_vtrpj")
 
 [node name="WikiEnemyPathView2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyPath/WikiStageViewTexture" index="1"]
 material = SubResource("ShaderMaterial_ysljs")
+
+[node name="WikiStageConfigTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer2" index="0"]
+summon_block_list = Array[ExtResource("3_xvxd2")]([ExtResource("4_wic1s"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege"), ExtResource("7_013jv"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege")])
+
+[node name="WikiStageConfigTable3" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer3" index="0"]
+total_wave_count = 1
+summon_block_list = Array[ExtResource("3_xvxd2")]([ExtResource("8_r36n8"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege"), ExtResource("9_vg2t0"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege")])
