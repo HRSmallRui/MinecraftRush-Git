@@ -60,7 +60,7 @@ func add_table_element(element_text: String, lable_color: Color = Color.BLACK):
 	label.text = element_text
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	#label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.add_theme_constant_override("line_spacing",5)
 	if lable_color != Color.BLACK:
 		label.add_theme_color_override("font_color",lable_color)
