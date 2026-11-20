@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="PathSummonList" load_steps=16 format=3 uid="uid://cb4kf03tsf13p"]
+
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="1_yfe1t"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="2_p3wsg"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="3_4d4qp"]
+[ext_resource type="Script" path="res://Library/EnemySummon/enemy_summon_block.gd" id="4_48o46"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wait_time.gd" id="5_b8t3j"]
+
+[sub_resource type="Resource" id="Resource_vd4ii"]
+script = ExtResource("4_48o46")
+enemy_id = 0
+summon_count = 12
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_nwjbl"]
+script = ExtResource("5_b8t3j")
+get_random_wait_time = false
+wait_time = 4.0
+
+[sub_resource type="Resource" id="Resource_urobu"]
+script = ExtResource("4_48o46")
+enemy_id = 1
+summon_count = 6
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_2pxmn"]
+script = ExtResource("5_b8t3j")
+get_random_wait_time = false
+wait_time = 6.0
+
+[sub_resource type="Resource" id="Resource_s5h6x"]
+script = ExtResource("4_48o46")
+enemy_id = 1
+summon_count = 8
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_6saqj"]
+script = ExtResource("5_b8t3j")
+get_random_wait_time = false
+wait_time = 6.0
+
+[sub_resource type="Resource" id="Resource_tu0xe"]
+script = ExtResource("4_48o46")
+enemy_id = 0
+summon_count = 18
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_r6x2r"]
+script = ExtResource("5_b8t3j")
+get_random_wait_time = false
+wait_time = 8.0
+
+[sub_resource type="Resource" id="Resource_fe553"]
+script = ExtResource("4_48o46")
+enemy_id = 1
+summon_count = 10
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_qeueu"]
+script = ExtResource("2_p3wsg")
+calculate_time = false
+summon_list = Array[ExtResource("3_4d4qp")]([SubResource("Resource_vd4ii"), SubResource("Resource_nwjbl"), SubResource("Resource_urobu"), SubResource("Resource_2pxmn"), SubResource("Resource_s5h6x"), SubResource("Resource_6saqj"), SubResource("Resource_tu0xe"), SubResource("Resource_r6x2r"), SubResource("Resource_fe553")])
+
+[resource]
+script = ExtResource("1_yfe1t")
+wave_summon_list = Array[ExtResource("2_p3wsg")]([SubResource("Resource_qeueu")])

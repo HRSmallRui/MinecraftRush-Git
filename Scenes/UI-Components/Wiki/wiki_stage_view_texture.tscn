@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq2kfr2g2830o"]
+[gd_scene load_steps=4 format=3 uid="uid://cq2kfr2g2830o"]
 
 [ext_resource type="Texture2D" uid="uid://ct1wl2m73pt6b" path="res://Assets/Images/Stages/Stage10/stage10.png" id="1_a4s2y"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_stage_view_texture.gd" id="2_xxyqh"]
+[ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="3_iua07"]
 
 [node name="WikiStageViewTexture" type="TextureRect"]
 custom_minimum_size = Vector2(0, 500)
+offset_right = 678.0
+offset_bottom = 500.0
 texture = ExtResource("1_a4s2y")
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("2_xxyqh")
+mc_font = ExtResource("3_iua07")
+
+[node name="ButtonGroup" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.9999
+offset_right = 58.0001
+offset_bottom = 73.0
+grow_horizontal = 0
+scale = Vector2(0.562451, 0.562451)
+theme_override_constants/separation = 40

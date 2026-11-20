@@ -1,4 +1,4 @@
-[gd_scene load_steps=318 format=3 uid="uid://dn3gqlx2m6o54"]
+[gd_scene load_steps=376 format=3 uid="uid://dn3gqlx2m6o54"]
 
 [ext_resource type="PackedScene" uid="uid://05u6aueicvo4" path="res://Scenes/Classes/stage_class.tscn" id="1_4y2mf"]
 [ext_resource type="Script" path="res://Scripts/Stages/stage_4_campaign.gd" id="2_4iw5u"]
@@ -97,6 +97,10 @@
 [ext_resource type="Texture2D" uid="uid://cwi0yhwg7lybr" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Barrack3.png" id="79_br6at"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="80_t8y8p"]
 [ext_resource type="PackedScene" uid="uid://dio78a5bk6bew" path="res://Scenes/DefenceTowers/BarrackTowers/barrack_tower_lv_2.tscn" id="86_3d10w"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="96_hq47n"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="97_mgpwi"]
+[ext_resource type="Script" path="res://Library/EnemySummon/enemy_summon_block.gd" id="98_utymg"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wait_time.gd" id="99_xopod"]
 
 [sub_resource type="Resource" id="Resource_xfkcn"]
 script = ExtResource("3_757s2")
@@ -1290,6 +1294,298 @@ enemy_count = 1
 script = ExtResource("74_yoge1")
 wave_summon_text_list = Array[ExtResource("76_5lsol")]([SubResource("Resource_eyrdk")])
 
+[sub_resource type="Resource" id="Resource_7nwkj"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([])
+
+[sub_resource type="Resource" id="Resource_l23v0"]
+script = ExtResource("98_utymg")
+enemy_id = 1
+summon_count = 4
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_ryqbc"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 4.0
+
+[sub_resource type="Resource" id="Resource_p1c82"]
+script = ExtResource("98_utymg")
+enemy_id = 0
+summon_count = 6
+time_interval = 1.0
+
+[sub_resource type="Resource" id="Resource_5llkj"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 38.0
+
+[sub_resource type="Resource" id="Resource_abkju"]
+script = ExtResource("98_utymg")
+enemy_id = 4
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_3o01d"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_l23v0"), SubResource("Resource_ryqbc"), SubResource("Resource_p1c82"), SubResource("Resource_5llkj"), SubResource("Resource_abkju")])
+
+[sub_resource type="Resource" id="Resource_vjpf2"]
+script = ExtResource("98_utymg")
+enemy_id = 4
+summon_count = 4
+time_interval = 6.0
+
+[sub_resource type="Resource" id="Resource_ueoiy"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 30.0
+
+[sub_resource type="Resource" id="Resource_0oguo"]
+script = ExtResource("98_utymg")
+enemy_id = 2
+summon_count = 4
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_u5wre"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_vjpf2"), SubResource("Resource_ueoiy"), SubResource("Resource_0oguo")])
+
+[sub_resource type="Resource" id="Resource_oxeu8"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 14.0
+
+[sub_resource type="Resource" id="Resource_wqil2"]
+script = ExtResource("98_utymg")
+enemy_id = 1
+summon_count = 4
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_phbbj"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 16.0
+
+[sub_resource type="Resource" id="Resource_udtgh"]
+script = ExtResource("98_utymg")
+enemy_id = 4
+summon_count = 6
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_33hnw"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_oxeu8"), SubResource("Resource_wqil2"), SubResource("Resource_phbbj"), SubResource("Resource_udtgh")])
+
+[sub_resource type="Resource" id="Resource_jiokw"]
+script = ExtResource("98_utymg")
+enemy_id = 5
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_8clrl"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 50.0
+
+[sub_resource type="Resource" id="Resource_led6t"]
+script = ExtResource("98_utymg")
+enemy_id = 5
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_dluna"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_jiokw"), SubResource("Resource_8clrl"), SubResource("Resource_led6t")])
+
+[sub_resource type="Resource" id="Resource_ikruv"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([])
+
+[sub_resource type="Resource" id="Resource_eaam2"]
+script = ExtResource("98_utymg")
+enemy_id = 1
+summon_count = 6
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_2rdn7"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 5.0
+
+[sub_resource type="Resource" id="Resource_ptikp"]
+script = ExtResource("98_utymg")
+enemy_id = 4
+summon_count = 4
+time_interval = 10.0
+
+[sub_resource type="Resource" id="Resource_r0so2"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_eaam2"), SubResource("Resource_2rdn7"), SubResource("Resource_ptikp")])
+
+[sub_resource type="Resource" id="Resource_i4g8h"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([])
+
+[sub_resource type="Resource" id="Resource_w5hvy"]
+script = ExtResource("98_utymg")
+enemy_id = 4
+summon_count = 1
+time_interval = 5.0
+
+[sub_resource type="Resource" id="Resource_n50vn"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 10.0
+
+[sub_resource type="Resource" id="Resource_vky02"]
+script = ExtResource("98_utymg")
+enemy_id = 5
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_i8f10"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 14.0
+
+[sub_resource type="Resource" id="Resource_b0usx"]
+script = ExtResource("98_utymg")
+enemy_id = 3
+summon_count = 3
+time_interval = 10.0
+
+[sub_resource type="Resource" id="Resource_vwggp"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 6.0
+
+[sub_resource type="Resource" id="Resource_p4or6"]
+script = ExtResource("98_utymg")
+enemy_id = 9
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_cyu0g"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_w5hvy"), SubResource("Resource_n50vn"), SubResource("Resource_vky02"), SubResource("Resource_i8f10"), SubResource("Resource_b0usx"), SubResource("Resource_vwggp"), SubResource("Resource_p4or6")])
+
+[sub_resource type="Resource" id="Resource_mdkpw"]
+script = ExtResource("98_utymg")
+enemy_id = 8
+summon_count = 6
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_fifqv"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 30.0
+
+[sub_resource type="Resource" id="Resource_mpbwq"]
+script = ExtResource("98_utymg")
+enemy_id = 9
+summon_count = 3
+time_interval = 5.0
+
+[sub_resource type="Resource" id="Resource_hbtcn"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_mdkpw"), SubResource("Resource_fifqv"), SubResource("Resource_mpbwq")])
+
+[sub_resource type="Resource" id="Resource_5fg65"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([])
+
+[sub_resource type="Resource" id="Resource_uw3j3"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([])
+
+[sub_resource type="Resource" id="Resource_wudth"]
+script = ExtResource("98_utymg")
+enemy_id = 5
+summon_count = 2
+time_interval = 30.0
+
+[sub_resource type="Resource" id="Resource_81el6"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 20.0
+
+[sub_resource type="Resource" id="Resource_jmwhe"]
+script = ExtResource("98_utymg")
+enemy_id = 7
+summon_count = 2
+time_interval = 15.0
+
+[sub_resource type="Resource" id="Resource_jsca4"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_wudth"), SubResource("Resource_81el6"), SubResource("Resource_jmwhe")])
+
+[sub_resource type="Resource" id="Resource_bab1s"]
+script = ExtResource("98_utymg")
+enemy_id = 4
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_3gxii"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 30.0
+
+[sub_resource type="Resource" id="Resource_k03px"]
+script = ExtResource("98_utymg")
+enemy_id = 9
+summon_count = 6
+time_interval = 6.0
+
+[sub_resource type="Resource" id="Resource_1a00m"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 10.0
+
+[sub_resource type="Resource" id="Resource_81vmm"]
+script = ExtResource("98_utymg")
+enemy_id = 7
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_27c74"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_bab1s"), SubResource("Resource_3gxii"), SubResource("Resource_k03px"), SubResource("Resource_1a00m"), SubResource("Resource_81vmm")])
+
+[sub_resource type="Resource" id="Resource_6naha"]
+script = ExtResource("99_xopod")
+get_random_wait_time = false
+wait_time = 15.0
+
+[sub_resource type="Resource" id="Resource_jwa6l"]
+script = ExtResource("98_utymg")
+enemy_id = 5
+summon_count = 3
+time_interval = 30.0
+
+[sub_resource type="Resource" id="Resource_hlprb"]
+script = ExtResource("96_hq47n")
+calculate_time = false
+summon_list = Array[ExtResource("97_mgpwi")]([SubResource("Resource_6naha"), SubResource("Resource_jwa6l")])
+
+[sub_resource type="Resource" id="Resource_mxtfm"]
+script = ExtResource("80_t8y8p")
+wave_summon_list = Array[ExtResource("96_hq47n")]([SubResource("Resource_7nwkj"), SubResource("Resource_3o01d"), SubResource("Resource_u5wre"), SubResource("Resource_33hnw"), SubResource("Resource_dluna"), SubResource("Resource_ikruv"), SubResource("Resource_r0so2"), SubResource("Resource_i4g8h"), SubResource("Resource_cyu0g"), SubResource("Resource_hbtcn"), SubResource("Resource_5fg65"), SubResource("Resource_uw3j3"), SubResource("Resource_jsca4"), SubResource("Resource_27c74"), SubResource("Resource_hlprb")])
+
 [node name="Stage4Campaign" node_paths=PackedStringArray("hide_left_based", "hide_left_based_2", "hide_right_based_1", "hide_right_based_2", "hide_right_based_3", "hide_right_based_4", "left_path_polygon", "right_path_polygon", "left_explosion_markers", "right_explosion_markers") instance=ExtResource("1_4y2mf")]
 script = ExtResource("2_4iw5u")
 stage_view1_path = "res://Assets/Images/Stages/Stage4/stage4-view3.png"
@@ -1819,7 +2115,7 @@ disabled = true
 [node name="Node2D" type="Node2D" parent="." index="17"]
 script = ExtResource("76_wxl02")
 max_wave_count = 15
-process_summon_blocks = Array[ExtResource("80_t8y8p")]([ExtResource("56_rtv7x"), ExtResource("57_c3gwk"), ExtResource("58_353uc"), ExtResource("59_h83qf"), ExtResource("60_88id5"), ExtResource("61_yftmp"), ExtResource("62_gvfn2"), ExtResource("63_gjbik"), ExtResource("64_g5bfu"), ExtResource("65_cdls0"), ExtResource("66_oo72l"), ExtResource("67_tbvrb"), ExtResource("68_3h1ti"), ExtResource("69_lybbf"), ExtResource("70_vm4sq")])
+process_summon_blocks = Array[ExtResource("80_t8y8p")]([SubResource("Resource_mxtfm"), ExtResource("57_c3gwk"), ExtResource("58_353uc"), ExtResource("59_h83qf"), ExtResource("60_88id5"), ExtResource("61_yftmp"), ExtResource("62_gvfn2"), ExtResource("63_gjbik"), ExtResource("64_g5bfu"), ExtResource("65_cdls0"), ExtResource("66_oo72l"), ExtResource("67_tbvrb"), ExtResource("68_3h1ti"), ExtResource("69_lybbf"), ExtResource("70_vm4sq")])
 
 [node name="SpecialTowersUnlockUI" parent="." index="18" instance=ExtResource("78_i72el")]
 show_texture = ExtResource("79_br6at")

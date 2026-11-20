@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgiev35qu8psa"]
+
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="1_i37dp"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_total_money_table.gd" id="1_xqbon"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="2_f7d5m"]
+
+[node name="WikiTotalMoneyTable" type="CenterContainer"]
+script = ExtResource("1_xqbon")
+
+[node name="WikiTable" parent="." instance=ExtResource("1_i37dp")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="WikiTable" instance=ExtResource("2_f7d5m")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WikiTable/WikiTableElement"]
+layout_mode = 2
+text = "总经济"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement2" parent="WikiTable" instance=ExtResource("2_f7d5m")]
+layout_mode = 2
+
+[node name="MoneyTable" type="Label" parent="WikiTable/WikiTableElement2"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

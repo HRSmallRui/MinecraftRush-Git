@@ -1,0 +1,828 @@
+[gd_scene load_steps=91 format=3 uid="uid://b2jeksw48nf"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_xscfc"]
+[ext_resource type="Texture2D" uid="uid://dsviwmsk3ct40" path="res://Assets/Images/Stages/Stage1/stage1-view.png" id="2_pdsmd"]
+[ext_resource type="PackedScene" uid="uid://cq2kfr2g2830o" path="res://Scenes/UI-Components/Wiki/wiki_stage_view_texture.tscn" id="3_wktnw"]
+[ext_resource type="PackedScene" uid="uid://dk82q51emf8kd" path="res://Scenes/UI-Components/Wiki/wiki_enemy_path_view.tscn" id="4_osh1w"]
+[ext_resource type="PackedScene" uid="uid://bgiev35qu8psa" path="res://Scenes/UI-Components/Wiki/wiki_total_money_table.tscn" id="6_u1ssp"]
+[ext_resource type="PackedScene" uid="uid://biw3tksctaci4" path="res://Scenes/UI-Components/Wiki/wiki_stage_config_table.tscn" id="7_7imem"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="7_xr53r"]
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="7_y6f7o"]
+[ext_resource type="Resource" uid="uid://br613b077osqh" path="res://Library/SummonConfigs/Stage1/Campaign/path0.res" id="8_d4yoi"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="8_ri7wv"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="9_7savb"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="10_dpgfo"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="10_fo2vj"]
+[ext_resource type="AudioStream" uid="uid://bwxefh0hfb0nu" path="res://Assets/Sounds/Music/皇城-准备.mp3" id="11_b4jfh"]
+[ext_resource type="Resource" uid="uid://c5ebxwhgnjlym" path="res://Library/SummonConfigs/Stage1/Campaign/path1.res" id="11_l1n2q"]
+[ext_resource type="AudioStream" uid="uid://ccxtxk1tauo4w" path="res://Assets/Sounds/Music/皇城-战斗1.mp3" id="12_24yhp"]
+[ext_resource type="Script" path="res://Library/EnemySummon/enemy_summon_block.gd" id="12_e7a3a"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wait_time.gd" id="13_8avqb"]
+[ext_resource type="AudioStream" uid="uid://fy8ydmnyba0s" path="res://Assets/Sounds/Music/BossFight.mp3" id="13_yyg56"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="14_eenb4"]
+[ext_resource type="Resource" uid="uid://cb4kf03tsf13p" path="res://Library/SummonConfigs/Stage1/Bedrock/path1.tres" id="14_gm6c7"]
+[ext_resource type="Resource" uid="uid://c0dy5kn3rnqma" path="res://Library/SummonConfigs/Stage1/Bedrock/path2.tres" id="15_crep2"]
+
+[sub_resource type="Resource" id="Resource_bo7uj"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_vks8b"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_vhm0u"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_7qybu"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_g3sp5"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_f1vlg"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_kpxyp"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_f713r"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_l8ege"]
+script = ExtResource("7_y6f7o")
+wave_summon_list = Array[ExtResource("9_7savb")]([SubResource("Resource_bo7uj"), SubResource("Resource_vks8b"), SubResource("Resource_vhm0u"), SubResource("Resource_7qybu"), SubResource("Resource_g3sp5"), SubResource("Resource_f1vlg"), SubResource("Resource_kpxyp"), SubResource("Resource_f713r")])
+
+[sub_resource type="Resource" id="Resource_1btg3"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 15
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_5iqsw"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_1btg3")])
+
+[sub_resource type="Resource" id="Resource_1gq62"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 6
+time_interval = 5.0
+
+[sub_resource type="Resource" id="Resource_s8s78"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 10.0
+
+[sub_resource type="Resource" id="Resource_p6jqk"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 6
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_04jh5"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_1gq62"), SubResource("Resource_s8s78"), SubResource("Resource_p6jqk")])
+
+[sub_resource type="Resource" id="Resource_k5lrx"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 11
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_567qn"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 5.0
+
+[sub_resource type="Resource" id="Resource_u1kgt"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 8
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_0hbdb"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 6.0
+
+[sub_resource type="Resource" id="Resource_tja4a"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 8
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_f5e2t"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_k5lrx"), SubResource("Resource_567qn"), SubResource("Resource_u1kgt"), SubResource("Resource_0hbdb"), SubResource("Resource_tja4a")])
+
+[sub_resource type="Resource" id="Resource_1mq8l"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 16
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_pk6h8"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_1mq8l")])
+
+[sub_resource type="Resource" id="Resource_2en3n"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 10
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_spcv7"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 8.0
+
+[sub_resource type="Resource" id="Resource_27sl7"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 4
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_sqkme"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 6.0
+
+[sub_resource type="Resource" id="Resource_gep85"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 14
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_qwths"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 4.0
+
+[sub_resource type="Resource" id="Resource_faaa7"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 4
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_e4wqv"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_2en3n"), SubResource("Resource_spcv7"), SubResource("Resource_27sl7"), SubResource("Resource_sqkme"), SubResource("Resource_gep85"), SubResource("Resource_qwths"), SubResource("Resource_faaa7")])
+
+[sub_resource type="Resource" id="Resource_2sekq"]
+script = ExtResource("7_y6f7o")
+wave_summon_list = Array[ExtResource("9_7savb")]([SubResource("Resource_5iqsw"), SubResource("Resource_04jh5"), SubResource("Resource_f5e2t"), SubResource("Resource_pk6h8"), SubResource("Resource_e4wqv")])
+
+[sub_resource type="Resource" id="Resource_ixff6"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_gvydi"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_u3yfm"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_05ueu"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_xvrjs"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_x7ltn"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_57bkf"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_1boc7"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([])
+
+[sub_resource type="Resource" id="Resource_dlj4j"]
+script = ExtResource("7_y6f7o")
+wave_summon_list = Array[ExtResource("9_7savb")]([SubResource("Resource_ixff6"), SubResource("Resource_gvydi"), SubResource("Resource_u3yfm"), SubResource("Resource_05ueu"), SubResource("Resource_xvrjs"), SubResource("Resource_x7ltn"), SubResource("Resource_57bkf"), SubResource("Resource_1boc7")])
+
+[sub_resource type="Resource" id="Resource_g4ies"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 6
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_0v36x"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 5.0
+
+[sub_resource type="Resource" id="Resource_ld0ge"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 6
+time_interval = 5.0
+
+[sub_resource type="Resource" id="Resource_gqlbc"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_g4ies"), SubResource("Resource_0v36x"), SubResource("Resource_ld0ge")])
+
+[sub_resource type="Resource" id="Resource_h5bq6"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 10
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_aye4v"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 5.0
+
+[sub_resource type="Resource" id="Resource_d8jcf"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 8
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_3ffnt"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_h5bq6"), SubResource("Resource_aye4v"), SubResource("Resource_d8jcf")])
+
+[sub_resource type="Resource" id="Resource_cbpvn"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 8
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_uoxmd"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 8.0
+
+[sub_resource type="Resource" id="Resource_g3p0s"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 10
+time_interval = 3.0
+
+[sub_resource type="Resource" id="Resource_b1xoj"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_cbpvn"), SubResource("Resource_uoxmd"), SubResource("Resource_g3p0s")])
+
+[sub_resource type="Resource" id="Resource_oyu4f"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 6
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_x1d56"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 2.0
+
+[sub_resource type="Resource" id="Resource_yjqrn"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 6
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_n78uo"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 8.0
+
+[sub_resource type="Resource" id="Resource_va7p4"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 6
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_4nrna"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_oyu4f"), SubResource("Resource_x1d56"), SubResource("Resource_yjqrn"), SubResource("Resource_n78uo"), SubResource("Resource_va7p4")])
+
+[sub_resource type="Resource" id="Resource_thkky"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 20
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_lptyx"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 5.0
+
+[sub_resource type="Resource" id="Resource_6b07n"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 6
+time_interval = 4.0
+
+[sub_resource type="Resource" id="Resource_o1b2f"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 8.0
+
+[sub_resource type="Resource" id="Resource_14jfa"]
+script = ExtResource("12_e7a3a")
+enemy_id = 0
+summon_count = 5
+time_interval = 2.0
+
+[sub_resource type="Resource" id="Resource_htxyc"]
+script = ExtResource("13_8avqb")
+get_random_wait_time = false
+wait_time = 5.0
+
+[sub_resource type="Resource" id="Resource_ywsk3"]
+script = ExtResource("12_e7a3a")
+enemy_id = 1
+summon_count = 1
+time_interval = 0.0
+
+[sub_resource type="Resource" id="Resource_5ckx5"]
+script = ExtResource("9_7savb")
+calculate_time = false
+summon_list = Array[ExtResource("10_fo2vj")]([SubResource("Resource_thkky"), SubResource("Resource_lptyx"), SubResource("Resource_6b07n"), SubResource("Resource_o1b2f"), SubResource("Resource_14jfa"), SubResource("Resource_htxyc"), SubResource("Resource_ywsk3")])
+
+[sub_resource type="Resource" id="Resource_p3dpq"]
+script = ExtResource("7_y6f7o")
+wave_summon_list = Array[ExtResource("9_7savb")]([SubResource("Resource_gqlbc"), SubResource("Resource_3ffnt"), SubResource("Resource_b1xoj"), SubResource("Resource_4nrna"), SubResource("Resource_5ckx5")])
+
+[node name="WikiPageStage" instance=ExtResource("1_xscfc")]
+offset_bottom = 7009.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Label" type="Label" parent="VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "皇城东门"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+texture = ExtResource("2_pdsmd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Info" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Info" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "关卡信息"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Info" index="1"]
+layout_mode = 2
+text = "关卡序号： 1
+ 
+配置： 1-1
+ 
+前置关卡： 无
+ 
+所属章节： 主线第 1 章 - 皇城"
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Story" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Story" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "剧情文本"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Story" index="1"]
+layout_mode = 2
+text = "你好，将军，作为帝国的守卫者之一，陛下需要你的帮助。
+我们需要你前往皇城东门抵御外敌的入侵，尽管一开始的战争我们一直处于被动状态，但如今敌人已尽显疲态，正是我们反击的好时刻。来不及多做准备，我们需要立刻动身赶去，将这些穷凶极恶之辈赶出帝国。为了皇帝陛下！"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Config" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "关卡配置"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="2"]
+layout_mode = 2
+text = "初始绿宝石： 250
+ 
+总波次： 8
+ 
+塔位数量： 11
+ 
+关卡环境标签： 无"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="3"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="5"]
+layout_mode = 2
+text = "初始绿宝石： 260
+ 
+总波次： 5
+ 
+塔位数量： 11
+ 
+关卡环境标签： 无"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="6"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="7"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基岩挑战"
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Config" index="8"]
+layout_mode = 2
+text = "初始绿宝石： 300
+ 
+总波次： 1
+ 
+塔位数量： 11
+ 
+关卡环境标签： 无"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="EnemyPath" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyPath" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "出怪路线"
+
+[node name="WikiStageViewTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyPath" index="1" instance=ExtResource("3_wktnw")]
+layout_mode = 2
+texture = ExtResource("2_pdsmd")
+
+[node name="WikiEnemyPathView" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyPath/WikiStageViewTexture" index="0" instance=ExtResource("4_osh1w")]
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="7"]
+layout_mode = 2
+
+[node name="EnemyConfig" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "出怪列表"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "战役模式"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="2"]
+layout_mode = 2
+
+[node name="WikiStageConfigTable" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer" index="0" instance=ExtResource("7_7imem")]
+layout_mode = 2
+
+[node name="WikiTotalMoneyTable" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="3" node_paths=PackedStringArray("linked_table") instance=ExtResource("6_u1ssp")]
+layout_mode = 2
+linked_table = NodePath("../CenterContainer/WikiStageConfigTable")
+total_wave_count = 8
+summon_block_list = Array[ExtResource("7_y6f7o")]([ExtResource("8_d4yoi"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege"), ExtResource("11_l1n2q"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege")])
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="4"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="5"]
+layout_mode = 2
+
+[node name="WikiStageConfigTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer2" index="0" instance=ExtResource("7_7imem")]
+layout_mode = 2
+total_wave_count = 5
+summon_block_list = Array[ExtResource("7_y6f7o")]([SubResource("Resource_2sekq"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j"), SubResource("Resource_p3dpq"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j")])
+
+[node name="WikiTotalMoneyTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="6" node_paths=PackedStringArray("linked_table") instance=ExtResource("6_u1ssp")]
+layout_mode = 2
+linked_table = NodePath("../CenterContainer2/WikiStageConfigTable2")
+total_wave_count = 5
+summon_block_list = Array[ExtResource("7_y6f7o")]([SubResource("Resource_2sekq"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j"), SubResource("Resource_p3dpq"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j")])
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="7"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基岩挑战"
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="8"]
+layout_mode = 2
+
+[node name="WikiStageConfigTable3" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer3" index="0" instance=ExtResource("7_7imem")]
+layout_mode = 2
+total_wave_count = 1
+summon_block_list = Array[ExtResource("7_y6f7o")]([ExtResource("14_gm6c7"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j"), ExtResource("15_crep2"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j")])
+
+[node name="WikiTotalMoneyTable3" parent="VBoxContainer/MarginContainer/VBoxContainer" index="9" node_paths=PackedStringArray("linked_table") instance=ExtResource("6_u1ssp")]
+layout_mode = 2
+linked_table = NodePath("../EnemyConfig/CenterContainer3/WikiStageConfigTable3")
+total_wave_count = 1
+summon_block_list = Array[ExtResource("7_y6f7o")]([ExtResource("14_gm6c7"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j"), ExtResource("15_crep2"), SubResource("Resource_dlj4j"), SubResource("Resource_dlj4j")])
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="10"]
+layout_mode = 2
+
+[node name="TechLevel" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "挑战模式限制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "钻石挑战"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="2"]
+layout_mode = 2
+text = "科技等级限制： 5级
+"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="3"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "基岩挑战"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="4"]
+layout_mode = 2
+text = "科技等级限制： 5级
+ 
+禁止： 箭塔， 炮塔"
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="12"]
+layout_mode = 2
+
+[node name="Music" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="13"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Music" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "关卡音乐"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Music" index="1"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer" index="0" instance=ExtResource("7_xr53r")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable" index="0" instance=ExtResource("8_ri7wv")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+text = "准备音乐"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable" index="1" instance=ExtResource("8_ri7wv")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("10_dpgfo")]
+layout_mode = 2
+audio_stream = ExtResource("11_b4jfh")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable" index="2" instance=ExtResource("8_ri7wv")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "战斗音乐"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable" index="3" instance=ExtResource("8_ri7wv")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("10_dpgfo")]
+layout_mode = 2
+audio_stream = ExtResource("12_24yhp")
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable" index="4" instance=ExtResource("8_ri7wv")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement5" index="0"]
+layout_mode = 2
+text = "Boss战音乐"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable" index="5" instance=ExtResource("8_ri7wv")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement6/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Music/CenterContainer/WikiTable/WikiTableElement6/HBoxContainer" index="1" instance=ExtResource("10_dpgfo")]
+layout_mode = 2
+audio_stream = ExtResource("13_yyg56")
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="14"]
+layout_mode = 2
+
+[node name="Special" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="15"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Special" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+text = "特殊机制"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Special" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 36
+text = "新手教程"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Special" index="2"]
+layout_mode = 2
+text = "如果没有选择跳过新手教程，则会在以下波次解锁能力
+ 
+第 2 波： 援军
+ 
+第 4 波： 英雄
+ 
+第 5 波： 英雄技能
+ 
+第 6 波： 天降火雨"
+autowrap_mode = 3
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 48.0
+offset_top = 157.0
+offset_right = 396.0
+offset_bottom = 1017.0
+scale = Vector2(0.904333, 0.904333)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "关卡信息"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Info")
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "剧情文本"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Story")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "关卡配置"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Config")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "出怪路线"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/EnemyPath")
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "出怪列表"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig")
+
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "挑战模式限制"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/TechLevel")
+
+[node name="NavigationButton7" parent="TopMenu/NavigationVBox" index="6" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "关卡音乐"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Music")
+
+[node name="NavigationButton8" parent="TopMenu/NavigationVBox" index="7" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("14_eenb4")]
+layout_mode = 2
+text = "特殊机制"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Special")
