@@ -1,5 +1,6 @@
 @tool
 extends ScrollContainer
+class_name WikiStageConfigTable
 
 @export var update: bool:
 	set(v):
