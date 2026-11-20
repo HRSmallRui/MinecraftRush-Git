@@ -47,15 +47,18 @@
 [ext_resource type="Texture2D" uid="uid://bq05cptpgrxdk" path="res://Assets/Images/Stages/Stage9/沙漠神殿.png" id="35_nm7jp"]
 [ext_resource type="Resource" uid="uid://cpkvbk5t2l1m3" path="res://Library/SummonConfigs/Stage9/Campaign/path8.res" id="35_ql03l"]
 [ext_resource type="Resource" uid="uid://c2dlsm868847n" path="res://Library/SummonConfigs/Stage9/Campaign/path9.res" id="36_8w2a1"]
+[ext_resource type="Curve2D" uid="uid://dh860wmlj8ijq" path="res://Library/Enemies/EnemyPaths/Stage9/path1.res" id="38_gvded"]
 [ext_resource type="Script" path="res://Scripts/Classes/enemy_path.gd" id="40_l2k17"]
 [ext_resource type="PackedScene" uid="uid://4j747edyffkd" path="res://Scenes/UI-Components/Stages/wave_button.tscn" id="41_bjthq"]
 [ext_resource type="Script" path="res://Library/EnemySummon/wave_summon_text.gd" id="42_bnu0d"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block.gd" id="43_2ff6s"]
+[ext_resource type="Curve2D" uid="uid://dd4brjkjcn5tk" path="res://Library/Enemies/EnemyPaths/Stage9/path2.res" id="43_8lxx3"]
 [ext_resource type="Texture2D" uid="uid://d4h7uga26vrgq" path="res://Assets/Images/UI/WaveButtons/wave-direction.png" id="43_lssc0"]
 [ext_resource type="Script" path="res://Library/EnemySummon/SummonTextBlock/summon_text_block_chapter3.gd" id="43_ofhbu"]
 [ext_resource type="PackedScene" uid="uid://dijjgy2lt1p7w" path="res://Scenes/UI-Components/Stages/wave_panel.tscn" id="44_or3ta"]
 [ext_resource type="PackedScene" uid="uid://dlggpawrxkxx5" path="res://Scenes/TipUI/special_towers_unlock_ui.tscn" id="46_ifxuv"]
 [ext_resource type="Script" path="res://Scripts/summon_count_porcess.gd" id="47_2ituf"]
+[ext_resource type="Curve2D" uid="uid://b32h5o1uj7g60" path="res://Library/Enemies/EnemyPaths/Stage9/path3.res" id="47_5px87"]
 [ext_resource type="Texture2D" uid="uid://didhu1fh2h0wj" path="res://Assets/Images/UI/SeenBook/DefenceTowers/Textures/Archer4.png" id="47_w48sk"]
 [ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="48_nhnwb"]
 
@@ -137,12 +140,6 @@ vertices = PackedVector2Array(1204.98, 1111.25, 1351.87, 1189.39, 1096.82, 1179.
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 4, 7, 9), PackedInt32Array(3, 2, 10, 11), PackedInt32Array(12, 11, 10, 13, 14), PackedInt32Array(15, 12, 14, 16), PackedInt32Array(17, 15, 16, 18), PackedInt32Array(19, 8, 9, 20, 21), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(27, 22, 26, 28), PackedInt32Array(29, 27, 28), PackedInt32Array(30, 19, 21, 31), PackedInt32Array(28, 32, 30, 31, 33, 34, 29), PackedInt32Array(35, 17, 18, 36, 37), PackedInt32Array(38, 35, 37, 39), PackedInt32Array(40, 38, 39, 41, 42), PackedInt32Array(42, 41, 43, 44), PackedInt32Array(44, 43, 45, 46), PackedInt32Array(47, 48, 49, 50, 51), PackedInt32Array(51, 50, 52, 53), PackedInt32Array(54, 53, 52, 55, 56), PackedInt32Array(56, 55, 57, 45), PackedInt32Array(45, 57, 58, 46), PackedInt32Array(59, 46, 58, 60, 61), PackedInt32Array(61, 60, 62, 34, 63), PackedInt32Array(33, 63, 34)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(236, 0, 234, 120, 234, 288, 287, 434, 378, 550, 461, 593, 594, 629, 554, 728, 478, 824, 376, 940, 336, 1101, 355, 1209, 446, 1332, 550, 1383, 724, 1394, 838, 1354, 967, 1256, 1099, 1190, 1395, 1201, 1207, 1101, 1039, 1118, 855, 1228, 775, 1279, 645, 1309, 514, 1267, 431, 1142, 450, 1008, 541, 898, 622, 796, 677, 663, 683, 618, 897, 582, 1046, 514, 1145, 468, 1256, 468, 1389, 491, 1550, 595, 1667, 633, 1853, 639, 2014, 601, 2105, 557, 2105, 453, 2008, 500, 1874, 546, 1686, 544, 1537, 481, 1442, 417, 1281, 370, 1370, 258, 1436, 110, 1448, -7, 1347, 2, 1332, 105, 1264, 245, 1184, 353, 1154, 383, 982, 430, 897, 476, 730, 527, 586, 536, 442, 485, 342, 360, 321, 194, 327, 0)])
 
-[sub_resource type="Curve2D" id="Curve2D_k44yw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2199, 484, 45.6984, -11.9865, -45.6984, 11.9865, 1926, 585, 54.6882, 0, -54.6882, 0, 1724, 604, 52.4408, 25.4712, -52.4408, -25.4712, 1552, 549, 43.4509, 11.9865, -43.4509, -11.9865, 1318, 430, 33.0644, -4.63816, -33.0644, 4.63816, 1181, 427, 30.8681, -15.749, -30.8681, 15.749, 1064, 466, 47.1967, -15.7322, -47.1967, 15.7322, 925, 530, 21.7255, -5.24408, -21.7255, 5.24408, 700, 576, 46.4475, 4.49492, -46.4475, -4.49492, 582, 583, 34.4611, 23.9729, -34.4611, -23.9729, 404, 517, 0, 0, 0, 0, 335, 436, 5.24408, 35.2102, -5.24408, -35.2102, 291, 327, 3.56359, 65.0356, -3.56359, -65.0356, 283, 198, 0, 0, 0, 0, 277, 57, 0, 0, 0, 0, 277, -42)
-}
-point_count = 16
-
 [sub_resource type="Curve2D" id="Curve2D_rjs8x"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 2193, 441, 45.6984, -11.9865, -45.6984, 11.9865, 1914, 557, 56.104, 3.7755, -56.104, -3.7755, 1718, 571, 52.4408, 25.4712, -52.4408, -25.4712, 1557, 512, 43.4509, 11.9865, -43.4509, -11.9865, 1317, 396, 32.5032, -10.8117, -32.5032, 10.8117, 1161, 393, 30.8681, -15.749, -30.8681, 15.749, 1037, 435, 47.1967, -15.7322, -47.1967, 15.7322, 892, 498, 21.7255, -5.24408, -21.7255, 5.24408, 695, 549, 51.6388, 11.102, -51.6388, -11.102, 573, 551, 26.9101, 27.7484, -26.9101, -27.7484, 412, 486, 6.68174, 13.8089, -6.68174, -13.8089, 355, 406, 5.24408, 35.2102, -5.24408, -35.2102, 319, 309, 3.56359, 65.0356, -3.56359, -65.0356, 312, 192, 0, 0, 0, 0, 313, 51, 0, 0, 0, 0, 311, -41)
@@ -155,12 +152,6 @@ _data = {
 }
 point_count = 16
 
-[sub_resource type="Curve2D" id="Curve2D_mtnnb"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1400, -66, 3.92862, -29.184, -3.92862, 29.184, 1390, 70, 13.4695, -31.9902, -13.4695, 31.9902, 1355, 179, 11.7859, -20.7655, -11.7859, 20.7655, 1287, 299, 14.277, -15.3422, -14.277, 15.3422, 1252, 367, 25.8166, -2.80616, -25.8166, 2.80616, 1181, 426, 20.7655, -12.9083, -20.7655, 12.9083, 1029, 482, 28.0616, -14.0308, -28.0616, 14.0308, 965, 517, 17.3982, -4.48985, -17.3982, 4.48985, 729, 569, 44.8985, 1.68369, -44.8985, -1.68369, 623, 587, 20.2043, 12.3471, -20.2043, -12.3471, 452, 547, 20.2043, 36.48, -20.2043, -36.48, 345, 455, 5.61231, 35.3576, -5.61231, -35.3576, 292, 333, 0.561231, 39.2862, -0.561231, -39.2862, 281, 165, 0, 0, 0, 0, 278, -42)
-}
-point_count = 15
-
 [sub_resource type="Curve2D" id="Curve2D_dvdlt"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1376, -66, 3.92862, -29.184, -3.92862, 29.184, 1360, 71, 13.4695, -31.9902, -13.4695, 31.9902, 1325, 179, 11.7859, -20.7655, -11.7859, 20.7655, 1256, 295, 17.9695, -20.0189, -17.9695, 20.0189, 1217, 353, 25.8166, -2.80616, -25.8166, 2.80616, 1129, 402, 20.7655, -12.9083, -20.7655, 12.9083, 1001, 457, 29.184, -10.6634, -29.184, 10.6634, 913, 498, 17.3982, -4.48985, -17.3982, 4.48985, 721, 548, 44.8985, 1.68369, -44.8985, -1.68369, 609, 557, 20.2043, 12.3471, -20.2043, -12.3471, 456, 515, 20.2043, 36.48, -20.2043, -36.48, 370, 433, 5.61231, 35.3576, -5.61231, -35.3576, 323, 318, 0.561231, 39.2862, -0.561231, -39.2862, 311, 161, 0, 0, 0, 0, 312, -40)
@@ -172,12 +163,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1428, -67, 3.92862, -29.184, -3.92862, 29.184, 1420, 69, 16.6479, -31.4605, -16.6479, 31.4605, 1383, 194, 11.7859, -20.7655, -11.7859, 20.7655, 1313, 319, 12.6878, -22.2287, -12.6878, 22.2287, 1275, 381, 27.4058, -7.04401, -27.4058, 7.04401, 1174, 452, 23.4142, -16.0867, -23.4142, 16.0867, 1032, 506, 28.0616, -14.0308, -28.0616, 14.0308, 952, 545, 17.3982, -4.48985, -17.3982, 4.48985, 731, 606, 44.8985, 1.68369, -44.8985, -1.68369, 616, 614, 20.2043, 12.3471, -20.2043, -12.3471, 436, 569, 20.2043, 36.48, -20.2043, -36.48, 324, 465, 5.61231, 35.3576, -5.61231, -35.3576, 262, 337, 0.561231, 39.2862, -0.561231, -39.2862, 249, 165, 0, 0, 0, 0, 247, -41)
 }
 point_count = 15
-
-[sub_resource type="Curve2D" id="Curve2D_ekee3"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1430, 1161, 24.9734, -0.594605, -24.9734, 0.594605, 1261, 1153, 29.7302, -0.594605, -29.7302, 0.594605, 1185, 1158, 26.7572, -4.16223, -26.7572, 4.16223, 1084, 1169, 19.0273, -10.1083, -19.0273, 10.1083, 994, 1196, 17.8381, -12.4867, -17.8381, 12.4867, 918, 1246, 23.1896, -10.7029, -23.1896, 10.7029, 794, 1316, 28.541, -1.78381, -28.541, 1.78381, 702, 1350, 26.7572, 5.35144, -26.7572, -5.35144, 585, 1348, 20.8112, 13.0813, -20.8112, -13.0813, 507, 1319, 14.2705, 24.9734, -14.2705, -24.9734, 435, 1257, 3.56763, 23.7842, -3.56763, -23.7842, 394, 1168, 0, 25.568, 0, -25.568, 387, 1066, -8.91907, 25.568, 8.91907, -25.568, 413, 976, -11.2975, 16.6489, 11.2975, -16.6489, 453, 916, -13.0813, 16.0543, 13.0813, -16.0543, 546, 833, -11.2975, 16.6489, 11.2975, -16.6489, 594, 761, -1.18921, 27.3518, 1.18921, -27.3518, 627, 677, 8.32446, 23.7842, -8.32446, -23.7842, 623, 602, 27.3518, 5.94602, -27.3518, -5.94602, 525, 571, 33.2979, 28.541, -33.2979, -28.541, 397, 510, 0, 0, 0, 0, 340, 449, 8.91907, 24.3788, -8.91907, -24.3788, 305, 371, 0, 0, 0, 0, 287, 290, 0.594603, 32.1086, -0.594603, -32.1086, 280, 160, 0, 0, 0, 0, 278, 56, 0, 0, 0, 0, 276, -43)
-}
-point_count = 27
 
 [sub_resource type="Curve2D" id="Curve2D_phbko"]
 _data = {
@@ -854,7 +839,7 @@ navigation_polygon = SubResource("NavigationPolygon_7wcta")
 
 [node name="EnemyPath" type="Path2D" parent="Enemies" index="0"]
 y_sort_enabled = true
-curve = SubResource("Curve2D_k44yw")
+curve = ExtResource("38_gvded")
 script = ExtResource("40_l2k17")
 path_summon_config = ExtResource("28_t8qle")
 
@@ -872,7 +857,7 @@ path_summon_config = ExtResource("30_k86m3")
 
 [node name="EnemyPath4" type="Path2D" parent="Enemies" index="3"]
 y_sort_enabled = true
-curve = SubResource("Curve2D_mtnnb")
+curve = ExtResource("43_8lxx3")
 script = ExtResource("40_l2k17")
 path_summon_config = ExtResource("31_h7mn2")
 
@@ -890,7 +875,7 @@ path_summon_config = ExtResource("33_vup05")
 
 [node name="EnemyPath7" type="Path2D" parent="Enemies" index="6"]
 y_sort_enabled = true
-curve = SubResource("Curve2D_ekee3")
+curve = ExtResource("47_5px87")
 script = ExtResource("40_l2k17")
 path_summon_config = ExtResource("34_5dst6")
 
