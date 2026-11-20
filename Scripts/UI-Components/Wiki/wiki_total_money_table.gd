@@ -14,6 +14,12 @@ extends CenterContainer
 @onready var money_table: Label = $WikiTable/WikiTableElement2/MoneyTable
 
 
+func _ready() -> void:
+	on_loading_configs()
+	on_calculating_money()
+	pass
+
+
 func on_loading_configs():
 	summon_block_list = linked_table.summon_block_list
 	pass

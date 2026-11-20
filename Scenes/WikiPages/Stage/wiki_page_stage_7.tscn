@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bgvpyuetpu7ko"]
+[gd_scene load_steps=55 format=3 uid="uid://bgvpyuetpu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://b2jeksw48nf" path="res://Scenes/WikiPages/Templates/wiki_page_stage.tscn" id="1_g8c76"]
 [ext_resource type="Texture2D" uid="uid://bnxjxkmwsaggd" path="res://Assets/Images/Stages/Stage7/stage7-view.png" id="2_31f0t"]
@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://dbn1rrb1r2ly1" path="res://Library/SummonConfigs/Stage7/Campaign/path12.res" id="21_1h60j"]
 [ext_resource type="Resource" uid="uid://dj1l0mx4ck1k7" path="res://Library/SummonConfigs/Stage7/Diamond/path1.res" id="22_hktvs"]
 [ext_resource type="Resource" uid="uid://b7ve764edvist" path="res://Library/SummonConfigs/Stage7/Diamond/path2.res" id="23_bwdqy"]
+[ext_resource type="PackedScene" uid="uid://bgiev35qu8psa" path="res://Scenes/UI-Components/Wiki/wiki_total_money_table.tscn" id="24_4ixo6"]
 [ext_resource type="Resource" uid="uid://cc75kndhf10gk" path="res://Library/SummonConfigs/Stage7/Diamond/path3.res" id="24_ydmd2"]
 [ext_resource type="Resource" uid="uid://bfi5qk8eirsym" path="res://Library/SummonConfigs/Stage7/Diamond/path4.res" id="25_n38o2"]
 [ext_resource type="Resource" uid="uid://bderk25bpoilw" path="res://Library/SummonConfigs/Stage7/Diamond/path5.res" id="26_b871k"]
@@ -58,7 +59,7 @@ atlas = ExtResource("49_oo0pn")
 region = Rect2(98, 192, 331, 143)
 
 [node name="WikiPageStage7" instance=ExtResource("1_g8c76")]
-offset_bottom = 10612.0
+offset_bottom = 11191.0
 
 [node name="Label" parent="VBoxContainer" index="1"]
 text = "南洋海岸"
@@ -172,15 +173,31 @@ total_wave_count = 16
 summon_block_list = Array[ExtResource("9_mlf2a")]([ExtResource("10_52ybw"), ExtResource("11_hmaog"), ExtResource("12_rihud"), ExtResource("13_lv32w"), ExtResource("14_qe6yv"), ExtResource("15_5glfk"), ExtResource("16_640wu"), ExtResource("17_62mfs"), ExtResource("18_c73ra"), ExtResource("19_jmvfs"), ExtResource("20_3aymy"), ExtResource("21_1h60j")])
 loading_path = "res://Library/SummonConfigs/Stage7/Campaign"
 
+[node name="WikiTotalMoneyTable" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="3"]
+total_wave_count = 15
+summon_block_list = Array[ExtResource("9_mlf2a")]([ExtResource("10_52ybw"), ExtResource("11_hmaog"), ExtResource("12_rihud"), ExtResource("13_lv32w"), ExtResource("14_qe6yv"), ExtResource("15_5glfk"), ExtResource("16_640wu"), ExtResource("17_62mfs"), ExtResource("18_c73ra"), ExtResource("19_jmvfs"), ExtResource("20_3aymy"), ExtResource("21_1h60j")])
+
+[node name="WikiTotalMoneyTable3" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="4" node_paths=PackedStringArray("linked_table") instance=ExtResource("24_4ixo6")]
+layout_mode = 2
+linked_table = NodePath("../CenterContainer/WikiStageConfigTable")
+total_wave_count = 16
+summon_block_list = Array[ExtResource("9_mlf2a")]([ExtResource("10_52ybw"), ExtResource("11_hmaog"), ExtResource("12_rihud"), ExtResource("13_lv32w"), ExtResource("14_qe6yv"), ExtResource("15_5glfk"), ExtResource("16_640wu"), ExtResource("17_62mfs"), ExtResource("18_c73ra"), ExtResource("19_jmvfs"), ExtResource("20_3aymy"), ExtResource("21_1h60j")])
+
 [node name="WikiStageConfigTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer2" index="0"]
 wave_font_color_list = Array[Color]([Color(1, 0, 0, 1), Color(1, 0.494118, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1)])
 summon_block_list = Array[ExtResource("9_mlf2a")]([ExtResource("22_hktvs"), ExtResource("23_bwdqy"), ExtResource("24_ydmd2"), ExtResource("25_n38o2"), ExtResource("26_b871k"), ExtResource("27_cqm7c"), ExtResource("28_ykrg2"), ExtResource("29_03sv5"), ExtResource("30_787ko"), ExtResource("31_k3jtt"), ExtResource("32_pri7v"), ExtResource("33_wc0kf")])
 loading_path = "res://Library/SummonConfigs/Stage7/Diamond"
 
+[node name="WikiTotalMoneyTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="7"]
+summon_block_list = Array[ExtResource("9_mlf2a")]([ExtResource("22_hktvs"), ExtResource("23_bwdqy"), ExtResource("24_ydmd2"), ExtResource("25_n38o2"), ExtResource("26_b871k"), ExtResource("27_cqm7c"), ExtResource("28_ykrg2"), ExtResource("29_03sv5"), ExtResource("30_787ko"), ExtResource("31_k3jtt"), ExtResource("32_pri7v"), ExtResource("33_wc0kf")])
+
 [node name="WikiStageConfigTable3" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer3" index="0"]
 wave_font_color_list = Array[Color]([Color(1, 0, 0, 1), Color(1, 0.494118, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1)])
 summon_block_list = Array[ExtResource("9_mlf2a")]([ExtResource("34_o801d"), ExtResource("35_4hrmm"), ExtResource("36_qoqrb"), ExtResource("37_vbwcl"), ExtResource("38_daxoy"), ExtResource("39_24rk3"), ExtResource("40_80t5s"), ExtResource("41_b2ak6"), ExtResource("42_vbw75"), ExtResource("43_a5fhh"), ExtResource("44_s7a3r"), ExtResource("45_5dxtp")])
 loading_path = "res://Library/SummonConfigs/Stage7/Bedrock"
+
+[node name="WikiTotalMoneyTable3" parent="VBoxContainer/MarginContainer/VBoxContainer" index="9"]
+summon_block_list = Array[ExtResource("9_mlf2a")]([ExtResource("34_o801d"), ExtResource("35_4hrmm"), ExtResource("36_qoqrb"), ExtResource("37_vbwcl"), ExtResource("38_daxoy"), ExtResource("39_24rk3"), ExtResource("40_80t5s"), ExtResource("41_b2ak6"), ExtResource("42_vbw75"), ExtResource("43_a5fhh"), ExtResource("44_s7a3r"), ExtResource("45_5dxtp")])
 
 [node name="Label3" parent="VBoxContainer/MarginContainer/VBoxContainer/TechLevel" index="2"]
 text = "科技等级限制： 3级
