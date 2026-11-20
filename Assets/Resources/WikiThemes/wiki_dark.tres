@@ -1,6 +1,16 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ddat5ya8lgphf"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ddat5ya8lgphf"]
 
 [ext_resource type="FontFile" uid="uid://b0ev28ueo51cu" path="res://Assets/Fonts/5_Minecraft AE(支持中文).ttf" id="1_reujo"]
+[ext_resource type="Texture2D" uid="uid://dn6osr6o4hg84" path="res://Assets/Images/UI/checkbox_select.png" id="1_to3ng"]
+[ext_resource type="Texture2D" uid="uid://dp1qx85r5tt8a" path="res://Assets/Images/UI/checkbox.png" id="2_etp33"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp0kt"]
+atlas = ExtResource("1_to3ng")
+region = Rect2(16, 18, 65, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s518q"]
+atlas = ExtResource("2_etp33")
+region = Rect2(16, 18, 65, 65)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_jh8eh"]
 color = Color(1, 1, 1, 1)
@@ -20,6 +30,8 @@ thickness = 2
 vertical = true
 
 [resource]
+CheckBox/icons/checked = SubResource("AtlasTexture_tp0kt")
+CheckBox/icons/unchecked = SubResource("AtlasTexture_s518q")
 HSeparator/styles/separator = SubResource("StyleBoxLine_jh8eh")
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/font_sizes/font_size = 24

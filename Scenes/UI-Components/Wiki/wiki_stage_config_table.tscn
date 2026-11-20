@@ -1,0 +1,78 @@
+[gd_scene load_steps=18 format=3 uid="uid://biw3tksctaci4"]
+
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="1_8v14r"]
+[ext_resource type="Script" path="res://Library/EnemySummon/path_summon_block.gd" id="1_rd7a1"]
+[ext_resource type="Script" path="res://Scripts/UI-Components/Wiki/wiki_stage_config_table.gd" id="1_rwuch"]
+[ext_resource type="Resource" uid="uid://br613b077osqh" path="res://Library/SummonConfigs/Stage1/Campaign/path0.res" id="2_3lyup"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="2_l31h1"]
+[ext_resource type="Script" path="res://Library/EnemySummon/wave_block.gd" id="3_sj27g"]
+[ext_resource type="Script" path="res://Library/EnemySummon/summon_block.gd" id="4_46ryp"]
+[ext_resource type="Resource" uid="uid://c5ebxwhgnjlym" path="res://Library/SummonConfigs/Stage1/Campaign/path1.res" id="5_3mskx"]
+
+[sub_resource type="Resource" id="Resource_bo7uj"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_vks8b"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_vhm0u"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_7qybu"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_g3sp5"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_f1vlg"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_kpxyp"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_f713r"]
+script = ExtResource("3_sj27g")
+calculate_time = false
+summon_list = Array[ExtResource("4_46ryp")]([])
+
+[sub_resource type="Resource" id="Resource_l8ege"]
+script = ExtResource("1_rd7a1")
+wave_summon_list = Array[ExtResource("3_sj27g")]([SubResource("Resource_bo7uj"), SubResource("Resource_vks8b"), SubResource("Resource_vhm0u"), SubResource("Resource_7qybu"), SubResource("Resource_g3sp5"), SubResource("Resource_f1vlg"), SubResource("Resource_kpxyp"), SubResource("Resource_f713r")])
+
+[node name="WikiStageConfigTable" type="ScrollContainer"]
+custom_minimum_size = Vector2(900, 0)
+offset_right = 1419.0
+offset_bottom = 744.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("1_rwuch")
+wave_font_color_list = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 1, 1)])
+total_wave_count = 8
+summon_block_list = Array[ExtResource("1_rd7a1")]([ExtResource("2_3lyup"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege"), ExtResource("5_3mskx"), SubResource("Resource_l8ege"), SubResource("Resource_l8ege")])
+loading_path = "res://Library/SummonConfigs"
+wiki_table_element_scene = ExtResource("2_l31h1")
+
+[node name="WikiTable" parent="." instance=ExtResource("1_8v14r")]
+layout_mode = 2
+mouse_filter = 2
+columns = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[connection signal="scroll_ended" from="." to="." method="_on_scroll_ended"]
+[connection signal="scroll_started" from="." to="." method="_on_scroll_started"]
