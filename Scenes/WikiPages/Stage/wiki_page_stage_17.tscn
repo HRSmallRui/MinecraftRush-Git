@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bdplbdhc3pdno"]
+[gd_scene load_steps=47 format=3 uid="uid://bdplbdhc3pdno"]
 
 [ext_resource type="PackedScene" uid="uid://b2jeksw48nf" path="res://Scenes/WikiPages/Templates/wiki_page_stage.tscn" id="1_rt23g"]
 [ext_resource type="Texture2D" uid="uid://b2qg53hs0g3y3" path="res://Assets/Images/Stages/Stage17/stage17-view.png" id="2_oqk2f"]
@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://d1wlki8wix40b" path="res://Library/SummonConfigs/Stage17/Campaign/path11.res" id="20_hea8y"]
 [ext_resource type="Resource" uid="uid://ig7ykpl7ej3f" path="res://Library/SummonConfigs/Stage17/Campaign/path12.res" id="21_dv7n5"]
 [ext_resource type="Resource" uid="uid://bjsrtx4jw5tpr" path="res://Library/SummonConfigs/Stage17/Diamond/path1.res" id="22_5n0hq"]
+[ext_resource type="PackedScene" uid="uid://bgiev35qu8psa" path="res://Scenes/UI-Components/Wiki/wiki_total_money_table.tscn" id="22_tsii6"]
 [ext_resource type="Resource" uid="uid://c2pnlcylt3llw" path="res://Library/SummonConfigs/Stage17/Diamond/path2.res" id="23_6w3c4"]
 [ext_resource type="Resource" uid="uid://oqxnwgogm1rn" path="res://Library/SummonConfigs/Stage17/Diamond/path3.res" id="24_nrtd5"]
 [ext_resource type="Resource" uid="uid://bf2yi46ymsmxf" path="res://Library/SummonConfigs/Stage17/Diamond/path4.res" id="25_d4b84"]
@@ -135,6 +136,12 @@ summon_block_list = Array[ExtResource("2_qttrh")]([ExtResource("10_eg0ck"), ExtR
 loading_path = "res://Library/SummonConfigs/Stage17/Campaign"
 
 [node name="WikiTotalMoneyTable" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="3"]
+total_wave_count = 14
+summon_block_list = Array[ExtResource("2_qttrh")]([ExtResource("10_eg0ck"), ExtResource("11_jepji"), ExtResource("12_23xe2"), ExtResource("13_13xog"), ExtResource("14_8l6px"), ExtResource("15_od313"), ExtResource("16_p1r0n"), ExtResource("17_pu2cj"), ExtResource("18_mm843"), ExtResource("19_rgyav"), ExtResource("20_hea8y"), ExtResource("21_dv7n5")])
+
+[node name="WikiTotalMoneyTable3" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="4" node_paths=PackedStringArray("linked_table") instance=ExtResource("22_tsii6")]
+layout_mode = 2
+linked_table = NodePath("../CenterContainer/WikiStageConfigTable")
 total_wave_count = 15
 summon_block_list = Array[ExtResource("2_qttrh")]([ExtResource("10_eg0ck"), ExtResource("11_jepji"), ExtResource("12_23xe2"), ExtResource("13_13xog"), ExtResource("14_8l6px"), ExtResource("15_od313"), ExtResource("16_p1r0n"), ExtResource("17_pu2cj"), ExtResource("18_mm843"), ExtResource("19_rgyav"), ExtResource("20_hea8y"), ExtResource("21_dv7n5")])
 
@@ -143,7 +150,7 @@ wave_font_color_list = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 1, 1), Color
 summon_block_list = Array[ExtResource("2_qttrh")]([ExtResource("22_5n0hq"), ExtResource("23_6w3c4"), ExtResource("24_nrtd5"), ExtResource("25_d4b84"), ExtResource("26_xb3p2"), ExtResource("27_sv06b"), ExtResource("28_lqcep"), ExtResource("29_jmao0"), ExtResource("30_ryh7w"), ExtResource("31_uhe8h"), ExtResource("32_m5lpj"), ExtResource("33_ulnac")])
 loading_path = "res://Library/SummonConfigs/Stage17/Diamond"
 
-[node name="WikiTotalMoneyTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="6"]
+[node name="WikiTotalMoneyTable2" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig" index="7"]
 summon_block_list = Array[ExtResource("2_qttrh")]([ExtResource("22_5n0hq"), ExtResource("23_6w3c4"), ExtResource("24_nrtd5"), ExtResource("25_d4b84"), ExtResource("26_xb3p2"), ExtResource("27_sv06b"), ExtResource("28_lqcep"), ExtResource("29_jmao0"), ExtResource("30_ryh7w"), ExtResource("31_uhe8h"), ExtResource("32_m5lpj"), ExtResource("33_ulnac")])
 
 [node name="WikiStageConfigTable3" parent="VBoxContainer/MarginContainer/VBoxContainer/EnemyConfig/CenterContainer3" index="0"]
