@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dutjyf0f8luov"]
+[gd_scene load_steps=49 format=3 uid="uid://dutjyf0f8luov"]
 
 [ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_u46ch"]
 [ext_resource type="Texture2D" uid="uid://cgqvtdtcpu8nd" path="res://Assets/Images/UI/SkillButton/Heroskill/Steve/steve_canuse.png" id="2_v5snv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="8_kf15f"]
 [ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="9_5vkjl"]
 [ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="10_dux6t"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="10_tgvse"]
 [ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="11_c8l25"]
 [ext_resource type="Texture2D" uid="uid://naipk375eihb" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_00.png" id="12_w4hw8"]
 [ext_resource type="Texture2D" uid="uid://da5v0ltiicr51" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_01.png" id="13_2aqj0"]
@@ -147,7 +148,7 @@ animations = [{
 }]
 
 [node name="WikiPageSkillSteveSkill" instance=ExtResource("1_u46ch")]
-offset_bottom = 3342.0
+offset_bottom = 3387.0
 
 [node name="Label" parent="VBoxContainer" index="1"]
 text = "药水风暴雨"
@@ -277,7 +278,14 @@ layout_mode = 2
 text = "对 30 范围内的有敌人造成 24-64 点法伤，该伤害对有 \"undead\" 标签的敌人无效。并对命中目标施加持续 4 秒的减速效果，效果持续期间目标减速 40%。"
 autowrap_mode = 3
 
-[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="7"]
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="7"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3" index="0" instance=ExtResource("10_tgvse")]
+layout_mode = 2
+tip_text = "免疫组： god, super_unit"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="8"]
 layout_mode = 2
 
 [node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2" index="0" instance=ExtResource("3_sro6r")]
