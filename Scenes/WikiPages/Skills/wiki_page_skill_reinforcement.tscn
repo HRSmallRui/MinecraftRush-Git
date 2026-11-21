@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://bog0e7j1xn0rd"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_csu4b"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="2_7t6g3"]
+[ext_resource type="Texture2D" uid="uid://bypr2xdx1ikr5" path="res://Assets/Images/UI/Wiki/Allys/Reinforce/LV0.png" id="3_a1amy"]
+[ext_resource type="Texture2D" uid="uid://crvmpt03ql6cv" path="res://Assets/Images/UI/Wiki/Allys/Reinforce/LV2.png" id="4_e31v6"]
+[ext_resource type="Texture2D" uid="uid://c6nvs6a1aigwc" path="res://Assets/Images/UI/Wiki/Allys/Reinforce/LV3.png" id="5_3x1ho"]
+[ext_resource type="Texture2D" uid="uid://dx55v6el487yw" path="res://Assets/Images/UI/Wiki/Allys/Reinforce/LV4.png" id="6_qre5y"]
+[ext_resource type="Texture2D" uid="uid://t64doon7eyfg" path="res://Assets/Images/UI/Wiki/Allys/Reinforce/Destroyer.png" id="7_3l500"]
+[ext_resource type="Texture2D" uid="uid://s2g8wml2pdo3" path="res://Assets/Images/UI/Wiki/GameBased/Index/科技升级.png" id="10_10sim"]
+
+[node name="WikiPageSkillReinforcement" instance=ExtResource("1_csu4b")]
+offset_bottom = 1915.0
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "在指定位置左侧 15 像素和右侧 15 像素各召唤 1 个援军，两个单位召唤间隔时间为 0.2 秒。 5 级之后还会在 0.5 秒之后在上方 15 像素的位置再额外召唤一个破灭者。
+ 
+援军的属性与等级和[升级]的援军板块相关。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
+columns = 3
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/GridContainer" index="0" instance=ExtResource("2_7t6g3")]
+layout_mode = 2
+texture_normal = ExtResource("3_a1amy")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv0.tscn"
+name_text = "0级援军"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/GridContainer" index="1" instance=ExtResource("2_7t6g3")]
+layout_mode = 2
+texture_normal = ExtResource("3_a1amy")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv1.tscn"
+name_text = "1级援军"
+
+[node name="WikiHeadTextureButton3" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/GridContainer" index="2" instance=ExtResource("2_7t6g3")]
+layout_mode = 2
+texture_normal = ExtResource("4_e31v6")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv2.tscn"
+name_text = "2级援军"
+
+[node name="WikiHeadTextureButton4" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/GridContainer" index="3" instance=ExtResource("2_7t6g3")]
+layout_mode = 2
+texture_normal = ExtResource("5_3x1ho")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv3.tscn"
+name_text = "3级援军"
+
+[node name="WikiHeadTextureButton5" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/GridContainer" index="4" instance=ExtResource("2_7t6g3")]
+layout_mode = 2
+texture_normal = ExtResource("6_qre5y")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_reinforcer_lv4.tscn"
+name_text = "4级援军"
+
+[node name="WikiHeadTextureButton6" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/GridContainer" index="5" instance=ExtResource("2_7t6g3")]
+layout_mode = 2
+texture_normal = ExtResource("7_3l500")
+target_page_path = "res://Scenes/WikiPages/Allys/Reinforcers/wiki_destroyer.tscn"
+name_text = "破灭者"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="2"]
+layout_mode = 2
+theme_override_constants/margin_bottom = -25
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="3"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer2" index="0" instance=ExtResource("2_7t6g3")]
+layout_mode = 2
+texture_normal = ExtResource("10_10sim")
+target_page_path = "res://Scenes/WikiPages/GameBased/wiki_upgrade.tscn"
+target_page_pos = -8542.0
+name_text = "援军科技"
