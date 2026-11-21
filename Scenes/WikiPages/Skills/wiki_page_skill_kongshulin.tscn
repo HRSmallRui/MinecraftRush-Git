@@ -1,0 +1,176 @@
+[gd_scene load_steps=15 format=3 uid="uid://bvcy2xiep3cth"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_q87a7"]
+[ext_resource type="Texture2D" uid="uid://g8ci1vyx2rbp" path="res://Assets/Images/UI/SkillButton/Heroskill/KongShuLin/kongshulin_skill.png" id="2_0wjgr"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_7ugxs"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="3_56imt"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_rh70m"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_82s71"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="6_gbxo2"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="7_oht4r"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="8_aaesb"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="9_mabgw"]
+[ext_resource type="Texture2D" uid="uid://c7ryo5idjq6lg" path="res://Assets/Images/Bullets/short_sword.png" id="11_ckar5"]
+[ext_resource type="AudioStream" uid="uid://dcrx0ef8eu86o" path="res://Assets/Sounds/FXs/Heroes/KongShuLin/时停.wav" id="12_q8buh"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="13_mb77q"]
+[ext_resource type="Texture2D" uid="uid://ci63egfknpnsw" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Kongshulin.png" id="14_8hwgh"]
+
+[node name="WikiPageSkillKongshulin" instance=ExtResource("1_q87a7")]
+offset_bottom = 2850.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "索命・死亡空间"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_0wjgr")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本： 召唤一片时停领域，结束后落下大量飞刀造成伤害
+ 
+冷却时间： 40 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "创建一片半径 158 像素的时停区域，冻结区域内所有敌人，持续 6 秒，在此期间每 0.1 秒对范围内所有敌人造成 2 点真伤。时停期间每 0.1 秒生成一把飞刀，总共生成 40 把飞刀，每把飞刀生成在时停区域中心位置随机方向偏移 100 像素的位置，目标位置为 时停区域中心区域 随机方向移 40 像素的坐标，时停结束后所有飞刀间隔 0.02 秒相继飞出，如果期间没有命中单位则会停留在目标区域，持续 3 秒，如果期间碰到地面敌人则会造成一次伤害，飞刀伤害为 15/20/25/30 点物伤。"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2" index="0" instance=ExtResource("3_56imt")]
+layout_mode = 2
+tip_text = "免疫组： god, boss"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_7ugxs")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="0" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_82s71")]
+layout_mode = 2
+texture = ExtResource("6_gbxo2")
+tip_text = "时停范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="1" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "158 像素"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="2" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_82s71")]
+layout_mode = 2
+texture = ExtResource("7_oht4r")
+tip_text = "时停时间"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="3" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "6 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="4" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_82s71")]
+layout_mode = 2
+texture = ExtResource("8_aaesb")
+tip_text = "时停区域伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="5" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "2 / 0.1秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="6" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement7" index="0" instance=ExtResource("5_82s71")]
+layout_mode = 2
+texture = ExtResource("9_mabgw")
+tip_text = "飞刀数量"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="7" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "40"
+horizontal_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="8" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement9" index="0" instance=ExtResource("5_82s71")]
+layout_mode = 2
+texture = ExtResource("7_oht4r")
+tip_text = "飞刀持续存在时间"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="9" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "3 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="10" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement11" index="0" instance=ExtResource("5_82s71")]
+layout_mode = 2
+tip_text = "飞刀伤害"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="11" instance=ExtResource("4_rh70m")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "15 / 20 / 25 / 30"
+horizontal_alignment = 1
+
+[node name="Art1" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="0"]
+visible = false
+
+[node name="Art2" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="0"]
+position = Vector2(48, -36)
+scale = Vector2(1.79429, 1.79429)
+texture = ExtResource("11_ckar5")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="1"]
+layout_mode = 0
+offset_left = -31.0
+offset_right = 113.0
+offset_bottom = 24.0
+text = "飞刀素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+text = "时停音效"
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1"]
+audio_stream = ExtResource("12_q8buh")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("13_mb77q")]
+layout_mode = 2
+texture_normal = ExtResource("14_8hwgh")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_kongshulin.tscn"
+name_text = "空树林"
