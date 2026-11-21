@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://duasaw8sn0dor"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_1qlod"]
+[ext_resource type="Texture2D" uid="uid://bx7canjsuxyg4" path="res://Assets/Images/UI/SkillButton/Reinforce/reinforce_canuse.png" id="2_i812s"]
+
+[node name="WikiPageSkillTemplate" instance=ExtResource("1_1qlod")]
+offset_bottom = 1776.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Label" type="Label" parent="VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "召唤援军"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_i812s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="SkillConfig" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能配置"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+layout_mode = 2
+text = "技能文本： 在战场上召唤援军前来支援战场
+ 
+冷却时间： 10 秒。"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="SkillEffect" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能效果"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="About" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "相关词条"
