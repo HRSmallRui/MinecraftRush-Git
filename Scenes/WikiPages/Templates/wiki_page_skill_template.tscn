@@ -1,0 +1,248 @@
+[gd_scene load_steps=13 format=3 uid="uid://dn0g4h0tok4gd"]
+
+[ext_resource type="PackedScene" uid="uid://82rxtx5ex75r" path="res://Scenes/WikiPages/Templates/wiki_page_class.tscn" id="1_1qlod"]
+[ext_resource type="Texture2D" uid="uid://bx7canjsuxyg4" path="res://Assets/Images/UI/SkillButton/Reinforce/reinforce_canuse.png" id="2_i812s"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="3_2wi4b"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_uy4lc"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_esxnb"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_jfyka"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="6_abq0a"]
+[ext_resource type="Texture2D" uid="uid://bjqd4l7lvkdk3" path="res://Assets/Images/Skills/Firerain/fire1.png" id="7_rh5io"]
+[ext_resource type="Texture2D" uid="uid://dryb5uixkktvo" path="res://Assets/Images/Skills/Firerain/fire2.png" id="8_v5m05"]
+[ext_resource type="Texture2D" uid="uid://bgnmllpvmj6s8" path="res://Assets/Images/Skills/Firerain/fire3.png" id="9_gtm2n"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="10_kgh82"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rjuhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rh5io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v5m05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gtm2n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiPageSkill" instance=ExtResource("1_1qlod")]
+offset_bottom = 1980.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/margin_top = 65
+
+[node name="Label" type="Label" parent="VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "召唤援军"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_i812s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="SkillConfig" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能配置"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+layout_mode = 2
+text = "技能文本： 在战场上召唤援军前来支援战场
+ 
+冷却时间： 10 秒"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer" index="0" instance=ExtResource("3_uy4lc")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable" index="0" instance=ExtResource("4_esxnb")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_jfyka")]
+layout_mode = 2
+texture = ExtResource("6_abq0a")
+tip_text = "冷却时间"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable" index="1" instance=ExtResource("4_esxnb")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "10 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="SkillEffect" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "技能效果"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="Art" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Art" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "美术素材"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Art" index="1"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Art" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/h_separation = 280
+theme_override_constants/v_separation = 220
+columns = 3
+
+[node name="Art1" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art1" index="0"]
+position = Vector2(48, -36)
+scale = Vector2(1.91785, 1.91785)
+sprite_frames = SubResource("SpriteFrames_rjuhk")
+autoplay = "default"
+frame_progress = 0.684401
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art1" index="1"]
+layout_mode = 0
+offset_left = -31.0
+offset_right = 113.0
+offset_bottom = 24.0
+text = "xxx动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "音效素材"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio" index="1"]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer" index="0" instance=ExtResource("3_uy4lc")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="0" instance=ExtResource("4_esxnb")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="1" instance=ExtResource("4_esxnb")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1" instance=ExtResource("10_kgh82")]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="7"]
+layout_mode = 2
+
+[node name="About" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "关联词条"
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("3_2wi4b")]
+layout_mode = 2
+text = "技能配置"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/SkillConfig")
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("3_2wi4b")]
+layout_mode = 2
+text = "技能效果"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/SkillEffect")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("3_2wi4b")]
+layout_mode = 2
+text = "美术素材"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Art")
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("3_2wi4b")]
+layout_mode = 2
+text = "音效素材"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/Audio")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("3_2wi4b")]
+layout_mode = 2
+text = "关联词条"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer/VBoxContainer/About")

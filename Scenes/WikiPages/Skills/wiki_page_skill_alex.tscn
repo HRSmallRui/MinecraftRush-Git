@@ -1,0 +1,220 @@
+[gd_scene load_steps=17 format=3 uid="uid://dmaarhis2ji8k"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_58o2u"]
+[ext_resource type="Texture2D" uid="uid://kj2hhcrva6rf" path="res://Assets/Images/UI/SkillButton/Heroskill/Alex/alex_skill.png" id="2_45mcx"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="3_vcawo"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="4_ptvmt"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="5_ctkls"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="6_aonm2"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="7_3t00f"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="8_c2djw"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="9_2libu"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="10_arn2v"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="11_8jr6p"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="12_8cf7v"]
+[ext_resource type="Texture2D" uid="uid://bcyadejygechf" path="res://Assets/Images/Bullets/三叉戟.png" id="13_41y0j"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="14_2jgn2"]
+[ext_resource type="Texture2D" uid="uid://c26jt1sxsb7dq" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Alex.png" id="15_jxjmv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2bvkk"]
+
+[node name="WikiPageSkillAlex" instance=ExtResource("1_58o2u")]
+offset_bottom = 2731.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "海神的惩戒"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_45mcx")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本： 召唤三叉戟从天而降，对一定范围的敌人造成大量伤害
+ 
+冷却时间： 42 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "42 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "在指定点位落下 6/8/10/12 发三叉戟，每发三叉戟对 100 范围内的所有敌人造成 80 点物伤，每发三叉戟间隔 0.1 秒相继出现。三叉戟阵存在 2 秒，期间持续对 100 范围内的地面敌人减速 50%，2 秒后爆炸，对 200 范围内的所有敌人造成 126/168/210/252 点炮伤，并眩晕所有敌人 2 秒。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_vcawo")]
+layout_mode = 2
+tip_text = "免疫组： god, boss, super_unit"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="3"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2" index="0" instance=ExtResource("4_ptvmt")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="0" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("7_3t00f")
+tip_text = "三叉戟数量"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="1" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "6 / 8 / 10 / 12"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="2" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("8_c2djw")
+tip_text = "前段伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="3" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="4" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("9_2libu")
+tip_text = "单发三叉戟伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="5" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "80"
+horizontal_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="6" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("10_arn2v")
+tip_text = "减速持续时间"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="7" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "2 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="8" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("11_8jr6p")
+tip_text = "减速幅度"
+property_state = 2
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="9" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "50%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="10" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement11" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("8_c2djw")
+tip_text = "爆炸伤害范围"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="11" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+
+[node name="WikiTableElement13" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="12" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement13" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("12_8cf7v")
+tip_text = "爆炸伤害"
+
+[node name="WikiTableElement14" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="13" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement14" index="0"]
+layout_mode = 2
+text = "128 / 168 / 210 / 252"
+horizontal_alignment = 1
+
+[node name="WikiTableElement15" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="14" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement15" index="0" instance=ExtResource("6_aonm2")]
+layout_mode = 2
+texture = ExtResource("10_arn2v")
+tip_text = "眩晕持续时间"
+
+[node name="WikiTableElement16" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="15" instance=ExtResource("5_ctkls")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement16" index="0"]
+layout_mode = 2
+text = "2 秒"
+horizontal_alignment = 1
+
+[node name="Art1" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="0"]
+visible = false
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art1" index="0"]
+sprite_frames = SubResource("SpriteFrames_2bvkk")
+frame_progress = 0.0
+
+[node name="Art2" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="0"]
+position = Vector2(48, -36)
+scale = Vector2(0.7324, 0.7324)
+texture = ExtResource("13_41y0j")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="1"]
+layout_mode = 0
+offset_left = -23.0
+offset_right = 123.0
+offset_bottom = 24.0
+text = "三叉戟素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" parent="VBoxContainer/MarginContainer/VBoxContainer" index="6"]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("14_2jgn2")]
+layout_mode = 2
+texture_normal = ExtResource("15_jxjmv")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_alex.tscn"
+name_text = "艾利克斯"
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="3"]
+visible = false

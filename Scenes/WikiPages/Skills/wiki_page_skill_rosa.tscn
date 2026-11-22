@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://cct2ktaljfgx8"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_f66n3"]
+[ext_resource type="Texture2D" uid="uid://bbix2ejk7c5om" path="res://Assets/Images/UI/SkillButton/Heroskill/Rosa/rosa_skill.png" id="2_yt5cl"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_bqdwn"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_lwu1s"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_xswrj"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="6_14mkb"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="7_8oml8"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="8_e827k"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="9_o6vjt"]
+[ext_resource type="Texture2D" uid="uid://gw6oti0b1btj" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Rosa.png" id="10_4qq68"]
+
+[node name="WikiPageSkillRosa" instance=ExtResource("1_f66n3")]
+offset_bottom = 1794.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "黑暗风暴"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_yt5cl")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本： 沿指定道路射出大量箭矢，对命中敌人造成真实伤害
+ 
+冷却时间： 35 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "35 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "在目标点位所在主路召唤 15/30/45/60 发箭矢，每发箭矢间隔 0.05 秒，朝向出怪口间隔 2 路径长度释放，并在所在路径的垂直方向随机偏移 25 像素。每发箭矢对 30 范围内的所有敌人造成 15/30/45/60 点真伤。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_bqdwn")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="0" instance=ExtResource("4_lwu1s")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_xswrj")]
+layout_mode = 2
+texture = ExtResource("6_14mkb")
+tip_text = "箭矢数量"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="1" instance=ExtResource("4_lwu1s")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "15 / 30 / 45 / 60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="2" instance=ExtResource("4_lwu1s")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_xswrj")]
+layout_mode = 2
+texture = ExtResource("7_8oml8")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="3" instance=ExtResource("4_lwu1s")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="4" instance=ExtResource("4_lwu1s")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_xswrj")]
+layout_mode = 2
+texture = ExtResource("8_e827k")
+tip_text = "技能伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="5" instance=ExtResource("4_lwu1s")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "15 / 30 / 45 / 60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Art" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+visible = false
+
+[node name="MarginContainer3" parent="VBoxContainer/MarginContainer/VBoxContainer" index="5"]
+visible = false
+
+[node name="Audio" parent="VBoxContainer/MarginContainer/VBoxContainer" index="6"]
+visible = false
+
+[node name="MarginContainer4" parent="VBoxContainer/MarginContainer/VBoxContainer" index="7"]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("9_o6vjt")]
+layout_mode = 2
+texture_normal = ExtResource("10_4qq68")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_rosa.tscn"
+name_text = "蔷薇"
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2"]
+visible = false
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="3"]
+visible = false

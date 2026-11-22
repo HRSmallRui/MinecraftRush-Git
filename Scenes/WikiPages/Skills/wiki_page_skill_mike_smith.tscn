@@ -1,0 +1,619 @@
+[gd_scene load_steps=25 format=3 uid="uid://edll0eek3pke"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_7vytx"]
+[ext_resource type="Texture2D" uid="uid://dkuncar13gyka" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/MikeSkill.png" id="2_blirv"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_1wxme"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_csgmg"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_kf7ms"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="6_6tk0h"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="7_21cou"]
+[ext_resource type="Texture2D" uid="uid://cg8y7gvthv1pt" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/fire.png" id="7_pk3th"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="8_vmcx4"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="9_cep70"]
+[ext_resource type="Texture2D" uid="uid://drp8leo284ll0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战超伤.png" id="10_4bd2a"]
+[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="11_t71n8"]
+[ext_resource type="Texture2D" uid="uid://bj2vehlykv7mu" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/water.png" id="13_1xm50"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="14_xs886"]
+[ext_resource type="Texture2D" uid="uid://m2w1qloq3jsu" path="res://Assets/Images/UI/Wiki/PropertyIcons/射程.png" id="15_kb0mj"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="16_ukhry"]
+[ext_resource type="Texture2D" uid="uid://cey441i8fdaaa" path="res://Assets/Images/UI/Wiki/PropertyIcons/魔抗.png" id="17_m8tuf"]
+[ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="18_0jnad"]
+[ext_resource type="Texture2D" uid="uid://dkendqxdjjk7b" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/earth.png" id="18_xpwh4"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="19_dbktv"]
+[ext_resource type="Texture2D" uid="uid://ckuuj7rsuesdc" path="res://Assets/Images/UI/SkillButton/Heroskill/Mike/wind.png" id="21_m87ei"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="22_xuujv"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="23_av2ov"]
+[ext_resource type="Texture2D" uid="uid://clmsrav51kdci" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Mike.png" id="24_xab7q"]
+
+[node name="WikiPageSkillMikeSmith" instance=ExtResource("1_7vytx")]
+offset_bottom = 6390.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "天劫轮回渡"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_blirv")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本
+天火： 召唤烈火陨石从天而降，对敌人造成极大损伤
+海啸： 造成大范围真实伤害，大幅削弱并沉默所有敌人
+地震： 造成大范围多段伤害，波及到的敌人均保持眩晕状态
+风刃： 造成大范围多段真实伤害，减速敌人并摧毁敌人护甲
+ 
+冷却时间： 32 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "32 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "迈克拥有 天火/海啸/地震/风刃 四个主动技能，开局为天火，释放技能会在指定位置释放天灾，并在释放完后切换到下一个天灾冷却，并让迈克进入独特的强化状态，持续 12 秒。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_1wxme")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="0" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("6_6tk0h")
+tip_text = "强化效果持续时间"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="1" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "12 秒"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "天灾之天火"
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="4"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("7_pk3th")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="5"]
+layout_mode = 2
+text = "在指定位置召唤 3/4/5/6 发烈火陨石，每发烈火陨石间隔 0.5 秒相继出现， 在x方向随机偏移 0-40 像素，y方向随机便宜 0-28 像素，落地后秒杀 200 范围内所有敌人，如果目标为 MiniBoss 级别及以上的敌人，则改为造成 600 点超伤，并施加持续 4 秒的天火燃烧效果，每 0.4 秒造成 66 点真伤。
+ 
+技能释放后为迈克施加 天火强化 状态，在此期间攻击力提高 100%。"
+autowrap_mode = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="6"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2" index="0" instance=ExtResource("7_21cou")]
+layout_mode = 2
+tip_text = "免疫组：god"
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="7"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3" index="0" instance=ExtResource("3_1wxme")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="0" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("8_vmcx4")
+tip_text = "陨石数量"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="1" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "3 / 4 / 5 / 6"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="2" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("9_cep70")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="3" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="4" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("10_4bd2a")
+tip_text = "烈火陨石伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="5" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "600"
+horizontal_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="6" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement7" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("6_6tk0h")
+tip_text = "天火燃烧持续时间"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="7" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "4 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="8" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement9" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("11_t71n8")
+tip_text = "天火燃烧伤害"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="9" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "66 / 0.4秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="10" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement11" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("14_xs886")
+tip_text = "迈克获得攻击力强化"
+property_state = 1
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="11" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="8"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "天灾之海啸"
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="9"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("13_1xm50")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="10"]
+layout_mode = 2
+text = "在指定位置召唤一滩巨澜，对 200 范围内所有地面敌人造成 200/400/600/800 点真伤，如果敌人为 Super 级别及以下的敌人，则普通攻击伤害永久降为 4-8/3-6/ 2-4/1-2（取前后最小值），永久沉默敌人，敌人远程攻击范围永久降低 100%，在 4/6/8/10 秒内敌人护甲与魔抗降低 100%。
+ 
+技能释放后为迈克施加 海啸强化 状态，在此期间获得 90% 总伤减免。"
+autowrap_mode = 3
+
+[node name="CenterContainer4" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="11"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4" index="0" instance=ExtResource("7_21cou")]
+layout_mode = 2
+tip_text = "破甲与沉默免疫组：god, boss"
+
+[node name="CenterContainer5" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="12"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5" index="0" instance=ExtResource("3_1wxme")]
+layout_mode = 2
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="0" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("9_cep70")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="1" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="2" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("11_t71n8")
+tip_text = "巨澜伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="3" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "200 / 400 / 600 / 800"
+horizontal_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="4" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement7" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("14_xs886")
+tip_text = "目标攻击力设置"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="5" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "4-8 / 3-6 / 2-4 / 1-2"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="6" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement9" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("15_kb0mj")
+tip_text = "射程降低"
+property_state = 2
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="7" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="8" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement11" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("16_ukhry")
+tip_text = "护甲降低"
+property_state = 2
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="9" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement13" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="10" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement13" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("17_m8tuf")
+tip_text = "魔抗降低"
+property_state = 2
+
+[node name="WikiTableElement14" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="11" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement14" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement15" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="12" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement15" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("18_0jnad")
+tip_text = "迈克强化获得总伤减免"
+
+[node name="WikiTableElement16" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="13" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement16" index="0"]
+layout_mode = 2
+text = "90%"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="13"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "天灾之地震"
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="14"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("18_xpwh4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="15"]
+layout_mode = 2
+text = "在指定位置召唤 2/3/4/5 道地震，每道地震间隔 1 秒相继出现，在 x 方向随机偏移 0-40 像素，y 方向随机偏移 0-28 像素。每道地震对 200 范围内的所有地面敌人造成 900 点炮伤，眩晕所有伤害敌人 2 秒。
+ 
+技能释放后为迈克施加 地震强化 状态，在此期间处于物理免疫状态。"
+autowrap_mode = 3
+
+[node name="CenterContainer6" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="16"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6" index="0" instance=ExtResource("7_21cou")]
+layout_mode = 2
+tip_text = "眩晕免疫组：god, boss"
+
+[node name="CenterContainer7" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="17"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7" index="0" instance=ExtResource("3_1wxme")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="0" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("8_vmcx4")
+tip_text = "地震数量"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="1" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "2 / 3 / 4 / 5"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="2" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("9_cep70")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="3" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="4" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("19_dbktv")
+tip_text = "地震伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="5" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "900"
+horizontal_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="6" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement7" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("6_6tk0h")
+tip_text = "眩晕时间"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="7" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "2 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="8" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement9" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("16_ukhry")
+tip_text = "迈克强化获得效果"
+property_state = 1
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable" index="9" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer7/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "免疫"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="18"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "天灾之风刃"
+
+[node name="TextureRect5" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="19"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("21_m87ei")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="20"]
+layout_mode = 2
+text = "在指定位置召唤风刃阵，在 0.5 秒内造成 10 段伤害，每次对 200 范围内的敌人造成 60/90/120/150 点真伤，并施加持续 5/6/7/8 秒的 60% 减速效果。如果目标为 Super 级别及以下的敌人，则护甲归零。
+ 
+技能释放后为迈克施加 风刃强化 效果，在此期间处于魔法免疫状态。"
+autowrap_mode = 3
+
+[node name="CenterContainer8" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="21"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer8" index="0" instance=ExtResource("7_21cou")]
+layout_mode = 2
+tip_text = "减速免疫组：god, boss"
+
+[node name="CenterContainer9" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="22"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9" index="0" instance=ExtResource("3_1wxme")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="0" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("8_vmcx4")
+tip_text = "伤害次数"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="1" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="2" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("9_cep70")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="3" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="4" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("11_t71n8")
+tip_text = "单段风刃伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="5" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "60 / 90 / 120 / 150"
+horizontal_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="6" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement7" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("6_6tk0h")
+tip_text = "减速持续时间"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="7" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "5 / 6 / 7 / 8 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="8" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement11" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("22_xuujv")
+tip_text = "减速效果"
+property_state = 2
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="9" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "60%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="10" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement9" index="0" instance=ExtResource("5_kf7ms")]
+layout_mode = 2
+texture = ExtResource("17_m8tuf")
+tip_text = "迈克强化获得效果"
+property_state = 1
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable" index="11" instance=ExtResource("4_csgmg")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer9/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "免疫"
+horizontal_alignment = 1
+
+[node name="Art" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+visible = false
+
+[node name="MarginContainer3" parent="VBoxContainer/MarginContainer/VBoxContainer" index="5"]
+visible = false
+
+[node name="Audio" parent="VBoxContainer/MarginContainer/VBoxContainer" index="6"]
+visible = false
+
+[node name="MarginContainer4" parent="VBoxContainer/MarginContainer/VBoxContainer" index="7"]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("23_av2ov")]
+layout_mode = 2
+texture_normal = ExtResource("24_xab7q")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_mike_smith.tscn"
+name_text = "迈克・史密斯"
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2"]
+visible = false
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="3"]
+visible = false

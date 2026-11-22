@@ -1,0 +1,449 @@
+[gd_scene load_steps=21 format=3 uid="uid://c1ur5ytym34bs"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_4gumg"]
+[ext_resource type="Texture2D" uid="uid://dnq7cjvbnjjh3" path="res://Assets/Images/UI/SkillButton/Heroskill/SteveSP/SPSkill.png" id="2_notxy"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="3_hedal"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="4_wjaae"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="5_5trre"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="6_6heih"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="7_vi42u"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="8_m57pa"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="9_hmjd6"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="10_jbtx0"]
+[ext_resource type="Texture2D" uid="uid://c2osk1n8kot46" path="res://Assets/Images/UI/Wiki/PropertyIcons/护甲.png" id="11_yxyvb"]
+[ext_resource type="Texture2D" uid="uid://duw7engfge273" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程炮伤.png" id="12_cybyr"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="13_5x4v6"]
+[ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="14_8ua5e"]
+[ext_resource type="AudioStream" uid="uid://cdwi7aoe3lqdb" path="res://Assets/Sounds/FXs/DefenceTowers/OperatorTurret/演算者发射.mp3" id="15_6al8f"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="16_sjiof"]
+[ext_resource type="AudioStream" uid="uid://fbwpwvsu6gr3" path="res://Assets/Sounds/FXs/Heroes/Mike/二段爆炸预备.wav" id="17_avo8x"]
+[ext_resource type="AudioStream" uid="uid://b6k07hqofnnxa" path="res://Assets/Sounds/FXs/Heroes/Fuchen/护盾.wav" id="18_7h4fp"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="19_2uoam"]
+[ext_resource type="Texture2D" uid="uid://cn6jvyxb0mcp7" path="res://Assets/Images/UI/Wiki/Allys/Heroes/SteveSP.png" id="20_7p1jo"]
+
+[node name="WikiPageSkillSteveSP" instance=ExtResource("1_4gumg")]
+offset_bottom = 4443.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "旅程的问答"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_notxy")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本
+因何踏上旅程： 对范围内的敌人造成大量伤害并眩晕敌人
+仍有要守护之物： 召唤一片领域，持续增益领域内的我方单位
+ 
+冷却时间： 40 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "40 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "史蒂夫拥有两个技能 - “因何踏上旅程” 和 “仍有要守护之物”。战斗开始时为前者，技能释放后都会立即替换为另一个技能并进入冷却。"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "因何踏上旅程"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="3"]
+layout_mode = 2
+text = "在指定区域释放一道天基炮，对 200 范围内所有敌人造成 40/60/80/100 点真伤，并对敌人施加持续 3 秒的减速效果和永久破甲效果。减速效果持续期间敌人减速 50%，破甲效果为削除敌人 20 点护甲。
+ 
+1.2 秒后爆炸造成二段伤害， 对 240 范围内所有敌人造成 200/300/400/500 点炮伤，并移除敌人所有正面效果。敌人每持有 1 个史蒂夫施加的效果，二段伤害造成的伤害额外提高 20/30/40/50  点，最多叠加 5 层。爆炸结束时对范围内所有敌人施加持续 4 秒的眩晕效果。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="4"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_hedal")]
+layout_mode = 2
+tip_text = "减速眩晕免疫组： god, boss, super_unit"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="5"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2" index="0" instance=ExtResource("3_hedal")]
+layout_mode = 2
+tip_text = "破甲免疫组： god, boss"
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="6"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+text = "前段技能"
+horizontal_alignment = 1
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer" index="1" instance=ExtResource("4_wjaae")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="0" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("7_vi42u")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="1" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="2" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("8_m57pa")
+tip_text = "技能伤害"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="3" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "40 / 60 / 80 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="4" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("9_hmjd6")
+tip_text = "减速持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="5" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "3 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="6" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("10_jbtx0")
+tip_text = "减速效果"
+property_state = 2
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="7" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="8" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("11_yxyvb")
+tip_text = "破甲效果"
+property_state = 2
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable" index="9" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/VBoxContainer/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="7"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer" index="0"]
+layout_mode = 2
+text = "二段爆炸"
+horizontal_alignment = 1
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer" index="1" instance=ExtResource("4_wjaae")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="0" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("7_vi42u")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="1" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "240"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="2" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("12_cybyr")
+tip_text = "技能伤害"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="3" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "200 / 300 / 400 / 500"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="4" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("12_cybyr")
+tip_text = "每层效果额外伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="5" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "20 / 30 / 40 / 50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="6" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("9_hmjd6")
+tip_text = "眩晕时间"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable" index="7" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4/VBoxContainer/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "4 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="8"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "仍有要守护之物"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="9"]
+layout_mode = 2
+text = "立即恢复史蒂夫 40% 的生命，并在目标点位生成一片 200 范围的增援区域，持续 3/6/8/12 秒，区域内的我方单位获得 80% 总伤减免，立即恢复自身 30%/40%/50%/60% 生命。每 0.5 秒为区域内我方单位施加 0.6 秒持续恢复生命效果，每 0.2 秒恢复自身 5 点生命。"
+autowrap_mode = 3
+
+[node name="CenterContainer5" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="10"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5" index="0" instance=ExtResource("4_wjaae")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="0" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("13_5x4v6")
+tip_text = "史蒂夫恢复生命"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="1" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "40%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="2" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement3" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("7_vi42u")
+tip_text = "技能范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="3" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "200"
+horizontal_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="4" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement5" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("9_hmjd6")
+tip_text = "持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="5" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "3 /6 / 8 / 12 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="6" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement7" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("14_8ua5e")
+tip_text = "总伤减免"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="7" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="8" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement9" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("13_5x4v6")
+tip_text = "区域内单位瞬时回血"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="9" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "30% / 40% / 50% / 60%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement11" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="10" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement11" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("9_hmjd6")
+tip_text = "恢复生命效果持续时间"
+
+[node name="WikiTableElement12" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="11" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement12" index="0"]
+layout_mode = 2
+text = "0.6 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement13" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="12" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement13" index="0" instance=ExtResource("6_6heih")]
+layout_mode = 2
+texture = ExtResource("13_5x4v6")
+tip_text = "恢复生命效果"
+
+[node name="WikiTableElement14" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="13" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement14" index="0"]
+layout_mode = 2
+text = "5 / 0.2秒"
+horizontal_alignment = 1
+
+[node name="Art" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+visible = false
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+text = "正面技能释放音效"
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1"]
+audio_stream = ExtResource("15_6al8f")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "二段爆炸预备音效"
+horizontal_alignment = 1
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("16_sjiof")]
+layout_mode = 2
+audio_stream = ExtResource("17_avo8x")
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="4" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement5" index="0"]
+layout_mode = 2
+text = "反面技能释放音效"
+horizontal_alignment = 1
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="5" instance=ExtResource("5_5trre")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement6/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement6/HBoxContainer" index="1" instance=ExtResource("16_sjiof")]
+layout_mode = 2
+audio_stream = ExtResource("18_7h4fp")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("19_2uoam")]
+layout_mode = 2
+texture_normal = ExtResource("20_7p1jo")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_steve_sp.tscn"
+name_text = "史蒂夫SP"
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2"]
+visible = false

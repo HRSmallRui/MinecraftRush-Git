@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://ck1rkiq4a4uow"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_colcv"]
+[ext_resource type="Texture2D" uid="uid://6i50vij6jgsl" path="res://Assets/Images/UI/SkillButton/Heroskill/Fuchen/fuchen_skill.png" id="2_hpx0i"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_oe4uv"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_mpila"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_nt6sp"]
+[ext_resource type="Texture2D" uid="uid://cql8d111c0hc6" path="res://Assets/Images/UI/Wiki/PropertyIcons/人数上限.png" id="6_knpyl"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="7_6pcrh"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="8_2wy37"]
+[ext_resource type="AudioStream" uid="uid://5vm66inghgpc" path="res://Assets/Sounds/FXs/Heroes/Fuchen/末日.wav" id="9_wuab4"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="10_kjvnm"]
+[ext_resource type="Texture2D" uid="uid://dhnyr7wii5i6v" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Fuchen.png" id="11_n6y6b"]
+
+[node name="WikiPageSkillFuchen" instance=ExtResource("1_colcv")]
+offset_bottom = 2133.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "奥术冲击"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_hpx0i")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本： 发射数道奥术射线，轰炸目标区域
+ 
+冷却时间： 45 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "45 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "在指定点位降下 4/6/8/10 发奥术射线，每发奥术射线在 xy 方向各自随机偏移 0-50 像素，相继间隔 0.2 秒生成， 对 100 范围内的所有敌人造成 80 点法伤。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_oe4uv")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="0" instance=ExtResource("4_mpila")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_nt6sp")]
+layout_mode = 2
+texture = ExtResource("6_knpyl")
+tip_text = "射线数量"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="1" instance=ExtResource("4_mpila")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "4 / 6 / 8 / 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="2" instance=ExtResource("4_mpila")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_nt6sp")]
+layout_mode = 2
+texture = ExtResource("7_6pcrh")
+tip_text = "伤害范围"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="3" instance=ExtResource("4_mpila")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="4" instance=ExtResource("4_mpila")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_nt6sp")]
+layout_mode = 2
+texture = ExtResource("8_2wy37")
+tip_text = "技能伤害"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="5" instance=ExtResource("4_mpila")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "80"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Art" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+visible = false
+
+[node name="MarginContainer3" parent="VBoxContainer/MarginContainer/VBoxContainer" index="5"]
+visible = false
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+text = "释放音效"
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1"]
+audio_stream = ExtResource("9_wuab4")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("10_kjvnm")]
+layout_mode = 2
+texture_normal = ExtResource("11_n6y6b")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_fuchen.tscn"
+name_text = "法辰"
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2"]
+visible = false

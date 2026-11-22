@@ -80,7 +80,9 @@ func add_table_body():
 	for i in total_wave_count:
 		add_table_element(str(i+1))
 		for j in wave_font_color_list.size():
-			add_table_element(get_enemy_text_block([summon_block_list[3*j],summon_block_list[3*j+1],summon_block_list[3*j+2]],i+1))
+			var font_color: Color = wave_font_color_list[j] * 0.8
+			font_color.a = 1
+			add_table_element(get_enemy_text_block([summon_block_list[3*j],summon_block_list[3*j+1],summon_block_list[3*j+2]],i+1),font_color)
 		add_table_element(get_wave_money_text(i+1))
 	pass
 

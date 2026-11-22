@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://bglefo13jb3yt"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_8y2xc"]
+[ext_resource type="Texture2D" uid="uid://desjphmwm4hmv" path="res://Assets/Images/UI/SkillButton/Heroskill/Talzin/talzin_skill.png" id="2_uurmi"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_870kt"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_y11ga"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_yqht7"]
+[ext_resource type="Texture2D" uid="uid://dnbf3is20sr48" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战真伤.png" id="6_s6p10"]
+[ext_resource type="Texture2D" uid="uid://fdl34csjxid" path="res://Assets/Images/Effects/skeleton_seckill_effect.png" id="7_yedmo"]
+[ext_resource type="AudioStream" uid="uid://dbtgg1fvplh1g" path="res://Assets/Sounds/FXs/Enemies/尸国统帅/尸国统帅死亡.wav" id="8_dd0hf"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="9_uy13j"]
+[ext_resource type="Texture2D" uid="uid://cebwnta355ylr" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Talzin.png" id="10_k30b4"]
+
+[node name="WikiPageSkillTalzin" instance=ExtResource("1_8y2xc")]
+offset_bottom = 2274.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "夕阳彼岸红"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_uurmi")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本：立即秒杀单个敌人，或对单个敌人造成极大损伤
+ 
+冷却时间： 120/100/80/60 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "120 / 100 / 80 / 60 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "瞄准单个敌人，1 秒后立即秒杀该敌人。如果敌人级别为 MiniBoss及以上敌人，则改为对敌人造成 500/750/1000/1300 点真伤。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_870kt")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="0" instance=ExtResource("4_y11ga")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_yqht7")]
+layout_mode = 2
+texture = ExtResource("6_s6p10")
+tip_text = "技能伤害"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="1" instance=ExtResource("4_y11ga")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "500 / 750 / 1000 / 1300"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Art1" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="0"]
+visible = false
+
+[node name="Art2" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="0"]
+position = Vector2(48, -36)
+rotation = 0.733266
+scale = Vector2(0.577546, 0.577546)
+texture = ExtResource("7_yedmo")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="1"]
+layout_mode = 0
+offset_left = -18.0
+offset_right = 121.0
+offset_bottom = 24.0
+text = "瞄准素材"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+text = "技能音效"
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1"]
+audio_stream = ExtResource("8_dd0hf")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("9_uy13j")]
+layout_mode = 2
+texture_normal = ExtResource("10_k30b4")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_talzin.tscn"
+name_text = "塔尔辛"
