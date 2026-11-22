@@ -1,0 +1,673 @@
+[gd_scene load_steps=10 format=3 uid="uid://rrsxl58lbjv7"]
+
+[ext_resource type="PackedScene" uid="uid://mus7jw1gdpk2" path="res://Scenes/WikiPages/Templates/wiki_page_other_template.tscn" id="1_51gds"]
+[ext_resource type="Texture2D" uid="uid://s2g8wml2pdo3" path="res://Assets/Images/UI/Wiki/GameBased/Index/科技升级.png" id="2_mbl4h"]
+[ext_resource type="Texture2D" uid="uid://dkfkjajgcnpgx" path="res://Assets/Images/UI/Wiki/VersionTexture/0.2.4宣传图.png" id="3_4nnih"]
+[ext_resource type="Texture2D" uid="uid://03twr6da23jn" path="res://Assets/Images/UI/Wiki/VersionTexture/0.3.png" id="4_nkaj3"]
+[ext_resource type="Texture2D" uid="uid://cpjdm2nmtkaiw" path="res://Assets/Images/UI/Wiki/VersionTexture/0.4.png" id="5_o32rk"]
+[ext_resource type="Texture2D" uid="uid://fexeqv8x3ugr" path="res://Assets/Images/UI/Wiki/VersionTexture/0.5.png" id="6_s4r36"]
+[ext_resource type="Texture2D" uid="uid://d2ep8ai2ac76x" path="res://Assets/Images/UI/Wiki/VersionTexture/1.0.png" id="7_cauye"]
+[ext_resource type="Texture2D" uid="uid://bdy3utc5gluyv" path="res://Assets/Images/UI/Wiki/VersionTexture/1.0.3.png" id="8_q3j1y"]
+[ext_resource type="PackedScene" uid="uid://bd7akssixn475" path="res://Scenes/UI-Components/Wiki/navigation_button.tscn" id="9_ar04n"]
+
+[node name="WikiPageVersionHistory" instance=ExtResource("1_51gds")]
+offset_bottom = 17690.0
+
+[node name="TextureRect" parent="VBoxContainer" index="1"]
+texture = ExtResource("2_mbl4h")
+
+[node name="Label" parent="VBoxContainer" index="2"]
+text = "版本更新日志"
+
+[node name="Version1" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version1" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "V0.2.4"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version1" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "发布日期"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version1" index="2"]
+layout_mode = 2
+text = "2025-08-27"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version1" index="3"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("3_4nnih")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version1" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "新增内容"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version1" index="5"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "7个关卡（每关包含一个普通模式和两个挑战模式）
+四种防御塔（各自3级），三个进阶防御塔
+3个英雄
+21个敌人"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Version2" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "V0.3"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "发布日期"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="2"]
+layout_mode = 2
+text = "2025-11-08"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="3"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("4_nkaj3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "新增内容"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="5"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "5个新防御塔（4级炮塔-演算者炮塔，4级箭塔-沙漠哨塔，4级兵营-大刀教会，4级炮塔-湮灭炮塔，沙漠雇佣兵营地）
+4个新关卡（8.卡瓦拉沙漠，9.沙漠神殿，10.绝望沙丘，11.东海岸）
+11种新敌人（尸壳，尸壳勇士，沙漠狙击手 蠹虫，噩梦幻翼，沙漠守卫，木乃伊，黄金傀儡，沙漠雇佣兵，军火商，巨型尸壳）
+2个新英雄（沙漠狙击手-塔尔辛，自然巫师-鲁伯特）
+10个新成就"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "调整内容"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version2" index="7"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "下调了第二章三个关卡的初始资金
+第二章敌人的赏金下调25%
+解决了单击和拖拽的判定问题
+解决了刷怪第一波卡死的问题（大概解决了）
+解决了钢铁模式如果给禁用塔无法升级的问题
+鸡骑士的新敌人提示追加“无法拦截”
+解决了BOSS击杀慢动作期间如果退回到主地图，会一直处于0.5倍速的问题
+删除了选中英雄视角聚焦英雄的设定
+教程关卡可以跳过
+暂停菜单可以调节音乐与音效大小
+修复了守卫者教堂出售之后铁傀儡不会卖掉的bug
+修复了铁傀儡升级之后其他一级铁傀儡保留高等级属性的bug
+修复了投石高塔的透视问题
+修复了科技限制的关卡展示升级范围与实际范围不一致的问题
+修复了兵营展示升级调集范围与实际不一致的问题
+箭塔1级科技的射程增幅从20%下调至15%
+修复了史蒂夫主动技能与火雨音效不受“音效”调整影响的问题
+删除了第二关的两个塔位
+修复了第四关非20血依旧弹出“惩奸除恶”的成就的bug
+破灭者存在时间从20秒下调至15秒
+第七关钻石基岩挑战新增“巨人之锤”装饰物
+第四关新增两个塔位
+修复了敌人被守卫者教堂秒杀后不弹出胜利画面的bug
+优化了下雨系统对末影人类敌人伤害判定和对苦力怕敌人强化判定的逻辑，主要是减少了无效的遍历
+对下雨系统的改变增加了提示文本
+史蒂夫金苹果回血持续时间：10s/14s/18s -> 8s/10s/12s
+成就名变动：强迫症 -> 全家福
+修改了大部分防御塔解锁介绍文本
+修复了英雄技能价格部分的bug
+提高了大部分英雄的经验获取倍率，英雄可以更快升级
+优化了下雨系统并修复了一些显示bug，同时下雨系统会显示文字提示玩家当前下雨的阶段
+修改了加载界面的一些tip
+提高了史蒂夫平A攻击力：满级17-28 -> 26-36"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Version3" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "V0.4"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "发布日期"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="2"]
+layout_mode = 2
+text = "2026-01-27"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="3"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("5_o32rk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "新增内容"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="5"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "4个新防御塔（4级法师塔-女巫高塔，4级兵营-医疗护卫队，4级箭塔-劫掠哨塔，4级法师塔-炼金术士）
+4个新关卡（12.丛林神殿，13.粘液沼泽，14.林地府邸，15.海底神殿）
+17种新敌人（厌国战士，厌国精英，蜘蛛，苦力怕，厌国狂战士，泰坦威克斯，幻翼，劫掠者，女巫，史莱姆，卫道士，唤魔者，恼鬼，劫掠者队长，劫掠兽，守卫者，远古守卫者）
+3个新英雄（疫病巫医-塞勒姆，独眼血枭-乔尼，神明-迈克・史密斯）
+12个新成就"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "调整内容"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version3" index="7"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "优化了防御塔的默认索敌逻辑：优先锁第一个进入射程的敌人并锁到死 -> 总是索敌射程内剩余路径最短的敌人
+优化了史蒂夫的技能释放逻辑：伤害范围内存在敌人血量高于四技能伤害量75%，或者伤害范围内存在至少5个敌人才会释放战神之刃；钻石镐不会对无护甲敌人释放
+对法师塔美术资源进行了优化，删掉无效占用，减少游戏体积
+删去了防御塔UI展开收回动画的旋转属性通道
+针对高占用的图鉴动画进行了压缩优化
+优化艾利克斯一技能索敌：投掷三叉戟时如果锁定敌人死亡则会转火，如果不存在合法目标则会取消技能释放并立即取消一技能CD
+提高史蒂夫平A伤害：26-36 -> 31-46
+史蒂夫战神之刃斩杀线：2%/4%/6% -> 4%/8%/12%
+史蒂夫战神之刃流血debuff调整：每0.2s造成2真伤 -> 每0.1s造成2真伤：满级流血总伤320
+史蒂夫主动技能药水的下落更靠近中心位置
+所有单位远程普攻释放时会转火
+解决了空闲帧比物理帧刷新快时导致的子弹空弹问题，现在子弹会在目的地停留0.1s后再取消物理检测
+手机端卸载后可以保留本地数据
+手机版取消了滑动条调整缩放，改成了双指缩放
+修复了第11关战役模式初始炮塔地基显示错误的问题
+优化了法辰末日技能的渲染性能问题，法辰现在释放末日技能可以减少卡顿问题
+守卫者教堂铁傀儡技能调整：价格 350/250/250 -> 300/200/200，生命调整：700/800/900 -> 600/700/800，3级攻击力调整：50-100 -> 40-80
+守卫者教堂尘解技能调整： 价格 400/200/200 -> 350/175/175， CD 21s/19s/18s -> 22s/21s/20s
+新增加作弊码功能，在主地图选项界面可以点击“作弊码”按钮进入输入作弊码，输入对应英雄的全拼大写就能解锁对应的英雄（迈克·史密斯除外）
+艾利克斯即使处于近战拦截状态也能够释放一技能和四技能
+对拦截机制进行了修改，目前可以防止兵营沿着道路过去反复拦截的情况（ally的intercepting_area组件被设置为了top_level）
+加入传感器支持，横屏朝向可以颠倒（由传感器控制）
+针对显存进行优化，峰值由2.3G降低至1.7G，同时峰值内存占用从800MB减少至600-700MB
+守卫者教堂总输出时间从9s提高至10s
+皇家近卫军“皇家审判”技能发动概率从15%提高至30%，CD从3s上调至6s
+皇家近卫军“神圣盾牌”近战伤害免疫概率从30%上调至40%
+皇家近卫军“皇家庇佑”技能价格调整：100/75/75 -> 125/100/100，追加效果：额外获得20%/30%/40%总伤减免
+大刀教会“神赐”调整：追加条件，复活后的6s内无法重复复活
+将炮塔的炮弹判定检测形状由圆形改为椭圆，并增大了炮弹轰炸区域
+皇家近卫军“皇家审判”价格调整：250/250/250 -> 250/150/150
+调低了幻翼类敌人的死亡音效
+修复了鲁伯特释放龙卷风技能后原拦截的我方单位继续上前进行拦截的bug
+法辰释放“奥数扫荡”时如果进行移动操作可以中止技能释放
+对友军类的拦截判定区域的碰撞形状进行了修改
+修改了炮塔的科技树顺序：\"高级望远镜\",\"成熟产业链\",\"秘制炸药\",\"精炼火药\",\"共振\"->\"高级望远镜\",\"精炼火药\",\"成熟产业链\",\"秘制炸药\",\"共振\"
+湮灭炮塔的活塞虫轰炸机扔出的TNT现可以享受“秘制炸药”的科技加成
+湮灭炮塔的TNT活塞虫轰炸机现在无法对空军单位主动释放（保留溅射对空）
+湮灭炮塔的“放射病”debuff持续时间调整：10s -> 5s
+湮灭炮塔活塞虫轰炸机技能调整：价格400/300 -> 500/400，CD18s -> 22s，技能伤害30-60/40-80 -> 20-40/30-60
+修复了手机端对于存在士兵单位和召唤物单位的防御塔单触出售按钮弹出信息面板时士兵单位和召唤物单位会先行销毁的bug
+修复了手机端升级界面的UI交互bug
+电脑端游戏窗口在游戏名后增加当前游戏版本的文本
+演算者炮塔一技能改动：召唤闪电攻击，对小范围内所有敌人造成50/75/100点真实伤害，并眩晕敌人1秒。 -> 召唤闪电攻击，对小范围内所有敌人造成75/90/125点真实伤害，并眩晕敌人1/1.5/2秒。
+演算者炮塔的平A伤害可以享受到眩晕科技的加成
+演算者炮塔的溅射伤害可以享受到无衰减伤害科技的加成
+演算者炮塔伤害调整：18-24 -> 25-36
+演算者炮塔的溅射伤害调整： 20-40 -> 30-60
+修复了在卡顿情况下连按升级按钮即使金钱不足也会消耗对应金钱升级的bug
+修复了史蒂夫“金苹果”技能和其他技能冲突的bug
+投石高塔一技能CD调整：16s -> 12s
+投石高塔二技能价格调整：300/200 -> 200/175
+投石高塔一技能价格调整： 250/200/200 -> 200/180/180
+沙漠哨塔一技能价格调整： 300/300/300 -> 300/200/200
+沙漠哨塔一技能释放动画速度提升，减少技能释放期间的攻击损失
+增大沙漠哨塔的二技能作用范围
+增大了投石高塔弹射的判定范围，并将弹射的二次子弹的伤害由原先的1/3改为2/3
+艾利克斯平A攻击力上调：9-11/10-12/11-14/12-16/13-18/14-20/15-22/16-24 -> 9-11/11-14/13-17/15-20/17-23/19-26/21-29/23-32
+优化了敌人的被拦截逻辑
+修复了大刀教会升级技能错误提升数值的bug
+第四关钻石挑战改动：初始资金调整 1000 -> 1800
+第四关基岩挑战改动：初始资金调整 2000 -> 2500，额外增加一个初始1级炮塔
+对播放爆炸音频的爆音问题进行了修复
+降低了骷髅类敌人死亡时的音效
+对图片资源进行了全面的压缩，显存占用显著降低：1.8-2.2G -> 500-900MB
+修复了电脑端提前下一波时增加绿宝石的文字位置不正确的bug
+“不生不灭，不垢不净”成就触发条件从让大刀兵重复复活6次下调至4次
+艾利克斯碧蓝之垒的CD下调：30s->22s
+艾利克斯四技能命中敌人时眩晕时间上调：1s->3s
+艾利克斯被动触发概率上调：10%/20%/30% -> 20%/30%/40%
+艾利克斯二技能眩晕时间上调：1s->2s
+艾利克斯三技能释放时伤害敌人的同时会眩晕敌人1s
+英雄每级升级所需经验下调：1300,5300,11300,19300,31800,46800,64300,88300,115300 ->1300,2500,5800,13100,19600,29400,44100,66100,90000
+炮塔现在可以溅射对空
+对第13关基岩挑战的敌人文本显示缺失做了补全
+将破灭者的出现音效从master音轨改为了sound
+取消了进家震动
+修改了“我们的死忠”成就的错误描述文本
+修改箭塔5级科技：箭塔每次攻击有10%概率造成流血，持续4s，每0.5s造成1倍面板真伤 -> 箭塔每次攻击有10%概率造成流血，持续2s，每0.5s造成1倍面板真伤，最多叠加5层
+修复了第11,13,15关的关卡预览图
+泰坦丧尸和巨型尸壳的血迹调大为3倍
+英雄殿堂界面添加了快速升级选项：通关第4关启用（上限为5级），通关第7关上限提高至7级，通关第11关解除等级上限
+修改了第12关演出剧情中的错别字"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Version4" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="6"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "V0.5"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "发布日期"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="2"]
+layout_mode = 2
+text = "2026-02-17"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="3"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("6_s4r36")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "新增内容"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="5"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "2个新关卡（16.高山，17.鬼门关）
+1个新防御塔（4级炮塔-无人机控制平台）
+1个新英雄（黯锋弩姬-蔷薇）
+5个新敌人（白眼士兵，白眼勇士，白眼法师，白眼傀儡，LIVER）
+2个新成就"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "调整内容"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version4" index="7"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "增幅火雨技能：间隔0.6s，降落需花费0.8s -> 间隔0.4s，降落需花费0.6s
+增大法辰大招的范围，单发奥术射线伤害调整：120 -> 80
+火雨五级的随机陨石数量增加至4颗，伤害额外提高至100-140
+史蒂夫金苹果技能改动：史蒂夫生命值少于20%时立即吃下一个金苹果，恢复自身200/250/300生命，并获得持续8/10/12秒的生命恢复效果，每0.5s恢复5生命 -> 史蒂夫生命值少于30%时立即吃下一个金苹果，恢复自身200/250/300生命，并获得持续8/10/12秒的生命恢复效果，每0.5s恢复10生命
+渲染引擎从forward+换成了兼容模式，内存占用从700MB降低至300MB
+修复了压缩纹理贴图资源之后导致的第二关显示提示大小不正确的bug
+我方单位被秒杀后血量显示会变为0
+法辰二技能护盾改为自动释放，CD24s -> 36s，持续时间4/5/6s -> 3/4/5s，同时释放时机从血量低于50%改为受伤时释放
+第15关初始资金上调：1900 -> 2000
+苦力怕类敌人在获得“闪电护盾”buff后不再属于苦力怕类敌人，可以正常受到闪电伤害
+修复了苦力怕类敌人被闪电击中后可以无限叠加爆炸范围的bug
+修改剧情厌皇的终结技，改为无法秒杀迈克·史密斯
+修复了演算者炮塔五级科技下100%眩晕的bug
+修复了蔷薇近战拦截时调遣后卡死的bug
+PC端在启动器界面可自行选择是否显示十字光标
+新增塞勒姆不死骑士被动：塞勒姆在不死骑士附近150范围内死亡时会在1秒后复活"
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="7"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Version5" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="8"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "V1.0"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "发布日期"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="2"]
+layout_mode = 2
+text = "2026-04-27"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="3"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("7_cauye")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "新增内容"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="5"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "2个新关卡（16.高山，17.鬼门关）
+1个新防御塔（4级炮塔-无人3个新关卡（18.诺冰要塞， 19.诺冰大峡谷， 20.皇城）
+5个新防御塔（脉冲发射台，村民骑士营地，流浪商人营地，尸国斗剑士营地，荆棘殿堂）
+5个新英雄（蚀日巡猎者-空树林， 天命欺诈师-金钻， 尸国统帅-炎阳赫斯菲， 骨国统帅-萨图恩・骨斯奇， 落日见证者- 史蒂夫）
+6个新敌人（尸国斗剑士，荆棘射手，剧毒蜘蛛，厌国投弹手，厌皇-尼古拉斯）
+10个新成就机控制平台）
+1个新英雄（黯锋弩姬-蔷薇）
+5个新敌人（白眼士兵，白眼勇士，白眼法师，白眼傀儡，LIVER）
+2个新成就"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "调整内容"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version5" index="7"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "修复了蔷薇近战拦截进行瞬移时会卡死的bug
+修复了塞勒姆在释放四技能死亡时法球不消失的bug
+演算者炮塔一技能价格调整：200/150/150 ->180/120/120
+演算者炮塔二技能价格调整：250/200/200 ->200/100/100
+略微增大塞勒姆平A感染的范围
+塞勒姆移动速度提高：1.5 -> 1.8
+考虑到多线程加载的死锁问题，现将敌人资源的加载安排在加载关卡的时刻，这会导致进入关卡的时间变长
+蔷薇攻击范围调整：360 -> 400
+减少了蔷薇大招的路径覆盖长度，增大了覆盖密度（总数不变）
+蔷薇待机动画的播放间隔调整：30s -> 20s
+删除第2关的一个无效塔位
+修复了溺尸斗士贴图显示错误的bug
+修复了烈阳环境对部分士兵单位无效的bug
+援军登场间隔调整：0.4s，0.4s -> 0.2s，0.3s
+修复了箭塔流血科技贴图显示错误的bug
+修复了箭塔流血科技描述不一致的错误：应该流血2s，实际流血4s
+箭塔流血科技调整：箭塔每次攻击有10%概率造成流血，持续2s，每0.5s造成0.8倍造成伤害的真伤，最多叠加5层，且无法对boss单位施加
+底层代码修改，所有我方单位默认优先拦截而不是远程攻击
+法辰拦截范围修改：150 -> 80
+法辰技能优先级调整：释放3,4技能/拦截/远程攻击 -> 释放3技能/拦截/远程攻击/释放4技能
+蔷薇在一技能释放期间可通过调遣打断
+修复了史蒂夫英雄殿堂界面技能描述不正确的问题
+修复了女巫高塔死亡诅咒3级给敌人加速的bug，且能正常施加易伤
+对科技树中的“成熟产业链”，“共振”和“人间炼狱”的贴图进行了更换
+对鲁伯特的一技能进行逻辑修改，现在可以保留buff
+修复了骷髅类敌人能够受到箭塔流血科技影响的bug
+修复了在菜单界面快速双击按钮会导致崩溃闪退的bug
+修复了劫掠兽在眩晕或时停状态下依旧冲刺的bug
+修复了迈克时停期间新生成的敌人不会被时停的bug
+修复了迈克史密斯拦截时释放技能期间进行瞬移不会断掉拦截关系的bug
+敌人在接近终点（总路程大于60%）且不在视野范围内时会在敌人的方向添加警告
+修复了提前波次加绿宝石特效位置错误的bug
+修复了守卫者教堂不受攻击力加成buff的bug
+在敌人死亡时准备拦截的我方单位会立即返回
+女巫高塔范围提高：370 -> 420
+投石高塔伤害调整：45-63 -> 48-69
+修复了大刀兵部分名字的显示bug
+大刀兵平A调整： 20-30 -> 25-35
+大刀教会尖刺技能调整：将大刀兵的伤害提高至25-40/30-50/35-60 -> 将大刀兵的伤害提高至35-45/45-55/50-70
+大刀教会尖刺技能价格调整： 200/100/100 -> 150/100/100
+医疗护卫队急救光环技能价格调整： 125/125/125 -> 150/150/150
+医疗护卫队急救光环技能效果调整：医疗兵自身生命低于100点时释放生命光环，恢复自身及周围友军60/120/180点生命 -> 医疗兵自身生命低于100点时释放生命光环，恢复自身及周围友军40/80/120点生命，并施加持续4s的生命恢复效果，每0.2s恢复自身3/4/5生命（总恢复量60/80/100）
+鲁伯特一技能CD调整：16s -> 23s
+对史蒂夫，法辰和塔尔辛的英雄立绘字体部分进行了重新制作
+塔尔辛拦截范围调整：140 -> 100
+鲁伯特拦截范围调整：150 -> 100
+佣兵头领拦截范围调整： 160 -> 140
+三级援军拦截范围调整： 160 -> 120
+四级援军拦截范围调整： 150 -> 120
+变节者拦截范围调整： 150 -> 120
+第二章的下雨系统对不同阶段的亮度下降力度进行了下调，黑色图层覆盖的alpha值均调整为原先的0.5-0.6倍
+蔷薇四技能调整：蔷薇全身始终保持着黑暗效果，为蔷薇提供50%/60%/70%的闪避效果，有30%/40%/45%概率闪避范围伤害。 -> 蔷薇全身始终保持着黑暗效果，为蔷薇提供40%/50%/60%的闪避效果，有20%/30%/40%概率闪避范围伤害。
+塔尔辛射程调整：460 -> 700
+塔尔辛攻速调整：3s -> 2.5s
+塔尔辛攻击力调整：45-60/50-70/55-75/60-80/65-85/70-90/75-100 -> 40-60/50-70/60-80/70-90/80-100/85-110/100-120
+塔尔辛一技能射程调整：600 -> 800"
+autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="9"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Version6" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="10"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "V1.0.3"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "发布日期"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="2"]
+layout_mode = 2
+text = "2026-08-26"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="3"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("8_q3j1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "新增内容"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="5"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "斗蛐蛐功能
+针对性能进行优化
+针对手感进行优化
+降低部分关卡难度
+对大部分防御塔和敌人以及英雄进行平衡性调整"
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "调整内容"
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/Version6" index="7"]
+layout_mode = 2
+theme_override_constants/line_spacing = 5
+text = "终末的死亡血迹加深，尺寸加大
+针对游戏性能对资源加载的代码进行大幅度重构
+修复了法辰二技能受一技能养成影响的bug
+修复了额外界面异常文字不换行的bug
+修复了选关界面文字介绍内容出现错误字符的bug
+重构了下雨系统的视觉表现形式，更加符合物理光照，且能够和场景中的光照组件交互
+闪电特效在阴暗天气下不会受到变暗影响
+下雨系统会对持有“red_stone”标签的我方单位造成同等真伤
+烈阳系统会给持有“metal”标签的我方单位或敌方单位施加反伤效果，每次受到近战攻击返还对方5/10真伤
+持有“no_live”标签的单位不会受到来自烈阳反伤效果的伤害
+修复沙漠关卡烈阳效果作用不全的bug
+鼠标移动到下一波图标按钮上可以预览敌人行进路线
+修复第16关基岩挑战忘记配置波次文本的问题
+提高史蒂夫被动“守护的力量”数值：10%/20%/30% -> 20%/30%/40%
+优化史蒂夫的“金苹果”技能手感：吃东西的时候移动会打断吃东西的动作优先移动，并且会重置CD
+优化史蒂夫“钻石镐”技能手感：只能对带护甲敌人释放->可以对任何被拦截的敌人释放
+优化拦截逻辑：在拦截完毕准备返回的时刻如果拦截区域内还有敌人则会立即追击不会先返回中心点再去拦截
+艾利克斯引雷三叉戟落空后依然会召唤闪电
+塔尔辛四技能数值提升：穿透伤害倍率：50%->75%
+提高塔尔辛三技能破甲数值：每次攻击削减1/2/3护甲->每次攻击削减4/8/12护甲
+提高塔尔辛一技能射程：800->1000
+加快塔尔辛切入近战状态的动画速度
+降低鲁伯特一技能龙卷风持续时间：2s/4s/6s -> 2s/3s/4s
+修复鲁伯特三技能条件判断有误导致释放错误的bug
+修复鲁伯特二技能烈焰时间过短敌人覆盖面积不足的问题：持续时间0.4s -> 1s
+鲁伯特一技能龙卷风移动速度下调
+下调鲁伯特四技能伤害加成数值：友军伤害提高50%/75%/100% -> 25%/40%/60%
+完善鲁伯特主动技能下雨的视觉表现
+塞勒姆一技能爆炸不会施加绿色毒瘟效果
+提高塞勒姆一技能尸爆伤害：死亡时对周围敌人造成10/20/30炮伤 -> 20/40/60炮伤
+提高塞勒姆三技能AOE伤害：3/6/9法伤 -> 5/9/12法伤
+降低塞勒姆四技能CD：28s -> 20s
+提高乔尼每次攻击的破甲数值：2/4/8 -> 4/8/16点护甲
+修复乔尼立绘文字错误问题
+迈克会主动攻击处于隐身状态的敌人
+提高迈克平A攻击力：50-70/60-80/70-90/80-100/90-110 -> 90-100/105-120/120-140/135-160/150-180
+迈克释放三技能时会回血：总回血100/200/300
+迈克释放四技能时不会暂停刷怪
+迈克三技能的特效由粒子发射器替换为贴图，降低性能损耗
+提高迈克主动技能数值：天火陨石单发伤害：300 -> 600，巨澜伤害：100/200/300/400 -> 200/400/600/800，地震单发伤害：400 -> 900，风刃单发伤害：40/60/80/100 -> 60/90/120/150
+降低蔷薇AOE闪避概率：20%/30%/40% -> 20%/25%/30%
+提高空树林二技能伤害范围：范围600 -> 700
+提高空树林索命debuff持续时间：持续4/7/9s -> 6/9/12s
+提高空树林四技能反击破甲率：50% -> 80%
+空树林四技能内置CD2s -> 8s
+加强金钻被动：第一波开始后固定获得5枚筹码作为初始筹码
+加强金钻二技能：加强金钻二技能
+修复空树林释放三技能时不会死亡的bug
+修复史蒂夫SP技能释放完毕后不销毁的bug
+提高史蒂夫SP主动技能二技能持续时间：技能持续时间：3s/5s/7s/10s ->3s/6s/8s/12s
+降低劫掠哨塔攻击范围：攻击范围500 -> 480
+提高沙漠哨塔一技能秒杀概率：秒杀概率：20%/30%/40% -> 30%/45%/60%
+调整骷髅狙击塔一技能：每射出一支箭都有概率秒杀敌人，如果秒杀失败则下次攻击秒杀概率增加5%/10%/15%，秒杀成功后回归初始概率 ->每射出一支箭都有概率秒杀敌人，如果秒杀失败则下次攻击秒杀概率增加8%/10%/12%，秒杀成功后回归初始概率
+降低脉冲发射台二技能CD：CD18s -> 14s
+提高大刀兵三技能复活频率：大刀兵死亡时有60%/70%/80%概率立即复活，并恢复自身40%/60%/80%最大生命值，在5秒内处于无敌状态，若成功复活下次立即复活的概率降低20% -> 大刀兵死亡时有60%/75%/90%概率立即复活，并恢复自身40%/60%/80%最大生命值，在5秒内处于无敌状态，若成功复活下次立即复活的概率降低15%
+提高大刀兵三技能价格：200/175/175 -> 225/180/180
+提高大刀兵一技能攻击力：将大刀兵的伤害提高至35-45/45-55/50-70点 -> 将大刀兵的伤害提高至40-60/55-75/70-90
+增大大刀兵拦截范围：拦截范围：150 -> 165
+提高大刀兵二技能伤害：大刀兵进行一次强力斩击，对范围内所有地面敌人造成75-150/100-180/130-210范围伤害 -> 大刀兵进行一次强力斩击，对范围内所有地面敌人造成100-150/125-200/150-250范围伤害
+修改医疗兵三技能：医疗兵自身生命低于100点时释放生命光环，恢复自身及周围友军60/120/180点生命，并施加持续8秒的生命恢复效果，每0.4s恢复3/4/5生命
+提高投石高塔一技能眩晕时间：眩晕时间：1s -> 1.5s
+守卫者教堂攻击结束后会根据攻击阶段返还CD：当处于叠层0/1/2/3/4/5层时，结束攻击时冷却时间为1.5s/1.8s/2.1s/2.4s/2.7s/3s
+提高守卫者教堂总输出时间：输出时间：10s -> 12s
+降低守卫者教堂一技能价格：300/200/200 -> 300/150/150
+提高演算者炮塔一技能伤害：伤害75/90/125 -> 75-85/90-110/125-155
+提高演算者炮塔一技能价格：180/120/120 -> 180/140/140
+降低湮灭炮塔二技能第一次伤害：120-140/160-180/200-240 -> 120-140/140-170/160-200
+降低湮灭炮塔二技能持续伤害：6/8/10 -> 4/6/8
+提高湮灭炮塔放射病debuff持续伤害：伤害：2 -> 3
+针对炼金术士二技能进行修改：
+兴奋剂（价格200/160/160）
+\"提高射程范围内所有我方单位15%攻击力，移动速度增加60%，攻击间隔减少20%，每秒恢复自身5点生命，持续10秒。\", \"提高射程范围内所有我方单位20%攻击力，移动速度增加60%，攻击间隔减少20%，每秒恢复自身10点生命，持续10秒。\", \"提高射程范围内所有我方单位25%攻击力，移动速度增加60%，攻击间隔减少20%，每秒恢复自身15点生命，持续10秒。\"
+->
+粘稠液体（价格120/80）
+\"炼金术士生成的液体对敌人的减速效果提高至50%，并额外对敌人每0.2秒造成5点魔法伤害。\", \"炼金术士生成的液体对敌人的减速效果提高至60%，并额外对敌人每0.2秒造成6点魔法伤害。\"
+修复兵营升级掉拦截范围的bug
+降低部分关卡难度：第四关钻石基岩挑战，第三关增加NPC防御塔，第15关修改出怪，第20关修改出怪
+修复第19关合作部分尸国骨国单位仍为敌方单位的bug
+增强厌皇二阶段：范围伤害；常驻95%减伤；空中单位；不会进家；血量低于20%时进入【神裁终焉】阶段，部分技能获得强化，且无法释放常规天灾技能，额外增加独特的终结技，同时立即恢复自身15%生命
+增加斗蛐蛐功能
+降低腐化爬行者爆炸伤害：伤害140 -> 60
+降低溺尸斗士的冲刺伤害：伤害： 70 -> 60
+降低终末瞬移CD：12s -> 8s
+蠹虫进入战斗立即呼唤同伴
+降低厌国战士远程攻击攻速，并且变为游击型远程单位：1.5s -> 2.5s
+降低厌国精英自爆伤害：对100范围目标造成200炮伤，闪电状态对150范围造成250炮伤 ->对100范围目标造成120炮伤，闪电状态对150范围造成160炮伤
+降低苦力怕自爆伤害：对120范围目标造成140炮伤，闪电状态对150范围造成280炮伤 -> 对120范围目标造成90炮伤，闪电状态对150范围造成180炮伤
+降低厌国狂战士双重量子光刃伤害倍率：4倍伤害 -> 3倍伤害
+降低劫掠者的攻速：攻速：2s -> 2.5s
+降低劫掠者队长远程攻速：远程攻速：2.5s ->3s
+降低幻翼生命值：400 ->350"
+autowrap_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer" index="11"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="NavigationVBox" parent="TopMenu" index="0"]
+offset_left = 87.0
+offset_right = 500.0
+offset_bottom = 831.0
+scale = Vector2(0.674882, 0.674882)
+
+[node name="NavigationButton" parent="TopMenu/NavigationVBox" index="0" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("9_ar04n")]
+layout_mode = 2
+text = "V0.2.4"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Version1")
+
+[node name="NavigationButton2" parent="TopMenu/NavigationVBox" index="1" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("9_ar04n")]
+layout_mode = 2
+text = "V0.3"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Version2")
+
+[node name="NavigationButton3" parent="TopMenu/NavigationVBox" index="2" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("9_ar04n")]
+layout_mode = 2
+text = "V0.4"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Version3")
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="3" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("9_ar04n")]
+layout_mode = 2
+text = "V0.5"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Version4")
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="4" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("9_ar04n")]
+layout_mode = 2
+text = "V1.0"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Version5")
+
+[node name="NavigationButton6" parent="TopMenu/NavigationVBox" index="5" node_paths=PackedStringArray("wiki_page", "linked_part") instance=ExtResource("9_ar04n")]
+layout_mode = 2
+text = "V1.0.6"
+wiki_page = NodePath("../../..")
+linked_part = NodePath("../../../VBoxContainer/MarginContainer2/VBoxContainer/Version6")
