@@ -1,0 +1,320 @@
+[gd_scene load_steps=20 format=3 uid="uid://bhtjgia1oet60"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_xrx80"]
+[ext_resource type="Texture2D" uid="uid://bhqn2q1wn86rt" path="res://Assets/Images/UI/SkillButton/Heroskill/GoldenDiamond/golden_diamond_skill.png" id="2_rgsia"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_fbkkq"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_26egp"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_0e85n"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="6_ywr48"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="7_xcneq"]
+[ext_resource type="Texture2D" uid="uid://bbhf23til0ns0" path="res://Assets/Images/UI/Wiki/PropertyIcons/近战物伤.png" id="8_3niev"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="9_0q1oh"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="10_a3ttv"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="11_2dfwm"]
+[ext_resource type="Texture2D" uid="uid://ci7smwcc4ybhj" path="res://Assets/Images/UI/Wiki/PropertyIcons/易伤.png" id="12_ao0f8"]
+[ext_resource type="Texture2D" uid="uid://cks6nvblel574" path="res://Assets/Images/UI/Wiki/PropertyIcons/总伤减免.png" id="13_kvntj"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="14_2enot"]
+[ext_resource type="AudioStream" uid="uid://do6lkq4m3bv7e" path="res://Assets/Sounds/FXs/Heroes/GoldenDiamond/金钻减速.wav" id="14_03r2y"]
+[ext_resource type="AudioStream" uid="uid://cvr85147a6civ" path="res://Assets/Sounds/FXs/Enemies/瞬移1.wav" id="16_45mir"]
+[ext_resource type="AudioStream" uid="uid://c7r7ydgqlmmlf" path="res://Assets/Sounds/FXs/Enemies/瞬移2.wav" id="17_kovbw"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="18_cdwhn"]
+[ext_resource type="Texture2D" uid="uid://b05l6u2qp1okn" path="res://Assets/Images/UI/Wiki/Allys/Heroes/GoldenDiamond.png" id="19_rtm75"]
+
+[node name="WikiPageSkillGoldenDiamond" instance=ExtResource("1_xrx80")]
+offset_bottom = 3877.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "梭哈"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_rgsia")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本
+高牌：减速所有敌人，并施加易伤效果
+顺子：眩晕所有敌人，并对目标造成少量真实伤害
+四条：提高我方全体单位攻击力，并持续恢复生命
+皇家同花顺：传送所有敌人后退一段距离，金钻在此期间获得无敌效果
+ 
+冷却时间： 60 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "60 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "该技能不可在金钻处于死亡状态或未持有筹码时释放。
+ 
+消耗金钻的所有筹码，根据筹码档位触发不同效果，持续 8 秒，高阶档位包含低阶档位效果。"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_fbkkq")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="0" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("6_ywr48")
+tip_text = "技能持续时间"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="1" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "8 秒"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "高牌"
+
+[node name="Label7" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="4"]
+layout_mode = 2
+text = "金钻持有 1-5 枚筹码时可释放。
+ 
+全图敌人减速 30%/40%/50%/60%，攻击力降低 20%/30%/40%/50%。"
+autowrap_mode = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="5"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2" index="0" instance=ExtResource("3_fbkkq")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="0" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("7_xcneq")
+tip_text = "减速幅度"
+property_state = 2
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="1" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "30% / 40% / 50% / 60%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="2" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("8_3niev")
+tip_text = "攻击力降低"
+property_state = 2
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="3" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "20% / 30% / 40% / 50%"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "顺子"
+
+[node name="Label8" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="7"]
+layout_mode = 2
+text = "全图敌人眩晕 1.5 秒，受到 80/120/160 /200 点真伤。"
+autowrap_mode = 3
+
+[node name="CenterContainer4" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="8"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer4" index="0" instance=ExtResource("9_0q1oh")]
+layout_mode = 2
+tip_text = "眩晕免疫组： boss, god, super_unit"
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="9"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3" index="0" instance=ExtResource("3_fbkkq")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="0" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("6_ywr48")
+tip_text = "眩晕时间"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="1" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "1.5 秒"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="2" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("10_a3ttv")
+tip_text = "技能伤害"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable" index="3" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "80 / 120 / 160 / 200"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="10"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "四条"
+
+[node name="Label9" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="11"]
+layout_mode = 2
+text = "我方所有防御塔和单位伤害提高 30%/40%/50%/60% ，每 0.5 秒恢复自身 6/8/10/12 点生命。"
+autowrap_mode = 3
+
+[node name="CenterContainer5" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="12"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5" index="0" instance=ExtResource("3_fbkkq")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="0" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("8_3niev")
+tip_text = "攻击力提高"
+property_state = 1
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="1" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "30% / 40% / 50% / 60%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="2" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("11_2dfwm")
+tip_text = "恢复生命"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable" index="3" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer5/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "6 / 8 / 10 / 12"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="13"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "皇家同花顺"
+
+[node name="Label10" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="14"]
+layout_mode = 2
+text = "传送全图敌人后退 240距离，易伤率提高 100% ，金钻在此期间获得 100% 总伤减免。"
+autowrap_mode = 3
+
+[node name="CenterContainer6" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="15"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6" index="0" instance=ExtResource("3_fbkkq")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable" index="0" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("12_ao0f8")
+tip_text = "易伤"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable" index="1" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable" index="2" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_0e85n")]
+layout_mode = 2
+texture = ExtResource("13_kvntj")
+tip_text = "总伤减免"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable" index="3" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer6/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Art" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+visible = false
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+text = "减速音效"
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1"]
+audio_stream = ExtResource("14_03r2y")
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="2" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement3" index="0"]
+layout_mode = 2
+text = "传送音效"
+horizontal_alignment = 1
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable" index="3" instance=ExtResource("4_26egp")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="1" instance=ExtResource("14_2enot")]
+layout_mode = 2
+audio_stream = ExtResource("16_45mir")
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement4/HBoxContainer" index="2" instance=ExtResource("14_2enot")]
+layout_mode = 2
+audio_stream = ExtResource("17_kovbw")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("18_cdwhn")]
+layout_mode = 2
+texture_normal = ExtResource("19_rtm75")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_golden_diamond.tscn"
+name_text = "金钻"
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2"]
+visible = false

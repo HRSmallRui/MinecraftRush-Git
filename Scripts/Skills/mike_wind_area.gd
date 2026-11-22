@@ -25,8 +25,9 @@ func _ready() -> void:
 			var slow_buff: PropertyBuff = slow_buff_scene.instantiate()
 			slow_buff.duration = slow_duration
 			enemy.buffs.add_child(slow_buff)
-			enemy.start_data.armor = 0
-			enemy.current_data.update_armor()
+			if enemy.enemy_type <= Enemy.EnemyType.Super:
+				enemy.start_data.armor = 0
+				enemy.current_data.update_armor()
 		await get_tree().create_timer(0.05,false).timeout
 	
 	await get_tree().create_timer(2,false).timeout

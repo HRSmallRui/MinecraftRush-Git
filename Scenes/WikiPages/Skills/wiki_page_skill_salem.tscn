@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvuri83pkva0d"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_oq4om"]
+[ext_resource type="Texture2D" uid="uid://dkt34c521uym3" path="res://Assets/Images/UI/SkillButton/Heroskill/Salem/salem_skill.png" id="2_7oymc"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="3_e2e58"]
+[ext_resource type="Texture2D" uid="uid://cvvq0x4k5bxol" path="res://Assets/Images/UI/Wiki/Allys/SummonAllys/UndeadKnight.png" id="4_hixuy"]
+[ext_resource type="Texture2D" uid="uid://b8qi84ka658j0" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Salem.png" id="5_c0nkh"]
+
+[node name="WikiPageSkillSalem" instance=ExtResource("1_oq4om")]
+offset_bottom = 1415.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "不死骑士"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_7oymc")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本： 在战场上召唤不死骑士前来支援战场
+ 
+冷却时间： 36 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "36 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "在战场上召唤不死骑士前来支援战场。
+ 
+相关属性可参阅 [不死骑士]页面，跳转至关联词条栏目可快速导航。"
+
+[node name="Art" parent="VBoxContainer/MarginContainer/VBoxContainer" index="4"]
+visible = false
+
+[node name="MarginContainer3" parent="VBoxContainer/MarginContainer/VBoxContainer" index="5"]
+visible = false
+
+[node name="Audio" parent="VBoxContainer/MarginContainer/VBoxContainer" index="6"]
+visible = false
+
+[node name="MarginContainer4" parent="VBoxContainer/MarginContainer/VBoxContainer" index="7"]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/HBoxContainer" index="0" instance=ExtResource("3_e2e58")]
+layout_mode = 2
+texture_normal = ExtResource("4_hixuy")
+target_page_path = "res://Scenes/WikiPages/Allys/SummonAllys/wiki_undead_knight.tscn"
+name_text = "不死骑士"
+
+[node name="WikiHeadTextureButton2" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer/HBoxContainer" index="1" instance=ExtResource("3_e2e58")]
+layout_mode = 2
+texture_normal = ExtResource("5_c0nkh")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_salem.tscn"
+name_text = "塞勒姆"
+
+[node name="NavigationButton4" parent="TopMenu/NavigationVBox" index="2"]
+visible = false
+
+[node name="NavigationButton5" parent="TopMenu/NavigationVBox" index="3"]
+visible = false

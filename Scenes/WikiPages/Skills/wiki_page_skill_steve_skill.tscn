@@ -1,0 +1,411 @@
+[gd_scene load_steps=49 format=3 uid="uid://dutjyf0f8luov"]
+
+[ext_resource type="PackedScene" uid="uid://dn0g4h0tok4gd" path="res://Scenes/WikiPages/Templates/wiki_page_skill_template.tscn" id="1_u46ch"]
+[ext_resource type="Texture2D" uid="uid://cgqvtdtcpu8nd" path="res://Assets/Images/UI/SkillButton/Heroskill/Steve/steve_canuse.png" id="2_v5snv"]
+[ext_resource type="PackedScene" uid="uid://do21df41fmjtl" path="res://Scenes/UI-Components/Wiki/wiki_table.tscn" id="3_sro6r"]
+[ext_resource type="PackedScene" uid="uid://ctwbv452gat5f" path="res://Scenes/UI-Components/Wiki/wiki_table_element.tscn" id="4_pxyvh"]
+[ext_resource type="PackedScene" uid="uid://brse6r1d2geqc" path="res://Scenes/UI-Components/Wiki/wiki_property_texture.tscn" id="5_8opjk"]
+[ext_resource type="Texture2D" uid="uid://c86plvd2rjc7x" path="res://Assets/Images/UI/Wiki/PropertyIcons/伤害范围.png" id="6_7bxx2"]
+[ext_resource type="Texture2D" uid="uid://cvg0kfg013ail" path="res://Assets/Images/UI/Wiki/PropertyIcons/脱战回血.png" id="7_3alcp"]
+[ext_resource type="Texture2D" uid="uid://tn50ra2rrew0" path="res://Assets/Images/UI/Wiki/PropertyIcons/攻击间隔.png" id="8_kf15f"]
+[ext_resource type="Texture2D" uid="uid://cciqjockcjuh2" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程真伤.png" id="9_5vkjl"]
+[ext_resource type="Texture2D" uid="uid://boymtpo20fuu5" path="res://Assets/Images/UI/Wiki/PropertyIcons/远程法伤.png" id="10_dux6t"]
+[ext_resource type="PackedScene" uid="uid://df3djfjjjjc7c" path="res://Scenes/UI-Components/Wiki/wiki_tip_panel.tscn" id="10_tgvse"]
+[ext_resource type="Texture2D" uid="uid://dpajynlu2aptv" path="res://Assets/Images/UI/Wiki/PropertyIcons/移速.png" id="11_c8l25"]
+[ext_resource type="Texture2D" uid="uid://naipk375eihb" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_00.png" id="12_w4hw8"]
+[ext_resource type="Texture2D" uid="uid://da5v0ltiicr51" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_01.png" id="13_2aqj0"]
+[ext_resource type="Texture2D" uid="uid://bwqsq6mbxo0pd" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_02.png" id="14_bnjmo"]
+[ext_resource type="Texture2D" uid="uid://dtjd0a8sfs8af" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_03.png" id="15_uqnaj"]
+[ext_resource type="Texture2D" uid="uid://docxr2piuuwr6" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_04.png" id="16_mxohc"]
+[ext_resource type="Texture2D" uid="uid://d3w6bsh8e48p1" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_05.png" id="17_wwys2"]
+[ext_resource type="Texture2D" uid="uid://dd3uqy1ycoqwt" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_06.png" id="18_4neuc"]
+[ext_resource type="Texture2D" uid="uid://b3s582u7bg2y5" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_07.png" id="19_y5ydt"]
+[ext_resource type="Texture2D" uid="uid://n5uc6yqoi5ts" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_08.png" id="20_pugma"]
+[ext_resource type="Texture2D" uid="uid://mhrrmstubcet" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_09.png" id="21_a0r0b"]
+[ext_resource type="Texture2D" uid="uid://b1kyn3piwmrij" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_10.png" id="22_hamnd"]
+[ext_resource type="Texture2D" uid="uid://bgwrqtx5wkgpg" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_11.png" id="23_tgc4d"]
+[ext_resource type="Texture2D" uid="uid://lg0bbgoivg27" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_12.png" id="24_h2alp"]
+[ext_resource type="Texture2D" uid="uid://daearqlxa4hh0" path="res://Assets/Images/Effects/SteveBuffPotion/AllyPotion_13.png" id="25_1qlxk"]
+[ext_resource type="Texture2D" uid="uid://ch4ti3oc6o6mk" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_00.png" id="26_6icvd"]
+[ext_resource type="Texture2D" uid="uid://cr6klbgpry20x" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_01.png" id="27_heqjm"]
+[ext_resource type="Texture2D" uid="uid://kk6axf506tey" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_02.png" id="28_mpdu1"]
+[ext_resource type="Texture2D" uid="uid://bhopdsgeaamy4" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_03.png" id="29_i4au6"]
+[ext_resource type="Texture2D" uid="uid://dfimb0gyk3de1" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_04.png" id="30_61okl"]
+[ext_resource type="Texture2D" uid="uid://brwu0hhvfcl70" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_05.png" id="31_5aqip"]
+[ext_resource type="Texture2D" uid="uid://b5ugev13ehhvy" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_06.png" id="32_1jxfm"]
+[ext_resource type="Texture2D" uid="uid://w7ex0t01ehot" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_07.png" id="33_scbdj"]
+[ext_resource type="Texture2D" uid="uid://cpb0pg0a4oaa7" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_08.png" id="34_y6td1"]
+[ext_resource type="Texture2D" uid="uid://20hvd143e0ue" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_09.png" id="35_4lfjq"]
+[ext_resource type="Texture2D" uid="uid://c1q2x7x4ljb8" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_10.png" id="36_3m5wj"]
+[ext_resource type="Texture2D" uid="uid://cqirix75d0wa0" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_11.png" id="37_jqoqy"]
+[ext_resource type="Texture2D" uid="uid://ca0wba1tv06wo" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_12.png" id="38_nivy4"]
+[ext_resource type="Texture2D" uid="uid://dm1potvs0gk8k" path="res://Assets/Images/Effects/SteveDebuffPotion/EnemyPotion_13.png" id="39_lfgxu"]
+[ext_resource type="AudioStream" uid="uid://dv2qekrqjyyjt" path="res://Assets/Sounds/FXs/Skills/splash1.wav" id="40_f6h44"]
+[ext_resource type="PackedScene" uid="uid://bdmf2oyahwn4d" path="res://Scenes/UI-Components/Wiki/wiki_audio_button.tscn" id="41_31wav"]
+[ext_resource type="AudioStream" uid="uid://28wyvuelh0ah" path="res://Assets/Sounds/FXs/Skills/splash2.wav" id="42_um3je"]
+[ext_resource type="AudioStream" uid="uid://ex5wm8d4mv2r" path="res://Assets/Sounds/FXs/Skills/splash3.wav" id="43_4u8uc"]
+[ext_resource type="PackedScene" uid="uid://bxfgdmde4dusx" path="res://Scenes/UI-Components/Wiki/wiki_head_texture_button.tscn" id="44_n7i71"]
+[ext_resource type="Texture2D" uid="uid://c86ouuukr7qqc" path="res://Assets/Images/UI/Wiki/Allys/Heroes/Steve.png" id="45_astae"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aievx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_w4hw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2aqj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bnjmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uqnaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mxohc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wwys2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4neuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_y5ydt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pugma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_a0r0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hamnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tgc4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_h2alp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1qlxk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrp0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_6icvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_heqjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mpdu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_i4au6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_61okl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5aqip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1jxfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_scbdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_y6td1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_4lfjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3m5wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_jqoqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_nivy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_lfgxu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="WikiPageSkillSteveSkill" instance=ExtResource("1_u46ch")]
+offset_bottom = 3387.0
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "药水风暴雨"
+
+[node name="TextureRect" parent="VBoxContainer" index="2"]
+texture = ExtResource("2_v5snv")
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig" index="1"]
+text = "技能文本： 倾泻一场药水风暴，伤害敌人，并支援友军
+ 
+冷却时间： 30 秒"
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillConfig/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+text = "30 秒"
+
+[node name="Label2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="1"]
+text = "在指定位置先后各自降下 2/4/6/8 发正面药水和负面药水，间隔 0.2 秒交替释放，每发药水落点位置随机在 x 方向偏移 0-25，y 方向偏移 0-18 像素。"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "正面药水"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="3"]
+layout_mode = 2
+text = "恢复 30 范围内所有友军 30 点生命，并施加持续 6 秒的超级恢复效果，每 0.5 秒恢复 10 点生命。如果落点 30 范围内存在持有 \"undead\" 标签的敌人，则会对其造成 30 点真伤。"
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="4"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer" index="0" instance=ExtResource("3_sro6r")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="0" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("6_7bxx2")
+tip_text = "技能范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="1" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="2" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("7_3alcp")
+tip_text = "单次恢复生命"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="3" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="4" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("8_kf15f")
+tip_text = "恢复效果持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="5" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "6 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="6" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement7" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("7_3alcp")
+tip_text = "恢复效果"
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="7" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "10 / 0.5秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement9" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="8" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement9" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("9_5vkjl")
+tip_text = "药水伤害"
+
+[node name="WikiTableElement10" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable" index="9" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer/WikiTable/WikiTableElement10" index="0"]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "负面药水"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="6"]
+layout_mode = 2
+text = "对 30 范围内的有敌人造成 24-64 点法伤，该伤害对有 \"undead\" 标签的敌人无效。并对命中目标施加持续 4 秒的减速效果，效果持续期间目标减速 40%。"
+autowrap_mode = 3
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="7"]
+layout_mode = 2
+
+[node name="WikiTipPanel" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer3" index="0" instance=ExtResource("10_tgvse")]
+layout_mode = 2
+tip_text = "免疫组： god, super_unit"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect" index="8"]
+layout_mode = 2
+
+[node name="WikiTable" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2" index="0" instance=ExtResource("3_sro6r")]
+layout_mode = 2
+
+[node name="WikiTableElement" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="0" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("6_7bxx2")
+tip_text = "技能范围"
+
+[node name="WikiTableElement2" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="1" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement2" index="0"]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement3" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="2" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement3" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("10_dux6t")
+tip_text = "药水伤害"
+
+[node name="WikiTableElement4" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="3" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement4" index="0"]
+layout_mode = 2
+text = "24 - 64"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement5" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="4" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement5" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("8_kf15f")
+tip_text = "减速持续时间"
+
+[node name="WikiTableElement6" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="5" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement6" index="0"]
+layout_mode = 2
+text = "4 秒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WikiTableElement7" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="6" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="WikiPropertyTexture" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement7" index="0" instance=ExtResource("5_8opjk")]
+layout_mode = 2
+texture = ExtResource("11_c8l25")
+tip_text = "减速效果"
+property_state = 2
+
+[node name="WikiTableElement8" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable" index="7" instance=ExtResource("4_pxyvh")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/SkillEffect/CenterContainer2/WikiTable/WikiTableElement8" index="0"]
+layout_mode = 2
+text = "40%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art1" index="0"]
+position = Vector2(48, -124)
+scale = Vector2(0.347059, 0.347059)
+sprite_frames = SubResource("SpriteFrames_aievx")
+frame_progress = 0.415913
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art1" index="1"]
+text = "正面药水动画"
+
+[node name="Art2" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="0"]
+position = Vector2(48, -124)
+scale = Vector2(0.347059, 0.347059)
+sprite_frames = SubResource("SpriteFrames_nrp0b")
+autoplay = "default"
+frame_progress = 0.868161
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Art/CenterContainer/GridContainer/Art2" index="1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 24.0
+text = "负面药水动画"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement" index="0"]
+text = "药水落地音效"
+
+[node name="WikiAudioButton" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="1"]
+audio_stream = ExtResource("40_f6h44")
+
+[node name="WikiAudioButton2" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="2" instance=ExtResource("41_31wav")]
+layout_mode = 2
+audio_stream = ExtResource("42_um3je")
+
+[node name="WikiAudioButton3" parent="VBoxContainer/MarginContainer/VBoxContainer/Audio/CenterContainer/WikiTable/WikiTableElement2/HBoxContainer" index="3" instance=ExtResource("41_31wav")]
+layout_mode = 2
+audio_stream = ExtResource("43_4u8uc")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/About" index="1"]
+layout_mode = 2
+
+[node name="WikiHeadTextureButton" parent="VBoxContainer/MarginContainer/VBoxContainer/About/CenterContainer" index="0" instance=ExtResource("44_n7i71")]
+layout_mode = 2
+texture_normal = ExtResource("45_astae")
+target_page_path = "res://Scenes/WikiPages/Allys/Heroes/wiki_hero_steve.tscn"
+name_text = "史蒂夫"
